@@ -2,7 +2,7 @@
 title: Guia do Android SDK
 description: Guia do Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '1685'
 ht-degree: 0%
@@ -32,10 +32,13 @@ A solução de direito de autenticação da Adobe Pass para Android é dividida 
 
 O objetivo do domínio AccessEnabler é ocultar todas as complexidades dos workflows de direito e fornecer ao aplicativo de camada superior (por meio da biblioteca AccessEnabler) um conjunto de primitivos de direito simples com os quais você implementa os workflows de direito:
 
-1. Definir a identidade do solicitante
-1. Verificar e obter autenticação em relação a um provedor de identidade específico
-1. Verificar e obter autorização para um recurso específico
-1. Sair
+1. Defina a identidade do solicitante.
+
+1. Verifique e obtenha autenticação em relação a um provedor de identidade específico.
+
+1. Verifique e obtenha autorização para um recurso específico.
+
+1. Fazer logoff.
 
 A atividade de rede do AccessEnabler ocorre em um thread diferente, de modo que o thread de interface do usuário nunca é bloqueado. Como resultado, o canal de comunicação bidirecional entre os dois domínios de aplicativos deve seguir um padrão totalmente assíncrono:
 
@@ -50,8 +53,6 @@ A atividade de rede do AccessEnabler ocorre em um thread diferente, de modo que 
 1. [Fluxo de autorização](#authz_flow)
 1. [Exibir fluxo de mídia](#media_flow)
 1. [Fluxo de saída](#logout_flow)
-
-
 
 ### A. Pré-requisitos {#prereqs}
 
@@ -137,8 +138,6 @@ A atividade de rede do AccessEnabler ocorre em um thread diferente, de modo que 
 
    - **Acionadores:** retorno de chamada setAuthenticationStatus()
 
-
-
 ### C. Fluxo de autenticação {#authn_flow}
 
 1. Chame [`getAuthentication()`](#$getAuthN) para iniciar o fluxo de autenticação ou obter a confirmação de que o usuário já está autenticado.\
@@ -151,7 +150,6 @@ A atividade de rede do AccessEnabler ocorre em um thread diferente, de modo que 
 1. Depois que o usuário selecionar um provedor, obtenha o URL do MVPD do usuário no `navigateToUrl()` retorno de chamada.  Abra um WebView e direcione esse controle do WebView para o URL.
 
 1. Por meio do WebView instanciado na etapa anterior, o usuário acessa a página de login do MVPD e insere credenciais de login. Várias operações de redirecionamento ocorrem no WebView.
-
 
    **Nota:** Nesse momento, o usuário tem a oportunidade de cancelar o fluxo de autenticação. Se isso ocorrer, a camada da interface do usuário será responsável por informar o AccessEnabler sobre esse evento, chamando `setSelectedProvider()` com `null` como parâmetro. Isso permite que o AccessEnabler limpe seu estado interno e redefina o Fluxo de autenticação.
 

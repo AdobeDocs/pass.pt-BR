@@ -2,9 +2,9 @@
 title: Caminho de atualização do AccessEnabler iOS/tvOS 3.7.0
 description: Caminho de atualização do AccessEnabler iOS/tvOS 3.7.0
 exl-id: f15c7414-ec9b-4e21-b457-1ecf59f47441
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '296'
+source-wordcount: '294'
 ht-degree: 0%
 
 ---
@@ -28,15 +28,20 @@ Algumas limitações, descritas abaixo, podem ser encontradas pelos implementado
 
 1. O SSO regular (Adobe) não funcionará entre um aplicativo usando o AccessEnabler versão 3.7.0 e um aplicativo usando o AccessEnabler versão/s inferior a 3.7.0, mesmo para aplicativos desenvolvidos pelo mesmo fornecedor.
 
-   - **Importante:**
-      - O SSO de nível de sistema (Apple) não será afetado!
-      - O SSO regular (Adobe) continuará a funcionar se ambos os aplicativos forem desenvolvidos pelo mesmo fornecedor e usarem versões do AccessEnabler inferiores a 3.7.0!
-      - O SSO regular (Adobe) funcionará se ambos os aplicativos forem desenvolvidos pelo mesmo fornecedor e usarem o AccessEnabler versão 3.7.0!
+   >[!IMPORTANT]
+   >
+   >* O SSO de nível de sistema (Apple) não será afetado!
+   >
+   >* O SSO regular (Adobe) continuará a funcionar se ambos os aplicativos forem desenvolvidos pelo mesmo fornecedor e usarem versões do AccessEnabler inferiores a 3.7.0!
+   >
+   >* O SSO regular (Adobe) funcionará se ambos os aplicativos forem desenvolvidos pelo mesmo fornecedor e usarem o AccessEnabler versão 3.7.0!
+
 
 1. No caso de fazer downgrade de um aplicativo usando o AccessEnabler versão 3.7.0 para uma versão inferior do AccessEnabler, os novos tokens gerados não serão migrados. Portanto, os usuários finais podem enfrentar a perda de sessões de autenticação/autorização, sem esperar essa perda.
 
-   - **Importante:**
-      - Os usuários finais autenticados por SSO de nível de sistema (Apple) não serão afetados.
-      - Os usuários finais que já foram autenticados antes da atualização para o novo aplicativo usando o AccessEnabler versão 3.7.0 não serão afetados!
+   >[!IMPORTANT]
+   >
+   >* Os usuários finais autenticados por SSO de nível de sistema (Apple) não serão afetados.
+   >* Os usuários finais que já foram autenticados antes da atualização para o novo aplicativo usando o AccessEnabler versão 3.7.0 não serão afetados!
 
 1. Na situação de fazer downgrade de um aplicativo usando o AccessEnabler versão 3.7.0 para uma versão inferior do AccessEnabler, os tokens excluídos não serão reconhecidos. Portanto, os usuários finais podem enfrentar a presença de sessões de autenticação/autorização, sem esperar essa presença.

@@ -2,9 +2,9 @@
 title: Guia de integração do Amazon FireOS
 description: Guia de integração do Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '1432'
+source-wordcount: '1416'
 ht-degree: 0%
 
 ---
@@ -20,27 +20,27 @@ ht-degree: 0%
 
 ## Introdução {#intro}
 
-Este documento descreve os workflows de direito que um aplicativo de nível superior do programador pode implementar por meio das APIs expostas pela biblioteca Amazon FireOS AccessEnabler.
+Este documento descreve os workflows de direito que um aplicativo de nível superior do programador pode implementar por meio das APIs expostas pelo Amazon FireOS `AccessEnabler` biblioteca.
 
 A solução de direito de autenticação da Adobe Pass para o Amazon FireOS é dividida em dois domínios:
 
-- O domínio da interface do usuário — essa é a camada de aplicativo de nível superior que implementa a interface do usuário e usa os serviços fornecidos pela biblioteca do AccessEnabler para fornecer acesso ao conteúdo restrito.
-- O domínio AccessEnabler - é aqui que os workflows de direito são implementados no formato de:
+- O domínio da interface do usuário — essa é a camada de aplicativo de nível superior que implementa a interface do usuário e usa os serviços fornecidos pelo `AccessEnabler` para fornecer acesso a conteúdo restrito.
+- A variável `AccessEnabler` domínio - é aqui que os workflows de direito são implementados na forma de:
    - Chamadas de rede feitas para servidores back-end do Adobe
    - Regras de lógica de negócios relacionadas aos workflows de autenticação e autorização
    - Gerenciamento de vários recursos e processamento do estado do fluxo de trabalho (como o cache de token)
 
-O objetivo do domínio AccessEnabler é ocultar todas as complexidades dos workflows de direito e fornecer ao aplicativo de camada superior (por meio da biblioteca AccessEnabler) um conjunto de primitivos de direito simples com os quais você implementa os workflows de direito:
+A meta do `AccessEnabler` domínio é ocultar todas as complexidades dos workflows de direito e fornecer ao aplicativo de camada superior (por meio do `AccessEnabler` biblioteca) um conjunto de primitivos de direitos simples. Esse processo permite implementar os workflows de direito:
 
-1. Definir a identidade do solicitante
-1. Verificar e obter autenticação em relação a um provedor de identidade específico
-1. Verificar e obter autorização para um recurso específico
-1. Sair
+1. Defina a identidade do solicitante.
+1. Verifique e obtenha autenticação em relação a um provedor de identidade específico.
+1. Verifique e obtenha autorização para um recurso específico.
+1. Fazer logoff.
 
-A atividade de rede do AccessEnabler ocorre em um thread diferente, de modo que o thread de interface do usuário nunca é bloqueado. Como resultado, o canal de comunicação bidirecional entre os dois domínios de aplicativos deve seguir um padrão totalmente assíncrono:
+A variável `AccessEnabler`A atividade de rede do ocorre em um thread diferente, de modo que o thread da interface do usuário nunca é bloqueado. Como resultado, o canal de comunicação bidirecional entre os dois domínios de aplicativos deve seguir um padrão totalmente assíncrono:
 
-- A camada de aplicativo da interface envia mensagens para o domínio AccessEnabler por meio das chamadas de API expostas pela biblioteca AccessEnabler.
-- O AccessEnabler responde à camada da interface do usuário por meio dos métodos de retorno de chamada incluídos no protocolo AccessEnabler que a camada da interface do usuário registra na biblioteca AccessEnabler.
+- A camada de aplicativo da interface do usuário envia mensagens para o `AccessEnabler` domínio por meio das chamadas de API expostas pelo `AccessEnabler` biblioteca.
+- A variável `AccessEnabler` responde à camada da interface por meio dos métodos de retorno de chamada incluídos na `AccessEnabler` protocolo que a camada da interface do usuário registra com o `AccessEnabler` biblioteca.
 
 ## Fluxos de Direitos {#entitlement}
 
@@ -50,8 +50,6 @@ A atividade de rede do AccessEnabler ocorre em um thread diferente, de modo que 
 1. [Fluxo de autorização](#authz_flow)
 1. [Exibir fluxo de mídia](#media_flow)
 1. [Fluxo de saída](#logout_flow)
-
-
 
 ### A. Pré-requisitos {#prereqs}
 
@@ -113,9 +111,9 @@ A variável `event` indica qual evento de direito ocorreu;o parâmetro `data` pa
 1. Inicie o aplicativo de nível superior.
 1. Iniciar a autenticação do Adobe Pass.
 
-   1. Chame [`getInstance`](#$getInstance) para criar uma única instância do Adobe Pass Authentication AccessEnabler.
+   1. Chame [`getInstance`](#$getInstance) para criar uma única instância da Autenticação do Adobe Pass `AccessEnabler`.
 
-      - **Dependência:** Biblioteca Amazon FireOS nativa de autenticação da Adobe Pass (AccessEnabler)
+      - **Dependência:** Biblioteca Amazon FireOS nativa de autenticação da Adobe Pass (`AccessEnabler`)
 
    1. Chame` setRequestor()` para estabelecer a identificação do Programador; passar no `requestorID` e (opcionalmente) uma matriz de endpoints de Autenticação do Adobe Pass.
 
@@ -127,8 +125,8 @@ A variável `event` indica qual evento de direito ocorreu;o parâmetro `data` pa
 
    Você tem duas opções de implementação: depois que as informações de identificação do solicitante são enviadas ao servidor de backend, a camada de aplicativo da interface do usuário pode escolher uma das duas abordagens a seguir:</p>
 
-   1. Aguarde o acionamento do `setRequestorComplete()` retorno de chamada (parte do delegado AccessEnabler).  Essa opção oferece a maior certeza de que `setRequestor()` concluído, portanto, é recomendado para a maioria das implementações.
-   1. Continuar sem esperar o acionamento do `setRequestorComplete()` retorno de chamada e comece a emitir solicitações de direito. Essas chamadas (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) são enfileiradas pela biblioteca AccessEnabler, que fará as chamadas de rede reais após o `setRequestor()`. Ocasionalmente, essa opção pode ser interrompida se, por exemplo, a conexão de rede estiver instável.
+   1. Aguarde o acionamento do `setRequestorComplete()` callback (parte do `AccessEnabler` delegado).  Essa opção oferece a maior certeza de que `setRequestor()` concluído, portanto, é recomendado para a maioria das implementações.
+   1. Continuar sem esperar o acionamento do `setRequestorComplete()` retorno de chamada e comece a emitir solicitações de direito. Essas chamadas (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) são enfileiradas pelo `AccessEnabler` biblioteca, que fará as chamadas de rede reais após o `setRequestor()`. Ocasionalmente, essa opção pode ser interrompida se, por exemplo, a conexão de rede estiver instável.
 
 1. Chame [checkAuthentication()](#$checkAuthN) para verificar uma autenticação existente sem iniciar o fluxo de Autenticação completa.  Se essa chamada for bem-sucedida, você poderá prosseguir diretamente para o Fluxo de autorização.  Caso contrário, prossiga para o Fluxo de autenticação.
 
@@ -150,10 +148,10 @@ A variável `event` indica qual evento de direito ocorreu;o parâmetro `data` pa
 
    >[!NOTE]
    >
-   >Nesse momento, o usuário tem a oportunidade de cancelar o fluxo de autenticação. Se isso ocorrer, o AccessEnabler limpará seu estado interno e redefinirá o Fluxo de autenticação.
+   >Nesse momento, o usuário tem a oportunidade de cancelar o fluxo de autenticação. Se isso ocorrer, a variável `AccessEnabler` limpará seu estado interno e redefinirá o Fluxo de autenticação.
 
 1. Após um logon bem-sucedido do usuário, o WebView será fechado.
-1. chamar `getAuthenticationToken(),` que instrui o AccessEnabler a recuperar o token de autenticação do servidor back-end.
+1. chamar `getAuthenticationToken(),` que instrui o `AccessEnabler` para recuperar o token de autenticação do servidor back-end.
 1. [Opcional] Chame [`checkPreauthorizedResources(resources)`](#$checkPreauth) para verificar quais recursos o usuário está autorizado a visualizar. A variável `resources` é uma matriz de recursos protegidos associada ao token de autenticação do usuário.
 
    **Acionadores:** `preAuthorizedResources()` retorno de chamada\
@@ -196,6 +194,6 @@ A variável `event` indica qual evento de direito ocorreu;o parâmetro `data` pa
 
 ### F. Fluxo de logout {#logout_flow}
 
-1. Chame [`logout()`](#$logout) para desconectar o usuário. O AccessEnabler limpa todos os valores e tokens em cache obtidos pelo usuário para o MVPD atual em todos os solicitantes que compartilham o logon por meio do Logon único. Depois de limpar o cache, o AccessEnabler faz uma chamada de servidor para limpar as sessões do lado do servidor.  Como a chamada do servidor pode resultar em um redirecionamento SAML para o IdP (isso permite a limpeza da sessão no lado do IdP), essa chamada deve seguir todos os redirecionamentos. Por esse motivo, essa chamada será tratada em um controle WebView, invisível para o usuário.
+1. Chame [`logout()`](#$logout) para desconectar o usuário. A variável `AccessEnabler` limpa todos os valores e tokens em cache obtidos pelo usuário para o MVPD atual em todos os solicitantes que compartilham o logon por meio do Logon único. Depois de limpar o cache, a variável `AccessEnabler` O faz uma chamada de servidor para limpar as sessões do lado do servidor.  Como a chamada do servidor pode resultar em um redirecionamento SAML para o IdP (isso permite a limpeza da sessão no lado do IdP), essa chamada deve seguir todos os redirecionamentos. Por esse motivo, essa chamada será tratada em um controle WebView, invisível para o usuário.
 
    **Nota:** O fluxo de logout difere do fluxo de autenticação na medida em que o usuário não é obrigado a interagir com o WebView de nenhuma forma. Assim, é possível (e recomendado) tornar o controle do WebView invisível (ou seja: oculto) durante o processo de logout.

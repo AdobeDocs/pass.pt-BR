@@ -2,7 +2,7 @@
 title: Guia do Apple SSO (REST API)
 description: Guia do Apple SSO (REST API)
 exl-id: cb27c4b7-bdb4-44a3-8f84-c522a953426f
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '1435'
 ht-degree: 0%
@@ -21,13 +21,9 @@ A API REST de autenticação da Adobe Pass pode oferecer suporte à autenticaç�
 
 Observe que este documento atua como uma extensão da documentação da API REST existente, que pode ser encontrada [aqui](/help/authentication/rest-api-reference.md).
 
-</br>
-
 ## Cookbooks {#Cookbooks}
 
 Para se beneficiar da experiência do usuário do Apple SSO, um aplicativo precisaria integrar o [Conta do assinante do vídeo](https://developer.apple.com/documentation/videosubscriberaccount) A estrutura desenvolvida pela Apple, embora relacionada à comunicação da API REST de autenticação da Adobe Pass, ela teria que seguir a sequência de dicas apresentada abaixo.
-
-</br>
 
 ### Autenticação {#Authentication}
 
@@ -44,10 +40,8 @@ Para se beneficiar da experiência do usuário do Apple SSO, um aplicativo preci
 - [Continuar com fluxos de autorização](#Proceed_with_authorization_flows)
 
 
-
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/qu/platform-sso.jpeg)
 
-</br>
 
 #### Etapa: &quot;Há um token de autenticação de Adobe válido?&quot; {#Is_there_a_valid_Adobe_authentication_token}
 
@@ -55,7 +49,6 @@ Para se beneficiar da experiência do usuário do Apple SSO, um aplicativo preci
 >
 > **<u>Dica:</u>** Implementar isso através do meio de [Autenticação Adobe Pass](/help/authentication/check-authentication-token.md) serviço.
 
-</br>
 
 #### Etapa: &quot;O usuário está conectado por meio do SSO da Platform?&quot; {#Is_the_user_logged_in_via_Platform_SSO}
 
@@ -127,8 +120,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 ...  
 ```
 
-</br>
-
 #### Etapa: &quot;Buscar configuração de Adobe&quot; {#Fetch_Adobe_configuration}
 
 >[!TIP]
@@ -139,8 +130,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >[!TIP]
 >
 > **<u>Dica Profissional:</u>** Esteja ciente das propriedades do MVPD: *`enablePlatformServices`*, *`boardingStatus`*, *`displayInPlatformPicker`*, *`platformMappingId`*, *`requiredMetadataFields`* e preste atenção extra aos comentários apresentados em trechos de código de outras etapas.
-
-</br>
 
 #### Etapa &quot;Iniciar fluxo de trabalho de SSO da plataforma com configuração Adobe&quot; {#Initiate_Platform_SSO_workflow_with_Adobe_config}
 
@@ -263,8 +252,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >
 > **<u>Dica Profissional:</u>** Esteja ciente do trecho de código do [&quot;Iniciar fluxo de trabalho de SSO da plataforma com configuração Adobe&quot;](#Initiate_Platform_SSO_workflow_with_Adobe_config) etapa. O logon do usuário é bem-sucedido caso a variável *`vsaMetadata!.accountProviderIdentifier`* contém um valor válido e a data atual não ultrapassou o *`vsaMetadata!.authenticationExpirationDate`* valor.
 
-</br>
-
 #### Etapa &quot;Obter uma solicitação de perfil do Adobe para o MVPD selecionado&quot; {#Obtain_a_profile_request_from_Adobe_for_the_selected_MVPD}
 
 >[!TIP]
@@ -274,8 +261,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >[!TIP]
 >
 > **<u>Dica Profissional:</u>** Esteja ciente de que o identificador do provedor obtido da estrutura da Conta do Assinante do Vídeo representa o *`platformMappingId`* em termos de configuração de Autenticação Adobe Pass. Portanto, o aplicativo deve determinar o valor da propriedade de ID do MVPD, usando o *`platformMappingId`* valor, por meio da Autenticação Adobe Pass [Fornecer Lista MVPD](/help/authentication/provide-mvpd-list.md) serviço.
-
-</br>
 
 #### Etapa: &quot;Encaminhe a solicitação de Adobe para o SSO da plataforma para obter o perfil&quot; {#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile}
 

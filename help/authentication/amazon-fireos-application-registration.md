@@ -2,9 +2,9 @@
 title: Registro do aplicativo Amazon FireOS
 description: Registro do aplicativo Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '513'
 ht-degree: 0%
 
 ---
@@ -33,25 +33,37 @@ Uma Declaração de Software é um token JWT que contém informações sobre seu
 
 ### Se você tiver acesso ao Painel TVE do Adobe:
 
-- Abra o navegador e acesse <https://console.auth.adobe.com>
-- Navegue até `Channels` e selecione seu canal.
-- Navegue até `Registered Applications` Guia.
-- Clique em `Add new application`.
-- Forneça um nome e uma versão para o aplicativo e selecione as plataformas em que ele estará disponível (por exemplo, Android no nosso caso).
-- Forneça um Nome de domínio escolhendo em uma lista de domínios já configurados para seu Programador.
-- Envie suas alterações ao servidor e navegue de volta para a guia Aplicativos registrados do canal.
-- Você deve ver uma lista com todos os aplicativos registrados. Clique em `Download` no aplicativo recém-criado. Observação: Talvez seja necessário aguardar alguns minutos para que a Declaração de Software esteja pronta para download.
-- Um arquivo de texto será baixado. Use seu conteúdo como sua Declaração de Software.
+1. Abra o navegador e acesse `https://console.auth.adobe.com`.
+
+1. Navegue até a **[!UICONTROL Channels]** e, em seguida, selecione seu canal.
+
+1. Navegue até a **[!UICONTROL Registered Applications]** guia.
+
+1. Clique em **[!UICONTROL Add new application]**.
+
+1. Forneça um nome e uma versão para o aplicativo e selecione as plataformas em que ele estará disponível (como Android).
+
+1. Forneça um **[!UICONTROL Domain Name]** escolhendo em uma lista de domínios já configurados para seu Programador.
+
+1. Envie suas alterações ao servidor e navegue de volta para o canal **[!UICONTROL Registered Applications]** guia.
+
+   Você deve ver uma lista com todos os aplicativos registrados.
+
+1. Clique em **[!UICONTROL Download]** no aplicativo recém-criado.
+
+   Talvez seja necessário aguardar alguns minutos antes que a Declaração de software esteja pronta para download.
+
+   Um arquivo de texto é baixado. Use seu conteúdo como a Declaração de Software.
 
 Mais informações, consulte [Gerenciamento dinâmico de registro de clientes](/help/authentication/dynamic-client-registration-management.md)
 
 ### Se você não tiver acesso ao Painel do Adobe TVE:
 
-Enviar um tíquete para <tve-support@adobe.com>. Inclua todas as informações necessárias, incluindo canal, nome do aplicativo, versão e plataformas, e alguém de nossa equipe de suporte criará uma declaração de software para você.
+Enviar um tíquete para [tve-support@adobe.com](mailto:tve-support@adobe.com). Inclua todas as informações necessárias, incluindo canal, nome do aplicativo, versão e plataformas, e alguém de nossa equipe de suporte criará uma declaração de software para você.
 
-## Como usar a Declaração de Software? {#use}
+## Como usar a Declaração de Software {#use}
 
-Depois de obter a Instrução de Software, você precisará passá-la como um parâmetro no construtor Access Enabler. Recomendamos hospedar a Declaração de Software em um local remoto. Dessa forma, você pode revogar e alterar facilmente a Declaração de Software sem lançar uma nova versão do seu aplicativo.
+Depois de obter a Instrução de Software, você precisará passá-la como um parâmetro no construtor Access Enabler. A Adobe recomenda hospedar a Declaração de Software em um local remoto. Dessa forma, você pode revogar e alterar facilmente a Declaração de Software sem lançar uma nova versão do seu aplicativo.
 
 ## Como usar a Declaração de Software {#use-both}
 
