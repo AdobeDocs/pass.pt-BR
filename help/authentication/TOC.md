@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticação Adobe Pass
 user-guide-description: A Autenticação do Adobe Pass é uma solução de direito para a TV Everywhere, que fornece uma estrutura modular para determinar se alguém que solicita acesso a um recurso tem direito a ele.
-source-git-commit: fd65582522d6b40e5797dff192e2340c5575ef3b
+source-git-commit: 05184defb3d912050240be7763ced4ccce6a35ad
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '785'
 ht-degree: 0%
 
 ---
@@ -161,10 +161,12 @@ ht-degree: 0%
    + [Notas de versão da Autenticação Adobe Pass 2.64](auth-rn-264.md)
    + [Notas de versão da Autenticação Adobe Pass 2.63](auth-rn-263.md)
    + [Notas de versão do Adobe Pass Authentication 2.62.1](auth-rn-2621.md)
-   + [Notas de versão do Adobe Pass Authentication iOS / tvOS 3.7.0](authn-rn-ios-tvos-370.md)
-   + [Notas de versão do Adobe Pass Authentication iOS / tvOS 3.8.1](authn-rn-ios-tvos-381.md)
-   + [Notas de versão do Adobe Pass Authentication iOS / tvOS 3.8.2](authn-rn-ios-tvos-382.md)
-   + [Notas de versão do Adobe Pass Authentication Android 3.7.3](authn-rn-android-373.md)
+   + Notas de versão do iOS/tvOS SDK  {#release-notes-ios}
+      + [Notas de versão do Adobe Pass Authentication iOS / tvOS 3.8.2](authn-rn-ios-tvos-382.md)
+      + [Notas de versão do Adobe Pass Authentication iOS / tvOS 3.8.1](authn-rn-ios-tvos-381.md)
+      + [Notas de versão do Adobe Pass Authentication iOS / tvOS 3.7.0](authn-rn-ios-tvos-370.md)
+   + Notas de versão do Android SDK {#release-notes-android}
+      + [Notas de versão do Adobe Pass Authentication Android 3.7.3](authn-rn-android-373.md)
 + Notas técnicas {#tech-notes}
    + SDKs de autenticação da Adobe Pass {#primetime-authentication-sdks}
       + [Perguntas e respostas sobre certificados](certificates-qa.md)
