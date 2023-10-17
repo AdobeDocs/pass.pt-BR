@@ -2,10 +2,10 @@
 title: Listagem MVPD de Endereços IP
 description: Listagem MVPD de Endereços IP
 exl-id: be18084c-22f5-47b5-b088-d9032681113d
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 7a44fc9254171f2e3063d3d67cdf790e12dc10fa
 workflow-type: tm+mt
-source-wordcount: '82'
-ht-degree: 24%
+source-wordcount: '146'
+ht-degree: 19%
 
 ---
 
@@ -17,23 +17,32 @@ ht-degree: 24%
 
 Para uma integração de Autenticação MVPD/Adobe Pass, determinados IPs devem ser permitidos no firewall de um MVPD. Estes são os IPs de saída:
 
-* 34.233.60.171
-* 34.233.163.243
-* 34.206.195.149
-* 34.198.39.14
-* 35.162.207.100
-* 34.212.224.47
-* 52.27.200.183
-* 52.37.19.205
-* 34.193.92.8
-* 35.174.195.14
-* 54.68.95.213
-* 54.201.166.167
-* 52.33.192.79
-* 34.217.226.123
-* 34.208.172.198
-* 52.41.27.220
-* 52.43.250.32
-* 54.70.252.231
-* 54.146.175.174
-* 18.215.135.17
+| IP | Ambiente | Região |
+| :-------------: | :---------: | :-----: |
+| 34.233.60.171 | Produção | us-east |
+| 34.233.163.243 | Produção | us-east |
+| 34.206.195.149 | Produção | us-east |
+| 34.198.39.14 | Produção | us-east |
+| 35.162.207.100 | Produção | us-west |
+| 34.212.224.47 | Produção | us-west |
+| 52.27.200.183 | Estágios | us-west |
+| 52.37.19.205 | Estágios | us-wst |
+| 34.193.92.8 | Estágios | us-east |
+| 35.174.195.14 | Estágios | us-east |
+| 52.41.27.220 | Estágios | us-west |
+| 52.43.250.32 | Estágios | us-west |
+| 54.70.252.231 | Estágios | us-west |
+| 54.146.175.174 | Estágios | us-east |
+| 18.215.135.17 | Estágios | us-east |
+| 193.105.140.131 | VPN | eu-east |
+| 192.150.10.0/24 | VPN | us-west |
+| 192.150.11.4 | VPN | us-west |
+| 192.150.19.4 | VPN | us-west |
+| 192.150.18.2 | VPN | us-west |
+| 192.150.18.33 | VPN | us-west |
+| 192.150.18.41 | VPN | us-west |
+| 64.129.229.106 | VPN | us-west |
+| 192.147.118.254 | VPN | us-east |
+| 192.147.118.2 | VPN | us-east |
+| 192.147.118.6 | VPN | us-east |
+| 192.147.118.253 | VPN | us-east |
