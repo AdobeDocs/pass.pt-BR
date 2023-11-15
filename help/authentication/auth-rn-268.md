@@ -1,9 +1,9 @@
 ---
 title: Notas de versão da Autenticação Adobe Pass 2.68
 description: Notas de versão da Autenticação Adobe Pass 2.68
-source-git-commit: 68e572797a39327682ea7f491ef2109374fadc2e
+source-git-commit: 47e663b9bc2044a182abede390aa15c5bf7d2e87
 workflow-type: tm+mt
-source-wordcount: '131'
+source-wordcount: '137'
 ht-degree: 0%
 
 ---
@@ -30,13 +30,9 @@ Data de lançamento: **21/11/2023 - 23/11/2023**
 
 ### Novos recursos {#new-features-268}
 
-* Continuação das atualizações internas para a nova API REST.
+* Atualizações para nossas novas APIs REST.  Os novos endpoints ainda não estão disponíveis, mas estamos trabalhando na atualização da documentação que detalha o uso dessas novas APIs.
 * Melhorias contínuas na arquitetura interna.
 * Atualização da biblioteca Device Atlas para melhorar a identificação do dispositivo.
-
-### Atualizações do MVPD {#mvpd-updates-268}
-
-* Um novo MVPD foi adicionado: **MAX**. Entre em contato com seu TAM para obter mais detalhes.
 
 #### Correções de erros {#bug-fixes-268}
 
