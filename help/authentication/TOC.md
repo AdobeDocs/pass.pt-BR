@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: O Adobe Pass Authentication é uma solução de concessão de direitos para o TV Everywhere, o qual fornece uma estrutura modular para determinar se a pessoa que solicita o acesso a um recurso possui direito a ele.
-source-git-commit: 97928c231d5e3d4b36fb2967452b01cb8af86072
+source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '892'
 ht-degree: 3%
 
 ---
@@ -164,6 +164,14 @@ ht-degree: 3%
    + [Notas de versão da Autenticação Adobe Pass 2.64](auth-rn-264.md)
    + [Notas de versão da Autenticação Adobe Pass 2.63](auth-rn-263.md)
    + [Notas de versão do Adobe Pass Authentication 2.62.1](auth-rn-2621.md)
+   + Notas de versão do SDK JavaScript  {#release-notes-javascript}
+      + [Notas de versão do JavaScript 3.5.0 de autenticação da Adobe Pass](authn-rn-javascript-350.md)
+      + [Notas de versão do JavaScript 4.0.0 de autenticação da Adobe Pass](authn-rn-javascript-400.md)
+      + [Notas de versão do JavaScript 4.1.0 de autenticação da Adobe Pass](authn-rn-javascript-410.md)
+      + [Notas de versão do JavaScript 4.1.1 de autenticação da Adobe Pass](authn-rn-javascript-411.md)
+      + [Notas de versão do JavaScript 4.2.0 de autenticação da Adobe Pass](authn-rn-javascript-420.md)
+      + [Notas de versão do JavaScript 4.4.0 de autenticação da Adobe Pass](authn-rn-javascript-440.md)
+      + [Notas de versão do JavaScript 4.6.0 de autenticação da Adobe Pass](authn-rn-javascript-460.md)
    + Notas de versão do iOS/tvOS SDK  {#release-notes-ios}
       + [Notas de versão do Adobe Pass Authentication iOS / tvOS 3.8.3](authn-rn-ios-tvos-383.md)
       + [Notas de versão do Adobe Pass Authentication iOS / tvOS 3.8.2](authn-rn-ios-tvos-382.md)
