@@ -4,10 +4,10 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Monitoramento de simultaneidade do Adobe Pass
 user-guide-description: Saiba como definir e aplicar limites ao uso simultâneo em vários aplicativos.
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: d39836cfb81a81271f526e6aa52fcc2d6558678f
 workflow-type: tm+mt
-source-wordcount: '141'
-ht-degree: 0%
+source-wordcount: '161'
+ht-degree: 9%
 
 ---
 
@@ -21,6 +21,7 @@ ht-degree: 0%
 + [Visão geral da API de monitoramento de concorrência](cm-api-overview.md)
 + [Atributos de metadados padrão](standard-metadata-attributes.md)
 + [Política de retenção de dados](data-retention-policy.md)
++ [Mecanismo de limitação](throttling-mechanism.md)
 + [Procedimentos de escalonamento](cm-escalation-procedures.md)
 + Uso do monitoramento de simultaneidade {#cmu}
    + [Relatórios de uso de monitoramento de simultaneidade](cm-usage-reports.md)
