@@ -1,9 +1,9 @@
 ---
 title: Mecanismo de limitação
 description: Mecanismo de limitação
-source-git-commit: 1390c09d3de6b4608cdcc97b3f053cce71e84639
+source-git-commit: cbb45cae576332e2b63027992c597b834210988d
 workflow-type: tm+mt
-source-wordcount: '589'
+source-wordcount: '624'
 ht-degree: 1%
 
 ---
@@ -13,14 +13,14 @@ ht-degree: 1%
 
 ## Introdução {#introduction}
 
-O Adobe, na sua função de processador de dados, deve tomar as medidas apropriadas para garantir que os usuários de nossos clientes usem os recursos de forma equitativa e que o serviço não seja inundado por solicitações desnecessárias de API. Para isso, implantamos um mecanismo de controle.\
-Um aplicativo de Monitoramento de simultaneidade pode ser usado por vários usuários e um deles pode ter várias sessões. Portanto, o serviço terá limites configurados para o número de chamadas aceitas por usuário/sessão em um intervalo de tempo específico.\
-Quando o limite for atingido, as solicitações serão marcadas com um status de resposta específico (HTTP 429 Demasiadas solicitações). Qualquer chamada subsequente feita após o recebimento de uma resposta &quot;429 Muitas solicitações&quot; deve ser feita com um período de resfriamento de pelo menos 1 minuto, para garantir que obtenha uma resposta comercial válida.
+O Adobe, na sua função de processador de dados, deve tomar as medidas apropriadas para garantir que os usuários de nossos clientes usem os recursos de forma equitativa e que o serviço não seja inundado por solicitações desnecessárias de API. Para isso, implantamos um mecanismo de controle.
+Um aplicativo de Monitoramento de simultaneidade pode ser usado por vários usuários e um deles pode ter várias sessões. Portanto, o serviço terá limites configurados para o número de chamadas aceitas por usuário/sessão em um intervalo de tempo específico.
+Quando o limite for atingido, as solicitações serão marcadas com um status de resposta específico (HTTP 429 Demasiadas solicitações). Qualquer chamada subsequente feita após o recebimento de uma resposta &quot;429 Muitas solicitações&quot; deve ser feita com pelo menos um minuto de resfriamento para garantir que obtenha uma resposta comercial válida.
 
 ## Visão geral do mecanismo {#mechanism-overview}
 
 O mecanismo determina o número máximo de chamadas aceitas para cada endpoint de Monitoramento de simultaneidade em um intervalo de tempo específico.
-Quando esse número máximo de chamadas for atingido, nosso serviço responderá com &quot;429 Muitas solicitações&quot;. O serviço precisa de mais 60 segundos para inicializar o limite novamente para seu valor máximo.
+Quando esse número máximo de chamadas for atingido, nosso serviço responderá com &quot;429 Muitas solicitações&quot;. O cabeçalho &quot;Expira&quot; da resposta 429 inclui o carimbo de data e hora quando a próxima chamada seria considerada válida ou quando a limitação expira. No momento, a limitação expira após um minuto da primeira resposta 429.
 
 Os endpoints configurados com limitação são:
 1. Criar uma nova sessão: POST /sessions/{idp}/{subject}
@@ -35,7 +35,7 @@ O limite para limitação de nível de sessão é definido como 200 solicitaçõ
 O limite de limitação no nível do usuário é definido como 200 solicitações em um minuto.\
 Ambos os limites (limitação de nível de sessão e limitação de nível de usuário) são configuráveis e nós os atualizaremos caso sejam atingidos por meio de cenários de integração válidos. Para isso, recomendamos que a equipe de suporte seja contatada.
 
-Este é um cenário para limitação de nível de sessão:
+**Cenário de limitação de nível de sessão:**
 
 | Hora | Solicitação de envio para o CM | Número de solicitações | Resposta recebida do CM | Explicação |
 |-----------|-----------------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
@@ -44,7 +44,7 @@ Este é um cenário para limitação de nível de sessão:
 | Segundo 61 | DELETE /sessions/idp1/subject1/session1 | 1 | 1 chamada recebe ‘429 muitas solicitações’ | Nenhuma chamada no limite disponível ainda |
 | Segundos 70 | DELETE /sessions/idp1/subject1/session1 | 1 | 1 chamada recebe ‘202 Aceito’ | O limite foi definido como 200 chamadas disponíveis porque 60 segundos se passaram desde os 10 segundos |
 
-e um cenário para limitação no nível do usuário:
+**Cenário de limitação no nível do usuário:**
 
 | Hora | Solicitação de envio para o CM | Número de solicitações | Resposta recebida do CM | Explicação |
 |-----------|------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
@@ -53,8 +53,24 @@ e um cenário para limitação no nível do usuário:
 | Segundo 61 | POST /sessions/idp1/subject1 | 1 | 1 chamada recebe ‘429 muitas solicitações’ | Nenhuma chamada no limite disponível ainda |
 | Segundos 70 | POST /sessions/idp1/subject1 | 1 | 1 chamada recebe ‘202 Aceito’ | O limite foi definido como 200 chamadas disponíveis porque 60 segundos se passaram desde os 10 segundos |
 
+**429 Exemplo de resposta:**
+
+```
+HTTP/2 429
+date: Thu, 15 Feb 2024 07:54:20 GMT
+content-length: 0
+vary: Origin
+vary: Access-Control-Request-Method
+vary: Access-Control-Request-Headers
+cache-control: no-store
+expires: Thu, 15 Feb 2024 07:54:41 GMT
+strict-transport-security: max-age=31536000 ; includeSubDomains
+x-xss-protection: 1; mode=block
+x-frame-options: DENY
+x-content-type-options: nosniff
+```
 
 ## Recomendações de integração do cliente {#customer-integration-recommendations}
 
-Com uma implementação correta, os clientes não receberão a resposta &quot;429 muitas solicitações&quot;.\
-Além disso, a Adobe recomenda que cada cliente manipule a resposta &quot;429 muitas solicitações&quot; apropriadamente, usando os detalhes técnicos apresentados acima.
+Com uma implementação correta, os clientes não receberão a resposta &quot;429 muitas solicitações&quot;.
+Além disso, a Adobe recomenda que cada cliente manipule a resposta &quot;429 muitas solicitações&quot; apropriadamente, usando os detalhes técnicos apresentados acima. Ao manipular a resposta, o cabeçalho &quot;Expira&quot; deve ser usado para determinar quando enviar a próxima solicitação válida.
