@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: O Adobe Pass Authentication é uma solução de concessão de direitos para o TV Everywhere, o qual fornece uma estrutura modular para determinar se a pessoa que solicita o acesso a um recurso possui direito a ele.
-source-git-commit: 2dbb45aebb1a00863a9344114963f6df95763dfc
+source-git-commit: 579ce868b6ee94e1854bbc51145fc7840268db26
 workflow-type: tm+mt
-source-wordcount: '915'
+source-wordcount: '919'
 ht-degree: 3%
 
 ---
@@ -186,7 +186,8 @@ ht-degree: 3%
    + SDKs de autenticação da Adobe Pass {#primetime-authentication-sdks}
       + [Perguntas e respostas sobre certificados](certificates-qa.md)
       + SDK do JavaScript {#javascript}
-         + [Limitações do JS SDK para o navegador Safari](js-sdk-limitations-for-safari-browser.md)
+         + [Avaliação da prevenção de rastreamento - Apple Safari](tracking-prevention-assessment-apple-safari.md)
+         + [Avaliação da prevenção de rastreamento - Google Chrome](tracking-prevention-assessment-google-chrome.md)
          + [Atualizações de cookies - Sinalizadores SameSite e Seguro](cookies-updates-samesite-and-secure-flags.md)
       + Android SDK {#android}
          + [Acesse o Logon único (SSO) do SDK do Android Enabler em aplicativos Android 10](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
