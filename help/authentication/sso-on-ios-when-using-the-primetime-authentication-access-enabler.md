@@ -2,9 +2,9 @@
 title: SSO no iOS ao usar o Adobe Pass Authentication Access Enabler
 description: SSO no iOS ao usar o Adobe Pass Authentication Access Enabler
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 929d1cc2e0466155b29d1f905f2979c942c9ab8c
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1121'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ O comportamento do SSO é o seguinte:
    - **Importante:** Observe que a versão 1.9.4 do SDK do iOS [o objetivo mínimo de implantação do iOS foi aumentado para iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7 e superior**: O SSO funcionará nas seguintes condições:
 
-1. Os aplicativos são publicados usando o mesmo perfil de distribuição do Apple ou perfis que pertencem à mesma equipe. Essa é a única maneira de os aplicativos compartilharem áreas de trabalho personalizadas no iOS 7 e superior. Em todos os outros cenários, a área de trabalho é colocada em sandbox por aplicativo. De [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[UIPasteboard pasteboardWithName:create:\] e +\[UIPasteboard pasteboardWithUniqueName\] agora são exclusivos para o nome fornecido e permitem que somente os aplicativos no mesmo grupo de aplicativos acessem a área de trabalho. Se o desenvolvedor tentar criar uma área de transferência com um nome que já existe e não faz parte do mesmo conjunto de aplicativos, ele obterá sua própria área de transferência exclusiva e privada. Observe que isso não afeta as áreas de trabalho fornecidas pelo sistema, o geral e a localização.
+1. Os aplicativos são publicados usando o mesmo perfil de distribuição do Apple ou perfis que pertencem à mesma equipe. Essa é a única maneira de os aplicativos compartilharem áreas de trabalho personalizadas no iOS 7 e superior. Em todos os outros cenários, a área de trabalho é colocada em sandbox por aplicativo. De [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[`UIPasteboard pasteboardWithName:create:\`] e +\[`UIPasteboard pasteboardWithUniqueName`\] agora é exclusivo no nome fornecido para permitir que apenas os aplicativos no mesmo grupo de aplicativos acessem a área de trabalho. Se o desenvolvedor tentar criar uma área de transferência com um nome que já existe e não faz parte do mesmo conjunto de aplicativos, ele obterá sua própria área de transferência exclusiva e privada. Observe que isso não afeta as áreas de trabalho fornecidas pelo sistema, o geral e a localização.
 
 1. Os aplicativos têm o mesmo prefixo de ID do pacote (todos os componentes, exceto o último). Somente os aplicativos que compartilham o mesmo prefixo de ID do pacote calcularão o mesmo IDFV. De [*https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice\_Class/index.html\#//apple\_ref/occ/instp/UIDevice/identifierForVendor*](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor): no IOS 7, todos os componentes do pacote, exceto o último componente, são usados para gerar a ID do fornecedor. Se a ID do pacote tiver apenas um único componente, a ID do pacote inteiro será usada.
 

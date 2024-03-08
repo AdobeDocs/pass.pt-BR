@@ -2,9 +2,9 @@
 title: Suporte a SFSafariViewController no iOS SDK 3.2+
 description: Suporte a SFSafariViewController no iOS SDK 3.2+
 exl-id: 6691550f-c36f-4fae-aa77-082ca7d8a60a
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 929d1cc2e0466155b29d1f905f2979c942c9ab8c
 workflow-type: tm+mt
-source-wordcount: '405'
+source-wordcount: '413'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ Para gerenciar manualmente o SVC, o implementador deve executar as seguintes eta
 
 1. chamar **setOptions([&quot;handleSVC&quot;:true])** após a inicialização do AccessEnabler (certifique-se de que essa chamada seja feita antes do início da autenticação). Isso habilitará o gerenciamento &quot;manual&quot; do SVC. O SDK não apresentará automaticamente o SVC, mas, quando necessário, chamará **navigate(toUrl:*{url}* useSVC:true)**.
 
-1. implementar o retorno de chamada opcional **navigateToUrl:useSVC:** dentro da implementação, você deve criar uma instância svc usando a instância SFSafariViewController usando o url fornecido e apresentá-la na tela:
+1. implementar o retorno de chamada opcional **`navigateToUrl:useSVC:`** dentro da implementação, você deve criar uma instância svc usando a instância SFSafariViewController usando o url fornecido e apresentá-la na tela:
 
    ```obj-c
    func navigate(toUrl url: String!, useSVC: Bool) {
