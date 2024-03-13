@@ -2,9 +2,9 @@
 title: Iniciar autorização
 description: Iniciar autorização
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '413'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!NOTE]
+>
+> A implementação da REST API é limitada por [Mecanismo de limitação](/help/authentication/throttling-mechanism.md)
 
 ## Endpoints da REST API {#clientless-endpoints}
 

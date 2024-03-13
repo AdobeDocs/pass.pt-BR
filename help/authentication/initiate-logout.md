@@ -2,10 +2,10 @@
 title: Iniciar logout
 description: Iniciar logout
 exl-id: 9625b5a2-31d9-4e20-8703-4a9e4eeb1618
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '302'
-ht-degree: 0%
+source-wordcount: '304'
+ht-degree: 1%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!NOTE]
+>
+> A implementação da REST API é limitada por [Mecanismo de limitação](/help/authentication/throttling-mechanism.md)
 
 ## Endpoints da REST API {#clientless-endpoints}
 

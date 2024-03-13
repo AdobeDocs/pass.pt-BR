@@ -2,9 +2,9 @@
 title: Cookbook da API REST (cliente para servidor)
 description: Cliente do guia da API rest para o servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '870'
 ht-degree: 0%
 
 ---
@@ -22,6 +22,10 @@ Este documento fornece instruções passo a passo para a equipe de engenharia de
 
 
 Essa abordagem requer dois componentes (aplicativo de streaming e aplicativo AuthN) para concluir os fluxos necessários: inicialização, registro, autorização e fluxos de mídia de visualização no aplicativo de streaming e o fluxo de autenticação no aplicativo AuthN.
+
+### Mecanismo de limitação
+
+A API REST de Autenticação do Adobe Pass é regida por um [Mecanismo de limitação](/help/authentication/throttling-mechanism.md).
 
 ## Componentes {#components}
 

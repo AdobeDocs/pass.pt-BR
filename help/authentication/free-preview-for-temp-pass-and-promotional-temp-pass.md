@@ -2,10 +2,10 @@
 title: Visualização gratuita para aprovação temporária e aprovação temporária promocional
 description: Visualização gratuita para aprovação temporária e aprovação temporária promocional
 exl-id: c584bf0c-15c4-4a4d-b6a2-8d15ee786fe3
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '406'
-ht-degree: 1%
+source-wordcount: '399'
+ht-degree: 0%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 1%
 >[!NOTE]
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!NOTE]
+>
+> A implementação da REST API é limitada por [Mecanismo de limitação](/help/authentication/throttling-mechanism.md)
 
 ## Endpoints da REST API {#clientless-endpoints}
 

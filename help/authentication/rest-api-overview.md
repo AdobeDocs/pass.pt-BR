@@ -2,9 +2,9 @@
 title: Visão geral da REST API
 description: Visão geral para APIs Rest
 exl-id: 5533d852-f644-417e-bf80-6f7aa1edd6b2
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '1599'
+source-wordcount: '1612'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,9 @@ ht-degree: 0%
 
 A API REST de autenticação da Adobe Pass fornece acesso direto aos serviços de autenticação e autorização da TV em qualquer lugar (TVE). Essa API é compatível com duas arquiteturas principais: servidor para servidor ou dispositivos conectados (por exemplo, consoles de jogos, TVs inteligentes, decodificadores de sinais etc.) aplicativos que não têm recursos de navegação na web.
 
+### Mecanismo de limitação
+
+A API REST de Autenticação do Adobe Pass é regida por um [Mecanismo de limitação](/help/authentication/throttling-mechanism.md).
 
 
 ### Servidor para servidor

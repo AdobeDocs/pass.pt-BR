@@ -2,10 +2,10 @@
 title: Recuperar solicitação de perfil SSO da plataforma
 description: Recuperar solicitação de perfil SSO da plataforma
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '183'
-ht-degree: 0%
+source-wordcount: '189'
+ht-degree: 1%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!NOTE]
+>
+> A implementação da REST API é limitada por [Mecanismo de limitação](/help/authentication/throttling-mechanism.md)
 
 ## Endpoints da REST API {#clientless-endpoints}
 

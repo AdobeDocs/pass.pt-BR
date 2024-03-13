@@ -2,10 +2,10 @@
 title: Trocar um token SSO da plataforma por um token de Adobe
 description: Trocar um token SSO da plataforma por um token de Adobe
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '223'
-ht-degree: 2%
+source-wordcount: '228'
+ht-degree: 0%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 2%
 >[!NOTE]
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!NOTE]
+>
+> A implementação da REST API é limitada por [Mecanismo de limitação](/help/authentication/throttling-mechanism.md)
 
 ## Endpoints da REST API {#clientless-endpoints}
 

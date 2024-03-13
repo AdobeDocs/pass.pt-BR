@@ -2,9 +2,9 @@
 title: Cookbook da API REST (servidor para servidor)
 description: Servidor do guia da API rest para o servidor.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '1825'
+source-wordcount: '1847'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,9 @@ ht-degree: 0%
 
 O objetivo deste documento de guia é detalhar as práticas recomendadas para implementar a Autenticação do Adobe Pass usando as arquiteturas de servidor para servidor.  Ele fornece requisitos básicos, implementação de fluxo passo a passo e considerações gerais para ambientes de produção e operação.
 
+### Mecanismo de limitação
+
+A API REST de Autenticação do Adobe Pass é regida por um [Mecanismo de limitação](/help/authentication/throttling-mechanism.md).
 
 
 ## Componentes {#components}
