@@ -1,7 +1,7 @@
 ---
 title: Acesso à API CMU
 description: Acesso à API CMU
-source-git-commit: 30631ac006b7944cb2eb8996c2c165343b6be5fe
+source-git-commit: 598eb878168f6e352a8eae369cbc8cb833033328
 workflow-type: tm+mt
 source-wordcount: '407'
 ht-degree: 0%
@@ -16,8 +16,7 @@ ht-degree: 0%
 
 ## Visão geral do procedimento de acesso {#api-access-procedure-overview}
 
-Atualizamos o acesso aos relatórios CMU para que sejam compatíveis com o Protocolo de registro dinâmico do cliente OAuth 2.0.
-Um servidor de autorização OAuth 2.0 personalizado é implantado para atender às necessidades do aplicativo de Monitoramento de simultaneidade. \
+Atualizamos o acesso aos relatórios CMU para que sejam compatíveis com o Protocolo de registro dinâmico do cliente OAuth 2.0. Um servidor de autorização OAuth 2.0 personalizado é implantado para atender às necessidades do aplicativo de Monitoramento de simultaneidade. \
 Para que os aplicativos cliente utilizem a autorização OAuth 2.0, o servidor deve se registrar dinamicamente para obter informações específicas (credenciais do cliente) e poder interagir com ele. Como parte do processo de registro, o cliente deve apresentar um conjunto de metadados incorporados ao endpoint de registro do cliente.
 Esses metadados são comunicados como uma declaração de software, que contém um &quot;software_id&quot; para permitir que nosso servidor de autorização correlacione diferentes instâncias de um aplicativo usando a mesma declaração de software.
 Uma instrução de software é um JSON Web Token (JWT) que declara valores de metadados sobre o software cliente como um pacote. Quando apresentada ao servidor de autorização como parte de uma solicitação de registro do cliente, a instrução de software deve ser assinada digitalmente ou MACed usando JSON Web Signature (JWS). \
@@ -28,7 +27,7 @@ Siga as etapas nas seções abaixo para obter acesso.
 
 1. Ter um aplicativo registrado no servidor Adobe Pass DCR. Para esta etapa, entre em contato com nosso [Equipe de suporte](mailto:tve-support@adobe.com).
 2. Obter a declaração de software
-   1. Ir para o painel TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pré-produção </a> ou <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. Ir para o painel TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pré-produção </a>  ou <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
    2. Selecionar programador
    3. Ir para a guia Aplicativos
    4. Selecionar aplicativo
