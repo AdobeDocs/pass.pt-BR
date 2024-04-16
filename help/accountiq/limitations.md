@@ -1,42 +1,35 @@
 ---
-title: Limitações e problemas conhecidos
-description: Problemas conhecidos no produto.
+title: Limitação
+description: Saiba mais sobre limitações e MVPD de modo de isolamento para programadores no Account IQ.
 exl-id: 08d65716-8b6a-4300-acda-fec63e1e6815
-source-git-commit: 2ced89dc1f77d2c090b599c40e778f3054f1a8dd
+source-git-commit: 791d661e1495bdb6fe4eb25efbefeecd813f0f3a
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
 
-# Problemas conhecidos e limitações {#known-issues}
+# Limitação {#limitations}
 
-O Adobe se esforça para oferecer uma funcionalidade robusta e experiências do usuário perfeitas por meio de suas ofertas. A versão atual (versão 1.0) do Account IQ fornece análise de compartilhamento de uso e assinatura para provedores de streaming com alto grau de confiança. No entanto, as limitações a seguir serão abordadas em versões futuras.
+As versões D2C e TV Everywhere do Account IQ fornecem análise de compartilhamento de uso e assinatura para provedores de transmissão. No entanto, a versão atual 1.3 tem determinadas limitações, que serão abordadas em versões futuras.
 
-* Atualmente, ao definir coortes nas páginas de painel ou relatórios, não há opção de adicionar métricas como **número de dispositivos** para refinar o segmento. Esse recurso estará disponível em uma versão futura.
+* A variável [Pontuação geral de compartilhamento](/help/accountiq/data-panels.md#overall-sharing-score) inclui atualmente [Nível de compartilhamento](/help/accountiq/data-panels.md#sharing-level) e [Uso de contas compartilhadas](/help/accountiq/data-panels.md#usage-from-shared-accounts). As próximas versões incluirão mais métricas.
 
-* Ao estimar pontuações de compartilhamento para contas individuais, o Account IQ adota uma abordagem conservadora que permite que as empresas atuem no compartilhamento com grande grau de confiança. No entanto, essa abordagem tende a subestimar a quantidade total de compartilhamento quando agregada em muitas contas.
+* Ao definir segmentos no painel ou padrões de uso, a variável [Categorias de vídeo no segmento](/help/accountiq/data-panels.md#video-categories-segment), [Pontuação de compartilhamento por canais e MVPDs](/help/accountiq/data-panels.md#sharin-score-by-channels-and-mvpds), e [Distribuição do padrão de uso para categorias de vídeo](/help/accountiq/usage-patterns.md#usage-pattern-dis-video-categories) os relatórios só podem exibir dados de até 20 [categorias de vídeo](product-concepts.md#video-category-def). Segmentos que contêm mais de 20 categorias de vídeo não mostrarão dados nesses relatórios.
 
-* A variável [Pontuação geral de compartilhamento](/help/accountiq/dashboard.md#overall-sharing-score) atualmente, apenas fatores em [Nível de compartilhamento](/help/accountiq/dashboard.md#sharing-level) e [Uso de contas compartilhadas](/help/accountiq/dashboard.md#usage-from-shared-accounts). As versões futuras levarão em conta as métricas adicionais.
+* Atualmente, a opção de exportar estatísticas de conta está restrita à exportação de 1000 contas.
 
-* Ao definir coortes nas páginas de painel ou relatórios, os seletores para MVPDs e canais não têm o mecanismo de pesquisa, por enquanto.
+* Ao definir as Operações, a opção para selecionar [tipo de segmento](/help/accountiq/operations.md#segment) está limitado a **Número fixo de contas**. A variável **Número variável de contas** estará disponível em versões futuras.
 
-* Ao definir coortes nas páginas de painel ou relatórios, há uma limitação para selecionar até 10 MVPDs e Programadores (ou canais individuais).
+* A variável **Benchmarking**, **Modelos de detecção**, **Ações**, e **Configurações** as seções na navegação à esquerda estão desativadas no momento e estarão disponíveis em uma versão futura.
 
-* A opção de exportar estatísticas de contas está limitada a exportar 1000 contas, a partir de agora.
+* Ao criar operações, você pode aplicar apenas dois tipos de [ações](/help/accountiq/operations.md#action) — Regras de monitoramento de simultaneidade e ações externas.
 
-* A opção para selecionar [Tipo de segmento](#segment-type) quando a definição de Operações é limitada a **Número fixo de contas**. A variável **Número variável de contas** estará disponível em uma versão futura.
+* Atualmente, você só pode [criar](/help/accountiq/operations.md#create-new-operation) e [programação](/help/accountiq/operations.md#schedule) Operações. As próximas versões permitirão pausar, retomar e gerenciá-las completamente.
 
-* As seções Avaliação de desempenho, Modelos de detecção, Segmentos, Instantâneos e Regras na navegação à esquerda estão desativadas no momento e estarão disponíveis em uma versão futura.
+* Você só pode analisar dados de uma única semana ou mês por vez ao selecionar Granularidade e Intervalo de tempo.
 
-* Ao criar [Operações](/help/accountiq/operation-affecting-user-segment.md), você pode identificar apenas dois tipos de [Ações](/help/accountiq/operation-affecting-user-segment.md) a partir de agora — Regras de monitoramento de simultaneidade e Ações externas.
+* Não é possível adicionar MVPDs do Modo de Isolamento à definição de segmento com outros MVPDs. Alguns MVPDs não identificam exclusivamente assinantes em vários canais de programador. Portanto, esses MVPDs são tratados separadamente para programadores da TV Everywhere.
 
-* Atualmente, as Operações só podem ser criadas e [programado](/help/accountiq/operation-affecting-user-segment.md#action). As versões futuras permitirão pausá-las, retomá-las e gerenciá-las totalmente.
 
-* Devido ao conjunto de dados mais limitado usado, o modo de Isolamento não reflete realmente a quantidade de compartilhamento. Portanto, o MVPD no modo Isolation não pode ser comparado a qualquer outro MVPD. <!--do we need to separate out this limitation, which is from a different persona i.e. only for Programmer persona?-->
 
-* Quando estiver definindo um novo [segmento](/help/accountiq/segments-timeframe.md) para uma operação, é possível adicionar métricas. Porém, se você selecionar um segmento salvo, não poderá adicionar mais métricas para refinar o segmento.
-
-* A granularidade e o seletor de período são limitados a uma semana ou um mês, o que significa que os dados podem ser avaliados somente em uma semana ou um mês.
-
-* Os intervalos predefinidos estão atualmente desabilitados na granularidade e no seletor de período e estarão disponíveis em uma versão futura.

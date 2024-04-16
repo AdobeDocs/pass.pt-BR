@@ -1,97 +1,71 @@
 ---
 title: Relatórios de uso geral
-description: Relatórios de uso geral
+description: Saiba mais sobre os relatórios de uso geral
 exl-id: 1272073a-61fe-47ec-aced-2e8055b6b11e
-source-git-commit: d543bbe972944ad83f4cb28c8a17ea6e10f66975
+source-git-commit: 4a8a73d6c67508e88ba3ffbb9033b7e339f4fe8f
 workflow-type: tm+mt
-source-wordcount: '1275'
+source-wordcount: '1055'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL General Usage] relatórios {#general-usage-reports}
+# [!UICONTROL General usage] relatórios {#general-usage-reports}
 
-[!UICONTROL Account IQ] relatórios são ferramentas analíticas básicas e relatórios que permitem que você faça drill-down em seus dados para isolar [coortes](/help/accountiq/product-concepts.md#segmet-def)O, identifica anomalias e cria uma compreensão das características da sua conta.
+[!UICONTROL Account IQ] relatórios são ferramentas básicas do analytics que permitem detalhar seus dados para isolar [coortes](/help/accountiq/product-concepts.md#segmet-def)O, identifica anomalias e cria uma compreensão das características da sua conta.
 
-[!UICONTROL General Usage] A página Relatórios fornece ferramentas para separar métricas de subgrupos com base no número de dispositivos de conta em uso, IPs detectados e respectivos códigos postais.
+[!UICONTROL General usage] A página Relatórios fornece ferramentas para separar métricas de subgrupo com base no número de dispositivos de conta em uso, IPs detectados e seus respectivos códigos postais.
 
-<!--Divide the content in cohorts.
+Todos os relatórios se baseiam no segmento atual selecionado no [Segmentos e intervalo de tempo](/help/accountiq/segments-timeinterval.md) painel. Você pode ajustar a seleção e restringi-la ainda mais especificando limites (número de dispositivos, número de IPs e número de códigos postais) no [Visão geral do instantâneo - Contas acima dos limites](#snapshot-overview) painel.
 
-Content filters
-device filters
+## Solicitações de reprodução e assinantes únicos {#playreq-uniquesubs}
 
-segment and definition replicate to cohorts. Number of people and number of account that ......
-content consumption.....-->
+Os gráficos de linha aqui fornecem uma visualização das alterações ao longo do tempo de valores, como Solicitações de reprodução e Assinantes únicos em um intervalo de tempo selecionado para o segmento definido.
 
-Todos os relatórios se baseiam no segmento atual selecionado usando [Segmentos e intervalo de tempo](/help/accountiq/howto-select-segment-timeframe.md) painel. Você pode ajustar a seleção e restringi-la ainda mais especificando limites (número de dispositivos, número de IPs e número de códigos postais) no [Visão Geral do Instantâneo - Contas acima dos limites](#snapshot-overview) painel.
++++ Serviços D2C: Solicitações Play/Assinantes únicos
 
-<!--To view General Usage Reports:
+![](assets/d2c-line-graph-gu.png)
 
-1. Select the desired MVPDs from the **MVPDs in Segment** option.
 
-2. Select the desired programmer channels from the **Channels in Segment** Option.
+*Solicitações Play/Assinantes únicos para serviços D2C*
 
-3. Select an appropriate time frame from the **Granularity and time frame** option.
++++
 
-   Using the above options you have defined segments for your analysis. Based on your segment selection, following graphs and reports are displayed.
-
-4. You can fine tune your selection and further narrow it down by specifying (number of devices, number of IPs, and number of zip codes) thresholds in [Snapshot Overview - Accounts above thresholds](#snapshot-overview) widget/panel.-->
-
-## AuthN OK / AuthZ OK / Solicitações de reprodução / Assinantes únicos {#authn-authz-playreq-uniquesubs}
-
-Os gráficos de linha aqui fornecem uma visualização das alterações ao longo do tempo nos valores de AuthN OK, AuthZ OK, Solicitações de reprodução e Assinantes únicos em um intervalo de tempo selecionado para o segmento definido.
-
-+++Programador- **AuthN OK / AuthZ OK / Solicitações de reprodução / Assinantes únicos**
++++Programadores: Solicitações De Reprodução/Assinantes Únicos
 
 ![](assets/progr-line-graph-gu.png)
 
 
-*Figura: AuthN OK / AuthZ OK / Solicitações de reprodução / Assinantes únicos para o usuário programador*
-
+*Solicitações de reprodução/Assinantes únicos para programadores*
 
 +++
 
-
-+++MVPD- **AuthN OK / AuthZ OK / Assinantes únicos**
++++MVPDs: Assinantes únicos
 
 ![](assets/mvpd-line-graph-gu.png)
 
-
-*Figura: AuthN OK / AuthZ OK / Assinantes únicos para usuário MVPD*
-
+*Assinantes únicos para MVPDs*
 
 +++
 
-O eixo x apresenta as unidades no intervalo de tempo atual e o eixo y representa as métricas básicas de atividade do assinante durante esse período. Os gráficos de linha permitem comparar os seguintes valores para os assinantes de MVPDs e canais selecionados no painel de seleção de segmentos:
+<br/>
 
-* **AuthN OK**
+O eixo x representa o tempo com base no intervalo atual e o eixo y representa as métricas básicas de atividade do assinante durante esse período. Os gráficos de linha ajudam a visualizar e comparar a atividade dos assinantes no segmento atual. Dependendo da versão do Account IQ, as métricas incluem:
 
-  Autenticação OK é o número de autenticações bem-sucedidas. Para obter mais informações e definições, consulte [Conceitos do produto: AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
+* **AuthN OK**: Número de autenticações bem-sucedidas. Leia mais sobre [AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
 
-* **AuthZ OK**
+* **AuthZ OK**: Número de autorizações bem-sucedidas. Leia mais sobre [AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
 
-  AuthZ OK é o número de autorizações bem-sucedidas. Para obter mais informações e definições, consulte [Conceitos do produto: AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
+* **Solicitações Play**: Número de solicitações de reprodução. Leia mais sobre [Reproduzir solicitações](/help/accountiq/product-concepts.md#play-requests-def).
 
-* **Solicitações Play**
+* **Assinantes únicos**: número de assinantes únicos bem-sucedidos. Leia mais sobre [Assinantes únicos](/help/accountiq/product-concepts.md#unique-subscriber-def).
 
-  Solicitações de reprodução são o número de Solicitações de reprodução. Para obter mais informações e definições, consulte [Conceitos do produto: Solicitações de reprodução](/help/accountiq/product-concepts.md#play-requests-def)
+>[!NOTE]
+>
+>A disponibilidade das métricas varia dependendo da versão do Account IQ.
 
-  >[!NOTE]
-  >
-  >O gráfico de linha de solicitações de reprodução não está disponível para usuários do MVPD.
+## Visão geral do instantâneo - contas acima dos limites {#snapshot-overview}
 
-
-* **Assinantes únicos**
-
-  Assinantes únicos são o número de assinantes únicos bem-sucedidos. Para obter mais informações e definições, consulte [Conceitos do produto: assinantes únicos](/help/accountiq/product-concepts.md#unique-subscriber-def)
-
-  >[!NOTE]
-  >
-  >O número total de assinantes únicos também inclui o número de dispositivos únicos se o uso de Adobe TempPass por um programador (ou seja, pré-visualização gratuita) fizer parte do segmento.
-
-## Visão Geral do Instantâneo - Contas acima dos limites {#snapshot-overview}
-
-Ajuste a análise e os relatórios usando esse filtro adicional para definir vários limites de uso. Depois de definir seu segmento (ou coorte) para análise selecionando os MVPD(s) e canais desejados, você também pode usar os seguintes filtros para analisar o comportamento dos assinantes:
+Ajuste a análise e os relatórios usando esse filtro adicional para definir vários limites de uso. Depois de selecionar um segmento, você também pode usar os seguintes filtros para analisar mais o comportamento do assinante:
 
 * Limite de número de dispositivos
 
@@ -99,7 +73,7 @@ Ajuste a análise e os relatórios usando esse filtro adicional para definir vá
 
 * Limite do número de códigos postais
 
-Ao atualizar valores de limite no [Segmento de contas - com base nos limites selecionados](#account-segments-basedon-segments) você pode exibir o efeito em:
+Ao atualizar valores de limite no [Contas com base nos limites selecionados em segmentos](#account-segments-basedon-segments) , você verá o efeito em:
 
 * [Dispositivos por semana (ou mês) por conta](#devices-week-account)
 
@@ -111,25 +85,23 @@ Ao atualizar valores de limite no [Segmento de contas - com base nos limites sel
 
 >[!NOTE]
 >
->O valor padrão para cada limite é 4. Ou seja, a página Uso geral mostra análises de MVPDs com assinantes que usam quatro (e mais de quatro) dispositivos, consumindo conteúdo de quatro (e mais) localizações geográficas diferentes e quatro (e mais) códigos postais diferentes.
+>Cada limite é definido com um valor padrão de 4. Ou seja, a página Uso geral mostra análise para assinantes que usam mais de quatro dispositivos, consumindo conteúdo de mais de quatro endereços IP diferentes, *e* mais de quatro códigos postais diferentes.
 
-### Segmento de contas - com base nos limites selecionados {#account-segments-basedon-segments}
+### Contas baseadas em segmentos nos limites selecionados {#account-segments-basedon-segments}
 
-A variável **Segmento de contas - com base nos limites selecionados** O painel oferece opções para definir limites (entre 1 e 10) para o número de dispositivos, o número de IPs e o número de CEPs.
+A variável **Contas com base nos limites selecionados em segmentos** O painel oferece opções para definir limites (entre 1 e 10) para o número de dispositivos, o número de IPs e o número de CEPs.
 
 O gráfico mostra:
 
-* número absoluto de contas de assinantes e
+* Número absoluto de contas de assinantes.
 
-* porcentagem do total de contas do assinante nesse segmento,
-
-  que estão usando X número de dispositivos, Y número de IPs e Z número de códigos Zip para consumir conteúdo do seu canal para o (segmento definido de) MVPDs, para um intervalo de tempo.
+* Porcentagem do total de contas de assinantes no segmento que estão usando o número de dispositivos, a partir do número de IPs, no número de CEPs, conforme especificado pelos limites.
 
 ![](assets/select-thresholds.png)
 
 ## Dispositivos por semana (ou mês) por conta {#devices-week-account}
 
-A variável **gráfico de barras** O fornece insights sobre o comportamento de uso em termos de como os assinantes estão usando seus dispositivos para acessar conteúdo.
+Este gráfico de barras fornece insights sobre o comportamento de uso em termos de como os assinantes estão usando seus dispositivos para acessar conteúdo.
 
 O eixo x representa o Número de contas e o eixo y representa o Número de dispositivos. Com base no limite definido para o número de dispositivos por conta, ele marca o número absoluto de contas de assinantes que consomem conteúdo de um número específico de dispositivos durante uma semana.
 
@@ -143,64 +115,54 @@ O gráfico também marca o seguinte:
 
 * Uma linha verde para marcar a média do número de dispositivos diferentes usados por uma conta de assinante por semana (ou mês).
 
-É possível comparar o nível de limite com a média semanal do número de diferentes dispositivos usados por uma conta, para julgar o nível de compartilhamento.
-
-O gráfico também fornece uma ideia da porcentagem de contas de assinantes que estão usando mais dispositivos do que o limite definido.
-
-O gráfico de rosca ajuda a avaliar a magnitude das contas dos assinantes que consomem conteúdo de canal usando dispositivos além do limite definido (em um período) rapidamente.
+A rosca fornece uma visualização alternativa dos dispositivos em uso pelas contas no segmento atual acima do limite definido.
 
 ![](assets/donut-devices-w-acc.png)
 
 ## Locais por semana (ou mês) por conta {#locations-week-account}
 
-Curtir [Dispositivos por semana (ou mês) por conta](#devices-week-account), a métrica Locais por semana (ou mês) por conta ajuda a analisar o uso da conta do assinante em diferentes locais para identificar mais detalhadamente o compartilhamento de senhas. O eixo x representa o Número de contas e o eixo y representa o Número de locais.
-
-Os resultados desta métrica combinados com o número de [Dispositivos por semana (ou mês) por conta](#devices-week-account) e número de [IPs por semana (ou mês) por conta](#ip-week-account) Ajudar você a julgar com mais precisão as instâncias de compartilhamento de senha; de modo que os usuários autênticos não sejam contados em.
+Semelhante à métrica para [Dispositivos por semana (ou mês) por conta](#devices-week-account), a métrica Locais por semana (ou mês) por conta permite analisar o uso da conta do assinante em locais diferentes. O eixo x representa o Número de contas e o eixo y representa o Número de locais.
 
 ![](assets/graph-loc-week-acc.png)
 
-Depois de definir um segmento e definir o limite para o número de locais, você pode identificar no gráfico:
+Depois de definir o limite para o número de locais, você pode usar o gráfico para identificar o seguinte:
 
 * Número (e porcentagem) de assinantes que estão consumindo conteúdo de (um específico) x número de locais em uma semana.
 
 * Porcentagem do total de contas de assinantes que estão exibindo conteúdo de mais locais do que o limite.
 
-* Comparar a média semanal (número de locais diferentes para uma conta) com o Limite.
+* Comparar a média semanal (número de locais diferentes para uma conta) com o limite.
 
-## IPs por semana (ou mês) por conta {#ip-week-account}
+## Ips por semana (ou mês) por conta {#ip-week-account}
 
-Semelhante [Dispositivos por semana (ou mês) por conta](#devices-week-account) e [Locais por semana (ou mês) por conta](#locations-week-account), o **Número de IPs por semana por conta** permite analisar o compartilhamento de senhas com mais precisão e granularidade.
+Semelhante à métrica para **Número de Locais por semana por conta**, o **Número de IPs por semana por conta** métrica permite avaliar a quantidade de alterações na origem do fluxo para o segmento atual.
 
 O eixo x representa o Número de contas e o eixo y representa o Número de IPs.
 
 ![](assets/graph-ip-week-acc.png)
 
-Depois de definir um segmento (selecionando MVPDs e canais) e definir o limite para o número de IPs, você pode identificar no gráfico:
+Depois de definir um segmento e o limite para o número de IPs, você pode usar o gráfico para identificar o seguinte:
 
-* Número (e porcentagem) de assinantes que estão consumindo conteúdo de (um específico) x número de IP em uma semana.
+* Número (e porcentagem) de assinantes que estão consumindo conteúdo de um número específico de IP em uma semana.
 
 * Porcentagem do total de contas de assinantes que estão exibindo conteúdo de mais endereços IP do que o limite.
 
-* Compare a média semanal (número de IPs diferentes para uma conta) com o Limite.
+* Compare a média semanal (número de IPs diferentes para uma conta) com o limite.
 
-## Segmento de contas - exibição histórica {#account-segment-historical-view}
+## Exibição do histórico de segmentos das contas {#account-segment-historical-view}
 
-O gráfico de barras Exibição histórica ajuda a comparar as métricas de uso em diferentes períodos. Além disso, representa coletivamente as várias métricas de uso, como [Dispositivos por semana (ou mês) por conta](#devices-week-account), [Locais por semana (ou mês) por conta](#locations-week-account), e [IPs por semana (ou mês) por conta](#ip-week-account).
+O gráfico de barras Exibição histórica ajuda a comparar as métricas de uso em diferentes intervalos de tempo. Além disso, representa coletivamente as várias métricas de uso, como [Dispositivos por semana (ou mês) por conta](#devices-week-account), [Locais por semana (ou mês) por conta](#locations-week-account), e [IPs por semana (ou mês) por conta](#ip-week-account).
 
-* O eixo x representa o período e o eixo y representa o número de contas de assinantes, dispositivos, locais e IPs.
+* O eixo x representa o intervalo de tempo e o eixo y representa o número de contas de assinantes, dispositivos, locais e IPs.
 
 * As barras coloridas laranja significam segmentos em vários intervalos de tempo.
 
-* O gráfico de linhas representa as alterações no [Dispositivos por semana (ou mês) por conta](#devices-week-account), [Locais por semana (ou mês) por conta](#locations-week-account), e [IPs por semana (ou mês) por conta](#ip-week-account) valores no período com base no limite.
+* O gráfico de linhas representa as alterações no [Dispositivos por semana (ou mês) por conta](#devices-week-account), [Locais por semana (ou mês) por conta](#locations-week-account), e [IPs por semana (ou mês) por conta](#ip-week-account) valores no intervalo de tempo com base no limite.
 
 ![](assets/historical-view.png)
 
-* As barras azuis significam o número total de assinantes ativos em todo o setor para um intervalo de tempo.
+* As barras azuis significam o número total de assinantes ativos no setor por um intervalo de tempo.
 
 * É possível selecionar legendas específicas para ajudá-lo a dimensionar o gráfico.
 
 ![](assets/historical-view-total.png)
-
->[!MORELIKETHIS]
->
->* Saiba como exportar relatórios para os 1000 principais assinantes no segmento selecionado usando filtros no Relatório de uso geral usando [Exportar as 1000 contas principais](/help/accountiq/export-acc-information.md) opção.

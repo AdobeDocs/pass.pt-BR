@@ -1,51 +1,66 @@
 ---
-title: Exibir relatórios no modo de isolamento
-description: Visualizar relatórios no modo de isolamento do Xfinity.
-exl-id: e7cf24c5-9bfa-48f6-b5c8-20443a976891
-source-git-commit: d543bbe972944ad83f4cb28c8a17ea6e10f66975
+title: MVPDs do modo de isolamento
+description: Saiba mais sobre os MVPDs do modo de isolamento para programadores do TV Everywhere
+source-git-commit: 5639319ce8915f0c33d927ca9554c405b3b2e87d
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '502'
 ht-degree: 0%
 
 ---
 
-# Exibir relatórios de compartilhamento no modo de isolamento {#report-isolation-mode}
 
-No Modo de isolamento, os MVPDs (como Xfinity) identificam os assinantes de forma consistente em todos os dispositivos, mas identificam os assinantes de forma diferente, com base nos programadores com os quais eles interagem. Enquanto no modo padrão, os MVPDs identificam consistentemente os assinantes em todos os dispositivos, independentemente dos programadores.
+# MVPDs de modo de isolamento para programadores do TV Everywhere {#isolation-mode-tve}
 
-Por exemplo, na imagem a seguir, se um Assinante B de um MVPD de Modo de Isolamento (como Xfinity) acessar o conteúdo oferecido por dois programadores diferentes usando o mesmo dispositivo, o MVPD associará identificadores diferentes às duas tentativas de acesso diferentes. Assim, para esses programadores (L e M na figura) e para o Account IQ, parece que há dois assinantes diferentes acessando o conteúdo. No entanto, para o MVPD Padrão, se o Assinante B acessar o conteúdo oferecido por dois programadores diferentes, o MVPD associará um único identificador de acesso para ambas as tentativas de acesso. Os MVPDs (como Xfinity) no Modo de isolamento não identificam um assinante de maneira consistente, mesmo que o assinante esteja usando o mesmo dispositivo em programadores diferentes.
+>[!IMPORTANT]
+>
+> A limitação de MVPDs do Modo de Isolamento só é aplicável a programadores do TV Everywhere.
+
+No Modo de isolamento, os MVPDs (como Xfinity) identificam de forma consistente os assinantes nos dispositivos com base em suas interações com programadores específicos. No modo padrão, os MVPDs identificam consistentemente os assinantes em todos os dispositivos, independentemente dos programadores envolvidos.
+
+Veja um exemplo:
 
 ![](assets/isolation-diff-new.png)
 
-*Figura: O MVPD do modo de isolamento identifica quatro assinantes diferentes em vez de dois*
+*Os MVPDs do Modo de Isolamento identificam quatro assinantes diferentes em vez de dois*
 
-Para gerenciar a distorção de dados (devido à identificação do mesmo assinante como diferente com base no acesso de diferentes programadores), o Modo de isolamento limita a atividade relatada sobre um programador à atividade somente nos aplicativos desse programador. Por exemplo, para o Modo de isolamento na imagem acima, o Programador L vê os dados com base apenas na atividade das Identidades W e Y, ignorando as Identidades X e Z.
+* Se um Assinante B de um MVPD de Modo de Isolamento (como Xfinity) acessar o conteúdo oferecido por dois programadores diferentes usando o mesmo dispositivo, o MVPD associará identificadores diferentes às duas tentativas de acesso diferentes. Parece que há dois assinantes diferentes acessando o conteúdo para os programadores (L e M na figura).
+
+* Para MVPDs Padrão, se o Assinante B acessar o conteúdo oferecido por dois programadores diferentes, o MVPD associará um único identificador de acesso para ambas as tentativas de acesso.
+
+* Os MVPDs (como Xfinity) no Modo de isolamento não identificam um assinante de maneira consistente, mesmo que o assinante use o mesmo dispositivo em diferentes programadores.
+
+Para evitar a distorção de dados causada pela contagem de um único assinante como vários assinantes devido ao acesso de programadores diferentes, o Modo de isolamento restringe a atividade relatada sobre um programador somente a seus aplicativos.
+
+Por exemplo, o Programador L pode exibir dados com base apenas na atividade das Identidades W e Y, ignorando as Identidades X e Z na imagem anterior.
 
 >[!IMPORTANT]
 >
 > A desvantagem é que o Programador L é privado de compartilhar informações coletadas sobre os Assinantes A e B devido à atividade com qualquer Programador diferente de L.
 
-No Modo de Isolamento, todos os cálculos feitos para obter as Pontuações de Compartilhamento e todas as métricas associadas são feitos usando apenas a atividade dos dispositivos que transmitem a partir de aplicativos pertencentes ao Programador e aos canais selecionados.
-As pontuações e probabilidades de compartilhamento são calculadas somente usando o fluxo que começa nos canais selecionados atualmente.
+No Modo de isolamento, as pontuações de compartilhamento e as métricas associadas são calculadas somente a partir da atividade dos dispositivos que transmitem a partir dos aplicativos do programador e do canal selecionados. As pontuações e probabilidades de compartilhamento são calculadas a partir dos inícios de fluxo nos canais selecionados no momento.
 
-Para exibir métricas no modo de isolamento:
+O sistema opera automaticamente no Modo de isolamento quando o segmento selecionado contém um MVPD de modo de isolamento que identifica assinantes únicos como vários assinantes ao transmitir de programadores diferentes. Todos os gráficos e tabelas desses segmentos refletirão os resultados desse comportamento alterado.
 
-1. Selecionar **[!UICONTROL isolation mode]** do **[!UICONTROL MVPDs in segment]** e selecione **[!UICONTROL Apply Selection]**.
+>[!IMPORTANT]
+>
+> O comportamento no Modo de Isolamento é incompatível com o modo padrão, o Modo de Isolamento MVPD não pode ser misturado com outros MVPDs e vice-versa.
 
-   ![](assets/xfinity-in-segment.gif)
+Para criar um segmento que seja analisado no Modo de isolamento, arraste o MVPD do Modo de isolamento, como **Xfinity**, para a seção MVPDs da definição de segmento.
 
-   *Figura: Seleção de MVPD no modo de Isolamento*
+>[!NOTE]
+>
+> Como os MVPDs do modo de isolamento não podem ser misturados com outros MVPDs, a seção MVPD da definição de segmento não permitirá que outro MVPD seja arrastado até lá.
 
-1. Selecione os canais desejados na **[!UICONTROL Channels in segment]** e selecione **[!UICONTROL Apply Selection]**.
+![](assets/xfinity-in-segment.png)
 
-   Além disso, selecione um [intervalo de tempo](/help/accountiq/product-concepts.md#granularity-def).
+*Seleção de Xfinity no Modo de Isolamento*
 
-   >[!IMPORTANT]
-   >
-   >Como o compartilhamento de conta é mais relevante quando medido para transmissão em todos os aplicativos dos programadores, você verá pontuações de compartilhamento mais baixas e alguma variação nas métricas quando estiver no Modo de isolamento.
+>[!IMPORTANT]
+>
+> O compartilhamento de conta é mais relevante quando medido para transmissão em todos os aplicativos do programador. Esperar menos **Pontuações de compartilhamento** e alguma variação nas métricas quando estiver no Modo de isolamento.
 
-   ![](assets/aggregate-sharing-isolation.png)
+![](assets/aggregate-sharing-isolation.png)
 
-   *Figura: Medidores de probabilidade de compartilhamento no modo de Isolamento*
+*Medidores de probabilidade de compartilhamento no Modo de Isolamento*
 
-   Observe que os medidores acima mostram que apenas 6% de todas as contas estão sendo compartilhadas e apenas 8% do conteúdo está sendo consumido por esses 8%. Portanto, os canais podem comparar suas pontuações no Modo de isolamento com as de outros MVPDs. Portanto, as informações obtidas usando o Modo de isolamento devem ser interpretadas de forma diferente dos outros dados.
+Os medidores acima mostram que apenas 9% de todas as contas são compartilhadas e, entre elas, apenas 11% do conteúdo é consumido. Devido às pontuações naturalmente mais baixas, os resultados no Modo de isolamento devem ser interpretados de forma diferente dos resultados no modo padrão.

@@ -2,9 +2,9 @@
 title: Temp Pass Promocional
 description: Temp Pass Promocional
 exl-id: 705c1ba9-0430-4e3b-add1-d9e4da3f82d1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c88fba76b1805dd88fccb68b13bde11b1b8ea181
 workflow-type: tm+mt
-source-wordcount: '1529'
+source-wordcount: '1510'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Com base na ID do dispositivo e nas informações fornecidas pelo usuário e seg
 
 * Chave de informações fornecida pelo usuário (por exemplo, email)
 * Número de recursos que o usuário está autorizado a consumir
-* TTL - o período no qual o usuário tem direito a consumir o número configurado de recursos
+* TTL - o intervalo de tempo em que o usuário tem direito a consumir o número configurado de recursos
 
 ### Metadados do usuário {#user-metadata}
 
@@ -74,7 +74,7 @@ Para facilitar a execução da candidatura do programador, devem ser **as inform
 
 ### Como o tempo de exibição é calculado? {#compute-viewing-time}
 
-O tempo em que uma Aprovação Temporária permanece válida não está correlacionado à quantidade de tempo que um usuário gasta visualizando o conteúdo no aplicativo do Programador. Após a solicitação inicial de autorização do usuário por meio do passo Temp Promocional, uma hora de expiração é calculada adicionando a hora inicial da solicitação atual ao TTL (intervalo de tempo de duração) especificado pelo Programador.
+O tempo em que uma Aprovação Temporária permanece válida não está correlacionado à quantidade de tempo que um usuário gasta visualizando o conteúdo no aplicativo do Programador. Após a solicitação inicial de autorização do usuário por meio do Passo de Temp Promocional, uma hora de expiração é calculada adicionando a hora inicial da solicitação atual ao TTL (intervalo de tempo de duração) especificado pelo Programador.
 
 ### Autenticação e autorização {#authn-authz}
 

@@ -2,9 +2,9 @@
 title: Perguntas frequentes sobre o Account IQ
 description: Respostas às perguntas frequentes dos clientes.
 exl-id: d6e11fc9-0d14-46d8-9a85-f1006ac81fb1
-source-git-commit: ffc7caa9a857a60380d15f69abf346718de6fa4c
+source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 1. Quem é [!UICONTROL Account IQ] projetado para?
 
-   **Responda.** [!UICONTROL Account IQ] O foi projetado para atender aos programadores, MVPDs e serviços D2C, no entanto, há pequenas diferenças entre essas versões. Existem limitações e restrições sobre quais dados podem ser mostrados para cada grupo.
+   **Responda.** [!UICONTROL Account IQ] O foi projetado para atender aos serviços D2C, e aos programadores e MVPDs da TV Everywhere. No entanto, há pequenas diferenças entre essas versões. Existem limitações e restrições sobre quais dados podem ser mostrados para cada grupo.
 
 1. Até que ponto os dados retrocedem?
 
@@ -25,23 +25,23 @@ ht-degree: 0%
 
 1. É possível filtrar as contas de teste?
 
-   **Responda.** A funcionalidade para filtrar as contas de teste não está disponível nesta versão, mas o recurso estará disponível em uma versão futura.
+   **Responda.** A funcionalidade para filtrar as contas de teste não está disponível no momento, mas o recurso estará disponível em uma versão futura.
 
-1. Posso ver o compartilhamento de conta para cada um dos meus canais? <!--shall we separate out this question for the persona of programmer?-->
+1. Posso ver a conta compartilhando para diferentes categorias de vídeo?
 
-   **Responda.** Sim, você pode ver o compartilhamento de conta para canais individuais, um grupo de canais ou redes inteiras (por exemplo, programadores).
+   **Responda.** Sim, você pode ver o compartilhamento de conta para uma categoria específica ou um grupo de categorias. Por exemplo, um conjunto de regiões de serviço D2C ou uma coleção de canais da TV Everywhere.
 
 1. Qual é a fonte de dados usada para identificar o compartilhamento de credenciais?
 
-   **Responda.** O serviço examina toda a atividade de streaming do assinante e a aprimora com fontes de dados proprietárias. Para TV Everywhere isso inclui todas as transações entre programadores e MVPDs. A partir daí, os dados de análise de nível superior das pontuações de compartilhamento de conta são sintetizados.
+   **Responda.** O serviço examina toda a atividade de streaming do assinante e a aprimora com fontes de dados proprietárias. Para serviços D2C, a atividade do assinante normalmente vem de repositórios, como Adobe Analytics ou data warehouses de terceiros. Para a TV Everywhere, isso inclui todas as transações entre programadores e MVPDs processadas pela Adobe Pass.
 
-1. Qual é a média do setor?
+1. Qual é a média do setor ou dos serviços?
 
-   **Responda.** A média do setor é refletida nos três principais indicadores de compartilhamento — Nível de compartilhamento, Uso de contas compartilhadas e Pontuação geral de compartilhamento. Esses valores representam as médias de todos os assinantes de todos os serviços.
+   **Responda.** Para serviços D2C, o serviço reflete a atividade de linha de base em todas as contas. Para TV Everywhere, a média da indústria reflete o total para todos os programadores e MVPDs. Em ambos os casos, esses valores são exibidos nos principais indicadores de compartilhamento — Nível de compartilhamento, Uso de contas compartilhadas e Pontuação geral de compartilhamento.
 
 1. O AccountIQ é uma ferramenta de imposição? Caso contrário, como usá-lo para interromper o compartilhamento?
 
-   **Responda.** O AIQ usa análises avançadas para fornecer insights. No entanto, esses insights podem impulsionar ações ilimitadas por meio de integrações com produtos Adobe, como o Monitoramento de simultaneidade ou as ferramentas de sua empresa.
+   **Responda.** O Account IQ usa análises avançadas para fornecer insights. No entanto, esses insights podem impulsionar ações ilimitadas por meio de integrações com produtos Adobe, como o Monitoramento de simultaneidade ou as ferramentas de sua empresa.
 
 1. Qual é a eficiência do Monitoramento de simultaneidade na mitigação do compartilhamento no setor?
 
@@ -57,11 +57,11 @@ ht-degree: 0%
 
 1. Como posso usar os insights fornecidos pelo [!UICONTROL Account IQ]?
 
-   **Responda.** Entender a escala e a natureza do compartilhamento é o primeiro passo em nossas práticas recomendadas. A ação direcionada com contas específicas, como venda adicional ou limitação de fluxos, é o passo. A recomendação completa é começar com pouco, medir os resultados da ação e refinar e dimensionar o processo.
+   **Responda.** Entender a escala e a natureza do compartilhamento é o primeiro passo em nossas práticas recomendadas. A segunda etapa é tomar medidas direcionadas com contas específicas, como venda adicional ou limitação de fluxos. A recomendação completa é começar com pouco, medir os resultados da ação e refinar e dimensionar o processo.
 
 1. Precisamos trabalhar com grupos internos de tecnologia e parceiros de distribuição para implementar medidas como o CM (Concurrency Monitoring, monitoramento simultâneo) inteligente?
 
-   **Responda.** Não necessariamente. [!DNL Adobe Pass] O suporte pode funcionar para criar suas próprias regras de CM com base nos dados de AIQ.
+   **Responda.** Não necessariamente. [!DNL Adobe Pass] O suporte pode funcionar para criar suas próprias regras de CM com base nos dados do Account IQ.
 
 1. Posso ver a tendência dos segmentos ao longo do tempo?
 

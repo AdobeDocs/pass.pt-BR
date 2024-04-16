@@ -2,9 +2,9 @@
 title: Guia do usuário do Painel Primetime TVE
 description: Guia do usuário do Painel Primetime TVE
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
 workflow-type: tm+mt
-source-wordcount: '4386'
+source-wordcount: '4377'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,7 @@ Para alternar entre ambientes, o usuário pode clicar no ambiente desejado repre
 *Figura 2: Lista suspensa de ambientes do painel do Adobe Pass TVE*
 
 >[!IMPORTANT]
+>
 >É muito importante observar que, ao fazer alterações administrativas na configuração da Autenticação do Adobe Pass por meio do Painel do TVE, recomendamos que você siga a sequência abaixo para garantir a funcionalidade adequada.
 
 Para fazer alterações administrativas na configuração da Autenticação Adobe Pass por meio do Painel TVE:
@@ -69,6 +70,7 @@ Para fazer alterações administrativas na configuração da Autenticação Adob
 * Faça as alterações no [Liberar produção e validá-las](http://sp.auth-staging.adobe.com/apitest/api.html).
 
 >[!IMPORTANT]
+>
 >Para que as alterações administrativas sejam ativadas, os usuários devem navegar até a seção &quot;Revisar e enviar alterações&quot; selecionando o botão, que aparecerá na parte inferior esquerda da barra lateral. Para revisar as alterações, adicione uma descrição das alterações recém-criadas e confirme a atualização de configuração selecionando a &quot;Configuração de envio&quot;.
 
 ![Tve Dashboard revisar uma notificação por push](assets/tve-review-push-notifications.png)

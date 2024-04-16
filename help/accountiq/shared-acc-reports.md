@@ -1,21 +1,21 @@
 ---
-title: Relatórios de Contas compartilhadas
+title: Relatórios de contas compartilhadas
 description: Relatórios de contas compartilhadas
 exl-id: 16c5ded1-2a95-4373-8b90-b445131f333a
-source-git-commit: d543bbe972944ad83f4cb28c8a17ea6e10f66975
+source-git-commit: 85316a40ba5f6564c84a5aecf689c077e936a91a
 workflow-type: tm+mt
-source-wordcount: '452'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
 
-# Relatórios de Contas Compartilhadas {#shared-accounts-reports}
+# Relatórios de contas compartilhadas {#shared-accounts-reports}
 
-Os Relatórios de Contas compartilhadas detalham as métricas como número de dispositivos e tipos de dispositivos pelo intervalo selecionado de probabilidade de compartilhamento, por exemplo **[!UICONTROL Over Moderate Probability]** e **[!UICONTROL Over Low Probability]** para o segmento atual.
+Os Relatórios de contas compartilhadas fornecem outro grupo de gráficos que refletem o comportamento de compartilhamento e o consumo do segmento atual. Por exemplo, **[!UICONTROL Over Moderate Probability]** e **[!UICONTROL Over Low Probability]** para o segmento atual.
 
-Esses intervalos podem servir como limites definidos pelo usuário e os gráficos são atualizados com base nos limites selecionados.
+## Probabilidade de compartilhamento de contas {#accounts-sharing-probability}
 
-O Account IQ classifica todas as contas de assinantes do segmento definido nas contas com as cinco categorias a seguir com base em suas probabilidades de compartilhamento:
+Esses gráficos de rosca e de barra mostram as porcentagens (e números absolutos) das contas de assinantes que se enquadram em intervalos específicos de probabilidade de compartilhamento. Esses intervalos são definidos como:
 
 * Muito alto (80%-100%)
 * Alta (60%-80%)
@@ -23,25 +23,23 @@ O Account IQ classifica todas as contas de assinantes do segmento definido nas c
 * Baixa (20%-40%)
 * Muito baixo (0%-20%)
 
-## Probabilidade de Compartilhamento de Contas {#accounts-sharing-probability}
-
-O gráfico de rosca aqui categoriza e mostra as porcentagens (e números absolutos) das contas dos assinantes de várias categorias de probabilidade.
-
-A linha vermelha marca o intervalo limite selecionado pelos usuários em [Contas acima do limite no segmento atual](#threshold-selector) painel.
+A linha vermelha marca o intervalo de limite selecionado no [Contas acima do limite no segmento atual](#threshold-selector) e a área vermelha clara contém o total de todas as contas acima desse limite.
 
 ![](assets/accounts-sharing-probability-pie.png)
 
-O gráfico de barras representa o número de contas no eixo y para várias categorias de probabilidades de compartilhamento (representadas no eixo x).
+O gráfico de barras representa o número de contas que se enquadram em cada intervalo no eixo y para cada um dos intervalos (representados no eixo x).
 
 ![](assets/accounts-sharing-probability-bar.png)
 
-A linha vermelha marca o intervalo de limite e pode ser ajustada no gráfico de barras. O limite ajustado no gráfico de barras reflete no intervalo de limites no gráfico de rosca.
+Aqui novamente, a linha vermelha marca o limite atual, e a área vermelha clara contém o total de todas as contas acima desse limite.
 
-<!--![](assets/shared-accounts-rep.gif)-->
+>[!NOTE]
+>
+> O eixo y do gráfico de barras é logarítmico.
 
 ### Contas acima do limite no segmento atual{#threshold-selector}
 
-Esse painel permite selecionar um intervalo entre os seguintes como limite para contas de assinantes (com base em suas probabilidades de compartilhamento):
+Esse painel permite selecionar o intervalo de limites para os gráficos de rosca e de barras acima. As quatro opções são:
 
 * Contas **muito baixo** compartilhamento **probabilidade**
 
@@ -55,44 +53,43 @@ Esse painel permite selecionar um intervalo entre os seguintes como limite para 
 
 Depois de selecionar o limite, o painel mostra a porcentagem (e o número) de contas de todas as contas do assinante no segmento selecionado.
 
-## Segmento - Reproduzir solicitações do total {#play-request-out-total}
+## Solicitações de reprodução de segmento do total {#play-request-out-total}
 
 O gráfico de rosca mostra a porcentagem (e o número) de solicitações de reprodução feitas pelos assinantes no segmento e permite comparar as solicitações de reprodução feitas pelos assinantes que não estão no segmento definido.
 
 ![](assets/play-req-outof-total.png)
 
-Ao mover o cursor no gráfico de rosca, ele também mostra porcentagens e números do assinante de vários intervalos de probabilidade.
+Ao mover o cursor sobre o gráfico de rosca, ele também mostra porcentagens e números do assinante de vários intervalos de probabilidade.
 
 <!--![](assets/play-request-total.gif)-->
 
-## Número médio de dispositivos do segmento por conta{#avg-devices-account}
+## Número médio de segmentos de dispositivos por conta{#avg-devices-account}
 
-O gráfico de barras mostra o número médio de dispositivos de cada tipo de dispositivo em uso pelos assinantes no segmento atual e pelos assinantes que não estão no segmento atual.
+O gráfico de barras mostra o número médio de dispositivos de cada tipo que estão sendo usados atualmente pelos assinantes no segmento atual e daqueles que não estão no segmento atual.
 
 ![](assets/avg-devices-per-acc.png)
 
-## Segmento - códigos postais por período por conta {#zip-codes-period-account}
+## Códigos postais de segmento por período por conta {#zip-codes-period-account}
 
-Este gráfico informa sobre o número de assinantes que estão consumindo conteúdo de diferentes locais em um intervalo de tempo.
+Este gráfico informa sobre o número de assinantes no segmento atual que estão consumindo conteúdo de diferentes locais (conforme medido pelo código postal) para o intervalo de tempo determinado.
 
 ![](assets/zip-period-account.png)
 
-Você pode ampliar para restringir e exibir especificidades de uma barra no gráfico que representa um intervalo de locais.
+>[!NOTE]
+>
+>É possível ampliar as barras que representam mais de um conjunto de códigos postais, representados com um **+** (mais) (por exemplo, 10+), clicando duas vezes neles.
 
-<!--![](assets/zip-code-period.gif)-->
 
-## Segmento - Extensão geográfica / Período / Conta {#geo-span-period-account}
+## Segmento-intervalo geográfico por período por conta {#geo-span-period-account}
 
-Este gráfico de barras representa o número de contas do assinante em relação a diferentes intervalos geográficos em milhas. O intervalo se baseia na distância máxima entre os locais a partir dos quais um assinante transmitiu durante o intervalo de tempo.
-
-<!--Total number of users ...
-
-How many accounts are within 99 miles of each other.....and how many are apart. 
-
-Based on points on the map.-->
+Este gráfico de barras representa o número de contas de assinantes que consomem conteúdo de locais que se enquadram em diferentes intervalos geográficos em milhas. O intervalo se baseia na distância máxima entre os locais a partir dos quais um assinante transmitiu durante o intervalo de tempo.
 
 ![](assets/geogr-span-account.png)
 
-Quando você seleciona uma barra representando um intervalo de distância geográfica, ela expande o intervalo para mostrar mais detalhes.
+>[!NOTE]
+>
+> É possível ampliar as barras que representam mais de um conjunto de distâncias geográficas, representadas por um **+** (mais) (por exemplo, 1000+), clicando duas vezes neles.
 
-<!--![](assets/geo-span-period-acc.gif)-->
+>[!MORELIKETHIS]
+>
+>* Saiba como exportar relatórios para os 1000 principais assinantes no segmento selecionado usando filtros em Relatórios de contas compartilhadas usando [Exportar as 1000 contas principais](/help/accountiq/export-acc-information.md) opção.
