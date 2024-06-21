@@ -1,13 +1,13 @@
 ---
 title: Visão geral da API
 description: Visão geral da API do monitoramento de simultaneidade
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
+source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
 workflow-type: tm+mt
-source-wordcount: '1425'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
-
 
 # Visão geral da API {#api-overview}
 
@@ -101,6 +101,24 @@ Use os mesmos parâmetros para a chamada e para a pulsação da sessão. Os cód
 * 202 ACEITO para uma resposta bem-sucedida
 * 410 DESAPARECEU se a sessão já tivesse sido interrompida.
 
+#### Obter todos os fluxos em execução {#get-all-running-streams}
+
+Esse endpoint oferece todas as sessões em execução para um locatário específico em todos os seus aplicativos. Uso **assunto** e **idp** parâmetros para a chamada:
+
+![](assets/get-all-running-streams-parameters.png)
+
+Ao fazer a chamada, você receberá a seguinte resposta:
+
+![](assets/get-all-running-streams-success.png)
+
+Observe a **Expira** cabeçalho. Esse é o momento em que a primeira sessão deve expirar, a menos que um heartbeat seja enviado. OtherStreams tem o valor 0 porque não há outros fluxos em execução para este usuário em aplicativos de outro locatário.
+O campo de metadados será preenchido com todos os metadados enviados quando a sessão for iniciada. Não o filtramos; você receberá tudo o que enviou.
+Se não houver sessões em execução para um usuário específico ao fazer a chamada, você receberá esta resposta:
+
+![](assets/get-all-running-streams-empty.png)
+
+Observe também que, neste caso, o **Expira** o cabeçalho não está presente.
+
 #### Quebrando a política {#breaking-policy-app-first}
 
 
@@ -157,4 +175,3 @@ Para romper a regra que temos na política atribuída a este aplicativo, precisa
 Se utilizarmos valores diferentes para os metadados do canal sempre que criarmos uma nova sessão, todas as chamadas serão bem-sucedidas, pois o limite 2 tem escopo para cada valor individualmente.
 
 Como no primeiro exemplo, podemos usar o código de terminação para interromper remotamente fluxos conflitantes ou podemos esperar que um dos fluxos expire, supondo que nenhum heartbeat será operado neles.
-
