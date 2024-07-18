@@ -2,9 +2,9 @@
 title: Iniciar autorização
 description: Iniciar autorização
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '423'
 ht-degree: 0%
 
 ---
@@ -21,15 +21,15 @@ ht-degree: 0%
 
 ## Endpoints da REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 Obtém a resposta de autorização.
 
-| Endpoint | Chamado  </br>Por | Entrada   </br>Params | HTTP  </br>Método | Resposta | HTTP  </br>Resposta |
+| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/authorize | Aplicativo de transmissão</br></br>ou</br></br>Serviço de programador | 1. solicitante (obrigatório)</br>2.  deviceId (Obrigatório)</br>3.  recurso (Obrigatório)</br>4.  device_info/X-Device-Info (Obrigatório)</br>5.  _deviceType_</br> 6.  _deviceUser_ (Obsoleto)</br>7.  _appId_ (Obsoleto)</br>8.  parâmetros extras (opcional) | GET | XML ou JSON que contém detalhes de autorização ou detalhes de erro, se malsucedido. Consulte os exemplos abaixo. | 200 - Sucesso  </br>403 - Sem Sucesso |
+| &lt;SP_FQDN>/api/v1/authorize | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | 1. solicitante (obrigatório)</br>2.  deviceId (Obrigatório)</br>3.  recurso (obrigatório)</br>4.  device_info/X-Device-Info (Obrigatório)</br>5.  _deviceType_</br> 6.  _deviceUser_ (Obsoleto)</br>7.  _appId_ (obsoleto)</br>8.  parâmetros extras (opcional) | GET | XML ou JSON que contém detalhes de autorização ou detalhes de erro, se malsucedido. Consulte os exemplos abaixo. | 200 - Êxito </br>403 - Sem Êxito |
 
 {style="table-layout:auto"}
 
@@ -51,25 +51,25 @@ Obtém a resposta de autorização.
 | solicitante | O requestorId do Programador para o qual esta operação é válida. |
 | deviceId | Os bytes de id do dispositivo. |
 | recurso | Uma cadeia de caracteres que contém um resourceId (ou fragmento MRSS), identifica o conteúdo solicitado por um usuário e é reconhecida por pontos de extremidade de autorização MVPD. |
-| device_info/</br></br>X-Device-Info | Informações do dispositivo de transmissão.</br></br>**Nota**: isso PODE ser passado para device_info como um parâmetro de URL, mas devido ao tamanho potencial desse parâmetro e às limitações no comprimento de um URL do GET, ele DEVE ser passado como X-Device-Info no cabeçalho http. </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)-->. |
-| _deviceType_ | O tipo de dispositivo (por exemplo, Roku, PC).</br></br>Se esse parâmetro estiver definido corretamente, o ESM oferecerá métricas que são [detalhado por tipo de dispositivo](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) ao usar sem cliente, para que diferentes tipos de análise possam ser executados para, por exemplo, Roku, Apple TV, Xbox etc.</br></br>Consulte [Benefícios do parâmetro do tipo de dispositivo sem cliente nas métricas de passagem ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Nota**: device_info substituirá esse parâmetro. |
+| device_info/</br></br>X-Device-Info | Informações do dispositivo de transmissão.</br></br>**Observação**: isso PODE ser passado para device_info como um parâmetro de URL, mas devido ao tamanho potencial desse parâmetro e às limitações no comprimento de uma URL GET, DEVE ser passado como X-Device-Info no cabeçalho http. </br></br>Veja os detalhes completos em [Passando Informações sobre Dispositivo e Conexão](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | O tipo de dispositivo (por exemplo, Roku, PC).</br></br>Se este parâmetro estiver definido corretamente, o ESM oferecerá métricas que são [analisadas por tipo de dispositivo](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) ao usar o sem cliente, para que diferentes tipos de análise possam ser executados para, por exemplo, Roku, Apple TV, Xbox etc.</br></br>Consulte [Vantagens do parâmetro de tipo de dispositivo sem cliente em métricas de passagem ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Observação**: device_info substituirá esse parâmetro. |
 | _deviceUser_ | O identificador do usuário do dispositivo. |
-| _appId_ | O id/nome do aplicativo. </br></br>**Nota**: device_info substitui esse parâmetro. |
-| parâmetros extras | A chamada também pode conter parâmetros opcionais que habilitam outras funcionalidades como:</br></br>* generic_data - permite o uso de [TempPass Promocional](/help/authentication/promotional-temp-pass.md)</br></br>Exemplo: `generic_data=("email":"email@domain.com")` |
+| _appId_ | O id/nome do aplicativo. </br></br>**Observação**: device_info substitui este parâmetro. |
+| parâmetros extras | A chamada também pode conter parâmetros opcionais que habilitam outras funcionalidades como:</br></br>* generic_data - habilita o uso de [Promotional TempPass](/help/authentication/promotional-temp-pass.md)</br></br>Exemplo: `generic_data=("email":"email@domain.com")` |
 
 {style="table-layout:auto"}
 
 >[!CAUTION]
 >
->**Endereço IP do dispositivo de transmissão**</br>
->Para implementações de Cliente para servidor, o Endereço IP do dispositivo de transmissão é implicitamente enviado com esta chamada.  Para implementações de servidor para servidor, em que a variável **regcode** A chamada é feita pelo Serviço do Programador e não pelo Dispositivo de Streaming, o seguinte cabeçalho é necessário para passar o Endereço IP do Dispositivo de Streaming:</br></br>
+>**Endereço IP do Dispositivo de Streaming**</br>
+>Para implementações de Cliente para servidor, o Endereço IP do dispositivo de transmissão é implicitamente enviado com esta chamada.  Para implementações de Servidor para Servidor, em que a chamada **regcode** é feita pelo Serviço do Programador e não pelo Dispositivo de Streaming, o seguinte cabeçalho é necessário para passar o Endereço IP do Dispositivo de Streaming:</br></br>
 >
 >```
 >X-Forwarded-For : <streaming\_device\_ip>
 >```
 >
 >onde `<streaming\_device\_ip>` é o endereço IP público do Dispositivo de Streaming.</br></br>
->Exemplo:</br>
+>Exemplo: </br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1
@@ -90,8 +90,8 @@ Obtém a resposta de autorização.
     &lt;authorization>
     &lt;expires>1348148289000&lt;/expires>
     &lt;mvpd>sampleMvpdId&lt;/mvpd>
-    &lt;requestor>sampleRequestId&lt;/requestor>
-    &lt;resource>sampleResourceId&lt;/resource>
+    &lt;requestor>sampleRequestorId&lt;/requestor>
+    &lt;resource>sampleResourceId&lt;/requestor>
     &lt;/authorization>
     &quot;
 
@@ -110,11 +110,11 @@ Obtém a resposta de autorização.
 
 >[!IMPORTANT]
 >
->Quando a resposta vem de um MVPD de proxy, ela pode incluir um elemento adicional chamado `proxyMvpd`.
+>Quando a resposta vem de um MVPD de Proxy, ela pode incluir um elemento adicional chamado `proxyMvpd`.
 
 
 
-* **Caso 2: Autorização negada**
+* **Caso 2: autorização negada**
 
 
   ```JSON
