@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# Erro de autenticação do iOS - adobepass.ios.app não pode ser encontrado {#ios-authentication-error-adobepass.ios.app-cannot-be-found}
+# Erro de autenticação do iOS - adobepass.ios.app não encontrado {#ios-authentication-error-adobepass.ios.app-cannot-be-found}
 
 >[!NOTE]
 >
@@ -17,15 +17,15 @@ ht-degree: 0%
 
 ## Problema {#issue}
 
-O usuário está passando pelo Fluxo de autenticação e, após inserir suas credenciais com êxito com seu provedor, é redirecionado de volta para uma página de erro, uma página de pesquisa ou alguma outra página personalizada informando que `adobepass.ios.app` não pôde ser encontrada/resolvida.
+O usuário está passando pelo fluxo de Autenticação e, depois de inserir com êxito suas credenciais com o provedor, ele é redirecionado de volta para uma página de erro, uma página de pesquisa ou alguma outra página personalizada informando que `adobepass.ios.app` não pôde ser encontrado/resolvido.
 
 ## Explicação {#explanation}
 
-No iOS, `adobepass.ios.app` é usado como o URL final de redirecionamento para indicar que o fluxo de Autenticação foi concluído. Neste ponto, o aplicativo precisa fazer uma solicitação ao AccessEnabler para obter o token de autenticação e finalizar o fluxo de autenticação.
+No iOS, `adobepass.ios.app` é usado como a URL final de redirecionamento para indicar que o fluxo de Autenticação foi concluído. Neste ponto, o aplicativo precisa fazer uma solicitação ao AccessEnabler para obter o token de autenticação e finalizar o fluxo de autenticação.
 
-O problema é que `adobepass.ios.app` não existe de fato e acionará uma mensagem de erro no `webView`. As versões anteriores do DemoApp para iOS presumiam que esse erro sempre seria acionado no final do fluxo de Autenticação e foi configurado para lidar com ele adequadamente (`indidFailLoadWithError`).
+O problema é que `adobepass.ios.app` não existe de fato e disparará uma mensagem de erro no `webView`. As versões anteriores do iOS DemoApp presumiam que esse erro sempre seria acionado no final do fluxo AuthN e foi configurado para lidar com ele adequadamente (`indidFailLoadWithError`).
 
-**Nota:** Esse problema foi corrigido em versões posteriores do DemoApp (incluídas no download do SDK do iOS).
+**Observação:** esse problema foi corrigido em versões posteriores do DemoApp (incluído no download do SDK do iOS).
 
 Infelizmente, essa suposição NÃO está correta. Há alguns servidores DNS ou Proxy &quot;inteligentes&quot; que não apenas transmitem o erro gerado, mas executam um dos seguintes procedimentos:
 
@@ -36,7 +36,7 @@ Nesses casos, a resposta que retorna ao WebView do iOS será uma resposta perfei
 
 ## Solução {#solution}
 
-NÃO faça a mesma suposição que o DemoApp faz. Em vez disso, intercepte a solicitação antes que ela seja executada (em `shouldStartLoadWithRequest`) e manuseá-lo adequadamente.
+NÃO faça a mesma suposição que o DemoApp faz. Em vez disso, intercepte a solicitação antes que ela seja executada (em `shouldStartLoadWithRequest`) e manipule-a adequadamente.
 
 Exemplo de como interceptar a solicitação antes de ela ser executada:
 
@@ -60,6 +60,6 @@ return YES;
 
 Algumas observações:
 
-- NUNCA usar `adobepass.ios.app` diretamente em qualquer lugar no código. Em vez disso, use a constante `ADOBEPASS_REDIRECT_URL`
-- A variável `return NO;` a instrução impedirá que a página carregue
-- Certifique-se de que o `getAuthenticationToken` A chamada de é chamada uma vez e somente uma vez no código. Várias chamadas para `getAuthenticationToken` resultará em resultados indefinidos.
+- NUNCA use `adobepass.ios.app` diretamente em nenhum lugar do código. Em vez disso, use a constante `ADOBEPASS_REDIRECT_URL`
+- A instrução `return NO;` impedirá que a página seja carregada
+- Certifique-se de que a chamada `getAuthenticationToken` seja chamada uma vez e apenas uma vez no código. Várias chamadas para `getAuthenticationToken` resultarão em resultados indefinidos.

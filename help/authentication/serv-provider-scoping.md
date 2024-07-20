@@ -4,7 +4,7 @@ description: Escopo do provedor de serviços
 exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '313'
+source-wordcount: '314'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Visão geral {#overview}
 
-A implementação padrão de uma integração da Autenticação Adobe Pass com um MVPD é baseada no **Especificação OLCA**. A seção Authentication Requirements da especificação OLCA (6.5, Subject Identifier) indica que é possível indicar o escopo do Service Provider (SP) para o identificador de assunto. (O identificador de assunto é a ID de usuário ofuscada que o MVPD retorna à controladora.)  Em uma integração de Autenticação do Adobe Pass, é necessário que os MVPDs habilitem o escopo das solicitações de Autenticação do SP.
+A implementação padrão de uma integração da Autenticação Adobe Pass com um MVPD é baseada na **Especificação OLCA**. A seção Authentication Requirements da especificação OLCA (6.5, Subject Identifier) indica que é possível indicar o escopo do Service Provider (SP) para o identificador de assunto. (O identificador de assunto é a ID de usuário ofuscada que o MVPD retorna à controladora.)  Em uma integração de Autenticação do Adobe Pass, é necessário que os MVPDs habilitem o escopo das solicitações de Autenticação do SP.
 
 Com a Autenticação do Adobe Pass assumindo a função de SP para o Programador, é necessário implementar uma personalização que permita o escopo de SP da solicitação de autenticação.  Isso precisa ser feito para que o MVPD possa identificar a marca de rede transmitida na asserção SAML para o Provedor de identidade (IdP) do MVPD.  O escopo pode ser implementado de uma das duas maneiras descritas na próxima seção.
 
@@ -25,9 +25,9 @@ Com a Autenticação do Adobe Pass assumindo a função de SP para o Programador
 
 A Autenticação do Adobe Pass oferece suporte às duas seguintes formas de habilitar o escopo de solicitações de autenticação da controladora de armazenamento:
 
-* **A Abordagem de Emissor SAML.**  Nesta abordagem, a &quot;ID do solicitante&quot; é anexada à string do emissor SAML na solicitação de autenticação SAML.
+* **A Abordagem de Emissor SAML.** Nesta abordagem, a &quot;ID do Solicitante&quot; é anexada à cadeia de caracteres do Emissor SAML na solicitação de Autenticação SAML.
 
-* **A Abordagem De Propriedade Do Escopo Personalizado.**  Nesta abordagem, a &quot;ID do solicitante&quot; é incluída explicitamente como uma propriedade personalizada &quot;Escopo&quot; na solicitação de autenticação SAML.
+* **A Abordagem De Propriedade De Escopo Personalizado.** Nessa abordagem, a &quot;ID do solicitante&quot; é incluída explicitamente como uma propriedade personalizada de &quot;Escopo&quot; na solicitação de Autenticação SAML.
 
 >[!NOTE]
 >
@@ -35,7 +35,7 @@ A Autenticação do Adobe Pass oferece suporte às duas seguintes formas de habi
 
 ### Abordagem de emissor SAML {#saml-issuer-approach}
 
-Essa abordagem usa o SAML `<Issuer>` elemento na solicitação de Autenticação SAML, conforme mostrado neste trecho:
+Esta abordagem usa o elemento `<Issuer>` do SAML na solicitação de Autenticação SAML, conforme mostrado neste trecho:
 
 ```xml
 ...

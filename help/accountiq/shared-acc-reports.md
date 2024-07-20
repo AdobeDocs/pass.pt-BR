@@ -23,7 +23,7 @@ Esses gráficos de rosca e de barra mostram as porcentagens (e números absoluto
 * Baixa (20%-40%)
 * Muito baixo (0%-20%)
 
-A linha vermelha marca o intervalo de limite selecionado no [Contas acima do limite no segmento atual](#threshold-selector) e a área vermelha clara contém o total de todas as contas acima desse limite.
+A linha vermelha marca o intervalo de limite selecionado no painel [Contas acima do limite no segmento atual](#threshold-selector) e a área vermelha clara contém o total de todas as contas acima desse limite.
 
 ![](assets/accounts-sharing-probability-pie.png)
 
@@ -41,13 +41,13 @@ Aqui novamente, a linha vermelha marca o limite atual, e a área vermelha clara 
 
 Esse painel permite selecionar o intervalo de limites para os gráficos de rosca e de barras acima. As quatro opções são:
 
-* Contas **muito baixo** compartilhamento **probabilidade**
+* Contas **acima de muito baixo** compartilhando **probabilidade**
 
-* Contas **sobre baixo** compartilhamento **probabilidade**
+* Contas **muito baixas** compartilhando **probabilidade**
 
-* Contas **excessivamente moderado** compartilhamento **probabilidade**
+* Contas **acima do moderado** compartilhando **probabilidade**
 
-* Contas **acima do alto** compartilhamento **probabilidade**
+* Contas **acima do alto** compartilhando **probabilidade**
 
 ![](assets/threshold-selector-shared-accounts.png)
 
@@ -77,7 +77,7 @@ Este gráfico informa sobre o número de assinantes no segmento atual que estão
 
 >[!NOTE]
 >
->É possível ampliar as barras que representam mais de um conjunto de códigos postais, representados com um **+** (mais) (por exemplo, 10+), clicando duas vezes neles.
+>É possível ampliar as barras que representam mais de um conjunto de códigos postais, representados por um sinal de **+** (mais) (por exemplo, 10+), clicando duas vezes neles.
 
 
 ## Segmento-intervalo geográfico por período por conta {#geo-span-period-account}
@@ -88,8 +88,8 @@ Este gráfico de barras representa o número de contas de assinantes que consome
 
 >[!NOTE]
 >
-> É possível ampliar as barras que representam mais de um conjunto de distâncias geográficas, representadas por um **+** (mais) (por exemplo, 1000+), clicando duas vezes neles.
+> É possível ampliar as barras que representam mais de um conjunto de distâncias geográficas, representadas com um sinal de **+** (mais) (por exemplo, 1000+), clicando duas vezes nelas.
 
 >[!MORELIKETHIS]
 >
->* Saiba como exportar relatórios para os 1000 principais assinantes no segmento selecionado usando filtros em Relatórios de contas compartilhadas usando [Exportar as 1000 contas principais](/help/accountiq/export-acc-information.md) opção.
+>* Saiba como exportar relatórios para os 1.000 assinantes principais no segmento selecionado usando filtros em Relatórios de Contas compartilhadas usando a opção [Exportar 1.000 contas principais](/help/accountiq/export-acc-information.md).

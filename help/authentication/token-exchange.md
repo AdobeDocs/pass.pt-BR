@@ -21,15 +21,15 @@ ht-degree: 0%
 
 ## Endpoints da REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 Permite que um perfil SSO da Platform seja &quot;trocado&quot; por um token Adobe.
 
-| Endpoint | Chamado  </br>Por | Entrada   </br>Params | HTTP  </br>Método | Resposta | HTTP  </br>Resposta |
+| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/tokens/authn | Aplicativo de transmissão</br></br>ou</br></br>Serviço de programador | 1. solicitante (obrigatório)</br>    </br>2.  deviceId (Obrigatório)</br>    </br>3.  mvpd (Obrigatório)</br>    </br>4.  deviceType (Obrigatório)</br>    </br>5.  SAMLResponse (Obrigatório)</br>    </br>6.  deviceUser (obsoleto)</br>    </br>7.  appId (obsoleto) | POST | A resposta bem-sucedida será 204 Sem conteúdo, indicando que o token foi criado com êxito e está pronto para uso para os fluxos de autorização. | 204 - Sem conteúdo   </br>400 - Solicitação inválida |
+| &lt;SP_FQDN>/api/v1/tokens/authn | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | 1. solicitante (Obrigatório)</br>    </br>2.  deviceId (Obrigatório)</br>    </br>3.  mvpd (Obrigatório)</br>    </br>4.  deviceType (Obrigatório)</br>    </br>5.  SAMLResponse (Obrigatório)</br>    </br>6.  deviceUser (obsoleto)</br>    </br>7.  appId (obsoleto) | POST | A resposta bem-sucedida será 204 Sem conteúdo, indicando que o token foi criado com êxito e está pronto para uso para os fluxos de autorização. | 204 - Sem conteúdo   </br>400 - Solicitação inválida |
 
 
 | Parâmetro de entrada | Descrição |
@@ -47,7 +47,7 @@ Permite que um perfil SSO da Platform seja &quot;trocado&quot; por um token Adob
 | solicitante | O requestorId do Programador para o qual esta operação é válida. |
 | deviceId | Os bytes de id do dispositivo. |
 | mvpd | A ID de MVPD para a qual esta operação é válida. |
-| deviceType | A plataforma do Apple para a qual estamos tentando obter uma solicitação de perfil.  Ou **iOS** ou **tvOS**. |
+| deviceType | A plataforma do Apple para a qual estamos tentando obter uma solicitação de perfil.  **iOS** ou **tvOS**. |
 | SAMLResponse | O perfil real foi retornado pelo SSO da Platform. |
 | _deviceUser_ | O identificador do usuário do dispositivo. |
 | _appId_ | O id/nome do aplicativo. |

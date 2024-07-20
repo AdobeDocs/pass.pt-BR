@@ -4,7 +4,7 @@ description: Apêndice B "Dicas de depuração"
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '161'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ A Autenticação do Adobe Pass armazena dados temporários, como cache do navega
 
 ## Limpando cache de LSOs {#clearing-lsos-cache}
 
-Acesse o [Ajuda do Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+Acesse a [ajuda do Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
 Selecione o ```entitlement.\*``` (dependendo do que for testado) e clique em &quot;Excluir site&quot;.
 
@@ -42,7 +42,7 @@ Os engenheiros de autenticação da Adobe Pass usam as seguintes ferramentas de 
 
 - Firebug - <http://www.getfirebug.com/>
 - Flashbug (funciona com a versão de depuração do flash player)
-- Violador - <http://www.fiddler2.com/fiddler2/>
+- Filtro - <http://www.fiddler2.com/fiddler2/>
 - Charles - <http://www.charlesproxy.com/>
 - Wireshark - <http://www.wireshark.org/>
 

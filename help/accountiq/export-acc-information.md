@@ -11,21 +11,21 @@ ht-degree: 1%
 
 # Exportar informações para contas com alta pontuação de compartilhamento {#export-account-info-high-score}
 
-[!UICONTROL Account IQ] permite exportar detalhes de compartilhamento de conta para 1000 contas de assinantes principais com base em suas [compartilhando probabilidades](/help/accountiq/product-concepts.md#account-sharing-probability-def). É possível exportar as informações de compartilhamento de conta da conta atual [segmento](/help/accountiq/product-concepts.md#segment-def) e [intervalo de tempo especificado](/help/accountiq/product-concepts.md#time-interval-def) no [Relatórios de Contas Compartilhadas](/help/accountiq/shared-acc-reports.md) página.
+[!UICONTROL Account IQ] permite exportar detalhes de compartilhamento de conta para 1000 contas de assinantes principais com base em suas [probabilidades de compartilhamento](/help/accountiq/product-concepts.md#account-sharing-probability-def). Você pode exportar as informações de compartilhamento de conta do [segmento](/help/accountiq/product-concepts.md#segment-def) atual e do [intervalo de tempo especificado](/help/accountiq/product-concepts.md#time-interval-def) na página [Relatórios de Contas Compartilhadas](/help/accountiq/shared-acc-reports.md).
 
 Siga as etapas para exportar as informações de compartilhamento de conta de contas de assinantes para um segmento específico.
 
 1. Faça logon com suas credenciais.
-1. Navegue até a **Contas compartilhadas** em **Relatórios** seção.
-1. Selecione o segmento e o intervalo de tempo necessários no painel Segmento e intervalo de tempo. Saiba mais [como selecionar um segmento e um intervalo](segments-timeinterval.md).
+1. Navegue até a guia **Contas compartilhadas** na seção **Relatórios**.
+1. Selecione o segmento e o intervalo de tempo necessários no painel Segmento e intervalo de tempo. Saiba [como selecionar um segmento e um intervalo de tempo](segments-timeinterval.md).
 
-   Se necessário, consulte as instruções de [criação de um segmento](work-with-segments.md#create-new-segment) ou [editar um segmento](work-with-segments.md#edit-segment).
+   Se necessário, consulte as instruções para [criar um segmento](work-with-segments.md#create-new-segment) ou [editar um segmento](work-with-segments.md#edit-segment).
 
-1. Selecionar **[!UICONTROL Export top 1000 accounts]** localizado no canto superior direito do painel segmento e intervalo de tempo.
+1. Selecione **[!UICONTROL Export top 1000 accounts]**, localizado no canto superior direito do painel Intervalo de tempo e segmento.
 
    ![Exportar as 1000 contas principais](assets/export-top-1000-accounts.png)
 
-   *Selecione a opção Exportar as 1000 contas principais*
+   *Selecione a opção Exportar 1.000 contas principais*
 
 O arquivo será baixado automaticamente para o computador local como um .csv.
 
@@ -33,15 +33,15 @@ Esse arquivo contém os dados para as 1.000 contas principais com base nas proba
 
 Veja a seguir um exemplo do arquivo .csv exportado.
 
-![dados exportados em arquivo .csv](assets/exported-csv.png)
+![dados exportados no arquivo .csv](assets/exported-csv.png)
 
-*Dados exportados em arquivo .csv*
+*Dados exportados no arquivo .csv*
 
 ## Colunas no relatório exportado {#columns-in-export}
 
 **Semana/Mês**
 
-A semana ou mês selecionado no **[!UICONTROL Granularity and Time Interval]** no seletor de segmentos.
+A semana ou mês selecionado na opção **[!UICONTROL Granularity and Time Interval]** no seletor de segmentos.
 
 **MVPD**
 
@@ -49,7 +49,7 @@ Se você for um programador, a coluna mostrará o distribuidor com o qual a cont
 
 >[!NOTE]
 >
-> A variável **MVPD** A coluna só está disponível para versões do TV Everywhere.
+> A coluna **MVPD** só está disponível para versões do TV Everywhere.
 
 **ID do Assinante**
 
@@ -89,7 +89,7 @@ O número de estados em que a atividade de streaming ocorreu.
 
 **[!UICONTROL # Clusters]**
 
-O número de [clusters](/help/accountiq/product-concepts.md#cluster-def) onde ocorreu a transmissão.
+O número de [clusters](/help/accountiq/product-concepts.md#cluster-def) distintos nos quais ocorreu a transmissão.
 
 **[!UICONTROL Geographic span (miles)]**
 
@@ -101,7 +101,7 @@ O número de logons que os usuários fazem durante o período especificado usand
 
 >[!NOTE]
 >
-> Alguns serviços D2C podem não ver **[!UICONTROL # AuthN OK]** dados, pois eles podem não ser incluídos nos dados de sua empresa.
+> Alguns serviços D2C podem não ver os dados de **[!UICONTROL # AuthN OK]**, pois eles podem não estar incluídos nos dados de suas empresas.
 
 **[!UICONTROL # AuthZ OK]**
 
@@ -113,7 +113,7 @@ O número de vezes que um MVPD autorizou um fluxo ou concedeu acesso ao conteúd
 
 >[!NOTE]
 >
->Para TV em todos os lugares, **[!UICONTROL # AuthZ OK]** está correlacionado com o número de **[Nº de Solicitações Play](/help/accountiq/product-concepts.md##play-requests-def)**. Sempre será menor que **[!UICONTROL # Play Requests]** porque o Adobe normalmente armazena em cache as autorizações de MVPDs por aproximadamente 24 horas.
+>Para o TV Everywhere, **[!UICONTROL # AuthZ OK]** está correlacionado com o número de **[# Solicitações de Reprodução](/help/accountiq/product-concepts.md##play-requests-def)**. Sempre será menor que **[!UICONTROL # Play Requests]**, pois o Adobe normalmente armazena em cache as autorizações de MVPDs por aproximadamente 24 horas.
 
 
 **[!UICONTROL # Play Requests]**
@@ -122,7 +122,7 @@ O número real de fluxos ocorridos durante um período especificado.
 
 >[!NOTE]
 >
->A variável [Nº de Solicitações Play](/help/accountiq/product-concepts.md##play-requests-def) A coluna não está disponível na versão MVPD do TV Everywhere.
+>A coluna [# Solicitações de Reprodução](/help/accountiq/product-concepts.md##play-requests-def) não está disponível na versão MVPD do TV Everywhere.
 
 **[!UICONTROL # Channels]**
 
@@ -137,7 +137,7 @@ O número geral de canais que a conta assistiu por um período especificado.
 >Para a TV Everywhere, eles incluem os canais que podem não pertencer ao programador conectado. Esse número para a conta inclui seu canal e outros canais acessados durante o período especificado.
 
 
-**Padrão de uso**
+**Padrão de Uso**
 
 Os valores nessas colunas servem como identificadores correspondentes a um dos 14 padrões que usamos para categorizar todas as contas de usuário.
 
@@ -206,4 +206,4 @@ A probabilidade de uma conta específica estar compartilhando suas credenciais.
 
 >[!NOTE]
 >
-> A média da probabilidade de compartilhamento de todas as contas no segmento selecionado é usada para calcular a [nível de compartilhamento](/help/accountiq/data-panels.md#sharing-level) do [pontuação média de compartilhamento](/help/accountiq/data-panels.md#aggregated-sharing).
+> A média da probabilidade de compartilhamento de todas as contas no segmento selecionado é usada para calcular o [nível de compartilhamento](/help/accountiq/data-panels.md#sharing-level) da [pontuação média de compartilhamento](/help/accountiq/data-panels.md#aggregated-sharing).

@@ -1,13 +1,13 @@
 ---
 title: Mecanismo de limitação
 description: Saiba mais sobre o mecanismo de limitação usado na autenticação do Adobe Pass. Explore uma visão geral desse mecanismo nesta página.
-source-git-commit: 4f81f39427d87e4274c27d8f1b4bd1eb366d9abb
+exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
 
 ---
-
 
 # Mecanismo de limitação {#throttling-mechanism}
 
@@ -76,19 +76,19 @@ Como os clientes que usam a Autenticação Adobe Pass fornecidos pelos SDKs não
 
 #### setRequestor
 
-Ao atingir o limite do acelerador usando `setRequestor` do SDK, o SDK retornará um código de erro CFG429 por meio de `errorHandler` retorno de chamada.
+Ao atingir o limite de aceleração usando a função `setRequestor` do SDK, o SDK retornará um código de erro CFG429 por meio do retorno de chamada `errorHandler`.
 
 #### getAuthorization
 
-Ao atingir o limite do acelerador usando `getAuthorization` do SDK, o SDK retornará um código de erro Z100 por meio de `errorHandler` retorno de chamada.
+Ao atingir o limite de aceleração usando a função `getAuthorization` do SDK, o SDK retornará um código de erro Z100 pela chamada de retorno `errorHandler`.
 
 #### checkPreauthorizedResources
 
-Ao atingir o limite do acelerador usando `checkPreauthorizedResources` do SDK, o SDK retornará um código de erro P100 por meio de `errorHandler` retorno de chamada.
+Ao atingir o limite de aceleração usando a função `checkPreauthorizedResources` do SDK, o SDK retornará um código de erro P100 pela chamada de retorno `errorHandler`.
 
 #### getMetadata
 
-Ao atingir o limite do acelerador usando `getMetadata` do SDK, o SDK retornará uma resposta vazia por meio de `setMetadataStatus` retorno de chamada.
+Ao atingir o limite de aceleração usando a função `getMetadata` do SDK, o SDK retornará uma resposta vazia por meio do retorno de chamada `setMetadataStatus`.
 
 Para cada detalhe de implementação específico, consulte a documentação do SDK.
 

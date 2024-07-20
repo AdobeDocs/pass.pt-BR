@@ -5,7 +5,7 @@ exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
 source-wordcount: '711'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -49,23 +49,23 @@ Para que a Autenticação do Adobe Pass seja integrada a um MVPD de proxy, o seg
 
 * O Proxy MVPD precisa abrir as portas 443 e 80 para os seguintes IPs:
    * 192.150.4.5
-   * 192.150.10.200
+   * 192 150 10 200
    * 192.150.11.4
    * 4.53.93.130
    * 193.105.140.131
    * 193.105.140.132
    * 76.74.170.204
-   * 63.140.39.4
-   * 66.235.132.38
-   * 66.235.139.38
-   * 66.235.139.168
+   * 63 140 39 4
+   * 66 235 132 38
+   * 66 235 139 38
+   * 66 235 139 168
 
 
 #### Solicitação e Resposta SAML de Autenticação {#authn-saml-req-resp}
 
 Na solicitação AuthN do SAML, as integrações de proxy incluem a seguinte propriedade adicional que precisa ser manipulada pelo Proxy MVPD.  Essa propriedade é necessária para processar corretamente o solicitante em nome do MVPD por proxy e para renderizar a experiência de logon correta. (Essa propriedade é realçada na solicitação de exemplo abaixo.)
 
-**Propriedade de escopo** - Inclui um item IDPEntry que inclui o MVPD_ID e o Nome do MVPD específicos.  Representa o MVPD que o usuário realmente selecionou no seletor do Programador e corresponde ao MVPD_ID especificado no Serviço Web Proxy.
+**Propriedade de Escopo** - Inclui um item IDPEntry que inclui o MVPD_ID e o Nome do MVPD específicos.  Representa o MVPD que o usuário realmente selecionou no seletor do Programador e corresponde ao MVPD_ID especificado no Serviço Web Proxy.
 
 Há uma propriedade de escopo adicional para RequestorID que pode ser usada para personalizar o logon para a marca específica do Programador (se necessário). Ou pode ser usado apenas para análises em que parte da solicitação é originária.
 
@@ -75,7 +75,7 @@ Na resposta do SAML AuthN, o Proxy MVPD deve especificar o Proxy MVPD como a Ent
 * Qualificador de Nome
 
 
-**Exemplo de solicitação de AuthN**
+**Solicitação de AuthN de Exemplo**
 
 ```XML
 <samlp:AuthnRequest
@@ -111,7 +111,7 @@ Na resposta do SAML AuthN, o Proxy MVPD deve especificar o Proxy MVPD como a Ent
 ```
 
 
-**Exemplo de resposta AuthN**
+**Exemplo de resposta de AuthN**
 
 ```XML
 <samlp:Response Destination="https://sp.auth-staging.adobe.com/sp/saml/SAMLAssertionConsumer"
@@ -170,7 +170,7 @@ Para a parte de autorização, o MVPD teria de aceitar para autorização o recu
 
 Na resposta AuthZ, o ISSUER deve corresponder ao ISSUER da Resposta SAML, que deve ser o identificador MVPD por proxy.
 
-**Exemplo de solicitação AuthZ XACML**
+**Solicitação XACML de AuthZ de Exemplo**
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -247,7 +247,7 @@ Na resposta AuthZ, o ISSUER deve corresponder ao ISSUER da Resposta SAML, que de
 </soap11:Envelope>
 ```
 
-**Exemplo de resposta AuthZ XACML (autorização concedida)**
+**Resposta AuthZ XACML de Exemplo (Autorização Concedida)**
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -303,7 +303,7 @@ Na resposta AuthZ, o ISSUER deve corresponder ao ISSUER da Resposta SAML, que de
 </soap-env:Envelope>
 ```
 
-**Exemplo de resposta AuthZ XACML (autorização negada)**
+**Resposta AuthZ XACML de Exemplo (Autorização Negada)**
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

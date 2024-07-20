@@ -1,10 +1,10 @@
 ---
-title: Bem- vindo ao Adobe&reg; Passar Autenticação!
+title: Bem- vindo ao Adobe&reg; Passar a autenticação!
 description: Bem- vindo ao Adobe&reg; Visão geral da autenticação de aprovação
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
 source-git-commit: 6699f37915551a19252dc84b6a37cc4565011fd5
 workflow-type: tm+mt
-source-wordcount: '338'
+source-wordcount: '331'
 ht-degree: 0%
 
 ---
@@ -27,29 +27,30 @@ Seu feedback é sempre apreciado!
 
 | **Itens em destaque** |
 |-|
-| <ul><li>[Logon único no iOS](/help/authentication/apple-sso-overview.md)</li><li>[Temp Pass Promocional](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticação baseada em casa (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infográfico HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guia do usuário do painel do Adobe Pass TVE](/help/authentication/tve-dashboard-user-guide.md)</li></ul> |
+| <ul><li>[Logon único para o iOS](/help/authentication/apple-sso-overview.md)</li><li>[Aprovação Temp Promocional](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticação baseada em casa (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infográfico de HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guia do Usuário do Painel do Adobe Pass TVE](/help/authentication/tve-dashboard-user-guide.md)</li></ul> |
 
-| **Para programadores** | **Para MVPDs** |
+| **Para Programadores** | **Para MVPDs** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| <ul><li>[Guia de início rápido do programador](/help/authentication/programmer-kickstart-guide.md)</li><li>[Metadados do usuário](/help/authentication/user-metadata.md)</li></ul> | <ul><li>[Guia de início rápido do MVPD](/help/authentication/mvpd-kickstart-guide.md)</li><li>[Autenticação](/help/authentication/authn-usecase.md)</li><li>[Autorização](/help/authentication/authz-usecase.md)</li><li>[Sair](/help/authentication/usecase-mvpd-logout.md)</li></ul> |
-| **Para clientes de aplicativos nativos** | **Para todos** |
+| <ul><li>[Guia de Kickstart do Programador](/help/authentication/programmer-kickstart-guide.md)</li><li>[Metadados de usuário](/help/authentication/user-metadata.md)</li></ul> | <ul><li>[Guia de início rápido do MVPD](/help/authentication/mvpd-kickstart-guide.md)</li><li>[Autenticação](/help/authentication/authn-usecase.md)</li><li>[Autorização](/help/authentication/authz-usecase.md)</li><li>[Logoff](/help/authentication/usecase-mvpd-logout.md)</li></ul> |
+| **Para Clientes De Aplicativos Nativos** | **Para Todos** |
 | <ul><li>[Visão geral técnica do iOS](/help/authentication/iostvos-sdk-overview.md)</li><li>[Visão geral técnica do Android](/help/authentication/android-sdk-overview.md)</li></ul> | <ul><li>[Papel Técnico](/help/authentication/technical-paper.md)</li><li>[Procedimentos de escalonamento](/help/authentication/escalation-procedures.md)</li><li>[Glossário](/help/authentication/glossary.md)</li></ul> |
-| **Para dispositivos inteligentes** | |
+| **Para Dispositivos Inteligentes** | |
 | <ul><li>[Visão geral técnica sem cliente](/help/authentication/rest-api-overview.md)</li><li>[API sem cliente](/help/authentication/rest-api-reference.md)</li></ul> | |
 
 >[!IMPORTANT]
 >
->Se você não encontrar uma resposta, [**Envie um email para nós**](mailto:tve-support@adobe.com).
+>Se você não encontrar uma resposta, [**Envie-nos um email**](mailto:tve-support@adobe.com).
 >
->[Enviar um email para nossa equipe de suporte](mailto:tve-support@adobe.com) O também é a primeira etapa para qualquer relatório de problema ou incidente.
+>[Enviar um email para nossa equipe de suporte](mailto:tve-support@adobe.com) também é a primeira etapa para qualquer relatório de problema ou incidente.
 >
->Se você tiver uma [SEVERIDADE 1 EM TEMPO REAL](/help/authentication/escalation-procedures.md) problema e você nos enviou um e-mail e decorreram 30 minutos sem uma resposta, depois consulte a [Procedimentos de escalonamento](/help/authentication/escalation-procedures.md) documento para números de telefone.
+>Se você tiver um problema de [GRAVIDADE 1 EM TEMPO REAL](/help/authentication/escalation-procedures.md) e tiver enviado um email para nós e 30 minutos tiverem decorrido sem uma resposta, consulte o documento [Procedimentos de Escalonamento](/help/authentication/escalation-procedures.md) para obter os números de telefone para ligar.
 >
 
 
 ## Para encontrar o que você precisa {#how-to-search}
 
-* **Pesquisar** em qualquer lugar no Helpdesk de autenticação da Adobe Pass para obter resultados que incluam essa documentação.
-* **Procurar** toda a documentação de Autenticação do Adobe Pass, por meio da hierarquia de pastas no painel de navegação à esquerda.
-* **Filtro** Para definir a hierarquia de pastas, insira termos no campo na parte superior do painel de navegação.
-* **Indicador** &quot;deep links&quot; para páginas de interesse usando seu navegador da web.
+* **Pesquise** em qualquer lugar do Helpdesk de Autenticação da Adobe Pass para obter resultados que incluam este
+documentação.
+* **Procure** toda a documentação de Autenticação do Adobe Pass, por meio da hierarquia de pastas no painel de navegação à esquerda.
+* **Filtre** a hierarquia de pastas inserindo termos no campo na parte superior do painel de navegação.
+* **Marque** &quot;deep links&quot; para páginas de interesse usando seu navegador da Web.

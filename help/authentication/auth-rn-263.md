@@ -4,7 +4,7 @@ description: Notas de versão da Autenticação Adobe Pass 2.63
 exl-id: 40987328-6d41-4948-aa4a-bab31f98a18a
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '296'
+source-wordcount: '304'
 ht-degree: 0%
 
 ---
@@ -24,8 +24,8 @@ Esta página descreve novos recursos, alterações e problemas conhecidos com es
 
 ### Número da Build {#build-number-263}
 
-Autenticação do Adobe Pass: adobe-pass-**2,63**
-Data de lançamento: **20/09/2022 - 22/09/2022**
+Autenticação Adobe Pass: adobe-pass-**2.63**
+Data de lançamento: **09/20/2022 - 22/09/2022**
 
 ### Novos recursos {#new-features-263}
 
@@ -54,5 +54,5 @@ Nesta versão, corrigimos um problema em que o authN ou o authZ TTL definido no 
 
 #### JavaScript SDK 4.6.0 {#js-sdk}
 
-* Remoção do uso de `eval` , tornando o SDK compatível com a Política de segurança de conteúdo.
+* Remoção do uso da função `eval`, tornando o SDK compatível com a Política de Segurança de Conteúdo.
 * Correção de um problema que impedia a conclusão bem-sucedida do fluxo de autenticação quando o Armazenamento local do navegador era limpo explicitamente por um Aplicativo de parceiro.

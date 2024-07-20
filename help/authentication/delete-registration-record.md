@@ -21,15 +21,15 @@ ht-degree: 2%
 
 ## Endpoints da REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -38,9 +38,9 @@ ht-degree: 2%
 
 Exclui o registro de código de registro e libera o código de registro para reutilização.
 
-| Endpoint | Chamado  </br>Por | Entrada   </br>Params | HTTP  </br>Método | Resposta | HTTP  </br>Resposta |
+| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Por exemplo:</br></br>&lt;reggie_fqdn>/reggie/v1/regcode/ER45RTY | Aplicativo de transmissão</br></br>ou</br></br>Serviço de programador | 1. ID do solicitante  </br>    (Componente do caminho)</br>2.  Código de registro  </br>    (Componente do caminho) | DELETE | Nenhum | 204 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Por exemplo:</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | 1. ID do Solicitante </br>    (Componente do caminho)</br>2.  Código de registro </br>    (Componente do caminho) | DELETE | Nenhum | 204 |
 
 {style="table-layout:auto"}
 
@@ -55,4 +55,4 @@ Exclui o registro de código de registro e libera o código de registro para reu
 
 </br>
 
-### [Voltar para Referência da API REST](/help/authentication/rest-api-reference.md)
+### [Voltar à Referência da API REST](/help/authentication/rest-api-reference.md)

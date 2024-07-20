@@ -1,7 +1,8 @@
 ---
 title: Notas de versão do Adobe Pass Authentication iOS / tvOS 3.9.2
 description: Notas de versão do Adobe Pass Authentication iOS / tvOS 3.9.2
-source-git-commit: 73d87de7db950f23973ad31b61409a1b711fc916
+exl-id: 5c3f6138-f727-499b-bc73-816444849c1b
+source-git-commit: d14afd85610381481a115b40e205541acefd1a8a
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 0%
@@ -32,4 +33,4 @@ Data de lançamento: 26/03/2024
 
 ## Lançar pacote {#rel-pkg-iostvos392}
 
-É possível baixar o SDK v3.9.2 do iOS/tvOS em [aqui](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-tvOS-Native-AccessEnabler-Library).
+Você pode baixar o iOS/tvOS SDK v3.9.2 de [aqui](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-tvOS-Native-AccessEnabler-Library).

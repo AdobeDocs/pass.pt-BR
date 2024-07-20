@@ -4,7 +4,7 @@ description: Permitir MVPDs na Caixa de Diálogo de Seleção
 exl-id: 2c0e0f06-ddc6-4bea-90dc-d7ef8e78d27e
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '129'
+source-wordcount: '128'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ O programador pode querer testar ou verificar a experiência do usuário de nova
 
 ## Solução {#solution}
 
-No `displayProviderDialog()` callback, a Autenticação Adobe Pass retorna todos os MVPDs integrados ao Programador selecionado (ID do Solicitante). Mas o Programador pode aplicar um filtro na matriz de retorno de MVPDs e exibir apenas aqueles que estão em ambas as listas.
+No retorno de chamada `displayProviderDialog()`, a Autenticação do Adobe Pass retorna todos os MVPDs integrados ao Programador selecionado (ID do Solicitante). Mas o Programador pode aplicar um filtro na matriz de retorno de MVPDs e exibir apenas aqueles que estão em ambas as listas.
 
 ## Exemplo {#example}
 

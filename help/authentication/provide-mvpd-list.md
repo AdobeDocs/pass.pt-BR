@@ -21,15 +21,15 @@ ht-degree: 2%
 
 ## Endpoints da REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -37,9 +37,9 @@ ht-degree: 2%
 
 Retorna a lista de MVPDs configurados para o solicitante.
 
-| Endpoint | Chamado  </br>Por | Entrada   </br>Params | HTTP  </br>Método | Resposta | HTTP  </br>Resposta |
+| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/config/{requestorId}</br></br>Por exemplo:</br></br>&lt;sp_fqdn>/api/v1/config/sampleRequestId | Adobe Pass Authentication | 1. Solicitante</br>    (Componente do caminho)</br>_2.  deviceType (obsoleto)_ | GET | XML ou JSON contendo a lista de MVPDs. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Por exemplo:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass Authentication | 1. Solicitante</br>    (Componente do caminho)</br>_2.  deviceType (desaprovado)_ | GET | XML ou JSON contendo a lista de MVPDs. | 200 |
 
 {style="table-layout:auto"}
 
@@ -57,8 +57,8 @@ Igual à resposta XML do MVPD existente ao servlet /config
 
 Observação: todos os MVPDs configurados para usar o Platform SSO terão as seguintes propriedades extras no nó correspondente (JSON/XML):
 
-* **enablePlatformServices (booleano):** sinalizador que indica se este MVPD está integrado via SSO da Plataforma
-* **boardingStatus (string):** sinalizador que indica se o MVPD oferece suporte total ao SSO da Plataforma (SUPORTADO) ou se o MVPD só aparece no seletor de plataforma (SELETOR)
-* **displayInPlatformPicker (booleano):** esse MVPD deve aparecer no seletor de plataforma?
+* **enablePlatformServices (booleano): sinalizador** indicando se este MVPD está integrado via SSO da Plataforma
+* **boardingStatus (cadeia de caracteres): sinalizador** indicando se o MVPD oferece suporte total a Platform SSO (SUPPORTED) ou se o MVPD aparece somente no seletor de plataforma (PICKER)
+* **displayInPlatformPicker (booleano):** este MVPD deve aparecer no seletor de plataforma?
 * **platformMappingId (cadeia de caracteres):** o identificador deste MVPD conforme conhecido pela plataforma
-* **requiredMetadataFields (matriz de sequência):** os campos de metadados do usuário que devem estar disponíveis em um logon bem-sucedido
+* **requiredMetadataFields (matriz de cadeia de caracteres):** os campos de metadados do usuário devem estar disponíveis em um logon bem-sucedido

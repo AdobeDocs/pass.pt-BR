@@ -4,7 +4,7 @@ description: Utilização da ID de Experience Cloud na autenticação da Adobe P
 exl-id: 03354c01-5aad-4d81-beee-1c3834599134
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Depois de obter a ECID (explicada acima), é necessário transmitir essas inform
 
 ### JS SDK {#js-sdk}
 
-Para JavaScript, você precisa passar a ECID em um mapa como o terceiro parâmetro para a chamada setRequestor.
+Para o JavaScript, é necessário passar a ECID em um mapa como o terceiro parâmetro para a chamada setRequestor.
 
 **Exemplo de uso:**
 
@@ -76,7 +76,7 @@ accessEnabler.setOptions(options);
 
 ### API sem cliente {#clientless-api}
 
-Ao usar o Adobe Pass por meio da REST API, a variável **ECID** o valor deve ser enviado **em todas as APIs** como um parâmetro chamado **&#39;ap_vi&#39;**.
+Ao usar o Adobe Pass por meio da REST API, o valor **ECID** deve ser enviado **em todas as APIs** como um parâmetro chamado **&#39;ap_vi&#39;**.
 
 **Exemplo de uso:**
 

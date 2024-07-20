@@ -4,7 +4,7 @@ description: Autenticação usando o protocolo OAuth 2.0
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1074'
+source-wordcount: '1088'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ O protocolo também oferece mais flexibilidade em termos de dados expostos, já 
 
 Para ser compatível com a autenticação com o OAuth 2.0, um MVPD precisa atender aos seguintes pré-requisitos:
 
-Em primeiro lugar, o MVPD deve garantir que [Concessão de código de autorização](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/authcode.html) fluxo.
+Primeiramente, o MVPD deve se certificar de que ele suporta o fluxo [Concessão de código de autorização](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/authcode.html).
 
 Depois de confirmar que oferece suporte ao fluxo, o MVPD deve nos fornecer as seguintes informações:
 
@@ -50,14 +50,14 @@ Depois de confirmar que oferece suporte ao fluxo, o MVPD deve nos fornecer as se
    * o token de atualização precisa ser estável (ele não deve ser alterado sempre que solicitarmos um novo token de acesso)
    * o MVPD precisa permitir vários tokens de acesso ativos para cada token de atualização
    * este ponto de extremidade também trocará um token de atualização por um token de acesso
-* precisamos de um **ponto final para perfil do usuário**
+* precisamos de um **ponto final para perfil de usuário**
    * esse terminal fornecerá a ID do usuário, que precisa ser exclusiva para uma conta e não deve conter informações pessoais identificáveis
-* o **/logout** ponto final (opcional)
+* o ponto de extremidade **/logout** (opcional)
    * A Autenticação do Adobe Pass redirecionará para esse ponto de extremidade, fornecerá ao MVPD um URI de retorno de redirecionamento; nesse ponto de extremidade, o MVPD pode apagar os cookies na máquina cliente ou aplicar qualquer lógica desejada para logout
 * é altamente recomendável ter suporte para clientes autorizados (aplicativos clientes que não acionam uma página de autorização do usuário)
 * também precisaremos de:
-   * **clientID** e **segredo do cliente** para as configurações de integração
-   * **tempo de vida** Valores de (TTL) para o token de atualização e o token de acesso
+   * **clientID** e **client secret** para as configurações de integração
+   * Valores de **tempo de vida** (TTL) para o token de atualização e o token de acesso
    * Podemos fornecer ao MVPD um URI de retorno de chamada de autorização e de retorno de chamada de logout. Além disso, se necessário, podemos fornecer aos MVPDs uma lista de IPs que devem ser incluídos na lista de permissões nas configurações do firewall.
 
 
@@ -102,7 +102,7 @@ Um fluxo de autorização típico executa uma troca do token de atualização sa
 
 A migração de integrações de SAML para OAuth 2.0 será executada pelo Adobe e pelo MVPD. Não há necessidade de qualquer mudança técnica no lado do programador, embora o programador possa querer verificar/testar o co-branding na página de login do MVPD. Do ponto de vista do MVPD, os endpoints e outras informações solicitadas nos requisitos do Oauth 2.0 são necessários.
 
-Para **preservar SSO**, os usuários que já têm um token de autenticação obtido por SAML ainda serão considerados autenticados e suas solicitações serão roteadas por meio da integração SAML antiga.
+Para **preservar SSO**, os usuários que já têm um token de autenticação obtido via SAML ainda serão considerados autenticados e suas solicitações serão roteadas por meio da integração SAML antiga.
 
 Do ponto de vista técnico:
 

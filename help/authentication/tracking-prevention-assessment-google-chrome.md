@@ -1,7 +1,8 @@
 ---
-title: Avaliação de prevenção de rastreamento no Google Chrome
-description: Avaliação de prevenção de rastreamento no Google Chrome
-source-git-commit: 579ce868b6ee94e1854bbc51145fc7840268db26
+title: Avaliação de prevenção de rastreamento Google Chrome
+description: Avaliação de prevenção de rastreamento Google Chrome
+exl-id: f3d552da-2fd7-4ac8-9f82-876625af5d47
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '650'
 ht-degree: 0%
@@ -24,16 +25,16 @@ A avaliação é realizada para aplicativos da TV Everywhere (TVE) em execução
 
 Veja abaixo uma lista de recursos agregados do site do desenvolvedor do Google e também do blog oficial que recomendamos que nossos clientes consultem:
 
-* [A próxima etapa para a eliminação gradual de cookies de terceiros no Chrome](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
-* [Documentação do desenvolvedor para sandbox de privacidade](https://developers.google.com/privacy-sandbox)
-* [Preparar para restrições de cookies de terceiros](https://developers.google.com/privacy-sandbox/3pcd)
-* [Preparar-se para a eliminação de cookies de terceiros](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
-* [Preparação para o fim de cookies de terceiros](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
+* [A próxima etapa para eliminar os cookies de terceiros no Chrome](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
+* [Documentação do desenvolvedor para a sandbox de privacidade](https://developers.google.com/privacy-sandbox)
+* [Preparar para restrições a cookies de terceiros](https://developers.google.com/privacy-sandbox/3pcd)
+* [Preparar para a eliminação de cookies de terceiros](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
+* [Preparando para o fim de cookies de terceiros](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
 * [Cookies de terceiros restritos por padrão a 1% dos usuários do Chrome](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
 
 ## Linha do tempo
 
-Como um breve resumo, o Google Chrome iniciou os testes [Proteção contra Rastreamento](https://privacysandbox.com/), um novo recurso que limita o rastreamento entre sites que afeta todos os cookies de terceiros.
+Como um breve resumo, o Google Chrome começou a testar a [Proteção de rastreamento](https://privacysandbox.com/), um novo recurso que limita o rastreamento entre sites que afeta todos os cookies de terceiros.
 
 Inicialmente, esta medida teve início no início de 2024 e afetou cerca de 1 % dos seus utilizadores e o seu plano (provisório) consiste em prorrogar esta medida até 100 % dos utilizadores, a partir do terceiro trimestre de 2024.
 
@@ -41,11 +42,11 @@ Inicialmente, esta medida teve início no início de 2024 e afetou cerca de 1 % 
 
 A Google publicou um documento agregando seu manual recomendado para se preparar para o fim da fase de cookies de terceiros no seguinte link: https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout.
 
-Seguimos esse manual para a avaliação de aplicativos da TV Everywhere (TVE) em execução no navegador Google Chrome e que estão usando o SDK JavaScript v4 do Adobe Pass Access Enabler para integração com os serviços de back-end de autenticação da Adobe Pass.
+Seguimos esse manual para a avaliação de aplicativos da TV Everywhere (TVE) em execução no navegador Google Chrome e que estão usando o SDK JavaScript v4 do Adobe Pass Access Enabler para integrar-se aos serviços de back-end de autenticação da Adobe Pass.
 
 ### Conclusões
 
-Com base em nossos testes, simulando as atualizações futuras do Google Chrome, os principais fluxos de negócios da TVE **continuará a funcionar conforme esperado**.
+Com base em nossos testes, que simulam as próximas atualizações do Google Chrome, os fluxos comerciais **principais da TVE continuarão a funcionar conforme esperado**.
 
 No entanto, é crucial reconhecer a estratégia mais ampla da Google, que envolve não apenas a descontinuação de cookies de terceiros, mas também o particionamento de armazenamento de terceiros.
 
@@ -53,7 +54,7 @@ Consequentemente, os usuários do Chrome enfrentarão interrupções com os recu
 
 ## Chamada para autoavaliação
 
-Recomendamos que nossos clientes conduzam avaliações semelhantes de forma proativa para identificar possíveis problemas com bastante antecedência e se familiarizarem com a experiência do usuário revisada do Google Chrome.
+Recomendamos que nossos clientes conduzam avaliações semelhantes de forma proativa para identificar problemas potenciais com bastante antecedência e se familiarizarem com a experiência do usuário revisada do Google Chrome.
 
 Essa avaliação deve abranger serviços primários e de terceiros, especialmente no que diz respeito à integração do SDK v4 do JavaScript do Adobe Pass Access Enabler.
 
@@ -63,19 +64,19 @@ Para obter ajuda para desenvolver seu plano de autoavaliação, consulte as seç
 
 ### Auditoria de uso de cookies
 
-A partir do Chrome 118, a variável [Problemas do DevTools](https://developer.chrome.com/docs/devtools/issues/) A guia destaca os cookies possivelmente afetados com a seguinte mensagem: `Cookie sent in cross-site context will be blocked in future Chrome versions`.
+A partir do Chrome 118, a guia [DevTools Issues](https://developer.chrome.com/docs/devtools/issues/) destaca cookies potencialmente afetados com a seguinte mensagem: `Cookie sent in cross-site context will be blocked in future Chrome versions`.
 
-Os cookies marcados para uso de terceiros podem ser identificados por seus `SameSite=None` valor do atributo.
+Os cookies marcados para uso de terceiros podem ser identificados por seu valor de atributo `SameSite=None`.
 
 Siga este link para ler mais: https://developers.google.com/privacy-sandbox/3pcd/prepare/audit-cookies
 
 ### Ensaio de ruptura
 
-Para testar a quebra, inicie o Chrome usando o `--test-third-party-cookie-phaseout` sinalizador de linha de comando ou do Chrome 118 habilitar `#test-third-party-cookie-phaseout` in `chrome://flags/`.
+Para testar a quebra, inicie o Chrome usando o sinalizador de linha de comando `--test-third-party-cookie-phaseout` ou a partir do Chrome 118 habilite `#test-third-party-cookie-phaseout` em `chrome://flags/`.
 
 Isso configurará o Google Chrome para bloquear cookies de terceiros e garantir que a funcionalidade futura esteja ativa, a fim de simular melhor o estado após o encerramento.
 
-Vale a pena aprofundar as especificações técnicas para os seguintes sinalizadores do Chrome:
+Vale a pena aprofundar as especificações técnicas dos seguintes sinalizadores do Chrome:
 
 * `#test-third-party-cookie-phaseout`
 * `#third-party-storage-partitioning`
@@ -86,7 +87,7 @@ Siga este link para ler mais: https://developers.google.com/privacy-sandbox/3pcd
 
 ### Firefox
 
-O Firefox tinha uma implantação do mecanismo chamado: `Enhanced Tracking Protection` alguns anos atrás.
+O Firefox fez uma implantação de seu mecanismo chamado: `Enhanced Tracking Protection` alguns anos atrás.
 
 Veja abaixo alguns recursos úteis do Firefox:
 
@@ -95,7 +96,7 @@ Veja abaixo alguns recursos úteis do Firefox:
 
 ### Safari
 
-O Safari teve uma implantação de seu mecanismo chamado: `Intelligent Tracking Prevention` alguns anos atrás.
+O Safari teve uma implantação de seu mecanismo chamada: `Intelligent Tracking Prevention` alguns anos atrás.
 
 Veja abaixo alguns recursos úteis do Safari:
 

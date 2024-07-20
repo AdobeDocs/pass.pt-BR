@@ -4,7 +4,7 @@ description: Caminho de atualização do AccessEnabler iOS/tvOS 3.7.0
 exl-id: f15c7414-ec9b-4e21-b457-1ecf59f47441
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 </br>
 
-Alterações no armazenamento de chaveiros do [nova versão do AccessEnabler 3.7.0](/help/authentication/authn-rn-ios-tvos-370.md) são incompatíveis com a implementação do armazenamento Keychain a partir da versão AccessEnabler anterior à 3.7.0.
+As alterações de armazenamento de chaveiros da [nova versão do AccessEnabler 3.7.0](/help/authentication/authn-rn-ios-tvos-370.md) são incompatíveis com a implementação de armazenamento de chaveiros da versão do AccessEnabler anterior à 3.7.0.
 
-O caminho de atualização de um aplicativo que adota a nova versão 3.7.0 do AccessEnabler migrará todos os tokens de versões anteriores do armazenamento de Chaves. Portanto, os usuários finais **não deve ocorrer perda de sessões de autenticação/autorização** durante o processo de atualização da estrutura do AccessEnabler.
+O caminho de atualização de um aplicativo que adota a nova versão 3.7.0 do AccessEnabler migrará todos os tokens de versões anteriores do armazenamento de Chaves. Portanto, os usuários finais **não devem sofrer perda de sessões de autenticação/autorização** durante o processo de atualização da estrutura AccessEnabler.
 
 ## Limitações conhecidas
 

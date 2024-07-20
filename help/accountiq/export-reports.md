@@ -1,7 +1,8 @@
 ---
 title: Exportar relatórios do painel de dados
 description: Saiba como exportar relatórios do painel de dados no painel.
-source-git-commit: 88b11527b2a432c2cd27bf9e29fd286969036eb0
+exl-id: ee76bb87-6cbf-4150-bcdd-31ffae2c0571
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '239'
 ht-degree: 0%
@@ -20,19 +21,19 @@ Você pode exportar os seguintes relatórios do painel de dados:
 Siga as etapas para exportar relatórios do painel de dados para um segmento específico.
 
 1. Faça logon com suas credenciais.
-1. Selecione um segmento e um intervalo de tempo necessários no painel Segmento e intervalo de tempo. Exibir [segmentos e intervalo de tempo](segments-timeinterval.md#segment-selection) para obter mais informações.
+1. Selecione um segmento e um intervalo de tempo necessários no painel Segmento e intervalo de tempo. Exiba [segmentos e intervalo de tempo](segments-timeinterval.md#segment-selection) para obter mais informações.
 
-   Se necessário, consulte as instruções de [criação de um segmento](work-with-segments.md#create-new-segment) ou [editar um segmento](work-with-segments.md#edit-segment).
+   Se necessário, consulte as instruções para [criar um segmento](work-with-segments.md#create-new-segment) ou [editar um segmento](work-with-segments.md#edit-segment).
 
 1. Navegue até o painel de dados que deseja exportar.
 
-   Por exemplo, considere **Número de contas e uso por nível de probabilidade de compartilhamento** como mostrado abaixo.
+   Por exemplo, considere o painel **Número de contas e uso por nível de probabilidade de compartilhamento**, conforme mostrado abaixo.
 
-   ![Exportar Número de contas e uso por nível de probabilidade de compartilhamento](assets/export-report.png){align="left"}
+   ![Exportar número de contas e uso por nível de probabilidade de compartilhamento](assets/export-report.png){align="left"}
 
-   *Exportar Número de contas e uso por nível de probabilidade de compartilhamento*
+   *Exportar número de contas e uso por nível de probabilidade de compartilhamento*
 
-1. Selecionar **[!UICONTROL Export]** localizado no canto superior direito do painel de dados.
+1. Selecione **[!UICONTROL Export]**, localizado no canto superior direito do painel de dados.
 
 O arquivo será baixado automaticamente no computador local. O sistema salva os dados para o número de contas e uso compartilhando o nível de probabilidade como um .csv.
 

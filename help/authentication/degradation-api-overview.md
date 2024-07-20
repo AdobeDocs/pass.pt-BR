@@ -16,14 +16,14 @@ ht-degree: 0%
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 >Para usar a API de degradação, é necessário:
 >- solicite à equipe de suporte uma declaração de software para seu aplicativo registrado
->- obter um token de acesso com base em [Registro de cliente dinâmico](dynamic-client-registration.md)
+>- obter um token de acesso com base no [Registro de Cliente Dinâmico](dynamic-client-registration.md)
 > 
 
 >[!NOTE]
 >
 >Para usar a API de degradação, é necessário:
 >- solicite à equipe de suporte uma declaração de software para seu aplicativo registrado
->- obter um token de acesso com base em [Registro de cliente dinâmico](dynamic-client-registration.md)
+>- obter um token de acesso com base no [Registro de Cliente Dinâmico](dynamic-client-registration.md)
 > 
 
 ## Informações gerais {#general_info}

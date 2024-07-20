@@ -1,13 +1,13 @@
 ---
 title: Notas de versão do Adobe Pass Concurrency Monitoring 2.2.2
 description: Notas de versão do Adobe Pass Concurrency Monitoring 2.2.2
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 32a333bf-557e-48d0-bfcd-770f3879fe34
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '70'
-ht-degree: 0%
+source-wordcount: '77'
+ht-degree: 7%
 
 ---
-
 
 # Notas de versão do Adobe Pass Concurrency Monitoring 2.2.2 {#cm-222}
 
@@ -22,8 +22,8 @@ Data de lançamento: 27/08/2015
 
 ## Correções de erros {#bug-fixes}
 
-N/D
+N/A
 
 ## Problemas conhecidos {#known-issues}
 
-N/D
+N/A

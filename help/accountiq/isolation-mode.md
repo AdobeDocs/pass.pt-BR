@@ -1,13 +1,13 @@
 ---
 title: MVPDs do modo de isolamento
 description: Saiba mais sobre os MVPDs do modo de isolamento para programadores do TV Everywhere
-source-git-commit: 5639319ce8915f0c33d927ca9554c405b3b2e87d
+exl-id: 7ffe4ce3-e9cb-4382-a421-bb57d1927b53
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%
 
 ---
-
 
 # MVPDs de modo de isolamento para programadores do TV Everywhere {#isolation-mode-tve}
 
@@ -21,7 +21,7 @@ Veja um exemplo:
 
 ![](assets/isolation-diff-new.png)
 
-*Os MVPDs do Modo de Isolamento identificam quatro assinantes diferentes em vez de dois*
+*MVPDs de Modo de Isolamento identifica quatro assinantes diferentes em vez de dois*
 
 * Se um Assinante B de um MVPD de Modo de Isolamento (como Xfinity) acessar o conteúdo oferecido por dois programadores diferentes usando o mesmo dispositivo, o MVPD associará identificadores diferentes às duas tentativas de acesso diferentes. Parece que há dois assinantes diferentes acessando o conteúdo para os programadores (L e M na figura).
 
@@ -45,7 +45,7 @@ O sistema opera automaticamente no Modo de isolamento quando o segmento selecion
 >
 > O comportamento no Modo de Isolamento é incompatível com o modo padrão, o Modo de Isolamento MVPD não pode ser misturado com outros MVPDs e vice-versa.
 
-Para criar um segmento que seja analisado no Modo de isolamento, arraste o MVPD do Modo de isolamento, como **Xfinity**, para a seção MVPDs da definição de segmento.
+Para criar um segmento que seja analisado no Modo de Isolamento, arraste o MVPD do Modo de Isolamento, como **Xfinity**, para a seção MVPDs da definição de segmento.
 
 >[!NOTE]
 >
@@ -57,7 +57,7 @@ Para criar um segmento que seja analisado no Modo de isolamento, arraste o MVPD 
 
 >[!IMPORTANT]
 >
-> O compartilhamento de conta é mais relevante quando medido para transmissão em todos os aplicativos do programador. Esperar menos **Pontuações de compartilhamento** e alguma variação nas métricas quando estiver no Modo de isolamento.
+> O compartilhamento de conta é mais relevante quando medido para transmissão em todos os aplicativos do programador. Espere **Pontuações de Compartilhamento** mais baixas e alguma variação nas métricas no Modo de Isolamento.
 
 ![](assets/aggregate-sharing-isolation.png)
 

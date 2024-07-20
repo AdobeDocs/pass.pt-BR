@@ -1,10 +1,10 @@
 ---
 title: Notas de versão do Authentication iOS / tvOS 3.8.1
 description: Notas de versão do Authentication iOS / tvOS 3.8.1
-exl-id: c403a80b-717c-4274-8d86-d96b7e81e624
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: e1e24b47-e5b7-4706-8690-ad71dee35cb8
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '89'
+source-wordcount: '96'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,6 @@ Data de lançamento: 05/26/2023
 
 Adiciona melhorias internas de arquitetura para a solução de gerenciamento de armazenamento.
 
-## Lançar pacote {#rel=pkg-iostvos381}
+## Liberar o pacote {#rel=pkg-iostvos381}
 
-É possível baixar o SDK v3.8.1 do iOS/tvOS em [aqui](https://tve.zendesk.com/hc/en-us/articles/204963209).
+Você pode baixar o iOS/tvOS SDK v3.8.1 de [aqui](https://tve.zendesk.com/hc/en-us/articles/204963209).

@@ -4,7 +4,7 @@ description: Autorização MVPD
 exl-id: 215780e4-12b6-4ba6-8377-4d21b63b6975
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '579'
+source-wordcount: '584'
 ht-degree: 0%
 
 ---
@@ -23,9 +23,9 @@ Para solicitações AuthZ, o endpoint de autorização deve ser capaz de process
 
 * **Uid**. A ID de usuário recebida da etapa de autenticação.
 
-* **ID do recurso**. Uma string que identifica um determinado recurso de conteúdo. Essa ID de recurso é especificada pelo Programador e o MVPD deve reforçar as regras de negócios desses recursos (por exemplo, verificando se o usuário está inscrito em um determinado canal).
+* **Identificação do recurso**. Uma string que identifica um determinado recurso de conteúdo. Essa ID de recurso é especificada pelo Programador e o MVPD deve reforçar as regras de negócios desses recursos (por exemplo, verificando se o usuário está inscrito em um determinado canal).
 
-Além de determinar se o usuário está autorizado, a resposta deve incluir o TTL (time-to-live) dessa autorização, ou seja, quando a autorização expira. Se o TTL não for definido, a solicitação AuthZ falhará.  Por esse motivo, **o TTL é uma definição de configuração obrigatória no lado da Autenticação do Adobe Pass**, a fim de abranger o caso em que um MVPD não inclua o TTL no seu pedido.
+Além de determinar se o usuário está autorizado, a resposta deve incluir o TTL (time-to-live) dessa autorização, ou seja, quando a autorização expira. Se o TTL não for definido, a solicitação AuthZ falhará.  Por esse motivo, **o TTL é uma configuração obrigatória no lado da Autenticação do Adobe Pass**, para abranger o caso quando um MVPD não incluir o TTL em sua solicitação.
 
 ## A solicitação de autorização {#authz-req}
 
@@ -106,15 +106,15 @@ A resposta à solicitação de AuthZ vem depois que o MVPD avalia a solicitaçã
 
 Esta é uma lista de Obrigações de NEGAÇÃO que a Autenticação do Adobe Pass suporta e permite que os Programadores cumpram:
 
-* **urn:tve:xacml:2.0:obligations:restrict-pc** - O Assinante não passou em uma verificação de controle dos pais e o SP deve tomar as medidas apropriadas para restringir o acesso a esse conteúdo.
+* **urn:tve:xacml:2.0:obligations:restrict-pc** - O Assinante falhou em uma verificação de controle dos pais e o SP deve tomar as medidas apropriadas para restringir o acesso a esse conteúdo.
 
-* **urn:tve:xacml:2.0:obligations:atualização** - O Assinante não tem um nível de assinatura apropriado.  É necessário atualizar a assinatura para acessar o conteúdo.
+* **urn:tve:xacml:2.0:obligations:upgrade** - O Assinante não tem um nível de assinatura apropriado.  É necessário atualizar a assinatura para acessar o conteúdo.
 
-A Autenticação do Adobe Pass oferece suporte ao seguinte **PERMITIR** Obrigações e permite aos programadores cumprirem-nas:
+A Autenticação do Adobe Pass dá suporte às seguintes Obrigações de **PERMIT** e permite que os Programadores as cumpram:
 
-* **urn:cablelabs:olca:1.0:obligations:log** - A Adobe Pass registra a transação e pode disponibilizá-la por meio do mecanismo de relatório acordado.
+* **urn:cablelabs:olca:1.0:obligations:log** - a Adobe Pass registra a transação e pode disponibilizá-la por meio do mecanismo de relatório acordado.
 
-* **urn:cablelabs:olca:1.0:obligations:reautenticação** - A Autenticação Adobe Pass atualiza a autorização novamente em n segundos (especificado como um argumento para a Obrigação por meio de uma Atribuição XACML - consulte Especificação principal XACML , Seção 5.46).
+* **urn:cablelabs:olca:1.0:obligations:re-authz** - A Autenticação Adobe Pass atualiza a autorização novamente em n segundos (especificado como um argumento para a Obrigação por meio de um AttributeAssignment XACML - consulte Especificação principal XACML, Seção 5.46).
 
 <!--
 >![RelatedInformation]

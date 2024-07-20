@@ -1,14 +1,13 @@
 ---
 title: Metadados personalizados
 description: Metadados personalizados
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 0cfd1158-8c6c-47c2-b838-5490ff4bf0ce
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '367'
 ht-degree: 0%
 
 ---
-
-
 
 # Metadados personalizados {#cm}
 
@@ -40,10 +39,9 @@ Com base nesses valores/chaves que estão sendo enviados, regras diferentes pode
 
 1. O cliente decide que gostaria de enviar o grupo de parâmetros, que terá como valores &quot;SPORTS&quot; e &quot;KIDS&quot;.
 1. Em seguida, o aplicativo precisaria fazer isso:
-   * Para canais esportivos, na inicialização do stream, o aplicativo seria enviado ***type=ESPORTES*** como parâmetro de consulta
-   * Para canais com conteúdo relacionado a crianças, na inicialização do fluxo, o aplicativo seria enviado ***type=KIDS*** como parâmetro de consulta
+   * Para canais de esportes, na inicialização do fluxo, o aplicativo enviaria ***type=SPORTS*** como um parâmetro de consulta
+   * Para canais com conteúdo relacionado a crianças, na inicialização do fluxo, o aplicativo enviaria ***type=KIDS*** como um parâmetro de consulta
 1. Assim, uma política como essa poderia ser definida:
    * `GROUP by type HAVING COUNT(streamID) < 4) IF type=KIDS`
    * `GROUP by type HAVING COUNT(streamID) < 2) IF type=SPORTS`
 1. Isso basicamente significa que, quando um usuário está assistindo a esportes, ele não pode fazer isso em mais de um dispositivo. No entanto, quando o usuário assiste a conteúdo infantil, a visualização é permitida em no máximo três dispositivos.
-

@@ -1,7 +1,8 @@
 ---
 title: Revisar e enviar alterações
 description: Saiba como revisar e enviar alterações no painel da TVE.
-source-git-commit: b81cc7498a8035f4c274ba25952dcd1dcd8d71f5
+exl-id: 2f29712e-7b3f-472a-a36f-32780bec1508
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
@@ -24,34 +25,32 @@ Siga estas etapas para revisar e enviar alterações.
 
    *Caixa de notificação Revisar e enviar alterações*
 
-1. Selecionar **Revisar alterações** do **revisar e enviar alterações** caixa de notificação.
+1. Selecione **Revisar alterações** na caixa de notificação **revisar e enviar alterações**.
 
-1. Digite uma breve descrição da alteração no **Descrição da configuração** para rastrear e entender efetivamente a finalidade de cada alteração.
+1. Digite uma breve descrição da alteração em **Descrição da configuração** para acompanhar e entender com eficácia a finalidade de cada alteração.
 
-   ![Adicionar uma descrição da configuração](assets/add-conf-desc.png)
+   ![Adicionar uma Descrição de Configuração](assets/add-conf-desc.png)
 
-   *Adicionar uma descrição da configuração*
+   *Adicionar uma Descrição de Configuração*
 
-1. Navegue até a **Alterações de configuração** para exibir um resumo das alterações.
+1. Navegue até a seção **Alterações de Configuração** para exibir um resumo das alterações.
 
 1. Passe o mouse sobre a alteração que deseja revisar.
 
-1. Selecionar **Exibir** para revisar os valores anteriores e novos associados a uma alteração de configuração.
+1. Selecione **Exibir** para revisar os valores novos e anteriores associados a uma alteração de configuração.
 
    ![Exibir alterações de configuração](assets/view-configuration-changes.png)
 
    *Exibir alterações de configuração*
 
-1. Depois de revisar todas as alterações e tudo parecer correto, selecione **Enviar alterações** para aplicar a configuração atualizada ao servidor.
+1. Depois de ter revisado todas as alterações e tudo parecer correto, selecione **Enviar alterações** para aplicar a configuração atualizada ao servidor.
 
    >[!NOTE]
    >
-   >A variável **Enviar alterações** O botão fica ativo somente depois de adicionar um **Descrição da configuração**.
+   >O botão **Enviar alterações** fica ativo somente após adicionar uma **Descrição de Configuração**.
 
    ![Enviar alterações](assets/push-changes.png)
 
    *Enviar alterações*
 
    Como alternativa, você pode selecionar **Ignorar alterações** se quiser reverter todas as alterações de configuração listadas.
-
-

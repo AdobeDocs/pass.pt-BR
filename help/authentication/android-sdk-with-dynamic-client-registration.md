@@ -1,15 +1,15 @@
 ---
-title: Android SDK com registro de cliente dinâmico
-description: Android SDK com registro de cliente dinâmico
+title: SDK do Android com registro dinâmico do cliente
+description: SDK do Android com registro dinâmico do cliente
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1294'
+source-wordcount: '1277'
 ht-degree: 0%
 
 ---
 
-# Android SDK com registro de cliente dinâmico {#android-sdk-with-dynamic-client-registration}
+# SDK do Android com registro dinâmico do cliente {#android-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Introdução {#Intro}
 
-O Android AccessEnabler SDK para Android foi modificado para habilitar a Autenticação sem usar cookies de sessão. À medida que mais e mais navegadores restringem o acesso a cookies, outro método precisa ser usado para permitir a autenticação.
+O SDK do Android AccessEnabler para Android foi modificado para habilitar a Autenticação sem usar cookies de sessão. À medida que mais e mais navegadores restringem o acesso a cookies, outro método precisa ser usado para permitir a autenticação.
 
 Para o Android, o uso das Guias personalizadas do Chrome restringe o acesso a cookies de outros aplicativos.
 
@@ -28,24 +28,24 @@ Para o Android, o uso das Guias personalizadas do Chrome restringe o acesso a co
 
 >[!NOTE]
 >
->Para versões mais antigas do Android sem suporte a Guias personalizadas do Chrome, a autenticação do WebView será semelhante à das versões mais antigas do SDK AccessEnabler.
+>Para versões mais antigas do Android sem o suporte a Guias personalizadas do Chrome, o usará a autenticação do WebView semelhante às versões mais antigas do SDK AccessEnabler.
 
 
 ## Registro de cliente dinâmico {#DCR}
 
-O Android SDK v3.0+ usará o procedimento de Registro de cliente dinâmico conforme definido em [Registro de cliente dinâmico](/help/authentication/dynamic-client-registration.md).
+O Android SDK v3.0+ usará o procedimento Registro de Cliente Dinâmico conforme definido em [Registro de Cliente Dinâmico](/help/authentication/dynamic-client-registration.md).
 
 
 ## Demonstração de recursos {#Demo}
 
-Assista [este webinário](https://my.adobeconnect.com/pzkp8ujrigg1/) que fornece mais contexto do recurso e contém uma demonstração sobre como gerenciar as instruções de software usando o Painel TVE e como testar as geradas usando um aplicativo de demonstração fornecido pelo Adobe como parte do Android SDK.
+Assista a [este webinário](https://my.adobeconnect.com/pzkp8ujrigg1/), que fornece mais contexto sobre o recurso e contém uma demonstração sobre como gerenciar as instruções de software usando o Painel TVE e como testar as geradas usando um aplicativo de demonstração fornecido pelo Adobe como parte do SDK do Android.
 
 ## Alterações na API {#API}
 
 
 ### Factory.getInstance
 
-**Descrição:** Instancia o objeto do Access Enabler. Deve haver uma única instância do Access Enabler por instância do aplicativo.
+**Descrição:** Instancia o objeto do Ativador de Acesso. Deve haver uma única instância do Access Enabler por instância do aplicativo.
 
 | Chamada de API: construtor |
 | --- |
@@ -56,9 +56,9 @@ Assista [este webinário](https://my.adobeconnect.com/pzkp8ujrigg1/) que fornece
 
 **Parâmetros:**
 
-- *appContext*: Contexto de aplicativo do Android
-- softwareStatement: valor obtido do TVE Dashboard ou *null* se &quot;software\_statement&quot; estiver definido em strings.xml
-- redirectUrl : url exclusivo, um dos domínios na ordem inversa que foi explicitamente adicionado no Painel TVE ou *null* se &quot;redirect\_uri&quot; estiver definido em strings.xml
+- *appContext*: contexto de aplicativo do Android
+- softwareStatement: valor obtido do Painel TVE ou *null* se &quot;software\_statement&quot; estiver definido em strings.xml
+- redirectUrl : url exclusiva, um dos domínios na ordem inversa que foi explicitamente adicionado no Painel TVE ou *null* se &quot;redirect\_uri&quot; estiver definido em strings.xml
 
 Observação: um softwareStatement ou um redirectUrl inválido fará com que o aplicativo não inicialize o AccessEnabler ou não registre o aplicativo para Autenticação e autorização do Adobe Pass
 </br>
@@ -71,9 +71,9 @@ Observação: o parâmetro redirectUrl ou redirect\_uri em strings.xml deve ser 
 
 A resposta do servidor contém uma lista de MVPDs juntamente com algumas informações de configuração anexadas à identidade do Canal. A resposta do servidor é usada internamente pelo código Access Enabler. Somente o status da operação (ou seja, SUCCESS/FAIL) é apresentado ao seu aplicativo por meio do retorno de chamada setRequestorComplete().
 
-Se a variável *urls* não for usado, a chamada de rede resultante será direcionada ao URL do provedor de serviços padrão: o ambiente de Liberação/Produção do Adobe.
+Se o parâmetro *urls* não for usado, a chamada de rede resultante será direcionada ao URL do provedor de serviços padrão: o ambiente de Liberação/Produção do Adobe.
 
-Se um valor for fornecido para a variável *urls* parâmetro, a chamada de rede resultante será direcionada a todos os URLs fornecidos na variável *urls* parâmetro. Todas as solicitações de configuração são acionadas simultaneamente em threads separados. O primeiro respondente tem prioridade ao compilar a lista de MVPDs. Para cada MVPD na lista, o Ativador de acesso lembra o URL do provedor de serviços associado. Todas as solicitações de direito subsequentes são direcionadas ao URL associado ao provedor de serviços que foi emparelhado com o MVPD de destino durante a fase de configuração.
+Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante será direcionada a todas as URLs fornecidas no parâmetro *urls*. Todas as solicitações de configuração são acionadas simultaneamente em threads separados. O primeiro respondente tem prioridade ao compilar a lista de MVPDs. Para cada MVPD na lista, o Ativador de acesso lembra o URL do provedor de serviços associado. Todas as solicitações de direito subsequentes são direcionadas ao URL associado ao provedor de serviços que foi emparelhado com o MVPD de destino durante a fase de configuração.
 
 | Chamada de API: configuração do solicitante |
 | --- |
@@ -100,7 +100,7 @@ Obsoleto:
 
 ### logout
 
-**Descrição:** Use esse método para iniciar o fluxo de logout. O logout é o resultado de uma série de operações de redirecionamento HTTP devido ao fato de que o usuário precisa ser desconectado dos servidores de Autenticação do Adobe Pass e também dos servidores do MVPD. Como resultado, esse fluxo abrirá uma janela ChromeCustomTab para executar o logout.
+**Descrição:** Use este método para iniciar o fluxo de logout. O logout é o resultado de uma série de operações de redirecionamento HTTP devido ao fato de que o usuário precisa ser desconectado dos servidores de Autenticação do Adobe Pass e também dos servidores do MVPD. Como resultado, esse fluxo abrirá uma janela ChromeCustomTab para executar o logout.
 
 | Chamada de API: iniciar o fluxo de logout |
 | --- |
@@ -115,7 +115,7 @@ Obsoleto:
 
 ## Fluxo de implementação do programador {#Progr}
 
-### **1. Registrar aplicativo**
+### **1. Registrar Aplicativo**
 
 a. Obter software\_statement e redirect\_uri da Adobe Pass ( Painel TVE )
 
@@ -128,7 +128,8 @@ Em strings.xml, adicione :
 <string name="redirect_uri">application_url.com</string>
 ```
 
-Chamar AccessEnabler.getInstance(appContext,softwareStatement, redirectUrl)
+Chame AccessEnabler.getInstance(appContext,softwareStatement,
+redirectUrl)
 
 
 ### 2. Configurar Aplicativo
@@ -137,9 +138,9 @@ a. setRequestor(requestor\_id)
 
 O SDK executará as seguintes operações:
 
-- registrar aplicativo: usando **software\_statement**, o SDK obterá uma **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Essas informações serão armazenadas no armazenamento interno do aplicativo.
+- registrar aplicativo: usando **software\_statement**, o SDK obterá um **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Essas informações serão armazenadas no armazenamento interno do aplicativo.
 
-- obter um **access\_token** usando client\_id, client\_secret e grant\_type=&quot;client\_credentials&quot;. Esse access\_token será usado em cada chamada feita pelo SDK para servidores da Adobe Pass
+- obtenha um **access\_token** usando client\_id, client\_secret e grant\_type=&quot;client\_credentials&quot;. Esse access\_token será usado em cada chamada feita pelo SDK para servidores da Adobe Pass
 
 **Respostas de Erro de Token:**
 
@@ -149,14 +150,14 @@ O SDK executará as seguintes operações:
 | HTTP 400 (Solicitação inválida) | {&quot;error&quot;: &quot;invalid\_client&quot;} | Falha na autenticação do cliente porque o cliente era desconhecido. O SDK DEVE se registrar no servidor de autorização novamente. |
 | HTTP 400 (Solicitação inválida) | {&quot;error&quot;: &quot;unauthorized\_client&quot;} | O cliente autenticado não está autorizado a usar este tipo de concessão de autorização. |
 
-- no caso de um MVPD exigir Autenticação passiva, uma Guia personalizada do Chrome será aberta para executar passiva com esse MVPD e será fechada ao concluir
+- caso um MVPD exija Autenticação Passiva, uma Guia Personalizada do Chrome será aberta para execução passiva com esse MVPD e será fechada ao concluir
 
 b. checkAuthentication()
 
 - true : ir para Autorização
 - false : ir para Selecionar MVPD
 
-c. getAuthentication : o SDK incluirá **access_token** em parâmetros de chamada
+c. getAuthentication: o SDK incluirá **access_token** nos parâmetros de chamada
 
 - mvpd lembrado : ir para setSelectedProvider(mvpd_id)
 - mvpd não selecionado : displayProviderDialog
@@ -169,18 +170,19 @@ d. setSelectedProvider
 - logon cancelado : redefinir seleção de MVPD
 - O esquema de URL é estabelecido como &quot;adobepass://redirect_uri&quot; para capturar quando a autenticação é concluída
 
-e. get/checkAuthorization : o SDK incluirá **access_token** no cabeçalho como Autorização: Portador **access_token**
+e. get/checkAuthorization: o SDK incluirá **access_token** no cabeçalho como Autorização: Portador **access_token**
 
-- se a autorização for bem-sucedida, será feita uma chamada para a obtenção do token de mídia
+- se a autorização for bem-sucedida, será feita uma chamada para obter a
+token de mídia
 
 f. logout:
 
 - O SDK excluirá um token válido para o solicitante atual (as autenticações obtidas por outros aplicativos e não por meio do SSO permanecerão válidas)
-- O SDK abrirá as Guias personalizadas do Chrome para alcançar o ponto de extremidade de logout mvpd_id. Depois de concluído, as guias personalizadas do Chrome serão fechadas
+- O SDK abrirá as Guias personalizadas do Chrome para alcançar o ponto de extremidade de logout mvpd_id. Depois de concluídas, as Guias personalizadas do Chrome serão fechadas
 - O esquema de URL é estabelecido como &quot;adobepass://logout&quot; para capturar o momento em que o logout é concluído
 - logout acionará um sendTrackingData(new Event(EVENT_LOGOUT,USER_NOT_AUTHENTICATED_ERROR) e um retorno de chamada : setAuthenticationStatus(0,&quot;Logout&quot;)
 
-**Nota:** já que cada chamada requer uma **access_token,** os possíveis códigos de erro abaixo são tratados no SDK.
+**Observação:** como cada chamada requer um **access_token,** possíveis códigos de erro abaixo são tratados no SDK.
 
 
 | Respostas de erro | | |

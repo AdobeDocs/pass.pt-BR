@@ -4,12 +4,12 @@ description: Suporte ao WKWebView no iOS SDK 3.1+
 exl-id: 90062be0-1a0a-44ae-8d8e-f4d97a92b17a
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '311'
 ht-degree: 0%
 
 ---
 
-# Suporte ao WKWebView no iOS SDK 3.1+ {#wkwebview-support-on-ios-sdk-3.1}
+# Suporte a WKWebView no iOS SDK 3.1+ {#wkwebview-support-on-ios-sdk-3.1}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 </br>
 
-**Devido à descontinuação do Apple UIWebView no iOS, atualizamos o iOS SDK 3.1 com suporte para WKWebView.**
+**Devido à descontinuação do UIWebView no iOS pelo Apple, atualizamos o iOS SDK 3.1 com suporte para WKWebView.**
 
 ## Compatibilidade {#compatibility}
 

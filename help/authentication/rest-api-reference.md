@@ -26,23 +26,23 @@ A API REST de Autenticação do Adobe Pass é regida por um [Mecanismo de limita
 >
 > As APIs fornecidas nesses serviços podem retornar respostas em XML ou JSON (para APIs que retornam uma resposta). Há três maneiras diferentes de especificar o formato de resposta na solicitação:
 >
->* Definir cabeçalho HTTP Accept para `application/xml` ou `application/json`.
+>* Defina o Cabeçalho Aceitar HTTP como `application/xml` ou `application/json`.
 >* Na carga da solicitação, especifique o parâmetro `format=xml` ou `format=json`.
->* Chamar o ponto de extremidade do serviço Web com extensão `.xml` ou `.json`. Por exemplo, `/regcode.xml` ou `/regcode.json`
+>* Chame o ponto de extremidade do serviço Web com extensão `.xml` ou `.json`. Por exemplo, `/regcode.xml` ou `/regcode.json`
 >
 >Você pode especificar qualquer um dos métodos acima. A especificação de vários métodos com formatos conflitantes pode resultar em erros ou em saídas indesejáveis.
 
 ## Endpoints da REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -54,27 +54,27 @@ A tabela abaixo lista os serviços Web disponíveis para a abordagem sem cliente
 
 | Sr | Ponto Final do Serviço Web | Descrição | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->. | Hospedado em | Chamado por |
 | --- | --- | --- | --- | --- | --- |
-| 1. | [&lt;reggie_fqdn>/reggie/v1/  </br>  {requestorId}/regcode](/help/authentication/registration-code-request.md) | Retorna o código de registro gerado aleatoriamente e o URI da página de logon | 2 | Adobe  </br>Serviço de código de registro | Dispositivo inteligente |
-| 2. | [&lt;reggie_fqdn>/reggie/v1/  </br>  {requestorId}/regcode/  </br>  {registrationCode}](/help/authentication/return-registration-record.md) | Retorna o registro do código de registro contendo o código de registro UUID, o código de registro e a ID do dispositivo com hash | 8 | Adobe  </br>Serviço de código de registro | Adobe Pass Authentication |
-| 3. | [&lt;sp_fqdn>/api/v1/config/  </br>  {requestorId}](/help/authentication/provide-mvpd-list.md) | Retorna a lista de MVPDs configurados para o solicitante | 5 | Adobe  </br>Adobe Pass  </br>autenticação  </br>Serviço | Logon  </br>Web  </br>Aplicativo |
-| 4. | [&lt;sp_fqdn>/api/v1/authenticate](/help/authentication/initiate-authentication.md) | Inicia o processo de Autenticação informando o evento de seleção MVPD. Cria um registro no banco de dados de autenticação, que é reconciliado quando uma resposta bem-sucedida é recebida do MVPD (Etapa 13) | 7 | Adobe  </br>Adobe Pass  </br>autenticação  </br>Serviço | Logon  </br>Web  </br>Aplicativo |
-| 5. | Consumidor de Asserção SAML | Fluxo de trabalho SAML existente entre a Autenticação do Adobe Pass e o MVPD | 13 | Adobe Pass  </br>autenticação  </br>Serviço | Adobe Pass Authentication |
-| 6. | [&lt;sp_fqdn>/api/v1/checkauthn/  </br>  {registrationCode}](/help/authentication/check-authentication-flow-by-second-screen-web-app.md) | O Aplicativo Web de Logon pode verificar se a tentativa de fluxo de logon foi bem-sucedida |     | Adobe Pass  </br>autenticação   </br>Serviço | Logon   </br>Web   </br>Aplicativo |
-| 7. | [&lt;sp_fqdn>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md) | Obtém metadados relacionados ao token de Autenticação | 15 | Adobe Pass  </br>autenticação  </br>Serviço | Dispositivo inteligente |
-| 8. | [&lt;reggie_fqdn>/reggie/v1/  </br>  {requestorId}/regcode/  </br>  {registrationCode}](/help/authentication/delete-registration-record.md) | Exclui o registro de código regulamentar e libera o código regulamentar para reutilização | 16 | Adobe  </br>Serviço de código de registro | Adobe Pass Authentication |
-| 9. | [&lt;sp_fqdn>/api/v1/authorize](/help/authentication/initiate-authorization.md) | Obtém a resposta de autorização. | 17 | Adobe Pass  </br>autenticação  </br>Serviço | Dispositivo inteligente |
-| 10. | [&lt;sp_fqdn>/api/v1/checkauthn](/help/authentication/check-authentication-token.md) | Indica se o dispositivo tem um token de autenticação não expirado. |     | Adobe Pass  </br>autenticação  </br>Serviço | Dispositivo inteligente |
-| 11. | [&lt;sp_fqdn>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md) | Retorna o token de autenticação se for encontrado. |     | Adobe Pass  </br>autenticação  </br>Serviço | Dispositivo inteligente |
-| 12. | [&lt;sp_fqdn>/api/v1/tokens/authz](/help/authentication/retrieve-authorization-token.md) | Retorna o token de AuthZ, se encontrado. |     | Adobe Pass  </br>autenticação  </br>Serviço | Dispositivo inteligente |
-| 13. | [&lt;sp_fqdn>/api/v1/tokens/media](/help/authentication/obtain-short-media-token.md) | Retorna o token de mídia curta se encontrado - o mesmo que /api/v1/mediatoken |     | Adobe Pass  </br>autenticação  </br>Serviço | Dispositivo inteligente |
-| 14. | [&lt;sp_fqdn>/api/v1/mediatoken](/help/authentication/obtain-short-media-token.md) | Obtém O Token De Mídia Curta |     | Adobe Pass  </br>autenticação  </br>Serviço | Dispositivo inteligente |
-| 15. | [&lt;sp_fqdn>/api/v1/preauthorize](/help/authentication/retrieve-list-of-preauthorized-resources.md) | Recupera a lista de recursos pré-autorizados |     | Adobe Pass  </br>autenticação  </br>Serviço | Dispositivo inteligente |
-| 16. | [&lt;sp_fqdn>/api/v1/preauthorize/{code}](/help/authentication/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | Recupera a lista de recursos pré-autorizados |     | Adobe Pass  </br>autenticação  </br>Serviço | Aplicativo Web de Logon |
-| 17. | [&lt;sp_fqdn>/api/v1/logout](/help/authentication/initiate-logout.md) | Remover tokens AuthN e AuthZ do armazenamento |     | Adobe Pass  </br>autenticação   </br>Serviço | Dispositivo inteligente |
-| 18. | [&lt;sp_fqdn>/api/v1/tokens/usermetadata](/help/authentication/user-metadata.md) | Obtém metadados do usuário após a conclusão do fluxo de autenticação | N/A | N/A | Dispositivo inteligente |
-| 19. | [&lt;sp_fqdn>/api/v1/authenticate/freepreview](/help/authentication/free-preview-for-temp-pass-and-promotional-temp-pass.md) | Criar um token de autenticação para Aprovação Temporária ou Aprovação Temporária Promocional | N/A | Adobe Pass  </br>autenticação  </br>Serviço | Dispositivo inteligente |
+| 1. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode](/help/authentication/registration-code-request.md) | Retorna o código de registro gerado aleatoriamente e o URI da página de logon | 2 | Serviço de código Adobe </br>Reg | Dispositivo inteligente |
+| 2. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode/ </br> {registrationCode}](/help/authentication/return-registration-record.md) | Retorna o registro do código de registro contendo o código de registro UUID, o código de registro e a ID do dispositivo com hash | 8 | Serviço de código Adobe </br>Reg | Adobe Pass Authentication |
+| 3. | [&lt;SP_FQDN>/api/v1/config/ </br> {requestorId}](/help/authentication/provide-mvpd-list.md) | Retorna a lista de MVPDs configurados para o solicitante | 5 | Serviço </br>de autenticação </br>do Adobe </br>Adobe Pass | Logon </br>Aplicativo </br>Web |
+| 4. | [&lt;SP_FQDN>/api/v1/authenticate](/help/authentication/initiate-authentication.md) | Inicia o processo de Autenticação informando o evento de seleção MVPD. Cria um registro no banco de dados de autenticação, que é reconciliado quando uma resposta bem-sucedida é recebida do MVPD (Etapa 13) | 7 | Serviço </br>de autenticação </br>do Adobe </br>Adobe Pass | Logon </br>Aplicativo </br>Web |
+| 5. | Consumidor de Asserção SAML | Fluxo de trabalho SAML existente entre a Autenticação do Adobe Pass e o MVPD | 13 | Serviço </br>de autenticação </br>do Adobe Pass | Adobe Pass Authentication |
+| 6. | [&lt;SP_FQDN>/api/v1/checkauthn/ </br> {registrationCode}](/help/authentication/check-authentication-flow-by-second-screen-web-app.md) | O Aplicativo Web de Logon pode verificar se a tentativa de fluxo de logon foi bem-sucedida |     | Autenticação </br> do Adobe Pass   </br>Serviço | Logon   </br>Web   </br>Aplicativo |
+| 7. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md) | Obtém metadados relacionados ao token de Autenticação | 15 | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
+| 8. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode/ </br> {registrationCode}](/help/authentication/delete-registration-record.md) | Exclui o registro de código regulamentar e libera o código regulamentar para reutilização | 16 | Serviço de código Adobe </br>Reg | Adobe Pass Authentication |
+| 9. | [&lt;SP_FQDN>/api/v1/authorize](/help/authentication/initiate-authorization.md) | Obtém a resposta de autorização. | 17 | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
+| 10. | [&lt;SP_FQDN>/api/v1/checkauthn](/help/authentication/check-authentication-token.md) | Indica se o dispositivo tem um token de autenticação não expirado. |     | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
+| 11. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md) | Retorna o token de autenticação se for encontrado. |     | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
+| 12. | [&lt;SP_FQDN>/api/v1/tokens/authz](/help/authentication/retrieve-authorization-token.md) | Retorna o token de AuthZ, se encontrado. |     | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
+| 13. | [&lt;SP_FQDN>/api/v1/tokens/media](/help/authentication/obtain-short-media-token.md) | Retorna o token de mídia curta se encontrado - o mesmo que /api/v1/mediatoken |     | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
+| 14. | [&lt;SP_FQDN>/api/v1/mediatoken](/help/authentication/obtain-short-media-token.md) | Obtém O Token De Mídia Curta |     | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
+| 15. | [&lt;SP_FQDN>/api/v1/preauthorize](/help/authentication/retrieve-list-of-preauthorized-resources.md) | Recupera a lista de recursos pré-autorizados |     | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
+| 16. | [&lt;SP_FQDN>/api/v1/preauthorize/{code}](/help/authentication/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | Recupera a lista de recursos pré-autorizados |     | Serviço </br>de autenticação </br>do Adobe Pass | Aplicativo Web de Logon |
+| 17. | [&lt;SP_FQDN>/api/v1/logout](/help/authentication/initiate-logout.md) | Remover tokens AuthN e AuthZ do armazenamento |     | Autenticação </br> do Adobe Pass   </br>Serviço | Dispositivo inteligente |
+| 18. | [&lt;SP_FQDN>/api/v1/tokens/usermetadata](/help/authentication/user-metadata.md) | Obtém metadados do usuário após a conclusão do fluxo de autenticação | N/A | N/A | Dispositivo inteligente |
+| 19. | [&lt;SP_FQDN>/api/v1/authenticate/freepreview](/help/authentication/free-preview-for-temp-pass-and-promotional-temp-pass.md) | Criar um token de autenticação para Aprovação Temporária ou Aprovação Temporária Promocional | N/A | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
 
 
 ## Segurança da API REST {#security}
 
-Todas as APIs sem cliente da Autenticação Adobe Pass devem ser chamadas usando o protocolo HTTPS para comunicação segura. Além disso, a maioria das APIs chamadas deve conter um token de acesso fornecido pelo [Registro de cliente dinâmico](/help/authentication/dynamic-client-registration.md).
+Todas as APIs sem cliente da Autenticação Adobe Pass devem ser chamadas usando o protocolo HTTPS para comunicação segura. Além disso, a maioria das APIs chamadas deve conter um token de acesso fornecido pelo [Registro de Cliente Dinâmico](/help/authentication/dynamic-client-registration.md).

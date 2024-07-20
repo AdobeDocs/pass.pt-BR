@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## Visão geral {#overview}
 
-Este documento fornece instruções passo a passo para a equipe de engenharia de um programador integrar um &quot;dispositivo inteligente&quot; (console de jogos, aplicativo de TV inteligente, set top box etc.) com Autenticação Adobe Pass usando serviços REST API. Essa abordagem de cliente para servidor, que usa REST APIs em vez de um SDK cliente, permite um suporte mais amplo de diferentes plataformas para as quais o desenvolvimento de um número significativo de SDKs únicos não seria viável. Para obter uma visão geral técnica abrangente de como a solução sem clientes funciona, consulte [Visão geral técnica sem cliente](/help/authentication/rest-api-overview.md).
+Este documento fornece instruções passo a passo para a equipe de engenharia de um programador integrar um &quot;dispositivo inteligente&quot; (console de jogos, aplicativo de TV inteligente, set top box etc.) com Autenticação Adobe Pass usando serviços REST API. Essa abordagem de cliente para servidor, que usa REST APIs em vez de um SDK cliente, permite um suporte mais amplo de diferentes plataformas para as quais o desenvolvimento de um número significativo de SDKs únicos não seria viável. Para obter uma visão geral técnica abrangente de como a solução sem cliente funciona, consulte a [Visão geral técnica sem cliente](/help/authentication/rest-api-overview.md).
 
 
 Essa abordagem requer dois componentes (aplicativo de streaming e aplicativo AuthN) para concluir os fluxos necessários: inicialização, registro, autorização e fluxos de mídia de visualização no aplicativo de streaming e o fluxo de autenticação no aplicativo AuthN.
@@ -44,13 +44,13 @@ Em uma solução cliente para servidor que funciona, os seguintes componentes es
 
 
 
-Os termos adicionais usados no fluxo são definidos no [Glossário](/help/authentication/glossary.md).
+Termos adicionais usados no fluxo são definidos no [Glossário](/help/authentication/glossary.md).
 
 ## Fluxos{#flows}
 
 ### Registro dinâmico de cliente (DCR)
 
-O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicativo ou servidor do programador e os serviços da Adobe Pass. O fluxo do DCR é separado, dependente e de pré-requisito, e pode ser encontrado em [Registro de cliente dinâmico](/help/authentication/dynamic-client-registration.md)
+O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicativo ou servidor do programador e os serviços da Adobe Pass. O fluxo do DCR é separado, dependente e de pré-requisito e pode ser encontrado no [Registro de cliente dinâmico](/help/authentication/dynamic-client-registration.md)
 
 
 ### Fluxos de aplicativo de transmissão (dispositivo inteligente)
@@ -65,7 +65,7 @@ O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicat
 
 3. Emita uma chamada de Verificação de autenticação para ver se o dispositivo já está autenticado.  Por exemplo: [`<SP_FQDN>/api/v1/checkauthn [device ID]`](/help/authentication/check-authentication-token.md)
 
-4. Se a variável `checkauthn` chamada bem-sucedida, prossiga para o Fluxo de autorização da Etapa 2 em diante.  Se falhar, inicie o Fluxo de registro.
+4. Se a chamada `checkauthn` for bem-sucedida, prossiga para o Fluxo de Autorização a partir da Etapa 2.  Se falhar, inicie o Fluxo de registro.
 
 
 
@@ -83,7 +83,7 @@ O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicat
 
 #### Fluxo de autorização
 
-1. O usuário retorna do aplicativo de segunda tela e pressiona o botão &quot;Continuar&quot; em seu dispositivo. Como alternativa, você pode implementar um mecanismo de pesquisa para verificar o status de autenticação, mas a Autenticação do Adobe Pass recomenda o método do botão Continuar em vez da pesquisa. <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> Por exemplo: [\&lt;sp _fqdn=&quot;&quot;>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
+1. O usuário retorna do aplicativo de segunda tela e pressiona o botão &quot;Continuar&quot; em seu dispositivo. Como alternativa, você pode implementar um mecanismo de pesquisa para verificar o status de autenticação, mas a Autenticação do Adobe Pass recomenda o método do botão Continuar em vez da pesquisa. <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> Por exemplo: [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
 
 2. Envie uma solicitação GET ao serviço de autorização de Autenticação da Adobe Pass para iniciar a autorização. Por exemplo: `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
@@ -109,9 +109,11 @@ O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicat
 
    a. Seu aplicativo verifica se a mídia está protegida.
 
-   b. Se a mídia estiver protegida, o aplicativo iniciará o fluxo de autorização (AuthZ) acima.
+   b. Se a mídia estiver protegida, o aplicativo iniciará a Autorização
+(AuthZ) Fluxo acima.
 
-   c. Se a mídia não estiver protegida, reproduza a mídia para o usuário.
+   c. Se a mídia não estiver protegida, reproduza-a para o
+usuário.
 
 3. Reproduza a mídia.
 
@@ -139,7 +141,7 @@ Algumas plataformas fornecem suporte dedicado para Single Sign-On (SSO). Os deta
 
 Para implementações TempPass e TempPass promocional em que o usuário não é solicitado a inserir credenciais, a autenticação pode ser implementada diretamente no Aplicativo de streaming.
 
-**Para usar essa API, o aplicativo de streaming precisa garantir a exclusividade da ID do dispositivo, pois ela está sendo usada para identificar o token, juntamente com os dados adicionais opcionais.**
+**Para usar essa API, o Aplicativo de Streaming precisa verificar a exclusividade da ID do dispositivo, pois ela está sendo usada para identificar o token, juntamente com os dados adicionais opcionais.**
 
 
 ![](assets/temp-pass-promo-temppass.png)

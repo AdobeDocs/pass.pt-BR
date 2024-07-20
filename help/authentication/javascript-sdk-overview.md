@@ -4,7 +4,7 @@ description: Visão geral do SDK do JavaScript
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,9 @@ ht-degree: 0%
 
 A Adobe recomenda que você migre para a versão mais recente do JS v4.x da biblioteca do AccessEnabler.
 
-A integração do JavaScript de autenticação da Adobe Pass oferece aos programadores uma solução TV em qualquer lugar no ambiente familiar de desenvolvimento de aplicativos JS da Web. Os principais componentes da integração são seu aplicativo de &quot;alto nível&quot; (interação do usuário, apresentação de vídeo) e a biblioteca de &quot;baixo nível&quot; do AccessEnabler fornecida pelo Adobe, que fornece sua entrada para os fluxos de direitos e lida com a comunicação com os servidores de autenticação da Adobe Pass.
+A integração do JavaScript de autenticação da Adobe Pass oferece aos programadores uma solução TV em todos os lugares no ambiente familiar de desenvolvimento de aplicativos Web JS. Os principais componentes da integração são seu aplicativo de &quot;alto nível&quot; (interação do usuário, apresentação de vídeo) e a biblioteca de &quot;baixo nível&quot; do AccessEnabler fornecida pelo Adobe, que fornece sua entrada para os fluxos de direitos e lida com a comunicação com os servidores de autenticação da Adobe Pass.
 
-O fluxo de direitos de Autenticação do Adobe Pass geral é coberto na [Fluxo de Direitos do Programador](/help/authentication/entitlement-flow.md), e o Guia de integração do JavaScript orientará você na implementação. As seções a seguir fornecem descrições e exemplos específicos para a integração do JavaScript AccessEnabler.
+O fluxo de direitos de Autenticação geral do Adobe Pass é coberto pelo [Fluxo de Direitos do Programador](/help/authentication/entitlement-flow.md), e o Guia de Integração do JavaScript o orienta pela implementação. As seções a seguir fornecem descrições e exemplos específicos para a integração do JavaScript AccessEnabler.
 
 >[!IMPORTANT]
 >
@@ -37,7 +37,7 @@ Se você já souber quem é o provedor do cliente, poderá [definir o MVPD de fo
 
 A amostra de código a seguir demonstra como descobrir e exibir o provedor de serviços do cliente atual:
 
-**HTML** - Essa página adiciona uma seção à página que exibe o provedor escolhido pelo cliente, se ele já estiver conectado:
+**HTML** - Esta página adiciona uma seção à página que exibe o provedor escolhido pelo cliente, se ele já estiver conectado:
 
 ```HTML
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -76,7 +76,7 @@ A amostra de código a seguir demonstra como descobrir e exibir o provedor de se
 ```
 
 
-**JavaScript** Esse arquivo JavaScript consulta o Ativador de acesso do provedor atual se o usuário já estiver conectado e exibe o resultado na seção da página reservada para ele. Também implementa uma caixa de diálogo do seletor de MVPD:
+**JavaScript** Este arquivo do JavaScript consulta o Habilitador de Acesso para o provedor atual se o usuário já estiver conectado e exibe o resultado na seção da página reservada para ele. Também implementa uma caixa de diálogo do seletor de MVPD:
 
 ```JS
     $(function() {
@@ -203,7 +203,7 @@ Há alguns casos em que o reprodutor não é responsável por gerenciar logouts 
 
 
 
-- **Quando o logout é iniciado a partir de um site que não está integrado à Autenticação Adobe Pass.** Nesse caso, o MVPD pode chamar o serviço de Logout único da autenticação da Adobe Pass por meio de um redirecionamento do navegador. (No momento, não há suporte para invocar o SLO por meio de uma chamada backchannel.)
+- **Quando o logout é iniciado de um site que não está integrado à Autenticação Adobe Pass.** Nesse caso, o MVPD pode invocar o serviço de Logout único de autenticação da Adobe Pass por meio de um redirecionamento do navegador. (No momento, não há suporte para invocar o SLO por meio de uma chamada backchannel.)
 
 >[!NOTE]
 >

@@ -21,15 +21,15 @@ ht-degree: 0%
 >
 > A implementação da REST API é limitada por [Mecanismo de limitação](/help/authentication/throttling-mechanism.md)
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 Retorna o Código de registro gerado aleatoriamente e o URI da página de logon.
 
-| Endpoint | Chamado  </br>Por | Entrada   </br>Parâmetro | HTTP  </br>Método | Resposta | HTTP  </br>Resposta |
+| Endpoint | Chamado </br>por | Entrada   </br>Parâmetro | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>/reggie/v1/{requestor}/regcode</br>Por exemplo:</br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Aplicativo de transmissão</br>ou</br>Serviço de programador | 1. requerente  </br>    (Componente do caminho)</br>2.  deviceId (com hash)   </br>    (Obrigatório)</br>3.  device_info/X-Device-Info (Obrigatório)</br>4.  mvpd (opcional)</br>5.  ttl (Opcional)</br>6.  _deviceType_</br> 7.  _deviceUser_ (Obsoleto)</br>8.  _appId_ (Obsoleto) | POST | XML ou JSON que contém um código de registro e informações ou detalhes de erro, caso seja malsucedido. Consulte schemas e exemplos abaixo. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode</br>Por exemplo:</br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Aplicativo de Streaming</br>ou</br>Serviço de Programador | 1. solicitante </br>    (Componente do caminho)</br>2.  deviceId (com hash)   </br>    (Obrigatório)</br>3.  device_info/X-Device-Info (Obrigatório)</br>4.  mvpd (Opcional)</br>5.  ttl (Opcional)</br>6.  _deviceType_</br> 7.  _deviceUser_ (Obsoleto)</br>8.  _appId_ (obsoleto) | POST | XML ou JSON que contém um código de registro e informações ou detalhes de erro, caso seja malsucedido. Consulte schemas e exemplos abaixo. | 201 |
 
 {style="table-layout:auto"}
 
@@ -47,21 +47,21 @@ Retorna o Código de registro gerado aleatoriamente e o URI da página de logon.
 | --- | --- |
 | solicitante | O requestorId do Programador para o qual esta operação é válida. |
 | deviceId | Os bytes de id do dispositivo. |
-| device_info/</br>X-Device-Info | Informações do dispositivo de transmissão.</br>**Nota**: isso PODE ser passado para device_info como um parâmetro de URL, mas devido ao tamanho potencial desse parâmetro e às limitações no comprimento de um URL do GET, ele DEVE ser passado como X-Device-Info no cabeçalho http. </br>Veja todos os detalhes em [Transmitindo Informações sobre Dispositivo e Conexão](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| device_info/</br>X-Device-Info | Informações do dispositivo de transmissão.</br>**Observação**: isso PODE ser passado para device_info como um parâmetro de URL, mas devido ao tamanho potencial desse parâmetro e às limitações no comprimento de uma URL GET, DEVE ser passado como X-Device-Info no cabeçalho http. </br>Veja os detalhes completos em [Passando Informações sobre Dispositivo e Conexão](/help/authentication/passing-client-information-device-connection-and-application.md). |
 | mvpd | A ID de MVPD para a qual esta operação é válida. |
-| ttl | Por quanto tempo esse regcode deve durar em segundos.</br>**Nota**: o valor máximo permitido para ttl é 36.000 segundos (10 horas). Valores mais altos resultam em uma resposta HTTP 400 (solicitação incorreta). Se `ttl` estiver vazio, a Autenticação do Adobe Pass definirá um valor padrão de 30 minutos. |
-| _deviceType_ | O tipo de dispositivo (por exemplo, Roku, PC).</br>Se esse parâmetro estiver definido corretamente, o ESM oferecerá métricas que são [detalhado por tipo de dispositivo](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) ao usar sem cliente, para que diferentes tipos de análise possam ser executados, por exemplo, Roku, Apple TV e Xbox.</br>Consulte [Benefícios do uso do parâmetro do tipo de dispositivo sem cliente nas métricas de passagem ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**Nota**: device_info substituirá esse parâmetro. |
+| ttl | Por quanto tempo esse regcode deve durar em segundos.</br>**Observação**: o valor máximo permitido para ttl é de 36.000 segundos (10 horas). Valores mais altos resultam em uma resposta HTTP 400 (solicitação incorreta). Se `ttl` for deixado em branco, a Autenticação Adobe Pass definirá um valor padrão de 30 minutos. |
+| _deviceType_ | O tipo de dispositivo (por exemplo, Roku, PC).</br>Se este parâmetro estiver definido corretamente, o ESM oferecerá métricas que são [analisadas por tipo de dispositivo](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) ao usar o sem cliente, para que diferentes tipos de análise possam ser executados, por exemplo, Roku, Apple TV e Xbox.</br>Consulte, [Vantagens de usar o parâmetro de tipo de dispositivo sem cliente em métricas de passagem ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**Observação**: device_info substituirá esse parâmetro. |
 | _deviceUser_ | O identificador do usuário do dispositivo. |
-| _appId_ | O id/nome do aplicativo. </br>**Nota**: device_info substitui esse parâmetro. |
+| _appId_ | O id/nome do aplicativo. </br>**Observação**: device_info substitui este parâmetro. |
 
 {style="table-layout:auto"}
 
 
 >[!CAUTION]
 >
->**Endereço IP do dispositivo de transmissão**
+>**Endereço IP do Dispositivo de Streaming**
 ></br>
->Para implementações de Cliente para servidor, o Endereço IP do dispositivo de transmissão é implicitamente enviado com esta chamada.  Para implementações de servidor para servidor, em que a variável **regcode** for feita uma chamada no Serviço do programador e não no Dispositivo de streaming, o seguinte cabeçalho será necessário para passar o Endereço IP do dispositivo de streaming:
+>Para implementações de Cliente para servidor, o Endereço IP do dispositivo de transmissão é implicitamente enviado com esta chamada.  Para implementações de Servidor para Servidor, em que a chamada **regcode** é feita pelo Serviço de Programador e não pelo Dispositivo de Streaming, o seguinte cabeçalho é necessário para passar o Endereço IP do Dispositivo de Streaming:
 >
 >
 >```
@@ -70,7 +70,7 @@ Retorna o Código de registro gerado aleatoriamente e o URI da página de logon.
 >
 >onde `<streaming\_device\_ip>` é o endereço IP público do Dispositivo de Streaming.
 ></br></br>
->Exemplo:</br>
+>Exemplo: </br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1</br>X-Forwarded-For:203.45.101.20

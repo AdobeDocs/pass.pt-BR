@@ -15,7 +15,7 @@ ht-degree: 9%
 # Ajuda do Monitoramento de concorrência do Adobe Pass {#cm}
 
 + [Introdução ao monitoramento de simultaneidade](cm-home.md)
-+ [Glossário de monitoramento de simultaneidade](cm-glossary.md)
++ [Glossário de monitoramento simultâneo](cm-glossary.md)
 + [Casos de uso do monitoramento de simultaneidade](cm-use-cases.md)
 + [Ponto de decisão da política](cm-policy-decision-point.md)
 + [Visão geral da API de monitoramento de concorrência](cm-api-overview.md)
@@ -23,11 +23,11 @@ ht-degree: 9%
 + [Política de retenção de dados](data-retention-policy.md)
 + [Mecanismo de limitação](throttling-mechanism.md)
 + [Procedimentos de escalonamento](cm-escalation-procedures.md)
-+ Uso do monitoramento de simultaneidade {#cmu}
++ Uso do Monitoramento de Simultaneidade {#cmu}
    + [Relatórios de uso de monitoramento de simultaneidade](cm-usage-reports.md)
    + [API de uso de monitoramento de simultaneidade](cmu-api.md)
    + [Acesso à API de uso de monitoramento de simultaneidade](cmu-api-access.md)
-+ API versão 1{#v1-api}
++ API da versão 1{#v1-api}
    + [Ponto de informações da política](policy-info-pt-versionone.md)
    + [Metadados personalizados](custom-metadata.md)
    + Cookies de integração {#int-cookbooks}
@@ -45,7 +45,7 @@ ht-degree: 9%
    + [Monitoramento de simultaneidade - Notas de versão 2.5.0](rn-cm-250.md)
    + [Monitoramento de simultaneidade - Notas de versão 2.3.2](rn-cm-232.md)
    + [Monitoramento de simultaneidade - Notas de versão 2.2.2](rn-cm-222.md)
-+ Notas técnicas{#tech-notes}
++ Notas Técnicas{#tech-notes}
    + [Como: distinguir entre VOD e conteúdo ao vivo no monitoramento de simultaneidade](vod-live-dist.md)
 
 <!--    + [Usage reports](usage-rep-versionone.md) -->

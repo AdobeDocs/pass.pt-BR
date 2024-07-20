@@ -1,13 +1,13 @@
 ---
 title: Notas de versão do Monitoramento de simultaneidade 2.9.6
 description: Notas de versão do Monitoramento de simultaneidade 2.9.6
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 904ae21b-34cb-4005-a12d-c534d406d1e8
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '63'
-ht-degree: 1%
+source-wordcount: '69'
+ht-degree: 2%
 
 ---
-
 
 # Notas de versão do Monitoramento de simultaneidade 2.9.6 {#cm-296-rn}
 
@@ -15,7 +15,7 @@ Esta página descreve novos recursos, alterações e problemas conhecidos com es
 
 ## Data de lançamento {#release-date}
 
-06/26/2019
+26/06/2019
 
 
 ## Visão geral da versão {#rel-overview}

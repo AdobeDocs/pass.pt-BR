@@ -19,9 +19,9 @@ A API pré-autorizada pode ser usada para obter uma decisão de pré-autorizaç�
 
 >[!IMPORTANT]
 >
->A API de autorização **deve** ser usado antes de conceder ao usuário acesso aos recursos especificados.
+>A API de Autorização **deve** ser usada antes de conceder ao usuário acesso aos recursos especificados.
 
-Se o resultado da resposta da API pré-autorizada contiver um ou mais recursos com uma decisão de pré-autorização negada, informações adicionais sobre o erro poderão ser incluídas **(veja a observação abaixo)** para cada recurso afetado.
+Se o resultado da resposta da API Pré-autorizada contiver um ou mais recursos com uma decisão de pré-autorização negada, informações adicionais sobre o erro poderão ser incluídas **(veja a observação abaixo)** para cada recurso afetado.
 
 >[!IMPORTANT]
 >

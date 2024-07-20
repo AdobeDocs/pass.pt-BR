@@ -1,6 +1,6 @@
 ---
-title: Pré-autorizar Android
-description: Pré-autorizar Android
+title: Pré-autorizar o Android
+description: Pré-autorizar o Android
 exl-id: b5337595-135f-4981-a578-2da432f125d6
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
@@ -34,9 +34,10 @@ Em caso de erro inesperado (por exemplo, problema de rede, ponto de acesso de au
 
 **Parâmetros:**
 
-- *PreauthorizeRequest*: objeto Builder usado para definir a solicitação
+- *PreauthorizeRequest*: objeto de construtor usado para definir a solicitação
 - AccessEnablerCallback : retorno de chamada usado para retornar a resposta da API
-- PreauthorizeResponse : objeto usado para retornar o conteúdo de resposta da API
+- PreauthorizeResponse : objeto usado para retornar a API
+conteúdo da resposta
 
 
 ### classe pública PreauthorizeRequest {#androidpreauthorizerequest}
@@ -62,7 +63,7 @@ Em caso de erro inesperado (por exemplo, problema de rede, ponto de acesso de au
     ///
 ```
 
-**public Builder setResources(List\&lt;string> recursos)**
+**setResources de construtor público(List\&lt;String\> recursos)**
 
 ```
     ///
@@ -84,7 +85,7 @@ Em caso de erro inesperado (por exemplo, problema de rede, ponto de acesso de au
 ```
 
 
-**public Builder disableFeatures(Definir\&lt;preauthorizerequest.feature>
+**public Builder disableFeatures(Definir\&lt;PreauthorizeRequest.Feature\>
 recursos)**
 
 ```
@@ -105,7 +106,7 @@ recursos)**
     ///
 ```
 
-**build() public PreauthorizeRequest**
+**build()** de PreauthorizeRequest pública
 
 **enum PreauthorizeRequest.Feature**
 

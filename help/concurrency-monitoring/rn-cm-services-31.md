@@ -1,13 +1,13 @@
 ---
 title: Notas de versão do Adobe Concurrency Monitoring Services 3.1
 description: Notas de versão do Adobe Concurrency Monitoring Services 3.1
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 2c43d6fd-812b-438c-bebf-28b32e5f1935
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '152'
-ht-degree: 0%
+source-wordcount: '158'
+ht-degree: 1%
 
 ---
-
 
 # Notas de versão do Adobe Concurrency Monitoring Services 3.1 {#cm-services-rns}
 

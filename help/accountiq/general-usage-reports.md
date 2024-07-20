@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # [!UICONTROL General usage] relatórios {#general-usage-reports}
 
-[!UICONTROL Account IQ] relatórios são ferramentas básicas do analytics que permitem detalhar seus dados para isolar [coortes](/help/accountiq/product-concepts.md#segmet-def)O, identifica anomalias e cria uma compreensão das características da sua conta.
+Os relatórios do [!UICONTROL Account IQ] são ferramentas básicas de análise que permitem analisar seus dados para isolar [coortes](/help/accountiq/product-concepts.md#segmet-def), identificar anomalias e criar uma compreensão das características da sua conta.
 
-[!UICONTROL General usage] A página Relatórios fornece ferramentas para separar métricas de subgrupo com base no número de dispositivos de conta em uso, IPs detectados e seus respectivos códigos postais.
+A página de relatórios do [!UICONTROL General usage] fornece ferramentas para separar métricas de subgrupo com base no número de dispositivos de conta em uso, IPs detectados e seus respectivos códigos postais.
 
-Todos os relatórios se baseiam no segmento atual selecionado no [Segmentos e intervalo de tempo](/help/accountiq/segments-timeinterval.md) painel. Você pode ajustar a seleção e restringi-la ainda mais especificando limites (número de dispositivos, número de IPs e número de códigos postais) no [Visão geral do instantâneo - Contas acima dos limites](#snapshot-overview) painel.
+Todos os relatórios se baseiam no segmento atual selecionado no painel [Segmentos e intervalo de tempo](/help/accountiq/segments-timeinterval.md). Você pode ajustar sua seleção e restringi-la ainda mais especificando limites (número de dispositivos, número de IPs e número de códigos postais) no painel [Visão geral do instantâneo - Contas acima dos limites](#snapshot-overview).
 
 ## Solicitações de reprodução e assinantes únicos {#playreq-uniquesubs}
 
@@ -26,7 +26,7 @@ Os gráficos de linha aqui fornecem uma visualização das alterações ao longo
 ![](assets/d2c-line-graph-gu.png)
 
 
-*Solicitações Play/Assinantes únicos para serviços D2C*
+*Solicitações de Reprodução/Assinantes Exclusivos para serviços D2C*
 
 +++
 
@@ -35,7 +35,7 @@ Os gráficos de linha aqui fornecem uma visualização das alterações ao longo
 ![](assets/progr-line-graph-gu.png)
 
 
-*Solicitações de reprodução/Assinantes únicos para programadores*
+*Solicitações de Reprodução/Assinantes Exclusivos para programadores*
 
 +++
 
@@ -43,7 +43,7 @@ Os gráficos de linha aqui fornecem uma visualização das alterações ao longo
 
 ![](assets/mvpd-line-graph-gu.png)
 
-*Assinantes únicos para MVPDs*
+*Assinantes exclusivos para MVPDs*
 
 +++
 
@@ -51,13 +51,13 @@ Os gráficos de linha aqui fornecem uma visualização das alterações ao longo
 
 O eixo x representa o tempo com base no intervalo atual e o eixo y representa as métricas básicas de atividade do assinante durante esse período. Os gráficos de linha ajudam a visualizar e comparar a atividade dos assinantes no segmento atual. Dependendo da versão do Account IQ, as métricas incluem:
 
-* **AuthN OK**: Número de autenticações bem-sucedidas. Leia mais sobre [AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
+* **AuthN OK**: número de autenticações bem-sucedidas. Leia mais sobre [AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
 
 * **AuthZ OK**: Número de autorizações bem-sucedidas. Leia mais sobre [AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
 
-* **Solicitações Play**: Número de solicitações de reprodução. Leia mais sobre [Reproduzir solicitações](/help/accountiq/product-concepts.md#play-requests-def).
+* **Solicitações de reprodução**: Número de solicitações de reprodução. Leia mais sobre [Solicitações de reprodução](/help/accountiq/product-concepts.md#play-requests-def).
 
-* **Assinantes únicos**: número de assinantes únicos bem-sucedidos. Leia mais sobre [Assinantes únicos](/help/accountiq/product-concepts.md#unique-subscriber-def).
+* **Assinantes Exclusivos**: Número de assinantes exclusivos bem-sucedidos. Leia mais sobre [Assinantes únicos](/help/accountiq/product-concepts.md#unique-subscriber-def).
 
 >[!NOTE]
 >
@@ -73,7 +73,7 @@ Ajuste a análise e os relatórios usando esse filtro adicional para definir vá
 
 * Limite do número de códigos postais
 
-Ao atualizar valores de limite no [Contas com base nos limites selecionados em segmentos](#account-segments-basedon-segments) , você verá o efeito em:
+Ao atualizar os valores de limite no painel [Contas baseadas em limites selecionados](#account-segments-basedon-segments), você verá o efeito em:
 
 * [Dispositivos por semana (ou mês) por conta](#devices-week-account)
 
@@ -85,11 +85,11 @@ Ao atualizar valores de limite no [Contas com base nos limites selecionados em s
 
 >[!NOTE]
 >
->Cada limite é definido com um valor padrão de 4. Ou seja, a página Uso geral mostra análise para assinantes que usam mais de quatro dispositivos, consumindo conteúdo de mais de quatro endereços IP diferentes, *e* mais de quatro códigos postais diferentes.
+>Cada limite é definido com um valor padrão de 4. Ou seja, a página Uso Geral mostra análises para assinantes que usam mais de quatro dispositivos, consomem conteúdo de mais de quatro endereços IP diferentes, *e* mais de quatro códigos postais diferentes.
 
 ### Contas baseadas em segmentos nos limites selecionados {#account-segments-basedon-segments}
 
-A variável **Contas com base nos limites selecionados em segmentos** O painel oferece opções para definir limites (entre 1 e 10) para o número de dispositivos, o número de IPs e o número de CEPs.
+O painel **Segmento de contas com base nos limites selecionados** oferece opções para definir limites (entre 1 e 10) para o número de dispositivos, o número de IPs e o número de códigos postais.
 
 O gráfico mostra:
 
@@ -121,7 +121,7 @@ A rosca fornece uma visualização alternativa dos dispositivos em uso pelas con
 
 ## Locais por semana (ou mês) por conta {#locations-week-account}
 
-Semelhante à métrica para [Dispositivos por semana (ou mês) por conta](#devices-week-account), a métrica Locais por semana (ou mês) por conta permite analisar o uso da conta do assinante em locais diferentes. O eixo x representa o Número de contas e o eixo y representa o Número de locais.
+Semelhante à métrica para [Dispositivos por semana (ou mês) por conta](#devices-week-account), a métrica Locais por semana (ou mês) por conta permite analisar o uso da conta do assinante em diferentes locais. O eixo x representa o Número de contas e o eixo y representa o Número de locais.
 
 ![](assets/graph-loc-week-acc.png)
 
@@ -135,7 +135,7 @@ Depois de definir o limite para o número de locais, você pode usar o gráfico 
 
 ## Ips por semana (ou mês) por conta {#ip-week-account}
 
-Semelhante à métrica para **Número de Locais por semana por conta**, o **Número de IPs por semana por conta** métrica permite avaliar a quantidade de alterações na origem do fluxo para o segmento atual.
+Semelhante à métrica para **Número de Locais por semana por conta**, a métrica **Número de IPs por semana por conta** permite avaliar a quantidade de alterações na origem da transmissão para o segmento atual.
 
 O eixo x representa o Número de contas e o eixo y representa o Número de IPs.
 
@@ -151,13 +151,13 @@ Depois de definir um segmento e o limite para o número de IPs, você pode usar 
 
 ## Exibição do histórico de segmentos das contas {#account-segment-historical-view}
 
-O gráfico de barras Exibição histórica ajuda a comparar as métricas de uso em diferentes intervalos de tempo. Além disso, representa coletivamente as várias métricas de uso, como [Dispositivos por semana (ou mês) por conta](#devices-week-account), [Locais por semana (ou mês) por conta](#locations-week-account), e [IPs por semana (ou mês) por conta](#ip-week-account).
+O gráfico de barras Exibição histórica ajuda a comparar as métricas de uso em diferentes intervalos de tempo. Além disso, representa coletivamente as várias métricas de uso, como [Dispositivos por semana (ou mês) por conta](#devices-week-account), [Locais por semana (ou mês) por conta](#locations-week-account) e [IPs por semana (ou mês) por conta](#ip-week-account).
 
 * O eixo x representa o intervalo de tempo e o eixo y representa o número de contas de assinantes, dispositivos, locais e IPs.
 
 * As barras coloridas laranja significam segmentos em vários intervalos de tempo.
 
-* O gráfico de linhas representa as alterações no [Dispositivos por semana (ou mês) por conta](#devices-week-account), [Locais por semana (ou mês) por conta](#locations-week-account), e [IPs por semana (ou mês) por conta](#ip-week-account) valores no intervalo de tempo com base no limite.
+* O gráfico de linhas plota as alterações em [Dispositivos por semana (ou mês) por conta](#devices-week-account), [Locais por semana (ou mês) por conta](#locations-week-account) e [IPs por semana (ou mês) por conta](#ip-week-account) valores ao longo do intervalo de tempo com base no limite.
 
 ![](assets/historical-view.png)
 

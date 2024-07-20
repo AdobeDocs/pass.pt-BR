@@ -11,9 +11,9 @@ ht-degree: 0%
 
 # Padrões de uso {#usage-patterns}
 
-O Account IQ classifica os usuários de contas de assinantes em várias categorias em termos de comportamento social, como viajante ou viajante, família grande e compartilhamento de comunidade. A variável **Padrões de uso** A página mostra várias análises e relatórios diferentes para essas tipologias de usuário. Por exemplo, **Distribuição de padrões de uso** os relatórios comparam o comportamento de uso do segmento atual com todas as suas contas.
+O Account IQ classifica os usuários de contas de assinantes em várias categorias em termos de comportamento social, como viajante ou viajante, família grande e compartilhamento de comunidade. A página **Padrões de Uso** mostra várias análises e relatórios diferentes para essas tipologias de usuário. Por exemplo, os relatórios **Distribuição de padrões de uso** comparam o comportamento de uso do segmento atual com o de todas as suas contas.
 
-Como as outras páginas no aplicativo, a análise e os relatórios aqui se baseiam no segmento atual definido no [painel segmento](/help/accountiq/segments-timeinterval.md).
+Assim como as outras páginas do aplicativo, a análise e os relatórios aqui se baseiam no segmento atual definido no [painel de segmentos](/help/accountiq/segments-timeinterval.md).
 
 ## Distribuição de padrões de uso {#usage-pattern-dis}
 
@@ -25,7 +25,7 @@ O gráfico de barras de cluster abaixo compara a distribuição do padrão de us
 
 ![](assets/d2c-segment-users-industry.png)
 
-*Distribuição de padrões de uso - Usuários no segmento*
+*Distribuição de padrões de uso-Usuários no segmento*
 
 +++
 
@@ -35,13 +35,13 @@ Além de comparar cada padrão de uso no segmento atual com o setor inteiro, tam
 
 ![](assets/segment-users-industry.png)
 
-*Distribuição de padrões de uso - Usuários no segmento versus Setor*
+*Distribuição de padrões de uso-Usuários no segmento vs. Setor*
 
 +++
 
 ## Distribuição do padrão de uso no segmento {#usage-pattern-dis-segment}
 
-A variável **[!UICONTROL Usage patterns distribution in segment]** O painel tabula as seguintes informações para cada padrão do usuário:
+O painel **[!UICONTROL Usage patterns distribution in segment]** tabula as seguintes informações para cada padrão de usuário:
 
 * Intervalo de probabilidade de compartilhamento no qual as contas individuais se enquadram.
 * Número e porcentagem de contas nesse padrão.
@@ -63,7 +63,7 @@ Por exemplo, na visualização acima:
 
 +++Serviços D2C: Distribuição padrão de uso para regiões
 
-A variável **[!UICONTROL Usage pattern distribution]** A tabela fornece uma comparação dos padrões de uso entre [categorias de vídeo](product-concepts.md##video-category-def) no segmento atual.
+A tabela **[!UICONTROL Usage pattern distribution]** fornece uma comparação dos padrões de uso em [categorias de vídeo](product-concepts.md##video-category-def) no segmento atual.
 
 ![](assets/d2c-usage-patterns-regions.png)
 
@@ -71,13 +71,13 @@ A variável **[!UICONTROL Usage pattern distribution]** A tabela fornece uma com
 
 >[!NOTE]
 >
->A categoria de vídeo mostrada na imagem anterior, como **Regiões** O é apenas um exemplo. Ao fazer logon no Account IQ, o rótulo exibe as categorias de vídeo específicas da sua empresa.
+>A categoria de vídeo mostrada na imagem anterior, como **Regiões**, é apenas um exemplo. Ao fazer logon no Account IQ, o rótulo exibe as categorias de vídeo específicas da sua empresa.
 
 +++
 
 +++Programador: Distribuição do padrão de uso para MVPDs
 
-A variável **[!UICONTROL Usage pattern distribution]** A tabela fornece uma comparação da distribuição do padrão de uso para os MVPDs no segmento atual.
+A tabela **[!UICONTROL Usage pattern distribution]** fornece uma comparação da distribuição do padrão de uso para os MVPDs no segmento atual.
 
 ![](assets/usage-patterns-mvpdwise.png)
 
@@ -87,7 +87,7 @@ A variável **[!UICONTROL Usage pattern distribution]** A tabela fornece uma com
 
 +++MVPD: Distribuição de padrão de uso para programadores
 
-A variável **[!UICONTROL Usage pattern distribution]** A tabela fornece uma comparação da distribuição do padrão de uso para os programadores ou canais no segmento atual.
+A tabela **[!UICONTROL Usage pattern distribution]** fornece uma comparação da distribuição do padrão de uso para os programadores ou canais no segmento atual.
 
 ![](assets/usage-patterns-programmerwise.png)
 

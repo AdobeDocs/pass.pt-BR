@@ -1,9 +1,10 @@
 ---
 title: Redefinir aprovação temporária
 description: Redefinir aprovação temporária
-source-git-commit: 4ae0b17eff2dfcf0aaa5d11129dfd60743f6b467
+exl-id: ab39e444-eab2-4338-8d09-352a1d5135b6
+source-git-commit: 28d432891b7d7855e83830f775164973e81241fc
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '439'
 ht-degree: 0%
 
 ---
@@ -16,33 +17,36 @@ ht-degree: 0%
 >
 >Para usar a API Reset Temp Pass, é necessário:
 >- solicite à equipe de suporte uma declaração de software para seu aplicativo registrado
->- obter um token de acesso com base em [Registro de cliente dinâmico](dynamic-client-registration.md)
+>- obter um token de acesso com base no [Registro de Cliente Dinâmico](dynamic-client-registration.md)
 > 
 
-Para **redefinir um Temp Pass específico**, a Autenticação do Adobe Pass fornece aos programadores uma *público* API da Web:
+Para **redefinir um Temp Pass** específico, a Autenticação do Adobe Pass fornece aos Programadores uma API da Web *pública*:
 
-- **Ambiente:** especifica o ponto de extremidade do servidor de passagem de TV por Adobe que receberá a chamada de rede de passagem temporária de redefinição. Valores possíveis: **Pré-Igual** (*mgmt-prequal.auth.adobe.com*), **Versão** (*mgmt.auth.adobe.com* ou **Personalizado** (reservado para testes internos de Adobe).
-- **Token de acesso OAuth2:** o token OAuth2 é necessário para autorizar o Programador para a autenticação de TV por Adobe. Esse token pode ser obtido em [Registro de cliente dinâmico](dynamic-client-registration.md).
-- **ID de passagem temporária:** o identificador exclusivo do MVPD de passagem temporária a ser redefinido.(um programador pode usar vários MVPDs Temp Pass e deseja redefinir um específico)
-- **Chave genérica:** alguns MVPDs Temp Pass (ou seja, [Temp pass promocional](promotional-temp-pass.md)).
+- **Ambiente:** especifica o ponto de extremidade do servidor de passagem de TV por Adobe que receberá a chamada de rede de redefinição de Passagem Temporária. Valores possíveis: **Pré-Igual** (*mgmt-pré-qual.auth.adobe.com*), **Versão** (*mgmt.auth.adobe.com*) ou **Personalizado** (reservado para teste interno de Adobe).
+- **Token de acesso OAuth2:** o token OAuth2 é necessário para autorizar o Programador para a autenticação de TV por Adobe. Este token pode ser obtido em [Registro de Cliente Dinâmico](dynamic-client-registration.md).
+- **ID da Passagem Temporária:** a ID exclusiva do MVPD da Passagem Temporária a ser redefinido.(um programador pode usar vários MVPDs Temp Pass e deseja redefinir um específico)
+- **Chave Genérica:** alguns MVPDs de Passagem Temporária (ou seja, [Passagem temporária promocional](promotional-temp-pass.md)).
 
-Todos os parâmetros acima (exceto o *Chave genérica*) são obrigatórios. Este é um exemplo de parâmetros e a chamada de rede associada (o exemplo é na forma de um comando *curl *):
+Todos os parâmetros acima (exceto a *Chave Genérica*) são obrigatórios. Este é um exemplo de parâmetros e a chamada de rede associada (o exemplo é na forma de um comando *curl *):
 
 - **Ambiente:** Versão (*mgmt.auth.adobe.com*)
-- **Token de acesso OAuth2:** &lt;access_token> de [Registro de cliente dinâmico](dynamic-client-registration.md)
-- **ID do programador:** REF
-- **ID de passagem temporária:** TempPassREF
-- **Chave genérica:** null (nenhum valor fornecido)
+- **Token de Acesso OAuth2:** &lt;access_token> de [Registro de Cliente Dinâmico](dynamic-client-registration.md)
+- **ID do Programador:** REF
+- **ID da Passagem Temporária:** TempPassREF
+- **Chave Genérica:** nula (nenhum valor fornecido)
 
 ```curl
 curl -X DELETE -H "Authorization:Bearer <access_token_here>" "https://mgmt.auth.adobe.com/reset-tempass/v3/reset?device_id=f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991&requestor_id=REF&mvpd_id=TempPassREF"
 ```
 
-uma solicitação HTTP DELETE será feita para o **/reset** endpoint, transmitindo o *Token de acesso OAuth2* no cabeçalho Autorização e no campo *ID do dispositivo*, *ID do Solicitante* e *ID de Aprovação Temporária (ID do MVPD)* como parâmetros.
+uma solicitação HTTP DELETE será feita para o ponto de extremidade **/reset**, transmitindo o *Token de Acesso OAuth2* no cabeçalho de Autorização e a *ID do Dispositivo*, a *ID do Solicitante* e a *ID de Passagem Temporária (MVPD ID)* como parâmetros.
 
-Se o Programador fornecer um valor para a variável *Chave genérica*, outra chamada HTTP será executada (desta vez para o **/reset/generic** ponto de extremidade), transmitindo o *Chave genérica* dentro do *key* parâmetro de solicitação.
+Se o Programador fornecer um valor para a *Chave Genérica*, outra chamada HTTP será executada (desta vez para o ponto de extremidade **/reset/generic**), transmitindo a *Chave Genérica* dentro do parâmetro de solicitação *chave*.
 
-Por exemplo, definir a variável *Chave genérica* para um hash de endereço de email (para MVPDs Temp Pass que oferecem suporte a esse tipo de funcionalidade) gerará a seguinte chamada HTTP (o email é `user@domain.com` seu hash SHA-256 é `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`):
+Por exemplo, definir a *Chave genérica* como um hash de endereço de email (para
+Temp Pass (MVPDs que oferecem suporte a esse tipo de funcionalidade) resultará em
+seguindo chamada HTTP (o Email é `user@domain.com` seu SHA-256
+o hash é `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`):
 
 ```curl
 curl -X DELETE -H "Authorization:Bearer <access_token_here>"
@@ -50,7 +54,7 @@ curl -X DELETE -H "Authorization:Bearer <access_token_here>"
 ```
 
 
-Para **redefinir um Temp Pass específico para todos os dispositivos**, a Autenticação do Adobe Pass fornece aos programadores uma *público* API da Web:
+Para **redefinir um Temp Pass específico para todos os dispositivos**, a Autenticação da Adobe Pass fornece aos Programadores uma API da Web *pública*:
 
 ```url
 DELETE https://mgmt.auth.adobe.com/reset-tempass/v3/reset

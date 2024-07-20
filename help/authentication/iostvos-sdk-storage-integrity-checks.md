@@ -1,10 +1,11 @@
 ---
 title: Mecanismo de verificação de integridade do armazenamento iOS/tvOS
 description: Mecanismo de verificação de integridade do iOS/tvOS
-source-git-commit: 444a81ad18afcb26dcf3ae8b41f4d02c465f4655
+exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
+source-git-commit: e8a9e53f8bb0a06379d90a91a57335d2897342b0
 workflow-type: tm+mt
-source-wordcount: '327'
-ht-degree: 1%
+source-wordcount: '323'
+ht-degree: 2%
 
 ---
 
@@ -68,5 +69,5 @@ A enumeração IntegrityCheckType é exposta ao aplicativo cliente e tem os segu
 | Valor | Verificações realizadas | Armazenamento limpo | Descrição | Caso de uso recomendado |
 |-----------------------|-----------------------------------------------------|-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | INTEGRITY_CHECK_NONE | Nenhum | Nunca | Nenhuma verificação de integridade é realizada na inicialização do armazenamento | Quando os fluxos do SDK estão funcionando como esperado |
-| INTEGRITY_CHECK_ALL | Operabilidade do armazenamento <br/> Validade dos valores armazenados | Na falha da verificação | Todas as verificações de integridade disponíveis são executadas na inicialização do armazenamento | Quando há suspeita de corrupção do armazenamento do SDK. <br/> Se alguma das verificações de integridade falhar, o usuário será desconectado |
+| INTEGRITY_CHECK_ALL | Operabilidade de armazenamento <br/> Validade dos valores armazenados | Na falha da verificação | Todas as verificações de integridade disponíveis são executadas na inicialização do armazenamento | Quando há suspeita de corrupção do armazenamento do SDK. <br/> Se alguma das verificações de integridade falhar, o usuário será desconectado |
 | INTEGRITY_CHECK_CLEAR | Nenhum | Sempre | O armazenamento é limpo na inicialização do armazenamento | Quando os fluxos do SDK não podem ser concluídos como esperado |

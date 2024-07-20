@@ -1,10 +1,10 @@
 ---
 title: Notas de versão da Autenticação Adobe Pass 2.65
 description: Notas de versão da Autenticação Adobe Pass 2.65
-exl-id: fa0d38d5-c3c3-4ecf-a5f4-6c33a8617108
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: 12a1578f-e990-4b3b-ac3d-e356ecd20810
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '79'
+source-wordcount: '89'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Esta página descreve novos recursos, alterações e problemas conhecidos com es
 
 ### Número da Build {#build-number-265}
 
-Autenticação do Adobe Pass: adobe-pass-**2,65**
+Autenticação Adobe Pass: adobe-pass-**2.65**
 Data de lançamento: **25/04/2023 - 27/04/2023**
 
 ### Novos recursos {#new-features-265}

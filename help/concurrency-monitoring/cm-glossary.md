@@ -1,41 +1,41 @@
 ---
 title: Glossário
 description: Glossário de termos no Monitoramento de simultaneidade
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
 
-
 # Glossário {#glossary}
 
-## ID da conta {#accid-defn}
+## ID da Conta {#accid-defn}
 
 * Conta MVPD de um assinante, geralmente correspondente à conta de faturamento real. Essa conta deve ser identificável pelo MVPD em seu próprio sistema.
 
 ## Ação {#action-defn}
 
-* O tipo de acesso que o sujeito solicita; os valores possíveis para o CM são ***iniciar*** ou ***continuar*** uma sessão de transmissão.
+* O tipo de acesso que o assunto solicita; os valores possíveis para o CM são ***iniciar*** ou ***continuar*** uma sessão de streaming.
 
 ## Fluxo ativo {#active-stream-defn}
 
 * Um fluxo que recebeu pelo menos um evento (pulsação) nos últimos 90 segundos.
 
-* ***Nota:*** Se o último evento no fluxo for do tipo parar (`?event=stop`), não será contado. Esta é uma otimização que permite ao reprodutor fechar explicitamente um fluxo para que não seja mais considerado &quot;ativo&quot;.
+* ***Observação:*** se o último evento no fluxo for do tipo parar (`?event=stop`), ele não será contado. Esta é uma otimização que permite ao reprodutor fechar explicitamente um fluxo para que não seja mais considerado &quot;ativo&quot;.
 
 ## Aplicativo {#application-defn}
 
 * Desenvolvido pelo locatário para acesso ao conteúdo de vídeo
-* Tome e impõe decisões sobre o acesso ao conteúdo com base nas informações fornecidas pelo Serviço de monitoramento de simultaneidade (isso é válido no [Ponto de Informações de Política](/help/concurrency-monitoring/policy-info-pt-versionone.md) case)
-* Terá um único **ID do aplicativo** fornecido pela Adobe.
+* Toma e impõe decisões sobre o acesso ao conteúdo com base nas informações fornecidas pelo Serviço de Monitoramento de Simultaneidade (isso é válido no caso [Ponto de Informações de Política](/help/concurrency-monitoring/policy-info-pt-versionone.md))
+* Terá uma **ID de aplicativo** exclusiva fornecida pelo Adobe.
 
 ## Serviço de monitoramento de concorrência {#cm-service-defn}
 
 * Atua como um sistema de monitoramento para os assinantes, apoiando os MVPDs e programadores em seus requisitos de aplicação de políticas entre aplicativos.
 * Recebe pulsações que indicam a atividade do fluxo.
-* Atua como um _Ponto de decisão da política_ avaliando solicitações de autorização com base na atividade do usuário e fornecendo uma resposta de permissão/negação.
+* Atua como um _Ponto de decisão de política_ avaliando solicitações de autorização com base na atividade do usuário e fornecendo uma resposta de permissão/negação.
 * Atua como um _Ponto de Informações de Política_ relatando o número de fluxos ativos (e metadados de fluxo adicionais) para um assinante.
 
 ## Ambiente {#env-defn}
@@ -76,9 +76,9 @@ ht-degree: 0%
 * Precisa oferecer suporte ao MVPD para coletar a atividade do assinante e aplicar as regras de limitação quando em suas propriedades.
 * Também pode estar interessado em limitar o acesso simultâneo ao conteúdo em todos os portais de destino, como uma regra separada.
 
-  *P: Por que o programador e não a ID do solicitante como no restante da autenticação do Adobe Pass?*
+  *P: Por que o Programador e a ID do Solicitante não são como no restante da Autenticação do Adobe Pass?*
 
-  *R: O motivo é permitir que os programadores usem esse parâmetro de forma flexível para transmitir ou isolar dados entre suas propriedades, dependendo de seus casos de uso.*
+  *A: o motivo é permitir que os Programadores usem este parâmetro de forma flexível para transmitir ou isolar dados entre suas propriedades, dependendo de seus casos de uso.*
 
 ## Recurso {#resource-defn}
 
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Assunto {#subj-defn}
 
-* O consumidor do conteúdo (vídeo) na Internet. Estamos deliberadamente evitando o termo _**usuário**_, já que o Monitoramento de simultaneidade geralmente lida com IDs de conta MVPD (que envolvem vários usuários reais que compartilham o mesmo contrato, por exemplo, membros da família de uma família).
+* O consumidor do conteúdo (vídeo) na Internet. Estamos deliberadamente evitando o termo _**usuário**_, já que o Monitoramento de Simultaneidade geralmente lida com IDs de conta MVPD (que envolvem vários usuários reais compartilhando o mesmo contrato, por exemplo, membros da família de uma família).
 
 * Para cada fluxo, o sujeito pode ser aprimorado com atributos relacionados à pessoa real usando o serviço, seu dispositivo conectado à rede e assim por diante.
 

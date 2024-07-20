@@ -4,7 +4,7 @@ description: Amazon FireOS SSO usando livro de cookies de API sem cliente
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '755'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Este documento fornece instruções para implementar a versão SSO do Amazon do 
 
 A segunda parte do documento aborda as etapas principais para implementar a API sem cliente do Adobe Pass Authentication.
 
-Para obter uma visão geral técnica abrangente de como a solução sem clientes funciona, consulte [Visão geral da REST API](/help/authentication/rest-api-overview.md). O Adobe é o contato preferido para suporte sobre a arquitetura geral e as primeiras implementações.
+Para obter uma visão geral técnica abrangente de como a solução sem cliente funciona, consulte a [Visão geral da API REST](/help/authentication/rest-api-overview.md). O Adobe é o contato preferido para suporte sobre a arquitetura geral e as primeiras implementações.
 
 ## SSO sem cliente do Amazon {#AMZ-Clientless-SSO}
 
@@ -37,16 +37,16 @@ Se a carga for reconhecida e corresponder a uma sessão autenticada, as APIs sem
 
 ### Como criar o aplicativo para usar o SDK do Amazon {#Build-entries}
 
-* Baixe e copie a mais recente [SDK stub do Amazon](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) em uma pasta /SOEnabler paralela ao diretório de aplicativo
+* Baixe e copie o [Amazon Stub SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) mais recente em uma pasta /SOEnabler paralela ao diretório de aplicativos
 * Atualizar arquivos manifest/gradle para usar a biblioteca:
 
-  **Adicione a seguinte linha ao arquivo Manifesto:**
+  **Adicionar a seguinte linha ao arquivo Manifesto:**
 
   ```Java
   <uses-library android:name="com.amazon.ottssotokenlib" android:required="false"/\>
   ```
 
-  **Entradas de arquivo de gradação:**
+  **Entradas de arquivo simples:**
 
   Em repositórios:
 
@@ -65,7 +65,7 @@ Se a carga for reconhecida e corresponder a uma sessão autenticada, as APIs sem
 
 * Lidar com a ausência do aplicativo associado do Amazon:
 
-  Embora isso não seja provável, se o companheiro não estiver presente no dispositivo Amazon que seu aplicativo está executando, você deve encontrar uma ClassNotFoundException no tempo de execução na seguinte classe: `com.amazon.ottssotokenlib.SSOEnabler`.
+  Embora isso não seja provável, se o companheiro não estiver presente no dispositivo Amazon que seu aplicativo está executando, você deve encontrar um ClassNotFoundException no tempo de execução na seguinte classe: `com.amazon.ottssotokenlib.SSOEnabler`.
 
   Se isso acontecer, tudo o que você precisa fazer é ignorar a etapa de carga e voltar ao fluxo normal do PrimeTime. O SSO não será habilitado, mas o fluxo de autenticação regular ocorrerá normalmente.
 
@@ -145,13 +145,13 @@ Se, por qualquer motivo, as chamadas de API não retornarem uma carga, use o flu
 
 ### Atualização da API sem cliente do Adobe Pass para usar o Registro de cliente dinâmico {#clientlessdcr}
 
-Se esta for sua primeira implementação, consulte a **Visão geral técnica sem cliente** e entre em contato com o Adobe caso precise de suporte.
+Se esta for sua primeira implementação, consulte a **Visão geral técnica do sem cliente** e entre em contato com o Adobe caso precise de suporte.
 
 A API sem cliente do Adobe exige que os aplicativos usem o Registro de cliente dinâmico para fazer chamadas para servidores Adobe.
 
-* Para usar o Registro de cliente dinâmico em seu aplicativo, siga as instruções em [Dynamic Client Registration Management para registrar o aplicativo](/help/authentication/dynamic-client-registration-management.md).
+* Para usar o Registro de Cliente Dinâmico em seu aplicativo, siga as instruções em [Gerenciamento de Registro de Cliente Dinâmico para registrar o aplicativo](/help/authentication/dynamic-client-registration-management.md).
 
-* Para implementar a API de registro de cliente dinâmico para executar solicitações de autenticação e autorização para servidores Adobe Pass, siga as instruções em [API dinâmica de registro de cliente](/help/authentication/dynamic-client-registration-api.md) .
+* Para implementar a API Dynamic Client Registration para executar solicitações de autenticação e autorização para servidores Adobe Pass, siga as instruções em [API Dynamic Client Registration](/help/authentication/dynamic-client-registration-api.md).
 
 ### Atualização da API sem cliente do Adobe Pass para usar o SSO do Amazon {#clientlesssso}
 
@@ -181,7 +181,7 @@ Todos os endpoints de Autenticação do Adobe Pass são compatíveis com os segu
 
 **Exemplos:**
 
-**Enviar como cabeçalho personalizado**
+**Enviando como cabeçalho personalizado**
 
 ```HTTPS
 GET /adobe-services/config/requestor HTTP/1.1 Host: sp-preprod.auth.adobe.com
@@ -189,7 +189,7 @@ GET /adobe-services/config/requestor HTTP/1.1 Host: sp-preprod.auth.adobe.com
 Adobe-Subject-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA
 ```
 
-**Envio como parâmetro de consulta**
+**Enviando como parâmetro de consulta**
 
 ```HTTPS
 GET /adobe-services/config/requestor?ast=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA
@@ -199,7 +199,7 @@ Host: sp.auth.adobe.com
 ```
 
 
-**Envio como parâmetro de publicação**
+**Enviando como parâmetro de postagem**
 
 
 ```HTTPS

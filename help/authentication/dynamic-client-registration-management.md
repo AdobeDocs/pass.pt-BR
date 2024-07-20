@@ -4,7 +4,7 @@ description: Gerenciamento dinâmico de registro de clientes
 exl-id: 2c3ebb0b-c814-4b9e-af57-ce1403651e9e
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1338'
+source-wordcount: '1321'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Visão geral {#overview}
 
-Com a adoção generalizada da [Guias Personalizadas Do Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target_blanck} e [Controlador de visualização do Apple Safari](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target_blanck} nos aplicativos de nossos clientes, estamos atualizando o fluxo de autenticação do usuário na autenticação da Adobe Pass. Mais especificamente, não podemos mais atingir o objetivo de manter o estado para que o fluxo de agente do usuário de autenticação de um assinante MVPD possa ser rastreado entre os redirecionamentos. Isso foi feito anteriormente usando cookies HTTP. Essa limitação é o driver para começar a migrar todas as APIs para o OAuth 2.0 [RFC6749](https://tools.ietf.org/html/rfc6749){target_blanck}.
+Com a adoção generalizada das [Guias Personalizadas do Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target_blanck} e do [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target_blanck} nos aplicativos de nossos clientes, estamos atualizando o fluxo de autenticação de usuário na Autenticação do Adobe Pass. Mais especificamente, não podemos mais atingir o objetivo de manter o estado para que o fluxo de agente do usuário de autenticação de um assinante MVPD possa ser rastreado entre os redirecionamentos. Isso foi feito anteriormente usando cookies HTTP. Essa limitação é o driver para começar a migrar todas as APIs para o OAuth 2.0 [RFC6749](https://tools.ietf.org/html/rfc6749){target_blanck}.
 
 Com essa atualização, os Clientes de autenticação Adobe se tornam clientes OAuth 2.0 e um servidor de autorização OAuth 2.0 personalizado é implantado para atender às necessidades do Serviço de autenticação da Adobe Pass.
 
@@ -25,16 +25,16 @@ Para que os aplicativos cliente utilizem a autorização OAuth 2.0, o servidor d
 
 Esses metadados são comunicados como uma declaração de software, que contém um &quot;software_id&quot; para permitir que nosso servidor de autorização correlacione diferentes instâncias de um aplicativo usando a mesma declaração de software.
 
-A **declaração de software** é um JSON Web Token (JWT) que declara valores de metadados sobre o software cliente como um pacote. Quando apresentada ao servidor de autorização como parte de uma solicitação de registro do cliente, a instrução de software deve ser assinada digitalmente ou MACed usando JSON Web Signature (JWS).
+Uma **instrução de software** é um JSON Web Token (JWT) que declara valores de metadados sobre o software cliente como um pacote. Quando apresentada ao servidor de autorização como parte de uma solicitação de registro do cliente, a instrução de software deve ser assinada digitalmente ou MACed usando JSON Web Signature (JWS).
 
-Você pode encontrar uma explicação mais detalhada sobre o que são as declarações de software e como elas funcionam na documentação oficial [RFC7591](https://tools.ietf.org/html/rfc7591).
+Você pode encontrar uma explicação mais detalhada sobre o que são as instruções de software e como elas funcionam na documentação oficial [RFC7591](https://tools.ietf.org/html/rfc7591).
 
 A instrução de software deve ser implantada com o aplicativo no dispositivo do usuário.
 
 Antes desta atualização, tínhamos dois mecanismos para permitir que os aplicativos executassem chamadas para a Autenticação Adobe Pass:
 
-* os clientes baseados em navegador são registrados via permitido [listagem de domínio](/help/authentication/programmer-overview.md#reg-and-init)
-* clientes de aplicativos nativos, como aplicativos iOS e Android, são registrados por meio de **solicitante assinado** mecanismo
+* os clientes baseados em navegador são registrados por meio da [lista de domínios](/help/authentication/programmer-overview.md#reg-and-init) permitida
+* os clientes de aplicativos nativos, como aplicativos iOS e Android, são registrados por meio do mecanismo **solicitante assinado**
 
 
 Com o mecanismo de autorização Registro do cliente, você deve adicionar seus aplicativos ao painel da TVE.
@@ -47,29 +47,29 @@ Siga as etapas nas seções abaixo para criar um Aplicativo registrado no painel
 
 Há duas maneiras de criar um Aplicativo Registrado no Painel TVE:
 
-* [Nível do programador](#prog-level) - permite criar um Aplicativo Registrado e vinculá-lo a qualquer um ou todos os canais do Programador.
+* [Nível do programador](#prog-level) - permite criar um Aplicativo registrado e vinculá-lo a qualquer um ou a todos os canais do programador.
 
-* [Nível do canal](#channel-level) - permite criar um Aplicativo registrado que é vinculado permanentemente apenas a este Canal.
+* [Nível de canal](#channel-level) - permite criar um Aplicativo Registrado que esteja permanentemente vinculado apenas a este Canal.
 
 ### Criar um aplicativo registrado no nível do programador {#prog-level}
 
-Ir para **Programadores** > **Aplicativos registrados** guia.
+Vá para a guia **Programadores** > **Aplicativos Registrados**.
 
 ![](assets/reg-app-progr-level.png)
 
-Na guia Registered Applications, clique em **Adicionar Novo Aplicativo**. Preencha os campos obrigatórios na nova janela.
+Na guia Registered Applications, clique em **Add New Application**. Preencha os campos obrigatórios na nova janela.
 
 Como visto na imagem abaixo, os campos que você deve preencher são:
 
-* **Nome do aplicativo** - o nome do aplicativo
+* **Nome do Aplicativo** - o nome do aplicativo
 
-* **Atribuído ao canal** - o nome do seu canal, t</span>ao qual este aplicativo está vinculado. A configuração padrão na máscara suspensa é **Todos os canais.** A interface permite selecionar um canal ou todos os canais.
+* **Atribuído ao Canal** - o nome do seu canal, ao qual este aplicativo está vinculado. </span> A configuração padrão na máscara suspensa é **Todos os canais.** A interface permite selecionar um canal ou todos os canais.
 
-* **Versão do aplicativo** - por padrão, isso é definido como &quot;1.0.0&quot;, mas recomendamos que você o modifique com sua própria versão do aplicativo. Como prática recomendada, se você decidir alterar a versão do aplicativo, reflita-a criando um novo aplicativo registrado para ela.
+* **Versão do Aplicativo** - por padrão, está definido como &quot;1.0.0&quot;, mas é altamente recomendável que você o modifique com sua própria versão do aplicativo. Como prática recomendada, se você decidir alterar a versão do aplicativo, reflita-a criando um novo aplicativo registrado para ela.
 
-* **Plataformas de aplicativos** - as plataformas com as quais o aplicativo será vinculado. Você tem a opção de selecionar todos eles ou vários valores.
+* **Plataformas de Aplicativos** - as plataformas às quais o aplicativo será vinculado. Você tem a opção de selecionar todos eles ou vários valores.
 
-* **Nomes de domínio** - os domínios aos quais o aplicativo será vinculado. Os domínios na lista suspensa são uma seleção unificada de todos os domínios de todos os canais. Você tem a opção de selecionar vários domínios na lista. O significado dos domínios são URLs de redirecionamento [RFC6749](https://tools.ietf.org/html/rfc6749). No processo de registro do cliente, o aplicativo cliente pode solicitar permissão para usar um URL de redirecionamento para a finalização do fluxo de autenticação. Quando um aplicativo cliente solicita um URL de redirecionamento específico, ele é validado em relação aos domínios da lista de permissões neste Aplicativo registrado associado à instrução do software.
+* **Nomes de Domínio** - os domínios aos quais o aplicativo será vinculado. Os domínios na lista suspensa são uma seleção unificada de todos os domínios de todos os canais. Você tem a opção de selecionar vários domínios na lista. O significado dos domínios são URLs de redirecionamento [RFC6749](https://tools.ietf.org/html/rfc6749). No processo de registro do cliente, o aplicativo cliente pode solicitar permissão para usar um URL de redirecionamento para a finalização do fluxo de autenticação. Quando um aplicativo cliente solicita um URL de redirecionamento específico, ele é validado em relação aos domínios da lista de permissões neste Aplicativo registrado associado à instrução do software.
 
 
 ![](assets/new-reg-app.png)
@@ -77,7 +77,7 @@ Como visto na imagem abaixo, os campos que você deve preencher são:
 
 Depois de preencher os campos com os valores apropriados, clique em &quot;Concluído&quot; para que o aplicativo seja salvo na configuração.
 
-Observe que há **nenhuma opção para modificar um aplicativo já criado**. Caso se descubra que algo criado não atende mais aos requisitos, um novo aplicativo registrado precisará ser criado e usado com o aplicativo cliente cujos requisitos ele atende.
+Esteja ciente de que não há **nenhuma opção para modificar um aplicativo já criado**. Caso se descubra que algo criado não atende mais aos requisitos, um novo aplicativo registrado precisará ser criado e usado com o aplicativo cliente cujos requisitos ele atende.
 
 
 ### Registrar um novo aplicativo no nível do canal {#channel-level}
@@ -124,7 +124,7 @@ O nome do arquivo é identificado exclusivamente ao prefixá-lo com &quot;softwa
 
 Observe que, para o mesmo aplicativo registrado, serão recebidas instruções de software diferentes sempre que o botão de download for clicado, mas isso não invalida as instruções de software obtidas anteriormente para esse aplicativo. Isso acontece porque elas são geradas no local, por solicitação de ação.
 
-Há um **limitação** em relação à ação de download. Se for solicitada uma instrução de software clicando no botão &quot;Download&quot; logo após a criação do aplicativo registrado e isso ainda não tiver sido salvo e o json de configuração não tiver sido sincronizado, a seguinte mensagem de erro aparecerá na parte inferior da página.
+Há uma **limitação** relacionada à ação de download. Se for solicitada uma instrução de software clicando no botão &quot;Download&quot; logo após a criação do aplicativo registrado e isso ainda não tiver sido salvo e o json de configuração não tiver sido sincronizado, a seguinte mensagem de erro aparecerá na parte inferior da página.
 
 ![](assets/error-sw-statement-notready.png)
 
@@ -143,4 +143,4 @@ Para obter detalhes sobre como o processo completo funciona ou para obter alguns
 
 ## Demonstração de recursos {#tutorial}
 
-Assista [este webinário](https://my.adobeconnect.com/pzkp8ujrigg1/) que fornece mais contexto dos recursos e contém uma demonstração sobre como gerenciar as instruções de software usando o painel TVE e como testar as geradas usando um aplicativo de demonstração fornecido pelo Adobe como parte do Android SDK.
+Assista a [este webinário](https://my.adobeconnect.com/pzkp8ujrigg1/), que fornece mais contexto sobre os recursos e contém uma demonstração sobre como gerenciar as instruções de software usando o Painel TVE e como testar as geradas usando um aplicativo de demonstração fornecido pelo Adobe como parte do SDK do Android.

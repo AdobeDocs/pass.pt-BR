@@ -1,13 +1,13 @@
 ---
 title: Notas de versão do Adobe Pass Concurrency Monitoring 2.6.0
 description: Notas de versão do Adobe Pass Concurrency Monitoring 2.6.0
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: f24980e3-ffe8-4b5e-8adc-ae443baed40f
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '193'
-ht-degree: 0%
+source-wordcount: '202'
+ht-degree: 1%
 
 ---
-
 
 # Notas de versão do Adobe Pass Concurrency Monitoring 2.6.0 {#cm-260}
 
@@ -26,7 +26,7 @@ Essa versão adiciona a capacidade de encerrar fluxos existentes para permitir q
 
 
 
-**Término remoto**
+**Encerramento remoto**
 
 * Em uma resposta de Conflito 409, cada sessão listada no campo &quot;conflitos&quot; da dica terá um atributo termincode.
 * O usuário pode ser avisado com a lista de sessões conflitantes e ter permissão para escolher as que deseja eliminar
@@ -54,4 +54,4 @@ Os cabeçalhos duplicados foram removidos na resposta do servidor (a correção 
 
 ## Problemas conhecidos {#known-issues}
 
-N/D
+N/A

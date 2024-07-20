@@ -4,7 +4,7 @@ description: SDK do Amazon FireOS com registro de cliente dinâmico
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1150'
+source-wordcount: '1145'
 ht-degree: 0%
 
 ---
@@ -21,14 +21,14 @@ ht-degree: 0%
 
 O SDK FireOS AccessEnabler para FireTV foi modificado para habilitar a autenticação sem usar cookies de sessão. À medida que mais e mais navegadores restringem o acesso a cookies, outro método era necessário para permitir a autenticação.
 
-**FireOS SDK 3.0.4** substitui o mecanismo atual de registro do aplicativo com base na ID do solicitante assinada e na autenticação de cookie de sessão por [Registro de cliente dinâmico](/help/authentication/dynamic-client-registration.md).
+O **FireOS SDK 3.0.4** substitui o mecanismo de registro de aplicativo atual com base na ID do solicitante assinada e na autenticação de cookie de sessão pelo [Registro de Cliente Dinâmico](/help/authentication/dynamic-client-registration.md).
 
 
 ## Alterações na API {#API}
 
 ### Factory.getInstance
 
-**Descrição:** Instancia o objeto do Access Enabler. Deve haver uma única instância do Access Enabler por instância do aplicativo.
+**Descrição:** Instancia o objeto do Ativador de Acesso. Deve haver uma única instância do Access Enabler por instância do aplicativo.
 
 | Chamada de API: construtor |
 | --- |
@@ -38,9 +38,9 @@ O SDK FireOS AccessEnabler para FireTV foi modificado para habilitar a autentica
 
 **Parâmetros:**
 
-- *appContext*: Contexto de aplicativo do Android
-- *softwareStatement*: valor obtido do painel TVE ou *null* se &quot;software\_statement&quot; estiver definido em strings.xml
-- *redirectUrl* : para implementações FireTV, esse parâmetro deve ser nulo. Qualquer configuração neste atributo será ignorada.
+- *appContext*: contexto de aplicativo do Android
+- *softwareStatement*: valor obtido do Painel TVE ou *null* se &quot;software\_statement&quot; estiver definido em strings.xml
+- *redirectUrl* : para implementações FireTV, este parâmetro deve ser nulo. Qualquer configuração neste atributo será ignorada.
 
 **Notas**
 
@@ -53,9 +53,9 @@ O SDK FireOS AccessEnabler para FireTV foi modificado para habilitar a autentica
 
 A resposta do servidor contém uma lista de MVPDs juntamente com algumas informações de configuração anexadas à identidade do Canal. A resposta do servidor é usada internamente pelo código Access Enabler. Somente o status da operação (ou seja, SUCCESS/FAIL) é apresentado ao seu aplicativo por meio do retorno de chamada setRequestorComplete().
 
-Se a variável *urls* não for usado, a chamada de rede resultante será direcionada ao URL do provedor de serviços padrão: o ambiente de Produção da versão do Adobe.
+Se o parâmetro *urls* não for usado, a chamada de rede resultante será direcionada para a URL do provedor de serviços padrão: o ambiente de Produção de Liberação de Adobe.
 
-Se um valor for fornecido para a variável *urls* parâmetro, a chamada de rede resultante será direcionada a todos os URLs fornecidos na variável *urls* parâmetro. Todas as solicitações de configuração são acionadas simultaneamente em threads separados. O primeiro respondente tem prioridade ao compilar a lista de MVPDs. Para cada MVPD na lista, o Ativador de acesso lembra o URL do provedor de serviços associado. Todas as solicitações de direito subsequentes são direcionadas ao URL associado ao provedor de serviços que foi emparelhado com o MVPD de destino durante a fase de configuração.
+Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante será direcionada a todas as URLs fornecidas no parâmetro *urls*. Todas as solicitações de configuração são acionadas simultaneamente em threads separados. O primeiro respondente tem prioridade ao compilar a lista de MVPDs. Para cada MVPD na lista, o Ativador de acesso lembra o URL do provedor de serviços associado. Todas as solicitações de direito subsequentes são direcionadas ao URL associado ao provedor de serviços que foi emparelhado com o MVPD de destino durante a fase de configuração.
 
 | Chamada de API: configuração do solicitante |
 | --- |
@@ -84,7 +84,7 @@ Obsoleto:
 
 ### logout
 
-**Descrição:** Use esse método para iniciar o fluxo de logout. O logout é o resultado de uma série de operações de redirecionamento HTTP devido ao fato de que o usuário precisa ser desconectado dos servidores de Autenticação do Adobe Pass e também dos servidores do MVPD. Como resultado, esse fluxo abrirá uma janela ChromeCustomTab para executar o logout.
+**Descrição:** Use este método para iniciar o fluxo de logout. O logout é o resultado de uma série de operações de redirecionamento HTTP devido ao fato de que o usuário precisa ser desconectado dos servidores de Autenticação do Adobe Pass e também dos servidores do MVPD. Como resultado, esse fluxo abrirá uma janela ChromeCustomTab para executar o logout.
 
 | Chamada de API: iniciar o fluxo de logout |
 | --- |
@@ -98,7 +98,7 @@ Obsoleto:
 
 ## Fluxo de implementação do programador {#Progr}
 
-### **1. Registrar aplicativo**
+### **1. Registrar Aplicativo**
 
 1. Obter software\_statement do Adobe Pass ( Painel TVE )
 1. Há duas opções para transmitir esses valores para o SDK do Adobe Pass:
@@ -112,19 +112,19 @@ Obsoleto:
 
 
 
-### **2. Configurar aplicativo**
+### **2. Configurar Aplicativo**
 
 - a. setRequestor(requestor\_id)
 
   O SDK executará as seguintes operações:
 
-   - registrar aplicativo: usando **software\_statement**, o SDK obterá uma **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Essas informações serão armazenadas no armazenamento interno do aplicativo.
-   - obter um **access\_token** usando client\_id, client\_secret e grant\_type=&quot;client\_credentials&quot;. Esse access\_token será usado em cada chamada feita pelo SDK para servidores da Adobe Pass.
+   - registrar aplicativo: usando **software\_statement**, o SDK obterá um **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Essas informações serão armazenadas no armazenamento interno do aplicativo.
+   - obtenha um **access\_token** usando client\_id, client\_secret e grant\_type=&quot;client\_credentials&quot;. Esse access\_token será usado em cada chamada feita pelo SDK para servidores da Adobe Pass.
 
 | Respostas de Erro de Token: |  |  |
 |--- | --- | --- |
 | HTTP 400 (Solicitação inválida) | {&quot;error&quot;: &quot;invalid\_request&quot;} | A solicitação não tem um parâmetro obrigatório, inclui um valor de parâmetro sem suporte (diferente do tipo de concessão), repete um parâmetro, inclui várias credenciais, usa mais de um mecanismo para autenticar o cliente ou está malformada. |
-| HTTP 400 (Solicitação inválida) | {&quot;error&quot;: &quot;invalid\_client&quot;} | Falha na autenticação do cliente porque o cliente era desconhecido. O SDK *DEVE* registre-se novamente no servidor de autorização. |
+| HTTP 400 (Solicitação inválida) | {&quot;error&quot;: &quot;invalid\_client&quot;} | Falha na autenticação do cliente porque o cliente era desconhecido. O SDK *DEVE* fazer o registro no servidor de autorização novamente. |
 | HTTP 400 (Solicitação inválida) | {&quot;error&quot;: &quot;unauthorized\_client&quot;} | O cliente autenticado não está autorizado a usar este tipo de concessão de autorização. |
 
 - no caso de um MVPD exigir Autenticação Passiva, um WebView será aberto para execução passiva com esse MVPD e será fechado quando concluído
@@ -132,9 +132,9 @@ Obsoleto:
 - b. checkAuthentication()
 
    - *true* : ir para Autorização
-   - *false* : vá para Selecionar MVPD
+   - *false* : ir para Selecionar MVPD
 
-- c. getAuthentication : o SDK incluirá **access_token** em parâmetros de chamada
+- c. getAuthentication: o SDK incluirá **access_token** nos parâmetros de chamada
 
    - mvpd lembrado : ir para setSelectedProvider (mvpd\_id)
    - mvpd não selecionado : displayProviderDialog
@@ -154,13 +154,13 @@ Obsoleto:
 - f. logout:
 
    - O SDK excluirá um token válido para o solicitante atual (as autenticações obtidas por outros aplicativos e não por meio do SSO permanecerão válidas)
-   - O SDK abrirá as Guias personalizadas do Chrome para alcançar o ponto de extremidade de logout mvpd\_id. Depois de concluído, as guias personalizadas do Chrome serão fechadas
+   - O SDK abrirá as Guias personalizadas do Chrome para alcançar o ponto de extremidade de logout mvpd\_id. Depois de concluídas, as Guias personalizadas do Chrome serão fechadas
    - O esquema de URL é estabelecido como &quot;adobepass://logout&quot; para capturar o momento em que o logout é concluído
    - logout acionará um sendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) e um callback : setAuthenticationStatus(0,&quot;Logout&quot;)
 
 
 
-**Nota:** já que cada chamada requer uma **access_token**, os possíveis códigos de erro abaixo são tratados no SDK.
+**Observação:** como cada chamada requer um **access_token**, os possíveis códigos de erro abaixo são tratados no SDK.
 
 | Respostas de erro |  |  |
 |--- | --- | --- |

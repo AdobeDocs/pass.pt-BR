@@ -4,7 +4,7 @@ description: Temp pass
 exl-id: 1df14090-8e71-4e3e-82d8-f441d07c6f64
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '2229'
+source-wordcount: '2243'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ O Temp Pass permite que os programadores ofereçam acesso temporário a seu cont
 * Os programadores especificam a duração (Tempo de vida útil ou TTL) de seu passe temporário.
 * Operação Temp Pass por solicitante.  Por exemplo, a NBC poderia configurar um passe Temp de 4 horas para o solicitante &quot;NBCOlympics&quot;.
 * Os programadores podem redefinir todos os tokens concedidos a um solicitante específico.  O &quot;MVPD temporário&quot; usado para implementar a Passagem Temporária deve ser configurado com a opção &quot;Autenticação por Solicitante&quot; ativada.
-* **O acesso Temp Pass é concedido a usuários individuais em dispositivos específicos**. Depois que o acesso de Aprovação Temporária expira para um usuário, ele não poderá obter acesso temporário no mesmo dispositivo até que o acesso expire [token de autorização](/help/authentication/glossary.md#authz-token) é apagado do servidor de autenticação do Adobe Pass.
+* **O acesso de Temp Pass é concedido a usuários individuais em dispositivos específicos**. Depois que o acesso de passagem temporária expira para um usuário, ele não poderá obter acesso temporário no mesmo dispositivo até que o [token de autorização](/help/authentication/glossary.md#authz-token) expirado desse usuário seja apagado do servidor de Autenticação do Adobe Pass.
 
 
 >[!NOTE]
@@ -35,19 +35,19 @@ O Temp Pass permite que os programadores ofereçam acesso temporário a seu cont
 
 ## Detalhes do recurso {#tempass-featur-details}
 
-* **Como o tempo de exibição é calculado** - O tempo em que um passe temporário permanece válido não está correlacionado à quantidade de tempo que um usuário gasta visualizando o conteúdo no aplicativo do Programador.  Após a solicitação inicial do usuário para autorização por meio da Aprovação de Temp, uma hora de expiração é calculada adicionando a hora da solicitação atual inicial ao TTL especificado pelo Programador. Esse tempo de expiração está associado à ID do dispositivo do usuário e à ID do solicitante do programador, e armazenado no banco de dados de autenticação do Adobe Pass. Sempre que o usuário tentar acessar o conteúdo usando a Aprovação Temporária do mesmo dispositivo, a Autenticação do Adobe Pass comparará o tempo de solicitação do servidor com o tempo de expiração associado à ID de dispositivo do usuário e à ID do solicitante do Programador. Se o tempo de solicitação do servidor for menor que o tempo de expiração, a autorização será concedida; caso contrário, a autorização será negada.
-* **Parâmetros de configuração** - Os seguintes parâmetros de Aprovação Temporária podem ser especificados por um Programador para criar uma regra de Aprovação Temporária:
+* **Como o Tempo de Exibição é Calculado** - O tempo que uma Aprovação Temporária permanece válida não está correlacionado com o tempo que um usuário passa visualizando o conteúdo no aplicativo do Programador.  Após a solicitação inicial do usuário para autorização por meio da Aprovação de Temp, uma hora de expiração é calculada adicionando a hora da solicitação atual inicial ao TTL especificado pelo Programador. Esse tempo de expiração está associado à ID do dispositivo do usuário e à ID do solicitante do programador, e armazenado no banco de dados de autenticação do Adobe Pass. Sempre que o usuário tentar acessar o conteúdo usando a Aprovação Temporária do mesmo dispositivo, a Autenticação do Adobe Pass comparará o tempo de solicitação do servidor com o tempo de expiração associado à ID de dispositivo do usuário e à ID do solicitante do Programador. Se o tempo de solicitação do servidor for menor que o tempo de expiração, a autorização será concedida; caso contrário, a autorização será negada.
+* **Parâmetros de Configuração** - Os seguintes parâmetros de Temp Pass podem ser especificados por um Programador para criar uma regra de Temp Pass:
    * **TTL do token** - O tempo que um usuário pode assistir sem entrar em um MVPD. Esse horário é baseado em relógio e expira independentemente de o usuário estar assistindo ao conteúdo ou não.
   >[!NOTE]
   >Uma ID de solicitante não pode ter mais de uma regra de senha temporária associada a ela.
-* **Autenticação / Autorização** - No fluxo Aprovação de Temp, especifique o MVPD como &quot;Aprovação de Temp&quot;.  A Autenticação do Adobe Pass não se comunica com um MVPD real no fluxo de Aprovação Temporária, portanto, o MVPD de &quot;Aprovação Temporária&quot; autoriza qualquer recurso. Os programadores podem especificar um recurso que seja acessível usando o Temp Pass da mesma forma que fazem para o restante dos recursos em seu site. A Biblioteca de Verificador de Mídia pode ser usada como de costume para verificar o token de mídia curto de Aprovação Temporária e impor a verificação de recursos antes da reprodução.
-* **Rastreamento de dados no fluxo de passagem temporário** - Dois pontos sobre os dados de rastreamento durante um fluxo de direito de Aprovação Temporária:
-   * A ID de rastreamento que é passada da autenticação da Adobe Pass para o **sendTrackingData()** O retorno de chamada é um hash da ID do dispositivo.
-   * Como a ID do MVPD usada no fluxo Passagem Temporária é &quot;Passagem Temporária&quot;, essa mesma ID do MVPD é passada de volta para **sendTrackingData()**. A maioria dos programadores provavelmente desejará tratar as métricas de Aprovação de temperatura de forma diferente das métricas reais de MVPD. Isso requer algum trabalho adicional na implementação do Analytics.
+* **Autenticação/Autorização** - No fluxo de passagem temporária, você especifica o MVPD como &quot;Aprovação temporária&quot;.  A Autenticação do Adobe Pass não se comunica com um MVPD real no fluxo de Aprovação Temporária, portanto, o MVPD de &quot;Aprovação Temporária&quot; autoriza qualquer recurso. Os programadores podem especificar um recurso que seja acessível usando o Temp Pass da mesma forma que fazem para o restante dos recursos em seu site. A Biblioteca de Verificador de Mídia pode ser usada como de costume para verificar o token de mídia curto de Aprovação Temporária e impor a verificação de recursos antes da reprodução.
+* **Dados de Rastreamento no Fluxo de Aprovação Temp** - Dois pontos relacionados aos dados de rastreamento durante um fluxo de qualificação de Aprovação Temp:
+   * A ID de Rastreamento transmitida da Autenticação Adobe Pass para o retorno de chamada **sendTrackingData()** é um hash da ID do Dispositivo.
+   * Como a ID de MVPD usada no fluxo de Passagem Temporária é &quot;Passagem Temporária&quot;, essa mesma ID de MVPD é passada de volta para **sendTrackingData()**. A maioria dos programadores provavelmente desejará tratar as métricas de Aprovação de temperatura de forma diferente das métricas reais de MVPD. Isso requer algum trabalho adicional na implementação do Analytics.
 
 A ilustração a seguir mostra o fluxo Aprovação Temporária:
 
-![O fluxo de passagem temporária](assets/temp-pass-flow.png)
+![O Fluxo de Passagem Temporária](assets/temp-pass-flow.png)
 
 *Figura: O fluxo de passagem temporária*
 
@@ -57,18 +57,18 @@ No lado da Autenticação do Adobe Pass, o Temp Pass é implementado com a adiç
 
 No lado do Programador, o Temp Pass é implementado da seguinte maneira para os dois cenários que os MVPDs usam para autenticação:
 
-* **iFrame na página do programador**. A Aprovação Temporária funciona independentemente do tipo de autenticação de um MVPD, mas para o cenário de iFrame, etapas adicionais são necessárias para cancelar o fluxo de autenticação atual e autenticar com a Aprovação Temporária. Essas etapas são mostradas na seção [Logon no iFrame](/help/authentication/temp-pass.md) abaixo.
+* **iFrame na página do Programador**. A Aprovação Temporária funciona independentemente do tipo de autenticação de um MVPD, mas para o cenário de iFrame, etapas adicionais são necessárias para cancelar o fluxo de autenticação atual e autenticar com a Aprovação Temporária. Estas etapas são mostradas no [Logon do iFrame](/help/authentication/temp-pass.md) abaixo.
 * **Redirecionar para a página de logon do MVPD**. No caso mais tradicional em que a interface do usuário para acionar a passagem temporária é apresentada antes de iniciar a autenticação com um MVPD, não há etapas especiais a serem executadas. A passagem temporária deve ser tratada como um MVPD regular.
 
 Os seguintes pontos se aplicam a ambos os cenários de implementação:
 
 * A &quot;Aprovação Temporária&quot; deve ser exibida no seletor de MVPD somente para usuários que ainda não solicitaram uma autorização de Aprovação Temporária. Bloquear a exibição para solicitações subsequentes pode ser feito mantendo um sinalizador nos cookies. Isso funcionará desde que o usuário não limpe o cache do navegador. Se os usuários limparem os caches do navegador, &quot;Aprovação temporária&quot; aparecerá novamente no seletor e o usuário poderá solicitá-lo novamente. O acesso será concedido somente se a hora &quot;Aprovação temporária&quot; ainda não tiver expirado.
 * Quando um usuário solicita acesso por meio da Aprovação temporária, o Servidor de autenticação da Adobe Pass não executará sua solicitação usual de SAML (Security Assertion Markup Language) durante o processo de autenticação. Em vez disso, o endpoint de autenticação retornará sucesso sempre que for chamado enquanto os tokens forem válidos para o dispositivo.
-* Quando um Temp Pass expirar, o usuário não será mais autenticado, pois no fluxo do Temp Pass, o token de autenticação e o token de autorização têm a mesma data de expiração. Para explicar aos usuários que seu Passe Temporário expirou, os Programadores devem recuperar o MVPD selecionado logo após chamar `setRequestor()`, e chame `checkAuthentication()` como de costume. No `setAuthenticationStatus()` retorno de chamada: é possível fazer uma verificação para determinar se o status de autenticação é 0, de modo que, se o MVPD selecionado fosse &quot;TempPass&quot;, uma mensagem poderia ser apresentada aos usuários informando que a sessão do Temp Pass expirou.
+* Quando um Temp Pass expirar, o usuário não será mais autenticado, pois no fluxo do Temp Pass, o token de autenticação e o token de autorização têm a mesma data de expiração. Para explicar aos usuários que o Passe Temporário expirou, os Programadores devem recuperar o MVPD selecionado logo após chamar `setRequestor()` e chamar `checkAuthentication()` como de costume. No retorno de chamada `setAuthenticationStatus()`, é possível verificar se o status de autenticação é 0, para que, se o MVPD selecionado fosse &quot;TempPass&quot;, uma mensagem possa ser apresentada aos usuários informando que a sessão de Temp Pass expirou.
 * Se um usuário excluir o token de passagem temporária antes da expiração, as verificações de direito subsequentes gerarão um token que terá um TTL igual ao tempo restante.
 * Se o usuário excluir o token de passagem temporária após a expiração, as verificações de direito subsequentes retornarão &quot;usuário não autorizado&quot;.
 
-Veja as amostras em [Código de exemplo](/help/authentication/temp-pass.md#tempass-sample-code) abaixo para obter exemplos de como codificar os detalhes de implementação descritos nesta seção.
+Consulte as amostras em [Código de amostra](/help/authentication/temp-pass.md#tempass-sample-code) abaixo para obter exemplos de como codificar os detalhes de implementação descritos nesta seção.
 
 ## Código de exemplo {#tempass-sample-code}
 
@@ -212,7 +212,7 @@ Este exemplo mostra como implementar o Temp Pass para o caso em que os MVPDs ofe
 
 #### Casos de uso de logon de iFrame {#iframe-login-use-cases}
 
-**Para solicitar um passe temporário pela primeira vez:**
+**Para solicitar um Temp Pass pela primeira vez:**
 
 1. Um usuário acessa a página do Programador e clica no link de logon.
 1. O seletor de MVPD é aberto e o usuário escolhe um MVPD na lista.
@@ -224,7 +224,7 @@ Este exemplo mostra como implementar o Temp Pass para o caso em que os MVPDs ofe
 1. Os servidores de Autenticação do Adobe Pass geram um token de autorização.
 1. O usuário acessa o conteúdo protegido.
 
-**Para solicitar um Temp Pass novamente depois que um usuário de Temp Pass que retorna exclui os cookies do navegador:**
+**Para solicitar novamente um Temp Pass após um usuário de Temp Pass retornar ter excluído os cookies do navegador:**
 
 1. O usuário acessa a página do Programador e clica no link de logon.
 1. O seletor de MVPD é aberto e o usuário escolhe um MVPD na lista.
@@ -483,13 +483,13 @@ Para esse exemplo de cenário (uma sessão inicial de 4 horas livre, seguida por
 Depois que o Adobe configurar as duas instâncias do TempPass, os dois MVPDs adicionais (TempPass1 e TempPass2) aparecerão na lista MVPD do Programador.  O Programador precisa executar as seguintes etapas para implementar as várias passagens temporárias:
 
 1. Na visita inicial do usuário ao site, faça logon nele automaticamente com o TempPass1. Você pode usar a Amostra de Login Automático acima como ponto de partida para essa tarefa.
-1. Quando você detectar que TempPass1 expirou, armazene o fato (em um cookie/armazenamento local) e apresente ao usuário seu seletor de MVPD padrão. **Filtre TempPass1 e TempPass2 da lista**.
+1. Quando você detectar que TempPass1 expirou, armazene o fato (em um cookie/armazenamento local) e apresente ao usuário seu seletor de MVPD padrão. **Filtre TempPass1 e TempPass2 dessa lista**.
 1. Em cada dia subsequente, se TempPass1 expirar, efetue login automático nesse usuário com TempPass2.
 1. Quando o TempPass2 expirar, armazene o fato (em um cookie/armazenamento local) para o dia e apresente ao usuário seu seletor de MVPD padrão. Novamente, filtre TempPass1 e TempPass2 dessa lista.
-1. Em cada novo dia, às 00:00 horas, redefina todos os passes temporários para TempPass2 usando o [Redefinir API da Web TempPass](/help/authentication/temp-pass.md#reset-all-tempass).
+1. A cada novo dia, às 00:00 horas, redefina todos os passos de temp para TempPass2 usando a [Redefinir API da Web TempPass](/help/authentication/temp-pass.md#reset-all-tempass).
 
 >[!NOTE]
->**Nota de programação:** A Autenticação do Adobe Pass não tem um mecanismo integrado para interromper a transmissão gratuita após o transcorrido de 10 minutos.  Cabe aos programadores restringir o acesso depois que o TempPass2 expirar. Para conseguir isso, os programadores podem implementar em seus sites/aplicativos uma chamada de &quot;checkAuthorization&quot; a cada X minutos, onde X é o período de tempo que o programador determina que faz sentido para seus aplicativos.
+>**Nota de programação:** a Autenticação Adobe Pass não tem um mecanismo interno para interromper a transmissão gratuita após 10 minutos.  Cabe aos programadores restringir o acesso depois que o TempPass2 expirar. Para conseguir isso, os programadores podem implementar em seus sites/aplicativos uma chamada de &quot;checkAuthorization&quot; a cada X minutos, onde X é o período de tempo que o programador determina que faz sentido para seus aplicativos.
 
 ## Redefinir todas as passagens temporárias {#reset-all-tempass}
 
@@ -499,7 +499,7 @@ Certas regras de negócios exigem a limpeza regular da Aprovação Temporária o
 * Um passe temporário disponível para todos os usuários durante as últimas notícias. (O Temp Pass precisa ser redefinido para todos os dispositivos assim que as últimas notícias começarem.)
 * O cenário de vários passes temporários que fornece uma combinação de um período de exibição inicial de alguma duração, seguido por períodos diários subsequentes de outra duração.
 
-Para redefinir todas as Etapas Temporárias, a Autenticação do Adobe Pass fornece aos Programadores uma *público* API da Web:
+Para redefinir todas as Passagens Temporárias, a Autenticação do Adobe Pass fornece aos Programadores uma API da Web *pública*:
 
 ```url
 DELETE https://mgmt.auth.adobe.com/reset-tempass/v2/reset
@@ -545,6 +545,6 @@ Suporte da Ferramenta Temp Pass e Reset por plataforma:
 
 Esta seção descreve as limitações que se aplicam à implementação atual do Temp Pass.
 
-**SDK do JavaScript**: suporta a funcionalidade de redefinição de passagem temporária da versão **3.X e superior**.
+**JavaScript SDK**: oferece suporte à funcionalidade de redefinição de passagem temporária da versão **3.X e superior**.
 
 <!--For Customers migrating from the 2.X JavaScript AccessEnabler to the 3.X JavaScript AccessEnabler, see [AccessEnabler JS 2.x to JS 3.x migration guide](https://tve.helpdocsonline.com/accessenabler-js-to-js-migration-guide).-->

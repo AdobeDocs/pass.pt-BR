@@ -21,15 +21,15 @@ ht-degree: 1%
 
 ## Endpoints da REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -38,13 +38,13 @@ ht-degree: 1%
 Esse recurso produz solicitações de perfil para uma ID do solicitante e uma tupla MVPD.
 
 
-| Endpoint | Chamado  </br>Por | Entrada   </br>Params | HTTP  </br>Método | Resposta | HTTP  </br>Resposta |
+| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/{requestor}/profile-requests/{mvpd} | Aplicativo de transmissão</br></br>ou</br></br>Serviço de programador | 1. solicitante (parâmetro de caminho)</br>2. mvpd (parâmetro de caminho)</br>3. deviceType (Obrigatório) | GET | O Content-Type da resposta será application/octet-stream, pois a carga real é opaca para o aplicativo cliente.</br></br>A resposta deve ser encaminhada pelo aplicativo para a Plataforma</br></br>Mecanismo SSO para obter um SSO de perfil. | 200 - Sucesso   </br>400 - Solicitação inválida |
+| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | 1. solicitante (parâmetro de caminho)</br>2. mvpd (parâmetro de caminho)</br>3. deviceType (Obrigatório) | GET | O Content-Type da resposta será application/octet-stream, pois a carga real é opaca para o aplicativo cliente.</br></br>A resposta deve ser encaminhada pelo aplicativo para o mecanismo SSO da Plataforma</br></br>para obter um SSO de Perfil. | 200 - Sucesso   </br>400 - Solicitação inválida |
 
 
 | Parâmetro de entrada | Descrição |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | solicitante | O requestorId do Programador para o qual esta operação é válida. |
 | mvpd | A ID de MVPD para a qual esta operação é válida. |
-| deviceType | A plataforma do Apple para a qual estamos tentando obter uma solicitação de perfil.  Ou **iOS** ou **tvOS**. |
+| deviceType | A plataforma do Apple para a qual estamos tentando obter uma solicitação de perfil.  **iOS** ou **tvOS**. |

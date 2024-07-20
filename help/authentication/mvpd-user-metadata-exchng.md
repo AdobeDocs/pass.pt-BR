@@ -4,7 +4,7 @@ description: Troca de metadados de usuário MVPD
 exl-id: 8bce6acc-cd33-476c-af5e-27eb2239cad1
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '943'
+source-wordcount: '940'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ Este exemplo mostra a troca do seguinte:
 
 Atualmente, a API do programador, a Autenticação do Adobe Pass e os Autorizadores MVPD suportam apenas a autorização no nível do canal. O canal é especificado como uma cadeia de texto sem formatação na chamada da API getAuthorization() do programador. Essa cadeia de caracteres é propagada completamente para o back-end de autorização do MVPD:
 
-No aplicativo ou site do Programador, o usuário escolhe um MVPD compatível com XACML (neste exemplo, &quot;TNT&quot;). Para obter informações sobre XACML, consulte [Linguagem de marcação de controle de acesso extensível](https://en.wikipedia.org/wiki/XACML){target=_blank}.
+No aplicativo ou site do Programador, o usuário escolhe um MVPD compatível com XACML (neste exemplo, &quot;TNT&quot;). Para obter informações sobre XACML, consulte [eXtensible Access Control Markup Language](https://en.wikipedia.org/wiki/XACML){target=_blank}.
 O aplicativo do Programador forma uma solicitação AuthZ que inclui o recurso e seus metadados.  Este exemplo inclui uma classificação MPAA de &quot;pg&quot; no atributo de mídia do elemento de canal:
 
 ```XML
@@ -105,13 +105,13 @@ A Autenticação Adobe Pass assume as seguintes premissas:
 
 ### Notas {#notes-mvpd-progr-metadata-exch-flow}
 
-**Normalização e validação de recursos.** As IDs de recurso podem ser transmitidas como uma sequência de caracteres simples ou uma sequência de caracteres MRSS. Um programador pode decidir usar o formato de string simples ou o MRSS, mas precisará de um acordo prévio com o MVPD para que o MVPD saiba como tratar esse recurso.
+**Validação e Normalização de Recursos.** As IDs de recursos podem ser passadas como uma cadeia de caracteres simples ou uma cadeia de caracteres MRSS. Um programador pode decidir usar o formato de string simples ou o MRSS, mas precisará de um acordo prévio com o MVPD para que o MVPD saiba como tratar esse recurso.
 
-**ID do recurso e especificação de metadados.** A Autenticação do Adobe Pass usa o padrão RSS com a extensão RSS de mídia para especificar um recurso e seus metadados. Juntamente com a extensão Media RSS, a Autenticação do Adobe Pass é compatível com uma grande variedade de metadados, como controles pelos pais (via `<media:rating>`) ou geolocalização (`<media:location>`).
+**Especificação de Metadados e ID de Recursos.A Autenticação do Adobe Pass** usa o padrão RSS com a extensão RSS de Mídia para especificar um recurso e seus metadados. Juntamente com a extensão RSS de Mídia, a Autenticação da Adobe Pass oferece suporte a uma grande variedade de metadados, como controles dos pais (via `<media:rating>`) ou geolocalização (`<media:location>`).
 
 A Autenticação do Adobe Pass também pode oferecer suporte à conversão transparente da cadeia de caracteres do canal herdado para o recurso RSS correspondente para MVPDs que exigem RSS. Na outra direção, a Autenticação do Adobe Pass oferece suporte à conversão de RSS+MRSS em título de canal simples, para MVPDs somente de canal.
 
-**A Autenticação Adobe Pass garante total compatibilidade com versões anteriores de integrações existentes.** Ou seja, para programadores que usam autenticação no nível do canal, a Autenticação do Adobe Pass cuida de empacotar a ID do canal no formato necessário antes de enviá-la para um MVPD que entenda esse formato. O inverso também se aplica: se um Programador especificar todos os seus recursos em um novo formato, a Autenticação do Adobe Pass converterá o novo formato em uma string de canal simples se autorizar em relação a um MVPD que apenas faz autorização no nível do canal.
+A Autenticação do **Adobe Pass garante total compatibilidade com versões anteriores de integrações existentes.** Ou seja, para Programadores que usam autenticação no nível do canal, a Autenticação da Adobe Pass cuida de empacotar a ID do canal no formato necessário antes de enviá-la para um MVPD que entenda esse formato. O inverso também se aplica: se um Programador especificar todos os seus recursos em um novo formato, a Autenticação do Adobe Pass converterá o novo formato em uma string de canal simples se autorizar em relação a um MVPD que apenas faz autorização no nível do canal.
 
 ## Casos de uso de metadados do usuário {#user-metadata-use-cases}
 

@@ -4,7 +4,7 @@ description: SSO via autenticação passiva
 exl-id: ce45899f-6e94-4bb0-a2c1-51f03bd66d8d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '778'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,8 @@ O diagrama a seguir descreve o fluxo aprimorado e a autenticação passiva &quot
 
 
 
-Exemplo de solicitação SAML Este é um exemplo de solicitação SAML para o fluxo de autenticação passivo:
+Exemplo de solicitação SAML
+Esta é uma amostra de solicitação SAML para o fluxo de autenticação passivo:
 
 
 ```xml
@@ -101,7 +102,7 @@ Exemplo de solicitação SAML Este é um exemplo de solicitação SAML para o fl
 </saml2p:AuthnRequest>
 ```
 
-## Regras comerciais
+## Regras de negócios
 
 Os MVPDs têm restrições específicas de domínio de escopo de SSO. Por exemplo, apenas alguns domínios podem ser permitidos por alguns MVPDs (SSO para a mesma empresa de mídia, mas não entre empresas).
 Alguns MVPDs podem exigir regras de autenticação diferentes para serem aplicados. Por exemplo, os MVPDs podem ter TTLs de autenticação diferentes para redes diferentes. Além disso, os MVPDs podem habilitar a autenticação baseada em casa para algumas redes, mas não para outras (os casos de uso de controle dos pais são fortemente representados aqui).

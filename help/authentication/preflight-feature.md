@@ -4,7 +4,7 @@ description: Recurso de comprovação, como ativar, solucionar ou determinar o p
 exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ A interface externa da API de pré-autorização não foi alterada. Nenhuma atua
 
 Há três maneiras de calcular os recursos de Comprovação:
 
-* **Fork e método join para MVPD**: envolve a Adobe fazer várias chamadas de autorização para o MVPD (embora o cliente ainda tenha que fazer uma chamada de comprovação).
+* **Fork and join method to MVPD**: envolve a Adobe fazendo várias chamadas de autorização para o MVPD (embora o cliente ainda tenha que fazer uma chamada de comprovação).
 * **Linha de canal**: o MVPD expõe a linha de canal para o usuário conectado na resposta de autenticação SAML e o Adobe retorna os recursos autorizados com base nisso. A resposta authN do SAML no rastreador SAML deve expor essa lista.
-* **Autorização multicanal**: a autenticação de cliente e Adobe faz uma única chamada ao MVPD para um conjunto de recursos.
+* **Autorização multicanal**: o cliente e a autenticação Adobe fazem uma única chamada para o MVPD para um conjunto de recursos.
 
 Independentemente do MVPD, o aplicativo Cliente fará uma única chamada para o endpoint de Comprovação (checkPreauthorizedResources API), transmitindo um conjunto de resourceIDs. Com base em uma das maneiras suportadas pelo MVPD, o Adobe retornará as resourceIDs pré-autorizadas.
 

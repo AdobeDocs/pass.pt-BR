@@ -1,13 +1,13 @@
 ---
 title: Casos de uso
 description: Casos de uso no monitoramento de simultaneidade.
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 6cc30bb6-e985-4d9a-9f99-a7f04ae8deb7
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
 
 ---
-
 
 # Casos de uso {#use-cases}
 
@@ -17,8 +17,8 @@ Para monitorar o uso pelo assinante, é necessário um serviço centralizado que
 
 Os principais casos de uso compatíveis com esse serviço centralizado devem ser:
 
-1. Assim que um assinante começar a assistir a um vídeo, o aplicativo poderá **inicializar uma sessão de transmissão** e iniciar **atividade de relatórios** dados.
-1. No mesmo serviço central, outra instância receberá ***Decisões do CM*** - caso o aplicativo tenha uma ou mais políticas registradas no serviço CM, o serviço responderá com uma decisão de acesso com base na atividade atual.
+1. Assim que um assinante começar a assistir a um vídeo, o aplicativo poderá **inicializar uma sessão de streaming** e iniciar os dados de **atividade de relatório**.
+1. No mesmo serviço central, outra instância receberá ***decisões de CM*** - caso o aplicativo tenha uma ou mais políticas registradas no serviço CM, o serviço responderá com uma decisão de acesso com base na atividade atual.
 
 
 ## Criação de uma sessão {#create-session}

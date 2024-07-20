@@ -4,7 +4,7 @@ description: API de registro dinâmico do cliente
 exl-id: 06a76c71-bb19-4115-84bc-3d86ebcb60f3
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 0%
 
 Atualmente, há duas maneiras pelas quais a Autenticação Adobe Pass identifica e registra aplicativos:
 
-* os clientes baseados em navegador são registrados via permitido [listagem de domínio](/help/authentication/programmer-overview.md)
-* os clientes de aplicativos nativos, como aplicativos iOS e Android, são registrados por meio do mecanismo solicitante assinado.
+* os clientes baseados em navegador são registrados por meio da [lista de domínios](/help/authentication/programmer-overview.md) permitida
+* os clientes de aplicativos nativos, como os aplicativos iOS e Android, são registrados por meio do mecanismo solicitante assinado.
 
 A Autenticação Adobe Pass propõe um novo mecanismo para registrar aplicativos. Esse mecanismo é descrito nos parágrafos seguintes.
 
@@ -28,11 +28,13 @@ A Autenticação Adobe Pass propõe um novo mecanismo para registrar aplicativos
 
 ### Motivos técnicos {#reasons}
 
-O mecanismo de autenticação na Autenticação do Adobe Pass dependia de cookies de sessão, mas devido a [Guias Personalizadas Do Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}No entanto, essa meta não pode mais ser alcançada.
+O mecanismo de autenticação na Autenticação do Adobe Pass dependia de cookies de sessão, mas devido às [Guias Personalizadas do Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} e ao [Controlador de Exibição do Apple Safari](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}, essa meta não pode mais ser alcançada.
 
-Dadas essas limitações, o Adobe introduz um novo mecanismo de registro para todos os seus clientes. É baseado no OAuth 2.0 RFC e consiste nas seguintes etapas:
+Dadas essas limitações, o Adobe introduz um novo mecanismo de registro para todos os seus clientes. É baseado no OAuth 2.0 RFC e consiste em
+das seguintes etapas:
 
-1. Recuperando a instrução de software do Painel TVE
+1. Recuperando a declaração de software da TVE
+Painel
 1. Obter credenciais do cliente
 1. Obter o token de acesso
 
@@ -44,7 +46,7 @@ Para cada aplicativo lançado, é necessário obter uma instrução de software.
 >
 >Ao usar uma declaração de software, o mecanismo de ID do solicitante assinado não será mais necessário.
 
-Para obter mais detalhes sobre como criar instruções de software, visite [Registro do cliente no painel TVE](/help/authentication/dynamic-client-registration.md).
+Para obter mais detalhes sobre como criar instruções de software, visite [Registro de Cliente no Painel do TVE](/help/authentication/dynamic-client-registration.md).
 
 ### Obtendo credenciais do cliente {#clientCredentials}
 
@@ -80,7 +82,7 @@ Depois de recuperar uma declaração de software do Painel do TVE, é necessári
 | client_secret | String | obrigatório |
 | client_id_issue_at | long | obrigatório |
 | redirect_uris | lista de strings | obrigatório |
-| grant_types | lista de strings<br/> **valor aceito**<br/> `client_credentials`: usado por clientes inseguros, como o Android SDK. | obrigatório |
+| grant_types | lista de Cadeias de Caracteres<br/> **valor aceito**<br/> `client_credentials`: usado por clientes inseguros, como o Android SDK. | obrigatório |
 | erro | **valores aceitos**<ul><li>invalid_request</li><li>invalid_redirect_uri</li><li>instrução_de_software_inválida</li><li>unapproved_software_statement</li></ul> | obrigatório em um fluxo de erro |
 
 
@@ -165,9 +167,9 @@ Depois de recuperar o identificador exclusivo do cliente (ID do cliente e segred
 | caminho | `/o/client/token` |
 | método | POST |
 
-| **parâmetros de solicitação** | |
+| **solicitar parâmetros** | |
 | --- | --- |
-| `grant_type` | Recebido no processo de registro do cliente.<br/> **Valor aceito**<br/>`client_credentials`: usado para clientes inseguros, como o Android SDK. |
+| `grant_type` | Recebido no processo de registro de cliente.<br/> **Valor aceito**<br/>`client_credentials`: usado para clientes inseguros, como o SDK do Android. |
 | `client_id` | Identificador de cliente obtido no processo de registro do cliente. |
 | `client_secret` | Identificador de cliente obtido no processo de registro do cliente. |
 
@@ -232,9 +234,9 @@ Pragma: no-cache
 
 ## Executando solicitações de autenticação {#autheticationRequests}
 
-Usar o token de acesso para executar o Adobe Pass [Chamadas de API de autenticação](/help/authentication/initiate-authentication.md). Para fazer isso, o token de acesso precisa ser adicionado à solicitação de API de uma das seguintes maneiras:
+Use o token de acesso para executar [Chamadas de API de autenticação](/help/authentication/initiate-authentication.md) do Adobe Pass. Para fazer isso, o token de acesso precisa ser adicionado à solicitação de API de uma das seguintes maneiras:
 
-* adicionando um novo parâmetro de consulta à solicitação. Esse novo parâmetro é chamado de **access_token**.
+* adicionando um novo parâmetro de consulta à solicitação. Esse novo parâmetro é chamado **access_token**.
 
 * adicionando um novo cabeçalho HTTP à solicitação: Autorização: Portador. Recomendamos que você use o cabeçalho HTTP, já que as cadeias de caracteres de consulta tendem a estar visíveis nos logs do servidor.
 
@@ -248,7 +250,7 @@ Em caso de erro, as seguintes respostas de erro podem ser retornadas:
 
 ### Exemplos de execução de solicitações de autenticação:
 
-**Enviando o token de acesso como parâmetro de solicitação:**
+**Enviando token de acesso como parâmetro de solicitação:**
 
 ```HTTPS
 GET adobe-services/config?access_token=<access_token>&requestor_id=... HTTP/1.1
@@ -256,7 +258,7 @@ GET adobe-services/config?access_token=<access_token>&requestor_id=... HTTP/1.1
 Host: sp.auth.adobe.com
 ```
 
-**Envio do token de acesso como cabeçalho HTTP:**
+**Enviando token de acesso como cabeçalho HTTP:**
 
 ```HTTPS
 POST adobe-services/sessionDevice?device_id=platformDeviceId HTTP/1.1

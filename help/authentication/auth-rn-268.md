@@ -4,7 +4,7 @@ description: Notas de versão da Autenticação Adobe Pass 2.68
 exl-id: 88628696-448e-4afa-91f0-d3767d68d2f4
 source-git-commit: 87d7380aa7045e64e8caff6d5d7610bd0917181e
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '148'
 ht-degree: 0%
 
 ---
@@ -25,8 +25,8 @@ Esta página descreve novos recursos, alterações e problemas conhecidos com es
 
 ### Número da Build {#build-number-268}
 
-Autenticação do Adobe Pass: adobe-pass-**2.68.0.5**
-Data de lançamento: **05/12/2023 - 07/12/2023**
+Autenticação Adobe Pass: adobe-pass-**2.68.0.5**
+Data de lançamento: **12/05/2023 - 07/12/2023**
 
 ### Novos recursos {#new-features-268}
 

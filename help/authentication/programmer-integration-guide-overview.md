@@ -19,24 +19,24 @@ ht-degree: 0%
 
 ## Cookbooks {#cookbooks}
 
-* Guia do SDK JavaScript do AccessEnabler
+* Guia do SDK do JavaScript do AccessEnabler
 * Guia do SDK do AccessEnabler iOS/tvOS
-* Guia do SDK do Android AccessEnabler
+* Guia do SDK do Android do AccessEnabler
 * Cookbook da API REST (servidor para servidor)
 * Cookbook da API REST (cliente para servidor)
 
 ## Referências da API {#api-references}
 
-* Referência da API do SDK JavaScript do AccessEnabler
+* Referência da API do SDK do JavaScript do AccessEnabler
 * Referência da API do SDK do AccessEnabler iOS/tvOS
 * Referência da API do SDK do Android do AccessEnabler
 * Referência da API REST
 
 ## Visão geral técnica {#technical-overviews}
 
-* Visão geral do SDK JavaScript do AccessEnabler
+* Visão geral do SDK do JavaScript do AccessEnabler
 * Visão geral do SDK do AccessEnabler iOS/tvOS
-* Visão geral do SDK do Android AccessEnabler
+* Visão geral do SDK do Android do AccessEnabler
 * Visão geral da REST API
 
 Eles são destinados aos engenheiros de software que lidarão com o lado técnico de uma integração de autenticação da Adobe Pass.

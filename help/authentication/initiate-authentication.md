@@ -21,15 +21,15 @@ ht-degree: 0%
 
 ## Endpoints da REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -40,9 +40,9 @@ Inicia o processo de autenticação informando sobre um evento de seleção MVPD
 
 
 
-| Endpoint | Chamado  </br>Por | Entrada   </br>Params | HTTP  </br>Método | Resposta | HTTP  </br>Resposta |
+| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/authenticate | Módulo AuthN | 1. requestor_id (Obrigatório)</br>2.  mso_id (Obrigatório)</br>3.  reg_code (Obrigatório)</br>4.  domain_name (Obrigatório)</br>5.  noflash=true -  </br>    (Obrigatório, parâmetro residual)</br>6.  no_iframe=true (Obrigatório, Parâmetro residual)</br>7.  parâmetros extras (opcional)</br>8.  redirect_url (Obrigatório) | GET | O aplicativo web de logon é redirecionado para a página de logon do MVPD. | 302 para implementações de redirecionamento completo |
+| &lt;SP_FQDN>/api/v1/authenticate | Módulo AuthN | 1. requestor_id (Obrigatório)</br>2.  mso_id (Obrigatório)</br>3.  reg_code (obrigatório)</br>4.  nome_domínio (Obrigatório)</br>5.  noflash=true - </br>    (Obrigatório, Parâmetro residual)</br>6.  no_iframe=true (Obrigatório, parâmetro Residual)</br>7.  parâmetros extras (Opcional)</br>8.  redirect_url (Obrigatório) | GET | O aplicativo web de logon é redirecionado para a página de logon do MVPD. | 302 para implementações de redirecionamento completo |
 
 {style="table-layout:auto"}
 
@@ -61,7 +61,7 @@ Inicia o processo de autenticação informando sobre um evento de seleção MVPD
 
 >[!IMPORTANT]
 > 
->**Importante: Parâmetros obrigatórios -** Independentemente da implementação do lado do cliente, todos os parâmetros acima são obrigatórios.
+>**Importante: Parâmetros obrigatórios -** Independentemente da implementação no lado do cliente, todos os parâmetros acima são obrigatórios.
 >
 >
 >Exemplo:
@@ -81,7 +81,7 @@ Inicia o processo de autenticação informando sobre um evento de seleção MVPD
 >
 >A chamada também pode conter parâmetros opcionais que habilitam outras funcionalidades como:
 >
-> * generic\_data - permite o uso de [TempPass Promocional](/help/authentication/promotional-temp-pass.md)
+> * generic\_data - habilita o uso de [TempPass Promocional](/help/authentication/promotional-temp-pass.md)
 >
 >```JSON
 >Example:
@@ -91,10 +91,10 @@ Inicia o processo de autenticação informando sobre um evento de seleção MVPD
 
 ### **Notas** {#notes}
 
-* O valor de `domain_name` O parâmetro deve ser definido como um dos nomes de domínio registrados com a Autenticação Adobe Pass. Para obter mais detalhes, consulte [Registro e inicialização](/help/authentication/programmer-overview.md).
+* O valor do parâmetro `domain_name` deve ser definido como um dos nomes de domínio registrados com a Autenticação Adobe Pass. Para obter mais detalhes, consulte [Registro e Inicialização](/help/authentication/programmer-overview.md).
 
 * [Evite usar &#39;&amp;&#39;reg\_code in /authenticate request (Nota técnica)](/help/authentication/clientless-avoid-using-reg-code-in-authenticate-request.md)
 
-* A variável `redirect_url` O parâmetro deve ser o último em ordem
+* O parâmetro `redirect_url` deve ser o último a ser ordenado
 
-* O valor de `redirect_url` O parâmetro deve ser codificado em URL
+* O valor do parâmetro `redirect_url` deve ser codificado em URL

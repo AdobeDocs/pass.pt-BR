@@ -1,13 +1,13 @@
 ---
 title: Visão geral da API
 description: Visão geral da API
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '2054'
-ht-degree: 0%
+source-wordcount: '2043'
+ht-degree: 1%
 
 ---
-
 
 # API de uso de monitoramento de simultaneidade {#cmu-api-usage}
 
@@ -17,14 +17,14 @@ ht-degree: 0%
 
 ## Visão geral da API {#api-overview}
 
-O CMU (Concurrency Monitoring Usage) é implementado como um WOLAP (baseado na Web [Processamento analítico online](http://en.wikipedia.org/wiki/Online_analytical_processing)) projeto. A CMU é uma API da Web de geração de relatórios comerciais genérica suportada por um data warehouse. Ela age como uma linguagem de consulta HTTP que permite que operações OLAP típicas sejam executadas RESTfully.
+O CMU (Monitoramento de Simultaneidade de Uso) é implementado como um projeto WOLAP (Web-based [Online Analytical Processing](http://en.wikipedia.org/wiki/Online_analytical_processing)). A CMU é uma API da Web de geração de relatórios comerciais genérica suportada por um data warehouse. Ela age como uma linguagem de consulta HTTP que permite que operações OLAP típicas sejam executadas RESTfully.
 
 
 >[!NOTE]
 >
 >A API da CMU não está geralmente disponível. Entre em contato com o representante da Adobe para tirar dúvidas sobre disponibilidade.
 
-A API CMU fornece uma exibição hierárquica dos cubos OLAP subjacentes. Cada recurso ([dimension](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) na hierarquia da dimensão, mapeado como um segmento de caminho de URL) gera relatórios com (agregado) [métricas](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) para a seleção atual. Cada recurso aponta para seu recurso pai (para roll-up) e seus sub-recursos (para drill-down). O corte e a divisão são obtidos por meio de parâmetros de sequência de consulta que fixam dimensões a valores ou intervalos específicos.
+A API CMU fornece uma exibição hierárquica dos cubos OLAP subjacentes. Cada recurso ([dimensão](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) na hierarquia de dimensão, mapeado como um segmento de caminho de URL) gera relatórios com [métricas](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) (agregadas) para a seleção atual. Cada recurso aponta para seu recurso pai (para roll-up) e seus sub-recursos (para drill-down). O corte e a divisão são obtidos por meio de parâmetros de sequência de consulta que fixam dimensões a valores ou intervalos específicos.
 
 A API REST fornece os dados disponíveis dentro de um intervalo de tempo especificado na solicitação (recorrendo aos valores padrão se nenhum for fornecido), de acordo com o caminho da dimensão, os filtros fornecidos e as métricas selecionadas. O intervalo de tempo não será aplicado a relatórios que não contêm dimensões de tempo (ano, mês, dia, hora, minuto, segundo).
 
@@ -36,11 +36,11 @@ Os caminhos de URL disponíveis são detectáveis por meio de links contidos na 
 
 As árvores de detalhamento a seguir ilustram as dimensões (recursos) disponíveis na CMU 2.0:
 
-**Dimension disponível para locatários CM**
+**Dimension disponíveis para locatários CM**
 
 ![](assets/new_breakdown.png)
 
-A `GET` para o `https://mgmt.auth.adobe.com/cmu/v2` O endpoint da API retornará uma representação que contém:
+Um `GET` para o ponto de extremidade de API `https://mgmt.auth.adobe.com/cmu/v2` retornará uma representação contendo:
 
 * Links para os caminhos de drill-down raiz disponíveis:
 
@@ -62,10 +62,10 @@ Exceto para as dimensões de data/hora, qualquer dimensão disponível para a pr
 
 As seguintes opções de filtro estão disponíveis:
 
-* **Igual a** os filtros são fornecidos definindo o nome da dimensão para um valor específico na string de consulta.
-* **IN** os filtros podem ser especificados adicionando o mesmo parâmetro de nome de dimensão várias vezes com valores diferentes: dimension=value1&amp;dimension=value2
-* **Não é igual** os filtros devem usar o caractere &#39;!&#39; após o nome da dimensão, resultando no caractere &#39;!=&#39; &quot;operator&quot;: dimensão!=valor
-* **NÃO EM** os filtros exigem o caractere &#39;!Operador =&#39; a ser usado várias vezes, uma vez para cada valor no conjunto: dimension!=value1&amp;dimension!=value2&amp;...
+* **Igual a** filtros são fornecidos definindo o nome da dimensão para um valor específico na cadeia de caracteres de consulta.
+* Filtros **IN** podem ser especificados adicionando o mesmo parâmetro de nome de dimensão várias vezes com valores diferentes: dimension=value1&amp;dimension=value2
+* **Não é igual a** filtros devem usar o caractere &#39;!&#39; após o nome da dimensão, resultando no caractere &#39;!=&#39; &quot;operator&quot;: dimensão!=valor
+* **NOT IN** filtros exigem o caractere &#39;!Operador =&#39; a ser usado várias vezes, uma vez para cada valor no conjunto: dimension!=value1&amp;dimension!=value2&amp;...
 
 
 Também há um uso especial para os nomes de dimensão na sequência de consulta: se o nome da dimensão for usado como um parâmetro da sequência de consulta sem valor, isso instruirá a API a retornar uma projeção que inclua essa dimensão no relatório.
@@ -76,9 +76,9 @@ Exemplo de consultas CMU:
 |:---|:---|
 | /dimension1/dimension2/dimension3?dimension1=value1 | SELECT * da projeção WHERE dimension1 = &#39;value1&#39; GROUP BY dimension1, dimension2, dimension3 |
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * da projeção WHERE dimension1 IN (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * da projeção WHERE dimension1 &lt;> &#39;value1&#39; GROUP BY dimension1, dimension2, dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=valor1&amp;dimensão2!=value2 | SELECT * da projeção WHERE dimension1 NOT IN (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
-| Supondo que não haja caminho direto: /dimension1/dimension3, mas haja um caminho: /dimension1/dimension2/dimension3  </br></br> /dimension1?dimension3 | SELECT * da projeção GROUP BY dimension1,dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=valor1 | SELECT * da projeção WHERE dimension1 &lt;> &#39;value1&#39; GROUP BY dimension1, dimension2, dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=valor1&amp;dimensão2!=valor2 | SELECT * da projeção WHERE dimension1 NOT IN (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
+| Supondo que não haja caminho direto: /dimension1/dimension3, mas haja um caminho: /dimension1/dimension2/dimension3 </br></br> /dimension1?dimension3 | SELECT * da projeção GROUP BY dimension1,dimension3 |
 
 >[!NOTE]
 >
@@ -129,9 +129,9 @@ Os dados estão disponíveis nos seguintes formatos:
 
 As estratégias de negociação de conteúdo a seguir podem ser usadas pelos clientes (a precedência é dada pela posição na lista - primeiros itens primeiro):
 
-1. Uma &quot;extensão de arquivo&quot; foi anexada ao último segmento do caminho do URL: por exemplo, /cmu/v2/tenant/year/month/day.xml. Se o URL contiver uma cadeia de caracteres de consulta, a extensão deverá vir antes do ponto de interrogação: `/cmu/v2/tenant/year/month/day.csv?mvpd=SomeMVPD`
-1. Um parâmetro de string de consulta de formato: por exemplo, `/cmu/report?format=json`
-1. O cabeçalho padrão HTTP Accept: por exemplo, `Accept: application/xml`
+1. Uma &quot;extensão de arquivo&quot; foi anexada ao último segmento do caminho do URL: por exemplo, /cmu/v2/tenant/year/month/day.xml. Se a URL contiver uma cadeia de caracteres de consulta, a extensão deverá vir antes do ponto de interrogação: `/cmu/v2/tenant/year/month/day.csv?mvpd=SomeMVPD`
+1. Um parâmetro da cadeia de caracteres de consulta de formato: ex.: `/cmu/report?format=json`
+1. O cabeçalho padrão HTTP Accept: ex.: `Accept: application/xml`
 
 A &quot;extensão&quot; e o parâmetro de consulta suportam os seguintes valores:
 
@@ -174,7 +174,7 @@ O relatório real (uma tag/propriedade aninhada chamada &quot;relatório&quot;) 
 
 Para formatos XML e JSON, a ordem dos campos (dimensões e métricas) em um registro não é especificada, mas é consistente (a ordem será a mesma em todos os registros). No entanto, os clientes não devem confiar em nenhuma ordem específica dos campos em um registro.
 
-O link de recurso (o rel &quot;self&quot; em JSON e o atributo de recurso &quot;href&quot; em XML) contém o caminho atual e a sequência de consulta usada para o relatório em linha. A sequência de consulta revelará todos os parâmetros implícitos e explícitos, para que a carga aponte explicitamente o intervalo de tempo usado, os filtros implícitos (se houver) e assim por diante. O restante dos links no recurso conterá todos os segmentos disponíveis que podem ser seguidos para detalhar os dados atuais. Um link para roll-up também será fornecido e apontará para o caminho principal (se houver). A variável `href` o valor dos links de drill-down/roll-up contém apenas o caminho do URL (ele não inclui a sequência de consulta, portanto, ela precisa ser anexada pelo cliente, se necessário). Observe que nem todos os parâmetros da cadeia de caracteres de consulta usados (ou implícitos) pelo recurso atual serão aplicáveis a links de &quot;acúmulo&quot; ou &quot;detalhamento&quot; (por exemplo, os filtros podem não se aplicar a sub ou superrecursos).
+O link de recurso (o rel &quot;self&quot; em JSON e o atributo de recurso &quot;href&quot; em XML) contém o caminho atual e a sequência de consulta usada para o relatório em linha. A sequência de consulta revelará todos os parâmetros implícitos e explícitos, para que a carga aponte explicitamente o intervalo de tempo usado, os filtros implícitos (se houver) e assim por diante. O restante dos links no recurso conterá todos os segmentos disponíveis que podem ser seguidos para detalhar os dados atuais. Um link para roll-up também será fornecido e apontará para o caminho principal (se houver). O valor `href` dos links de detalhamento/rollup contém apenas o caminho da URL (ele não inclui a cadeia de caracteres de consulta, portanto, ele precisa ser anexado pelo cliente, se necessário). Observe que nem todos os parâmetros da cadeia de caracteres de consulta usados (ou implícitos) pelo recurso atual serão aplicáveis a links de &quot;acúmulo&quot; ou &quot;detalhamento&quot; (por exemplo, os filtros podem não se aplicar a sub ou superrecursos).
 
 Exemplo (supondo que tenhamos uma única métrica chamada clientes e haja uma pré-agregação para `year/month/day/...`):
 
@@ -228,7 +228,7 @@ No formato de dados CSV, nenhum link ou outro metadado (exceto a linha de cabeç
 report__<start-date>_<end-date>_<filter-values,...>.csv
 ```
 
-O CSV conterá uma linha de cabeçalho e, em seguida, os dados do relatório como linhas subsequentes. A linha de cabeçalho conterá todas as dimensões seguidas por todas as métricas. A ordem de classificação dos dados do relatório será refletida na ordem das dimensões. Portanto, se os dados forem classificados por D1 e depois por D2, o cabeçalho CSV será semelhante a: `D1, D2, ...metrics....`
+O CSV conterá uma linha de cabeçalho e, em seguida, os dados do relatório como linhas subsequentes. A linha de cabeçalho conterá todas as dimensões seguidas por todas as métricas. A ordem de classificação dos dados do relatório será refletida na ordem das dimensões. Portanto, se os dados forem classificados por D1 e depois por D2, o cabeçalho CSV terá esta aparência: `D1, D2, ...metrics....`
 
 A ordem dos campos na linha de cabeçalho refletirá a ordem de classificação dos dados da tabela.
 
@@ -241,14 +241,14 @@ Exemplo: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv produzirá um arquivo
 
 ## Atualização de dados {#data-freshness}
 
-Embora a solicitação contenha um cabeçalho Última modificação, ela **NÃO** reflete a hora em que o relatório no corpo foi atualizado pela última vez. Os relatórios gerais estão sendo calculados regularmente, com as seguintes regras:
+Embora a solicitação contenha um cabeçalho Última Modificação, ela **NÃO** reflete a hora em que o relatório no corpo foi atualizado pela última vez. Os relatórios gerais estão sendo calculados regularmente, com as seguintes regras:
 
-* se a granularidade de tempo for **ano** ou **mês**, o relatório é atualizado a cada 2 dias
+* se a granularidade de tempo for **ano** ou **mês**, o relatório será atualizado a cada 2 dias
 * se a granularidade de tempo for **dia**, o relatório será atualizado a cada 3 horas
-* se a granularidade de tempo for **hora**, o relatório é atualizado a cada hora
-* se a granularidade de tempo for **minuto**, o relatório é atualizado a cada minuto
+* se a granularidade de tempo for **hora**, o relatório será atualizado a cada hora
+* se a granularidade de tempo for **minuto**, o relatório será atualizado a cada minuto
 
-A variável **nível de atividade** e **nível de concorrência** os relatórios são atualizados todos os dias, independentemente da granularidade de tempo.
+Os relatórios de **nível de atividade** e **nível de simultaneidade** são atualizados todos os dias, independentemente da granularidade de tempo.
 
 ## Compactação GZIP {#gzip-compression}
 

@@ -1,13 +1,13 @@
 ---
 title: Implementação do CM para um único locatário/política e vários aplicativos
 description: Implementação do CM para um único locatário/política e vários aplicativos
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 5c579c7d-f235-4dba-95c2-8485021d9065
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
-
 
 # Implementação do CM para um único locatário/política e vários aplicativos {#imp-cm}
 
@@ -29,7 +29,7 @@ Dois aplicativos + um site são usados para iniciar fluxos:
 
 1. O usuário inicia um fluxo do aplicativo iPhone e um fluxo do aplicativo iPad. A política permite isso.
 1. O usuário então inicia um terceiro fluxo a partir do site do Programador.
-1. A regra na política (máx. 2 fluxos, ganhos mais recentes) permite que o fluxo mais recente seja reproduzido assim **o primeiro fluxo que foi iniciado será marcado como não compatível com a política e será interrompido.**
+1. A regra na política (máx. 2 fluxos, ganhos mais recentes) permite que o fluxo mais recente seja reproduzido, portanto, **o primeiro fluxo iniciado será marcado como não compatível com a política e será interrompido.**
 
 
 

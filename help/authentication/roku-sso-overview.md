@@ -49,7 +49,7 @@ Os programadores devem verificar se suas implementações atuais baseadas na API
 
 ## Perguntas frequentes {#faq}
 
-* **Como funcionará o SSO?**
+* **Como o SSO funcionará?**
 
   O SSO funcionará em todos os aplicativos do Programador alimentados pela Autenticação Adobe Pass em todos os dispositivos Roku associados ao mesmo usuário do Roku.
 Nem todos os MVPDs permitirão o Roku SSO.

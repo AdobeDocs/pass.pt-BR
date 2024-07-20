@@ -1,13 +1,13 @@
 ---
 title: Mecanismo de limitação
 description: Mecanismo de limitação
-source-git-commit: cbb45cae576332e2b63027992c597b834210988d
+exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 1%
 
 ---
-
 
 # Mecanismo de limitação {#throttling-mechanism}
 
@@ -20,16 +20,16 @@ Quando o limite for atingido, as solicitações serão marcadas com um status de
 ## Visão geral do mecanismo {#mechanism-overview}
 
 O mecanismo determina o número máximo de chamadas aceitas para cada endpoint de Monitoramento de simultaneidade em um intervalo de tempo específico.
-Quando esse número máximo de chamadas for atingido, nosso serviço responderá com &quot;429 Muitas solicitações&quot;. O cabeçalho &quot;Expira&quot; da resposta 429 inclui o carimbo de data e hora quando a próxima chamada seria considerada válida ou quando a limitação expira. No momento, a limitação expira após um minuto da primeira resposta 429.
+Quando esse número máximo de chamadas for atingido, nosso serviço responderá com &quot;429 Muitas solicitações&quot;. O cabeçalho &quot;Expira&quot; da resposta 429 inclui o carimbo de data e hora quando a próxima chamada seria considerada válida ou quando a limitação expira. No momento, a limitação expira após uma   minuto a partir da primeira resposta 429.
 
 Os endpoints configurados com limitação são:
 1. Criar uma nova sessão: POST /sessions/{idp}/{subject}
-2. Chamada do Heartbeat: POST /sessions/{idp}/{subject}/{sessionId}
+2. Chamada Heartbeat: POST /sessions/{idp}/{subject}/{sessionId}
 3. Encerrar uma sessão: DELETE /sessions/{idp}/{subject}/{sessionId}
 
 A limitação é configurada em dois níveis:
-1. session: mesmo exclusivo {sessionId} parâmetro enviado em `Heartbeat` chame e `Terminate a session` chame.
-2. user: same unique {subject} parâmetro enviado em `Create a new session` chame.
+1. sessão: mesmo parâmetro {sessionId} exclusivo enviado na chamada `Heartbeat` e na chamada `Terminate a session`.
+2. usuário: mesmo parâmetro {subject} exclusivo enviado na chamada `Create a new session`.
 
 O limite para limitação de nível de sessão é definido como 200 solicitações em um minuto.\
 O limite de limitação no nível do usuário é definido como 200 solicitações em um minuto.\
@@ -44,7 +44,7 @@ Ambos os limites (limitação de nível de sessão e limitação de nível de us
 | Segundo 61 | DELETE /sessions/idp1/subject1/session1 | 1 | 1 chamada recebe ‘429 muitas solicitações’ | Nenhuma chamada no limite disponível ainda |
 | Segundos 70 | DELETE /sessions/idp1/subject1/session1 | 1 | 1 chamada recebe ‘202 Aceito’ | O limite foi definido como 200 chamadas disponíveis porque 60 segundos se passaram desde os 10 segundos |
 
-**Cenário de limitação no nível do usuário:**
+**Cenário de limitação de nível de usuário:**
 
 | Hora | Solicitação de envio para o CM | Número de solicitações | Resposta recebida do CM | Explicação |
 |-----------|------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
@@ -53,7 +53,7 @@ Ambos os limites (limitação de nível de sessão e limitação de nível de us
 | Segundo 61 | POST /sessions/idp1/subject1 | 1 | 1 chamada recebe ‘429 muitas solicitações’ | Nenhuma chamada no limite disponível ainda |
 | Segundos 70 | POST /sessions/idp1/subject1 | 1 | 1 chamada recebe ‘202 Aceito’ | O limite foi definido como 200 chamadas disponíveis porque 60 segundos se passaram desde os 10 segundos |
 
-**429 Exemplo de resposta:**
+**Exemplo de resposta:**
 
 ```
 HTTP/2 429

@@ -35,9 +35,9 @@ Para tais casos, a versão 3.2 introduz a capacidade para o programador gerencia
 Para gerenciar manualmente o SVC, o implementador deve executar as seguintes etapas:
 
 
-1. chamar **setOptions([&quot;handleSVC&quot;:true])** após a inicialização do AccessEnabler (certifique-se de que essa chamada seja feita antes do início da autenticação). Isso habilitará o gerenciamento &quot;manual&quot; do SVC. O SDK não apresentará automaticamente o SVC, mas, quando necessário, chamará **navigate(toUrl:*{url}* useSVC:true)**.
+1. chame **setOptions([&quot;handleSVC&quot;:true])** após a inicialização de AccessEnabler (verifique se essa chamada foi executada antes do início da autenticação). Isso habilitará o gerenciamento &quot;manual&quot; do SVC. O SDK não apresentará automaticamente o SVC, mas, quando necessário,     chame **navigate(toUrl:*{url}* useSVC:true)**.
 
-1. implementar o retorno de chamada opcional **`navigateToUrl:useSVC:`** dentro da implementação, você deve criar uma instância svc usando a instância SFSafariViewController usando o url fornecido e apresentá-la na tela:
+1. implemente o retorno de chamada opcional **`navigateToUrl:useSVC:`** dentro da implementação, você deve criar uma instância svc usando a instância SFSafariViewController usando a url fornecida e apresentá-la na tela:
 
    ```obj-c
    func navigate(toUrl url: String!, useSVC: Bool) {
@@ -50,11 +50,11 @@ Para gerenciar manualmente o SVC, o implementador deve executar as seguintes eta
    ***Notas:***
 
    - *Você pode personalizar o SFSafariViewController da maneira que desejar. Por exemplo, no iOS 11+, é possível alterar o rótulo &quot;Concluído&quot; para &quot;Cancelar&quot;.*
-   - *para poder descartar o svc, você precisa de uma referência a ele, não crie-o no escopo de **navigateToUrl:useSVC***
-   - *use seu próprio controlador de visualização para &quot;myController&quot;*
+   - *para poder descartar o svc, você precisa de uma referência a ele. Não o crie no escopo de **navigateToUrl:useSVC***
+   - *usar seu próprio controlador de exibição para &quot;myController&quot;*
 
 
-1. Na implementação delegada do aplicativo de **application(\_app: UIApplication, open url: URL, options: \[UIApplicationOpenURLOptionsKey: Any\]) -\> Bool**, adicione o código para fechar o svc. Você já deve ter algum código que chama **accessEnabler.handleExternalURL()**. Logo abaixo, adicione:
+1. Na implementação delegada do seu aplicativo de **application(\_app: UIApplication, open url: URL, options: \[UIApplicationOpenURLOptionsKey: Any\]) -\> Bool**, adicione o código para fechar o svc. Você já deve ter algum código lá que chame **accessEnabler.handleExternalURL()**. Logo abaixo, adicione:
 
    ```obj-c
    if(svc != nil) {
@@ -65,7 +65,7 @@ Para gerenciar manualmente o SVC, o implementador deve executar as seguintes eta
    Novamente, svc é uma referência ao SFSafariViewController criado na etapa 2.
 
 
-1. Implementar **safariViewControllerDidFinish(\_ controller: SFSafariViewController)** de **SFSafariViewControllerDelegate** para detectar quando o usuário cancelou o svc usando o botão &quot;Concluído&quot;. Nesta função, para informar ao SDK que a autenticação foi cancelada, é necessário chamar:
+1. Implemente **safariViewControllerDidFinish(\_ controller: SFSafariViewController)** de **SFSafariViewControllerDelegate** para detectar quando o usuário cancelou o svc usando o botão &quot;Concluído&quot;. Nesta função, para informar ao SDK que a autenticação foi cancelada, é necessário chamar:
 
    ```obj-c
    accessEnabler.setSelectedProvider(nil)

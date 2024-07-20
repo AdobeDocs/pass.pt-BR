@@ -1,7 +1,8 @@
 ---
 title: Versões do Account IQ
-description: Saiba mais sobre as versões usadas para diferentes serviços no Account IQ.
-source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
+description: Saiba mais sobre as versões usadas para diferentes serviços na Account IQ.
+exl-id: b8b014d5-a8a8-4327-b6aa-15f7e6a63274
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '312'
 ht-degree: 0%
@@ -24,9 +25,9 @@ D2C refere-se aos serviços de transmissão de vídeo vendidos diretamente de um
 
 TV Everywhere refere-se ao componente online da assinatura de TV tradicional de um cliente. Inclui assinantes de serviços de televisão por cabo ou por satélite, como a Comcast ou a DirecTV, que podem aceder ao conteúdo desses fornecedores em linha através de várias plataformas de transmissão.
 
-Existem duas versões do TV Everywhere: [Programadores](/help/accountiq/product-concepts.md#programmer-def) e [MVPDs](/help/accountiq/product-concepts.md#mvpd-def).
+Há duas versões da TV Everywhere: [Programmers](/help/accountiq/product-concepts.md#programmer-def) e [MVPDs](/help/accountiq/product-concepts.md#mvpd-def).
 
-Quando você [integrado](/help/accountiq/get-started.md) sua organização ao Account IQ, você recebe uma versão Programmer ou MVPD.
+Ao [integrar](/help/accountiq/get-started.md) sua organização à Account IQ, você recebe uma versão Programmer ou MVPD.
 
 ### Programadores {#programmers}
 
@@ -38,8 +39,4 @@ Os MVPDs fornecem vários canais de televisão aos assinantes por meio de vária
 
 >[!NOTE]
 >
-> Dependendo da versão do Account IQ em que você fizer logon, determinados rótulos serão alterados e algumas exibições poderão não estar disponíveis.
-
-
-
-
+> Dependendo da versão do Account IQ na qual você fizer logon, determinados rótulos serão alterados e algumas exibições poderão não estar disponíveis.

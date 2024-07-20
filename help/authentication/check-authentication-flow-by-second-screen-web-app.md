@@ -21,15 +21,15 @@ ht-degree: 0%
 
 ## Endpoints da REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produção - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Estágios - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Preparo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -38,9 +38,9 @@ ht-degree: 0%
 Essa API deve ser consumida pelo segundo aplicativo Web de logon de tela para confirmar que a Autenticação do Adobe Pass reconheceu o logon bem-sucedido do MVPD. Recomendamos chamar essa API antes de mostrar uma mensagem de sucesso para o usuário final que o instrui a prosseguir para o console do dispositivo para continuar com os workflows.
 
 
-| Endpoint | Chamado  </br>Por | Entrada   </br>Params | HTTP  </br>Método | Resposta | HTTP  </br>Resposta |
+| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{código de registro} | Aplicativo Web de Logon | 1. código de registro  </br>    (Componente do caminho)</br>2.  solicitante  </br>    (Obrigatório) | GET | XML ou JSON que contém detalhes de erros, caso não seja bem-sucedido. | 200 - Sucesso   </br>403 - Proibido |
+| SP_FQDN/api/v1/checkauthn/{código de registro} | Aplicativo Web de Logon | 1. código de registro </br>    (Componente do caminho)</br>2.  solicitante </br>    (Obrigatório) | GET | XML ou JSON que contém detalhes de erros, caso não seja bem-sucedido. | 200 - Sucesso   </br>403 - Proibido |
 
 </br>
 
@@ -59,4 +59,4 @@ Essa API deve ser consumida pelo segundo aplicativo Web de logon de tela para co
     }
 ```
 
-### [Voltar para Referência da API REST](/help/authentication/rest-api-reference.md)
+### [Voltar à Referência da API REST](/help/authentication/rest-api-reference.md)

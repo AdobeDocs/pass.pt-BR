@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # Operações {#operations-tab-next-steps}
 
-Depois de analisar os padrões de uso do assinante e identificar as instâncias de compartilhamento de senha para um segmento selecionado usando [!DNL Account IQ] Analytics, você pode realizar ações direcionadas por meio de procedimentos focados chamados [!DNL Account IQ].
+Depois de analisar os padrões de uso do assinante e identificar instâncias de compartilhamento de senhas para um segmento selecionado usando o [!DNL Account IQ] Analytics, você poderá realizar ações direcionadas por meio de procedimentos focalizados chamados operações em [!DNL Account IQ].
 
-**Operações** O permite rastrear e gerenciar com eficiência o compartilhamento de credenciais em um grupo de contas, para reduzir o compartilhamento de senhas e aprimorar a experiência de assinantes importantes.
+**As** permitem que você rastreie e gerencie efetivamente o compartilhamento de credenciais em um grupo de contas, para reduzir o compartilhamento de senhas e aprimorar a experiência de assinantes importantes.
 
-É possível aplicar ações a um [segmento](/help/accountiq/product-concepts.md#segment-def) para gerenciar o compartilhamento de senhas em um [intervalo de tempo](/help/accountiq/product-concepts.md#time-interval-def) e agendar a operação para ser executada em uma data futura. Essas ações incluem restrições para minimizar o compartilhamento de senhas ou atenuar as restrições em contas que não estejam compartilhando.
+Você pode aplicar ações a um [segmento](/help/accountiq/product-concepts.md#segment-def) definido para endereçar o compartilhamento de senhas em um [intervalo](/help/accountiq/product-concepts.md#time-interval-def) específico e agendar a operação para execução em uma data futura. Essas ações incluem restrições para minimizar o compartilhamento de senhas ou atenuar as restrições em contas que não estejam compartilhando.
 
 Usando operações, você não só especifica ações e seu escopo, mas também mede seus resultados.
 
@@ -29,7 +29,7 @@ Você pode executar várias funções com operações:
 
 ## Exibir relatórios de operação {#operation-reports}
 
-Você pode revisar os efeitos de uma operação por meio de relatórios de operação. Para exibir o relatório da operação, selecione **Operações** em **Ações** no painel esquerdo do aplicativo Account IQ. Uma lista de operações disponíveis no sistema é exibida. Você pode acessar os principais detalhes sobre cada operação em formato tabular. Os detalhes incluem:
+Você pode revisar os efeitos de uma operação por meio de relatórios de operação. Para exibir o relatório de operações, selecione a guia **Operações** em **Ações** no painel esquerdo do aplicativo do Account IQ. Uma lista de operações disponíveis no sistema é exibida. Você pode acessar os principais detalhes sobre cada operação em formato tabular. Os detalhes incluem:
 
 * Nome da operação
 * Status atual (como Agendado, Em Execução, Encerrado, Com Erro ou Interrompido)
@@ -45,17 +45,17 @@ Você pode revisar os efeitos de uma operação por meio de relatórios de opera
 
 *Lista e detalhes de operações existentes no Account IQ*
 
-Selecione o desejado **Nome da operação** da lista de operações. Os seguintes relatórios são exibidos:
+Selecione o **Nome da Operação** desejado na lista de operações. Os seguintes relatórios são exibidos:
 
 ### Desempenho da operação {#operation-performance}
 
-O desempenho da operação fornece uma leitura de linha superior resumindo o número de contas afetadas, o andamento da operação e a pontuação geral de compartilhamento das contas no segmento durante a operação [período de avaliação](/help/accountiq/product-concepts.md#evaluation-period-def).
+O desempenho da operação fornece uma leitura de linha superior resumindo o número de contas afetadas, o andamento da operação e a pontuação geral de compartilhamento das contas no segmento durante o [período de avaliação](/help/accountiq/product-concepts.md#evaluation-period-def) da operação.
 
 ![Relatório de desempenho da operação](assets/operation-performance.png)
 
 *Relatório de desempenho da operação*
 
-**A.** Contas afetadas **B.** Progresso da operação **C** Pontuação geral de compartilhamento
+**A.** Contas afetadas **B.** Progresso da operação **C.** Pontuação geral de compartilhamento
 
 #### Contas afetadas {#impacted-accounts}
 
@@ -73,15 +73,15 @@ Este gráfico de linhas representa a [pontuação geral de compartilhamento](/he
 
 Esse relatório é exibido como um gráfico de colunas empilhadas que ilustra o impacto de uma operação ao longo do tempo.
 
-![Impacto da operação nas contas no gráfico de segmentos](assets/accounts-in-segment.png)
+![Impacto da operação em contas no gráfico de segmentos](assets/accounts-in-segment.png)
 
-*Impacto da operação nas contas no gráfico de segmentos*
+*Impacto da operação em contas no gráfico de segmentos*
 
-O eixo x representa o eixo da operação [período de avaliação](/help/accountiq/product-concepts.md#evaluation-period-def), enquanto o eixo y indica o status das contas no segmento da operação. Cada barra no gráfico é dividida em três cores:
+O eixo x representa o [período de avaliação](/help/accountiq/product-concepts.md#evaluation-period-def) da operação, enquanto o eixo y indica o status das contas no segmento da operação. Cada barra no gráfico é dividida em três cores:
 
 * Rosa representa o número de contas que atendem às condições do segmento usadas nessa operação.
 
-* Azul representa o número de contas ativas originalmente no segmento, mas que não atenderam às condições do segmento durante cada semana ou mês na operação [período de avaliação](/help/accountiq/product-concepts.md#evaluation-period-def).
+* Azul representa o número de contas ativas originalmente no segmento, mas que não atenderam às condições do segmento durante cada semana ou mês no [período de avaliação](/help/accountiq/product-concepts.md#evaluation-period-def) da operação.
 
 * Cinza representa as contas que estavam inativas durante o período de avaliação.
 
@@ -93,11 +93,11 @@ Com o tempo, o gráfico ilustra as alterações no comportamento da conta em rel
 
 ### Impacto da operação: métricas de contas compartilhadas {#impact-shared-accounts}
 
-As métricas de contas compartilhadas fornecem uma visão geral do nível de compartilhamento e das solicitações de reprodução pelas contas do assinante no segmento da operação durante a operação [período de avaliação](/help/accountiq/product-concepts.md#evaluation-period-def).
+As métricas de contas compartilhadas fornecem uma visão geral do nível de compartilhamento e das solicitações de reprodução pelas contas de assinantes no segmento da operação durante o [período de avaliação](/help/accountiq/product-concepts.md#evaluation-period-def) da operação.
 
 #### Nível de compartilhamento {#share-level}
 
-Este gráfico de linhas representa a [nível de compartilhamento](/help/accountiq/data-panels.md#sharing-level) todas as semanas durante o período de avaliação da operação.
+Este gráfico de linhas representa o [nível de compartilhamento](/help/accountiq/data-panels.md#sharing-level) a cada semana durante o período de avaliação da operação.
 
 ![Gráfico de linhas de nível de compartilhamento](assets/share-level.png){width="550" align="left"}
 
@@ -105,37 +105,37 @@ Este gráfico de linhas representa a [nível de compartilhamento](/help/accounti
 
 #### Número de solicitações de reprodução {#play-requests}
 
-Este gráfico de linhas representa a [reproduzir solicitações](/help/accountiq/general-usage-reports.md#playreq-uniquesubs) todas as semanas no período de avaliação da operação.
+Este gráfico de linhas representa as [solicitações de reprodução](/help/accountiq/general-usage-reports.md#playreq-uniquesubs) todas as semanas no período de avaliação da operação.
 
-![Número de gráficos de linhas de solicitações de reprodução](assets/number-play-requests.png){width="550" align="left"}
+![Gráfico de linhas de número de solicitações de reprodução](assets/number-play-requests.png){width="550" align="left"}
 
-*Número de gráficos de linhas de solicitações de reprodução*
+*Gráfico de linhas de número de solicitações de reprodução*
 
 ### Impacto da operação: métricas de uso geral {#impact-general-usage}
 
-As métricas de uso geral fornecem uma visão geral do número médio de dispositivos, IPs e locais no segmento da operação durante o [período de avaliação](/help/accountiq/product-concepts.md#evaluation-period-def).
+As métricas de uso geral fornecem uma visão geral do número médio de dispositivos, IPs e locais no segmento da operação durante o [período de avaliação](/help/accountiq/product-concepts.md#evaluation-period-def) da operação.
 
 #### Número de dispositivos {#devices}
 
-Este gráfico de linhas representa a média [número de dispositivos](/help/accountiq/general-usage-reports.md#devices-week-account) todas as semanas no período de avaliação da operação.
+Este gráfico de linhas representa o [número médio de dispositivos](/help/accountiq/general-usage-reports.md#devices-week-account) a cada semana no período de avaliação da operação.
 
-![Gráfico de linhas de número de dispositivos](assets/number-devices.png){width="550" align="left"}
+![Gráfico de linhas de dispositivos](assets/number-devices.png){width="550" align="left"}
 
-*Gráfico de linhas de número de dispositivos*
+*Gráfico de linhas de dispositivos*
 
 #### Número de IPs e localizações {#IPs-locations}
 
-Este gráfico de linhas representa a média [número de IPs](/help/accountiq/general-usage-reports.md#ip-week-account) e [locais](/help/accountiq/general-usage-reports.md#locations-week-account) todas as semanas no período de avaliação da operação.
+Este gráfico de linhas representa o [número médio de IPs](/help/accountiq/general-usage-reports.md#ip-week-account) e [locais](/help/accountiq/general-usage-reports.md#locations-week-account) semanalmente no período de avaliação da operação.
 
-![Número de IPs e gráfico de linhas de localizações](assets/number-ips-locations.png){width="550" align="left"}
+![Gráfico de linhas de número de IPs e localizações](assets/number-ips-locations.png){width="550" align="left"}
 
-*Número de IPs e gráfico de linhas de localizações*
+*Gráfico de linhas de número de IPs e localizações*
 
-Para fechar o relatório e voltar para a página **Operações** selecione **Operações** em **Ações** no painel esquerdo.
+Para fechar o relatório e voltar à página principal de **Operações**, selecione a guia **Operações** em **Ações** no painel esquerdo.
 
 ## Criar nova operação {#create-new-operation}
 
-Quando você for ao **Operações** em **Ações** no painel esquerdo, selecione **Criar nova operação** na parte superior do **Operações** página.
+Ao ir para a guia **Operações** em **Ações** no painel esquerdo, selecione **Criar nova operação** na parte superior da página **Operações**.
 
 Para criar uma nova operação, siga as instruções nas seguintes seções:
 
@@ -150,17 +150,17 @@ Nesta seção, digite o nome da operação em **Nome da operação**.
 
 >[!TIP]
 >
->Descreva a finalidade da operação ou a natureza da ação em **nome da operação** para identificação rápida. A opção de **Adicionar descrição e tags** estará disponível em versões futuras.
+>Descreva a finalidade da operação ou a natureza da ação em **nome da operação** para identificação rápida. A opção de **Adicionar descrição e marcas** estará disponível em versões futuras.
 
-![Adicionar nome da operação nos detalhes da operação](assets/operation-details.png)
+![Adicionar nome da operação aos detalhes da operação](assets/operation-details.png)
 
 *Adicionar nome da operação*
 
 ### Segmento {#segment}
 
-Nesta seção, clique em **Selecionar segmento** e escolha um segmento para o qual deseja usar essa operação. Saiba mais [como selecionar um segmento](/help/accountiq/segments-timeinterval.md#segment-selection).
+Nesta seção, clique em **Selecionar segmento** e escolha um segmento para o qual deseja usar esta operação. Saiba [como selecionar um segmento](/help/accountiq/segments-timeinterval.md#segment-selection).
 
-Depois de selecionar um segmento, use <img alt= "expandir resumo de segmentos" src="./assets/expand-segment-summary.svg" width="25"> ícone para exibir o resumo detalhado do segmento. Leia mais sobre [resumo do segmento](segments-timeinterval.md#segment-summary).
+Depois de selecionar um segmento, use Ícone <img alt= "expandir resumo de segmentos" src="./assets/expand-segment-summary.svg" width="25"> para exibir o resumo detalhado do segmento. Leia mais sobre [resumo do segmento](segments-timeinterval.md#segment-summary).
 
 ![Selecionar segmento e intervalo de tempo](assets/select-segment-timeinterval.png)
 
@@ -168,29 +168,29 @@ Depois de selecionar um segmento, use <img alt= "expandir resumo de segmentos" s
 
 >[!NOTE]
 >
->A variável [categorias de vídeo](product-concepts.md#video-category-def) mostrada na imagem anterior, como **MVPDs**, **Programadores**, e **Canais** representam os rótulos usados na versão para TV em todos os locais do Account IQ. Se você estiver conectado como um serviço D2C, esses rótulos exibirão as categorias de vídeo específicas da sua empresa.
+>As [categorias de vídeo](product-concepts.md#video-category-def) mostradas na imagem anterior, como **MVPDs**, **Programadores** e **Canais**, representam os rótulos usados na versão para TV em Qualquer Lugar do Account IQ. Se você estiver conectado como um serviço D2C, esses rótulos exibirão as categorias de vídeo específicas da sua empresa.
 
-Se necessário, use <img alt= "editar segmento" src="./assets/edit-segment.svg" width="25"> ícone para editar o segmento selecionado ou  <img alt= "criar novo segmento" src="./assets/create-new-segment.svg" width="25"> ícone para criar um novo segmento. Para obter mais detalhes, consulte as instruções para [criação de um novo segmento](work-with-segments.md#create-new-segment) ou [editar um segmento](work-with-segments.md#edit-segment).
+Se necessário, use Ícone <img alt= "editar segmento" src="./assets/edit-segment.svg" width="25"> para editar o segmento selecionado ou  Ícone <img alt= "criar novo segmento" src="./assets/create-new-segment.svg" width="25"> para criar um novo segmento. Para obter mais detalhes, consulte as instruções para [criar um novo segmento](work-with-segments.md#create-new-segment) ou [editar um segmento](work-with-segments.md#edit-segment).
 
 >[!IMPORTANT]
 >
->**Tipo de segmento** nomeado **[!UICONTROL Fixed number of accounts]** está selecionado no momento por padrão. A opção para selecionar **[!UICONTROL Variable number of accounts]** estará disponível em versões futuras.
+>O **tipo de segmento** denominado **[!UICONTROL Fixed number of accounts]** está selecionado por padrão no momento. A opção para selecionar **[!UICONTROL Variable number of accounts]** estará disponível em versões futuras.
 
-Selecionar **Granularidade e intervalo de tempo** para monitorar a operação durante um período específico. Saiba mais sobre [como selecionar a granularidade e o intervalo de tempo](/help/accountiq/segments-timeinterval.md#granularity-timeinterval).
+Selecione **Granularidade e intervalo de tempo** para monitorar a operação durante um período específico. Saiba mais sobre [como selecionar granularidade e intervalo de tempo](/help/accountiq/segments-timeinterval.md#granularity-timeinterval).
 
 ### Ação {#action}
 
-Nesta seção, escolha uma **Ação** que deseja executar no segmento selecionado no menu suspenso.
+Nesta seção, escolha no menu suspenso uma **Ação** que deseja executar no segmento selecionado.
 
-![Selecione o tipo de ação](assets/apply-actions.png)
+![Selecione o tipo de Ação](assets/apply-actions.png)
 
-*Selecione o tipo de ação*
+*Selecione o tipo de Ação*
 
 Há duas opções disponíveis:
 
-* Selecionar **Política CM** para o sistema de monitoramento de simultaneidade integrado ao Account IQ.
+* Selecione a **Política CM** para o sistema de monitoramento simultâneo integrado com o Account IQ.
 
-* Selecionar **Ações externas** para criar e processar fluxos de trabalho externos ao Account IQ e não integrados ao sistema Account IQ.
+* Selecione **Ações externas** para criar e processar fluxos de trabalho externos para o Account IQ e não integrados ao sistema Account IQ.
 
 >[!NOTE]
 >
@@ -198,43 +198,43 @@ Há duas opções disponíveis:
 
 ### Agendar {#schedule}
 
-Nesta seção, selecione o **Data inicial** e **Data final** no seletor de datas para definir a ativação da operação.
+Nesta seção, selecione a **Data inicial** e a **Data final** no seletor de datas para definir a ativação para a operação.
 
 >[!IMPORTANT]
 >
->Atualmente, a ativação padrão **Data inicial** e **Data final** estão definidos como **Na data**. A opção para selecionar **Quando uma condição é atendida** e **Manualmente** estará disponível em versões futuras.
+>Atualmente, a **Data inicial** e a **Data final** de ativação padrão estão definidas como **Na data**. A opção para selecionar **Quando uma condição for atendida** e **Manualmente** estará disponível em versões futuras.
 
 >[!NOTE]
 >
->Verifique se a data de início e a data de término estão alinhadas com a granularidade selecionada para avaliação no **Etapa 4**.
+>Verifique se a data de início e a data de término estão alinhadas com a granularidade selecionada para avaliação na **Etapa 4**.
 
 * Se você optou pela granularidade agregada por semanas, selecione as datas de início e término em semanas (por exemplo, Semana 10).
 * Se você optou pela granularidade agregada por meses, selecione as datas de início e término em meses.
 
-![Selecione a data inicial e a data final no seletor de datas](assets/add-schedule.png)
+![Selecione data de início e data de término no seletor de datas](assets/add-schedule.png)
 
-*Selecione Data inicial e Data final no seletor de datas*
+*Selecione Data de início e Data de término no seletor de datas*
 
 **A.** Seletor de data inicial **B.** Seletor de data final
 
 >[!NOTE]
 >
->A variável **Data inicial** deve ser posterior ao período de avaliação e à data atual, enquanto a variável **Data final** deve ser posterior à Data inicial e à data atual para agendar e executar operações no período futuro.
+>A **Data de início** deve ser posterior ao período de avaliação e à data atual, enquanto a **Data de término** deve ser posterior à data de início e à data atual para agendar e executar operações no período futuro.
 
-Selecionar **Salvar operação** na parte superior do **Operações** página para processar uma nova operação.
+Selecione **Salvar operação** na parte superior da página **Operações** para processar uma nova operação.
 
 ## Parar operação {#stop-operation}
 
-Você só pode interromper as operações que estão atualmente em **Executando** status. Para interromper uma operação existente, siga estas etapas:
+Você só pode parar as operações que estão atualmente no status **Em execução**. Para interromper uma operação existente, siga estas etapas:
 
-1. Navegue até a **Operações** em **Ações** na navegação à esquerda do aplicativo Account IQ.
-1. Selecionar **Opções** menu da operação que deseja interromper.
+1. Navegue até a guia **Operações** em **Ações**, na navegação à esquerda do aplicativo Account IQ.
+1. Selecione o menu **Opções** da operação que deseja parar.
 
    ![Selecione o menu de opções para interromper a operação](assets/stop-operation.png)
 
    *Selecione o menu Opções para interromper a operação*
 
-1. Selecionar **Parar**.
+1. Selecione **Parar**.
 
 
 

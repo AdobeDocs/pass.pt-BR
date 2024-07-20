@@ -1,13 +1,13 @@
 ---
 title: Procedimentos de escalonamento de monitoramento de simultaneidade
 description: Procedimentos de escalonamento de monitoramento de simultaneidade
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: eb110465-3a74-489e-a521-0e17f5aeecb8
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '849'
 ht-degree: 0%
 
 ---
-
 
 # Procedimentos de escalonamento de monitoramento de simultaneidade {#esc-procedures}
 
@@ -18,15 +18,15 @@ ht-degree: 0%
 
 ## Introdução {#cm-escalation-intro}
 
-O presente documento descreve os procedimentos de apoio a incidentes graves (**SEVERIDADE 1** nível) afetando a Autenticação do Adobe Pass, o Monitoramento de simultaneidade do Adobe Pass e seus parceiros.
+Este documento descreve os procedimentos de suporte para incidentes graves (nível **SEVERITY 1**) que afetam a Autenticação da Adobe Pass, o Monitoramento de Simultaneidade da Adobe Pass e seus parceiros.
 
 ## Definição do nível de gravidade 1 do escalonamento {#defn-escl-sevrityone-level}
 
-A **SEVERIDADE 1** incidente de nível é um **LIVE** situação, **acontecendo no ambiente de produção**, que não permite a conclusão dos fluxos de autenticação e/ou autorização para um canal e um MVPD, afetando um grande número de assinantes do MVPD que está executando o fluxo.
+Um incidente de nível **SEVERITY 1** é uma situação **LIVE**, **acontecendo no ambiente de produção**, que não permite a conclusão dos fluxos de autenticação e/ou autorização para um canal e um MVPD, afetando um grande número de assinantes do MVPD que estão executando o fluxo.
 
 ## Exemplos de incidentes de Gravidade 1 {#exampl-sevone-incident}
 
-* O Ativador de acesso de produção hospedado em <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> não está disponível.
+* O Ativador de Acesso para produção hospedado em <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> não está disponível.
 
 * Para um MVPD específico, o Adobe não redireciona mais/exibe a página de logon, depois que o usuário seleciona o MVPD (em qualquer um dos navegadores compatíveis).
 
@@ -37,7 +37,7 @@ A **SEVERIDADE 1** incidente de nível é um **LIVE** situação, **acontecendo 
 
 ## Exemplos do que é *NOT* um incidente de Gravidade 1 {#exampl-not-sev1}
 
-*Para problemas desses tipos, o Adobe fornecerá suporte para investigações, mas não são incidentes de Gravidade 1:*
+*Para problemas desses tipos, o Adobe dará suporte para investigações, mas não são incidentes de Gravidade 1:*
 
 * Um ou alguns assinantes não podem executar o fluxo devido a um problema de versão do Flash (Flash ausente, bloqueadores de Flashes, versão incorreta do Flash).
 * Um ou alguns assinantes não podem se autenticar e permanecem na página de logon do MVPD.
@@ -66,11 +66,11 @@ Os incidentes de gravidade 1 podem ser iniciados pelo Adobe ou por um parceiro d
    * **1-205-693-9813**
 
 
-**Se você não incluir &quot;URGENT-INCIDENT&quot; no título do ticket, ele não será selecionado pelo nosso sistema de notificação.**
+**Se você não incluir &quot;URGENT-INCIDENT&quot; no título do tíquete, ele não será selecionado pelo nosso sistema de notificação.**
 
 ### Fluxo iniciado pelo Adobe {#adobe-initiated-flow}
 
-**...por um problema de autenticação da Adobe Pass**
+**...por um problema de autenticação do Adobe Pass**
 
 1. O Adobe identifica um problema interno e abre um ticket no nosso sistema de rastreamento.
 
@@ -79,11 +79,11 @@ Os incidentes de gravidade 1 podem ser iniciados pelo Adobe ou por um parceiro d
 1. O Adobe trabalha para a resolução do incidente e mantém todos os parceiros afetados informados.
 
 
-**...para um problema de parceiro (Programador/MVPD)**
+**...para um problema de parceiro (Programmer/MVPD)**
 
 1. Adobe identifica um problema relacionado à integração com um MVPD ou em um dos sites do Programador.
 
-1. Adobe notifica o parceiro afetado **procedimentos de apoio em vigor com esse parceiro** e abre um tíquete na organização de suporte do parceiro.
+1. O Adobe notifica o parceiro afetado **seguindo os procedimentos de suporte em vigor com esse parceiro** e abre um tíquete com a organização de suporte do parceiro.
 
 1. Se, durante a análise de impacto, o Adobe identificar que o problema pertence a uma das decisões pré-acordadas sobre cenários de incidente (consulte a seção &quot;Decisões pré-acordadas sobre cenários de incidente&quot; abaixo), ele agirá de acordo sem esperar pelo parceiro1. entrada do.
 

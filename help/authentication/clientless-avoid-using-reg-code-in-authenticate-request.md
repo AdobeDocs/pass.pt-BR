@@ -4,7 +4,7 @@ description: Evite usar '&'reg_code in /authenticate Request
 exl-id: c0ecb6f9-2167-498c-8a2d-a692425b31c5
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 ## Problema
 
-O navegador IE 9 interpreta &#39;\®&#39; como um comando especial e o converte para ®.
+O navegador IE 9 interpreta &#39;\&amp;reg&#39; como um comando especial e o converte em ®.
 
 ## Explicação
 
-Se a variável `/authenticate` é composta da seguinte forma...
+Se a solicitação `/authenticate` for composta da seguinte maneira...
 
 
 ```
@@ -41,7 +41,7 @@ Se a variável `/authenticate` é composta da seguinte forma...
 ```
 
 
-O requestor\_id será interpretado como univision®\_code=EKAFIFM, já que não há &#39;&amp;&#39; e o Adobe não encontrará um `regCode` parâmetro ao qual associar o token.  Há uma chance de o token de autenticação não ser criado, nesse caso `/checkauthn` As chamadas do não localizarão nenhum token.
+O requestor\_id será interpretado como univision®\_code=EKAFIFM, já que não há &#39;&amp;&#39; e o Adobe não encontrará um parâmetro `regCode` para associar ao token.  Há uma chance de o token de Autenticação não ser criado, caso em que `/checkauthn` chamadas não encontrarão nenhum token.
 
 
 
@@ -49,14 +49,14 @@ O requestor\_id será interpretado como univision®\_code=EKAFIFM, já que não 
 
 Uma das seguintes opções deve resolver esse problema:
 
-1. Evite usar o `&reg_code` parâmetro entre os outros parâmetros da cadeia de caracteres de consulta.  Em vez disso, mova-o para o primeiro parâmetro da string de consulta no URL da solicitação, tornando o URL da solicitação assim:
+1. Evite usar o parâmetro `&reg_code` entre os outros parâmetros da cadeia de caracteres de consulta.  Em vez disso, mova-o para o primeiro parâmetro da string de consulta no URL da solicitação, tornando o URL da solicitação assim:
 
 
-       &lt;fqdn>authenticate?reg_code =EKAFIFM&amp;requestor_id=someRequestor&amp;domain_name=someRequestor.com&amp;noflash=true&amp;mso_id=someMvpd&amp;redirect_url=someRequestor.redirect.url.html
+       &lt;FQDN>authenticate?reg_code =EKAFIFM&amp;requestor_id=someRequestor&amp;domain_name=someRequestor.com&amp;noflash=true&amp;mso_id=someMvpd&amp;redirect_url=someRequestor.redirect.url.html
    
 
-   Deste modo, a Comissão `&reg` O parâmetro não será interpretado incorretamente.
+   Dessa forma, o parâmetro `&reg` não será interpretado incorretamente.
 
-1. Normalizar `&reg_code` como usar `&amp;reg_code`.
+1. Normalize `&reg_code` como usando `&amp;reg_code`.
 
 1. O Adobe poderia introduzir um novo recurso para enviar um código de erro de volta à segunda tela em resposta a uma chamada de autenticação, se a criação do token de autenticação falhasse.

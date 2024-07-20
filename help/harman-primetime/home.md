@@ -1,10 +1,11 @@
 ---
 title: Visão geral do Harman Primetime
 description: Harman mantém produtos de publicidade e publicação do Primetime, enquanto o Adobe gerencia produtos da Adobe Pass para AccountIQ, Autenticação e Monitoramento de simultaneidade.
-source-git-commit: f24e0a7e81ed23e69d038e14fb8585e89e248e27
+exl-id: e9215d1b-00bc-44ee-82d7-c0df20796818
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '144'
-ht-degree: 0%
+source-wordcount: '139'
+ht-degree: 48%
 
 ---
 
@@ -20,12 +21,12 @@ Harman mantém produtos de publicidade e publicação do Primetime, enquanto o A
 
 | Guia | Descrição |
 |--- |--- |
-| [Ad Insertion dinâmico do Primetime](https://experienceleague.adobe.com/docs/primetime/ad-insertion/home.html) | Ajuda do Adobe Pass Ad Insertion |
+| [Ad Insertion Dinâmico do Primetime](https://experienceleague.adobe.com/docs/primetime/ad-insertion/home.html) | Ajuda do Adobe Pass Ad Insertion |
 
 ## Guias do Adobe Pass
 
 | Guia | Descrição |
 |--- |--- |
-| [Autenticação Adobe Pass](/help/authentication/home.md) | A Autenticação do Adobe Pass é uma solução de direito para a TV Everywhere, que fornece uma estrutura modular para determinar se alguém que solicita acesso a um recurso tem direito a ele. |
-| [Monitoramento de simultaneidade do Adobe Pass](/help/concurrency-monitoring/cm-home.md) | Saiba como definir e aplicar limites ao uso simultâneo em vários aplicativos. |
-| [Adobe Pass Account IQ](/help/accountiq/home.md) | O Adobe Pass Account IQ ajuda a fornecer informações sobre os componentes do Account IQ e orienta você pelas jornadas do usuário para usar os vários componentes. |
+| [Autenticação do Adobe Pass](/help/authentication/home.md) | O Adobe Pass Authentication é uma solução de concessão de direitos para o TV Everywhere, o qual fornece uma estrutura modular para determinar se a pessoa que solicita o acesso a um recurso possui direito a ele. |
+| [Monitoramento de Simultaneidade do Adobe Pass](/help/concurrency-monitoring/cm-home.md) | Saiba como definir e aplicar limites ao uso simultâneo em vários aplicativos. |
+| [Adobe Pass Account IQ](/help/accountiq/home.md) | O Adobe Pass Account IQ ajuda a fornecer informações sobre os componentes do Account IQ e orienta você pelas jornadas de uso dos vários componentes. |
