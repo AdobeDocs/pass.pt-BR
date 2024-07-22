@@ -2,7 +2,7 @@
 title: Casos de uso do programador
 description: Casos de uso do programador
 exl-id: 51ca7e4f-b0d8-4e35-8398-2efb4879de2a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 189d0e5c83d1bc171c6ff3057f22dbf4055ea6b1
 workflow-type: tm+mt
 source-wordcount: '1654'
 ht-degree: 2%
@@ -131,11 +131,12 @@ Habilite o direito de TVE para eventos especiais que podem não ser recursos do 
 **Prioridade**- Medium
 
 Ativar a validação do token de mídia antes de liberar o fluxo de vídeo para o reprodutor do cliente.
-| Prioridade  |                                                   Caso de uso                                                  |                                                                                                                                                              Descrição                                                                                                                                                             | Plataformas | Notas do MVPD |
-|—|—|—|—|—|
-| Alta      | Programador Federated Player - Com Autorização No Nível Da Página                                                 | As APIs de autenticação da Adobe Pass são feitas no JavaScript na página, e o token é passado para o reprodutor. O token pode ser passado para o serviço de validação de várias maneiras:                                 Obter parâmetro no URL do serviço de validação                    Parâmetro de URL passado na cadeia de caracteres de consulta do URL do fluxo                    API da interface externa                    FlashVars                           |           |            |
-| Medium    | Programador Federated Player - Com Autorização Interna Do Player                                            | As APIs de autenticação da Adobe Pass são feitas no ActionScript no SWF do reprodutor, portanto, o token está disponível para o reprodutor a partir do retorno de chamada.                                                                                                                                                                                         |           |            |
-| Alta      | Player sindicalizado - hospedado no portal MVPD com autorização em nível de página usando um iFrame para envolver o player  | Semelhante ao reprodutor com autorização em nível de página, mas com o invólucro de página do reprodutor iFramed no portal MVPD. A autenticação deve ocorrer separadamente no portal MVPD.                                                                                                                                                    |           |                        |
+
+| Prioridade | Caso de uso | Descrição | Plataformas | Notas do MVPD |
+|---------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------|
+| Alto | Programador Federated Player - Com Autorização No Nível Da Página | As APIs de autenticação da Adobe Pass são feitas no JavaScript na página, e o token é passado para o reprodutor. O token pode ser passado para o serviço de validação de várias maneiras:                                 Obter parâmetro no URL do serviço de validação                    Parâmetro de URL passado na cadeia de caracteres de consulta do URL do fluxo                    API da interface externa                    FlashVars |           |            |
+| Médio | Programador Federated Player - Com Autorização Interna Do Player | As APIs de autenticação da Adobe Pass são feitas no ActionScript no SWF do reprodutor, portanto, o token está disponível para o reprodutor a partir do retorno de chamada. |           |            |
+| Alto | Player sindicalizado - hospedado no portal MVPD com autorização em nível de página usando um iFrame para envolver o player | Semelhante ao reprodutor com autorização em nível de página, mas com o invólucro de página do reprodutor iFramed no portal MVPD. A autenticação deve ocorrer separadamente no portal MVPD. |           |                        |
 
 
 <!--
