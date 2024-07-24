@@ -2,28 +2,28 @@
 title: Configuração do ambiente e teste na pré-qualificação
 description: Configuração do ambiente e teste na pré-qualificação
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3a6a5633c728398a3847ee3e341e82aba915f0d9
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 0%
 
 ---
 
-# Configuração do ambiente e dos testes na pré-qualidade{#setting-up-your-environment-and-testing-in-prequal}
+# Configuração do ambiente e dos testes na pré-classificação{#setting-up-your-environment-and-testing-in-prequal}
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso dessa API requer uma licença atual da Adobe. Nenhum uso não autorizado é permitido.
+>O conteúdo neste página é fornecido apenas para fins informativos. O uso dessa API exige uma licença atual do Adobe Systems. Nenhum uso não autorizado é permitido.
 
-O objetivo desta nota técnica é ajudar nossos parceiros a configurar o ambiente e a começar a testar um novo build implantado no ambiente de pré-qualificação da Adobe.
+O objetivo desta nota técnica é ajudar nossos parceiros a configurar suas ambiente e start testar um novo build implantado no Adobe Systems ambiente de pré-qualificação.
 
-Como há duas opções de criação: ***produção*** e ***teste***, neste documento vamos focar na configuração de produção com a menção de que todas as etapas são as mesmas para o teste, somente as URLs são diferentes.
+Como há dois tipos build: ***produção*** e ***preparo***, neste documento vamos focalizar na configuração da produção com a menção de que todas as etapas são as mesmas para o preparo, apenas as URLs são diferentes.
 
-As etapas 1 e 2 estão configurando o ambiente de teste em uma das máquinas de teste, a etapa 3 é uma verificação do fluxo básico e as etapas 4 &amp;5 apresentam algumas diretrizes de teste.
+As etapas 1 e 2 estão configurando a teste ambiente em uma das máquinas de teste, a etapa 3 é uma verificação do fluxo básico e as etapas 4 e 5 estão apresentando algumas diretrizes de teste.
 
 >[!IMPORTANT]
 >
-> É muito importante executar as etapas 1 e 2 sempre que você desejar alterar o ambiente de teste (alternando do palco para o perfil de produção ou o contrário)
+> É muito importante executar as etapas 1 e 2 sempre que quiser alterar os ambiente de teste (alternando de teste para perfil de produção ou de outra forma de contornar)
 
 
 ## ETAPA 1. Resolução de Passagem de domínio para um IP {#resolving-pass-domain-to-an-ip}
@@ -56,19 +56,19 @@ As etapas 1 e 2 estão configurando o ambiente de teste em uma das máquinas de 
 
 >[!NOTE]
 >
->Os domínios excluídos da resposta por não serem relevantes e podem diferir de usuário para usuário.
+>Os domínios excluídos da resposta, pois não são relevantes e podem ser diferentes de usuário para usuário.
 
 >[!IMPORTANT]
 >
-> Esses endereços IP podem mudar no futuro e podem não ser os mesmos para usuários em regiões geográficas diferentes.
+> Esses endereços IP podem mudar no futuro e podem não ser os mesmos para usuários em diferentes regiões geográficas.
 
 
-## ETAPA 2.  Falsificar o ambiente de pré-qualificação para ser produção {#spoofing-the-prequalification-environment}
+## ETAPA 2.  Falsificação do ambiente de pré-qualificação para produção {#spoofing-the-prequalification-environment}
 
-* Edite o *arquivo c:\\windows\System32\\drivers\\etc\hosts* (no Windows) ou */etc/hosts* (no Macintosh/Linux/Android) e adicione o seguinte:
+* Editar o *arquivo c:\\windows\\System32\\drivers\\etc\\hosts* (no Windows) ou */etc/hosts* (em Macintosh/Linux/Android) e adicione o seguinte:
 
-* Perfil de produção spoof
-   * 52.13.71.11 http://entitlement.auth.adobe.com, http://sp.auth.adobe.com http://api.auth.adobe.com
+* Perfil de produção falsos
+   * 52.13.71.11 entitlement.auth.adobe.com sp.auth.adobe.com api.auth.adobe.com
 
 **Falsificação no Android:** Para fazer spoof no Android, é necessário usar um emulador do Android.
 
@@ -79,16 +79,16 @@ As etapas 1 e 2 estão configurando o ambiente de teste em uma das máquinas de 
 
 **Esta é uma etapa fácil:**
 
-* carregar [ambiente e [direito](https://entitlement.auth.adobe.com/environment.html) pré-qualificados](https://entitlement-prequal.auth.adobe.com/environment.html). Eles devem retornar a mesma resposta.
+* carregamento [de ambiente](https://entitlement-prequal.auth.adobe.com/environment.html) qualificado e [direito](https://entitlement.auth.adobe.com/environment.html). Elas devem retornar a mesma resposta.
 
 
-## PASSO 4.  Execute um fluxo simples de autenticação/autorização usando o site do programador {#peform-a-simple-auth-flow}
+## ETAPA 4.  Realize um fluxo simples de autenticação/autorização usando o site do programador {#peform-a-simple-auth-flow}
 
-* Esta etapa requer o endereço de site do programador e algumas credenciais válidas de MVPD (um usuário que é autenticado e autorizado).
+* Esta etapa requer o endereço do site do programador e algumas credenciais válidas de MVPD (uma usuário que seja autenticada e autorizada).
 
-## PASSO 5.  Realizar testes de cenário usando os sites do programador {#perform-scenario-testing-using-programmer-website}
+## ETAPA 5.  Realizar teste de cenário usando os sites do programador {#perform-scenario-testing-using-programmer-website}
 
-* Depois de concluir a configuração do ambiente e garantir que o fluxo básico de autenticação de autorização esteja funcionando, você pode continuar com o teste de cenários mais complexos.
+* Depois de concluir a configuração ambiente e garantir que o fluxo básico de autenticação-autorização esteja funcionando, você pode continuar com o teste de cenários mais complexos.
 
 
 ## ETAPA 6.  Realizar testes usando o site de teste da API {#perform-testing-using-api-testing-site}
