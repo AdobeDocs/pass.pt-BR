@@ -2,7 +2,7 @@
 title: Recursos de integração do MVPD
 description: Recursos de integração do MVPD
 exl-id: fcd65940-9a86-49b2-9d52-9031fb763338
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: e4567dd870790d11b9c5904d635fc00bdd1a23d2
 workflow-type: tm+mt
 source-wordcount: '1733'
 ht-degree: 3%
@@ -84,8 +84,8 @@ As informações nas tabelas têm como objetivo orientar o processo de integraç
 | 3,3 | Registro de conta em linha | O MVPD fornece um meio de criar uma nova conta em linha para o fluxo de Autenticação federado. | A |                                                                                                                                                           |
 | 3,4 | Ajuda/suporte em linha | O MVPD fornece um meio de fornecer ajuda durante o fluxo de Autenticação federado. | A |                                                                                                                                                           |
 | 3,5 | Autenticação In-home baseada em modem | O MVPD autentica automaticamente um dispositivo quando ele está na rede local de um modelo registrado (somente MVPD do ISP). | B | Essa é uma prioridade mais baixa porque é uma otimização que muitos ainda não podem suportar e apresenta alguns desafios para a mitigação de fraudes e o controle dos pais |
-Agora é possível importar o código da tabela do Markdown diretamente usando a caixa de diálogo File/Paste table data... .
 
+Agora é possível importar o código da tabela do Markdown diretamente usando a caixa de diálogo File/Paste table data... .
 
 
 ## 4. Recursos do Analytics {#analytics-features}
