@@ -1,9 +1,9 @@
 ---
 title: Iniciar logout para mvpd específico
 description: REST API V2 - Iniciar logout para mvpd específico
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
 workflow-type: tm+mt
-source-wordcount: '900'
+source-wordcount: '911'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!IMPORTANT]
+>
+> A implementação da REST API V2 é limitada pela documentação do [Mecanismo de limitação](/help/authentication/throttling-mechanism.md).
 
 ## Solicitação {#request}
 
