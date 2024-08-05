@@ -1,0 +1,52 @@
+---
+title: Cabeçalho - Adobe-Subject-Token
+description: REST API V2 - Cabeçalho - Adobe-Subject-Token
+source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+workflow-type: tm+mt
+source-wordcount: '130'
+ht-degree: 3%
+
+---
+
+
+# Cabeçalho - Adobe-Subject-Token {#header-adobe-subject-token}
+
+## Visão geral {#overview}
+
+O cabeçalho de solicitação <b>Adobe-Subject-Token</b> contém o identificador de plataforma exclusivo como `JWS` ou `JWE` obtido de um serviço de identidade ou biblioteca em execução fora dos sistemas de Autenticação Adobe Pass.
+
+Esse cabeçalho foi projetado para ser usado em fluxos habilitados para logon único (SSO) que usam o método de identidade da plataforma.
+
+Para obter mais detalhes sobre os fluxos habilitados para o logon único (SSO) que usam o método de Identidade da Plataforma, consulte a documentação do [Logon único usando fluxos de identidade da plataforma](../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md).
+
+## Sintaxe {#syntax}
+
+<table>
+   <tr>
+      <td style="background-color: #DEEBFF;" colspan="2"><b>Token de Assunto do Adobe</b>: &lt;identificador_plataforma_exclusiva&gt;</td>
+   </tr>
+   <tr>
+      <td>Tipo de cabeçalho</td>
+      <td>Cabeçalho da solicitação</td>
+   </tr>
+   <tr>
+      <td>Padrão</td>
+      <td>Não</td>
+   </tr>
+</table>
+
+## Diretivas {#directives}
+
+<b>identificador_de_plataforma_exclusiva</b>
+
+A Assinatura Web JSON (`JWS`) ou a Criptografia Web JSON (`JWE`), que é um Token Web JSON assinado ou criptografado (`JWT`) contendo informações de identificador de plataforma exclusivas.
+
+Isso está disponível para as seguintes plataformas:
+
+* [Amazon](../../../amazon-fireos-sso-using-clientless-api-cookbook.md)
+
+## Exemplos {#examples}
+
+Consulte os exemplos descritos para as seguintes plataformas:
+
+* [Amazon](../../../amazon-fireos-sso-using-clientless-api-cookbook.md)
