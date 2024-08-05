@@ -1,7 +1,7 @@
 ---
 title: Cabeçalho - AD-Service-Token
 description: REST API V2 - Cabeçalho - AD-Service-Token
-source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 1%
@@ -21,7 +21,7 @@ O cabeçalho de solicitação <b>AD-Service-Token</b> contém o identificador de
 
 Esse cabeçalho foi projetado para uso em fluxos habilitados para logon único (SSO) que usam o método de token de serviço.
 
-Para obter mais detalhes sobre os fluxos habilitados para o logon único (SSO) que usam o método Token de Serviço, consulte a documentação do [Logon único usando fluxos de token de serviço](../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md).
+Para obter mais detalhes sobre os fluxos habilitados para o logon único (SSO) que usam o método Token de Serviço, consulte a documentação do [Logon único usando fluxos de token de serviço](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 ## Sintaxe {#syntax}
 

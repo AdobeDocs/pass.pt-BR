@@ -1,7 +1,7 @@
 ---
 title: Cabeçalho - AP-Identificador de dispositivo
 description: REST API V2 - Cabeçalho - AP-Identificador de dispositivo
-source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '103'
 ht-degree: 3%

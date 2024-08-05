@@ -1,7 +1,7 @@
 ---
 title: Recuperar solicitação de autenticação do parceiro
 description: REST API V2 - Recuperar solicitação de autenticação do parceiro
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '1104'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Recuperar solicitação de autenticação do parceiro {#retrieve-partner-authentication-request}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
@@ -123,7 +123,7 @@ ht-degree: 1%
       <td>
         A geração da carga de logon único para o método Partner está descrita na documentação <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
         <br/><br/>
-        Para obter mais detalhes sobre os fluxos habilitados para logon único usando um parceiro, consulte a documentação do <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md">Logon único usando fluxos do parceiro</a>.</td>
+        Para obter mais detalhes sobre os fluxos habilitados para logon único usando um parceiro, consulte a documentação do <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Logon único usando fluxos do parceiro</a>.</td>
       <td>opcional</td>
    </tr>
    <tr>

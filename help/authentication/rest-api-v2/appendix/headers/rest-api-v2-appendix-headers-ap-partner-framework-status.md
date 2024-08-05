@@ -1,7 +1,7 @@
 ---
 title: Cabeçalho - AP-Parceiro-Estrutura-Status
 description: REST API V2 - Cabeçalho - AP-Parceiro-Estrutura-Status
-source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '388'
 ht-degree: 1%

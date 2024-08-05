@@ -1,15 +1,15 @@
 ---
-title: Recuperar perfil usando resposta de autenticação de parceiro
-description: REST API V2 - Recuperar perfil usando resposta de autenticação de parceiro
+title: Recuperar perfil para código específico
+description: REST API V2 - Recuperar perfil para código específico
 source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
-source-wordcount: '729'
-ht-degree: 2%
+source-wordcount: '570'
+ht-degree: 3%
 
 ---
 
 
-# Recuperar perfil usando resposta de autenticação de parceiro {#retrieve-profile-using-partner-authentication-response}
+# Recuperar perfil para código específico {#retrieve-profile-for-specific-code}
 
 >[!IMPORTANT]
 >
@@ -29,12 +29,12 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">caminho</td>
-      <td>/api/v2/{serviceProvider}/profiles/sso/{partner}</td>
+      <td>/api/v2/{serviceProvider}/profiles/{code}</td>
       <td></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">método</td>
-      <td>POST</td>
+      <td>GET</td>
       <td></td>
    </tr>
    <tr>
@@ -47,23 +47,9 @@ ht-degree: 2%
       <td>O identificador exclusivo interno associado ao provedor de serviços durante o processo de integração.</td>
       <td><i>obrigatório</i></td>
    </tr>
-    <tr>
-      <td style="background-color: #DEEBFF;">parceiro</td>
-      <td>O nome do parceiro (por exemplo, Apple) que fornece a estrutura de logon único integrada aos fluxos de autenticação da Adobe Pass.</td>
-      <td><i>obrigatório</i></td>
-   </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parâmetros de corpo</th>
-      <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">SAMLResponse</td>
-      <td>
-        A resposta de autenticação de parceiro que contém os metadados de usuário necessários para criar e salvar um perfil de parceiro.
-        <br/><br/>
-        O valor deve ser codificado em Base64 e depois codificado em URL.
-      </td>
+      <td style="background-color: #DEEBFF;">código</td>
+      <td>O código de autenticação obtido após a criação da sessão de autenticação no dispositivo de streaming.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
@@ -75,41 +61,6 @@ ht-degree: 2%
       <td style="background-color: #DEEBFF;">Autorização</td>
       <td>A geração da carga do token de portador está descrita na documentação do <a href="../../../dynamic-client-registration-api.md">Registro de Cliente Dinâmico</a>.</td>
       <td><i>obrigatório</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">Tipo de conteúdo</td>
-      <td>
-         O tipo de mídia aceito para os recursos que estão sendo enviados.
-         <br/><br/>
-         Deve ser application/x-www-form-urlencoded.
-      </td>
-      <td><i>obrigatório</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">Identificador de dispositivo AP</td>
-      <td>A geração da carga do identificador de dispositivo está descrita na documentação <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>.</td>
-      <td><i>obrigatório</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">X-Device-Info</td>
-      <td>
-         A geração da carga de informações do dispositivo está descrita na documentação <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
-         <br/><br/>
-         É altamente recomendável sempre usá-lo quando a plataforma do dispositivo do aplicativo permitir a provisão explícita de valores válidos.
-         <br/><br/>
-         Quando fornecido, o back-end da Autenticação do Adobe Pass mesclará explicitamente valores definidos com valores extraídos implicitamente (por padrão).
-         <br/><br/>
-         Quando não for fornecido, o back-end da Autenticação do Adobe Pass usará os valores extraídos implicitamente (por padrão).
-      </td>
-      <td><i>obrigatório</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
-      <td>
-        A geração da carga de logon único para o método Partner está descrita na documentação <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
-        <br/><br/>
-        Para obter mais detalhes sobre os fluxos habilitados para logon único usando um parceiro, consulte a documentação do <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Logon único usando fluxos do parceiro</a>.</td>
-      <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Encaminhado-Para</td>
@@ -147,8 +98,8 @@ ht-degree: 2%
       <th style="background-color: #EFF2F7;">Descrição</th>
    </tr>
    <tr>
-      <td>201</td>
-      <td>Criado em</td>
+      <td>200</td>
+      <td>OK</td>
       <td>
         O corpo da resposta contém um mapa de perfis válidos, que pode estar vazio.
       </td>
@@ -193,7 +144,7 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
-      <td>201</td>
+      <td>200</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
@@ -209,10 +160,10 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">perfis</td>
       <td>
-         JSON que contém um mapa de pares de chaves e valores.
-         <br/><br/>
-         O elemento principal é definido pelo seguinte valor:
-         <table>
+        JSON que contém um mapa de pares de chaves e valores.
+        <br/><br/>
+        O elemento principal é definido pelo seguinte valor:
+        <table>
             <tr>
                <th style="background-color: #EFF2F7; width: 20%;">Valor</th>
                <th style="background-color: #EFF2F7"></th>
@@ -253,16 +204,25 @@ ht-degree: 2%
                         <th style="background-color: #EFF2F7;"></th>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">Apple</td>
+                        <td style="background-color: #DEEBFF;">mvpd<br/><br/>por exemplo, Spectrum, Cablevision, etc.</td>
                         <td>
                             O perfil foi criado como resultado de:
                             <ul>
-                                <li>Logon único usando Apple de parceiro</li>
+                                <li>Autenticação básica</li>
+                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="background-color: #DEEBFF;">Adobe</td>
+                        <td>
+                            O perfil foi criado como resultado de:
+                            <ul>
+                                <li>Acesso degradado</li>
+                                <li>Acesso temporário</li>
                             </ul>
                         </td>
                      </tr>
                   </table>
-               </td>
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
@@ -277,16 +237,33 @@ ht-degree: 2%
                         <th style="background-color: #EFF2F7;"></th>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">appleSSO</td>
+                        <td style="background-color: #DEEBFF;">regular</td>
                         <td>
                             O perfil foi criado como resultado de:
                             <ul>
-                                <li>Logon único usando Apple de parceiro</li>
+                                <li>Autenticação básica</li>
+                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="background-color: #DEEBFF;">degradado</td>
+                        <td>
+                            O perfil foi criado como resultado de:
+                            <ul>
+                                <li>Acesso degradado</li>
+                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="background-color: #DEEBFF;">temporário</td>
+                        <td>
+                            O perfil foi criado como resultado de:
+                            <ul>
+                                <li>Acesso temporário</li>
                             </ul>
                         </td>
                      </tr>
                   </table>
-               </td>
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
@@ -345,40 +322,34 @@ ht-degree: 2%
 
 ## Amostras {#samples}
 
-### 1. Apple SSO habilitado e resposta SAML válida
+### 1. Recupere perfis autenticados existentes e válidos em um dispositivo secundário após executar uma autenticação básica
 
 >[!BEGINTABS]
 
 >[!TAB Solicitação]
 
 ```JSON
-POST /api/v2/REF30/profiles/sso/Apple
+GET /api/v2/REF30/profiles/Cablevision/XTC98W
  
 Authorization: Bearer ....
 AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info: ....
-AP-Partner-Framework-Status: ewogICAidXNlcl9wZXJtaXNzaW9ucyIgOiB7fSwKICAgIm12cGRfc3RhdHVzIiA6IHt9Cn0=
-Content-Type: application/x-www-form-urlencoded
+X-Device-Info ....
 Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-
-Body:
-
-SAMLResponse=PHNhbWxwOlJlc3BvbnNlIHhtbG5zOnNhbWxwPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6cHJvdG9jb2wiIH...
 ```
 
 >[!TAB Resposta]
 
 ```JSON
 HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
  
 {
     "profiles" : {
         "Cablevision" : {
             "notBefore" : 1623943955,
             "notAfter" : 1623951155,
-            "issuer" : "Apple",
-            "type" : "appleSSO",
+            "issuer" : "Cablevision",
+            "type" : "regular",
             "attributes" : {
                 "userId" : {
                     "value" : "BASE64_value_userId",
@@ -391,100 +362,15 @@ HTTP/1.1 200 OK
                 "zip" : {
                     "value" : "BASE64_value_zip",
                     "state" : "enc"
-                }       
+                },
+                "parental-controls" : {
+                    "value" : BASE64_value_parental-controls,
+                    "state" : "plain"
+                }
             }
         }
      }
-}  
-```
-
->[!ENDTABS]
-
-### 2. Perfil AppleSSO para uma integração degradada
-
->[!BEGINTABS]
-
->[!TAB Solicitação]
-
-```JSON
-POST /api/v2/REF30/profiles/sso/Apple HTTP/1.1
- 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info: ....
-AP-Partner-Framework-Status: ewogICAidXNlcl9wZXJtaXNzaW9ucyIgOiB7fSwKICAgIm12cGRfc3RhdHVzIiA6IHt9Cn0=
-Content-Type: application/x-www-form-urlencoded
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-
-Body:
-
-SAMLResponse=PHNhbWxwOlJlc3BvbnNlIHhtbG5zOnNhbWxwPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6cHJvdG9jb2wiIH...
-```
-
->[!TAB Resposta]
-
-```JSON
-HTTP/1.1 200 OK
- 
-{
-   "profiles":{
-      "WOW":{
-         "notBefore":1706636062704,
-         "notAfter":1706696062704,
-         "issuer":"Adobe",
-         "type":"degraded",
-         "attributes":{
-            "userID":{
-               "value":"95cf93bcd183214ac9e4433153cb8a9d180a463128c0a5d26f202e8c",
-               "state":"plain"
-            }
-         }
-      }
-   }
 }
-```
-
->[!ENDTABS]
-
-### 3. Fluxo de SSO do Apple quando a resposta SAML não é válida
-
->[!BEGINTABS]
-
->[!TAB Solicitação]
-
-```JSON
-POST /api/v2/REF30/profiles/sso/Apple HTTP/1.1 
- 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info: ....
-AP-Partner-Framework-Status: ewogICAidXNlcl9wZXJtaXNzaW9ucyIgOiB7fSwKICAgIm12cGRfc3RhdHVzIiA6IHt9Cn0=
-Content-Type: application/x-www-form-urlencoded
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-
-Body:
-        
-SAMLResponse=PHNhbWxwOlJlc3BvbnNlIHhtbG5zOnNhbWxwPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6cHJvdG9jb2wiIH...
-```
-
->[!TAB Resposta]
-
-```JSON
-HTTP/1.1 403 OK
-Content-Type: application/json; charset=utf-8
-    
-{
-    "errors" : [
-        {
-            "code": "invalid_mvpd_response",
-            "message": "The saml mvpd response is not valid",
-            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-            "action": "none"        
-        } 
-    ]
-}   
 ```
 
 >[!ENDTABS]
