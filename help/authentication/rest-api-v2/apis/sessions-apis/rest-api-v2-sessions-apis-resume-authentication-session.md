@@ -1,7 +1,7 @@
 ---
 title: Retomar sessão de autenticação
 description: REST API V2 - Retomar sessão de autenticação
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
 workflow-type: tm+mt
 source-wordcount: '755'
 ht-degree: 2%
@@ -11,7 +11,7 @@ ht-degree: 2%
 
 # Retomar sessão de autenticação {#resume-authentication-session}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
