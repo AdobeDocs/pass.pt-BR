@@ -1,15 +1,19 @@
 ---
 title: Logout único - Fluxo
 description: REST API V2 - Logout único - Fluxo
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '566'
 ht-degree: 0%
 
 ---
 
 
 # Fluxo de logout único {#single-logout-flow}
+
+>[!NOTE]
+>
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Iniciar logout único para mvpd específico {#initiate-single-logout-for-specific-mvpd}
 

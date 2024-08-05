@@ -1,15 +1,19 @@
 ---
 title: Autenticação básica - Aplicativo secundário - Fluxo
 description: Autenticação básica - REST API V2 - Aplicativo secundário - Fluxo
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1719'
+source-wordcount: '1745'
 ht-degree: 0%
 
 ---
 
 
 # Fluxo de autenticação básico executado no aplicativo secundário {#basic-authentication-flow-performed-within-secondary-application}
+
+>[!NOTE]
+>
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
 O **Fluxo de autenticação** no direito de Autenticação Adobe Pass permite que o aplicativo de streaming verifique se um usuário tem uma conta MVPD válida. Esse processo exige que o usuário tenha uma conta MVPD ativa e insira credenciais de logon válidas na página de logon do MVPD.
 

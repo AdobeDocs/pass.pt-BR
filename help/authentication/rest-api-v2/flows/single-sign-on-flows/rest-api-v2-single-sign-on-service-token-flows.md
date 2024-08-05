@@ -1,15 +1,19 @@
 ---
 title: Logon Único - Token de Serviço - Fluxos
 description: REST API V2 - Logon único - Token de serviço - Fluxos
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1811'
+source-wordcount: '1837'
 ht-degree: 0%
 
 ---
 
 
 # Logon único usando fluxos de token de serviço{#single-sign-on-service-token-full-flows}
+
+>[!NOTE]
+>
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
 O método de Token de serviço permite que vários aplicativos usem um identificador de usuário exclusivo para obter logon único (SSO) em vários dispositivos e plataformas ao usar os serviços da Adobe Pass.
 

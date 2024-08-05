@@ -1,15 +1,19 @@
 ---
 title: Cabeçalho - AP-Identificador de dispositivo
 description: REST API V2 - Cabeçalho - AP-Identificador de dispositivo
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '77'
-ht-degree: 5%
+source-wordcount: '103'
+ht-degree: 3%
 
 ---
 
 
 # Cabeçalho - AP-Identificador de dispositivo {#header-ap-device-identifier}
+
+>[!NOTE]
+>
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Visão geral {#overview}
 

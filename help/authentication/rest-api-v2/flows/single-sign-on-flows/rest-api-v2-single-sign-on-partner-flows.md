@@ -1,15 +1,19 @@
 ---
 title: Logon único - Parceiro - Fluxos
 description: REST API V2 - Logon único - Parceiro - Fluxos
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1280'
+source-wordcount: '1306'
 ht-degree: 0%
 
 ---
 
 
 # Logon único usando fluxos de parceiros {#single-sign-on-partner-flows}
+
+>[!NOTE]
+>
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Recuperar solicitação de autenticação do parceiro {#retrieve-partner-authentication-request}
 

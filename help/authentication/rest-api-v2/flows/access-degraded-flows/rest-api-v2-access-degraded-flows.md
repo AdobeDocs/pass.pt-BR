@@ -1,15 +1,19 @@
 ---
 title: Fluxos de acesso degradados
 description: REST API V2 - Fluxos de acesso degradados
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1594'
 ht-degree: 0%
 
 ---
 
 
 # Fluxos de acesso degradados {#degraded-access-flows}
+
+>[!NOTE]
+>
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
 A degradação fornece o desvio temporário de endpoints específicos de autenticação e autorização do MVPD. Normalmente, o Programador inicia essa ação, mas independentemente de quem aciona um evento de degradação, a ação depende de acordos anteriores feitos com os MVPDs afetados.
 
