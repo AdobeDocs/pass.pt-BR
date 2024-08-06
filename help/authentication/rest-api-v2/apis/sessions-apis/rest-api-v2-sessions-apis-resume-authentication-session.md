@@ -1,10 +1,10 @@
 ---
 title: Retomar sessão de autenticação
 description: REST API V2 - Retomar sessão de autenticação
-source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '755'
-ht-degree: 2%
+source-wordcount: '753'
+ht-degree: 1%
 
 ---
 
@@ -21,11 +21,11 @@ ht-degree: 2%
 
 ## Solicitação {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">caminho</td>
@@ -38,9 +38,9 @@ ht-degree: 2%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parâmetros de caminho</th>
+      <th style="background-color: #EFF2F7;">Parâmetros de caminho</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parâmetros de corpo</th>
+      <th style="background-color: #EFF2F7;">Parâmetros de corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
@@ -87,9 +87,9 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorização</td>
@@ -134,10 +134,10 @@ ht-degree: 2%
 
 ## Resposta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Código</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texto</th>
+      <th style="background-color: #EFF2F7;">Código</th>
+      <th style="background-color: #EFF2F7;">Texto</th>
       <th style="background-color: #EFF2F7;">Descrição</th>
    </tr>
    <tr>
@@ -179,11 +179,11 @@ ht-degree: 2%
 
 ### Sucesso {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -191,19 +191,19 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          Objeto JSON com os seguintes atributos:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Atributo</th>
+               <th style="background-color: #EFF2F7;">Atributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -211,24 +211,11 @@ ht-degree: 2%
                   A ação que o dispositivo de streaming precisa executar para concluir o fluxo de autenticação.
                   <br/><br/>
                   Os valores possíveis são:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autenticar</td>
-                        <td>O dispositivo de streaming ou outro dispositivo precisa abrir o URL fornecido em um agente do usuário.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">tentar novamente</td>
-                        <td>O dispositivo de streaming ou outro dispositivo precisa fornecer os parâmetros ausentes e tentar retomar a sessão de autenticação usando o código.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">authorize</td>
-                        <td>O dispositivo de transmissão pode prosseguir diretamente com os fluxos de decisão.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>autenticar</b><br/>O dispositivo de streaming ou outro dispositivo precisa abrir a URL fornecida em um agente de usuário.</li>
+                    <li><b>repetir</b><br/>O dispositivo de streaming ou outro dispositivo precisa fornecer os parâmetros ausentes e tentar retomar a sessão de autenticação usando o código.</li>
+                    <li><b>autorizar</b><br/>O dispositivo de streaming pode continuar diretamente com fluxos de decisões.</li>
+                  </ul> 
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
@@ -237,20 +224,10 @@ ht-degree: 2%
                   O tipo de interação que o dispositivo de streaming deve executar para continuar o fluxo com a ação especificada pelo atributo "actionName".
                   <br/><br/>
                   Os valores possíveis são:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">direto</td>
-                        <td>O fluxo continua com uma chamada direta para o URL fornecido usando um cliente HTTP disponível para a implementação do cliente.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interativo</td>
-                        <td>O fluxo continua com uma navegação até o URL fornecido usando um agente do usuário.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interativo</b><br/>O fluxo continua com uma navegação até a URL fornecida usando um agente de usuário.</li>
+                    <li><b>direct</b><br/>O fluxo continua com uma chamada direta para a URL fornecida usando um cliente HTTP disponível para a implementação do cliente.</li>
+                  </ul>
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
@@ -290,11 +267,11 @@ ht-degree: 2%
 
 ### Erro {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -307,9 +284,9 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">erro</td>

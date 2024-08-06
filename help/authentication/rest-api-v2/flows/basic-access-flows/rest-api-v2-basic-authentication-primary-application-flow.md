@@ -1,7 +1,7 @@
 ---
 title: Autenticação Básica - Aplicativo Principal - Fluxo
 description: REST API V2 - Autenticação básica - Aplicativo principal - Fluxo
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
    >
    > * Os parâmetros e cabeçalhos _requeridos_ devem ser válidos.
    > * A integração entre o `serviceProvider` e o `mvpd` fornecidos deve estar ativa.
+   > 
+   > <br/>
    > 
    > Se a validação falhar, uma resposta de erro será gerada, fornecendo informações adicionais que seguem a documentação de [Códigos de erro aprimorados](../../../enhanced-error-codes.md).
 

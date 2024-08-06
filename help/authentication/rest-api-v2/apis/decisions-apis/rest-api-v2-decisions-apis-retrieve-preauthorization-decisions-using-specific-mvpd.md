@@ -1,10 +1,10 @@
 ---
 title: Recuperar decisões de pré-autorização usando mvpd específico
 description: REST API V2 - Recuperar decisões de pré-autorização usando mvpd específico
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '813'
-ht-degree: 2%
+source-wordcount: '816'
+ht-degree: 1%
 
 ---
 
@@ -21,11 +21,11 @@ ht-degree: 2%
 
 ## Solicitação {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">caminho</td>
@@ -38,9 +38,9 @@ ht-degree: 2%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parâmetros de caminho</th>
+      <th style="background-color: #EFF2F7;">Parâmetros de caminho</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parâmetros de corpo</th>
+      <th style="background-color: #EFF2F7;">Parâmetros de corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">recursos</td>
@@ -63,9 +63,9 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorização</td>
@@ -154,10 +154,10 @@ ht-degree: 2%
 
 ## Resposta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Código</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texto</th>
+      <th style="background-color: #EFF2F7;">Código</th>
+      <th style="background-color: #EFF2F7;">Texto</th>
       <th style="background-color: #EFF2F7;">Descrição</th>
    </tr>
    <tr>
@@ -199,11 +199,11 @@ ht-degree: 2%
 
 ### Sucesso {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -216,19 +216,19 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">decisões</td>
       <td>
          JSON contendo uma lista de elementos, cada elemento com os seguintes atributos:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Atributo</th>
+               <th style="background-color: #EFF2F7;">Atributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">recurso</td>
@@ -254,28 +254,14 @@ ht-degree: 2%
                <td style="background-color: #DEEBFF;">origem</td>
                <td>
                   Informações sobre a fonte de decisão:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">mvpd</td>
-                        <td>A decisão é emitida pelo endpoint de pré-autorização do MVPD.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">degradação</td>
-                        <td>A decisão é emitida como resultado de acesso degradado.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">temppass</td>
-                        <td>A decisão é emitida como resultado de acesso temporário.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">fictício</td>
-                        <td>A decisão é emitida como resultado do recurso de pré-autorização fictício.</td>
-                     </tr>
-                  </table>
+                  <br/><br/>
+                  Os valores possíveis são:
+                  <ul>
+                    <li><b>mvpd</b><br/>A decisão é emitida pelo ponto de extremidade de pré-autorização do MVPD.</li>
+                    <li><b>degradação</b><br/>A decisão é emitida como resultado de acesso degradado.</li>
+                    <li><b>temppass</b><br/>A decisão é emitida como resultado de acesso temporário.</li>
+                    <li><b>fictício</b><br/>A decisão é emitida como resultado do recurso de pré-autorização fictício.</li>
+                  </ul>
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
@@ -290,11 +276,11 @@ ht-degree: 2%
 
 ### Erro {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -307,9 +293,9 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">erro</td>

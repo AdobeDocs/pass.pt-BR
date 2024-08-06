@@ -1,9 +1,9 @@
 ---
 title: Recuperar sessão de autenticação usando código
 description: REST API V2 - Recuperar sessão de autenticação usando código
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '409'
+source-wordcount: '406'
 ht-degree: 3%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 3%
 
 ## Solicitação {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">caminho</td>
@@ -38,9 +38,9 @@ ht-degree: 3%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parâmetros de caminho</th>
+      <th style="background-color: #EFF2F7;">Parâmetros de caminho</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 3%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorização</td>
@@ -91,10 +91,10 @@ ht-degree: 3%
 
 ## Resposta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Código</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texto</th>
+      <th style="background-color: #EFF2F7;">Código</th>
+      <th style="background-color: #EFF2F7;">Texto</th>
       <th style="background-color: #EFF2F7;">Descrição</th>
    </tr>
    <tr>
@@ -136,11 +136,11 @@ ht-degree: 3%
 
 ### Sucesso {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -148,42 +148,29 @@ ht-degree: 3%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">parâmetros</td>
       <td>
          Objeto JSON com os seguintes atributos:
-         <table>
-            <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Atributo</th>
-               <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
-            </tr>
-            <tr>
-               <td style="background-color: #DEEBFF;">existente</td>
-               <td>Os parâmetros existentes que já foram fornecidos.</td>
-               <td><i>obrigatório</i></td>
-            </tr>
-            <tr>
-               <td style="background-color: #DEEBFF;">ausente</td>
-               <td>Os parâmetros ausentes que precisam ser fornecidos para concluir o fluxo de autenticação.</td>
-               <td><i>obrigatório</i></td>
-            </tr>
-         </table>
+         <ul>
+            <li><b>existente</b><br/>Os parâmetros existentes que já foram fornecidos.</li>
+            <li><b>ausentes</b><br/>Os parâmetros ausentes que precisam ser fornecidos para concluir o fluxo de autenticação.</li>
+         </ul>
       </td>
       <td><i>obrigatório</i></td>
 </table>
 
 ### Erro {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -196,9 +183,9 @@ ht-degree: 3%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">erro</td>

@@ -1,10 +1,10 @@
 ---
 title: Iniciar logout para mvpd específico
 description: REST API V2 - Iniciar logout para mvpd específico
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '911'
-ht-degree: 2%
+source-wordcount: '909'
+ht-degree: 1%
 
 ---
 
@@ -21,11 +21,11 @@ ht-degree: 2%
 
 ## Solicitação {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">caminho</td>
@@ -38,9 +38,9 @@ ht-degree: 2%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parâmetros de caminho</th>
+      <th style="background-color: #EFF2F7;">Parâmetros de caminho</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parâmetros de consulta</th>
+      <th style="background-color: #EFF2F7;">Parâmetros de consulta</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
@@ -67,9 +67,9 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorização</td>
@@ -141,10 +141,10 @@ ht-degree: 2%
 
 ## Resposta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Código</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texto</th>
+      <th style="background-color: #EFF2F7;">Código</th>
+      <th style="background-color: #EFF2F7;">Texto</th>
       <th style="background-color: #EFF2F7;">Descrição</th>
    </tr>
    <tr>
@@ -186,11 +186,11 @@ ht-degree: 2%
 
 ### Sucesso {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -203,9 +203,9 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">logouts</td>
@@ -213,11 +213,11 @@ ht-degree: 2%
          JSON que contém um mapa de pares de chaves e valores.
          <br/><br/>
          O elemento principal é definido pelo seguinte valor:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Valor</th>
+               <th style="background-color: #EFF2F7;">Valor</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -225,11 +225,11 @@ ht-degree: 2%
                <td><i>obrigatório</i></td>
          </table>
          O elemento value é definido pelos seguintes atributos:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Atributo</th>
+               <th style="background-color: #EFF2F7;">Atributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -237,47 +237,11 @@ ht-degree: 2%
                   A ação que o dispositivo de streaming precisa executar para concluir o fluxo de logout.
                   <br/><br/>
                   Os valores possíveis são:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">logout</td>
-                        <td>
-                            O dispositivo de streaming precisa abrir o URL fornecido em um agente do usuário.
-                            <br/><br/>
-                            Essa ação se aplica aos seguintes cenários:
-                            <ul>
-                                <li>Fazer logout do MVPD com um ponto de extremidade de logout</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">concluído</td>
-                        <td>
-                            O dispositivo de transmissão não precisa executar nenhuma ação subsequente.
-                            <br/><br/>
-                            Essa ação se aplica aos seguintes cenários:
-                            <ul>\
-                                <li>Fazer logout do MVPD sem um ponto de extremidade de logout (recurso de logout fictício)</li>
-                                <li>Fazer logoff durante acesso degradado</li>
-                                <li>Fazer logoff durante acesso temporário</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">inválido</td>
-                        <td>
-                            O dispositivo de transmissão não precisa executar nenhuma ação subsequente.
-                            <br/><br/>
-                            Essa ação se aplica aos seguintes cenários:
-                            <ul>
-                                <li>Fazer logoff do MVPD quando nenhum perfil válido for encontrado</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>logout</b><br/>O dispositivo de streaming precisa abrir a URL fornecida em um agente do usuário.<br/>Esta ação se aplica aos seguintes cenários: faça logout do MVPD com um ponto de extremidade de logout.</li>
+                    <li><b>concluído</b><br/>O dispositivo de streaming não precisa executar nenhuma ação subsequente.<br/>Esta ação se aplica aos seguintes cenários: fazer logoff do MVPD sem um ponto de extremidade de logout (recurso de logout fictício), fazer logoff durante acesso degradado, fazer logoff durante acesso temporário.</li>
+                    <li><b>inválido</b><br/>O dispositivo de streaming não precisa executar nenhuma ação subsequente.<br/>Esta ação se aplica aos seguintes cenários: faça logoff do MVPD quando nenhum perfil válido for encontrado.</li>
+                  </ul>  
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
@@ -286,31 +250,10 @@ ht-degree: 2%
                   O tipo de interação que o dispositivo de streaming deve executar para continuar o fluxo com a ação especificada pelo atributo "actionName".
                   <br/><br/>
                   Os valores possíveis são:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interativo</td>
-                        <td>
-                            Esse tipo se aplica aos seguintes valores do atributo "actionName":
-                            <ul>
-                                <li>logout</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">nenhum</td>
-                        <td>
-                            Esse tipo se aplica aos seguintes valores do atributo "actionName":
-                            <ul>
-                                <li>concluído</li>
-                                <li>inválido</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interativo</b><br/>Este tipo se aplica aos seguintes valores do atributo "actionName": <b>logout</b>.</li>
+                    <li><b>nenhum</b><br/>Este tipo se aplica aos seguintes valores do atributo "actionName": <b>complete</b>, <b>invalid</b>.</li>
+                  </ul>
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
@@ -325,8 +268,8 @@ ht-degree: 2%
                   <br/><br/>
                   Isso não está presente para os seguintes valores do atributo "actionName":
                   <ul>
-                    <li>concluído</li>
-                    <li>inválido</li>
+                    <li><b>concluído</b></li>
+                    <li><b>inválido</b></li>
                   </ul>
                </td>
                <td>opcional</td>
@@ -338,11 +281,11 @@ ht-degree: 2%
 
 ### Erro {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cabeçalhos</th>
+      <th style="background-color: #EFF2F7;">Cabeçalhos</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -355,9 +298,9 @@ ht-degree: 2%
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">erro</td>
