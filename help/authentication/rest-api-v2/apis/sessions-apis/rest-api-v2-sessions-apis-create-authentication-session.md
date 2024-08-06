@@ -1,9 +1,9 @@
 ---
 title: Criar sessão de autenticação
 description: REST API V2 - Criar sessão de autenticação
-source-git-commit: 9c04ec17c848d6734dc2ca2d6357ed5fb49341ec
+source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '965'
 ht-degree: 1%
 
 ---
@@ -246,24 +246,20 @@ ht-degree: 1%
                   A ação que o dispositivo de streaming precisa executar para concluir o fluxo de autenticação.
                   <br/><br/>
                   Os valores possíveis são:
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autenticar</td>
-                        <td>O dispositivo de streaming ou outro dispositivo precisa abrir o URL fornecido em um agente do usuário.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">retomar</td>
-                        <td>O dispositivo de streaming ou outro dispositivo precisa fornecer os parâmetros ausentes e retomar a sessão de autenticação usando o código.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">authorize</td>
-                        <td>O dispositivo de transmissão pode prosseguir diretamente com os fluxos de decisão.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>autenticar</b></li>
+                    <ul>
+                        <li>O dispositivo de streaming ou outro dispositivo precisa abrir o URL fornecido em um agente do usuário.</li>
+                    </ul>
+                    <li><b>retomar</b></li>
+                    <ul>
+                        <li>O dispositivo de streaming ou outro dispositivo precisa fornecer os parâmetros ausentes e retomar a sessão de autenticação usando o código.</li>
+                    </ul>
+                    <li><b>authorize</b></li>
+                    <ul>
+                        <li>O dispositivo de transmissão pode prosseguir diretamente com os fluxos de decisão.</li>
+                    </ul>
+                  </ul>
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
@@ -272,20 +268,16 @@ ht-degree: 1%
                   O tipo de interação que o dispositivo de streaming deve executar para continuar o fluxo com a ação especificada pelo atributo "actionName".
                   <br/><br/>
                   Os valores possíveis são:
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">direto</td>
-                        <td>O fluxo continua com uma chamada direta para o URL fornecido usando um cliente HTTP disponível para a implementação do cliente.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interativo</td>
-                        <td>O fluxo continua com uma navegação até o URL fornecido usando um agente do usuário.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interativo</b></li>
+                    <ul>
+                        <li>O fluxo continua com uma navegação até o URL fornecido usando um agente do usuário.</li>
+                    </ul>
+                    <li><b>direto</b></li>
+                    <ul>
+                        <li>O fluxo continua com uma chamada direta para o URL fornecido usando um cliente HTTP disponível para a implementação do cliente.</li>
+                    </ul>
+                  </ul>
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
