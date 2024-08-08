@@ -1,7 +1,7 @@
 ---
 title: Autenticação básica - Aplicativo secundário - Fluxo
 description: REST API V2 - Autenticação básica - Aplicativo secundário - Fluxo
-source-git-commit: c849882286c88d16a5652717d381700287c53277
+source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
 workflow-type: tm+mt
 source-wordcount: '2000'
 ht-degree: 0%
@@ -139,7 +139,7 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
 
    >[!NOTE]
    >
-   > Sugestão: O aplicativo secundário pode informar os usuários que o `code` usado é inválido no caso de uma resposta de erro indicando uma sessão de autenticação ausente, e aconselhá-los a tentar novamente com um novo.
+   > Sugestão: O aplicativo secundário pode informar os usuários que o `code` usado é inválido no caso de uma resposta de erro indicando uma sessão de autenticação ausente, e aconselhá-los a tentar novamente usando um novo.
 
 1. **Abrir URL no agente do usuário:** o aplicativo secundário abre um agente do usuário para carregar o `url` autocomputado, fazendo uma solicitação ao ponto de extremidade de Autenticação. Esse fluxo pode incluir vários redirecionamentos, levando o usuário à página de logon do MVPD e fornecendo credenciais válidas.
 
