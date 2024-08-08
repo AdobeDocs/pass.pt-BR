@@ -1,9 +1,9 @@
 ---
 title: Autenticação básica - Aplicativo secundário - Fluxo
 description: REST API V2 - Autenticação básica - Aplicativo secundário - Fluxo
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '1756'
+source-wordcount: '2000'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,46 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
 
    Se o back-end do Adobe Pass não identificar um perfil válido, o aplicativo de streaming exibirá o `code` que pode ser usado para retomar a sessão de autenticação em um aplicativo secundário.
 
+1. **Validar código de autenticação:** O aplicativo secundário valida o usuário fornecido `code` para garantir que ele possa continuar com a autenticação MVPD no agente do usuário.
+
+   >[!IMPORTANT]
+   >
+   > Consulte a [Documentação da API Recuperar informações da sessão de autenticação](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) para obter detalhes sobre:
+   >
+   > * Todos os parâmetros _necessários_, como `serviceProvider` e `code`
+   > * Todos os cabeçalhos _necessários_, como `Authorization`
+   > * Todos os _parâmetros e cabeçalhos_ opcionais
+
+1. **Retornar informações sobre a sessão de autenticação:** A resposta do ponto de extremidade Sessions contém os seguintes dados:
+   * O atributo `existing` contém os parâmetros existentes que já foram fornecidos.
+   * O atributo `missing` contém os parâmetros ausentes que precisam ser fornecidos para concluir o fluxo de autenticação.
+
+   >[!IMPORTANT]
+   >
+   > Consulte a [documentação da API Recuperar informações da sessão de autenticação](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) para obter detalhes sobre as informações fornecidas em uma resposta de validação de sessão.
+   >
+   > <br/>
+   >
+   > O endpoint de Sessões valida os dados da solicitação para garantir que as condições básicas sejam atendidas:
+   >
+   > * Os parâmetros e cabeçalhos _requeridos_ devem ser válidos.
+   >
+   > <br/>
+   >
+   > Se a validação falhar, uma resposta de erro será gerada, fornecendo informações adicionais que seguem a documentação de [Códigos de erro aprimorados](../../../enhanced-error-codes.md).
+
+   >[!NOTE]
+   >
+   > Sugestão: O aplicativo secundário pode informar os usuários que o `code` usado é inválido no caso de uma resposta de erro indicando uma sessão de autenticação ausente, e aconselhá-los a tentar novamente com um novo.
+
 1. **Abrir URL no agente do usuário:** o aplicativo secundário abre um agente do usuário para carregar o `url` autocomputado, fazendo uma solicitação ao ponto de extremidade de Autenticação. Esse fluxo pode incluir vários redirecionamentos, levando o usuário à página de logon do MVPD e fornecendo credenciais válidas.
+
+   >[!IMPORTANT]
+   >
+   > Consulte a [Executar autenticação na documentação da API do agente do usuário](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) para obter detalhes sobre:
+   >
+   > * Todos os parâmetros _necessários_, como `serviceProvider` e `code`
+   > * Todos os _parâmetros e cabeçalhos_ opcionais
 
 1. **Autenticação MVPD concluída:** Se o fluxo de autenticação for bem-sucedido, a interação do agente do usuário salvará um perfil regular no back-end do Adobe Pass e atingirá o `redirectUrl` fornecido.
 
@@ -231,6 +270,10 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
    > <br/>
    > 
    > Se a validação falhar, uma resposta de erro será gerada, fornecendo informações adicionais que seguem a documentação de [Códigos de erro aprimorados](../../../enhanced-error-codes.md).
+
+   >[!NOTE]
+   >
+   > Sugestão: O aplicativo secundário pode informar os usuários que o `code` usado é inválido no caso de uma resposta de erro indicando uma sessão de autenticação ausente, e aconselhá-los a tentar novamente usando um novo.
 
 1. **Indicar perfil existente:** A resposta do ponto de extremidade Sessions contém os seguintes dados:
    * O atributo `actionName` está definido como &quot;autorize&quot;.

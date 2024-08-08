@@ -1,7 +1,7 @@
 ---
 title: Retomar sessão de autenticação
 description: REST API V2 - Retomar sessão de autenticação
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
 source-wordcount: '753'
 ht-degree: 1%
@@ -47,7 +47,7 @@ ht-degree: 1%
       <td>O identificador exclusivo interno associado ao provedor de serviços durante o processo de integração.</td>
       <td><i>obrigatório</i></td>
    </tr>
-    <tr>
+   <tr>
       <td style="background-color: #DEEBFF;">código</td>
       <td>O código de autenticação obtido após a criação da sessão de autenticação no dispositivo de streaming.</td>
       <td><i>obrigatório</i></td>
