@@ -2,9 +2,9 @@
 title: Canais
 description: Saiba mais sobre os canais e suas várias configurações no Painel da TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1124'
 ht-degree: 0%
 
 ---
@@ -206,11 +206,11 @@ O domínio selecionado não está mais disponível para uso. Como resultado, o a
 
 ### Aplicativos registrados {#registered-applications}
 
-Esta guia fornece uma lista de registros de aplicativos. Exiba [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md) para obter mais informações.
+Esta guia fornece uma lista de registros de aplicativos.
 
 ### Esquemas personalizados {#custom-schemes}
 
-Esta guia exibe uma lista de esquemas personalizados. Exiba o [registro do aplicativo iOS/tvOS](/help/authentication/iostvos-application-registration.md) e o [Gerenciamento dinâmico de registros de clientes](/help/authentication/dynamic-client-registration-management.md) para obter mais informações.
+Esta guia exibe uma lista de esquemas personalizados. Exibir [registro de aplicativo iOS/tvOS](/help/authentication/iostvos-application-registration.md).
 
 ## Adicionar novo canal {#add-new-channel}
 

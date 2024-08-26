@@ -2,9 +2,9 @@
 title: Cookbook da API REST (servidor para servidor)
 description: Servidor do guia da API rest para o servidor.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1847'
+source-wordcount: '1844'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Os termos adicionais usados no fluxo são definidos no
 ### Registro dinâmico de cliente (DCR)
 
 
-O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicativo ou servidor do programador e os serviços da Adobe Pass. O fluxo do DCR é separado, dependente e de pré-requisito e pode ser encontrado no [Registro de Cliente Dinâmico](/help/authentication/dynamic-client-registration.md).
+O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicativo ou servidor do programador e os serviços da Adobe Pass. O fluxo do DCR é separado e descrito na [Documentação de Visão geral do Registro Dinâmico de Clientes](./dcr-api/dynamic-client-registration-overview.md).
 
 
 ### Autenticação (authN)

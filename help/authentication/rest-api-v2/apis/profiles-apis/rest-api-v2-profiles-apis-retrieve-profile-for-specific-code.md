@@ -1,7 +1,7 @@
 ---
 title: Recuperar perfil para código específico
 description: REST API V2 - Recuperar perfil para código específico
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
 source-wordcount: '571'
 ht-degree: 2%
@@ -59,7 +59,7 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorização</td>
-      <td>A geração da carga do token de portador está descrita na documentação do <a href="../../../dynamic-client-registration-api.md">Registro de Cliente Dinâmico</a>.</td>
+      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Autorização</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
@@ -115,7 +115,7 @@ ht-degree: 2%
       <td>401</td>
       <td>Não autorizado</td>
       <td>
-        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação do <a href="../../../dynamic-client-registration-api.md">Registro de Cliente Dinâmico</a>.
+        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="../../../dcr-api/dynamic-client-registration-overview.md">Visão geral do registro dinâmico do cliente</a>.
       </td>
    </tr>
    <tr>

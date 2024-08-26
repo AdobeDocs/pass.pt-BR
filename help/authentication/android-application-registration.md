@@ -2,9 +2,9 @@
 title: Registro do aplicativo Android
 description: Registro do aplicativo Android
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '586'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 A partir da versão 3.0 do SDK do Android AccessEnabler, estamos alterando o mecanismo de autenticação com servidores Adobe. Em vez de usar uma chave pública e um sistema secreto para assinar o requestorID, estamos introduzindo o conceito de uma string de Declaração de Software que pode ser usada para obter um token de acesso usado posteriormente para todas as chamadas que o SDK faz aos nossos servidores. Além de uma Declaração de Software, você também precisará criar um deep link para o seu aplicativo.
 
-Para obter mais informações, consulte [Registro de Cliente Dinâmico](/help/authentication/dynamic-client-registration.md)
+Para obter mais informações, consulte [Visão Geral do Registro de Cliente Dinâmico](./dcr-api/dynamic-client-registration-overview.md).
 
 ## O que é uma Declaração de Software? {#what}
 
@@ -57,7 +57,7 @@ Estas são as maneiras de obter uma Declaração de software.
 
    Um arquivo de texto é baixado. Use seu conteúdo como a Declaração de Software.
 
-Para obter mais informações, consulte [Gerenciamento dinâmico de registros de clientes](/help/authentication/dynamic-client-registration-management.md)
+Para obter mais informações, consulte [Dynamic Client Registration Management](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Se você não tiver acesso ao Painel Adobe TVE
 

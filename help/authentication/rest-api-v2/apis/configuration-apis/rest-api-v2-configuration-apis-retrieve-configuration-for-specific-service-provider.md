@@ -1,9 +1,9 @@
 ---
 title: Recuperar configuração para provedor de serviços específico
 description: REST API V2 - Recuperar configuração para provedor de serviço específico
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '523'
 ht-degree: 3%
 
 ---
@@ -64,18 +64,18 @@ ht-degree: 3%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorização</td>
-      <td>A geração da carga do token de portador está descrita na documentação do <a href="../../../dynamic-client-registration-api.md">Registro de Cliente Dinâmico</a>.</td>
+      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Autorização</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Identificador de dispositivo AP</td>
-      <td>A geração da carga do identificador de dispositivo está descrita na documentação <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>.</td>
+      <td>A geração da carga do identificador de dispositivo está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         A geração da carga de informações do dispositivo está descrita na documentação <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
+         A geração da carga de informações do dispositivo está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
          <br/><br/>
          É altamente recomendável sempre usá-lo quando a plataforma do dispositivo do aplicativo permitir a provisão explícita de valores válidos.
          <br/><br/>
@@ -138,7 +138,7 @@ ht-degree: 3%
       <td>401</td>
       <td>Não autorizado</td>
       <td>
-        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação do <a href="../../../dynamic-client-registration-api.md">Registro de Cliente Dinâmico</a>.
+        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="../../../dcr-api/dynamic-client-registration-overview.md">Visão geral do registro dinâmico do cliente</a>.
       </td>
    </tr>
    <tr>

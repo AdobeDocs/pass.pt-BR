@@ -2,12 +2,13 @@
 title: Registro de aplicativo iOS/tvOS
 description: Registro de aplicativo iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '609'
 ht-degree: 0%
 
 ---
+
 
 # Registro de aplicativo iOS/tvOS {#iostvos-application-registration}
 
@@ -19,7 +20,7 @@ ht-degree: 0%
 
 A partir da versão 3.0 do SDK AccessEnabler do iOS/tvOS, estamos alterando o mecanismo de autenticação com servidores Adobe. Em vez de usar uma chave pública e um sistema secreto para assinar o requestorID, estamos introduzindo o conceito de uma string de instrução de software que pode ser usada para obter um token de acesso usado posteriormente para todas as chamadas que o SDK faz aos nossos servidores. Além de uma declaração de software, você também precisará de um esquema de URL personalizado para seu aplicativo.
 
-Para obter mais informações, consulte [Registro de Cliente Dinâmico](/help/authentication/dynamic-client-registration.md)
+Para obter mais informações, consulte [Visão Geral do Registro de Cliente Dinâmico](./dcr-api/dynamic-client-registration-overview.md).
 
 ## O que é uma Declaração de Software? {#Soft_state}
 
@@ -40,7 +41,7 @@ Uma Declaração de Software é um token JWT que contém informações sobre seu
 - Você deve ver uma lista com todos os aplicativos registrados. Clique em   Botão `Download` no aplicativo recém-criado. Talvez seja necessário aguardar alguns minutos antes que a Declaração de software esteja pronta para download.
 - Um arquivo de texto será baixado. Use seu conteúdo como sua Declaração de Software.
 
-Para obter mais informações, consulte [Gerenciamento dinâmico de registros de clientes](/help/authentication/dynamic-client-registration-management.md).
+Para obter mais informações, consulte [Dynamic Client Registration Management](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Se você não tiver acesso ao Painel do Adobe TVE:
 

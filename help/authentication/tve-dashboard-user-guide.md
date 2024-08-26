@@ -2,9 +2,9 @@
 title: Guia do usuário do Painel Primetime TVE
 description: Guia do usuário do Painel Primetime TVE
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '4377'
+source-wordcount: '5504'
 ht-degree: 0%
 
 ---
@@ -112,12 +112,11 @@ Esta seção permite visualizar e editar as configurações dos Canais disponív
   Contém a lista de integrações com os MVPDs disponíveis, juntamente com o status de cada integração que pode ser ativada ou não. Navegar para a página Integração está disponível ao clicar em uma entrada específica.
 * **Aplicativos Registrados**
 
-  Contém a lista de registros de solicitações de emprego. Para obter mais detalhes, consulte o documento [Gerenciamento dinâmico de registro de cliente](/help/authentication/dynamic-client-registration-management.md).
+  Contém a lista de registros de solicitações de emprego. Para obter mais detalhes, consulte o documento [Gerenciamento Dinâmico de Registro de Cliente](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 * **Esquemas personalizados**
 
-  Contém a lista de esquemas personalizados. Para obter mais detalhes, consulte [registro de aplicativo iOS/tvOS](/help/authentication/iostvos-application-registration.md) e [Gerenciamento dinâmico de registro de cliente](/help/authentication/dynamic-client-registration-management.md)
-
+  Contém a lista de esquemas personalizados. Para obter mais detalhes, consulte [registro do aplicativo iOS/tvOS](/help/authentication/iostvos-application-registration.md) e [Gerenciamento dinâmico de registro do cliente](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)
 
 #### Adicionar/Excluir domínios {#add-delete-domains}
 
@@ -126,6 +125,50 @@ Para iniciar o processo de adição de um novo domínio para o canal selecionado
 ![Adicionar um novo domínio a uma seção de canal selecionada](assets/add-domain-to-channel-sec.png)
 
 *Figura: guia Domínios nos canais*
+
+#### Criar um aplicativo registrado no nível do canal {#create-registered-application-channel-level}
+
+Para criar um aplicativo registrado em um nível de canal, navegue até o menu &quot;Canais&quot; e escolha aquele para o qual deseja criar um aplicativo. Depois, depois de navegar para a guia &quot;Aplicativos registrados&quot;, clique no botão &quot;Adicionar novo aplicativo&quot;.
+
+![](./assets/reg-new-app-channel-level.png)
+
+Como visto na imagem abaixo, os campos que você deve preencher são:
+
+* **Nome do Aplicativo** - o nome do aplicativo
+
+* **Atribuído ao Canal** - Como mostrado abaixo, o que é um pouco diferente aqui, em comparação à mesma ação executada no nível do Programador, é a lista suspensa &quot;Canais Atribuídos&quot;, que não está habilitada, portanto, não há nenhuma opção para vincular o aplicativo registrado a um canal diferente do atual.
+
+* **Versão do Aplicativo** - por padrão, está definido como &quot;1.0.0&quot;, mas é altamente recomendável que você o modifique com sua própria versão do aplicativo. Como prática recomendada, se você decidir alterar a versão do aplicativo, reflita-a criando um novo aplicativo registrado para ela.
+
+* **Plataformas de Aplicativos** - as plataformas às quais o aplicativo será vinculado. Você tem a opção de selecionar todos eles ou vários valores.
+
+* **Nomes de Domínio** - os domínios aos quais o aplicativo será vinculado. Os domínios na lista suspensa são uma seleção unificada de todos os domínios de todos os canais. Você tem a opção de selecionar vários domínios na lista. O significado dos domínios são URLs de redirecionamento [RFC6749](https://tools.ietf.org/html/rfc6749). No processo de registro do cliente, o aplicativo cliente pode solicitar permissão para usar um URL de redirecionamento para a finalização do fluxo de autenticação. Quando um aplicativo cliente solicita um URL de redirecionamento específico, ele é validado em relação aos domínios da lista de permissões neste Aplicativo registrado associado à instrução do software.
+
+![](./assets/new-reg-app-channel.png)
+
+Depois de preencher os campos com os valores apropriados, clique em &quot;Concluído&quot; para que o aplicativo seja salvo na configuração.
+
+Esteja ciente de que não há **nenhuma opção para modificar um aplicativo já criado**. Caso se descubra que algo criado não atende mais aos requisitos, um novo aplicativo registrado precisará ser criado e usado com o aplicativo cliente cujos requisitos ele atende.
+
+##### Baixar uma instrução de software {#download-software-statement-channel-level}
+
+![](./assets/reg-app-list.png)
+
+Clicar no botão &quot;Download&quot; na entrada da lista para a qual uma instrução de software é necessária gerará um arquivo de texto. Esse arquivo conterá algo semelhante ao exemplo de saída abaixo.
+
+![](./assets/download-software-statement.png)
+
+O nome do arquivo é identificado exclusivamente ao prefixá-lo com &quot;software_statement&quot; e adicionar o carimbo de data e hora atual.
+
+Observe que, para o mesmo aplicativo registrado, serão recebidas instruções de software diferentes sempre que o botão de download for clicado, mas isso não invalida as instruções de software obtidas anteriormente para esse aplicativo. Isso acontece porque elas são geradas no local, por solicitação de ação.
+
+Há uma **limitação** relacionada à ação de download. Se for solicitada uma instrução de software clicando no botão &quot;Download&quot; logo após a criação do aplicativo registrado e isso ainda não tiver sido salvo e o json de configuração não tiver sido sincronizado, a seguinte mensagem de erro aparecerá na parte inferior da página.
+
+![](./assets/error-sw-statement-notready.png)
+
+Isso envolve um código de erro HTTP 404 Não encontrado recebido do núcleo, pois a id do aplicativo registrado ainda não foi propagada e o núcleo não tem conhecimento sobre isso.
+
+Após criar o aplicativo registrado, a solução é esperar no máximo 2 minutos pela sincronização da configuração. Depois que isso acontecer, a mensagem de erro não será mais recebida e o arquivo de texto com a instrução de software estará disponível para download.
 
 ### Programadores {#tve-db-programmers-section}
 
@@ -147,12 +190,57 @@ Esta seção permite visualizar e editar configurações para Programadores disp
 
 * **Aplicativos registrados**
 
-  Contém a lista de registros de solicitações de emprego. Para obter mais detalhes, consulte [Gerenciamento dinâmico de registros de clientes](/help/authentication/dynamic-client-registration-management.md).
+  Contém a lista de registros de solicitações de emprego. Para obter mais detalhes, consulte [Dynamic Client Registration Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 * **Esquemas personalizados**
 
-  Contém a lista de esquemas personalizados. Para obter mais detalhes, consulte [registro de aplicativo iOS/tvOS](/help/authentication/iostvos-application-registration.md) e [Gerenciamento dinâmico de registro de cliente](/help/authentication/dynamic-client-registration-management.md).
+  Contém a lista de esquemas personalizados. Para obter mais detalhes, consulte [registro do aplicativo iOS/tvOS](/help/authentication/iostvos-application-registration.md).
 
+#### Criar um aplicativo registrado no nível do programador {#create-registered-application-programmer-level}
+
+Vá para a guia **Programadores** > **Aplicativos Registrados**.
+
+![](./assets/reg-app-progr-level.png)
+
+Na guia Registered Applications, clique em **Add New Application**. Preencha os campos obrigatórios na nova janela.
+
+Como visto na imagem abaixo, os campos que você deve preencher são:
+
+* **Nome do Aplicativo** - o nome do aplicativo
+
+* **Atribuído ao Canal** - o nome do seu canal, ao qual este aplicativo está vinculado. </span> A configuração padrão na máscara suspensa é **Todos os canais.** A interface permite selecionar um canal ou todos os canais.
+
+* **Versão do Aplicativo** - por padrão, está definido como &quot;1.0.0&quot;, mas é altamente recomendável que você o modifique com sua própria versão do aplicativo. Como prática recomendada, se você decidir alterar a versão do aplicativo, reflita-a criando um novo aplicativo registrado para ela.
+
+* **Plataformas de Aplicativos** - as plataformas às quais o aplicativo será vinculado. Você tem a opção de selecionar todos eles ou vários valores.
+
+* **Nomes de Domínio** - os domínios aos quais o aplicativo será vinculado. Os domínios na lista suspensa são uma seleção unificada de todos os domínios de todos os canais. Você tem a opção de selecionar vários domínios na lista. O significado dos domínios são URLs de redirecionamento [RFC6749](https://tools.ietf.org/html/rfc6749). No processo de registro do cliente, o aplicativo cliente pode solicitar permissão para usar um URL de redirecionamento para a finalização do fluxo de autenticação. Quando um aplicativo cliente solicita um URL de redirecionamento específico, ele é validado em relação aos domínios da lista de permissões neste Aplicativo registrado associado à instrução do software.
+
+![](./assets/new-reg-app.png)
+
+Depois de preencher os campos com os valores apropriados, clique em &quot;Concluído&quot; para que o aplicativo seja salvo na configuração.
+
+Esteja ciente de que não há **nenhuma opção para modificar um aplicativo já criado**. Caso se descubra que algo criado não atende mais aos requisitos, um novo aplicativo registrado precisará ser criado e usado com o aplicativo cliente cujos requisitos ele atende.
+
+##### Baixar uma instrução de software {#download-software-statement-programmer-level}
+
+![](./assets/reg-app-list.png)
+
+Clicar no botão &quot;Download&quot; na entrada da lista para a qual uma instrução de software é necessária gerará um arquivo de texto. Esse arquivo conterá algo semelhante ao exemplo de saída abaixo.
+
+![](./assets/download-software-statement.png)
+
+O nome do arquivo é identificado exclusivamente ao prefixá-lo com &quot;software_statement&quot; e adicionar o carimbo de data e hora atual.
+
+Observe que, para o mesmo aplicativo registrado, serão recebidas instruções de software diferentes sempre que o botão de download for clicado, mas isso não invalida as instruções de software obtidas anteriormente para esse aplicativo. Isso acontece porque elas são geradas no local, por solicitação de ação.
+
+Há uma **limitação** relacionada à ação de download. Se for solicitada uma instrução de software clicando no botão &quot;Download&quot; logo após a criação do aplicativo registrado e isso ainda não tiver sido salvo e o json de configuração não tiver sido sincronizado, a seguinte mensagem de erro aparecerá na parte inferior da página.
+
+![](./assets/error-sw-statement-notready.png)
+
+Isso envolve um código de erro HTTP 404 Não encontrado recebido do núcleo, pois a id do aplicativo registrado ainda não foi propagada e o núcleo não tem conhecimento sobre isso.
+
+Após criar o aplicativo registrado, a solução é esperar no máximo 2 minutos pela sincronização da configuração. Depois que isso acontecer, a mensagem de erro não será mais recebida e o arquivo de texto com a instrução de software estará disponível para download.
 
 ### Integrações {#tve-db-integrations-sec}
 

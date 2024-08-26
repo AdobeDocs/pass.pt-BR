@@ -2,18 +2,27 @@
 title: API de monitoramento do serviço de qualificação
 description: API de monitoramento do serviço de qualificação
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '2010'
+source-wordcount: '2070'
 ht-degree: 1%
 
 ---
 
 # API de monitoramento do serviço de qualificação {#entitlement-service-monitoring-api}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!IMPORTANT]
+>
+> Antes de usar a API de degradação, verifique se os seguintes pré-requisitos foram atendidos:
+>
+> * Obtenha as credenciais do cliente conforme descrito na documentação da API [Recuperar credenciais do cliente](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
+> * Obtenha o token de acesso conforme descrito na documentação da API [Recuperar token de acesso](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+>
+> Consulte a documentação [Visão Geral do Registro Dinâmico do Cliente](./dcr-api/dynamic-client-registration-overview.md) para obter mais informações sobre como criar um aplicativo registrado e baixar a instrução de software.
 
 ## Visão geral da API {#api-overview}
 

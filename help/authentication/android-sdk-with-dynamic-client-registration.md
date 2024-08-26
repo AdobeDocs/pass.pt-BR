@@ -2,9 +2,9 @@
 title: SDK do Android com registro dinâmico do cliente
 description: SDK do Android com registro dinâmico do cliente
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1277'
+source-wordcount: '1278'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Para o Android, o uso das Guias personalizadas do Chrome restringe o acesso a co
 
 ## Registro de cliente dinâmico {#DCR}
 
-O Android SDK v3.0+ usará o procedimento Registro de Cliente Dinâmico conforme definido em [Registro de Cliente Dinâmico](/help/authentication/dynamic-client-registration.md).
+O Android SDK v3.0+ usará o procedimento Registro de Cliente Dinâmico conforme definido em [Visão Geral do Registro de Cliente Dinâmico](./dcr-api/dynamic-client-registration-overview.md).
 
 
 ## Demonstração de recursos {#Demo}

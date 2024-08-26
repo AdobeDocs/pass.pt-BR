@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: O Adobe Pass Authentication é uma solução de concessão de direitos para o TV Everywhere, o qual fornece uma estrutura modular para determinar se a pessoa que solicita o acesso a um recurso possui direito a ele.
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1142'
+source-wordcount: '1149'
 ht-degree: 2%
 
 ---
@@ -68,7 +68,7 @@ ht-degree: 2%
             + [Recuperar perfil para código específico](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
          + Decisões {#rest-api-v2-decisions-apis}
             + [Recuperar decisões de autorização usando mvpd específico](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
-            + [Recuperar decisões de pré-autorização usando mvpd](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) específico
+            + [Recuperar decisões de pré-autorização usando mvpd específico](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
          + Sair {#rest-api-v2-logout-apis}
             + [Iniciar logout para mvpd específico](./rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
          + Logon Único de Parceiro {#rest-api-v2-partner-single-sign-on-apis}
@@ -95,12 +95,13 @@ ht-degree: 2%
             + [Fluxo de logout único](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
       + Apêndice {#rest-api-v2-appendix}
          + Cabeçalhos {#rest-api-v2-appendix-headers}
+            + [Cabeçalho - autorização](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
+            + [Cabeçalho - AP-Identificador de dispositivo](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
+            + [Cabeçalho - X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
             + [Cabeçalho - AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
             + [Cabeçalho - Adobe-Subject-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
-            + [Cabeçalho - AP-Identificador de dispositivo](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
             + [Cabeçalho - AP-Parceiro-Estrutura-Status](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
             + [Cabeçalho - AP-TempPass-Identity](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
-            + [Cabeçalho - X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
    + SDK {#accessenabler-sdk} do AccessEnabler
       + JavaScript SDK {#javascriptsdk}
          + [Visão geral do SDK do JavaScript](javascript-sdk-overview.md)
@@ -113,7 +114,7 @@ ht-degree: 2%
       + SDK do iOS/tvOS {#ios-sdk}
          + [Visão geral do SDK do iOS/tvOS](iostvos-sdk-overview.md)
          + [Guia do SDK do iOS/tvOS](iostvos-sdk-cookbook.md)
-         + [Referência da API do SDK iOS/tvOS](iostvos-sdk-api-reference.md)
+         + [Referência de API do SDK do iOS/tvOS](iostvos-sdk-api-reference.md)
          + Diretrizes {#ios-tvos-sdk-guidelines}
             + [Registro de aplicativo iOS/tvOS](iostvos-application-registration.md)
             + Diretrizes de migração {#migration-guidelines}
@@ -175,7 +176,7 @@ ht-degree: 2%
    + Temp pass {#temp-pass}
       + [Temp pass](temp-pass.md)
       + [Temp pass promocional](promotional-temp-pass.md)
-      + [Redefinir Temp Pass](reset-temp-pass.md)
+      + [Redefinir aprovação temporária](reset-temp-pass.md)
    + Logon único {#sso}
       + [Suporte para logon único](sso-support.md)
       + [SSO via autenticação passiva](sso-passive-authn.md)
@@ -188,10 +189,13 @@ ht-degree: 2%
    + Relatório de erros {#error-reportn}
       + [Relatório de erros](error-reporting.md)
       + [Códigos de erro aprimorados](enhanced-error-codes.md)
-   + Registro de cliente {#client-regn}
-      + [Registro de cliente dinâmico](dynamic-client-registration.md)
-      + [API de registro dinâmico do cliente](dynamic-client-registration-api.md)
-      + [Gerenciamento dinâmico de registro de clientes](dynamic-client-registration-management.md)
+   + Registro de Cliente {#dcr-api}
+      + [Visão geral do registro dinâmico do cliente](./dcr-api/dynamic-client-registration-overview.md)
+      + APIs {#dcr-api-apis}
+         + [Recuperar credenciais do cliente](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
+         + [Recuperar token de acesso](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+      + Fluxos {#dcr-api-flows}
+         + [Fluxo dinâmico de registro de cliente](./dcr-api/flows/dynamic-client-registration-flow.md)
    + Serviço de degradação {#degrn-service}
       + [Visão geral da API de degradação](degradation-api-overview.md)
    + Disponibilidade de privacidade {#privacy-readiness}
@@ -251,7 +255,7 @@ ht-degree: 2%
          + [Erro de autenticação do iOS - adobepass.ios.app não pode ser encontrado](ios-authentication-error-adobepassiosapp-cannot-be-found.md)
          + [Redefinir Temp Pass no iOS](reset-temp-pass-on-ios.md)
          + [Depuração do SDK iOS/tvOS do AccessEnabler usando logs de aplicativo do console](debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
-         + [Caminho de Atualização do AccessEnabler iOS/tvOS 3.7.0](accessenabler-iostvos-370-upgrade-path.md)
+         + [Caminho de atualização do AccessEnabler iOS/tvOS 3.7.0](accessenabler-iostvos-370-upgrade-path.md)
    + Ambientes de autenticação de aprovação {#primetime-authentication-environments}
       + [Compreensão dos ambientes de Adobe](understanding-the-adobe-environments.md)
       + [Configuração do ambiente e teste na pré-qualificação](setting-up-your-environment-and-testing-in-prequal.md)
@@ -268,7 +272,7 @@ ht-degree: 2%
    + Ferramentas e Utilitários {#tools-and-utilities}
       + [Usando o Charles Proxy](using-charles-proxy.md)
    + Conceitos {#concepts}
-      + [Noções básicas sobre IDs de usuário](understanding-user-ids.md)
+      + [Compreensão das IDs de usuário](understanding-user-ids.md)
 + [Guia do usuário do Painel TVE](tve-dashboard-user-guide.md)
 + Novo guia do usuário do Painel TVE {#user-guide}
    + [Visão geral do painel TVE](/help/authentication/tve-dashboard-overview.md)
@@ -282,4 +286,3 @@ ht-degree: 2%
    + [Relatórios](/help/authentication/tve-dashboard-reports.md)
    + [Log de alterações](/help/authentication/tve-dashboard-changes-log.md)
 + [Glossário](glossary.md)
-
