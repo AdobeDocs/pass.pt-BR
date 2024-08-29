@@ -2,7 +2,7 @@
 title: Serviço Web MVPD de Proxy
 description: Serviço Web MVPD de Proxy
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: 186335e27c05b2e0dd553607715a625376d9f299
+source-git-commit: 6cd7093862b2a343d8105ba4d8e493851e93b87e
 workflow-type: tm+mt
 source-wordcount: '1027'
 ht-degree: 0%
@@ -239,7 +239,7 @@ Quaisquer parâmetros presentes no cabeçalho da solicitação que não estejam 
 
 Exemplo de ondulação:
 
-`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier&gt;/mvpds"`
+`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/<proxy-mvpd-identifier>/mvpds"`
 
 ## Pontos de Extremidade de Serviço Web MVPD do Proxy para os Ambientes de Autenticação do Adobe Pass {#proxy-mvpd-wevserv-endpoints}
 
