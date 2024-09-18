@@ -2,9 +2,9 @@
 title: Relatórios de uso de monitoramento de simultaneidade
 description: Relatórios de uso de monitoramento de simultaneidade
 exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 36da78fd66cfbc86e7bea7575c757fef536c0755
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '799'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ O serviço **Relatórios de Uso de Monitoramento de Simultaneidade** está dispo
 
 ## Pré-requisitos {#usage-rep-prerequisites}
 
-Para acessar o produto Relatórios de Uso de Monitoramento de Simultaneidade, um cliente deve primeiro entrar em contato com a [Equipe de Suporte](mailto:tve-support@adobe.com) do Monitoramento de Simultaneidade e executar as etapas necessárias para permitir o acesso ao produto da API.
+Para acessar o produto Relatórios de Uso de Monitoramento de Simultaneidade, um cliente deve primeiro entrar em contato com a [Equipe de Suporte](mailto:tve-support@adobe.com) do Monitoramento de Simultaneidade e executar as etapas necessárias para permitir o acesso ao produto da API. Mais detalhes sobre [Acesso à API CMU](/help/concurrency-monitoring/cmu-api-access.md).
 
 ## Métricas e detalhamentos gerais de relatório {#general-rep-metrics-breakdown}
 
@@ -54,12 +54,12 @@ Para acessar o produto Relatórios de Uso de Monitoramento de Simultaneidade, um
 ### Os usuários dos Relatórios de uso podem filtrar as métricas listadas acima pelas seguintes dimensões: {#dimensions-2-filter-metrics}
 
 | Nome do Dimension | Descrição |
-|:---|:---|
+|:---------------|:------------------------------------------------------------------------------------------------------------------|
 | ano | O ano de 4 dígitos |
 | mês | O mês do ano (1-12) |
 | dia | O dia do mês (1-31) |
 | hora | A hora do dia |
-| minuto | O minuto da hora |
+| minuto | O minuto da hora[^1] |
 | aplicativo | O nome do aplicativo registrado no Monitoramento de Simultaneidade usado para gerenciar sessões |
 | application-id | A ID do aplicativo registrada no Monitoramento de simultaneidade usada para gerenciar sessões |
 | channel | Os metadados do canal enviados durante a inicialização da sessão (marcado como Desconhecido se nenhum metadado for enviado) |
@@ -88,3 +88,9 @@ O objetivo principal deste relatório é ajudá-lo a entender o impacto de defin
 | nível de concorrência | Representa qualquer **atividade de fluxo distinta que foi aprovada na fase de inicialização da sessão** para um usuário a fim de observar quantos fluxos simultâneos **foram abertos** por um usuário e entender o impacto da aplicação de um determinado limite de simultaneidade |
 | nível de atividade | Representa qualquer atividade de fluxo **distinta (independentemente de seu estado: iniciada, ativa, interrompida, rejeitada)** para um usuário para que ele possa observar quantos fluxos simultâneos tentaram ser abertos por um usuário e entender o impacto da aplicação de um determinado limite de simultaneidade |
 | mvpd | O MVPD fornecido na gestão da sessão |
+
+### Exemplos de relatórios
+
+Para melhor precisão de dados, recomendamos os relatórios apresentados nesta página [exemplos de relatórios CMU](/help/concurrency-monitoring/cm-usage-reports-examples.md)
+
+[^1]: por padrão, os relatórios de minutos não estão disponíveis. Contate a [Equipe de Suporte](mailto:tve-support@adobe.com) do Monitoramento de Simultaneidade para solicitá-los.

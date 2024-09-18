@@ -2,7 +2,7 @@
 title: Visão geral da API
 description: Visão geral da API
 exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 301825253b21746684df9b6372a239b03305d50e
 workflow-type: tm+mt
 source-wordcount: '2043'
 ht-degree: 1%
@@ -24,7 +24,7 @@ O CMU (Monitoramento de Simultaneidade de Uso) é implementado como um projeto W
 >
 >A API da CMU não está geralmente disponível. Entre em contato com o representante da Adobe para tirar dúvidas sobre disponibilidade.
 
-A API CMU fornece uma exibição hierárquica dos cubos OLAP subjacentes. Cada recurso ([dimensão](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) na hierarquia de dimensão, mapeado como um segmento de caminho de URL) gera relatórios com [métricas](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) (agregadas) para a seleção atual. Cada recurso aponta para seu recurso pai (para roll-up) e seus sub-recursos (para drill-down). O corte e a divisão são obtidos por meio de parâmetros de sequência de consulta que fixam dimensões a valores ou intervalos específicos.
+A API CMU fornece uma exibição hierárquica dos cubos OLAP subjacentes. Cada recurso ([dimensão](/help/concurrency-monitoring/cm-usage-reports.md#dimensions-2-filter-metrics) na hierarquia de dimensão, mapeado como um segmento de caminho de URL) gera relatórios com [métricas](/help/concurrency-monitoring/cm-usage-reports.md#monitor-metrics) (agregadas) para a seleção atual. Cada recurso aponta para seu recurso pai (para roll-up) e seus sub-recursos (para drill-down). O corte e a divisão são obtidos por meio de parâmetros de sequência de consulta que fixam dimensões a valores ou intervalos específicos.
 
 A API REST fornece os dados disponíveis dentro de um intervalo de tempo especificado na solicitação (recorrendo aos valores padrão se nenhum for fornecido), de acordo com o caminho da dimensão, os filtros fornecidos e as métricas selecionadas. O intervalo de tempo não será aplicado a relatórios que não contêm dimensões de tempo (ano, mês, dia, hora, minuto, segundo).
 
