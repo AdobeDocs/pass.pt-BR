@@ -1,7 +1,7 @@
 ---
 title: Cookbook REST API V2 (cliente para servidor)
 description: Cookbook REST API V2 (cliente para servidor)
-source-git-commit: 837276ce85445da5c3877592b194e37adf35fa32
+source-git-commit: 709835276710ec4b92abec3e39aaecae99872e77
 workflow-type: tm+mt
 source-wordcount: '689'
 ht-degree: 0%
@@ -29,24 +29,24 @@ Para implementar a API REST V2 do Adobe Pass, é necessário seguir as etapas ab
 
 Para que o aplicativo possa chamar a API REST V2 do Adobe Pass, ele precisa de um token de acesso exigido pela camada de segurança da API.
 
-Para obter o token de acesso, o aplicativo precisa seguir as etapas descritas: [Registro de Cliente Dinâmico](./dynamic-client-registration.md)
+Para obter o token de acesso, o aplicativo precisa seguir as etapas descritas: [Registro de Cliente Dinâmico](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
 
 ## B. Fase de autenticação {#authentication-phase}
 
 ### Etapa 2: verificar perfis autenticados existentes {#step-2-check-for-existing-authenticated-profiles}
 
 O aplicativo de streaming verifica os perfis autenticados existentes: <b>/api/v2/{serviceProvider}/profiles</b><br>
-([Recuperar perfis autenticados](./apis/profiles-apis/rest-api-v2-retrieve-authenticated-profiles.md))
+([Recuperar perfis autenticados](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md))
 
 * Se nenhum perfil for encontrado e o aplicativo de Streaming implementar um fluxo TempPass
    * Siga a documentação sobre como implementar [Fluxos de acesso temporário](../flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
 * Se nenhum perfil for encontrado, o aplicativo de transmissão implementará um Fluxo de autenticação
    * O aplicativo de streaming recuperou a lista de MVPDs disponíveis para serviceProvider: <b>/api/v2/{serviceProvider}/configuration</b><br>
-([Recuperar lista de MVPDs](./apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md) disponíveis)
+([Recuperar lista de MVPDs](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md) disponíveis)
    * O aplicativo de transmissão pode implementar a filtragem na lista de MVPDs e exibir apenas MVPDs destinados ao ocultar outros (TempPass, MVPDs de teste, MVPDs em desenvolvimento etc.)
    * Seletor de exibição do aplicativo de transmissão, o usuário seleciona o MVPD
    * O aplicativo de streaming cria uma sessão: <b>/api/v2/{serviceProvider}/sessions</b><br>
-([Criar sessão de autenticação](./apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
+([Criar sessão de autenticação](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
       * um CÓDIGO e um URL a serem usados para autenticação são retornados
       * se um perfil for encontrado, o aplicativo de Streaming poderá prosseguir para <a href="#preauthorization-phase">C. Fase de pré-autorização </a> ou <a href="#authorization-phase">D. Fase de autorização</a>
 
@@ -64,9 +64,9 @@ Usando um navegador ou um aplicativo baseado na Web de segunda tela:
 O aplicativo de streaming verifica a autenticação com MVPD para concluir no Navegador ou na Segunda Tela
 
 * A sondagem a cada 15 segundos é recomendada em <b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>
-([Recuperar perfis autenticados para MVPD específico](.apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
+([Recuperar perfis autenticados para MVPD específico](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
    * Se a seleção de MVPD não for feita no aplicativo de Streaming como o seletor de MVPD é apresentado no aplicativo Segunda Tela, a sondagem deve ocorrer com CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>
-([Recuperar perfis autenticados para CÓDIGO específico](./apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
+([Recuperar perfis autenticados para CÓDIGO específico](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
 * A sondagem não deve exceder 30 minutos. Caso 30 minutos sejam atingidos e o aplicativo de transmissão ainda esteja ativo, uma nova sessão precisa ser iniciada e um novo CÓDIGO e URL serão retornados
 * Quando a autenticação estiver concluída, o retorno será de 200 com perfil autenticado
 * O aplicativo de Streaming pode prosseguir para <a href="#preauthorization-phase">C. Fase de pré-autorização </a> ou <a href="#authorization-phase">D. Fase de autorização</a>
@@ -80,7 +80,7 @@ acesso a esses recursos.
 
 * A etapa é opcional e executada se o aplicativo quiser filtrar os recursos não disponíveis no pacote de usuário autenticado
 * Chamada para <b>/api/v2/{serviceProvider}/decision/preauthorize/{mvpd}</b><br>
-([Recuperar decisão de pré-autorização usando MVPD](.apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) específico)
+([Recuperar decisão de pré-autorização usando MVPD](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) específico)
 
 ## D. Fase de autorização {#authorization-phase}
 
@@ -90,7 +90,7 @@ O aplicativo de streaming se prepara para reproduzir um vídeo/ativo/recurso sel
 
 * Etapa necessária para cada início de reprodução
 * Chamar <b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br>
-([Recuperar decisão de autorização usando MVPD](.apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) específico)
+([Recuperar decisão de autorização usando MVPD](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) específico)
    * decision = &#39;Permit&#39; , Dispositivo de transmissão inicia a transmissão
    * decisão = &#39;Negar&#39;, o dispositivo de transmissão informa ao usuário que ele não tem acesso a esse vídeo
 
@@ -101,5 +101,5 @@ O aplicativo de streaming se prepara para reproduzir um vídeo/ativo/recurso sel
 Dispositivo de transmissão: o usuário deseja fazer logoff do MVPD
 
 * Chamar <b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
-([Iniciar logout para MVPD](.apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) específico)
+([Iniciar logout para MVPD](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) específico)
 * Se a resposta actionType=&#39;interative&#39; e o url estiver presente, abra o url em um Navegador/Segunda Tela para concluir o logout com o MVPD
