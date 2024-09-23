@@ -1,9 +1,9 @@
 ---
 title: Exemplos de relatórios de uso de monitoramento de simultaneidade
 description: Exemplos de relatórios de uso de monitoramento de simultaneidade
-source-git-commit: 7adfa5c803d27ac63f4fde64cf86edfb6bfca9cd
+source-git-commit: ca9bfb964ad7e7437bbea4704bca4ac5105874f1
 workflow-type: tm+mt
-source-wordcount: '2387'
+source-wordcount: '2374'
 ht-degree: 0%
 
 ---
@@ -67,8 +67,6 @@ ht-degree: 0%
 | Relatório diário de nível de atividade | &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;activity-level&quot; | cmu/v2/year/month/day/activity-level | &quot;nível de atividade&quot;, &quot;usuários&quot; |
 | Relatório diário de nível de atividade por locatário | &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;activity-level&quot;, &quot;tenant&quot; | cmu/v2/year/month/day/activity-level/tenant | &quot;nível de atividade&quot;, &quot;locatário&quot;, &quot;usuários&quot; |
 | Relatório diário de nível de atividade por mvpd de locatário | &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;activity-level&quot;, &quot;tenant&quot;, &quot;mvpd&quot; | cmu/v2/year/month/day/activity-level/tenant/mvpd | &quot;nível de atividade&quot;, &quot;locatário&quot;, &quot;mvpd&quot;,&quot;usuários&quot; |
-
-*TODO:verifique com BG se os relatórios de simultaneidade e nível de atividade estão corretos *
 
 ## Exemplos de relatórios por hora {#hourly-reports-examples}
 
