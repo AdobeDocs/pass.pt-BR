@@ -2,9 +2,9 @@
 title: Canais
 description: Saiba mais sobre os canais e suas várias configurações no Painel da TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: c29af84963b010ef9d2a2d318486aae8fffccecc
 workflow-type: tm+mt
-source-wordcount: '1115'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -211,7 +211,88 @@ O domínio selecionado não está mais disponível para uso. Como resultado, o a
 
 ### Aplicativos registrados {#registered-applications}
 
-Esta guia exibe uma lista de esquemas personalizados. Exibir [registro de aplicativo iOS/tvOS](/help/authentication/iostvos-application-registration.md).
+Esta guia exibe uma lista de aplicativos registrados. Para obter mais detalhes relacionados ao uso de aplicativos registrados, consulte a documentação da [visão geral do registro dinâmico de clientes](../../dcr-api/dynamic-client-registration-overview.md).
+
+Você pode realizar as seguintes ações com aplicativos registrados:
+
+* [Adicionar um novo aplicativo registrado](#add-registered-applications)
+* [Baixar uma instrução de software](#download-software-statement)
+
+#### Adicionar novo aplicativo registrado {#add-registered-applications}
+
+Siga estas etapas para adicionar um novo aplicativo registrado.
+
+1. Selecione **Adicionar novo aplicativo** no canto superior direito da seção **Aplicativos Registrados**.
+
+   ![Adicionar um novo aplicativo](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-application-button.png)
+
+   *Adicionar um novo aplicativo*
+
+1. Selecione **Plataformas** no menu suspenso na caixa de diálogo **Novo Aplicativo**.
+
+   >[!IMPORTANT]
+   >
+   > É recomendável criar aplicativos registrados com permissões mais específicas e limitadas para melhorar a segurança e impedir o acesso não autorizado. Portanto, ao criar aplicativos registrados, considere usar opções mais restritas para o `platforms` atribuído.
+
+1. Selecione **Domínios** no menu suspenso.
+
+   >[!IMPORTANT]
+   >
+   > No processo de registro do cliente, o aplicativo cliente pode solicitar permissão para usar um URL de redirecionamento para a finalização do fluxo de autenticação. Quando um aplicativo cliente usa uma URL de redirecionamento específica, ela é validada em relação à `domains` selecionada nesta seleção.
+
+1. Digite o **Nome** do aplicativo.
+
+1. Digite a **Versão** do aplicativo.
+
+   >[!IMPORTANT]
+   >
+   > É recomendável criar um novo aplicativo registrado para cada atualização importante do aplicativo cliente para gerenciar o ciclo de vida e o uso. Se necessário, crie um tíquete por meio de nossa [Zendesk](https://adobeprimetime.zendesk.com) e peça ao seu Gerente técnico de conta (TAM) para revogar um aplicativo registrado para bloquear a funcionalidade de uma versão específica do aplicativo cliente.
+
+1. Selecione o valor &quot;DIRETO&quot; de **Tipo** no menu suspenso.
+
+1. Selecione **Adicionar aplicativo**.
+
+Uma nova alteração de configuração foi criada e está pronta para atualização do servidor. Para usar o novo aplicativo registrado listado na seção **Aplicativos registrados**, prossiga com o fluxo de [alterações de revisão e push](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md).
+
+#### Baixar demonstrativo de software {#download-software-statement}
+
+Siga estas etapas para baixar uma instrução de software.
+
+1. Passe o cursor do mouse sobre o aplicativo registrado que deseja baixar a instrução de software da lista de **Aplicativos Registrados**.
+
+1. Selecione **Baixar**.
+
+   ![Baixar uma instrução de software](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-download-software-statement-button.png)
+
+   *Baixar uma instrução de software*
+
+### Esquemas personalizados {#custom-schemes}
+
+Esta guia exibe uma lista de esquemas personalizados. Para obter mais detalhes relacionados ao uso de esquemas personalizados, consulte o [registro do aplicativo iOS/tvOS](/help/authentication/iostvos-application-registration.md).
+
+Você pode fazer as seguintes alterações em esquemas personalizados:
+
+* [Gerar um novo esquema personalizado](#generate-custom-schemes)
+
+#### Gerar novo esquema personalizado {#generate-custom-schemes}
+
+Siga estas etapas para gerar um novo esquema personalizado.
+
+1. Selecione **Gerar novo esquema personalizado**.
+
+   ![Gerar um novo esquema personalizado](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-custom-scheme-button.png)
+
+   *Gerar um novo esquema personalizado*
+
+Uma nova alteração de configuração foi criada e está pronta para atualização do servidor. Para usar o novo esquema personalizado listado na seção **Esquemas Personalizados**, prossiga com o fluxo de [alterações de revisão e envio por push](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md).
+
+#### Esquemas personalizados herdados {#inherited-custom-schemes}
+
+As empresas de mídia definem esses esquemas personalizados em seu próprio nível. Todos os canais associados à mesma empresa de mídia podem usar esses esquemas personalizados.
+
+![Esquemas personalizados herdados](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
+
+*Esquemas personalizados herdados*
 
 ## Adicionar novo canal {#add-new-channel}
 
