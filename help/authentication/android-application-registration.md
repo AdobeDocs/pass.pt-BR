@@ -2,9 +2,9 @@
 title: Registro do aplicativo Android
 description: Registro do aplicativo Android
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ Estas são as maneiras de obter uma Declaração de software.
 
 ### Se você tiver acesso ao Painel TVE do Adobe
 
-1. Abra o navegador e navegue até o [Painel do Adobe Pass TVE](https://console.auth.adobe.com).
+1. Abra o navegador e navegue até o [Painel do Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication).
 
 1. Navegue até a seção **[!UICONTROL Channels]** e selecione seu canal.
 

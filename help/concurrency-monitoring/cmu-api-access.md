@@ -2,9 +2,9 @@
 title: Acesso à API CMU
 description: Acesso à API CMU
 exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
-source-git-commit: 52c0ffe75f6ac9fda3da39ff08b0dc4c5d5ca428
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -27,20 +27,22 @@ Siga as etapas nas seções abaixo para obter acesso.
 ## Etapas do procedimento de acesso {#access-procedure-steps}
 
 1. Ter um aplicativo registrado no servidor Adobe Pass DCR. Para esta etapa, contate nossa [Equipe de suporte](mailto:tve-support@adobe.com).
+
 2. Obter a declaração de software
-   1. Vá para o TVE Dashboard <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pré-produção </a> ou <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. Ir para [Painel do Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication)
    2. Selecionar programador
-   3. Ir para a guia Aplicativos
+   3. Vá para a guia *Aplicativos Registrados*
    4. Selecionar aplicativo
-   5. Clique em Baixar Instrução de Software para obter um arquivo semelhante com a captura abaixo
+   5. Clique em download na linha de aplicativo registrado para a qual deseja obter uma declaração de software e salve-a como um arquivo em seu computador local
       <figure>
-          <img src="assets/software_statement_1_download.png"
+          <img src="assets/programmer-download-software-statement-button.png"
                alt="Baixar Declaração de Software">
-       </figure>
+      </figure>
+
       <figure>
           <img src="assets/software_statement_2.png"
                alt="Amostra de instrução de software">
-       </figure>
+      </figure>
 
 3. Obter token de acesso
    1. Obtenha credenciais do cliente usando a instrução de software obtida acima e executando a chamada abaixo. Dessa forma, um par client_id - client_secret será obtido, e poderá ser usado para obter o token de acesso.

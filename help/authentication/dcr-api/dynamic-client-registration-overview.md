@@ -2,9 +2,9 @@
 title: Visão geral do registro dinâmico do cliente
 description: Visão geral do registro dinâmico do cliente
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '840'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -51,11 +51,11 @@ Para saber mais sobre como gerenciar e usar o registro de cliente dinâmico, con
 
 ## Gerenciamento dinâmico de registro de clientes {#dynamic-client-registration-management}
 
-O processo de gerenciamento dinâmico de registros de clientes permite que aplicativos clientes sejam executados em plataformas específicas e que precisem de acesso a APIs de Autenticação Adobe Pass específicas para se registrarem por meio do [Painel do Adobe Pass TVE](https://console.auth.adobe.com/).
+O processo de gerenciamento dinâmico de registros de clientes permite que aplicativos clientes sejam executados em plataformas específicas e que precisem de acesso a APIs de Autenticação Adobe Pass específicas para se registrarem por meio do [Painel do Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication).
 
-O Adobe Pass TVE Dashboard é uma ferramenta para clientes de autenticação da Adobe Pass (programadores) gerenciarem suas configurações e dados. Este painel de autoatendimento habilita uma série de funcionalidades descritas na documentação do [Guia do Usuário do Painel do Adobe Pass TVE](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
+O Adobe Pass TVE Dashboard é uma ferramenta para clientes de autenticação da Adobe Pass (programadores) gerenciarem suas configurações e dados. Este painel de autoatendimento habilita uma série de funcionalidades descritas na documentação do [Guia do Usuário do Painel do Adobe Pass TVE](../tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md).
 
-Caso você tenha acesso ao [Painel do Adobe Pass TVE](https://console.auth.adobe.com/), siga as etapas das seções abaixo para criar um aplicativo registrado e baixar a declaração de software.
+Caso você tenha acesso ao [Painel do Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication), siga as etapas das seções abaixo para criar um aplicativo registrado e baixar a declaração de software.
 
 ### Gerenciar aplicativos registrados {#manage-registered-applications}
 
@@ -67,18 +67,18 @@ Há duas maneiras disponíveis de criar um aplicativo registrado:
 
 * **Nível do programador**
 
-  O processo de registro no nível do programador permite criar um aplicativo registrado vinculado a todos os canais disponíveis ou a um subconjunto selecionado de canais. Para obter mais detalhes, consulte a seção [Criar um aplicativo registrado no nível do programador](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-programmer-level) da documentação do [Guia do Usuário do Painel do TVE](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
+  O processo de registro no nível do programador permite criar um aplicativo registrado vinculado a todos os canais disponíveis ou a um subconjunto selecionado de canais. Para obter mais detalhes, consulte a documentação do [Guia do Usuário do Painel TVE para Programadores](../tve-dashboard/new-tve-dashboard/tve-dashboard-programmers.md).
 
 
 * **Nível do canal**
 
-  O processo de registro em nível de canal permite criar um aplicativo registrado vinculado somente ao canal selecionado no momento. Para obter mais detalhes, consulte a seção [Criar um aplicativo registrado no nível de canal](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-channel-level) da documentação do [Guia de Usuário do Painel do TVE](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
+  O processo de registro em nível de canal permite criar um aplicativo registrado vinculado somente ao canal selecionado no momento. Para obter mais detalhes, consulte a documentação do [Guia do Usuário do Painel TVE para Canais](../tve-dashboard/new-tve-dashboard/tve-dashboard-channels.md).
 
 >[!IMPORTANT]
 >
 > É recomendável criar aplicativos registrados com permissões mais específicas e limitadas para melhorar a segurança e impedir o acesso não autorizado. Portanto, ao criar aplicativos registrados, considere usar opções mais restritas para os `channels`, `platforms` e `scopes` atribuídos.
 >
-> É recomendável criar um novo aplicativo registrado para cada atualização importante do aplicativo cliente para gerenciar o ciclo de vida e o uso. Quando necessário, crie um tíquete por meio de nossa [Zendesk](https://adobeprimetime.zendesk.com) e peça ao seu Gerente técnico de conta (TAM) para revogar um aplicativo registrado para bloquear a funcionalidade de uma versão específica do aplicativo cliente.
+> É recomendável criar um novo aplicativo registrado para cada atualização importante do aplicativo cliente para gerenciar o ciclo de vida e o uso. Se necessário, crie um tíquete por meio de nossa [Zendesk](https://adobeprimetime.zendesk.com) e peça ao seu Gerente técnico de conta (TAM) para revogar um aplicativo registrado para bloquear a funcionalidade de uma versão específica do aplicativo cliente.
 
 ### Gerenciar demonstrativos de software {#manage-software-statements}
 
@@ -92,11 +92,11 @@ Há duas maneiras disponíveis de baixar uma instrução de software com base no
 
 * **Nível do programador**
 
-  Para obter mais detalhes, consulte a seção [Baixar uma instrução de software no nível do programador](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-programmer-level) da documentação do [Guia do Usuário do Painel do TVE](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
+  Para obter mais detalhes, consulte a documentação do [Guia do Usuário do Painel TVE para Programadores](../tve-dashboard/new-tve-dashboard/tve-dashboard-programmers.md).
 
 * **Nível do canal**
 
-  Para obter mais detalhes, consulte a seção [Baixar uma instrução de software no nível de canal](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-channel-level) da documentação do [Guia de Usuário do Painel do TVE](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
+  Para obter mais detalhes, consulte a documentação do [Guia do Usuário do Painel TVE para Canais](../tve-dashboard/new-tve-dashboard/tve-dashboard-channels.md).
 
 A instrução de software é um JSON Web Token (`JWT`) que contém informações sobre o software do aplicativo cliente como um pacote. Quando apresentada à API [Recuperar credenciais do cliente](./apis/dynamic-client-registration-apis-retrieve-client-credentials.md), a instrução de software é assinada digitalmente usando a Assinatura da Web JSON (`JWS`).
 

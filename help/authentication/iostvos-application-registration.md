@@ -2,9 +2,9 @@
 title: Registro de aplicativo iOS/tvOS
 description: Registro de aplicativo iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Uma Declaração de Software é um token JWT que contém informações sobre seu
 
 ### Se você tiver acesso ao Painel TVE do Adobe:
 
-- Abra seu navegador e navegue até <https://console.auth.adobe.com>
+- Abra seu navegador e navegue até <https://experience.adobe.com/#/pass/authentication>
 - Navegue até a seção `Channels` e selecione seu canal.
 - Navegue até a guia `Registered Applications`.
 - Clique em `Add new application`.
@@ -55,7 +55,7 @@ Depois de obter a Instrução de Software, você precisará passá-la como um pa
 
 ### Se você tiver acesso ao Painel TVE do Adobe:
 
-- Abra seu navegador e navegue até <https://console.auth.adobe.com>
+- Abra seu navegador e navegue até <https://experience.adobe.com/#/pass/authentication>
 - Navegue até a seção `Channels` e selecione seu canal.
 - Navegue até a guia `Custom Schemes`.
 - Clique em `Generate a new custom scheme`.
