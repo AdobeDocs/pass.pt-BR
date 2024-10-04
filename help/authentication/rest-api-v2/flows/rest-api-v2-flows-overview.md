@@ -1,21 +1,21 @@
 ---
-title: REST API V2 - Fluxos - Visão geral
-description: REST API V2 - Fluxos - Visão geral
+title: Visão geral de fluxos da REST API V2
+description: Visão geral de fluxos da REST API V2
 exl-id: 84a9ac0f-c26a-4159-82a8-3a31bb31f529
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '167'
+source-wordcount: '170'
 ht-degree: 0%
 
 ---
 
-# REST API V2 - Fluxos - Visão geral {#rest-api-v2-flows-overview}
+# Visão geral de fluxos da REST API V2 {#rest-api-v2-flows-overview}
 
 >[!IMPORTANT]
 >
 > O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
-Para começar, visite a documentação pública de cada entrada da lista abaixo.
+Para começar, visite a documentação pública dos fluxos nos quais você está interessado, na lista abaixo.
 
 ## Fluxos de acesso básicos {#rest-api-v2-flows-access-basic}
 
