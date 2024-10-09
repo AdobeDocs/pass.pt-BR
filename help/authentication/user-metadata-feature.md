@@ -2,9 +2,9 @@
 title: Recurso de metadados do usuário
 description: Recurso de metadados do usuário
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 8c5203aa4a897a5e119a9886afc64a1b1556ee4f
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1654'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ Pontos principais dos metadados do usuário:
 - Transmitido para o aplicativo do Programador durante os fluxos de autenticação e autorização
 - Os valores são salvos no token
 - Os valores podem ser normalizados se diferentes MVPDs fornecerem dados em diferentes formatos
-- Alguns parâmetros podem ser criptografados usando a chave do programador (por exemplo, código postal)
+- Alguns parâmetros podem ser criptografados usando a chave do Programador (por exemplo, CEP). Consulte [Certificado de Metadados de Usuário para criptografia](./user-metadata-certificate.md) para geração de certificado de criptografia
 - Valores específicos são disponibilizados por Adobe, por meio de uma alteração de configuração
 
 ## Obter metadados do usuário {#obtaining}
