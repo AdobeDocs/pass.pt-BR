@@ -1,13 +1,13 @@
 ---
 title: Recuperar perfis
 description: REST API V2 - Recuperar perfis
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '831'
 ht-degree: 1%
 
 ---
-
 
 # Recuperar perfis {#retrieve-profiles}
 
@@ -306,8 +306,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">erro</td>
-      <td>O erro fornece informações adicionais que seguem a documentação de <a href="../../../enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="../../../enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>

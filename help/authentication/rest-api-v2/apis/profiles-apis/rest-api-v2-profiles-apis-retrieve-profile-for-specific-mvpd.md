@@ -1,13 +1,13 @@
 ---
 title: Recuperar perfil para mvpd específico
 description: REST API V2 - Recuperar perfil para mvpd específico
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: ed1abc33-c279-4465-b5a0-b4e5b892076e
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '974'
 ht-degree: 1%
 
 ---
-
 
 # Recuperar perfil para mvpd específico {#retrieve-profile-for-specific-mvpd}
 
@@ -318,8 +318,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">erro</td>
-      <td>O erro fornece informações adicionais que seguem a documentação de <a href="../../../enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="../../../enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>
