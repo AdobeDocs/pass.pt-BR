@@ -2,9 +2,9 @@
 title: Visão geral das APIs REST API V2
 description: Visão geral das APIs REST API V2
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '144'
+source-wordcount: '149'
 ht-degree: 1%
 
 ---
@@ -26,6 +26,7 @@ Para começar, visite a documentação pública das APIs nas quais você está i
 * [Criar sessão de autenticação](sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
 * [Retomar sessão de autenticação](sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
 * [Recuperar sessão de autenticação](sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+* [Executar autenticação no agente do usuário](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
 
 ## Perfis {#rest-api-v2-apis-profiles}
 
