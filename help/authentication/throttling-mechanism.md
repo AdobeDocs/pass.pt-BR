@@ -2,9 +2,9 @@
 title: Mecanismo de limitação
 description: Saiba mais sobre o mecanismo de limitação usado na autenticação do Adobe Pass. Explore uma visão geral desse mecanismo nesta página.
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
+source-git-commit: 83998257b25465c109cac56ae753291d1572696c
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '1141'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Você pode encontrar mais detalhes sobre como passar o cabeçalho X-Forwarded-Fo
 
 ### Limites e endpoints reais
 
-Atualmente, o limite padrão permite no máximo 1 solicitação por segundo., com uma intermitência inicial de 3 solicitações (permissão única na primeira interação do cliente identificado, o que deve permitir que a inicialização seja concluída com êxito). Isso não deve afetar nenhum caso comercial normal em todos os nossos clientes.
+Atualmente, o limite padrão permite no máximo 1 solicitação por segundo, com uma intermitência inicial de 10 solicitações (permissão única na primeira interação do cliente identificado, o que deve permitir que a inicialização seja concluída com êxito). Isso não deve afetar nenhum caso comercial normal em todos os nossos clientes.
 
 O mecanismo de limitação será habilitado nos seguintes pontos de extremidade:
 
@@ -67,6 +67,7 @@ O mecanismo de limitação será habilitado nos seguintes pontos de extremidade:
 - /api/v1/authenticate/
 - /api/v1/+/profile-requests/.+
 - /api/v1/identities
+- /adobe-services/config/
 - /reggie/v1/+/regcode
 - /reggie/v1/+/regcode/+
 
@@ -144,13 +145,21 @@ Os clientes que usam uma implementação personalizada (incluindo as de servidor
 ## Exemplo de cenário para limitação
 
 | Tempo desde a primeira solicitação | Resposta recebida | Explicação |
-|--------------------------|-----------------------------------|----------------------------------------------------------------------------------------------------------|
+|--------------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | Segundo 0 | A chamada recebe o código de status de sucesso | 1 chamadas consumidas do limite |
 | Segundo 0,3 | A chamada recebe o código de status de sucesso | 1 chamada consumida do limite e 1 chamada marcada como intermitente |
 | Segundo 0,6 | A chamada recebe o código de status de sucesso | 1 chamada consumida do limite e 2 chamadas marcadas como intermitência |
 | Segundo 0,9 | A chamada recebe o código de status de sucesso | 1 chamada consumida do limite e 3 chamadas marcadas como intermitência |
 | Segundo 1.2 | A chamada recebe o código de status de sucesso | 2 chamadas consumidas do limite e 3 chamadas marcadas como intermitência |
-| Segundo 1.4 | A chamada recebe o código de status 429 | 2 chamadas consumidas do limite e 3 chamadas marcadas como intermitentes, e 1 chamada recebe &quot;429 muitas solicitações&quot; |
-| Segundo 1.6 | A chamada recebe o código de status 429 | 2 chamadas consumidas do limite e 3 chamadas marcadas como intermitentes, e 2 chamadas recebem &quot;429 muitas solicitações&quot; |
-| Segundo 1.8 | A chamada recebe o código de status 429 | 2 chamadas consumidas do limite e 3 chamadas marcadas como intermitentes e 3 chamadas recebem &quot;429 muitas solicitações&quot; |
-| Segundo 2.1 | A chamada recebe o código de status de sucesso | 3 chamadas consumidas do limite e 3 chamadas marcadas como intermitentes e 3 chamadas recebem &quot;429 muitas solicitações&quot; |
+| Segundo 1.3 | A chamada recebe o código de status de sucesso | 2 chamadas consumidas do limite e 4 chamadas marcadas como intermitência |
+| Segundo 1.4 | A chamada recebe o código de status de sucesso | 2 chamadas consumidas do limite e 5 chamadas marcadas como intermitência |
+| Segundo 1,5 | A chamada recebe o código de status de sucesso | 2 chamadas consumidas do limite e 6 chamadas marcadas como intermitência |
+| Segundo 1.6 | A chamada recebe o código de status de sucesso | 2 chamadas consumidas do limite e 7 chamadas marcadas como intermitência |
+| Segundo 1,7 | A chamada recebe o código de status de sucesso | 2 chamadas consumidas do limite e 8 chamadas marcadas como intermitência |
+| Segundo 1.8 | A chamada recebe o código de status de sucesso | 2 chamadas consumidas do limite e 9 chamadas marcadas como intermitência |
+| Segundo 2.1 | A chamada recebe o código de status de sucesso | 3 chamadas consumidas do limite e 9 chamadas marcadas como intermitência |
+| Segundo 2.2 | A chamada recebe o código de status de sucesso | 3 chamadas consumidas do limite e 10 chamadas marcadas como intermitência |
+| Segundo 2.4 | A chamada recebe o código de status 429 | 3 chamadas consumidas do limite e 10 chamadas marcadas como intermitentes, e 1 chamada recebe &quot;429 muitas solicitações&quot; |
+| Segundo 2.6 | A chamada recebe o código de status 429 | 3 chamadas consumidas do limite e 10 chamadas marcadas como intermitentes, e 2 chamadas recebem &quot;429 muitas solicitações&quot; |
+| Segundo 2.8 | A chamada recebe o código de status 429 | 3 chamadas consumidas do limite e 10 chamadas marcadas como intermitentes, e 3 chamadas recebem &quot;429 muitas solicitações&quot; |
+| Segundo 3.1 | A chamada recebe o código de status de sucesso | 4 chamadas consumidas do limite e 10 chamadas marcadas como intermitentes, e 3 chamadas recebem ‘429 muitas solicitações’ |
