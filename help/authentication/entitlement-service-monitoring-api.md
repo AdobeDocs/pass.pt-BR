@@ -2,9 +2,9 @@
 title: API de monitoramento do serviço de qualificação
 description: API de monitoramento do serviço de qualificação
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 8fa1e63619f4e22794d701a218c77649f73d9f60
 workflow-type: tm+mt
-source-wordcount: '2070'
+source-wordcount: '2027'
 ht-degree: 1%
 
 ---
@@ -36,13 +36,13 @@ A API ESM fornece uma exibição hierárquica dos cubos OLAP subjacentes. Cada r
 
 A API REST fornece os dados disponíveis dentro de um intervalo de tempo especificado na solicitação (recorrendo aos valores padrão se nenhum for fornecido), de acordo com o caminho da dimensão, os filtros fornecidos e as métricas selecionadas. O intervalo de tempo não será aplicado a relatórios que não contêm dimensões de tempo (ano, mês, dia, hora, minuto, segundo).
 
-O caminho raiz do URL do ponto de extremidade retornará as métricas agregadas gerais em um único registro, juntamente com os links para as opções de detalhamento disponíveis. A versão da API é mapeada como o segmento à direita do caminho URI do endpoint. Por exemplo, `https://mgmt.auth.adobe.com/*v2*` significa que os clientes acessarão o WOLAP versão 2.
+O caminho raiz do URL do ponto de extremidade retornará as métricas agregadas gerais em um único registro, juntamente com os links para as opções de detalhamento disponíveis. A versão da API é mapeada como o segmento à direita do caminho URI do endpoint. Por exemplo, `https://mgmt.auth.adobe.com/esm/v3` significa que os clientes acessarão o WOLAP versão 3.
 
 Os caminhos de URL disponíveis são detectáveis por meio de links contidos na resposta. Os caminhos de URL válidos são mantidos para mapear um caminho na árvore de detalhamento subjacente que contém (pré-) métricas agregadas. Um caminho no formulário `/dimension1/dimension2/dimension3` refletirá uma pré-agregação dessas três dimensões (o equivalente de um SQL `clause GROUP` BY `dimension1`, `dimension2`, `dimension3`). Se essa pré-agregação não existir e o sistema não puder calculá-la dinamicamente, a API retornará uma resposta 404 Não encontrado.
 
 ## Árvore de detalhamento {#drill-down-tree}
 
-As árvores de detalhamento a seguir ilustram as dimensões (recursos) disponíveis no ESM 2.0 para [Programadores](#progr-dimensions) e [MVPDs](#mvpd-dimensions).
+As árvores de detalhamento a seguir ilustram as dimensões (recursos) disponíveis no ESM 3.0 para [Programadores](#progr-dimensions) e [MVPDs](#mvpd-dimensions).
 
 
 ### Dimension disponível para programadores {#progr-dimensions}
@@ -63,13 +63,13 @@ As árvores de detalhamento a seguir ilustram as dimensões (recursos) disponív
 
 ![](assets/esm-mvpd-dimensions.png)
 
-Uma GET para o ponto de extremidade de API `https://mgmt.auth.adobe.com/v2` retornará uma representação contendo:
+Uma GET para o ponto de extremidade de API `https://mgmt.auth.adobe.com/esm/v3` retornará uma representação contendo:
 
 * Links para os caminhos de drill-down raiz disponíveis:
 
-   * `<link rel="drill-down" href="/v2/dimensionA"/>`
+   * `<link rel="drill-down" href="/v3/dimensionA"/>`
 
-   * `<link rel="drill-down" href="/v2/dimensionB"/>`
+   * `<link rel="drill-down" href="/v3/dimensionB"/>`
 
 * Um resumo (valores agregados) de todas as métricas (no padrão
 como nenhum parâmetro de string de consulta é fornecido, consulte abaixo).
@@ -119,8 +119,8 @@ Os parâmetros de cadeia de caracteres de consulta a seguir têm significados re
 ### Parâmetros de string de consulta reservados para a API ESM
 
 | Parâmetro | Opcional | Descrição | Valor padrão | Exemplo |
-| --- | ---- | --- | ---- | --- |
-| access_token | Sim | Caso a proteção IMS OAuth esteja habilitada, o token IMS pode ser passado como um token de portador de autorização padrão ou como um parâmetro de sequência de consulta. | Nenhum | access_token=XXXXXX |
+| --- | ---- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ---- | --- |
+| access_token | Sim | O token do DCR pode ser transmitido como um token de portador de autorização padrão. | Nenhum | access_token=XXXXXX |
 | dimension-name | Sim | Qualquer nome de dimensão - contido no caminho de URL atual ou em qualquer subcaminho válido; o valor será tratado como um filtro igual. Se nenhum valor for fornecido, isso forçará a dimensão especificada a ser incluída na saída mesmo se não estiver incluída ou adjacente ao caminho atual | Nenhum | someDimension=someValue&amp;someOtherDimension |
 | fim | Sim | Hora final do relatório em milhões | Hora atual do servidor | end=30/07/2012 |
 | formato | Sim | Usado para negociação de conteúdo (com o mesmo efeito, mas precedência inferior ao caminho &quot;extensão&quot; - consulte abaixo). | None: a negociação de conteúdo tentará as outras estratégias | format=json |
@@ -128,8 +128,7 @@ Os parâmetros de cadeia de caracteres de consulta a seguir têm significados re
 | métricas | Sim | Lista separada por vírgulas de nomes de métricas a serem retornados; isso deve ser usado para filtrar um subconjunto das métricas disponíveis (para reduzir o tamanho do conteúdo) e também para forçar a API a retornar uma projeção que contenha as métricas solicitadas (em vez da projeção ideal padrão). | Todas as métricas disponíveis para a projeção atual serão retornadas caso esse parâmetro não seja fornecido. | metrics=m1,m2 |
 | start | Sim | Hora de início do relatório como ISO8601; o servidor preencherá a parte restante se apenas um prefixo for fornecido: por exemplo, start=2012 resultará em start=2012-01-01:00:00:00 | Relatado pelo servidor no autolink; o servidor tenta fornecer padrões razoáveis com base na granularidade de tempo selecionada | start=15/07/2012 |
 
-O único método HTTP disponível atualmente é o GET. Suporte para OPTIONS /
-Os métodos HEAD podem ser fornecidos em versões futuras.
+O único método HTTP disponível atualmente é o GET.
 
 ## Códigos de status da API ESM {#esm-api-status-codes}
 
@@ -156,7 +155,7 @@ Os dados estão disponíveis nos seguintes formatos:
 
 As estratégias de negociação de conteúdo a seguir podem ser usadas pelos clientes (a precedência é dada pela posição na lista - primeiros itens primeiro):
 
-1. Uma &quot;extensão de arquivo&quot; foi anexada ao último segmento do caminho de URL: por exemplo, `/esm/v2/media-company/year/month/day.xml`. Se a URL contiver uma cadeia de caracteres de consulta, a extensão deverá vir antes do ponto de interrogação: `/esm/v2/media-company/year/month/day.csv?mvpd= SomeMVPD`
+1. Uma &quot;extensão de arquivo&quot; foi anexada ao último segmento do caminho de URL: por exemplo, `/esm/v3/media-company/year/month/day.xml`. Se a URL contiver uma cadeia de caracteres de consulta, a extensão deverá vir antes do ponto de interrogação: `/esm/v3/media-company/year/month/day.csv?mvpd= SomeMVPD`
 1. Um parâmetro da cadeia de caracteres de consulta de formato: ex.: `/esm/report?format=json`
 1. O cabeçalho padrão HTTP Accept: ex.: `Accept: application/xml`
 
@@ -205,13 +204,13 @@ O link de recurso (o rel &quot;self&quot; em JSON e o atributo de recurso &quot;
 
 Exemplo (supondo que tenhamos uma única métrica chamada `clients` e haja uma pré-agregação para `year/month/day/...`):
 
-* https://mgmt.auth.adobe.com/esm/v2/year/month.xml
+* https://mgmt.auth.adobe.com/esm/v3/year/month.xml
 
 ```XML
-   <resource href="/esm/v2/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21">
+   <resource href="/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21">
    <links>
-   <link rel="roll-up" href="/esm/v2/year"/>
-   <link rel="drill-down" href="/esm/v2/year/month/day"/>
+   <link rel="roll-up" href="/esm/v3/year"/>
+   <link rel="drill-down" href="/esm/v3/year/month/day"/>
    </links>
    <report>
    <record month="6" year="2012" clients="205"/>
@@ -220,19 +219,19 @@ Exemplo (supondo que tenhamos uma única métrica chamada `clients` e haja uma p
    </resource>
 ```
 
-* https://mgmt.auth.adobe.com/esm/v2/year/month.json
+* https://mgmt.auth.adobe.com/esm/v3/year/month.json
 
   ```JSON
       {
         "_links" : {
           "self" : {
-            "href" : "/esm/v2/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21"
+            "href" : "/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21"
           },
           "roll-up" : {
-            "href" : "/esm/v2/year"
+            "href" : "/esm/v3/year"
           },
           "drill-down" : {
-            "href" : "/esm/v2/year/month/day"
+            "href" : "/esm/v3/year/month/day"
           }
         },
         "report" : [ {
@@ -260,7 +259,7 @@ O CSV conterá uma linha de cabeçalho e, em seguida, os dados do relatório com
 A ordem dos campos na linha de cabeçalho refletirá a ordem de classificação dos dados da tabela.
 
 
-Exemplo: https://mgmt.auth.adobe.com/v2/year/month.csv produzirá um arquivo chamado `report__2012-07-20_2012-08-20_1000.csv` com o seguinte conteúdo:
+Exemplo: https://mgmt.auth.adobe.com/esm/v3/year/month.csv produzirá um arquivo chamado `report__2012-07-20_2012-08-20_1000.csv` com o seguinte conteúdo:
 
 
 | Ano | Month | Clientes |
@@ -273,8 +272,6 @@ Exemplo: https://mgmt.auth.adobe.com/v2/year/month.csv produzirá um arquivo cha
 As respostas HTTP bem-sucedidas contêm um cabeçalho `Last-Modified` que indica a hora em que o relatório no corpo foi atualizado pela última vez. A falta de um cabeçalho Última modificação indica que os dados do relatório são calculados em tempo real.
 
 Normalmente, os dados granulares serão atualizados com menos frequência do que os dados granulares (por exemplo, valores por minuto ou valores por hora, podem estar mais atualizados do que os valores diários, especialmente para métricas que não podem ser computadas com base em granularidades menores, como contagens exclusivas).
-
-As versões futuras do ESM podem permitir que os clientes executem GETs condicionais fornecendo o cabeçalho &quot;If-Modified-Since&quot; padrão.
 
 ## Compactação GZIP {#gzip-compression}
 
