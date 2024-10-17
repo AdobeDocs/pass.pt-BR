@@ -1,9 +1,9 @@
 ---
 title: Cookbook REST API V2 (cliente para servidor)
 description: Cookbook REST API V2 (cliente para servidor)
-source-git-commit: 709835276710ec4b92abec3e39aaecae99872e77
+source-git-commit: 0d6693d51887c9e794401e984f3a4075be091ee5
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '695'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## Etapas para implementar a REST API V2 em aplicativos do lado do cliente {#steps-to-implement-the-rest-api-v2-in-client-side-applications}
 
-Para implementar a API REST V2 do Adobe Pass, é necessário seguir as etapas abaixo agrupadas em fases.
+Para implementar a API REST V2 do Adobe Pass, é necessário seguir as etapas abaixo, agrupadas em fases.
 
 ## A. Fase de registro {#registration-phase}
 
@@ -40,11 +40,11 @@ O aplicativo de streaming verifica os perfis autenticados existentes: <b>/api/v2
 
 * Se nenhum perfil for encontrado e o aplicativo de Streaming implementar um fluxo TempPass
    * Siga a documentação sobre como implementar [Fluxos de acesso temporário](../flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
-* Se nenhum perfil for encontrado, o aplicativo de transmissão implementará um Fluxo de autenticação
-   * O aplicativo de streaming recuperou a lista de MVPDs disponíveis para serviceProvider: <b>/api/v2/{serviceProvider}/configuration</b><br>
+* Se nenhum perfil for encontrado e o aplicativo de Streaming implementar um Fluxo de autenticação
+   * O aplicativo de streaming recupera a lista de MVPDs disponíveis para serviceProvider: <b>/api/v2/{serviceProvider}/configuration</b><br>
 ([Recuperar lista de MVPDs](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md) disponíveis)
    * O aplicativo de transmissão pode implementar a filtragem na lista de MVPDs e exibir apenas MVPDs destinados ao ocultar outros (TempPass, MVPDs de teste, MVPDs em desenvolvimento etc.)
-   * Seletor de exibição do aplicativo de transmissão, o usuário seleciona o MVPD
+   * O aplicativo de transmissão exibe o seletor, o usuário seleciona o MVPD
    * O aplicativo de streaming cria uma sessão: <b>/api/v2/{serviceProvider}/sessions</b><br>
 ([Criar sessão de autenticação](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
       * um CÓDIGO e um URL a serem usados para autenticação são retornados
@@ -55,7 +55,7 @@ O aplicativo de streaming verifica os perfis autenticados existentes: <b>/api/v2
 Usando um navegador ou um aplicativo baseado na Web de segunda tela:
 
 * Opção 1. O aplicativo de streaming pode abrir um navegador ou visualização da Web, carregar o URL para autenticar e o usuário acessar a página de logon do MVPD, onde as credenciais precisam ser enviadas
-   * usuário digita login/senha, redirecionamento final mostra uma página de sucesso
+   * o usuário digita login/senha, o redirecionamento final mostra uma página de sucesso
 * Opção 2. O Aplicativo de Streaming não pode abrir um navegador e apenas exibir o CÓDIGO. <b>É necessário desenvolver um aplicativo Web separado</b> para solicitar que o usuário insira CÓDIGO, compile e abra a URL: <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
    * usuário digita login/senha, redirecionamento final mostra uma página de sucesso
 
