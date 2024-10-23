@@ -2,7 +2,7 @@
 title: API de monitoramento do serviço de qualificação
 description: API de monitoramento do serviço de qualificação
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 8fa1e63619f4e22794d701a218c77649f73d9f60
+source-git-commit: 59ece09a8a72e67ea0944059064dba65e3137bd7
 workflow-type: tm+mt
 source-wordcount: '2027'
 ht-degree: 1%
@@ -122,11 +122,11 @@ Os parâmetros de cadeia de caracteres de consulta a seguir têm significados re
 | --- | ---- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ---- | --- |
 | access_token | Sim | O token do DCR pode ser transmitido como um token de portador de autorização padrão. | Nenhum | access_token=XXXXXX |
 | dimension-name | Sim | Qualquer nome de dimensão - contido no caminho de URL atual ou em qualquer subcaminho válido; o valor será tratado como um filtro igual. Se nenhum valor for fornecido, isso forçará a dimensão especificada a ser incluída na saída mesmo se não estiver incluída ou adjacente ao caminho atual | Nenhum | someDimension=someValue&amp;someOtherDimension |
-| fim | Sim | Hora final do relatório em milhões | Hora atual do servidor | end=30/07/2012 |
+| fim | Sim | Hora final do relatório em milhões | Hora atual do servidor | end=30/07/2024 |
 | formato | Sim | Usado para negociação de conteúdo (com o mesmo efeito, mas precedência inferior ao caminho &quot;extensão&quot; - consulte abaixo). | None: a negociação de conteúdo tentará as outras estratégias | format=json |
 | limite | Sim | Número máximo de linhas a serem retornadas | Valor padrão relatado pelo servidor no autolink se nenhum limite for especificado na solicitação | limit=1500 |
 | métricas | Sim | Lista separada por vírgulas de nomes de métricas a serem retornados; isso deve ser usado para filtrar um subconjunto das métricas disponíveis (para reduzir o tamanho do conteúdo) e também para forçar a API a retornar uma projeção que contenha as métricas solicitadas (em vez da projeção ideal padrão). | Todas as métricas disponíveis para a projeção atual serão retornadas caso esse parâmetro não seja fornecido. | metrics=m1,m2 |
-| start | Sim | Hora de início do relatório como ISO8601; o servidor preencherá a parte restante se apenas um prefixo for fornecido: por exemplo, start=2012 resultará em start=2012-01-01:00:00:00 | Relatado pelo servidor no autolink; o servidor tenta fornecer padrões razoáveis com base na granularidade de tempo selecionada | start=15/07/2012 |
+| start | Sim | Hora de início do relatório como ISO8601; o servidor preencherá a parte restante se apenas um prefixo for fornecido: por exemplo, start=2024 resultará em start=2024-01-01:00:00:00 | Relatado pelo servidor no autolink; o servidor tenta fornecer padrões razoáveis com base na granularidade de tempo selecionada | start=15/07/2024 |
 
 O único método HTTP disponível atualmente é o GET.
 
@@ -207,14 +207,14 @@ Exemplo (supondo que tenhamos uma única métrica chamada `clients` e haja uma p
 * https://mgmt.auth.adobe.com/esm/v3/year/month.xml
 
 ```XML
-   <resource href="/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21">
+   <resource href="/esm/v3/year/month?start=2024-07-20T00:00:00&end=2024-08-20T14:35:21">
    <links>
    <link rel="roll-up" href="/esm/v3/year"/>
    <link rel="drill-down" href="/esm/v3/year/month/day"/>
    </links>
    <report>
-   <record month="6" year="2012" clients="205"/>
-   <record month="7" year="2012" clients="466"/>
+   <record month="6" year="2024" clients="205"/>
+   <record month="7" year="2024" clients="466"/>
    </report>
    </resource>
 ```
@@ -225,7 +225,7 @@ Exemplo (supondo que tenhamos uma única métrica chamada `clients` e haja uma p
       {
         "_links" : {
           "self" : {
-            "href" : "/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21"
+            "href" : "/esm/v3/year/month?start=2024-07-20T00:00:00&end=2024-08-20T14:35:21"
           },
           "roll-up" : {
             "href" : "/esm/v3/year"
@@ -236,11 +236,11 @@ Exemplo (supondo que tenhamos uma única métrica chamada `clients` e haja uma p
         },
         "report" : [ {
           "month" : "6",
-          "year" : "2012",
+          "year" : "2024",
           "clients" : "205"
         }, {
           "month" : "7",
-          "year" : "2012",
+          "year" : "2024",
           "clients" : "466"
         } ]
       }
@@ -259,13 +259,13 @@ O CSV conterá uma linha de cabeçalho e, em seguida, os dados do relatório com
 A ordem dos campos na linha de cabeçalho refletirá a ordem de classificação dos dados da tabela.
 
 
-Exemplo: https://mgmt.auth.adobe.com/esm/v3/year/month.csv produzirá um arquivo chamado `report__2012-07-20_2012-08-20_1000.csv` com o seguinte conteúdo:
+Exemplo: https://mgmt.auth.adobe.com/esm/v3/year/month.csv produzirá um arquivo chamado `report__2024-07-20_2024-08-20_1000.csv` com o seguinte conteúdo:
 
 
 | Ano | Month | Clientes |
 | ---- | :---: | ------- |
-| 2012 | 6 | 580 |
-| 2012 | 7 | 231 |
+| 2024 | 6 | 580 |
+| 2024 | 7 | 231 |
 
 ## Atualização de dados {#data-freshness}
 
