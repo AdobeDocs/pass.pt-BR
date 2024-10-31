@@ -1,13 +1,13 @@
 ---
 title: Logon único - Parceiro - Fluxos
 description: REST API V2 - Logon único - Parceiro - Fluxos
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '1317'
+source-wordcount: '1444'
 ht-degree: 0%
 
 ---
-
 
 # Logon único usando fluxos de parceiros {#single-sign-on-partner-flows}
 
@@ -18,6 +18,18 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > A implementação da REST API V2 é limitada pela documentação do [Mecanismo de limitação](/help/authentication/throttling-mechanism.md).
+
+O método Parceiro permite que vários aplicativos usem uma carga de status da estrutura do parceiro para obter logon único (SSO) no nível do dispositivo ao usar os serviços da Adobe Pass.
+
+Os aplicativos são responsáveis por recuperar a carga de status da estrutura do parceiro usando estruturas específicas do parceiro ou bibliotecas fora dos sistemas Adobe Pass.
+
+Os aplicativos são responsáveis por incluir essa carga de status de estrutura de parceiro como parte do cabeçalho `AP-Partner-Framework-Status` para todas as solicitações que a especificam.
+
+Para obter mais detalhes sobre o cabeçalho `AP-Partner-Framework-Status`, consulte a documentação [AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md).
+
+A API REST V2 de autenticação do Adobe Pass tem suporte para Logon único de parceiro (SSO) para usuários finais de aplicativos clientes em execução no iOS, iPadOS ou tvOS.
+
+Para obter mais detalhes sobre o logon único (SSO) para a plataforma Apple, consulte a [Documentação do Guia de SSO do Apple (REST API V2)](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v2.md).
 
 ## Recuperar solicitação de autenticação do parceiro {#retrieve-partner-authentication-request}
 
@@ -61,7 +73,7 @@ Execute as etapas fornecidas para recuperar a solicitação de autenticação do
    > Consulte a [Recuperar solicitação de autenticação do parceiro](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md) documentação da API para obter detalhes sobre:
    >
    > * Todos os parâmetros _necessários_, como `serviceProvider` e `partner`
-   > * Todos os cabeçalhos _necessários_ como `Authorization`, `AP-Device-Identifier` e `AP-Partner-Framework-Status`
+   > * Todos os cabeçalhos _necessários_ como `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` e `AP-Partner-Framework-Status`
    > * Todos os cabeçalhos e parâmetros _opcionais_
    >
    > <br/>
@@ -175,7 +187,7 @@ Execute as etapas fornecidas para implementar o fluxo de recuperação de perfil
    > Consulte a documentação da API [Recuperar perfil usando a resposta de autenticação de parceiro](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) para obter detalhes sobre:
    >
    > * Todos os parâmetros _necessários_, como `serviceProvider`, `partner` e `SAMLResponse`
-   > * Todos os cabeçalhos _necessários_, como `Authorization`, `AP-Device-Identifier` e `AP-Partner-Framework-Status`
+   > * Todos os cabeçalhos _necessários_, como `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` e `AP-Partner-Framework-Status`
    > * Todos os cabeçalhos e parâmetros _opcionais_
    >
    > <br/>

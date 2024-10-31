@@ -2,9 +2,9 @@
 title: Cookbook da API REST (cliente para servidor)
 description: Cliente do guia da API rest para o servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '876'
 ht-degree: 0%
 
 ---
@@ -130,16 +130,22 @@ usuário.
 
 1. Envie o usuário de volta ao aplicativo Dispositivo inteligente para concluir o fluxo de autorização.
 
-## Plataforma SSO {#platform-sso}
+## Logon único de parceiro {#partner-sso}
 
-Algumas plataformas fornecem suporte dedicado para Single Sign-On (SSO). Os detalhes da implementação podem ser encontrados para cada respectiva plataforma:
+Alguns dispositivos fornecem suporte dedicado para Logon Único de Parceiro (SSO):
 
-* [APPLE SSO](/help/authentication/apple-sso-cookbook-rest-api.md)
-* AMAZON SSO
+* [APPLE SSO](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v1.md)
+
+## Logon único na plataforma {#platform-sso}
+
+Alguns dispositivos fornecem suporte dedicado para Logon único da plataforma (SSO):
+
+* [AMAZON SSO](./single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [SSO do Roku](./single-sign-on/platform-single-sign-on/roku-single-sign-on/roku-sso-overview.md)
 
 ## TempPass e TempPass promocional para API REST {#temppass}
 
-Para implementações TempPass e TempPass promocional em que o usuário não é solicitado a inserir credenciais, a autenticação pode ser implementada diretamente no Aplicativo de streaming.
+Para implementações TempPass e TempPass Promocional em que o usuário não é solicitado a inserir credenciais, a autenticação pode ser implementada diretamente no Aplicativo de Streaming.
 
 **Para usar essa API, o Aplicativo de Streaming precisa verificar a exclusividade da ID do dispositivo, pois ela está sendo usada para identificar o token, juntamente com os dados adicionais opcionais.**
 

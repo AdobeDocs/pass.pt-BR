@@ -1,13 +1,13 @@
 ---
 title: Logon Único - Token de Serviço - Fluxos
 description: REST API V2 - Logon único - Token de serviço - Fluxos
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '1848'
 ht-degree: 0%
 
 ---
-
 
 # Logon único usando fluxos de token de serviço{#single-sign-on-service-token-full-flows}
 
@@ -120,7 +120,7 @@ Execute as etapas fornecidas para implementar o fluxo de autenticação por meio
    > * Todos os cabeçalhos _necessários_, como `Authorization`, `AP-Device-Identifier`
    > * Todos os _parâmetros e cabeçalhos_ opcionais
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugestão: O aplicativo de streaming pode esperar que o agente do usuário acesse o `redirectUrl` fornecido para verificar se o perfil regular foi gerado e salvo com êxito.
 

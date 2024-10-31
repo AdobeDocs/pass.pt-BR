@@ -2,9 +2,9 @@
 title: Bem- vindo ao Adobe&reg; Passar a autenticação!
 description: Bem- vindo ao Adobe&reg; Visão geral da autenticação de aprovação
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '331'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Seu feedback é sempre apreciado!
 
 | **Itens em destaque** |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>[Logon único para o iOS](/help/authentication/apple-sso-overview.md)</li><li>[Aprovação Temp Promocional](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticação baseada em casa (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infográfico de HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guia do Usuário do Painel do Adobe Pass TVE](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
+| <ul><li>[Logon único para o iOS](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md)</li><li>[Aprovação Temp Promocional](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticação baseada em casa (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infográfico de HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guia do Usuário do Painel do Adobe Pass TVE](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
 
 | **Para Programadores** | **Para MVPDs** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|

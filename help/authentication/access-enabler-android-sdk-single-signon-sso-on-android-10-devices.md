@@ -2,9 +2,9 @@
 title: Acesse o Logon único (SSO) do SDK do Android Enabler nos aplicativos do Android 10
 description: Acesse o Logon único (SSO) do SDK do Android Enabler nos aplicativos do Android 10
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
-source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
@@ -23,8 +23,6 @@ No entanto, o Google na versão mais recente do Android 10 produziu algumas alte
 
 Como resultado dessas alterações, o Logon Único (SSO) oferecido pelo SDK do Access Enabler Android versão **3.2.1 (mais recente)** e as versões anteriores podem ser afetados em dispositivos Android 10, conforme explicado na próxima seção.
 
-Consulte [Visão geral do SSO do Roku](/help/authentication/roku-sso-overview.md).
-
 ## Comportamento
 
 Dependendo do **[!UICONTROL target SDK level]** do seu aplicativo ou do uso do atributo de manifesto **android:requestLegacyExternalStorage**, o Logon Único (SSO) oferecido pelo SDK 3.2.1 do Access Enabler Android (mais recente) e as versões anteriores se comportarão da seguinte maneira no momento:
@@ -32,7 +30,6 @@ Dependendo do **[!UICONTROL target SDK level]** do seu aplicativo ou do uso do a
 - Seu aplicativo é direcionado ao **Android 9 (nível de API 28)** ou inferior **-\>** Logon Único (SSO) **funcionará**
 - Seu aplicativo é direcionado ao **Android 10** **(nível de API 29)** e **define** o valor de **requestLegacyExternalStorage como true** no arquivo de manifesto do seu aplicativo **-\>** Logon Único (SSO) **funcionará**
 - Seu aplicativo é direcionado ao **Android 10** **(nível de API 29)** e **não define** o valor de **requestLegacyExternalStorage para true** no arquivo de manifesto do seu aplicativo **-\>** Logon Único (SSO) **não funcionará**
-
 
 >[!TIP]
 >

@@ -2,7 +2,7 @@
 title: Códigos de erro aprimorados
 description: Códigos de erro aprimorados
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2593'
 ht-degree: 3%
@@ -301,8 +301,8 @@ A tabela abaixo lista possíveis Códigos de erro aprimorados que um aplicativo 
 | **nenhum** | *invalid_parameter_service_provider* | 400 | O valor do parâmetro do provedor de serviços está ausente ou é inválido. |
 |                              | *invalid_parameter_mvpd* | 400 | O valor do parâmetro mvpd está ausente ou é inválido. |
 |                              | *código_de_parâmetro_inválido* | 400 | O valor do parâmetro de código está ausente ou é inválido. |
-|                              | *recursos_de_parâmetro_inválidos* | 400 | O valor do parâmetro de URL de redirecionamento está ausente ou é inválido. |
-|                              | *url_redirecionamento_de_parâmetro_inválido* | 400 | O valor do parâmetro de recursos está ausente ou é inválido. |
+|                              | *recursos_de_parâmetro_inválidos* | 400 | O valor do parâmetro de recursos está ausente ou é inválido. |
+|                              | *url_redirecionamento_de_parâmetro_inválido* | 400 | O valor do parâmetro de URL de redirecionamento está ausente ou é inválido. |
 |                              | *invalid_parameter_partner* | 400 | O valor do parâmetro de parceiro está ausente ou é inválido. |
 |                              | *resposta_saml_parâmetro_inválido* | 400 | O valor do parâmetro de resposta SAML está ausente ou é inválido. |
 |                              | *informações_de_dispositivo_de_cabeçalho_inválido* | 400 | O valor do cabeçalho de informações do dispositivo está ausente ou é inválido. |

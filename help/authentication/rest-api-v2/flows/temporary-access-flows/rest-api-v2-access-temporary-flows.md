@@ -2,7 +2,7 @@
 title: Fluxos de Acesso Temporário
 description: REST API V2 - Fluxos de acesso temporário
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '3215'
 ht-degree: 0%
@@ -349,7 +349,7 @@ Siga as etapas fornecidas para implementar o fluxo de autorização ao consumir 
 
 1. **Identificador de detalhes de decisão `Deny`:** o aplicativo de streaming processa as informações de erro da resposta e pode usá-las para exibir opcionalmente uma mensagem específica na interface do usuário.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugestão: O aplicativo de transmissão pode informar aos usuários que o número máximo de recursos foi excedido e aconselhá-los a iniciar um fluxo de autenticação básico usando um MVPD regular para continuar assistindo.
 
@@ -429,7 +429,7 @@ Siga as etapas fornecidas para implementar o fluxo de autorização quando o Tem
 
 1. **Identificador de detalhes de decisão `Deny`:** o aplicativo de streaming processa as informações de erro da resposta e pode usá-las para exibir opcionalmente uma mensagem específica na interface do usuário.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugestão: O aplicativo de transmissão pode informar aos usuários que o acesso temporário expirou e aconselhá-los a iniciar um fluxo de autenticação básico usando um MVPD regular para continuar assistindo.
 

@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: O Adobe Pass Authentication é uma solução de concessão de direitos para o TV Everywhere, o qual fornece uma estrutura modular para determinar se a pessoa que solicita o acesso a um recurso possui direito a ele.
-source-git-commit: 2f5e511f774e1a2d8b8b60084844edfe27be6c76
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '1181'
+source-wordcount: '1199'
 ht-degree: 2%
 
 ---
@@ -56,28 +56,28 @@ ht-degree: 2%
       + [Visão geral da REST API V2](./rest-api-v2/rest-api-v2-overview.md)
       + [Glossário da REST API V2](./rest-api-v2/rest-api-v2-glossary.md)
       + APIs {#rest-api-v2-apis}
-         + [Visão geral das APIs REST API V2](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
+         + [Visão geral das APIs REST API V2](rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + Configuração {#rest-api-v2-configuration-apis}
-            + [Recuperar configuração para provedor de serviços específico](./rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
+            + [Recuperar configuração para provedor de serviços específico](rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
          + Sessões {#rest-api-v2-sessions-apis}
-            + [Criar sessão de autenticação](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
-            + [Retomar sessão de autenticação](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
-            + [Recuperar sessão de autenticação](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
-            + [Executar autenticação no agente do usuário](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
+            + [Criar sessão de autenticação](rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+            + [Retomar sessão de autenticação](rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
+            + [Recuperar sessão de autenticação](rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+            + [Executar autenticação no agente do usuário](rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
          + Perfis {#rest-api-v2-profiles-apis}
-            + [Recuperar perfis](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-            + [Recuperar perfil para mvpd específico](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
-            + [Recuperar perfil para código específico](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
+            + [Recuperar perfis](rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
+            + [Recuperar perfil para mvpd específico](rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+            + [Recuperar perfil para código específico](rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
          + Decisões {#rest-api-v2-decisions-apis}
-            + [Recuperar decisões de autorização usando mvpd específico](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
-            + [Recuperar decisões de pré-autorização usando mvpd específico](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+            + [Recuperar decisões de autorização usando mvpd específico](rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
+            + [Recuperar decisões de pré-autorização usando mvpd específico](rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
          + Sair {#rest-api-v2-logout-apis}
-            + [Iniciar logout para mvpd específico](./rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+            + [Iniciar logout para mvpd específico](rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
          + Logon Único de Parceiro {#rest-api-v2-partner-single-sign-on-apis}
             + [Recuperar solicitação de autenticação do parceiro](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
             + [Recuperar perfil usando resposta de autenticação de parceiro](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
       + Fluxos {#rest-api-v2-flows}
-         + [Visão geral de fluxos da REST API V2](./rest-api-v2/flows/rest-api-v2-flows-overview.md)
+         + [Visão geral de fluxos da REST API V2](rest-api-v2/flows/rest-api-v2-flows-overview.md)
          + Fluxos de Acesso Básico {#rest-api-v2-basic-access-flows}
             + [Fluxo de perfis básicos realizado no aplicativo principal](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
             + [Fluxo de perfis básicos realizado no aplicativo secundário](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
@@ -99,13 +99,13 @@ ht-degree: 2%
          + [Cookbook REST API V2 (cliente para servidor)](rest-api-v2/cookbooks/rest-api-v2-cookbooks-client-server.md)
       + Apêndice {#rest-api-v2-appendix}
          + Cabeçalhos {#rest-api-v2-appendix-headers}
-            + [Cabeçalho - autorização](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
-            + [Cabeçalho - AP-Identificador de dispositivo](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
-            + [Cabeçalho - X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
-            + [Cabeçalho - AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
-            + [Cabeçalho - Adobe-Subject-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
-            + [Cabeçalho - AP-Parceiro-Estrutura-Status](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
-            + [Cabeçalho - AP-TempPass-Identity](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
+            + [Cabeçalho - autorização](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
+            + [Cabeçalho - AP-Identificador de dispositivo](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
+            + [Cabeçalho - X-Device-Info](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
+            + [Cabeçalho - AD-Service-Token](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
+            + [Cabeçalho - Adobe-Subject-Token](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
+            + [Cabeçalho - AP-Parceiro-Estrutura-Status](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
+            + [Cabeçalho - AP-TempPass-Identity](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + SDK {#accessenabler-sdk} do AccessEnabler
       + JavaScript SDK {#javascriptsdk}
          + [Visão geral do SDK do JavaScript](javascript-sdk-overview.md)
@@ -136,20 +136,24 @@ ht-degree: 2%
          + API DO Android {#android-sdk-api}
             + [Pré-autorizar](preauthorize-api-android-sdk.md)
       + SDK {#fireossdk} do Amazon FireOS
-         + [Amazon FireOS SSO - Guia de início do programador](amazon-firetv-sso-programmer-kickoff-guide.md)
-         + [Amazon FireOS SSO usando livro de cookies de API sem cliente](amazon-fireos-sso-using-clientless-api-cookbook.md)
          + [Visão geral técnica do Amazon FireOS](amazon-fireos-technical-overview.md)
          + [Guia de integração do Amazon FireOS](amazon-fireos-integration-cookbook.md)
          + [Referência da API do Amazon FireOS](amazon-fireos-native-client-api-reference.md)
          + [Registro do aplicativo Amazon FireOS](amazon-fireos-application-registration.md)
          + [SDK do FireOS com registro de cliente dinâmico](fireos-sdk-with-dynamic-client-registration.md)
-   + Plataforma SSO {#platform-sso}
-      + Apple SSO {#apple-sso}
-         + [Visão geral do Apple SSO](apple-sso-overview.md)
-         + [Guia do Apple SSO (REST API)](apple-sso-cookbook-rest-api.md)
-         + [Guia do Apple SSO (iOS/tvOS SDK)](apple-sso-cookbook-iostvos-sdk.md)
-      + SSO {#roku-sso} do Roku
-         + [SSO do Roku](roku-sso-overview.md)
+         + [Amazon FireOS SSO - Guia de início do programador](amazon-firetv-sso-programmer-kickoff-guide.md)
+   + Logon único {#sso}
+      + Logon Único de Parceiro {#partner-sso}
+         + Logon único no Apple {#apple-sso}
+            + [Visão geral do Apple SSO](single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md)
+            + [Guia do Apple SSO (REST API V2)](single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v2.md)
+            + [Guia do Apple SSO (REST API V1)](single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v1.md)
+            + [Guia do Apple SSO (iOS/tvOS SDK)](single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-iostvos-sdk.md)
+      + Logon único da plataforma {#platform-sso}
+         + Logon único no Amazon {#amazon-sso}
+            + [Guia do Amazon SSO (REST API V1)](single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+         + Logon único do Roku {#roku-sso}
+            + [Visão geral do SSO do Roku](single-sign-on/platform-single-sign-on/roku-single-sign-on/roku-sso-overview.md)
    + Metadados de conteúdo {#content-metadata}
       + [Identificação do recurso protegido](identify-protected-resources.md)
    + Integração do servidor de conteúdo {#content-serv-int}

@@ -1,13 +1,13 @@
 ---
 title: Autenticação básica - Aplicativo secundário - Fluxo
 description: REST API V2 - Autenticação básica - Aplicativo secundário - Fluxo
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2000'
 ht-degree: 0%
 
 ---
-
 
 # Fluxo de autenticação básico executado no aplicativo secundário {#basic-authentication-flow-performed-within-secondary-application}
 
@@ -137,7 +137,7 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
    >
    > Se a validação falhar, uma resposta de erro será gerada, fornecendo informações adicionais que seguem a documentação de [Códigos de erro aprimorados](../../../enhanced-error-codes.md).
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugestão: O aplicativo secundário pode informar os usuários que o `code` usado é inválido no caso de uma resposta de erro indicando uma sessão de autenticação ausente, e aconselhá-los a tentar novamente usando um novo.
 
@@ -162,7 +162,7 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
    > * Todos os cabeçalhos _necessários_, como `Authorization`, `AP-Device-Identifier`
    > * Todos os _parâmetros e cabeçalhos_ opcionais
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugestão: O aplicativo de streaming pode implementar um mecanismo de sondagem usando o `code` para verificar se o perfil regular foi gerado e salvo com êxito.
 
@@ -271,7 +271,7 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
    > 
    > Se a validação falhar, uma resposta de erro será gerada, fornecendo informações adicionais que seguem a documentação de [Códigos de erro aprimorados](../../../enhanced-error-codes.md).
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugestão: O aplicativo secundário pode informar os usuários que o `code` usado é inválido no caso de uma resposta de erro indicando uma sessão de autenticação ausente, e aconselhá-los a tentar novamente usando um novo.
 
@@ -300,7 +300,7 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
    > * Todos os cabeçalhos _necessários_, como `Authorization`, `AP-Device-Identifier`
    > * Todos os _parâmetros e cabeçalhos_ opcionais
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugestão: O aplicativo de streaming pode implementar um mecanismo de sondagem usando o `code` para verificar se o perfil regular foi gerado e salvo com êxito.
 
