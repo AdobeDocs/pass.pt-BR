@@ -1,7 +1,7 @@
 ---
 title: Cookbook REST API V2 (servidor para servidor)
 description: Cookbook REST API V2 (servidor para servidor)
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+source-git-commit: c17e52dd52fa14c50d59945598d1913f02be2468
 workflow-type: tm+mt
 source-wordcount: '1566'
 ht-degree: 0%
@@ -186,4 +186,4 @@ O Serviço do programador deve manter certificados compartilhados com o Adobe (p
 
 ## Informações relacionadas {#related}
 
-* [Referência da REST API V2](/help/authentication/rest-api-v2/rest-api-v2-flows-overview.md)
+* [Referência da REST API V2](/help/authentication/rest-api-v2/rest-api-v2-overview.md)
