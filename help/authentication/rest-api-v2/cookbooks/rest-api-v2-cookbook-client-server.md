@@ -1,13 +1,13 @@
 ---
 title: Cookbook REST API V2 (cliente para servidor)
 description: Cookbook REST API V2 (cliente para servidor)
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
+source-git-commit: 563e0b17de3be9290a661242355b4835b8c386e1
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
-
 
 # Cookbook REST API V2 (cliente para servidor) {#rest-api-v2-cookbook-clientserver}
 
@@ -29,7 +29,7 @@ Para implementar a API REST V2 do Adobe Pass, é necessário seguir as etapas ab
 
 Para que o aplicativo possa chamar a API REST V2 do Adobe Pass, ele precisa de um token de acesso exigido pela camada de segurança da API.
 
-Para obter o token de acesso, o aplicativo precisa seguir as etapas descritas: [Registro de Cliente Dinâmico](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+Para obter o token de acesso, o aplicativo precisa seguir as etapas descritas na documentação do [Registro de Cliente Dinâmico](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
 ## B. Fase de autenticação {#authentication-phase}
 
@@ -55,9 +55,9 @@ O aplicativo de streaming verifica os perfis autenticados existentes: <b>/api/v2
 Usando um navegador ou um aplicativo baseado na Web de segunda tela:
 
 * Opção 1. O aplicativo de streaming pode abrir um navegador ou visualização da Web, carregar o URL para autenticar e o usuário acessar a página de logon do MVPD, onde as credenciais precisam ser enviadas
-   * o usuário digita login/senha, o redirecionamento final mostra uma página de sucesso
+   * O usuário insere login/senha, o redirecionamento final mostra uma página de sucesso
 * Opção 2. O Aplicativo de Streaming não pode abrir um navegador e apenas exibir o CÓDIGO. <b>É necessário desenvolver um aplicativo Web separado</b> para solicitar que o usuário insira CÓDIGO, compile e abra a URL: <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
-   * usuário digita login/senha, redirecionamento final mostra uma página de sucesso
+   * O usuário insere login/senha, o redirecionamento final mostra uma página de sucesso
 
 ### Etapa 4: verificar perfis autenticados {#step-4-check-for-authenticated-profiles}
 
@@ -67,7 +67,7 @@ O aplicativo de streaming verifica a autenticação com MVPD para concluir no Na
 ([Recuperar perfis autenticados para MVPD específico](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
    * Se a seleção de MVPD não for feita no aplicativo de Streaming como o seletor de MVPD é apresentado no aplicativo Segunda Tela, a sondagem deve ocorrer com CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>
 ([Recuperar perfis autenticados para CÓDIGO específico](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
-* A sondagem não deve exceder 30 minutos. Caso 30 minutos sejam atingidos e o aplicativo de transmissão ainda esteja ativo, uma nova sessão precisa ser iniciada e um novo CÓDIGO e URL serão retornados
+* A sondagem não deve exceder 30 minutos, caso 30 minutos sejam atingidos e o aplicativo de transmissão ainda esteja ativo, uma nova sessão precisa ser iniciada e um novo CÓDIGO e URL serão retornados
 * Quando a autenticação estiver concluída, o retorno será de 200 com perfil autenticado
 * O aplicativo de Streaming pode prosseguir para <a href="#preauthorization-phase">C. Fase de pré-autorização </a> ou <a href="#authorization-phase">D. Fase de autorização</a>
 
@@ -91,14 +91,14 @@ O aplicativo de streaming se prepara para reproduzir um vídeo/ativo/recurso sel
 * Etapa necessária para cada início de reprodução
 * Chamar <b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br>
 ([Recuperar decisão de autorização usando MVPD](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) específico)
-   * decision = &#39;Permit&#39; , Dispositivo de transmissão inicia a transmissão
+   * decision = &#39;Permit&#39;, Dispositivo de transmissão inicia a transmissão
    * decisão = &#39;Negar&#39;, o dispositivo de transmissão informa ao usuário que ele não tem acesso a esse vídeo
 
 ## E. Fase de saída {#logout-phase}
 
 ### Etapa 7: Logout {#step-7-logout}
 
-Dispositivo de transmissão: o usuário deseja fazer logoff do MVPD
+Dispositivo de transmissão: o usuário deseja sair do MVPD
 
 * Chamar <b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
 ([Iniciar logout para MVPD](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) específico)
