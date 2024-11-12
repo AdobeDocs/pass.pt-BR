@@ -2,9 +2,9 @@
 title: Códigos de erro aprimorados
 description: Códigos de erro aprimorados
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+source-git-commit: ce9659074bfa3fac3ea62a70a6da470f15bad3fe
 workflow-type: tm+mt
-source-wordcount: '2593'
+source-wordcount: '2606'
 ht-degree: 3%
 
 ---
@@ -313,6 +313,7 @@ A tabela abaixo lista possíveis Códigos de erro aprimorados que um aplicativo 
 |                              | *cabeçalho_inválido_pfs_permission_access_not_granted* | 400 | O valor de status de acesso da permissão do cabeçalho de status da estrutura do parceiro não é concedido. |
 |                              | *cabeçalho_inválido_pfs_provider_id_not_determination* | 400 | O valor da ID do provedor do cabeçalho de status da estrutura do parceiro não está associado a um mvpd conhecido. |
 |                              | *incompatibilidade_de_id_de_provedor_de_cabeçalho_inválido* | 400 | O valor da ID do provedor do cabeçalho de status da estrutura do parceiro não corresponde ao mvpd enviado como parâmetro. |
+|                              | *cabeçalho_inválido_pfs_provedor_info_expirado* | 400 | As informações do provedor do cabeçalho de status da estrutura do parceiro expiraram. |
 |                              | *integração_inválida* | 400 | A integração entre o provedor de serviços especificado e o mvpd não existe ou está desabilitada. |
 |                              | *sessão_de_autenticação_inválida* | 400 | A sessão de autenticação associada a esta solicitação está ausente ou é inválida. |
 |                              | *pré-autorização_negada_por_mvpd* | 403 | O MVPD retornou uma decisão de &quot;Negação&quot; ao solicitar pré-autorização para o recurso especificado. |
