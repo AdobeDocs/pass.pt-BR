@@ -1,9 +1,10 @@
 ---
 title: Guia do Apple SSO (REST API V2)
 description: Guia do Apple SSO (REST API V2)
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
+source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
-source-wordcount: '3402'
+source-wordcount: '3410'
 ht-degree: 0%
 
 ---
@@ -16,11 +17,11 @@ ht-degree: 0%
 
 A API REST V2 de autenticação do Adobe Pass tem suporte para Logon único de parceiro (SSO) para usuários finais de aplicativos clientes em execução no iOS, iPadOS ou tvOS.
 
-Este documento atua como uma extensão à documentação da REST API V2 existente que descreve como implementar o [Logon único usando fluxos de parceiros](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md).
+Este documento atua como uma extensão para a [Visão geral da REST API V2](/help/authentication/rest-api-v2/rest-api-v2-overview.md) existente, que fornece uma exibição de alto nível e o documento que descreve como implementar o [Logon único usando fluxos de parceiros](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md).
 
-## Logon único do Apple usando fluxos de parceiros {#apple-sso-cookbook-rest-api-v2-cookbook}
+## Logon único do Apple usando fluxos de parceiros {#cookbook}
 
-### Pré-requisitos {#apple-sso-cookbook-rest-api-v2-prerequisites}
+### Pré-requisitos {#prerequisites}
 
 Antes de prosseguir com o logon único da Apple usando fluxos de parceiros, verifique se os seguintes pré-requisitos foram atendidos:
 
@@ -40,7 +41,7 @@ Antes de prosseguir com o logon único da Apple usando fluxos de parceiros, veri
 >
 > * O aplicativo de streaming concluiu os [pré-requisitos de integração](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md#apple-sso-prerequisites-programmer) que se aplicam a um Programador e são necessários para habilitar a experiência de usuário de logon único do Apple.
 
-### Fluxo de trabalho (WRK) {#apple-sso-cookbook-rest-api-v2-workflow}
+### Fluxo de trabalho (WRK) {#workflow}
 
 Execute as etapas fornecidas para implementar o logon único do Apple usando fluxos de parceiros conforme mostrado no diagrama a seguir.
 
