@@ -1,9 +1,10 @@
 ---
 title: Glossário da REST API V2
 description: Glossário da REST API V2
-source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
+exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
-source-wordcount: '1872'
+source-wordcount: '1964'
 ht-degree: 0%
 
 ---
@@ -34,6 +35,8 @@ O código de autenticação é um conceito de Autenticação do Adobe Pass que a
 
 O código de autenticação pode ser usado por um [Aplicativo Primário (Programador)](#primary-application) ou um [Aplicativo Secundário (Programador)](#secondary-application) para concluir o processo de [autenticação](#authentication), recuperar informações sobre a [sessão de autenticação](#session) ou acessar o [perfil](#profile) do usuário.
 
+Sinônimo do termo usado anteriormente era o código de registro.
+
 #### Sessão de autenticação {#session}
 
 A sessão de autenticação é um conceito de Autenticação do Adobe Pass que armazena informações sobre o processo de autenticação do usuário iniciado (ou continuado) a partir de um aplicativo [Programador](#programmer), e é identificado exclusivamente por um [código de autenticação](#code).
@@ -45,6 +48,10 @@ A sessão de autenticação também pode indicar o aplicativo [Programador](#pro
 A autorização é um processo que permite que um usuário acesse conteúdo protegido ([resource](#resource)) de um catálogo [Programmer](#programmer) com base na assinatura [MVPD](#mvpd) própria, após validar os direitos de usuário com o [MVPD](#mvpd).
 
 ### C {#c}
+
+#### Credenciais do cliente {#client-credentials}
+
+As credenciais do cliente são um conjunto de valores exclusivos gerados durante o processo [Registro Dinâmico de Cliente (DCR)](#dcr) e devem ser usados para obter um [token de acesso](#access-token).
 
 #### Configuração {#configuration}
 
@@ -114,6 +121,8 @@ O token de mídia é um token gerado pela Autenticação Adobe Pass como resulta
 
 O token de mídia é passado para o [Programador](#programmer), que o valida para garantir a segurança de acesso desse [recurso](#resource).
 
+Sinônimo do termo anterior usado token de autorização curto.
+
 #### Verificador de token de mídia {#media-token-verifier}
 
 O Verificador de Token de Mídia é uma biblioteca distribuída pela Autenticação Adobe Pass que é responsável por verificar a autenticidade de um [token de mídia](#media-token).
@@ -138,7 +147,15 @@ O parceiro é identificado por um valor único (por exemplo, &quot;apple&quot;) 
 
 #### Pré-autorização {#preauthorization}
 
-A pré-autorização é um processo que permite ao usuário visualizar a lista de [recursos](#resource) de um catálogo [Programador](#programmer) ao qual ele teria direito de acesso, após validar os direitos de usuário com o [MVPD](#mvpd).
+A pré-autorização é um processo que permite que um usuário visualize um subconjunto de [recursos](#resource) de um catálogo [Programador](#programmer) ao qual ele teria direito de acesso, após validar os direitos de usuário com o [MVPD](#mvpd).
+
+Sinônimo de [Comprovação](#preflight).
+
+#### Comprovação {#preflight}
+
+A comprovação é um processo que permite que um usuário visualize um subconjunto de [recursos](#resource) de um catálogo [Programador](#programmer) ao qual ele teria direito de acesso, após validar os direitos de usuário com o [MVPD](#mvpd).
+
+Sinônimo de [Pré-autorização](#preauthorization).
 
 #### Aplicativo primário (programador) {#primary-application}
 
@@ -147,6 +164,8 @@ O aplicativo primário se refere a um aplicativo [Programador](#programmer) que 
 #### Perfil {#profile}
 
 O perfil é um conceito de Autenticação do Adobe Pass que armazena informações sobre a data de início e de término da autenticação do usuário, os [metadados do usuário](#user-metadata) junto com outros campos que indicam o método de obtenção da autenticação (por exemplo, &quot;regular&quot;, &quot;degradado&quot;, &quot;temporário&quot;, &quot;logon único&quot; etc.).
+
+Sinônimo do antigo termo usado como token de autenticação.
 
 #### Programador {#programmer}
 
@@ -270,7 +289,7 @@ O agente do usuário se refere a um navegador ou componente semelhante (específ
 
 #### Metadados do usuário {#user-metadata}
 
-Os metadados do usuário se referem a atributos específicos do usuário (por exemplo, códigos postais, classificações dos pais, IDs do usuário etc.) que são mantidos pelo [MVPD](#mvpd) e fornecidos pela Autenticação Adobe Pass como parte de um [perfil](#profile).
+Os metadados do usuário se referem a atributos específicos do usuário (por exemplo, códigos postais, classificações dos pais, IDs de usuário etc.) que são mantidos pelo [MVPD](#mvpd) e fornecidos pela Autenticação Adobe Pass como parte de um [perfil](#profile).
 
 Para obter mais informações, consulte a documentação dos [Metadados do usuário](/help/authentication/user-metadata-feature.md).
 

@@ -2,7 +2,7 @@
 title: Integrações do painel TVE
 description: Saiba mais sobre as integrações entre seus canais e MVPDs e como gerenciar integrações.
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
 source-wordcount: '2093'
 ht-degree: 0%
@@ -328,7 +328,7 @@ Para criar uma nova integração com um novo MVPD na configuração atual, siga 
 Uma nova integração será criada somente após [revisar e enviar alterações](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 
-## Desabilitar integração {#disable-integratgion}
+## Desabilitar integração {#disable-integration}
 
 Para desabilitar uma integração, siga estas etapas:
 
