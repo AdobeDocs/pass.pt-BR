@@ -2,9 +2,9 @@
 title: Guia do Apple SSO (REST API V2)
 description: Guia do Apple SSO (REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
+source-git-commit: dbf68d75962e3e34f0c569c409f8c98ae6b9e036
 workflow-type: tm+mt
-source-wordcount: '3410'
+source-wordcount: '3442'
 ht-degree: 0%
 
 ---
@@ -508,7 +508,10 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
    > * Todos os cabeçalhos _necessários_, como `Authorization`, `AP-Device-Identifier`
    > * Todos os _parâmetros e cabeçalhos_ opcionais
 
-1. **Indique a próxima ação:** A resposta do ponto de extremidade de logout do Adobe Pass contém os dados necessários para orientar o aplicativo de streaming em relação à próxima ação.
+1. **Indique a próxima ação:** A resposta do ponto de extremidade de logout do Adobe Pass contém os dados necessários para orientar o aplicativo de streaming em relação à próxima ação:
+   * O atributo `url` está ausente, pois o usuário precisa interagir com o nível do parceiro (sistema) para concluir o fluxo de logout.
+   * O atributo `actionName` está definido como &quot;partner_logout&quot;.
+   * O atributo `actionType` está definido como &quot;partner_interative&quot;.
 
    >[!IMPORTANT]
    >
