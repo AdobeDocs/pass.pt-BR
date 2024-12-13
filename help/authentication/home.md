@@ -2,26 +2,20 @@
 title: Bem- vindo ao Adobe&reg; Passar a autenticação!
 description: Bem- vindo ao Adobe&reg; Visão geral da autenticação de aprovação
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '331'
+source-wordcount: '296'
 ht-degree: 0%
 
 ---
 
 # Bem-vindo à Autenticação Adobe® Pass {#pt-auth-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 A Autenticação do Adobe Pass é uma solução de direito para a TV Everywhere, que fornece uma estrutura modular para determinar se alguém que solicita acesso a um recurso tem direito a ele. Para participar da solução de direito de autenticação da Adobe Pass, os Provedores de conteúdo (Programadores) e os Provedores de TV por assinatura (MVPDs) integram seus sistemas de direito aos workflows de autenticação da Adobe Pass. Este site de documentação fornece detalhes sobre o processo de integração, bem como dicas para parceiros existentes.
-
-Seu feedback é sempre apreciado!
-
->[!NOTE]
->
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Ajuda e perguntas frequentes populares {#help-faqs}
 
@@ -39,13 +33,11 @@ Seu feedback é sempre apreciado!
 
 >[!IMPORTANT]
 >
->Se você não encontrar uma resposta, [**Envie-nos um email**](mailto:tve-support@adobe.com).
+> Se você não encontrar uma resposta, [**Envie-nos um email**](mailto:tve-support@adobe.com).
 >
->[Enviar um email para nossa equipe de suporte](mailto:tve-support@adobe.com) também é a primeira etapa para qualquer relatório de problema ou incidente.
+> [Enviar um email para nossa equipe de suporte](mailto:tve-support@adobe.com) também é a primeira etapa para qualquer relatório de problema ou incidente.
 >
->Se você tiver um problema de [GRAVIDADE 1 EM TEMPO REAL](/help/authentication/kickstart/escalation-procedures.md) e tiver enviado um email para nós e 30 minutos tiverem decorrido sem uma resposta, consulte o documento [Procedimentos de Escalonamento](/help/authentication/kickstart/escalation-procedures.md) para obter os números de telefone para ligar.
->
-
+> Se você tiver um problema de [GRAVIDADE 1 EM TEMPO REAL](/help/authentication/kickstart/escalation-procedures.md), tiver enviado um email para nós e 30 minutos tiverem decorrido sem uma resposta, consulte o documento [Procedimentos de Escalonamento](/help/authentication/kickstart/escalation-procedures.md) para obter os números de telefone para ligar.
 
 ## Para encontrar o que você precisa {#how-to-search}
 

@@ -2,9 +2,9 @@
 title: Impedir que os MVPDs apareçam na Caixa de Diálogo de Seleção
 description: Impedir que os MVPDs apareçam na Caixa de Diálogo de Seleção
 exl-id: 20faf501-c006-45e2-a725-fb1273ecaffe
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '104'
+source-wordcount: '126'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!IMPORTANT]
+>
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 ## Problema {#issue-prevent-mvpd-sel-dialog}
 

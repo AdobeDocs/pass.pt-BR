@@ -2,9 +2,9 @@
 title: Pré-autorização da API do iOS/tvOS
 description: Pré-autorização da API do iOS/tvOS
 exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '414'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!IMPORTANT]
+>
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 A API pré-autorizada pode ser usada para obter uma decisão de pré-autorização para um ou mais recursos, dessa forma, o aplicativo pode implementar dicas de interface do usuário e/ou filtragem de conteúdo.
 

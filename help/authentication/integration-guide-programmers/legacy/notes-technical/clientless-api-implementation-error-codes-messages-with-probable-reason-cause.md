@@ -2,9 +2,9 @@
 title: Implementação da API sem cliente - Erro códigos / Mensagens com motivo provável / causa
 description: Implementação da API sem cliente - Erro códigos / Mensagens com motivo provável / causa
 exl-id: 616e35fc-9b72-422b-9a05-e6248bd52490
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '205'
+source-wordcount: '227'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >O conteúdo neste página é fornecido apenas para fins informativos. O uso dessa API exige uma licença atual do Adobe Systems. Não é permitida nenhuma utilização não autorizada.
+
+>[!IMPORTANT]
+>
+> Certifique-se de permanecer informado sobre as últimas Adobe Pass Authentication anúncios de produtos e as linhas do tempo de descontinuação agregadas no [página Anúncios](/help/authentication/product-announcements.md) do produto.
 
 </br>
 
@@ -33,7 +37,7 @@ ht-degree: 0%
 1. Você pode estar entrando em problemas de script entre domínios
 1. A falsificação adequada deve ser adicionada ao arquivo /etc/hosts
 
-## Erro: 400 Solicitação inválida
+## Erro: 400 Solicitação incorreta
 
 ### Causas:
 
@@ -51,9 +55,9 @@ ht-degree: 0%
 
 ### Causas:
 
-1. O nome de usuário e o senha não correspondem
+1. O nome de usuário e a senha não correspondem
 2. O logon pode ter sido desativado
-3. Verificar se o logon é para produção ou preparo
+3. Verifique se a fazer logon é para produção ou armazenamento temporário
 
 
 <!--

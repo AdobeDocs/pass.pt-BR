@@ -2,9 +2,9 @@
 title: Compreensão das IDs de usuário
 description: Compreensão das IDs de usuário
 exl-id: 813a8501-db72-4850-a387-c8db6120db80
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '625'
 ht-degree: 1%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 1%
 >[!NOTE]
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!IMPORTANT]
+>
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 Conceitualmente, cada usuário que inicia um fluxo de direitos é associado a uma única ID de usuário. No entanto, durante um fluxo de direitos, essa ID de usuário pode ser apresentada de diferentes maneiras, dependendo da API da qual você obtém a ID.
 

@@ -2,9 +2,9 @@
 title: Ativação dos Serviços de Qualificações da Adobe Pass para um Programador no Xbox 360 e no Xbox One Clientless
 description: Ativação dos Serviços de Qualificações da Adobe Pass para um Programador no Xbox 360 e no Xbox One Clientless
 exl-id: ff7254de-9ea4-4c27-a186-d1c2eea12222
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '476'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
-
+>[!IMPORTANT]
+>
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 
 1. O Programador cria um tíquete do Zendesk para habilitar a solução sem cliente Xbox 360/One for Adobe Pass Authentication fornecendo as seguintes informações:

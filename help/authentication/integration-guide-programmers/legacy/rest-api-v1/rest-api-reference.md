@@ -2,9 +2,9 @@
 title: Referência da API REST
 description: Referência da API Rest
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: 3e69473bdb9818416e67b03e6c35d24dc3e0f991
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '669'
 ht-degree: 3%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 3%
 >[!NOTE]
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!IMPORTANT]
+>
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 ## Mecanismo de limitação
 

@@ -2,9 +2,9 @@
 title: Suporte para logon único
 description: Suporte para logon único
 exl-id: edc3719e-c627-464c-9b10-367a425698c6
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1145'
+source-wordcount: '1167'
 ht-degree: 1%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 1%
 >[!NOTE]
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+
+>[!IMPORTANT]
+>
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 ## Visão geral {#overview-sso-support}
 

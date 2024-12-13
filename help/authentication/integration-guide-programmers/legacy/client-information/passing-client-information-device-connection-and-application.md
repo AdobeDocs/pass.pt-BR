@@ -2,9 +2,9 @@
 title: Transmissão de informações do cliente (dispositivo, conexão e aplicativo)
 description: Transmissão de informações do cliente (dispositivo, conexão e aplicativo)
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1666'
 ht-degree: 3%
 
 ---
@@ -15,6 +15,9 @@ ht-degree: 3%
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
+>[!IMPORTANT]
+>
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 ## Escopo {#pass-client-info-scope}
 
