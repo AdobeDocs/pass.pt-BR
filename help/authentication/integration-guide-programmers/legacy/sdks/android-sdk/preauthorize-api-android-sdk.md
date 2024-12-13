@@ -2,14 +2,14 @@
 title: Pré-autorizar o Android
 description: Pré-autorizar o Android
 exl-id: b5337595-135f-4981-a578-2da432f125d6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '195'
+source-wordcount: '196'
 ht-degree: 0%
 
 ---
 
-# Pré-autorizar {#preuthorize-android}
+# (Herdado) Pré-autorizar {#preuthorize-android}
 
 >[!NOTE]
 >
@@ -22,7 +22,7 @@ O método da API pré-autorizada precisa ser usado pelos aplicativos para obter 
 
 
 
-No caso de um erro inesperado (por exemplo, problema de rede, endpoint de autorização MVPD indisponível, etc.) ocorrer quando uma solicitação de API pré-autorizada for processada pelos serviços de autenticação da Adobe Pass, uma ou várias informações de erro separadas serão incluídas para os recursos afetados como parte do resultado da resposta da API pré-autorizada.
+Em caso de erro inesperado (por exemplo, problema de rede, endpoint de autorização do MVPD indisponível etc.) quando uma solicitação de API pré-autorizada é processada pelos serviços de autenticação da Adobe Pass, uma ou várias informações de erro separadas serão incluídas para os recursos afetados como parte do resultado da resposta da API pré-autorizada.
 
 
 ## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`

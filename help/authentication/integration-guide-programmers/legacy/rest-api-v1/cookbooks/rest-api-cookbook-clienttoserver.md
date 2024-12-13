@@ -2,14 +2,14 @@
 title: Cookbook da API REST (cliente para servidor)
 description: Cliente do guia da API rest para o servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '876'
+source-wordcount: '877'
 ht-degree: 0%
 
 ---
 
-# Cookbook da API REST (cliente para servidor) {#rest-api-cookbook-client-to-server}
+# Cookbook da API REST (herdada) (cliente para servidor) {#rest-api-cookbook-client-to-server}
 
 >[!NOTE]
 >
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## Visão geral {#overview}
 
-Este documento fornece instruções passo a passo para a equipe de engenharia de um programador integrar um &quot;dispositivo inteligente&quot; (console de jogos, aplicativo de TV inteligente, set top box, etc.) com a autenticação do Adobe Pass usando os serviços de API REST. Essa abordagem de cliente para servidor, que usa REST APIs em vez de um SDK cliente, permite um suporte mais amplo de diferentes plataformas para as quais o desenvolvimento de um número significativo de SDKs únicos não seria viável. Para obter uma visão geral técnica abrangente de como a solução sem cliente funciona, consulte a [Visão geral técnica sem cliente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/rest-api-overview.md).
+Este documento fornece instruções passo a passo para a equipe de engenharia de um programador integrar um &quot;dispositivo inteligente&quot; (console de jogos, aplicativo de TV inteligente, set top box, etc.) com a autenticação do Adobe Pass usando os serviços de API REST. Essa abordagem de cliente para servidor, que usa REST APIs em vez de um SDK cliente, permite um suporte mais amplo de diferentes plataformas para as quais o desenvolvimento de um número significativo de SDKs únicos não seria viável. Para obter uma visão geral técnica abrangente de como a solução sem cliente funciona, consulte a [Visão geral técnica sem cliente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md).
 
 
 Essa abordagem requer dois componentes (aplicativo de streaming e aplicativo AuthN) para concluir os fluxos necessários: inicialização, registro, autorização e fluxos de mídia de visualização no aplicativo de streaming e o fluxo de autenticação no aplicativo AuthN.
@@ -36,10 +36,10 @@ Em uma solução cliente para servidor que funciona, os seguintes componentes es
 | Tipo | Componente | Descrição |
 | --- | --- | --- |
 | Dispositivo de transmissão | Aplicativo de transmissão | O aplicativo Programador que reside no dispositivo de transmissão do usuário e reproduz o vídeo autenticado. |
-| | \[Opcional\] Módulo AuthN | Se o dispositivo de transmissão tiver um agente do usuário (ou seja, navegador da Web), o módulo AuthN será responsável pela autenticação do usuário no IdP do MVPD. |
+| | \[Opcional\] Módulo AuthN | se o dispositivo de transmissão tiver um agente do usuário (ou seja, navegador da Web), o módulo AuthN será responsável pela autenticação do usuário no MVPD IdP. |
 | \[Opcional\] Dispositivo AuthN | Aplicativo AuthN | se o dispositivo de transmissão não tiver um agente de usuário (ou seja, navegador da Web), o aplicativo AuthN será um aplicativo Web de programador acessado de um dispositivo separado do usuário usando um navegador da Web. |
 | Infraestrutura Adobe | Serviço Adobe Pass | Um serviço que se integra ao MVPD IdP e ao Serviço AuthZ e fornece decisões de autenticação e autorização. |
-| Infraestrutura MVPD | IdP MVPD | Um ponto de extremidade MVPD que fornece um serviço de autenticação baseado em credenciais para validar a identidade do usuário. |
+| Infraestrutura MVPD | MVPD IdP | Um terminal da MVPD que fornece um serviço de autenticação baseado em credenciais para validar a identidade do usuário. |
 | | Serviço MVPD AuthZ | Um terminal MVPD que fornece decisões de autorização com base nas assinaturas do usuário, controles dos pais etc. |
 
 
@@ -134,13 +134,13 @@ usuário.
 
 Alguns dispositivos fornecem suporte dedicado para Logon Único de Parceiro (SSO):
 
-* [APPLE SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v1.md)
+* [APPLE SSO](/help/authentication/integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
 
 ## Logon único na plataforma {#platform-sso}
 
 Alguns dispositivos fornecem suporte dedicado para Logon único da plataforma (SSO):
 
-* [AMAZON SSO](../../../features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [AMAZON SSO](../../sso-access/amazon-sso-cookbook-rest-api-v1.md)
 * [SSO do Roku](../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
 
 ## TempPass e TempPass promocional para API REST {#temppass}

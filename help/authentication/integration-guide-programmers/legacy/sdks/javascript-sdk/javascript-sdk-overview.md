@@ -1,15 +1,15 @@
 ---
-title: Visão geral do SDK do JavaScript
-description: Visão geral do SDK do JavaScript
+title: Visão geral do JavaScript SDK
+description: Visão geral do JavaScript SDK
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '511'
 ht-degree: 0%
 
 ---
 
-# Visão geral do SDK do JavaScript {#javascript-sdk-overview}
+# Visão geral do JavaScript SDK (herdado) {#javascript-sdk-overview}
 
 >[!NOTE]
 >
@@ -27,11 +27,11 @@ O fluxo de direitos de Autenticação geral do Adobe Pass é coberto pelo [Fluxo
 >
 >Este documento descreve a implementação de uma solução Web para desktop. A biblioteca do JavaScript não é compatível com plataformas móveis (por exemplo, Safari no iOS, Chrome no Android). Use nossos SDKs nativos se quiser direcionar a uma plataforma móvel (iOS, Android, Windows).
 
-## Criando a caixa de diálogo Seleção de MVPD {#creating-the-mvpd-selection-dialog}
+## Criando a caixa de diálogo de seleção do MVPD {#creating-the-mvpd-selection-dialog}
 
-Para que um usuário faça logon em seu MVPD e se torne autenticado, sua página ou player deve fornecer uma maneira de o usuário identificar seu MVPD. Uma versão padrão de uma caixa de diálogo de seleção MVPD é fornecida para desenvolvimento. Para uso em produção, você deve implementar seu próprio seletor de MVPD.
+Para que um usuário faça logon em sua MVPD e se torne autenticado, sua página ou reprodutor deve fornecer uma maneira de o usuário identificar sua MVPD. Uma versão padrão de uma caixa de diálogo de seleção do MVPD é fornecida para desenvolvimento. Para uso em produção, você deve implementar seu próprio seletor de MVPD.
 
-Se você já souber quem é o provedor do cliente, poderá [definir o MVPD de forma programática](/help/authentication/home.md), sem interação com o usuário. A técnica é a mesma, mas ignora a etapa de chamar a caixa de diálogo Seletor de provedor e pedir ao cliente para selecionar seu MVPD.
+Se você já souber quem é o provedor do cliente, poderá [definir o MVPD de forma programática](/help/authentication/home.md), sem interação com o usuário. A técnica é a mesma, mas ignora a etapa de chamar a caixa de diálogo Seletor de provedor e pedir ao cliente para selecionar sua MVPD.
 
 ## Exibindo o Provedor de Serviços {#displaying-the-service-provider}
 
@@ -76,7 +76,7 @@ A amostra de código a seguir demonstra como descobrir e exibir o provedor de se
 ```
 
 
-**JavaScript** Este arquivo do JavaScript consulta o Habilitador de Acesso para o provedor atual se o usuário já estiver conectado e exibe o resultado na seção da página reservada para ele. Também implementa uma caixa de diálogo do seletor de MVPD:
+**JavaScript** Este arquivo do JavaScript consulta o Habilitador de Acesso para o provedor atual se o usuário já estiver conectado e exibe o resultado na seção da página reservada para ele. Também implementa uma caixa de diálogo do seletor do MVPD:
 
 ```JS
     $(function() {
@@ -203,11 +203,11 @@ Há alguns casos em que o reprodutor não é responsável por gerenciar logouts 
 
 
 
-- **Quando o logout é iniciado de um site que não está integrado à Autenticação Adobe Pass.** Nesse caso, o MVPD pode invocar o serviço de Logout único de autenticação da Adobe Pass por meio de um redirecionamento do navegador. (No momento, não há suporte para invocar o SLO por meio de uma chamada backchannel.)
+- **Quando o logout é iniciado de um site que não está integrado à Autenticação Adobe Pass.** Nesse caso, o MVPD pode invocar o serviço de Logout único da autenticação da Adobe Pass por meio de um redirecionamento do navegador. (No momento, não há suporte para invocar o SLO por meio de uma chamada backchannel.)
 
 >[!NOTE]
 >
->Se o usuário deixar a máquina ociosa por tempo suficiente para que os tokens expirem, ainda poderá retornar à sessão e iniciar o logout com êxito. A autenticação da Adobe Pass garante que todos os tokens sejam excluídos e notifica o MVPD para excluir sua sessão.
+>Se o usuário deixar a máquina ociosa por tempo suficiente para que os tokens expirem, ainda poderá retornar à sessão e iniciar o logout com êxito. A autenticação da Adobe Pass garante que todos os tokens sejam excluídos e notifica a MVPD para excluir sua sessão.
 
 O código JavaScript a seguir demonstra o logout (desautenticação) de um usuário autenticado no momento:
 

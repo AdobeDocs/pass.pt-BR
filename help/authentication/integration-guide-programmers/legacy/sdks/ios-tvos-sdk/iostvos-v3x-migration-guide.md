@@ -2,14 +2,14 @@
 title: Guia de migração do iOS/tvOS v3.x
 description: Guia de migração do iOS/tvOS v3.x
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '559'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
 
-# Guia de migração do iOS/tvOS v3.x {#iostvos-v3x-migration-guide}
+# Guia de migração do iOS/tvOS v3.x (herdado) {#iostvos-v3x-migration-guide}
 
 >[!NOTE]
 >
@@ -89,7 +89,7 @@ Em seu `AppDelegate`, adicione o seguinte método:
 
 ## Atualizar a assinatura do método setRequestor {#update-setreq}
 
-Como o novo SDK está usando um novo mecanismo de autenticação, não há necessidade do parâmetro signedRequestId nem da chave pública e do segredo (para tvOS). O método `setRequestor` é simplificado e precisa apenas da requestorID.
+Como a nova SDK está usando um novo mecanismo de autenticação, não há necessidade do parâmetro signedRequestId nem da chave pública e do segredo (para tvOS). O método `setRequestor` é simplificado e precisa apenas da requestorID.
 
 ### iOS
 

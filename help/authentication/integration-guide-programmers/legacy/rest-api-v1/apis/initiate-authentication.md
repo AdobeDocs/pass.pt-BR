@@ -2,14 +2,14 @@
 title: Iniciar autenticação
 description: Iniciar autenticação
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '291'
+source-wordcount: '292'
 ht-degree: 0%
 
 ---
 
-# Iniciar autenticação {#initiate-authentication}
+# (Herdado) Iniciar autenticação {#initiate-authentication}
 
 >[!NOTE]
 >
@@ -36,13 +36,13 @@ ht-degree: 0%
 
 ## Descrição {#description}
 
-Inicia o processo de autenticação informando sobre um evento de seleção MVPD. Cria um registro no banco de dados de Autenticação do Adobe Pass, que é reconciliado quando uma resposta bem-sucedida é recebida do MVPD.
+Inicia o processo de autenticação informando sobre um evento de seleção do MVPD. Cria um registro no banco de dados de Autenticação do Adobe Pass, que é reconciliado quando uma resposta bem-sucedida é recebida do MVPD.
 
 
 
 | Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/authenticate | Módulo AuthN | 1. requestor_id (Obrigatório)</br>2.  mso_id (Obrigatório)</br>3.  reg_code (obrigatório)</br>4.  nome_domínio (Obrigatório)</br>5.  noflash=true - </br>    (Obrigatório, Parâmetro residual)</br>6.  no_iframe=true (Obrigatório, parâmetro Residual)</br>7.  parâmetros extras (Opcional)</br>8.  redirect_url (Obrigatório) | GET | O aplicativo web de logon é redirecionado para a página de logon do MVPD. | 302 para implementações de redirecionamento completo |
+| &lt;SP_FQDN>/api/v1/authenticate | Módulo AuthN | 1. requestor_id (Obrigatório)</br>2.  mso_id (Obrigatório)</br>3.  reg_code (obrigatório)</br>4.  nome_domínio (Obrigatório)</br>5.  noflash=true - </br>    (Obrigatório, Parâmetro residual)</br>6.  no_iframe=true (Obrigatório, parâmetro Residual)</br>7.  parâmetros extras (Opcional)</br>8.  redirect_url (Obrigatório) | GET | O Aplicativo web de logon é redirecionado para a página de logon do MVPD. | 302 para implementações de redirecionamento completo |
 
 {style="table-layout:auto"}
 
@@ -50,7 +50,7 @@ Inicia o processo de autenticação informando sobre um evento de seleção MVPD
 | Parâmetro de entrada | Descrição |
 | --- | --- |
 | requestor_id | O solicitante do Programador para o qual esta operação é válida. |
-| mso_id | A ID de MVPD para a qual esta operação é válida. |
+| mso_id | A MVPD ID para a qual esta operação é válida. |
 | reg_code | O código de registro gerado pelo serviço Reggie. |
 | nome_do_domínio | O domínio de origem. |
 | redirect_url | O URL de redirecionamento do Aplicativo Web de Logon após a conclusão da autenticação. |
@@ -93,7 +93,7 @@ Inicia o processo de autenticação informando sobre um evento de seleção MVPD
 
 * O valor do parâmetro `domain_name` deve ser definido como um dos nomes de domínio registrados com a Autenticação Adobe Pass. Para obter mais detalhes, consulte [Registro e Inicialização](/help/authentication/kickstart/programmer-overview.md).
 
-* [Evite usar &#39;&amp;&#39;reg\_code in /authenticate request (Nota técnica)](/help/authentication/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
+* [Evite usar &#39;&amp;&#39;reg\_code in /authenticate request (Nota técnica)](/help/authentication/integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
 
 * O parâmetro `redirect_url` deve ser o último a ser ordenado
 

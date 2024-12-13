@@ -1,15 +1,15 @@
 ---
-title: SDK do Android com registro dinâmico do cliente
-description: SDK do Android com registro dinâmico do cliente
+title: Android SDK com registro dinâmico do cliente
+description: Android SDK com registro dinâmico do cliente
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1278'
+source-wordcount: '1279'
 ht-degree: 0%
 
 ---
 
-# SDK do Android com registro dinâmico do cliente {#android-sdk-with-dynamic-client-registration}
+# (Herdado) Android SDK com Registro de cliente dinâmico {#android-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Introdução {#Intro}
 
-O SDK do Android AccessEnabler para Android foi modificado para habilitar a Autenticação sem usar cookies de sessão. À medida que mais e mais navegadores restringem o acesso a cookies, outro método precisa ser usado para permitir a autenticação.
+O Android AccessEnabler SDK for Android foi modificado para habilitar a Autenticação sem usar cookies de sessão. À medida que mais e mais navegadores restringem o acesso a cookies, outro método precisa ser usado para permitir a autenticação.
 
 Para o Android, o uso das Guias personalizadas do Chrome restringe o acesso a cookies de outros aplicativos.
 
@@ -28,17 +28,17 @@ Para o Android, o uso das Guias personalizadas do Chrome restringe o acesso a co
 
 >[!NOTE]
 >
->Para versões mais antigas do Android sem o suporte a Guias personalizadas do Chrome, o usará a autenticação do WebView semelhante às versões mais antigas do SDK AccessEnabler.
+>Para versões mais antigas do Android sem o suporte a Guias personalizadas do Chrome, a autenticação do WebView será usada de forma semelhante às versões mais antigas do AccessEnabler SDK.
 
 
 ## Registro de cliente dinâmico {#DCR}
 
-O Android SDK v3.0+ usará o procedimento Registro de Cliente Dinâmico conforme definido em [Visão Geral do Registro de Cliente Dinâmico](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+O Android SDK v3.0+ usará o procedimento de Registro Dinâmico do Cliente conforme definido na [Visão Geral do Registro Dinâmico do Cliente](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ## Demonstração de recursos {#Demo}
 
-Assista a [este webinário](https://my.adobeconnect.com/pzkp8ujrigg1/), que fornece mais contexto sobre o recurso e contém uma demonstração sobre como gerenciar as instruções de software usando o Painel TVE e como testar as geradas usando um aplicativo de demonstração fornecido pelo Adobe como parte do SDK do Android.
+Assista a [este webinário](https://my.adobeconnect.com/pzkp8ujrigg1/), que fornece mais contexto sobre o recurso e contém uma demonstração sobre como gerenciar as instruções de software usando o Painel TVE e como testar as geradas usando um aplicativo de demonstração fornecido pelo Adobe como parte do Android SDK.
 
 ## Alterações na API {#API}
 
@@ -90,7 +90,7 @@ Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante
 **Parâmetros:**
 
 - *requestorID*: o identificador exclusivo associado ao Canal. Transmita o identificador exclusivo atribuído pelo Adobe ao seu site quando você se registrou pela primeira vez no serviço de autenticação da Adobe Pass.
-- *urls*: parâmetro opcional; por padrão, o provedor de serviços da Adobe é usado [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). Essa matriz permite especificar endpoints para serviços de autenticação e autorização fornecidos pelo Adobe (instâncias diferentes podem ser usadas para fins de depuração). Você pode usar essa opção para especificar várias instâncias do provedor de serviços de Autenticação da Adobe Pass. Ao fazer isso, a lista MVPD é composta pelos endpoints de todos os provedores de serviços. Cada MVPD está associado ao provedor de serviços mais rápido; ou seja, o provedor que respondeu primeiro e que oferece suporte a esse MVPD.
+- *urls*: parâmetro opcional; por padrão, o provedor de serviços da Adobe é usado [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). Essa matriz permite especificar endpoints para serviços de autenticação e autorização fornecidos pelo Adobe (instâncias diferentes podem ser usadas para fins de depuração). Você pode usar essa opção para especificar várias instâncias do provedor de serviços de Autenticação da Adobe Pass. Ao fazer isso, a lista do MVPD é composta pelos endpoints de todos os provedores de serviços. Cada MVPD está associado ao provedor de serviços mais rápido; ou seja, o provedor que respondeu primeiro e que oferece suporte a esse MVPD.
 
 Obsoleto:
 
@@ -100,7 +100,7 @@ Obsoleto:
 
 ### logout
 
-**Descrição:** Use este método para iniciar o fluxo de logout. O logout é o resultado de uma série de operações de redirecionamento HTTP devido ao fato de que o usuário precisa ser desconectado dos servidores de Autenticação do Adobe Pass e também dos servidores do MVPD. Como resultado, esse fluxo abrirá uma janela ChromeCustomTab para executar o logout.
+**Descrição:** Use este método para iniciar o fluxo de logout. O logout é o resultado de uma série de operações de redirecionamento HTTP devido ao fato de que o usuário precisa ser desconectado dos servidores de autenticação da Adobe Pass e também dos servidores da MVPD. Como resultado, esse fluxo abrirá uma janela ChromeCustomTab para executar o logout.
 
 | Chamada de API: iniciar o fluxo de logout |
 | --- |
@@ -119,7 +119,7 @@ Obsoleto:
 
 a. Obter software\_statement e redirect\_uri da Adobe Pass ( Painel TVE )
 
-b. Há duas opções para transmitir esses valores para o SDK do Adobe Pass:
+b. Há duas opções para transmitir esses valores para o Adobe Pass SDK:
 
 Em strings.xml, adicione :
 
@@ -136,28 +136,28 @@ redirectUrl)
 
 a. setRequestor(requestor\_id)
 
-O SDK executará as seguintes operações:
+O SDK realizará as seguintes operações:
 
-- registrar aplicativo: usando **software\_statement**, o SDK obterá um **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Essas informações serão armazenadas no armazenamento interno do aplicativo.
+- registrar aplicativo: usando **software\_statement**, a SDK obterá um **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Essas informações serão armazenadas no armazenamento interno do aplicativo.
 
-- obtenha um **access\_token** usando client\_id, client\_secret e grant\_type=&quot;client\_credentials&quot;. Esse access\_token será usado em cada chamada feita pelo SDK para servidores da Adobe Pass
+- obtenha um **access\_token** usando client\_id, client\_secret e grant\_type=&quot;client\_credentials&quot;. Esse access\_token será usado em cada chamada feita pela SDK aos servidores da Adobe Pass
 
 **Respostas de Erro de Token:**
 
 | Respostas de erro | | |
 | --- | --- | --- |
 | HTTP 400 (Solicitação inválida) | {&quot;error&quot;: &quot;invalid\_request&quot;} | A solicitação não tem um parâmetro obrigatório, inclui um valor de parâmetro sem suporte (diferente do tipo de concessão), repete um parâmetro, inclui várias credenciais, usa mais de um mecanismo para autenticar o cliente ou está malformada. |
-| HTTP 400 (Solicitação inválida) | {&quot;error&quot;: &quot;invalid\_client&quot;} | Falha na autenticação do cliente porque o cliente era desconhecido. O SDK DEVE se registrar no servidor de autorização novamente. |
+| HTTP 400 (Solicitação inválida) | {&quot;error&quot;: &quot;invalid\_client&quot;} | Falha na autenticação do cliente porque o cliente era desconhecido. O SDK DEVE se registrar novamente no servidor de autorização. |
 | HTTP 400 (Solicitação inválida) | {&quot;error&quot;: &quot;unauthorized\_client&quot;} | O cliente autenticado não está autorizado a usar este tipo de concessão de autorização. |
 
-- caso um MVPD exija Autenticação Passiva, uma Guia Personalizada do Chrome será aberta para execução passiva com esse MVPD e será fechada ao concluir
+- caso uma MVPD exija a Autenticação passiva, uma Guia personalizada do Chrome será aberta para ser executada de forma passiva com essa MVPD e será fechada ao concluir
 
 b. checkAuthentication()
 
 - true : ir para Autorização
-- false : ir para Selecionar MVPD
+- false : acesse Selecionar MVPD
 
-c. getAuthentication: o SDK incluirá **access_token** nos parâmetros de chamada
+c. getAuthentication : o SDK incluirá **access_token** nos parâmetros de chamada
 
 - mvpd lembrado : ir para setSelectedProvider(mvpd_id)
 - mvpd não selecionado : displayProviderDialog
@@ -170,14 +170,14 @@ d. setSelectedProvider
 - logon cancelado : redefinir seleção de MVPD
 - O esquema de URL é estabelecido como &quot;adobepass://redirect_uri&quot; para capturar quando a autenticação é concluída
 
-e. get/checkAuthorization: o SDK incluirá **access_token** no cabeçalho como Autorização: Portador **access_token**
+e. get/checkAuthorization : o SDK incluirá **access_token** no cabeçalho como Authorization: Bearer **access_token**
 
 - se a autorização for bem-sucedida, será feita uma chamada para obter a
 token de mídia
 
 f. logout:
 
-- O SDK excluirá um token válido para o solicitante atual (as autenticações obtidas por outros aplicativos e não por meio do SSO permanecerão válidas)
+- O SDK excluirá um token válido para o solicitante atual (as autenticações obtidas por outros aplicativos e não via SSO permanecerão válidas)
 - O SDK abrirá as Guias personalizadas do Chrome para alcançar o ponto de extremidade de logout mvpd_id. Depois de concluídas, as Guias personalizadas do Chrome serão fechadas
 - O esquema de URL é estabelecido como &quot;adobepass://logout&quot; para capturar o momento em que o logout é concluído
 - logout acionará um sendTrackingData(new Event(EVENT_LOGOUT,USER_NOT_AUTHENTICATED_ERROR) e um retorno de chamada : setAuthenticationStatus(0,&quot;Logout&quot;)

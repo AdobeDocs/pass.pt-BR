@@ -2,7 +2,7 @@
 title: Visão Geral do Monitoramento do Serviço de Direito
 description: Visão Geral do Monitoramento do Serviço de Direito
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 0%
@@ -71,11 +71,11 @@ A API ESM geralmente não está disponível.  Entre em contato com o representan
 | eap | O provedor de autenticação externa quando o fluxo de autenticação é executado por meio de um sistema externo. </br> Os valores podem ser: </br> - N/A - a autenticação foi fornecida pela Autenticação Adobe Pass </br> - Apple - o sistema externo que forneceu a autenticação é o Apple |
 | os-family | Sistema operacional em execução no dispositivo |
 | browser-family | Agente do usuário usado para acessar a autenticação da Adobe Pass |
-| cdt | A plataforma do dispositivo (alternativa), usada atualmente para Clientless. </br> Os valores podem ser: </br> - N/A - o evento não foi originado de um SDK sem Cliente </br> - Desconhecido - Como o parâmetro deviceType de uma API sem Cliente é opcional, há chamadas que não contêm nenhum valor. </br> - qualquer outro valor que tenha sido enviado por meio da API sem cliente, por exemplo xbox, appletv, roku etc. </br> |
+| cdt | A plataforma do dispositivo (alternativa), usada atualmente para Clientless. </br> Os valores podem ser: </br> - N/A - o evento não se originou de um SDK sem Cliente </br> - Desconhecido - Como o parâmetro deviceType de uma API sem Cliente é opcional, há chamadas que não contêm nenhum valor. </br> - qualquer outro valor que tenha sido enviado por meio da API sem cliente, por exemplo xbox, appletv, roku etc. </br> |
 | platform-version | A versão do SDK sem cliente |
 | os-type | Sistema operacional em execução no dispositivo, alternativo (não usado no momento) |
 | browser-version | Versão do agente do usuário |
-| nsdk | O SDK do cliente usado (android, fireTV, js, iOS, tvOS, não sdk) |
+| nsdk | O SDK cliente usado (android, fireTV, js, iOS, tvOS, não sdk) |
 | nsdk-version | A versão do SDK do cliente de autenticação da Adobe Pass |
 | evento | O nome do evento de autenticação do Adobe Pass |
 | motivo | O motivo das falhas, conforme relatado pela Autenticação Adobe Pass |
@@ -83,7 +83,7 @@ A API ESM geralmente não está disponível.  Entre em contato com o representan
 | platform | A plataforma identificada pelo dispositivo. Valores possíveis: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - etc |
 | application-name | O nome do aplicativo configurado, no Painel TVE, para o aplicativo registrado DCR configurado para ser usado. |
 | application-version | A versão do aplicativo configurada, no Painel TVE, para que o aplicativo DCR registrado seja usado. |
-| customer-app | A ID do aplicativo personalizado foi passada via [Informações do Dispositivo](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
+| customer-app | A ID do aplicativo personalizado foi passada via [Informações do Dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | content-category | A categoria do conteúdo solicitado pelo aplicativo. |
 
 ## ESM para MVPDs {#esm-for-mvpds}
@@ -114,17 +114,17 @@ A API ESM geralmente não está disponível.  Entre em contato com o representan
 | mvpd | A ID do mvpd usada para executar a solicitação de direito |
 | requestor-id | A ID do solicitante usada para executar a solicitação de direito |
 | eap | O provedor de autenticação externa quando o fluxo de autenticação é executado por meio de um sistema externo. </br> Os valores podem ser: </br> - N/A - a autenticação foi fornecida pela Autenticação Adobe Pass </br> - Apple - o sistema externo que forneceu a autenticação é o Apple |
-| cdt | A plataforma do dispositivo (alternativa), usada atualmente para Clientless. </br> Os valores podem ser: </br> - N/A - o evento não foi originado de um SDK sem Cliente </br> - Desconhecido - Como o parâmetro deviceType de uma API sem Cliente é opcional, há chamadas que não contêm nenhum valor. </br> - qualquer outro valor que tenha sido enviado por meio da API sem cliente, por exemplo xbox, appletv, roku etc. </br> |
-| sdk-type | O SDK do cliente usado (Flash, HTML5, nativo do Android, iOS, sem clientes etc.) |
+| cdt | A plataforma do dispositivo (alternativa), usada atualmente para Clientless. </br> Os valores podem ser: </br> - N/A - o evento não se originou de um SDK sem Cliente </br> - Desconhecido - Como o parâmetro deviceType de uma API sem Cliente é opcional, há chamadas que não contêm nenhum valor. </br> - qualquer outro valor que tenha sido enviado por meio da API sem cliente, por exemplo xbox, appletv, roku etc. </br> |
+| sdk-type | O SDK cliente usado (Flash, HTML5, Android nativo, iOS, sem cliente etc.) |
 | platform | A plataforma identificada pelo dispositivo. Valores possíveis: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - etc |
-| nsdk | O SDK do cliente usado (android, fireTV, js, iOS, tvOS, não sdk) |
+| nsdk | O SDK cliente usado (android, fireTV, js, iOS, tvOS, não sdk) |
 | nsdk-version | A versão do SDK do cliente de autenticação da Adobe Pass |
 
 ## Casos de uso {#use-cases}
 
 Você pode usar os dados ESM para os seguintes casos de uso:
 
-- **Monitoramento** - As equipes de operações ou monitoramento podem criar um painel ou gráfico que chame a API a cada minuto. Usando as informações exibidas, é possível detectar um problema (com a Autenticação do Adobe Pass ou com um MVPD) no minuto em que ele é exibido.
+- **Monitoramento** - As equipes de operações ou monitoramento podem criar um painel ou gráfico que chame a API a cada minuto. Usando as informações exibidas, é possível detectar um problema (com a Autenticação Adobe Pass ou com uma MVPD) no minuto em que ele é exibido.
 
 - **Depuração/Teste de Qualidade** - Como os dados também são detalhados por plataforma, dispositivo, navegador e sistema operacional, a análise de padrões de uso pode apontar problemas em combinações específicas (por exemplo, Safari no OSX).
 

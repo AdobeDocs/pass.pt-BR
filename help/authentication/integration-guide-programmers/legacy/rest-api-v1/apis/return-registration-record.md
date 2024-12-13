@@ -2,14 +2,14 @@
 title: Retornar Registro de Registro
 description: Retornar Registro de Registro
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '253'
 ht-degree: 2%
 
 ---
 
-# Retornar Registro de Registro {#return-registration-record}
+# Registro de registro de devolução (herdado) {#return-registration-record}
 
 >[!NOTE]
 >
@@ -101,7 +101,7 @@ Retorna o registro do código de registro contendo o código de registro UUID, o
 | id | UUID gerado pelo Serviço de Código de Registro |
 | código | Código de registro gerado pelo Serviço de código de registro |
 | solicitante | ID do Solicitante |
-| mvpd | ID MVPD |
+| mvpd | MVPD ID |
 | gerado | Carimbo de data e hora de criação do Código de registro (em milissegundos desde 1° de janeiro de 1970 GMT) |
 | expira em | Carimbo de data e hora quando o código de registro expira (em milissegundos desde 1° de janeiro de 1970 GMT) |
 | deviceId | Identificador exclusivo do dispositivo (ou token XSTS) |

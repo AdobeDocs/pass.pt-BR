@@ -1,15 +1,15 @@
 ---
-title: Fornecer Lista MVPD
-description: Fornecer Lista MVPD
+title: Fornecer lista do MVPD
+description: Fornecer lista do MVPD
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '233'
 ht-degree: 2%
 
 ---
 
-# Fornecer Lista MVPD {#provide-mvpd-list}
+# (Herdado) Fornecer lista do MVPD {#provide-mvpd-list}
 
 >[!NOTE]
 >
@@ -57,8 +57,8 @@ Igual à resposta XML do MVPD existente ao servlet /config
 
 Observação: todos os MVPDs configurados para usar o Platform SSO terão as seguintes propriedades extras no nó correspondente (JSON/XML):
 
-* **enablePlatformServices (booleano): sinalizador** indicando se este MVPD está integrado via SSO da Plataforma
-* **boardingStatus (cadeia de caracteres): sinalizador** indicando se o MVPD oferece suporte total a Platform SSO (SUPPORTED) ou se o MVPD aparece somente no seletor de plataforma (PICKER)
-* **displayInPlatformPicker (booleano):** este MVPD deve aparecer no seletor de plataforma?
-* **platformMappingId (cadeia de caracteres):** o identificador deste MVPD conforme conhecido pela plataforma
+* **enablePlatformServices (booleano): sinalizador** indicando se este MVPD é integrado via SSO da Plataforma
+* **boardingStatus (cadeia de caracteres): sinalizador** indicando se o MVPD oferece suporte total a Platform SSO (SUPORTADO) ou se o MVPD só aparece no seletor de plataforma (SELETOR)
+* **displayInPlatformPicker (booleano):** este MVPD deve aparecer no seletor de plataforma
+* **platformMappingId (cadeia de caracteres):** o identificador deste MVPD, conforme conhecido pela plataforma
 * **requiredMetadataFields (matriz de cadeia de caracteres):** os campos de metadados do usuário devem estar disponíveis em um logon bem-sucedido

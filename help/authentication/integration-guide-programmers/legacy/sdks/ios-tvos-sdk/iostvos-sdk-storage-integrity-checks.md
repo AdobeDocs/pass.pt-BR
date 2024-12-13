@@ -2,14 +2,14 @@
 title: Mecanismo de verificação de integridade do armazenamento iOS/tvOS
 description: Mecanismo de verificação de integridade do iOS/tvOS
 exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '324'
 ht-degree: 2%
 
 ---
 
-# Mecanismo de verificação de integridade do iOS/tvOS {#iostvos-sdk-storage-integrity-checks}
+# Mecanismo de verificação de integridade do iOS/tvOS (herdado) {#iostvos-sdk-storage-integrity-checks}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 ## Introdução {#Intro}
 
-A partir da versão 3.8.3 do SDK AccessEnabler do iOS/tvOS, a opção de executar verificações de integridade de armazenamento está disponível na inicialização do AccessEnabler.
+A partir da versão 3.8.3 do iOS/tvOS AccessEnabler SDK, a opção de executar verificações de integridade de armazenamento está disponível na inicialização do AccessEnabler.
 
 Para usar esse mecanismo, a api foi estendida com um método de inicialização adicional para a classe AccessEnabler.
 
@@ -70,4 +70,4 @@ A enumeração IntegrityCheckType é exposta ao aplicativo cliente e tem os segu
 |-----------------------|-----------------------------------------------------|-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | INTEGRITY_CHECK_NONE | Nenhum | Nunca | Nenhuma verificação de integridade é realizada na inicialização do armazenamento | Quando os fluxos do SDK estão funcionando como esperado |
 | INTEGRITY_CHECK_ALL | Operabilidade de armazenamento <br/> Validade dos valores armazenados | Na falha da verificação | Todas as verificações de integridade disponíveis são executadas na inicialização do armazenamento | Quando há suspeita de corrupção do armazenamento do SDK. <br/> Se alguma das verificações de integridade falhar, o usuário será desconectado |
-| INTEGRITY_CHECK_CLEAR | Nenhum | Sempre | O armazenamento é limpo na inicialização do armazenamento | Quando os fluxos do SDK não podem ser concluídos como esperado |
+| INTEGRITY_CHECK_CLEAR | Nenhum | Sempre | O armazenamento é limpo na inicialização do armazenamento | Quando os fluxos do SDK não podem ser concluídos conforme esperado |

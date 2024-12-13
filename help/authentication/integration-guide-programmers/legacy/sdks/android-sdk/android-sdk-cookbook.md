@@ -1,15 +1,15 @@
 ---
-title: Guia do SDK do Android
-description: Guia do SDK do Android
+title: Guia do Android SDK
+description: Guia do Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1681'
+source-wordcount: '1682'
 ht-degree: 0%
 
 ---
 
-# Guia do SDK do Android {#android-sdk-cookbook}
+# Guia do Android SDK (herdado) {#android-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -76,7 +76,7 @@ A atividade de rede do AccessEnabler ocorre em um thread diferente, de modo que 
 
    - [navigateToUrl(url)](#$navigateToUrl)
 
-     Disparado por `getAuthentication()` depois que o usuário seleciona um MVPD. O parâmetro `url` fornece o local da página de logon do MVPD.
+     Disparado por `getAuthentication()` depois que o usuário seleciona uma MVPD. O parâmetro `url` fornece o local da página de logon do MVPD.
 
    - [&quot;sendTrackingData(event, data)&quot;](#$sendTrackingData)
 
@@ -148,9 +148,9 @@ Biblioteca da Android (AccessEnabler)
 
 1. Apresentar ao usuário a lista de provedores enviada para `displayProviderDialog()`.
 
-1. Depois que o usuário selecionar um provedor, obtenha a URL do MVPD do usuário do retorno de chamada `navigateToUrl()`.  Abra um WebView e direcione esse controle do WebView para o URL.
+1. Depois que o usuário selecionar um provedor, obtenha a URL da MVPD do usuário no retorno de chamada `navigateToUrl()`.  Abra um WebView e direcione esse controle do WebView para o URL.
 
-1. Por meio do WebView instanciado na etapa anterior, o usuário acessa a página de login do MVPD e insere credenciais de login. Várias operações de redirecionamento ocorrem no WebView.
+1. Por meio do WebView instanciado na etapa anterior, o usuário acessa a página de logon do MVPD e insere credenciais de logon. Várias operações de redirecionamento ocorrem no WebView.
 
    **Observação:** neste momento, o usuário tem a oportunidade de cancelar o fluxo de autenticação. Se isso ocorrer, a camada da interface do usuário será responsável por informar o AccessEnabler sobre esse evento, chamando `setSelectedProvider()` com `null` como parâmetro. Isso permite que o AccessEnabler limpe seu estado interno e redefina o Fluxo de autenticação.
 
@@ -171,7 +171,7 @@ Biblioteca da Android (AccessEnabler)
 1. Chame [getAuthorization()](#$getAuthZ) para iniciar a autorização
 fluxo.
 
-   Dependência: ResourceID(s) válido(s) acordado(s) com o(s) MVPD(s).
+   Dependência: ResourceID(s) válido(s) acordado(s) com a(s) MVPD(s).
 
    **Observação:** ResourceIDs devem ser os mesmos usados em qualquer outro dispositivo ou plataforma e serão os mesmos em MVPDs.
 
@@ -217,4 +217,4 @@ fluxo.
 
 [Aqui](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) você tem um documento que descreve o comportamento ao usar vários MVPDs e o que está acontecendo quando o usuário faz logoff de um aplicativo.
 
-O comportamento descrito está disponível ao usar o SDK do Android versão >= 2.0.0.
+O comportamento descrito está disponível ao usar o Android SDK versão >= 2.0.0.

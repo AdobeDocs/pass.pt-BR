@@ -2,14 +2,14 @@
 title: Pré-autorizar
 description: Pré-autorização do JavaScript
 exl-id: b7493ca6-1862-4cea-a11e-a634c935c86e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1465'
+source-wordcount: '1466'
 ht-degree: 0%
 
 ---
 
-# Pré-autorizar {#js-preauthorize}
+# (Herdado) Pré-autorizar {#js-preauthorize}
 
 >[!NOTE]
 >
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 O método da API pré-autorizada deve ser usado por aplicativos para obter decisões de pré-autorização para um ou mais recursos. A solicitação da API pré-autorizada deve ser usada para dicas da interface do usuário e/ou filtragem de conteúdo. Uma solicitação de API de autorização real deve ser feita antes de permitir o acesso do usuário aos recursos especificados.
 
-Caso ocorra um erro inesperado (por exemplo, problema de rede e ponto de acesso de autorização MVPD indisponível) quando uma solicitação de API pré-autorizada for processada pelos serviços de autenticação da Adobe Pass, uma ou várias informações de erro separadas serão incluídas para os recursos afetados como parte do resultado da resposta da API pré-autorizada.
+Caso ocorra um erro inesperado (por exemplo, problema de rede e ponto de acesso de autorização do MVPD indisponível) quando uma solicitação de API pré-autorizada for processada pelos serviços de autenticação da Adobe Pass, uma ou várias informações de erro separadas serão incluídas para os recursos afetados como parte do resultado da resposta da API pré-autorizada.
 
 ### public preauthorize(solicitação: PreauthorizeRequest, retorno de chamada: AccessEnablerCallback&lt;qualquer>): void {#preauth-method}
 
@@ -39,7 +39,7 @@ Caso ocorra um erro inesperado (por exemplo, problema de rede e ponto de acesso 
 
 * Define a Lista de recursos para os quais você deseja obter decisões de pré-autorização.
 * É obrigatório defini-lo para o uso da API pré-autorizada.
-* Cada elemento na lista deve ser uma String representando o valor da ID do recurso ou o fragmento de RSS de mídia que deve ser acordado com o MVPD.
+* Cada elemento na lista deve ser uma String representando o valor da ID do recurso ou o fragmento de RSS de mídia que deve ser acordado com a MVPD.
 * Este método define as informações somente no contexto da instância do objeto `PreauthorizeRequestBuilder` atual, que é o receptor dessa chamada de método.
 
 * Para construir um `PreauthorizeRequest` real, você pode observar o método de `PreauthorizeRequestBuilder`:
@@ -72,7 +72,7 @@ public func build() -> PreauthorizeRequest
 * Este método instancia um novo objeto `PreauthorizeRequest` sempre que é chamado.
 * Este método usa os valores definidos antecipadamente no contexto da instância do objeto `PreauthorizeRequestBuilder` atual, que é o receptor dessa chamada de método.
 * Tenha em mente que este método não produz quaisquer efeitos colaterais,
-* portanto, não altera o estado do SDK ou o estado da instância do objeto `PreauthorizeRequestBuilder`, que é o receptor dessa chamada de método.
+* portanto, não altera o estado da SDK ou o estado da instância do objeto `PreauthorizeRequestBuilder`, que é o receptor dessa chamada de método.
 * Isso significa que chamadas sucessivas desse método para o mesmo receptor criarão novas instâncias de objeto `PreauthorizeRequest` diferentes, mas com as mesmas informações, caso os valores definidos como `PreauthorizeRequestBuilder` não tenham sido modificados entre as chamadas.
 * Caso não precise atualizar nenhuma das informações fornecidas (recursos e armazenamento em cache), é possível reutilizar a instância PreauthorizeRequest para vários usos da API pré-autorizada.
 * `@returns {PreauthorizeRequest}`
@@ -108,7 +108,7 @@ public func build() -> PreauthorizeRequest
 #### estatuto público: número; {#public-status-numbr}
 
 * O código de status de resposta HTTP conforme documentado na RFC 7231.
-* Pode ser 0 caso `Status` venha do SDK, em vez dos serviços de Autenticação da Adobe Pass.
+* Pode ser 0 caso `Status` venha da SDK em vez dos serviços de Autenticação da Adobe Pass.
 
 #### código público: número; {#public-code-numbr}
 
@@ -263,12 +263,12 @@ accessEnablerApi.preauthorize(request, callback);
     },
     {
     &quot;id&quot;: &quot;RES03&quot;,
-    &quot;authorized&quot;: true
-    }
-    ]
-    }
+    &quot;authorized&quot;: verdadeiro
     
-    &quot; 
+    ]
+    
+    
+    &quot;
 
 </td>
   </tr>
@@ -290,7 +290,7 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;preauthorization_denied_by_mvpd&quot;,
-    &quot;message&quot; tem: &quot;O MVPD&quot; retornou uma decisão \&quot;Negar\&quot; ao solicitar pré-autorização para o recurso especificado.&quot;,
+    &quot;message&quot;: &quot;A MVPD retornou Decisão \&quot;Negar\&quot; ao solicitar pré-autorização para o recurso especificado.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;ação&quot;: &quot;nenhum&quot;
     }
@@ -337,12 +337,12 @@ accessEnablerApi.preauthorize(request, callback);
     },
     {
     &quot;id&quot;: &quot;RES03&quot;,
-    &quot;authorized&quot;: false
-    }
-    ]
-    }
+    &quot;authorized&quot;: falso
     
-    &quot; 
+    ]
+    
+    
+    &quot;
 
 </td>
   </tr>
@@ -363,16 +363,16 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;code&quot;: &quot;preauthorization_denied_by_mvpd&quot;,
     &quot;message&quot;: &quot;O MVPD retornou uma decisão \&quot;Deny\&quot; ao solicitar pré-autorização para o recurso especificado.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-     1}&quot;action&quot;: &quot;none&quot;
+    &quot;action&quot;: &quot;none&quot;
     }
-    ,
+    },
     {
     &quot;id&quot;: &quot;RES02&quot;,
     &quot;authorized&quot;: false,
     &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;preauthorization_denied_by_mvpd&quot;,
-    &quot;message&quot;: &quot;O MVPD retornou uma decisão \&quot;Deny\&quot; ao solicitar pré-autorização para o recurso especificado.&quot;, 
+    &quot;message&quot;: &quot;O MVPD retornou uma decisão \&quot;Deny\&quot; ao solicitar pré-autorização para o resource.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;none&quot;
     }
@@ -383,7 +383,7 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;maximum_execution_time_aded&quot;,
-    &quot;message&quot;: &quot;A solicitação não foi concluída no tempo máximo permitido. Tentar novamente a solicitação pode resolver o problema.&quot;,
+    &quot;message&quot;: &quot;O tempo máximo permitido não foi concluído. Tentar novamente a solicitação pode resolver o problema.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;retry&quot;
     }
@@ -422,10 +422,10 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;none&quot;
     },
-    &quot;decision&quot;: []
-    }
-    &quot;
-&quot; 3}
+    &quot;Decisions&quot;: 
+    
+    
+
 </td>
   </tr>
 </tbody>

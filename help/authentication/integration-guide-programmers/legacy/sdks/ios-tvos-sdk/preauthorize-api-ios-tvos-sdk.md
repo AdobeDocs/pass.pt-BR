@@ -2,14 +2,14 @@
 title: Pré-autorização da API do iOS/tvOS
 description: Pré-autorização da API do iOS/tvOS
 exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '392'
 ht-degree: 0%
 
 ---
 
-# Pré-autorizar {#preauthorize}
+# (Herdado) Pré-autorizar {#preauthorize}
 
 >[!NOTE]
 >
@@ -27,7 +27,7 @@ Se o resultado da resposta da API Pré-autorizada contiver um ou mais recursos c
 >
 >O recurso aprimorado de relatório de erros, que adiciona informações de erro adicionais para decisões de pré-autorização negadas, está disponível mediante solicitação, pois deve ser ativado no lado da configuração da Autenticação Adobe Pass.
 
-Caso a solicitação da API pré-autorizada não possa ser atendida devido a um erro do SDK de autenticação da Adobe Pass ou caso ocorra um erro nos serviços de autenticação da Adobe Pass, informações de erro adicionais (independentemente da configuração acima) e nenhum recurso serão incluídos como parte do resultado da resposta da API pré-autorizada.
+Caso a solicitação da API pré-autorizada não possa ser atendida devido a um erro do Adobe Pass Authentication SDK ou caso ocorra um erro do Adobe Pass Authentication services, informações de erro adicionais (independentemente da configuração acima) e nenhum recurso será incluído como parte do resultado da resposta da API pré-autorizada.
 
 </br>
 
@@ -273,7 +273,7 @@ Os serviços de Autenticação do Adobe Pass encontram um erro ao atender à sol
 
 #### Falha
 
-O SDK de autenticação da Adobe Pass apresenta um erro ao atender à solicitação da API pré-autorizada
+O SDK de autenticação da Adobe Pass encontra um erro ao atender à solicitação da API pré-autorizada
 
 ```JSON
     {

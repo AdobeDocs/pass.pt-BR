@@ -2,14 +2,14 @@
 title: Registro do aplicativo Android
 description: Registro do aplicativo Android
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
 
-# Registro do aplicativo Android {#android-application-registration}
+# Registro de aplicativo Android (herdado) {#android-application-registration}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Introdução {#intro}
 
-A partir da versão 3.0 do SDK do Android AccessEnabler, estamos alterando o mecanismo de autenticação com servidores Adobe. Em vez de usar uma chave pública e um sistema secreto para assinar o requestorID, estamos introduzindo o conceito de uma string de Declaração de Software que pode ser usada para obter um token de acesso usado posteriormente para todas as chamadas que o SDK faz aos nossos servidores. Além de uma Declaração de Software, você também precisará criar um deep link para o seu aplicativo.
+A partir da versão 3.0 do Android AccessEnabler SDK, estamos alterando o mecanismo de autenticação com servidores Adobe. Em vez de usar uma chave pública e um sistema secreto para assinar o requestorID, estamos introduzindo o conceito de uma string de Declaração de Software que pode ser usada para obter um token de acesso usado posteriormente para todas as chamadas que o SDK faz aos nossos servidores. Além de uma Declaração de Software, você também precisará criar um deep link para o seu aplicativo.
 
 Para obter mais informações, consulte [Visão Geral do Registro de Cliente Dinâmico](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
@@ -25,7 +25,7 @@ Para obter mais informações, consulte [Visão Geral do Registro de Cliente Din
 
 Uma Declaração de Software é um token JWT que contém informações sobre seu aplicativo. Cada aplicativo deve ter uma instrução de software exclusiva usada pelos nossos servidores para identificar o aplicativo no sistema Adobe.
 
-A Instrução de Software precisa ser passada quando você inicializa o SDK `AccessEnabler`. É usado para registrar o aplicativo com o Adobe. Após o registro, o SDK recebe uma ID do cliente e um segredo do cliente, que é usado para obter um token de acesso. Qualquer chamada feita pelo SDK para servidores Adobe requer um token de acesso válido. O SDK é responsável por registrar o aplicativo, obter e atualizar o token de acesso.
+A Instrução de Software precisa ser passada quando você inicializa o SDK `AccessEnabler`. É usado para registrar o aplicativo com o Adobe. Após o registro, a SDK recebe uma ID do cliente e um segredo do cliente, que é usado para obter um token de acesso. Qualquer chamada feita pela SDK para servidores Adobe requer um token de acesso válido. A SDK é responsável por registrar o aplicativo, obter e atualizar o token de acesso.
 
 >[!NOTE]
 >

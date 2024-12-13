@@ -2,14 +2,14 @@
 title: Guia de integração do Amazon FireOS
 description: Guia de integração do Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1425'
 ht-degree: 0%
 
 ---
 
-# Guia de integração do Amazon FireOS {#amazon-fireos-integration-cookbook}
+# Cookbook de integração do Amazon FireOS (herdado) {#amazon-fireos-integration-cookbook}
 
 >[!NOTE]
 >
@@ -70,7 +70,7 @@ A atividade de rede de `AccessEnabler` ocorre em um thread diferente, de modo qu
 
    - [navigateToUrl(url)](#$navigateToUrl)
 
-      - Ignorado no SDK do AmazonFireOS, o método é usado em plataformas Android onde é acionado por `getAuthentication()` depois que o usuário seleciona um MVPD.  O parâmetro `url` fornece o local da página de logon do MVPD.
+      - Ignorado no AmazonFireOS SDK, o método é usado em plataformas Android onde é acionado por `getAuthentication()` depois que o usuário seleciona um MVPD.  O parâmetro `url` fornece o local da página de logon do MVPD.
 
    - [&quot;sendTrackingData(event, data)&quot;](#$sendTrackingData)
 
@@ -164,7 +164,7 @@ O parâmetro `event` indica qual evento de direito ocorreu; o parâmetro `data` 
 
 1. Chame [`getAuthorization()`](#$getAuthZ) para iniciar o fluxo de autorização.
 
-   Dependência: ResourceID(s) válido(s) acordado(s) com o(s) MVPD(s).
+   Dependência: ResourceID(s) válido(s) acordado(s) com a(s) MVPD(s).
 
    **Observação:** ResourceIDs devem ser os mesmos usados em qualquer outro dispositivo ou plataforma e serão os mesmos em MVPDs.
 

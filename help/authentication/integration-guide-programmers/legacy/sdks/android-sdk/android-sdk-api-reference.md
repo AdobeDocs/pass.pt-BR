@@ -1,15 +1,15 @@
 ---
-title: Referência da API do SDK do Android
-description: Referência da API do SDK do Android
+title: Referência da API do Android SDK
+description: Referência da API do Android SDK
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '4537'
+source-wordcount: '4538'
 ht-degree: 0%
 
 ---
 
-# Referência da API do SDK do Android {#android-sdk-api-reference}
+# (Herdado) Referência da API do Android SDK {#android-sdk-api-reference}
 
 >[!NOTE]
 >
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 ## Introdução {#intro}
 
-Este documento detalha os métodos e retornos de chamada expostos pelo SDK do Android para autenticação da Adobe Pass, compatível com a Autenticação da Adobe Pass versões 1.7 e posteriores. Os métodos e as funções de retorno de chamada descritos aqui são definidos nos arquivos de cabeçalho AccessEnabler.h e EntitlementDelegate.h.
+Este documento detalha os métodos e retornos de chamada expostos pelo Android SDK para Autenticação do Adobe Pass, compatível com a Autenticação do Adobe Pass versões 1.7 e posteriores. Os métodos e as funções de retorno de chamada descritos aqui são definidos nos arquivos de cabeçalho AccessEnabler.h e EntitlementDelegate.h.
 
-Consulte [https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) para obter o SDK do Android AccessEnabler mais recente.
+Consulte [https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) para obter a versão mais recente do Android AccessEnabler SDK.
 
 
 **Observação:** a equipe de Autenticação da Adobe Pass incentiva você a usar somente as APIs *públicas* de Autenticação da Adobe Pass:
@@ -105,7 +105,7 @@ Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante
 
 - *signedRequestorID*: uma cópia da ID do solicitante que é assinada digitalmente com sua chave privada. <!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
-- *urls*: parâmetro opcional; por padrão, o provedor de serviços da Adobe é usado (http://sp.auth.adobe.com/). Essa matriz permite especificar endpoints para serviços de autenticação e autorização fornecidos pelo Adobe (instâncias diferentes podem ser usadas para fins de depuração). Você pode usar essa opção para especificar várias instâncias do provedor de serviços de Autenticação da Adobe Pass. Ao fazer isso, a lista MVPD é composta pelos endpoints de todos os provedores de serviços. Cada MVPD está associado ao provedor de serviços mais rápido; ou seja, o provedor que respondeu primeiro e que oferece suporte a esse MVPD.
+- *urls*: parâmetro opcional; por padrão, o provedor de serviços da Adobe é usado (http://sp.auth.adobe.com/). Essa matriz permite especificar endpoints para serviços de autenticação e autorização fornecidos pelo Adobe (instâncias diferentes podem ser usadas para fins de depuração). Você pode usar essa opção para especificar várias instâncias do provedor de serviços de Autenticação da Adobe Pass. Ao fazer isso, a lista do MVPD é composta pelos endpoints de todos os provedores de serviços. Cada MVPD está associado ao provedor de serviços mais rápido; ou seja, o provedor que respondeu primeiro e que oferece suporte a esse MVPD.
 
 **Retornos de chamada disparados:** `setRequestorComplete()`
 
@@ -155,11 +155,11 @@ Os valores serão passados ao servidor independentemente do fluxo atual (autenti
 
 **Parâmetros:**
 
-- *opções*: um mapa&lt;cadeia de caracteres, cadeia de caracteres> contendo opções globais do SDK. Atualmente, as seguintes opções estão disponíveis:
+- *opções*: um mapa&lt;Cadeia de caracteres, Cadeia de caracteres> contendo opções globais do SDK. Atualmente, as seguintes opções estão disponíveis:
    - **applicationProfile** - Ele pode ser usado para fazer configurações de servidor baseadas nesse valor.
    - **ap_vi** - A ID do Experience Cloud (visitorID). Esse valor pode ser usado posteriormente para relatórios de análise avançada.
    - **ap_ai** - A Advertising ID
-   - **device_info** - Informações do cliente conforme descrito aqui: [Passando informações do cliente para a conexão e o aplicativo do dispositivo](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md).
+   - **device_info** - Informações do cliente conforme descrito aqui: [Passando informações do cliente para a conexão e o aplicativo do dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
 
 [Voltar ao início...](#apis)
 
@@ -168,7 +168,7 @@ Os valores serão passados ao servidor independentemente do fluxo atual (autenti
 
 **Descrição:** Verifica o status de autenticação. Ele faz isso procurando um token de autenticação válido no espaço de armazenamento de token local. Esse método não executa chamadas de rede e recomendamos chamá-lo na thread principal. Ele é usado pelo aplicativo para consultar o status de autenticação do usuário e atualizar a interface de acordo (ou seja, atualizar a interface de logon/logout). O status de autenticação é comunicado ao aplicativo por meio do retorno de chamada [*setAuthenticationStatus()*](#setAuthNStatus).
 
-Se um MVPD suportar o recurso &quot;Autenticação por solicitante&quot;, vários tokens de autenticação poderão ser armazenados em um dispositivo.  Para obter detalhes sobre esse recurso, consulte a seção [Diretrizes de armazenamento em cache](#$caching) na Visão geral técnica da Android.
+Se uma MVPD suportar o recurso &quot;Autenticação por solicitante&quot;, vários tokens de autenticação poderão ser armazenados em um dispositivo.  Para obter detalhes sobre esse recurso, consulte a seção [Diretrizes de armazenamento em cache](#$caching) na Visão geral técnica da Android.
 
 | Chamada de API: verificar status de autenticação |
 | --- |
@@ -188,11 +188,11 @@ Se um MVPD suportar o recurso &quot;Autenticação por solicitante&quot;, vário
 **Descrição:** inicia o fluxo de trabalho de autenticação completa. Ele é iniciado verificando o status de autenticação. Se ainda não estiver autenticado, a máquina de estado do fluxo de autenticação é iniciada:
 
 - Se a última tentativa de autenticação tiver sido bem-sucedida, a fase de seleção do MVPD será ignorada e o retorno de chamada [*navigateToUrl()*](#navigagteToUrl) será acionado. O aplicativo usa essa chamada de retorno para instanciar o controle WebView que apresenta ao usuário a página de login do MVPD.
-- Se a última tentativa de autenticação não tiver sido bem-sucedida ou se o usuário tiver feito logout explicitamente, o retorno de chamada [*displayProviderDialog()*](#displayProviderDialog) será acionado. Seu aplicativo usa esse retorno de chamada para exibir a interface de seleção de MVPD. Além disso, o aplicativo é necessário para retomar o fluxo de autenticação, informando a biblioteca do Ativador de Acesso sobre a seleção de MVPD do usuário por meio do método [setSelectedProvider()](#setSelectedProvider).
+- Se a última tentativa de autenticação não tiver sido bem-sucedida ou se o usuário tiver feito logout explicitamente, o retorno de chamada [*displayProviderDialog()*](#displayProviderDialog) será acionado. Seu aplicativo usa essa chamada de retorno para exibir a interface de seleção do MVPD. Além disso, o aplicativo é necessário para retomar o fluxo de autenticação, informando a biblioteca do Access Enabler sobre a seleção de MVPD do usuário por meio do método [setSelectedProvider()](#setSelectedProvider).
 
-À medida que as credenciais do usuário são verificadas na página de logon do MVPD, sua aplicação é solicitada a monitorar as várias operações de redirecionamento que ocorrem enquanto o usuário é autenticado na página de logon do MVPD. Quando as credenciais corretas são inseridas, o controle WebView é redirecionado para uma URL personalizada definida pela constante *AccessEnabler.ADOBEPASS\_REDIRECT\_URL*. Este URL não deve ser carregado pelo WebView. O aplicativo deve interceptar esse URL e interpretar esse evento como um sinal de que a fase de logon foi concluída. Em seguida, ele deve entregar o controle ao Access Enabler para concluir o fluxo de autenticação (chamando o método *getAuthenticationToken()*).
+À medida que as credenciais do usuário são verificadas na página de logon da MVPD, sua aplicação é solicitada a monitorar as várias operações de redirecionamento que ocorrem enquanto o usuário é autenticado na página de logon da MVPD. Quando as credenciais corretas são inseridas, o controle WebView é redirecionado para uma URL personalizada definida pela constante *AccessEnabler.ADOBEPASS\_REDIRECT\_URL*. Este URL não deve ser carregado pelo WebView. O aplicativo deve interceptar esse URL e interpretar esse evento como um sinal de que a fase de logon foi concluída. Em seguida, ele deve entregar o controle ao Access Enabler para concluir o fluxo de autenticação (chamando o método *getAuthenticationToken()*).
 
-Se um MVPD suportar o recurso &quot;Autenticação por solicitante&quot;, vários tokens de autenticação poderão ser armazenados em um dispositivo (um por programador).  Para obter detalhes sobre esse recurso, consulte a seção [Diretrizes de armazenamento em cache](#$caching) na Visão geral técnica da Android.
+Se uma MVPD suportar o recurso &quot;Autenticação por solicitante&quot;, vários tokens de autenticação poderão ser armazenados em um dispositivo (um por programador).  Para obter detalhes sobre esse recurso, consulte a seção [Diretrizes de armazenamento em cache](#$caching) na Visão geral técnica da Android.
 
 Finalmente, o status de autenticação é comunicado ao aplicativo por meio do retorno de chamada *setAuthenticationStatus()*.
 
@@ -222,9 +222,9 @@ Finalmente, o status de autenticação é comunicado ao aplicativo por meio do r
 
 ### displayProviderDialog {#displayProviderDialog}
 
-**Descrição** Retorno de chamada disparado pelo Habilitador de Acesso para informar ao aplicativo que os elementos apropriados da interface do usuário precisam ser instanciados para permitir que o usuário selecione o MVPD desejado. O retorno de chamada fornece uma lista de objetos MVPD com informações adicionais que podem ajudar a criar corretamente o painel da interface de seleção (como o URL que aponta para o logotipo do MVPD, nome de exibição amigável etc.)
+**Descrição** Retorno de chamada disparado pelo Habilitador de Acesso para informar ao aplicativo que os elementos apropriados da interface do usuário precisam ser instanciados para permitir que o usuário selecione a MVPD desejada. A chamada de retorno fornece uma lista de objetos do MVPD com informações adicionais que podem ajudar a criar corretamente o painel da interface do usuário de seleção (como o URL que aponta para o logotipo do MVPD, o nome de exibição amigável etc.)
 
-Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior deve retomar o fluxo de autenticação, chamando *setSelectedProvider()* e transmitindo a ID do MVPD correspondente à seleção do usuário.
+Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior é necessário para retomar o fluxo de autenticação, chamando *setSelectedProvider()* e transmitindo a ID do MVPD correspondente à seleção do usuário.
 
 >[!NOTE]
 >
@@ -232,7 +232,7 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 > </br></br>
 > Observe que esse é um ponto em que o usuário pode pressionar o botão &quot;Voltar&quot;, o que é equivalente à anulação do fluxo de autenticação. Nesse cenário, seu aplicativo deve chamar o método `setSelectedProvider()`, transmitindo *null* como o parâmetro, para dar ao Ativador de Acesso a oportunidade de redefinir sua máquina de estado de autenticação.
 
-| Callback: exibir a interface de seleção de MVPD |
+| Retorno de chamada: exibir a interface do usuário de seleção do MVPD |
 | --- |
 | `public void displayProviderDialog(ArrayList<Mvpd> mvpds)` |
 
@@ -240,7 +240,7 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 
 **Parâmetros**:
 
-- *mvpds*: Lista de objetos MVPD que contêm informações relacionadas ao MVPD que o aplicativo pode usar para criar os elementos da interface de seleção MVPD.
+- *mvpds*: lista de objetos do MVPD que contêm informações relacionadas ao MVPD que o aplicativo pode usar para criar os elementos da interface de seleção do MVPD.
 
 **Acionado por:** `getAuthentication(), getAuthorization()`
 
@@ -249,9 +249,9 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 
 ### setSelectedProvider {#setSelectedProvider}
 
-**Descrição:** Esse método é chamado pelo seu aplicativo para informar ao Ativador de Acesso a seleção de MVPD do usuário. O aplicativo pode usar esse método para selecionar ou alterar o provedor de serviços usado para autenticação.
+**Descrição:** Este método é chamado pelo seu aplicativo para informar ao Habilitador de Acesso a seleção de MVPD do usuário. O aplicativo pode usar esse método para selecionar ou alterar o provedor de serviços usado para autenticação.
 
-Se o MVPD selecionado for um MVPD TempPass, ele será autenticado automaticamente com esse MVPD sem precisar chamar getAuthentication() posteriormente.
+Se o MVPD selecionado for um TempPass MVPD, ele será autenticado automaticamente com esse MVPD sem precisar chamar getAuthentication() posteriormente.
 
 Observe que isso não é possível para a Passagem Temp Promocional, onde parâmetros extras são fornecidos no método getAuthentication().
 
@@ -280,7 +280,7 @@ Ao passar *null* como parâmetro, o Ativador de Acesso presume que o usuário ca
 >
 > **Anulando o fluxo de autenticação** <br>Observe que este é um ponto em que o usuário pode pressionar o botão &quot;Voltar&quot;, o que é equivalente à anulação do fluxo de autenticação. Nesse cenário, o aplicativo deve chamar o método _setSelectedProvider()_ transmitindo _null_ como parâmetro e permitindo que o Habilitador de Acesso redefina seu computador de estado de autenticação.
 
-| Callback: exibir página de logon do MVPD |
+| Callback: exibir a página de logon do MVPD |
 | --- |
 | public void navigateToUrl(String url) |
 
@@ -299,7 +299,7 @@ Ao passar *null* como parâmetro, o Ativador de Acesso presume que o usuário ca
 
 **Obsoleto:** a partir do Android SDK 3.0, já que a Guia Personalizada do Chrome é usada para autenticação, esse método não é mais usado no aplicativo.
 
-**Descrição:** conclui o fluxo de autenticação solicitando o token de autenticação do servidor back-end. Esse método deve ser chamado pelo aplicativo somente em resposta ao evento em que o controle WebView que hospeda a página de logon MVPD é redirecionado para a URL personalizada definida pela constante `AccessEnabler.ADOBEPASS_REDIRECT_URL`.
+**Descrição:** conclui o fluxo de autenticação solicitando o token de autenticação do servidor back-end. Esse método deve ser chamado pelo aplicativo somente em resposta ao evento em que o controle WebView que hospeda a página de logon do MVPD é redirecionado para a URL personalizada definida pela constante `AccessEnabler.ADOBEPASS_REDIRECT_URL`.
 
 | Chamada de API: recuperar o token de autenticação |
 | --- |
@@ -309,7 +309,7 @@ Ao passar *null* como parâmetro, o Ativador de Acesso presume que o usuário ca
 
 **Parâmetros:**
 
-- *cookies*: cookies definidos no domínio de destino (consulte o aplicativo de demonstração no SDK para obter uma implementação de referência).
+- *cookies*: cookies definidos no domínio de destino (consulte o aplicativo de demonstração na SDK para obter uma implementação de referência).
 
 **Retornos de chamada disparados:** `setAuthenticationStatus()`, `sendTrackingData()`
 
@@ -349,7 +349,7 @@ fornecer informações adicionais sobre o motivo da falha, quando necessário.
 
 ### checkPreauthorizedResources {#checkPreauth}
 
->**Obsoleto:** a partir do Android SDK 3.6, a API pré-autorizada substitui checkPreauthorizedResources, fornecendo códigos de erro estendidos.
+>**Obsoleto:** a partir do Android SDK 3.6, a API pré-autorizada substituirá checkPreauthorizedResources, fornecendo códigos de erro estendidos.
 
 **Descrição:** Este método é usado pelo aplicativo para determinar se o usuário já está autorizado a exibir recursos protegidos específicos. O objetivo principal desse método é recuperar informações para usar na decoração da interface do usuário (por exemplo, indicando o status de acesso com ícones de bloqueio e desbloqueio).
 
@@ -359,7 +359,7 @@ fornecer informações adicionais sobre o motivo da falha, quando necessário.
 
 **Disponibilidade:** v1.3+
 
-**Parâmetros:** O parâmetro `resources` é uma matriz de recursos cuja autorização deve ser verificada. Cada elemento na lista deve ser uma string que representa a ID do recurso. A ID do recurso está sujeita às mesmas limitações que a ID do recurso na chamada `getAuthorization()`, ou seja, ela deve ser um valor acordado estabelecido entre o Programador e o MVPD ou um fragmento de RSS de mídia.
+**Parâmetros:** O parâmetro `resources` é uma matriz de recursos cuja autorização deve ser verificada. Cada elemento na lista deve ser uma string que representa a ID do recurso. A ID do recurso está sujeita às mesmas limitações que a ID do recurso na chamada `getAuthorization()`, ou seja, ela deve ser um valor acordado estabelecido entre o Programador e a MVPD ou um fragmento de RSS de mídia.
 
 **Retorno de chamada disparado:** `preauthorizedResources()`
 
@@ -368,7 +368,7 @@ fornecer informações adicionais sobre o motivo da falha, quando necessário.
 
 ### checkPreauthorizedResources {#checkPreauth2}
 
-**Obsoleto:** a partir do Android SDK 3.6, a API pré-autorizada substitui checkPreauthorizedResources, fornecendo códigos de erro estendidos.
+**Obsoleto:** a partir do Android SDK 3.6, a API pré-autorizada substituirá checkPreauthorizedResources, fornecendo códigos de erro estendidos.
 
 **Descrição:** Este método é usado pelo aplicativo para determinar se o usuário já está autorizado a exibir recursos protegidos específicos. O objetivo principal desse método é recuperar informações para usar na decoração da interface do usuário (por exemplo, indicando o status de acesso com ícones de bloqueio e desbloqueio).
 
@@ -378,7 +378,7 @@ fornecer informações adicionais sobre o motivo da falha, quando necessário.
 
 **Disponibilidade:** v3.1+
 
-**Parâmetros:** O parâmetro `resources` é uma matriz de recursos cuja autorização deve ser verificada. Cada elemento na lista deve ser uma string que representa a ID do recurso. A ID do recurso está sujeita às mesmas limitações que a ID do recurso na chamada `getAuthorization()`, ou seja, ela deve ser um valor acordado estabelecido entre o Programador e o MVPD ou um fragmento de RSS de mídia.
+**Parâmetros:** O parâmetro `resources` é uma matriz de recursos cuja autorização deve ser verificada. Cada elemento na lista deve ser uma string que representa a ID do recurso. A ID do recurso está sujeita às mesmas limitações que a ID do recurso na chamada `getAuthorization()`, ou seja, ela deve ser um valor acordado estabelecido entre o Programador e a MVPD ou um fragmento de RSS de mídia.
 
 O parâmetro `cache` especifica se a resposta de pré-autorização em cache pode ser usada ou não. Por padrão, o cache é verdadeiro. O SDK retornará uma resposta armazenada em cache anteriormente, se disponível.
 
@@ -388,7 +388,7 @@ O parâmetro `cache` especifica se a resposta de pré-autorização em cache pod
 
 ### preauthorizedResources {#preauthResources}
 
-**Obsoleto:** a partir do Android SDK 3.6, a API pré-autorizada substitui checkPreauthorizedResources, fornecendo códigos de erro estendidos. O retorno de chamada preauthorizedResources não será chamado na nova API.
+**Obsoleto:** a partir do Android SDK 3.6, a API pré-autorizada substituirá checkPreauthorizedResources, fornecendo códigos de erro estendidos. O retorno de chamada preauthorizedResources não será chamado na nova API.
 
 
 **Descrição:** Retorno de chamada disparado por checkPreauthorizedResources(). Fornece uma lista de recursos que o usuário já está autorizado a visualizar.
@@ -500,7 +500,7 @@ O parâmetro `cache` especifica se a resposta de pré-autorização em cache pod
    - `AccessEnablerConstants.USER_NOT_AUTHORIZED_ERROR` - O usuário não pôde autorizar para o recurso fornecido
 - *errorDescription*: detalhes adicionais sobre o cenário de falha. Se essa cadeia de caracteres descritiva não estiver disponível por algum motivo, a Autenticação Adobe Pass enviará uma cadeia de caracteres vazia **(&quot;)**.
 
-  Essa cadeia de caracteres pode ser usada por um MVPD para passar mensagens de erro personalizadas ou mensagens relacionadas a vendas. Por exemplo, se um assinante tiver a autorização negada para um recurso, o MVPD poderá enviar uma mensagem como: &quot;No momento, você não tem acesso a esse canal em seu pacote. Se quiser atualizar seu pacote, clique aqui.&quot; A mensagem é passada pela Autenticação Adobe Pass por meio dessa chamada de retorno ao Programador, que tem a opção de exibi-la ou ignorá-la. A Autenticação do Adobe Pass também pode usar esse parâmetro para fornecer notificação da condição que pode ter levado a um erro. Por exemplo, &quot;Ocorreu um erro de rede ao se comunicar com o serviço de autorização do provedor.&quot;
+  Esta cadeia de caracteres pode ser usada por uma MVPD para enviar mensagens de erro personalizadas ou mensagens relacionadas às vendas. Por exemplo, se um assinante tiver a autorização negada para um recurso, o MVPD poderá enviar uma mensagem como: &quot;No momento, você não tem acesso a esse canal em seu pacote. Se quiser atualizar seu pacote, clique aqui.&quot; A mensagem é passada pela Autenticação Adobe Pass por meio dessa chamada de retorno ao Programador, que tem a opção de exibi-la ou ignorá-la. A Autenticação do Adobe Pass também pode usar esse parâmetro para fornecer notificação da condição que pode ter levado a um erro. Por exemplo, &quot;Ocorreu um erro de rede ao se comunicar com o serviço de autorização do provedor.&quot;
 
 **Acionado por:** `checkAuthorization(), getAuthorization()`
 
@@ -508,7 +508,7 @@ O parâmetro `cache` especifica se a resposta de pré-autorização em cache pod
 
 ### logout {#logout}
 
-**Descrição:** Use este método para iniciar o fluxo de logout. O logout é o resultado de uma série de operações de redirecionamento HTTP devido ao fato de que o usuário precisa ser desconectado dos servidores de Autenticação do Adobe Pass e também dos servidores do MVPD. Como resultado, esse fluxo não pode ser concluído com uma simples solicitação HTTP emitida pela biblioteca do Access Enabler. As Guias personalizadas do Chrome são usadas pelo SDK para executar as operações de redirecionamento HTTP. Esse fluxo estará visível para o usuário e será fechado quando concluído
+**Descrição:** Use este método para iniciar o fluxo de logout. O logout é o resultado de uma série de operações de redirecionamento HTTP devido ao fato de que o usuário precisa ser desconectado dos servidores de autenticação da Adobe Pass e também dos servidores da MVPD. Como resultado, esse fluxo não pode ser concluído com uma simples solicitação HTTP emitida pela biblioteca do Access Enabler. As Guias personalizadas do Chrome são usadas pela SDK para executar as operações de redirecionamento HTTP. Esse fluxo estará visível para o usuário e será fechado quando concluído
 
 | Chamada de API: iniciar o fluxo de logout |
 | --- |
@@ -521,7 +521,7 @@ O parâmetro `cache` especifica se a resposta de pré-autorização em cache pod
 **Retornos de chamada disparados:**
 
 - `navigateToUrl()` para a versão do SDK anterior à 3.0
-- `setAuthenticationStatus()` para versão do SDK > 3.0
+- `setAuthenticationStatus()` para SDK versão > 3.0
 
 
 [Voltar à API do Android...](#api)
@@ -546,7 +546,7 @@ O parâmetro `cache` especifica se a resposta de pré-autorização em cache pod
 
 ### <span id="selectedProvider"></span>seletedProvider
 
-**Descrição:** Retorno de chamada disparado pelo Habilitador de Acesso que fornece informações sobre o MVPD selecionado no momento para o aplicativo.
+**Descrição:** Retorno de chamada disparado pelo Habilitador de Acesso que fornece ao aplicativo informações sobre o MVPD selecionado no momento.
 
 | Callback: informações sobre o MVPD selecionado no momento |
 | --- |
@@ -585,11 +585,11 @@ Há dois tipos de metadados disponíveis para programadores:
    - Se a chave for `METADATA_KEY_USER_META` e os argumentos contiverem um objeto SerializableNameValuePair com nome = `METADATA_ARG_USER_META` e valor = `[metadata_name]`, a consulta será feita para metadados de usuário. A lista atual de tipos de metadados de usuário disponíveis:
       - `zip` - CEP
 
-      - `householdID` - Identificador da família. Se um MVPD não oferecer suporte a subcontas, será idêntico a `userID`.
+      - `householdID` - Identificador da família. Se uma MVPD não oferecer suporte a subcontas, será idêntico a `userID`.
 
       - `maxRating` - Classificação máxima dos pais para o usuário
 
-      - `userID` - O identificador do usuário. Se um MVPD der suporte a subcontas e o usuário não for a conta principal, `userID` será diferente de `householdID`.
+      - `userID` - O identificador do usuário. Se uma MVPD der suporte a subcontas e o usuário não for a conta principal, `userID` será diferente de `householdID`.
 
       - `channelID` - Uma lista de canais que o usuário está autorizado a visualizar
    - Se a chave for `METADATA_KEY_DEVICE_ID`, será feita a consulta para obter a ID do dispositivo atual. Observe que esse recurso está desativado por padrão e os programadores devem entrar em contato com o Adobe para obter informações sobre ativação e taxas.
@@ -606,7 +606,7 @@ Há dois tipos de metadados disponíveis para programadores:
 
 >[!NOTE]
 >
->Os metadados reais do usuário disponíveis para um Programador dependem do que um MVPD disponibiliza.  Essa lista será expandida à medida que novos metadados forem disponibilizados e adicionados ao sistema de autenticação da Adobe Pass.
+>Os metadados reais do usuário disponíveis para um programador dependem do que uma MVPD disponibiliza.  Essa lista será expandida à medida que novos metadados forem disponibilizados e adicionados ao sistema de autenticação da Adobe Pass.
 
 **Retornos de chamada disparados:** [`setMetadataStatus()`](#setMetadaStatus)
 
@@ -732,7 +732,7 @@ O Ativador de acesso aciona um retorno de chamada adicional que não é necessar
 - *evento*: o evento que está sendo rastreado. Há três tipos possíveis de eventos de rastreamento:
    - **authorizationDetection:** sempre que uma solicitação de token de autorização retornar (o tipo de evento é `EVENT_AUTHZ_DETECTION`)
    - **authenticationDetection:** sempre que ocorrer uma verificação de autenticação (o tipo de evento é `EVENT_AUTHN_DETECTION`)
-   - **mvpdSelection:** quando o usuário seleciona um MVPD no formulário de seleção MVPD (o tipo de evento é `EVENT_MVPD_SELECTION`)
+   - **mvpdSelection:** quando o usuário seleciona um MVPD no formulário de seleção do MVPD (o tipo de evento é `EVENT_MVPD_SELECTION`)
 - *dados*: dados adicionais associados ao evento relatado. Esses dados são apresentados no formato de uma lista de valores.
 
 A seguir estão instruções para interpretar os valores nos *dados*
@@ -740,7 +740,7 @@ matriz:
 
 - Para o tipo de evento *`EVENT_AUTHN_DETECTION`:*
    - **0** - Se a solicitação de token foi bem-sucedida (true/false) e se o item acima for true:
-   - **1** - Cadeia de caracteres de ID MVPD
+   - **1** - Cadeia de caracteres da ID do MVPD
    - **2** - GUID (md5 com hash)
    - **3** - Token já no cache (true/false)
    - **4** - Tipo de dispositivo
@@ -749,7 +749,7 @@ matriz:
 
 - Para o tipo de evento `EVENT_AUTHZ_DETECTION`
    - **0** - Se a solicitação de token foi bem-sucedida (true/false) e se bem-sucedida:
-   - **1** - ID do MVPD
+   - **1** - MVPD ID
    - **2** - GUID (md5 com hash)
    - **3** - Token já no cache (true/false)
    - **4** - Erro

@@ -2,9 +2,9 @@
 title: Visão geral do Apple SSO
 description: Visão geral do Apple SSO
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1260'
 ht-degree: 0%
 
 ---
@@ -51,17 +51,17 @@ Para se beneficiar da experiência do usuário de Logon Único (SSO), um Program
 
      Consulte a documentação [Guia de SSO do Apple (REST API V2)](apple-sso-cookbook-rest-api-v2.md).
 
-   * A API REST V1 de Autenticação do Adobe Pass é compatível com o Logon Único de Parceiro (SSO).
+   * A API REST V1 herdada da Autenticação do Adobe Pass tem suporte para Logon único de parceiro (SSO).
 
-     Consulte a documentação [Guia de SSO do Apple (REST API V1)](apple-sso-cookbook-rest-api-v1.md).
+     Consulte a documentação [(Herdado) Guia de SSO Apple (REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
 
-   * O SDK do iOS/tvOS do Adobe Pass Authentication AccessEnabler é compatível com o Logon único de parceiros (SSO).
+   * O herdado Adobe Pass Authentication AccessEnabler iOS/tvOS SDK é compatível com o Partner Single Sign-On (SSO).
 
-     Consulte a documentação do [Guia do Apple SSO (iOS/tvOS SDK)](apple-sso-cookbook-iostvos-sdk.md).
+     Consulte a documentação [(Herdado) Guia de SSO do Apple (iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md).
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 
-Para se beneficiar da experiência do usuário de Logon Único (SSO), um MVPD deve:
+Para se beneficiar da experiência do usuário de Logon único (SSO), um MVPD deve:
 
 * Entre em contato com a Apple para iniciar o processo de integração no lado da Apple.
 
@@ -73,7 +73,7 @@ Para se beneficiar da experiência do usuário de Logon Único (SSO), um MVPD de
 
 ## Perguntas frequentes {#FAQ}
 
-* Caso algo dê errado com o fluxo de trabalho SSO do Apple, o aplicativo que usa o SDK iOS/tvOS do Adobe Pass Authentication AccessEnabler pode retornar ao fluxo de autenticação normal?
+* Caso algo dê errado com o fluxo de trabalho SSO do Apple, o aplicativo que usa o Adobe Pass Authentication AccessEnabler iOS/tvOS SDK pode recorrer ao fluxo de autenticação normal?
 
   Isso é possível, mas requer que uma alteração de configuração seja executada por meio do [Painel do Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication) para definir o **Habilitar Logon Único** em **NÃO** para a integração e plataforma desejadas (iOS/tvOS). Esteja ciente de que o aplicativo cliente reconhecerá a alteração de configuração somente após chamar a API [setRequestor](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setReqV3).
 
@@ -88,39 +88,39 @@ Para se beneficiar da experiência do usuário de Logon Único (SSO), um MVPD de
   Esta informação não está disponível.
 
 
-* O que acontece se um usuário entrar acessando a seção *`Settings -> TV Provider`* no iOS/iPadOS ou *`Settings -> Accounts -> TV Provider`* no tvOS usando um MVPD que não esteja integrado ao aplicativo?
+* O que acontece se um usuário entrar acessando a seção *`Settings -> TV Provider`* no iOS/iPadOS ou *`Settings -> Accounts -> TV Provider`* no tvOS usando uma MVPD que não esteja integrada ao aplicativo?
 
   Quando o usuário inicia o aplicativo, ele não é autenticado por meio do fluxo de trabalho SSO do Apple. Portanto, o aplicativo teria que recorrer ao fluxo de autenticação regular e apresentar seu próprio seletor de MVPD.
 
 
-* O que acontece se um usuário entrar pela *`Settings -> TV Provider`* no iOS/iPadOS ou *`Settings -> Accounts -> TV Provider`* na seção tvOS usando um MVPD que tenha o **Habilitar Logon Único** definido em **NÃO** por meio do [Painel do Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication) para a plataforma iOS/tvOS?
+* O que acontece se um usuário entrar pela *`Settings -> TV Provider`* no iOS/iPadOS ou *`Settings -> Accounts -> TV Provider`* na seção tvOS usando uma MVPD que tenha o **Habilitar Logon Único** definido em **NÃO** por meio do [Painel do Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication) para a plataforma iOS/tvOS?
 
   Quando o usuário inicia o aplicativo, ele não é autenticado por meio do fluxo de trabalho SSO do Apple. Portanto, o aplicativo teria que recorrer ao fluxo de autenticação regular e apresentar seu próprio seletor de MVPD.
 
 
-* O que acontece se um usuário tiver um MVPD que não seja integrado (não suportado) pelo Apple, mas que esteja presente no seletor de Apple?
+* O que acontece se um usuário tiver uma MVPD que não é integrada (não compatível) pelo Apple, mas está presente no seletor de Apple?
 
   Quando o usuário inicia o aplicativo, ele só seleciona o MVPD por meio do fluxo de trabalho SSO do Apple sem concluir o fluxo de autenticação. Portanto, o aplicativo teria que recorrer ao fluxo de autenticação regular, mas poderia usar o MVPD já selecionado.
 
 
-* O que acontece se um usuário tiver um MVPD que não seja integrado (não suportado) pelo Apple?
+* O que acontece se um usuário tiver uma MVPD que não é integrada (não é compatível) pelo Apple?
 
   Quando o usuário inicia o aplicativo, o usuário seleciona a opção de seleção &quot;Outros provedores de TV&quot; por meio do fluxo de trabalho SSO do Apple. Portanto, o aplicativo teria que recorrer ao fluxo de autenticação regular e apresentar seu próprio seletor de MVPD.
 
 
-* O que acontece se um usuário tiver um MVPD degradado pela mídia do [Painel do Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication)?
+* O que acontece se um usuário tiver uma MVPD degradada por meio do [Painel do Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication)?
 
-  Quando o usuário inicia o aplicativo, ele é autenticado por meio do mecanismo de degradação e não pelo fluxo de trabalho SSO do Apple. A experiência deve ser contínua para o usuário, enquanto o aplicativo será informado por meio do código de aviso *N010* caso esteja usando o SDK Adobe Pass Authentication AccessEnabler iOS/tvOS.
+  Quando o usuário inicia o aplicativo, ele é autenticado por meio do mecanismo de degradação e não pelo fluxo de trabalho SSO do Apple. A experiência deve ser perfeita para o usuário, enquanto o aplicativo será informado por meio do código de aviso *N010* caso esteja usando o Adobe Pass Authentication AccessEnabler iOS/tvOS SDK.
 
 
-* A ID do usuário MVPD mudará entre os fluxos de autenticação SSO da Apple e SSO que não seja da Apple?
+* A ID de usuário do MVPD mudará entre os fluxos de autenticação SSO da Apple e SSO que não sejam da Apple?
 
   A expectativa é que a ID do usuário não seja alterada, mas precisa ser verificada para cada provedor selecionado.
 
 
 * Haverá alguma alteração nos TTLs de autenticação?
 
-  A Autenticação do Adobe Pass continuará a respeitar os TTLs exigidos pelos Programadores para sua integração com cada MVPD. Ao navegar de um aplicativo do programador para outro aplicativo do programador por meio do Apple SSO, o segundo aplicativo terá o TTL de sua integração Programmer x MVPD correspondente (ele não compartilhará o TTL do primeiro aplicativo autenticado)
+  A Autenticação do Adobe Pass continuará a respeitar os TTLs exigidos pelos Programadores para sua integração com cada MVPD. Ao navegar de um aplicativo do Programador para outro aplicativo do Programador por meio do SSO do Apple, o segundo aplicativo terá o TTL da integração Programador x MVPD correspondente (ele não compartilhará o TTL do primeiro aplicativo autenticado)
 
 |                                      | TTL de Autenticação do Adobe Pass expirado | TTL de autenticação do Adobe Pass válido |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|

@@ -2,9 +2,9 @@
 title: Visão geral do registro dinâmico do cliente
 description: Visão geral do registro dinâmico do cliente
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '808'
+source-wordcount: '813'
 ht-degree: 0%
 
 ---
@@ -22,16 +22,16 @@ O Adobe Pass fornece um serviço dinâmico de registro de cliente que permite o 
 * APIs de gerenciamento de autenticação da Adobe Pass:
    * [Redefinir API Temp Pass](../../features-premium/temporary-access/reset-temp-pass.md)
    * [API de degradação](../../features-premium/degraded-access/degradation-api-overview.md)
-   * [API MVPD do proxy](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
+   * [API de MVPD do proxy](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
    * [API de monitoramento do serviço de qualificação](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * APIs REST de autenticação da Adobe Pass:
-   * [REST API V1](../../legacy/rest-api-v1/rest-api-reference.md)
    * [REST API V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
+   * [API REST V1 (herdada)](../../legacy/rest-api-v1/rest-api-reference.md)
 * SDKs de autenticação da Adobe Pass:
-   * [JAVASCRIPT SDK](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-   * [iOS/tvOS SDK](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
-   * [ANDROID SDK](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
-   * [FireOS SDK](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
+   * [(Herdado) JavaScript SDK](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+   * [(Herdado) iOS/tvOS SDK](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
+   * [(Herdado) Android SDK](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
+   * [(Herdado) FireOS SDK](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
 
 >[!IMPORTANT]
 >

@@ -2,14 +2,14 @@
 title: Verificar Fluxo de Autenticação por Aplicativo Web de Segunda Tela
 description: Verificar Fluxo de Autenticação por Aplicativo Web de Segunda Tela
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '212'
 ht-degree: 0%
 
 ---
 
-# Verificar Fluxo de Autenticação por Aplicativo Web de Segunda Tela {#check-authentication-flow-by-second-screen-web-app}
+# (Herdado) Verificar fluxo de autenticação por Second Screen Web App {#check-authentication-flow-by-second-screen-web-app}
 
 >[!NOTE]
 >

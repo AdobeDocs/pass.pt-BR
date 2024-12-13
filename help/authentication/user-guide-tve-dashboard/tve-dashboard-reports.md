@@ -2,7 +2,7 @@
 title: Relatórios
 description: Saiba como os dados são agregados nos relatórios do painel TVE.
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -35,7 +35,7 @@ Siga estas etapas para exibir um relatório específico.
 
 ### Relatórios AuthN TTL {#authn-ttl-reports}
 
-Os relatórios AuthN TTL, também chamados de TTL (Tempo de vida útil da autenticação), exibem a duração pela qual os tokens de autenticação são configurados para suas integrações de canais com vários MVPDs em todas as [plataformas](#platforms). Esses relatórios permitem inspecionar o tempo que um usuário permanece autenticado para um MVPD e plataforma específicos. Os valores de duração são apresentados em formatos amigáveis, como **dias**, **horas**, **minutos** e **segundos**. A tabela de Relatórios AuthN TTL apresenta rolagem horizontal e vertical para acomodar diferentes tamanhos de tela.
+Os relatórios AuthN TTL, também chamados de TTL (Tempo de vida útil da autenticação), exibem a duração pela qual os tokens de autenticação são configurados para suas integrações de canais com vários MVPDs em todas as [plataformas](#platforms). Esses relatórios permitem inspecionar o tempo que um usuário permanece autenticado para uma MVPD e plataforma específicas. Os valores de duração são apresentados em formatos amigáveis, como **dias**, **horas**, **minutos** e **segundos**. A tabela de Relatórios AuthN TTL apresenta rolagem horizontal e vertical para acomodar diferentes tamanhos de tela.
 
 Você também pode visualizar e baixar dados de [canais específicos ou MVPDs](#selecting-specific-channels-mvpds).
 
@@ -45,13 +45,13 @@ Você também pode visualizar e baixar dados de [canais específicos ou MVPDs](#
 
 >[!IMPORTANT]
 >
-> O espaço reservado **Set by MVPD** é usado quando o MVPD impõe o valor AuthN TTL em vez da configuração Autenticação do Adobe Pass.
+> O espaço reservado **Set by MVPD** é usado quando o MVPD impõe o valor AuthN TTL em vez da configuração de Autenticação Adobe Pass.
 
 Selecione **Exportar relatórios** para salvar os dados como um arquivo CSV no computador local.
 
 ### Relatórios TTL AuthZ {#authz-ttl-reports}
 
-Os relatórios AuthZ TTL, também conhecidos como Autorização de Vida Útil (TTL), exibem a duração do token de autorização configurado para suas integrações de Canais com vários MVPDs em todas as [plataformas](#platforms). Esses relatórios permitem inspecionar o tempo que um usuário permanece autorizado a assistir ao conteúdo de um MVPD e plataforma específicos. Os valores de duração são apresentados em formatos amigáveis, como **dias**, **horas**, **minutos** e **segundos**. A tabela de Relatórios TTL AuthZ apresenta rolagem horizontal e vertical para acomodar diferentes tamanhos de tela.
+Os relatórios AuthZ TTL, também conhecidos como Autorização de Vida Útil (TTL), exibem a duração do token de autorização configurado para suas integrações de Canais com vários MVPDs em todas as [plataformas](#platforms). Esses relatórios permitem inspecionar o tempo que um usuário permanece autorizado a assistir ao conteúdo de uma MVPD e plataforma específicas. Os valores de duração são apresentados em formatos amigáveis, como **dias**, **horas**, **minutos** e **segundos**. A tabela de Relatórios TTL AuthZ apresenta rolagem horizontal e vertical para acomodar diferentes tamanhos de tela.
 
 Você também pode visualizar e baixar os dados de [canais específicos ou MVPDs](#selecting-specific-channels-mvpds).
 
@@ -61,13 +61,13 @@ Você também pode visualizar e baixar os dados de [canais específicos ou MVPDs
 
 >[!IMPORTANT]
 >
-> O espaço reservado **Set by MVPD** é usado quando o MVPD impõe o valor AuthZ TTL, em vez da configuração Autenticação do Adobe Pass.
+> O espaço reservado **Set by MVPD** é usado quando o MVPD impõe o valor TTL AuthZ em vez da configuração de Autenticação Adobe Pass.
 
 Selecione **Exportar relatórios** para salvar os dados como um arquivo CSV no computador local.
 
 ### Relatórios de SSO {#sso-reports}
 
-Os relatórios de SSO, também chamados de logon único, exibem o status de logon único configurado para suas integrações de Canais com vários MVPDs em todas as [plataformas](#platforms). Esses relatórios permitem inspecionar a experiência de SSO de autenticação de usuário esperada para um MVPD e plataforma específicos. Os valores são apresentados em formatos amigáveis, como **SSO Desabilitado**, **SSO Habilitado** e **SSO Incerto**. A tabela Relatórios de SSO apresenta rolagem horizontal e vertical para acomodar diferentes tamanhos de tela.
+Os relatórios de SSO, também chamados de logon único, exibem o status de logon único configurado para suas integrações de Canais com vários MVPDs em todas as [plataformas](#platforms). Esses relatórios permitem inspecionar a experiência de SSO de autenticação de usuário esperada para uma MVPD e plataforma específicas. Os valores são apresentados em formatos amigáveis, como **SSO Desabilitado**, **SSO Habilitado** e **SSO Incerto**. A tabela Relatórios de SSO apresenta rolagem horizontal e vertical para acomodar diferentes tamanhos de tela.
 
 Você também pode visualizar e baixar dados de [canais específicos ou MVPDs](#selecting-specific-channels-mvpds).
 
@@ -81,7 +81,7 @@ Você também pode visualizar e baixar dados de [canais específicos ou MVPDs](#
 >
 > * Configurações da plataforma do usuário: a opção para bloquear cookies de terceiros.
 > * Decisões do usuário: os usuários negam acesso à plataforma à assinatura do provedor de TV.
-> * Configurações de MVPD: O MVPD solicita autenticação para cada canal.
+> * Configurações do MVPD: o MVPD solicita autenticação para cada canal.
 
 Selecione **Exportar relatórios** para salvar os dados como um arquivo CSV no computador local.
 
@@ -89,7 +89,7 @@ Selecione **Exportar relatórios** para salvar os dados como um arquivo CSV no c
 
 Os [Relatórios TTL de AuthN](#authn-ttl-reports), [Relatórios TTL de AuthZ](#authz-ttl-reports) e [Relatórios SSO](#sso-reports) apresentam dados em várias plataformas, como:
 
-* **Área de Trabalho**: exibe valores aplicados às implementações do programador por meio do SDK JavaScript de Autenticação da Adobe Pass.
+* **Área de Trabalho**: exibe os valores aplicados às implementações do programador através do JavaScript SDK de Autenticação da Adobe Pass.
 
 * **Celular**
 
@@ -103,15 +103,15 @@ Os [Relatórios TTL de AuthN](#authn-ttl-reports), [Relatórios TTL de AuthZ](#a
 
   **Roku**: exibe os valores aplicados por meio da API REST de Autenticação do Adobe Pass, identificando o Roku como um tipo de dispositivo.
 
-  **FireTV**: exibe valores aplicados por meio do SDK FireTV de Autenticação da Adobe Pass.
+  **FireTV**: exibe valores aplicados por meio do FireTV SDK de autenticação da Adobe Pass.
 
-  **AppleTV**: exibe valores aplicados por meio do SDK tvOS de Autenticação da Adobe Pass.
+  **AppleTV**: exibe valores aplicados por meio da Autenticação da Adobe Pass tvOS SDK.
 
   **Outros**: exibe os valores aplicados usando a API REST de Autenticação do Adobe Pass para dispositivos conectados à TV.
 
 * **Plataforma não identificada**: exibe os valores aplicados às implementações do programador quando os serviços de Autenticação da Adobe Pass detectam um tipo de dispositivo desconhecido.
 
-Para saber mais sobre como compartilhar o tipo de dispositivo desejado, como **Roku** com APIs REST de Autenticação Adobe Pass ou SDKs, exiba o mecanismo de [transmissão de informações do cliente](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md).
+Para saber mais sobre como compartilhar o tipo de dispositivo desejado, como **Roku** com APIs REST de Autenticação Adobe Pass ou SDKs, exiba o mecanismo de [transmissão de informações do cliente](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
 
 >[!IMPORTANT]
 >

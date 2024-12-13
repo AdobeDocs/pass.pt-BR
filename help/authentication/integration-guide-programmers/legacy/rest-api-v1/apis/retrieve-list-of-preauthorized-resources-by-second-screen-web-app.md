@@ -2,14 +2,14 @@
 title: Recuperar lista de recursos pré-autorizados pelo aplicativo web de segunda tela
 description: Recuperar lista de recursos pré-autorizados pelo aplicativo web de segunda tela
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '255'
 ht-degree: 0%
 
 ---
 
-# Recuperar lista de recursos pré-autorizados pelo aplicativo web de segunda tela {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
+# (Herdado) Recuperar lista de recursos pré-autorizados pelo aplicativo web de segunda tela {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
 
 >[!NOTE]
 >
@@ -50,7 +50,7 @@ Há dois conjuntos de APIs: um conjunto para o Aplicativo de streaming ou Servi�
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | código de registro | O valor do código de registro fornecido pelo usuário no início do fluxo de autenticação. |
 | solicitante | O requestorId do Programador para o qual esta operação é válida. |
-| lista de recursos | Uma string que contém uma lista delimitada por vírgulas de resourceIds que identifica o conteúdo que pode ser acessível a um usuário e é reconhecida por pontos de extremidade de autorização MVPD. |
+| lista de recursos | Uma string que contém uma lista delimitada por vírgulas de resourceIds que identifica o conteúdo que pode ser acessível a um usuário e é reconhecida pelos endpoints de autorização do MVPD. |
 
 
 ### Exemplo de resposta {#sample-response}

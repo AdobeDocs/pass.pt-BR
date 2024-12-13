@@ -1,15 +1,15 @@
 ---
-title: Guia do SDK do JavaScript
-description: Guia do SDK do JavaScript
+title: Guia do JavaScript SDK
+description: Guia do JavaScript SDK
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '935'
 ht-degree: 0%
 
 ---
 
-# Guia do SDK do JavaScript {#javascript-sdk-cookbook}
+# Guia do JavaScript SDK (herdado) {#javascript-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -51,7 +51,7 @@ Crie suas funções de retorno de chamada:
 
 - `displayProviderDialog(mvpds)`
 
-  **Acionador:** `getAuthentication(),` somente se o usuário não tiver selecionado um provedor (um MVPD) e ainda não estiver autenticado
+  **Acionar:** `getAuthentication(),` somente se o usuário não tiver selecionado um provedor (um MVPD) e ainda não estiver autenticado
 O parâmetro mvpds é uma matriz de provedores disponíveis para o usuário.
 
 - `setAuthenticationStatus(status, errorcode)`
@@ -152,7 +152,7 @@ A conclusão do fluxo de autenticação é alcançada quando o AccessEnabler cha
 **Dependências:**
 
 - Uma chamada bem-sucedida para `setRequestor()` (essa dependência também se aplica a todas as chamadas subsequentes).
-- ResourceID(s) válido(s) acordado(s) com o MVPD(s). Observe que as ResourceIDs devem ser as mesmas que as usadas em quaisquer outros dispositivos ou plataformas e serão as mesmas em MVPDs.
+- ResourceID(s) válido(s) acordado(s) com a(s) MVPD(s). Observe que as ResourceIDs devem ser as mesmas que as usadas em quaisquer outros dispositivos ou plataformas e serão as mesmas em MVPDs.
 
 Chame `getAuthorization()` e passe o ResourceID para a mídia solicitada. Uma chamada bem-sucedida retornará um Token de mídia curta, que confirma que o usuário está autorizado a visualizar a mídia solicitada.
 
@@ -182,7 +182,7 @@ AccessEnabler (biblioteca)
 
 ## Configurar a ID do visitante {#visitorID}
 
-Configurar um valor de [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) é muito importante do ponto de vista de análise. Depois que um valor de EC visitorID é definido, o SDK enviará essas informações junto com cada chamada de rede e o serviço de autenticação da Adobe Pass coletará essas informações. Dessa forma, é possível correlacionar os dados de análise do serviço de Autenticação da Adobe Pass com quaisquer outros relatórios de análise que você tenha de outros aplicativos ou sites. Informações sobre como configurar a EC visitorID podem ser encontradas [aqui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
+Configurar um valor de [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) é muito importante do ponto de vista de análise. Depois que um valor de EC visitorID é definido, o SDK envia essas informações junto com cada chamada de rede e o serviço de autenticação da Adobe Pass coleta essas informações. Dessa forma, é possível correlacionar os dados de análise do serviço de Autenticação da Adobe Pass com quaisquer outros relatórios de análise que você tenha de outros aplicativos ou sites. Informações sobre como configurar a EC visitorID podem ser encontradas [aqui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

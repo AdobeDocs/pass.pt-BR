@@ -2,15 +2,15 @@
 title: Registro de aplicativo iOS/tvOS
 description: Registro de aplicativo iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '610'
 ht-degree: 0%
 
 ---
 
 
-# Registro de aplicativo iOS/tvOS {#iostvos-application-registration}
+# Registro de aplicativo iOS/tvOS (herdado) {#iostvos-application-registration}
 
 >[!NOTE]
 >
@@ -18,13 +18,13 @@ ht-degree: 0%
 
 ## Introdução {#Intro}
 
-A partir da versão 3.0 do SDK AccessEnabler do iOS/tvOS, estamos alterando o mecanismo de autenticação com servidores Adobe. Em vez de usar uma chave pública e um sistema secreto para assinar o requestorID, estamos introduzindo o conceito de uma string de instrução de software que pode ser usada para obter um token de acesso usado posteriormente para todas as chamadas que o SDK faz aos nossos servidores. Além de uma declaração de software, você também precisará de um esquema de URL personalizado para seu aplicativo.
+A partir da versão 3.0 do iOS/tvOS AccessEnabler SDK, estamos alterando o mecanismo de autenticação com servidores Adobe. Em vez de usar uma chave pública e um sistema secreto para assinar o requestorID, estamos introduzindo o conceito de uma string de instrução de software que pode ser usada para obter um token de acesso usado posteriormente para todas as chamadas que o SDK faz aos nossos servidores. Além de uma declaração de software, você também precisará de um esquema de URL personalizado para seu aplicativo.
 
 Para obter mais informações, consulte [Visão Geral do Registro de Cliente Dinâmico](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## O que é uma Declaração de Software? {#Soft_state}
 
-Uma Declaração de Software é um token JWT que contém informações sobre seu aplicativo. Cada aplicativo deve ter uma instrução de software exclusiva, usada por nossos servidores para identificar o aplicativo no sistema Adobe. A Instrução de Software precisa ser passada ao inicializar o SDK do AccessEnabler e será usada para registrar o aplicativo no Adobe. Após o registro, o SDK receberá uma ID do cliente e um segredo do cliente que serão usados para obter um token de acesso. Qualquer chamada feita pelo SDK para nossos servidores exigirá um token de acesso válido. O SDK é responsável por registrar o aplicativo, obter e atualizar o token de acesso.
+Uma Declaração de Software é um token JWT que contém informações sobre seu aplicativo. Cada aplicativo deve ter uma instrução de software exclusiva, usada por nossos servidores para identificar o aplicativo no sistema Adobe. A Instrução de Software precisa ser passada quando você inicializar o AccessEnabler SDK e será usada para registrar o aplicativo com o Adobe. Após o registro, a SDK receberá uma ID do cliente e um segredo do cliente que será usado para obter um token de acesso. Qualquer chamada feita pela SDK para nossos servidores exigirá um token de acesso válido. A SDK é responsável por registrar o aplicativo, obter e atualizar o token de acesso.
 
 **Observação:** uma Instrução de Software é específica para o aplicativo e a mesma instrução de software não pode ser usada em mais de um aplicativo. Observe que as instruções de software de nível de programador também seguem o mesmo, ou seja, elas só podem ser usadas para um único aplicativo - seja de canal único ou de vários canais. Esta limitação também se aplica ao regime personalizado.
 
