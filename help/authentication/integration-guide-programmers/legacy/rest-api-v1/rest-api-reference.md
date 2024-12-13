@@ -2,9 +2,9 @@
 title: Referência da API REST
 description: Referência da API Rest
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3e69473bdb9818416e67b03e6c35d24dc3e0f991
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '647'
 ht-degree: 3%
 
 ---
@@ -66,7 +66,7 @@ A tabela abaixo lista os serviços Web disponíveis para a abordagem sem cliente
 | 10. | [&lt;SP_FQDN>/api/v1/checkauthn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) | Indica se o dispositivo tem um token de autenticação não expirado. |                                                                                             | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
 | 11. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | Retorna o token de autenticação se for encontrado. |                                                                                             | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
 | 12. | [&lt;SP_FQDN>/api/v1/tokens/authz](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md) | Retorna o token de AuthZ, se encontrado. |                                                                                             | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
-| 13. | [&lt;SP_FQDN>/api/v1/tokens/media](/help/authentication/integration-guide-programmer/rest-apis/rest-api-v1/apis/obtain-short-media-token.md | Retorna o token de mídia curta se encontrado - o mesmo que /api/v1/mediatoken |                                                                                             | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
+| 13. | [&lt;SP_FQDN>/api/v1/tokens/media](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | Retorna o token de mídia curta se encontrado - o mesmo que /api/v1/mediatoken |                                                                                             | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
 | 14. | [&lt;SP_FQDN>/api/v1/mediatoken](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | Obtém O Token De Mídia Curta |                                                                                             | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
 | 15. | [&lt;SP_FQDN>/api/v1/preauthorize](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md) | Recupera a lista de recursos pré-autorizados |                                                                                             | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
 | 16. | [&lt;SP_FQDN>/api/v1/preauthorize/{code}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | Recupera a lista de recursos pré-autorizados |                                                                                             | Serviço </br>de autenticação </br>do Adobe Pass | Aplicativo Web de Logon |
