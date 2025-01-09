@@ -2,9 +2,9 @@
 title: Cookbook da API REST (cliente para servidor)
 description: Cliente do guia da API rest para o servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '888'
 ht-degree: 0%
 
 ---
@@ -44,10 +44,6 @@ Em uma solução cliente para servidor que funciona, os seguintes componentes es
 | Infraestrutura Adobe | Serviço Adobe Pass | Um serviço que se integra ao MVPD IdP e ao Serviço AuthZ e fornece decisões de autenticação e autorização. |
 | Infraestrutura MVPD | MVPD IdP | Um terminal da MVPD que fornece um serviço de autenticação baseado em credenciais para validar a identidade do usuário. |
 | | Serviço MVPD AuthZ | Um terminal MVPD que fornece decisões de autorização com base nas assinaturas do usuário, controles dos pais etc. |
-
-
-
-Termos adicionais usados no fluxo são definidos no [Glossário](/help/authentication/kickstart/glossary.md).
 
 ## Fluxos{#flows}
 

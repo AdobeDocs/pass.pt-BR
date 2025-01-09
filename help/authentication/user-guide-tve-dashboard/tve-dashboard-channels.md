@@ -2,7 +2,7 @@
 title: Canais
 description: Saiba mais sobre os canais e suas várias configurações no Painel da TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 0%
@@ -21,7 +21,7 @@ A guia **Canais** no painel esquerdo exibe uma lista de canais vinculados com os
 
 * **Nome para exibição**: o nome da marca do canal usado para fins comerciais.
 * **ID do canal**: um identificador exclusivo, também conhecido como ID do Solicitante.
-* **Integrações**: o número de conexões estabelecidas com [MVPDs](/help/authentication/kickstart/glossary.md#mvpd).
+* **Integrações**: o número de conexões estabelecidas com [MVPDs](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd).
 
 ![Lista de canais existentes](../assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
 

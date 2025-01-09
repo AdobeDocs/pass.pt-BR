@@ -2,7 +2,7 @@
 title: Programadores
 description: Saiba mais sobre os programadores e suas configurações no painel TVE.
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >O conteúdo desta página é fornecido apenas para fins informativos. O uso dessa API exige uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
-A seção **Programadores** do Painel do TVE permite exibir e gerenciar as configurações dos [programadores](/help/authentication/kickstart/glossary.md#programmer) vinculados aos direitos da sua conta. Você também pode [adicionar um novo programador](#add-new-programmer) de acordo com sua necessidade.
+A seção **Programadores** do Painel do TVE permite exibir e gerenciar as configurações dos [programadores](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer) vinculados aos direitos da sua conta. Você também pode [adicionar um novo programador](#add-new-programmer) de acordo com sua necessidade.
 
 A guia **Programadores** no painel esquerdo exibe uma lista de programadores existentes com os seguintes detalhes:
 

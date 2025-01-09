@@ -2,7 +2,7 @@
 title: Cookbook REST API V2 (servidor para servidor)
 description: Cookbook REST API V2 (servidor para servidor)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1578'
 ht-degree: 0%
@@ -28,14 +28,14 @@ Em uma solução de servidor para servidor em funcionamento, os seguintes compon
 | Tipo | Componente | Descrição |
 |---------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Dispositivo de transmissão | Aplicativo de transmissão | O aplicativo Programador que reside no dispositivo de transmissão do usuário e reproduz o vídeo autenticado. |
-|                           | \[Opcional\] Módulo AuthN | Se o dispositivo de transmissão tiver um agente do usuário (ou seja, navegador da Web), o módulo AuthN será responsável pela autenticação do usuário no IdP do MVPD. |
+|                           | \[Opcional\] Módulo AuthN | Se o dispositivo de transmissão tiver um agente do usuário (ou seja, navegador da Web), o módulo AuthN será responsável pela autenticação do usuário no MVPD IdP. |
 | \[Opcional\] Dispositivo AuthN | Aplicativo AuthN | Se o dispositivo de transmissão não tiver um agente do usuário (ou seja, navegador da Web), o aplicativo AuthN será um aplicativo Web de programador acessado de um dispositivo separado do usuário usando um navegador da Web. |
 | Infraestrutura do programador | Serviço de programador | Um serviço que vincula o dispositivo de transmissão ao serviço do Adobe Pass para obter decisões de autenticação e autorização. |
 | Infraestrutura Adobe | Serviço Adobe Pass | Um serviço que se integra ao MVPD IdP e ao Serviço AuthZ e fornece decisões de autenticação e autorização. |
-| Infraestrutura MVPD | IdP MVPD | Um ponto de extremidade MVPD que fornece um serviço de autenticação baseado em credenciais para validar a identidade do usuário. |
+| Infraestrutura MVPD | MVPD IdP | Um terminal da MVPD que fornece um serviço de autenticação baseado em credenciais para validar a identidade do usuário. |
 |                           | Serviço MVPD AuthZ | Um terminal MVPD que fornece decisões de autorização com base nas assinaturas do usuário, controles dos pais etc. |
 
-Termos adicionais usados no fluxo são definidos no [Glossário](/help/authentication/kickstart/glossary.md).
+Termos adicionais usados no fluxo são definidos no [Glossário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md).
 
 O diagrama a seguir ilustra todo o fluxo:
 
@@ -78,8 +78,8 @@ O Serviço Programador verifica em nome do Aplicativo de Streaming os perfis aut
    * <b>Etapa 2.a:</b> o Serviço de Programador recuperou a lista de MVPDs disponíveis para serviceProvider: <b>/api/v2/{serviceProvider}/configuration</b><br>
 ([Recuperar lista de MVPDs](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md) disponíveis)
    * O Serviço de Programação pode implementar a filtragem na lista de MVPDs e exibir apenas MVPDs destinados ao ocultar outros (TempPass, MVPDs de teste, MVPDs em desenvolvimento etc.)
-   * O Serviço de programador deve retornar uma lista MVPD filtrada para o Aplicativo de streaming exibir o seletor, o usuário seleciona o MVPD
-   * Com o MVPD selecionado no Aplicativo de Streaming, o Serviço Programador cria uma sessão: <b>/api/v2/{serviceProvider}/sessions</b><br>
+   * O Serviço de programador deve retornar uma lista de MVPD filtrada para o aplicativo de streaming exibir o seletor, o usuário seleciona o MVPD
+   * Com a MVPD selecionada no aplicativo de streaming, o Serviço de Programador cria uma sessão: <b>/api/v2/{serviceProvider}/sessions</b><br>
 ([Criar sessão de autenticação](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
       * Um CÓDIGO e um URL a serem usados para autenticação são retornados
       * Se um perfil for encontrado, o Serviço de Programação poderá prosseguir para <a href="#preauthorization-phase">C. Fase de pré-autorização</a>
@@ -96,11 +96,11 @@ Usando um navegador ou um aplicativo baseado na Web de segunda tela:
 
 ### Etapa 4: verificar perfis autenticados {#step-4-check-for-authenticated-profiles}
 
-O Serviço do Programador verifica a autenticação com o MVPD para ser concluída no Navegador ou na Segunda Tela
+O Serviço do programador verifica a autenticação com o MVPD para concluir no navegador ou na segunda tela
 
 * A sondagem a cada 15 segundos é recomendada em <b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>
-([Recuperar perfis autenticados para MVPD específico](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
-   * Se a seleção de MVPD não for feita no aplicativo de Streaming como o seletor de MVPD é apresentado no aplicativo Segunda Tela, a sondagem deve ocorrer com CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>
+([Recuperar perfis autenticados para o MVPD específico](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
+   * Se a seleção de MVPD não for feita no aplicativo de Streaming como o seletor de MVPD é apresentado no aplicativo de Segunda Tela, a sondagem deve ocorrer com CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>
 ([Recuperar perfis autenticados para CÓDIGO específico](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
 * A sondagem não deve exceder 30 minutos, caso 30 minutos sejam atingidos e o aplicativo de transmissão ainda esteja ativo, uma nova sessão precisa ser iniciada e um novo CÓDIGO e URL serão retornados
 * Quando a autenticação estiver concluída, o retorno será de 200 com perfil autenticado
@@ -134,15 +134,15 @@ O aplicativo de streaming se prepara para reproduzir um vídeo/ativo/recurso sel
 
 ### Etapa 7: Logout {#step-7-logout}
 
-Aplicativo de streaming: o usuário deseja fazer logoff do MVPD
+Aplicativo de transmissão: o usuário deseja fazer logoff da MVPD
 
-* O Aplicativo de Streaming informa ao Serviço de Programação que ele precisa fazer logout do MVPD para esse Aplicativo específico.
+* O aplicativo de streaming informa ao serviço de programação que ele precisa fazer logoff da MVPD para este aplicativo específico.
 * O Serviço de programador pode limpar as informações armazenadas sobre o usuário autenticado
 * Chamada de Serviço Programador <b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
-([Iniciar logout para MVPD](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) específico)
+([Iniciar logout para MVPD específica](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md))
 * Se a resposta actionType=&#39;interative&#39; e o URL estiverem presentes, o Serviço de programador retornará o URL ao aplicativo de streaming
 * Com base nos recursos existentes, o aplicativo de streaming pode abrir o URL no navegador (geralmente o mesmo usado para autenticação)
-* Se o aplicativo de streaming não tiver um navegador, ou se for uma instância diferente daquela na autenticação, o fluxo poderá ser interrompido, pois a sessão MVPD não foi mantida no cache do navegador.
+* Se o aplicativo de streaming não tiver um navegador, ou se for uma instância diferente da que está na autenticação, o fluxo poderá ser interrompido, pois a sessão do MVPD não foi mantida no cache do navegador.
 
 ## Ambientes e requisitos funcionais{#environments}
 

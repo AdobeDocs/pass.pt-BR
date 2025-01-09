@@ -2,9 +2,9 @@
 title: Guia do Apple SSO (REST API V2)
 description: Guia do Apple SSO (REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '3442'
+source-wordcount: '3443'
 ht-degree: 0%
 
 ---
@@ -189,15 +189,15 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
    >
    > <br/>
    >
-   > Se a validação falhar, uma resposta de erro será gerada, fornecendo informações adicionais que seguem os [códigos de erro aprimorados](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
+   > Se a validação falhar, uma resposta de erro será gerada, fornecendo informações adicionais que seguem a documentação de [Códigos de erro aprimorados](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
 
    >[!IMPORTANT]
    >
    > O aplicativo de streaming deve garantir que ele processe os seguintes detalhes fornecidos para cada MVPD ao continuar:
    >
-   > * `enablePlatformServices`: indica se o MVPD oferece suporte ao logon único da Apple no momento.
-   > * `displayInPlatformPicker`: indica se o MVPD pode ser exibido no seletor de Apple.
-   > * `boardingStatus`: indica se o MVPD está integrado no logon único do Apple.
+   > * `enablePlatformServices`: indica se a MVPD oferece suporte ao logon único da Apple no momento.
+   > * `displayInPlatformPicker`: indica se a MVPD pode ser exibida no seletor de Apple.
+   > * `boardingStatus`: indica se a MVPD está integrada no logon único da Apple.
 
 1. **Recuperar status da estrutura do parceiro:** O aplicativo de streaming chama a [Estrutura da Conta de Assinante de Vídeo](https://developer.apple.com/documentation/videosubscriberaccount) desenvolvida pela Apple para obter permissões de usuário e informações do provedor.
 
@@ -271,7 +271,7 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
    * O atributo `actionName` está definido como &quot;autorize&quot;.
    * O atributo `actionType` está definido como &quot;direto&quot;.
 
-   Se o back-end do Adobe Pass identificar um perfil válido, o aplicativo de transmissão não precisará reautenticar com o MVPD selecionado, pois já existe um perfil que pode ser usado para fluxos de decisões subsequentes.
+   Se o back-end do Adobe Pass identificar um perfil válido, o aplicativo de transmissão não precisará reautenticar com o MVPD selecionado, pois já há um perfil que pode ser usado para fluxos de decisões subsequentes.
 
 1. **Continuar com o fluxo de autenticação básico:** A resposta do ponto de extremidade do Parceiro de Sessões contém os seguintes dados:
    * O atributo `actionName` está definido como &quot;autenticar&quot; ou &quot;retomar&quot;.
@@ -287,13 +287,13 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
 1. **Continue com a recuperação do perfil usando o fluxo de resposta de autenticação de parceiro:** A resposta do ponto de extremidade do Parceiro de Sessões contém os seguintes dados:
    * O atributo `actionName` está definido como &quot;partner_profile&quot;.
    * O atributo `actionType` está definido como &quot;direto&quot;.
-   * O atributo `authenticationRequest - type` inclui o protocolo de segurança usado pela estrutura do parceiro para logon MVPD (atualmente definido somente como SAML).
+   * O atributo `authenticationRequest - type` inclui o protocolo de segurança usado pela estrutura do parceiro para logon do MVPD (atualmente definido somente como SAML).
    * O atributo `authenticationRequest - request` inclui a solicitação SAML passada para a estrutura do parceiro.
    * O atributo `authenticationRequest - attributesNames` inclui os atributos SAML passados para a estrutura do parceiro.
 
-   Se o back-end do Adobe Pass não identificar um perfil válido e a validação de logon único de parceiro passar, o aplicativo de streaming receberá uma resposta com ações e dados para transmitir à estrutura do parceiro para iniciar o fluxo de autenticação com o MVPD.
+   Se o back-end do Adobe Pass não identificar um perfil válido e a validação de logon único de parceiro passar, o aplicativo de transmissão receberá uma resposta com ações e dados para transmitir à estrutura do parceiro para iniciar o fluxo de autenticação com a MVPD.
 
-1. **Conclua a autenticação MVPD com a estrutura do parceiro:** Encaminhe a solicitação de autenticação do parceiro (solicitação SAML) obtida na etapa anterior para a [Estrutura de Conta de Assinante de Vídeo](https://developer.apple.com/documentation/videosubscriberaccount). Se o fluxo de autenticação for bem-sucedido, a [Estrutura de Conta de Assinante de Vídeo](https://developer.apple.com/documentation/videosubscriberaccount) interação com o MVPD produz uma resposta de autenticação de parceiro (resposta SAML) que é retornada juntamente com as informações de status da estrutura de parceiro.
+1. **Conclua a autenticação do MVPD com a estrutura do parceiro:** Encaminhe a solicitação de autenticação do parceiro (solicitação SAML) obtida na etapa anterior para a [Estrutura de Conta de Assinante de Vídeo](https://developer.apple.com/documentation/videosubscriberaccount). Se o fluxo de autenticação for bem-sucedido, a interação da [Estrutura de Conta de Assinante de Vídeo](https://developer.apple.com/documentation/videosubscriberaccount) com a MVPD produzirá uma resposta de autenticação de parceiro (resposta SAML) que será retornada junto com as informações de status da estrutura de parceiro.
 
    >[!IMPORTANT]
    >
