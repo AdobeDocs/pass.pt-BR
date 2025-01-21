@@ -2,9 +2,9 @@
 title: Configuração do ambiente e teste na pré-qualificação
 description: Configuração do ambiente e teste na pré-qualificação
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: ca95bc45027410becf8987154c7c9f8bb8c2d5f8
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '478'
 ht-degree: 0%
 
 ---
@@ -41,6 +41,16 @@ As etapas 1 e 2 estão configurando a teste ambiente em uma das máquinas de tes
 
 ```Choose any IP from **addresses** section (e.g. `52.13.71.11)```
 
+```cmd
+C:\>nslookup entitlement-prequal.auth.adobe.com 
+...
+Addresses:  52.26.79.43
+            54.190.212.171
+```
+
+```Choose any IP from **addresses** section (e.g. `54.190.212.171)```
+
+
 * **No Linux/Mac**
 
 ```sh
@@ -53,6 +63,17 @@ As etapas 1 e 2 estão configurando a teste ambiente em uma das máquinas de tes
 ```
 
 ```Choose any IP from **A records (**e.g `52.13.71.11)```
+
+```sh
+    $ dig entitlement-prequal.auth.adobe.com
+    
+    ;; ANSWER SECTION:
+    ...
+    ............ 60 IN A      52.26.79.43
+    ............ 60 IN A      54.190.212.171
+```
+
+```Choose any IP from **A records (**e.g `54.190.212.171)```
 
 >[!NOTE]
 >
@@ -68,14 +89,15 @@ As etapas 1 e 2 estão configurando a teste ambiente em uma das máquinas de tes
 * Editar o *arquivo c:\\windows\\System32\\drivers\\etc\\hosts* (no Windows) ou */etc/hosts* (em Macintosh/Linux/Android) e adicione o seguinte:
 
 * Perfil de produção falsos
-   * 52.13.71.11 entitlement.auth.adobe.com sp.auth.adobe.com api.auth.adobe.com
+   * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
+   * 54.190.212.171 entitlement.auth.adobe.com
 
 **Falsificação no Android:** Para fazer spoof no Android, é necessário usar um emulador do Android.
 
 * Depois que a falsificação estiver em vigor, você poderá simplesmente usar as URLs normais para os perfis de produção e de preparo: (ou seja, `http://sp.auth-staging.adobe.com` e `http://entitlement.auth-staging.adobe.com` e, na verdade, você obterá o *ambiente de pré-qualificação/produção* da* nova compilação.
 
 
-## ETAPA 3.  Verifique se você está apontando para o ambiente correto {#Verify-you-are-pointing-to-the-right-environment}
+## ETAPA 3.  Verifique se você está apontando para a ambiente certa {#Verify-you-are-pointing-to-the-right-environment}
 
 **Esta é uma etapa fácil:**
 
@@ -86,13 +108,13 @@ As etapas 1 e 2 estão configurando a teste ambiente em uma das máquinas de tes
 
 * Esta etapa requer o endereço do site do programador e algumas credenciais válidas de MVPD (uma usuário que seja autenticada e autorizada).
 
-## ETAPA 5.  Realizar teste de cenário usando os sites do programador {#perform-scenario-testing-using-programmer-website}
+## ETAPA 5.  Realizar testes de cenário usando os sites do programador {#perform-scenario-testing-using-programmer-website}
 
-* Depois de concluir a configuração ambiente e garantir que o fluxo básico de autenticação-autorização esteja funcionando, você pode continuar com o teste de cenários mais complexos.
+* Depois de concluir a configuração do ambiente e garantir que o fluxo básico de autenticação-autorização esteja funcionando, você pode prosseguir com os testes de cenários mais complexos.
 
 
 ## ETAPA 6.  Realizar testes usando o site de teste da API {#perform-testing-using-api-testing-site}
 
 * Se quiser aprofundar no teste da Autenticação do Adobe Pass, recomendamos que você use o [site de teste de API](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
 
-Você pode encontrar mais detalhes sobre o site de teste da API em [Como testar fluxos de Autenticação e Autorização usando o site de teste da API do Adobe](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md).
+É possível encontrar mais detalhes no site da API teste em [Como teste fluxos de Authentication e Autorização usando a API da Adobe Systems teste site](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md).
