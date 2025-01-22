@@ -2,9 +2,9 @@
 title: Como testar fluxos de autenticação e autorização usando o site de teste da API do Adobe
 description: Como testar fluxos de autenticação e autorização usando o site de teste da API do Adobe
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 811feba1f2476bdfacb20e332e33df7f7ae8ac00
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '380'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
-Para testar os fluxos de AuthN e AuthZ, preparamos um **site de teste de API** que está à sua disposição. Nossa equipe de suporte terá o prazer de fornecer as credenciais a você. Entre em contato conosco em **support@tve.zendesk.com**.
+Para testar os fluxos de AuthN e AuthZ, preparamos um **site de teste de API** que está à sua disposição. Nossa equipe de suporte terá o prazer de fornecer as credenciais a você. Entre em contato conosco em **tve-support@adobe.com**.
 
 
 ## Parte I {#part-I}
@@ -32,17 +32,16 @@ Após concluir a parte I, execute as seguintes etapas:
 
 
 1. Abrir página da Web: [Teste de API de preparo](https://sp.auth-staging.adobe.com/apitest/api.html).
-1. Carregue o ativador de acesso do seguinte URL:
-   * [Acessar javascript do ativador para preparo](https://entitlement.auth-staging.adobe.com/entitlement/js/AccessEnabler.js).
-   * OU
-   * [Acesse o javascript do ativador para produção](https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js).
-   * EM SEGUIDA, clique no botão &quot;**Carregar Ativador de Acesso**&quot;.
+1. Carregar ativador de acesso por:
+   * Selecionando no menu suspenso qual versão do AccessEnabler é necessária (v3 ou v4), de onde você deseja acessá-lo (armazenamento temporário ou produção) e se ele deve estar no modo de depuração
+   * Inserir a instrução de software com a qual você deseja testar se estiver usando v4
+   * Em seguida, clique no botão &quot;**Carregar Ativador de Acesso**&quot;.
 1. Agora defina o valor da ID do solicitante como &quot;**requestorID**&quot; e clique no botão &quot;setRequestor&quot;.
 1. Depois disso, pressione o botão &quot;getAuthentication&quot; e aguarde até que o seletor de exibição seja exibido.
 1. Selecione o &quot;**MVPD**&quot; no seletor.
 1. Insira suas credenciais na página de logon do &quot;**MVPD**&quot;.
 1. Depois de ser redirecionado de volta, refaça as etapas de 1 a 3
 1. Depois de refazer a etapa 3 no &quot;setAuthenticationStatus&quot;, você deve ver o valor &quot;1&quot;. Se a autenticação não funcionar, a caixa de diálogo MVPD será exibida.
-1. Para testar a autorização, no campo de entrada do recurso, digite &quot;**requestorID**&quot; e clique no botão &quot;getAuthorization&quot;.
+1. Para testar a autorização, no campo de entrada à direita dos botões rotulados como &quot;checkAuthorization&quot; e &quot;getAuthorization&quot;, digite o **recurso** que você deseja autorizar e clique no botão &quot;getAuthorization&quot;.
 1. Como resultado, na caixa de texto &quot;setToken&quot;-\>&quot;resource id&quot;, o recurso será exibido e, na caixa de texto &quot;setToken&quot;-\>&quot;token&quot;, shortAuthorizationToken será exibido, significando que authZ foi bem-sucedido.
 1. Agora você pode clicar no botão &quot;logout&quot; para excluir os tokens.
