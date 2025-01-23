@@ -2,9 +2,9 @@
 title: Como testar fluxos de autenticação e autorização usando o site de teste da API do Adobe
 description: Como testar fluxos de autenticação e autorização usando o site de teste da API do Adobe
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: 811feba1f2476bdfacb20e332e33df7f7ae8ac00
+source-git-commit: 65475d6da7a1b25cb2d8ebd6229a7cb360c7ab4a
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '368'
 ht-degree: 0%
 
 ---
@@ -33,8 +33,8 @@ Após concluir a parte I, execute as seguintes etapas:
 
 1. Abrir página da Web: [Teste de API de preparo](https://sp.auth-staging.adobe.com/apitest/api.html).
 1. Carregar ativador de acesso por:
-   * Selecionando no menu suspenso qual versão do AccessEnabler é necessária (v3 ou v4), de onde você deseja acessá-lo (armazenamento temporário ou produção) e se ele deve estar no modo de depuração
-   * Inserir a instrução de software com a qual você deseja testar se estiver usando v4
+   * Escolha no menu suspenso de onde deseja acessá-lo (preparo ou produção) e se deve estar no modo de depuração
+   * Inserir a instrução de software com a qual você deseja testar
    * Em seguida, clique no botão &quot;**Carregar Ativador de Acesso**&quot;.
 1. Agora defina o valor da ID do solicitante como &quot;**requestorID**&quot; e clique no botão &quot;setRequestor&quot;.
 1. Depois disso, pressione o botão &quot;getAuthentication&quot; e aguarde até que o seletor de exibição seja exibido.
