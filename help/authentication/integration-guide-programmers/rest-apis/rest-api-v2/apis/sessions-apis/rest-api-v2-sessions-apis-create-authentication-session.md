@@ -2,9 +2,9 @@
 title: Criar sessão de autenticação
 description: REST API V2 - Criar sessão de autenticação
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
 workflow-type: tm+mt
-source-wordcount: '954'
+source-wordcount: '1000'
 ht-degree: 1%
 
 ---
@@ -64,7 +64,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        O domínio de origem do aplicativo que executa o logon MVPD.
+        O domínio de origem do aplicativo que executa o logon no MVPD.
         <br/><br/>
         Se a plataforma do dispositivo de transmissão tiver limitações no fornecimento de um valor, um aplicativo terá que retomar a sessão de autenticação e fornecer um valor válido.
       </td>
@@ -266,6 +266,23 @@ ht-degree: 1%
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
+               <td style="background-color: #DEEBFF;">reasonType</td>
+               <td>
+                  O tipo de motivo usado que explica o 'actionName'.
+                  <br/><br/>
+                  Os valores possíveis são:
+                  <ul>
+                    <li><b>nenhum</b></li>
+                    <li><b>autenticado</b></li>
+                    <li><b>temporário</b></li>
+                    <li><b>degradado</b></li>
+                    <li><b>authenticatedSSO</b></li>
+                    <li><b>pfs_fallback</b></li>
+                    <li><b>configuration_fallback</b></li>
+                  </ul>
+               <td><i>obrigatório</i></td>
+            </tr>
+            <tr>
                <td style="background-color: #DEEBFF;">missingParameters</td>
                <td>Os parâmetros ausentes que precisam ser fornecidos para concluir o fluxo de autenticação básico.</td>
                <td>opcional</td>
@@ -295,7 +312,17 @@ ht-degree: 1%
                <td>O identificador exclusivo interno associado ao provedor de serviços durante o processo de integração.</td>
                <td><i>obrigatório</i></td>
             </tr>
-         </table>
+            <tr>
+               <td style="background-color: #DEEBFF;">notBefore</td>
+               <td>O carimbo de data/hora antes do qual o código de autenticação não é válido.</td>
+               <td>opcional</td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notAfter</td>
+               <td>O carimbo de data/hora após o qual o código de autenticação não é válido.</td>
+               <td>opcional</td>
+            </tr>
+</table>
       </td>
       <td><i>obrigatório</i></td>
 </table>
@@ -363,11 +390,14 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
+    "reasonType": "none",
     "url": "/api/v2/authenticate/REF30/8ER640M",
     "code": "8ER640M",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
     "mvpd": "Cablevision",
-    "serviceProvider": "REF30"
+    "serviceProvider": "REF30",
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"
 }
 ```
 
@@ -402,11 +432,14 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "resume",
     "actionType": "direct",
+    "reasonType": "none",
     "url": "/api/v2/REF30/sessions/8ER640M",
     "missingParameters": ["mvpd", "domain", "redirectUrl"],
     "code": "8ER640M",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
-    "serviceProvider": "REF30"
+    "serviceProvider": "REF30",
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"
 }
 ```
 
@@ -443,6 +476,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authorize",
     "actionType": "direct",
+    "reasonType": "authenticated",
     "url": "/api/v2/REF30/decisions/authorize/Cablevision",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
     "mvpd": "Cablevision",
@@ -481,6 +515,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authorize",
     "actionType": "direct",
+    "reasonType": "temporary",
     "url": "/api/v2/REF30/decisions/authorize/TempPass_TEST40",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
     "mvpd": "TempPass_TEST40",
@@ -521,6 +556,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authorize",
     "actionType": "direct",
+    "reasonType": "degraded",
     "url": "/api/v2/REF30/decisions/authorize/Cablevision",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
     "mvpd": "Cablevision",
