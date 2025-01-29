@@ -2,7 +2,7 @@
 title: Guia do iOS/tvOS
 description: Guia do iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
 source-wordcount: '2425'
 ht-degree: 0%
@@ -229,7 +229,7 @@ autenticado.
 1. Chame [getAuthorization()](#$getAuthZ) para iniciar o fluxo de autorização.
 
    * **Dependência:** ResourceID(s) válido(s) acordado(s) com a(s) MVPD(s).
-   * As IDs de recursos devem ser as mesmas usadas em quaisquer outros dispositivos ou plataformas e serão as mesmas em todos os MVPDs. Para obter informações sobre IDs de Recursos, consulte [Identificando Recursos Protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)
+   * As IDs de recursos devem ser as mesmas usadas em quaisquer outros dispositivos ou plataformas e serão as mesmas em todos os MVPDs. Para obter informações sobre IDs de Recursos, consulte [Identificando Recursos Protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)
 
 1. Validar autenticação e autorização.
 

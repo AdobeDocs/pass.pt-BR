@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: O Adobe Pass Authentication é uma solução de concessão de direitos para o TV Everywhere, o qual fornece uma estrutura modular para determinar se a pessoa que solicita o acesso a um recurso possui direito a ele.
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '1267'
+source-wordcount: '1256'
 ht-degree: 2%
 
 ---
@@ -120,11 +120,10 @@ ht-degree: 2%
                + [Cabeçalho - AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + Recursos Padrão {#standard-features}
       + Direitos {#entitlements}
-         + [Identificação do recurso protegido](integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)
          + [Autorização de comprovação](integration-guide-programmers/features-standard/entitlements/preflight-authz.md)
-         + [Como integrar o Verificador de token de mídia](integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md)
-         + [Metadados do usuário](integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
-         + [Certificado de metadados do usuário para criptografia](integration-guide-programmers/features-standard/entitlements/user-metadata-certificate.md)
+         + [Recurso protegido](integration-guide-programmers/features-standard/entitlements/protected-resources.md)
+         + [Tokens de mídia](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
+         + [Metadados do usuário](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + Relatório de Erros {#error-reporting}
          + [Códigos de erro aprimorados](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + Acesso de Logon Único {#sso-access}

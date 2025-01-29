@@ -2,9 +2,9 @@
 title: Perguntas frequentes sobre REST API V2
 description: Perguntas frequentes sobre REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '6668'
+source-wordcount: '6664'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ Para obter mais detalhes, consulte os seguintes documentos:
 
 #### 3. Como o aplicativo cliente pode obter as informações de metadados do usuário? {#authentication-phase-faq3}
 
-O aplicativo cliente pode consultar um dos seguintes pontos de extremidade capazes de retornar informações de [metadados do usuário](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) como parte das informações do perfil:
+O aplicativo cliente pode consultar um dos seguintes pontos de extremidade capazes de retornar informações de [metadados do usuário](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) como parte das informações do perfil:
 
 * [API do endpoint de perfis](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
 * [Endpoint de perfis para API MVPD específica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
@@ -245,7 +245,7 @@ O identificador exclusivo do recurso pode ter dois formatos:
 * Um formato de string simples, como um identificador exclusivo de um canal (marca).
 * Um formato RSS de mídia (MRSS) com informações adicionais, como título, classificações e metadados de controle dos pais.
 
-Para obter mais detalhes, consulte a documentação [Identificando Recursos Protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
+Para obter mais detalhes, consulte a documentação de [Recursos Protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
 
 #### 6. Para quantos recursos o aplicativo cliente pode obter uma decisão de pré-autorização de cada vez? {#preauthorization-phase-faq6}
 
@@ -294,7 +294,7 @@ O token de mídia é um termo definido no [Glossário](/help/authentication/inte
 
 O token de mídia consiste em uma sequência de caracteres assinada enviada em texto não criptografado que pode ser recuperada do endpoint da Autorização de decisões.
 
-Para obter mais informações, consulte a documentação [Integração do Verificador de Token de Mídia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md).
+Para obter mais informações, consulte a documentação do [Verificador de Token de Mídia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 
 O token de mídia é válido por um período limitado e curto especificado no momento da emissão, indicando a quantidade de tempo que ele deve ser usado pelo aplicativo cliente antes de solicitar a consulta do endpoint da Autorização de Decisões novamente.
 
@@ -316,7 +316,7 @@ O identificador exclusivo do recurso pode ter dois formatos:
 * Um formato de string simples, como um identificador exclusivo de um canal (marca).
 * Um formato RSS de mídia (MRSS) com informações adicionais, como título, classificações e metadados de controle dos pais.
 
-Para obter mais detalhes, consulte a documentação [Identificando Recursos Protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
+Para obter mais detalhes, consulte a documentação de [Recursos Protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
 
 #### 6. Para quantos recursos o aplicativo cliente pode obter uma decisão de autorização de cada vez? {#authorization-phase-faq6}
 
