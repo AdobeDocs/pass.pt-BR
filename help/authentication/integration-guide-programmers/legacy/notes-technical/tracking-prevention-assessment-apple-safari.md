@@ -2,7 +2,7 @@
 title: Avaliação de prevenção de rastreamento no Apple Safari
 description: Avaliação de prevenção de rastreamento no Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -133,7 +133,7 @@ Neste ponto, esses requisitos/prompts do Safari não se alinham aos nossos requi
 
 **Temp Pass**
 
-Para atenuar os problemas de individualização e ter uma interação com o usuário, recomendamos que você use o **[Temp Pass Promocional](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)** de forma interativa e forneça pelo menos uma informação adicional sobre o usuário (por exemplo, endereço de email).
+Para atenuar os problemas de individualização e ter uma interação com o usuário, recomendamos que você use o **[Temp Pass Promocional](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)** de forma interativa e forneça pelo menos uma informação adicional sobre o usuário (por exemplo, endereço de email).
 
 ## Safari 13 {#safari13}
 

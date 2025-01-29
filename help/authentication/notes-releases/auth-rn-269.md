@@ -2,9 +2,9 @@
 title: Notas de versão da Autenticação Adobe Pass 2.69
 description: Notas de versão da Autenticação Adobe Pass 2.69
 exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '214'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Data de lançamento: **02/27/2024 - 29/02/2024**
 
 * Vulnerabilidades de segurança corrigidas.
 * Melhorias na redefinição da camada de segurança Temp Pass com o Dynamic Client Registration (DCR).
-   * Encontre mais detalhes aqui: [Redefinir Temp Pass](../integration-guide-programmers/features-premium/temporary-access/reset-temp-pass.md)
+   * Você pode encontrar mais detalhes aqui: [Recurso TempPass](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
 * Melhorias nos relatórios de Identificação de plataforma.
 
 #### REST APIs {#rest-apis}
@@ -50,5 +50,5 @@ Data de lançamento: **02/27/2024 - 29/02/2024**
 
 #### JavaScript SDK 4.7.0 {#js-sdk}
 
-* Remoção da versão obsoleta 2.0.1 do SDK do JavaScript do Access Enabler devido a vulnerabilidades de segurança.
+* Remoção da versão obsoleta 2.0.1 do Access Enabler JavaScript SDK devido a vulnerabilidades de segurança.
    * Siga o link para obter mais detalhes: [Notas de versão do Adobe Pass Authentication JavaScript 4.7.0](authn-rn-javascript-470.md)

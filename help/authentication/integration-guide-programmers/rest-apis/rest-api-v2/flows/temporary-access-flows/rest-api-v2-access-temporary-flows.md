@@ -2,7 +2,7 @@
 title: Fluxos de Acesso Temporário
 description: REST API V2 - Fluxos de acesso temporário
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '3215'
 ht-degree: 0%
@@ -19,9 +19,9 @@ ht-degree: 0%
 >
 > A implementação da REST API V2 é limitada pela documentação do [Mecanismo de limitação](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-O TempPass permite que os programadores forneçam acesso temporário a seu conteúdo protegido sem solicitar que os usuários se autentiquem com uma conta MVPD válida.
+O TempPass permite que os programadores forneçam acesso temporário a seu conteúdo protegido sem solicitar que os usuários se autentiquem com uma conta válida do MVPD.
 
-Para obter mais detalhes sobre o recurso TempPass, consulte a documentação [TempPass](../../../../features-premium/temporary-access/temp-pass.md).
+Para obter mais detalhes sobre o recurso TempPass, consulte a documentação [TempPass](../../../../features-premium/temporary-access/temp-pass-feature.md).
 
 Os fluxos de acesso temporário permitem consultar os seguintes cenários:
 
@@ -351,7 +351,7 @@ Siga as etapas fornecidas para implementar o fluxo de autorização ao consumir 
 
    >[!TIP]
    >
-   > Sugestão: O aplicativo de transmissão pode informar aos usuários que o número máximo de recursos foi excedido e aconselhá-los a iniciar um fluxo de autenticação básico usando um MVPD regular para continuar assistindo.
+   > Sugestão: o aplicativo de streaming pode informar aos usuários que o número máximo de recursos foi excedido e aconselhá-los a iniciar um fluxo de autenticação básica usando um MVPD comum para continuar assistindo.
 
 ## Recuperar decisões de autorização quando o TempPass básico ou promocional expirar {#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
@@ -431,7 +431,7 @@ Siga as etapas fornecidas para implementar o fluxo de autorização quando o Tem
 
    >[!TIP]
    >
-   > Sugestão: O aplicativo de transmissão pode informar aos usuários que o acesso temporário expirou e aconselhá-los a iniciar um fluxo de autenticação básico usando um MVPD regular para continuar assistindo.
+   > Sugestão: o aplicativo de transmissão pode informar aos usuários que o acesso temporário expirou e aconselhá-los a iniciar um fluxo de autenticação básico usando um MVPD comum para continuar assistindo.
 
 ## Recuperar perfil para TempPass básico {#retrieve-profile-for-basic-temppass}
 
