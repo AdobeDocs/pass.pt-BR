@@ -2,7 +2,7 @@
 title: Referência da API do Android SDK
 description: Referência da API do Android SDK
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '4560'
 ht-degree: 0%
@@ -614,7 +614,7 @@ Há dois tipos de metadados disponíveis para programadores:
 
 **Retornos de chamada disparados:** [`setMetadataStatus()`](#setMetadaStatus)
 
-**Mais Informações:** [Metadados de Usuário](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
+**Mais Informações:** [Metadados de Usuário](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)
 
 [Voltar à API do Android...](#api)
 
@@ -676,7 +676,7 @@ Esse valor é nulo quando a solicitação foi feita para metadados simples (TTL 
 
 **Acionado por:** [`getMetadata()`](#getMetadata)
 
-**Mais Informações:** [Metadados de Usuário](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
+**Mais Informações:** [Metadados de Usuário](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)
 
 
 [Voltar à API do Android...](#api)

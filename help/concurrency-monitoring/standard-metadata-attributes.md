@@ -2,7 +2,7 @@
 title: Atributos de metadados padrão
 description: Atributos de metadados padrão
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '1053'
 ht-degree: 4%
@@ -21,10 +21,10 @@ Esta página tem como objetivo fornecer uma lista completa de atributos de metad
 A API de Monitoramento de Simultaneidade força os clientes a enviar os seguintes valores como parte de qualquer chamada de inicialização válida: [chamadas de iniciação de sessão](/help/concurrency-monitoring/restrict-concurr-usage-mult-apps.md#api-calls-descr).
 
 | Nome do campo | Exemplo de valor | Onde usá-lo | Obtido de |
-|-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
+|---------------|-----------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | Cabeçalho de autorização | Tíquete do Zendesk na integração |
 | mvpdName | Sample_MVPD | Caminho do URI | Autenticação do Adobe Pass a partir do endpoint de configuração quando o usuário seleciona o MVPD |
-| accountId | 12345 | Caminho do URI | Metadados upstreamUserID de autenticação do Adobe Pass após logon do usuário [Metadados do usuário upstreamUserID - Autenticação do Adobe Pass](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) |
+| accountId | 12345 | Caminho do URI | Metadados upstreamUserID de autenticação do Adobe Pass após logon do usuário [Metadados do usuário upstreamUserID - Autenticação do Adobe Pass](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) |
 
 
 ## Atributos de metadados {#metadata-attr}
@@ -40,7 +40,7 @@ Com a [API v2.0](http://docs.adobeptime.io/cm-api-v2/), se qualquer um desses at
 | Recurso | channel | string | O canal de TV |                                                   | ChannelY |                                                                                   |
 |                 | assetId | string | O título &quot;amigável&quot; ou legível pelo consumidor a ser apresentado para este conteúdo | [Referência de campos de dados do EIDR 2.0](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/EIDR_2_0_Data_Fields.pdf){target=_blank} | Ben-Hur |                                                                                   |
 |                 | type | enumeração | Um valor que descreve o tipo geral de conteúdo representado pelo TveItem. Os valores enumerados incluem: filme broadcastEpisódio nonBroadcastEpisódio musicVideo awardsShow clip concerto conferência newsEvento sportingEvento trailer | [Prática Recomendada do Feed de Metadados OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | broadcastEpisode | O campo deve corresponder a um dos itens na lista discriminada |
-|                 | contentType | string | Este campo determina se o conteúdo solicitado é ao vivo ou VOD | N/A | live, vod | live ou vod |
+|                 | contentType | string | Este campo determina se o conteúdo solicitado é em tempo real ou VOD | N/A | live, vod | live ou vod |
 |                 | gênero | string | O gênero do conteúdo que é transmitido. Descreve o tipo de programação geral | [Prática Recomendada de Feed de Metadados OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | Comédia | Tipo de gênero válido |
 |                 | duração | número | A duração do item de mídia em segundos | [Prática Recomendada do Feed de Metadados OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | 1800 | sequência numérica |
 | Dispositivo/Navegador | deviceId | string | O identificador exclusivo do dispositivo. | [Propriedades do Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | 2b6f0cc904d137be2e1730235f5664094b831186 |                                                                                   |
@@ -55,7 +55,7 @@ Com a [API v2.0](http://docs.adobeptime.io/cm-api-v2/), se qualquer um desses at
 |                 | applicationId | string | A ID do aplicativo que identifica exclusivamente um aplicativo cliente. | N/A | de305d54-75b4-431b-adb2-eb6b9e546013 |                                                                                   |
 |                 | applicationPlatform | string | A plataforma nativa do aplicativo | N/A | ios, android |                                                                                   |
 |                 | applicationVersion | string | Esse valor pode ser usado para fins de análise | N/A | 1.0, 2.0 |                                                                                   |
-| Assunto | accountId | string | A ID da conta do assunto Monitoramento de simultaneidade (no escopo do MVPD) | N/A | conta-teste |                                                                                   |
+| Assunto | accountId | string | A ID da conta do assunto do Monitoramento de simultaneidade (no escopo do MVPD) | N/A | conta-teste |                                                                                   |
 |                 | contractType | string | premium, básico. Os clientes podem adicionar isso como metadados personalizados e usá-lo em seus próprios domínios | N/A | premium, básico |                                                                                   |
 | Usuário | name | string | Alguns MVPDs fornecem informações relacionadas ao usuário específico que reproduz o conteúdo. | N/A |                                                                                                                                                         |                                                                                   |
 |                 | hba | booleano | Identifica se o usuário tenta iniciar o fluxo a partir de sua localização inicial | N/A | verdadeiro, falso | verdadeiro ou falso |
