@@ -2,9 +2,9 @@
 title: Guia do usuário do Painel Primetime TVE
 description: Guia do usuário do Painel Primetime TVE
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
-source-wordcount: '5524'
+source-wordcount: '5517'
 ht-degree: 0%
 
 ---
@@ -287,7 +287,7 @@ Para criar uma nova integração, siga as etapas abaixo:
 
 Para atualizar uma integração existente, clique na entrada da tabela dessa integração específica na seção Integrações ou na seção Canais, que contém uma guia Integrações.
 
-Ao usar o modo Workspace básico, esta seção permitirá visualizar e editar as configurações mais atualizadas, como TTLs de token de autenticação e autorização (tempo de vida útil), bem como configurações de iFrame. Lembre-se de que as configurações de TTL podem estar ausentes nas integrações com MVPDs que oferecem suporte a TTL de Persistência de Token Definido Dinamicamente (consulte a entrada 1.19 de [Requisitos de Integração do MVPD](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md)).
+Ao usar o modo Workspace básico, esta seção permitirá visualizar e editar as configurações mais atualizadas, como TTLs de token de autenticação e autorização (tempo de vida útil), bem como configurações de iFrame. Lembre-se de que as configurações de TTL podem estar ausentes nas integrações com MVPDs que oferecem suporte a TTL de persistência de token definido dinamicamente.
 
 
 

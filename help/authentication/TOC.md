@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: O Adobe Pass Authentication é uma solução de concessão de direitos para o TV Everywhere, o qual fornece uma estrutura modular para determinar se a pessoa que solicita o acesso a um recurso possui direito a ele.
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
-source-wordcount: '1231'
+source-wordcount: '1230'
 ht-degree: 2%
 
 ---
@@ -48,7 +48,6 @@ ht-degree: 2%
    + [Papel técnico](kickstart/technical-paper.md)
    + [Guia de início rápido do programador](kickstart/programmer-kickstart-guide.md)
    + [Guia de início rápido do MVPD](kickstart/mvpd-kickstart-guide.md)
-   + [Visão geral do MVPD](kickstart/mvpd-overview.md)
    + [Perguntas frequentes sobre procedimentos de suporte](kickstart/support-procedures-faqs.md)
 + Guia De Integração Para Programadores {#integration-guide-programmers}
    + [Guia de integração do programador](integration-guide-programmers/programmer-integration-guide-overview.md)
@@ -260,7 +259,7 @@ ht-degree: 2%
             + [(Herdado) Monitoramento do Adobe Pass Adobe PayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [(Herdado) Como testar fluxos de autenticação e autorização usando o site de teste da API do Adobe](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
 + Guia de Integração para MVPDs {#integration-guide-mvpds}
-   + [Recursos de integração](integration-guide-mvpds/mvpd-integr-features.md)
+   + [Guia de integração do MVPD](integration-guide-mvpds/mvpd-integration-guide-overview.md)
    + [Autenticação](integration-guide-mvpds/authn-usecase.md)
    + [Autenticação usando o protocolo OAuth 2.0](integration-guide-mvpds/authn-oauth2-protocol.md)
    + [Autorização](integration-guide-mvpds/authz-usecase.md)
