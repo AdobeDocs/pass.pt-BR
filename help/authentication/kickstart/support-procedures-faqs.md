@@ -2,7 +2,7 @@
 title: Perguntas frequentes sobre procedimentos de suporte
 description: Perguntas frequentes sobre procedimentos de suporte
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
-source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
+source-git-commit: 0ab1fc212752dd4a4d6e12a4ab1287ef74e4a282
 workflow-type: tm+mt
 source-wordcount: '777'
 ht-degree: 0%
@@ -61,7 +61,7 @@ Um incidente de nível GRAVIDADE 1 pode ser iniciado pelo Adobe ou por um parcei
    * Logs de rastreamento ou dispositivo HTTP demonstrando o problema
    * (opcional) Capturas de tela ou vídeos disponíveis que demonstram o problema
 
-1. Se o Adobe não responder ao tíquete dentro de um período, o parceiro poderá ligar para o seguinte número: **1-205-693-9813**.
+1. Se o Adobe não responder ao tíquete dentro de um período, o parceiro pode ligar para o seguinte número: **1-657-312-4623**.
 
 >[!IMPORTANT]
 >
