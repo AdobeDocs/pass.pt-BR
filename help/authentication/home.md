@@ -2,9 +2,9 @@
 title: Bem- vindo ao Adobe&reg; Passar a autenticação!
 description: Bem- vindo ao Adobe&reg; Visão geral da autenticação de aprovação
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ A Autenticação do Adobe Pass é uma solução de direito para a TV Everywhere,
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <ul><li>[Guia de Kickstart do Programador](/help/authentication/kickstart/programmer-kickstart-guide.md)</li><li>[Metadados de usuário](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)</li></ul> | <ul><li>[Guia de início rápido do MVPD](/help/authentication/kickstart/mvpd-kickstart-guide.md)</li><li>[Autenticação](/help/authentication/integration-guide-mvpds/authn-usecase.md)</li><li>[Autorização](/help/authentication/integration-guide-mvpds/authz-usecase.md)</li><li>[Logoff](/help/authentication/integration-guide-mvpds/usecase-mvpd-logout.md)</li></ul> |
 | **Para Clientes De Aplicativos Nativos** | **Para Todos** |
-| <ul><li>[Visão geral técnica do iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Visão geral técnica do Android](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[Papel Técnico](/help/authentication/kickstart/technical-paper.md)</li><li>[Procedimentos de escalonamento](/help/authentication/kickstart/escalation-procedures.md)</li></ul> |
+| <ul><li>[Visão geral técnica do iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Visão geral técnica do Android](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[Papel Técnico](/help/authentication/kickstart/technical-paper.md)</li><li>[Perguntas frequentes sobre procedimentos de suporte](/help/authentication/kickstart/support-procedures-faqs.md)</li></ul> |
 | **Para Dispositivos Inteligentes** |                                                                                                                                                                                                                                                                                                                                                                       |
 | <ul><li>[Visão geral técnica sem cliente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)</li><li>[API sem cliente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
 
@@ -37,7 +37,7 @@ A Autenticação do Adobe Pass é uma solução de direito para a TV Everywhere,
 >
 > [Enviar um email para nossa equipe de suporte](mailto:tve-support@adobe.com) também é a primeira etapa para qualquer relatório de problema ou incidente.
 >
-> Se você tiver um problema de [GRAVIDADE 1 EM TEMPO REAL](/help/authentication/kickstart/escalation-procedures.md), tiver enviado um email para nós e 30 minutos tiverem decorrido sem uma resposta, consulte o documento [Procedimentos de Escalonamento](/help/authentication/kickstart/escalation-procedures.md) para obter os números de telefone para ligar.
+> Se você tiver um problema de [GRAVIDADE 1 EM TEMPO REAL](/help/authentication/kickstart/support-procedures-faqs.md), tiver enviado um email para nós e 30 minutos tiverem decorrido sem uma resposta, consulte o documento [Procedimentos de Escalonamento](/help/authentication/kickstart/support-procedures-faqs.md) para obter os números de telefone para ligar.
 
 ## Para encontrar o que você precisa {#how-to-search}
 
