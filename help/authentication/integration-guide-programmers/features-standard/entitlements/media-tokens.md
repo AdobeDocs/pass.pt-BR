@@ -1,9 +1,10 @@
 ---
 title: Tokens de mídia
 description: Tokens de mídia
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
@@ -12,9 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
-O token de mídia é um token gerado pela autenticação da Adobe Pass como resultado de uma decisão de autorização destinada a fornecer acesso de visualização ao conteúdo protegido (recurso). O token de mídia é válido por um período limitado e curto (alguns minutos) especificado no momento do problema, indicando a quantidade de tempo que ele deve ser usado pelo aplicativo cliente antes de exigir a recuperação de um novo.
+O token de mídia é um token gerado pela [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) da Autenticação da Adobe Pass como resultado de uma decisão de autorização destinada a fornecer acesso de exibição a conteúdo protegido (recurso). O token de mídia é válido por um período limitado e curto (alguns minutos) especificado no momento do problema, indicando a quantidade de tempo que ele deve ser verificado e usado pelo aplicativo cliente.
 
 O token de mídia consiste em uma sequência de caracteres assinada com base na Infraestrutura de Chave Pública (PKI) enviada em texto não criptografado. Com a proteção baseada em PKI, o token é assinado usando uma chave assimétrica emitida para o Adobe por uma Autoridade de Certificação (CA).
 
@@ -49,7 +50,7 @@ A biblioteca Verificador de Token de Mídia representada pelo arquivo Java `medi
 
 A classe `ITokenVerifier` define os seguintes métodos:
 
-* O método `isValid()` usado para validar o token de mídia. Ele aceita um único argumento, o [identificador de recurso](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md). Se o identificador de recurso fornecido for `null`, o método validará somente a autenticidade e o período de validade do token de mídia.
+* O método `isValid()` usado para validar o token de mídia. Ele aceita um único argumento, o [identificador de recurso](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier). Se o identificador de recurso fornecido for `null`, o método validará somente a autenticidade e o período de validade do token de mídia.
 
   O método `isValid()` retorna um dos seguintes valores de status:
 
@@ -193,7 +194,7 @@ O token de mídia pode ser recuperado usando a seguinte API:
 
 * [Recuperar decisões de autorização usando mvpd específico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 
-Consulte as seções **Resposta** e **Amostras** da API acima para entender a decisão de autorização e os modelos de token de mídia.
+Consulte as seções **Resposta** e **Amostras** da API acima para entender a estrutura das decisões de autorização e dos tokens de mídia.
 
 Para obter mais detalhes sobre como e quando integrar a API acima, consulte o seguinte documento:
 

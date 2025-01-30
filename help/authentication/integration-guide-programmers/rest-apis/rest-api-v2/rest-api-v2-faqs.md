@@ -2,7 +2,7 @@
 title: Perguntas frequentes sobre REST API V2
 description: Perguntas frequentes sobre REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '6664'
 ht-degree: 0%
@@ -245,7 +245,7 @@ O identificador exclusivo do recurso pode ter dois formatos:
 * Um formato de string simples, como um identificador exclusivo de um canal (marca).
 * Um formato RSS de mídia (MRSS) com informações adicionais, como título, classificações e metadados de controle dos pais.
 
-Para obter mais detalhes, consulte a documentação de [Recursos Protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
+Para obter mais detalhes, consulte a documentação de [Recursos Protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
 #### 6. Para quantos recursos o aplicativo cliente pode obter uma decisão de pré-autorização de cada vez? {#preauthorization-phase-faq6}
 
@@ -316,7 +316,7 @@ O identificador exclusivo do recurso pode ter dois formatos:
 * Um formato de string simples, como um identificador exclusivo de um canal (marca).
 * Um formato RSS de mídia (MRSS) com informações adicionais, como título, classificações e metadados de controle dos pais.
 
-Para obter mais detalhes, consulte a documentação de [Recursos Protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
+Para obter mais detalhes, consulte a documentação de [Recursos Protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
 #### 6. Para quantos recursos o aplicativo cliente pode obter uma decisão de autorização de cada vez? {#authorization-phase-faq6}
 

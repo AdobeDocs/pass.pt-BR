@@ -2,7 +2,7 @@
 title: Metadados do usuário
 description: Metadados do usuário
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '1793'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
 Os metadados do usuário se referem aos [atributos](#attributes) específicos do usuário (por exemplo, códigos postais, classificações dos pais, IDs de usuário etc.) que são mantidos pelos MVPDs e fornecidos aos Programadores por meio da [REST API V2](#apis) de Autenticação da Adobe Pass.
 
