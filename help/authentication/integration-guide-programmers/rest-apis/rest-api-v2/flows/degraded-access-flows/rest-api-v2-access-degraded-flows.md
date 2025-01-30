@@ -2,7 +2,7 @@
 title: Fluxos de acesso degradados
 description: REST API V2 - Fluxos de acesso degradados
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '1605'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 A degradação fornece o desvio temporário de endpoints específicos de autenticação e autorização do MVPD. Normalmente, o Programador inicia essa ação, mas independentemente de quem aciona um evento de degradação, a ação depende de acordos anteriores feitos com os MVPDs afetados.
 
-Para obter mais detalhes sobre o recurso de Degradação, consulte a documentação de [Degradação](../../../../features-premium/degraded-access/degradation-api-overview.md).
+Para obter mais detalhes sobre o recurso de Degradação, consulte a documentação de [Degradação](../../../../features-premium/degraded-access/degradation-feature.md).
 
 Os fluxos de acesso degradados permitem consultar os seguintes cenários:
 
@@ -36,7 +36,7 @@ Os fluxos de acesso degradados permitem consultar os seguintes cenários:
 
 Antes de executar o fluxo de autenticação enquanto a degradação é aplicada, verifique se os seguintes pré-requisitos foram atendidos:
 
-* O aplicativo de streaming deve iniciar uma sessão de autenticação quando precisar entrar com o MVPD.
+* O aplicativo de streaming deve iniciar uma sessão de autenticação quando precisar entrar com a MVPD.
 
 >[!IMPORTANT]
 > 
@@ -44,7 +44,7 @@ Antes de executar o fluxo de autenticação enquanto a degradação é aplicada,
 > 
 > <br/>
 > 
-> * O aplicativo de streaming não tem um perfil válido para esse MVPD específico salvo no back-end do Adobe Pass.
+> * O aplicativo de transmissão não tem um perfil válido para esse MVPD específico salvo no back-end do Adobe Pass.
 > * Há uma regra de degradação AuthNAll aplicada à integração entre os `serviceProvider` e `mvpd` fornecidos.
 
 ### Fluxo de trabalho (WRK) {#workflow-perform-authentication-while-degradation-is-applied}
@@ -257,7 +257,7 @@ Antes de recuperar o perfil de um MVPD específico enquanto a degradação é ap
 
 ### Fluxo de trabalho (WRK) {#workflow-retrieve-profile-while-degradation-is-applied}
 
-Siga as etapas fornecidas para implementar o fluxo de recuperação de perfil para um MVPD específico enquanto a degradação é aplicada, conforme mostrado no diagrama a seguir.
+Siga as etapas fornecidas para implementar o fluxo de recuperação de perfil para um MVPD específico, enquanto a degradação é aplicada, conforme mostrado no diagrama a seguir.
 
 ![Recuperar perfil enquanto a degradação é aplicada](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
 

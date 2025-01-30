@@ -2,9 +2,9 @@
 title: Glossário da REST API V2
 description: Glossário da REST API V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
-source-wordcount: '1743'
+source-wordcount: '1742'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,7 @@ A decisão é um conceito de Autenticação da Adobe Pass que armazena informaç
 
 A degradação é um recurso de Autenticação Adobe Pass que permite que um usuário acesse conteúdo protegido mesmo quando seu [MVPD](#mvpd) sofrer uma interrupção de serviço.
 
-Para obter mais informações, consulte a documentação [Visão geral da API de degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md).
+Para obter mais informações, consulte a documentação do [Recurso de Degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md).
 
 #### ID do dispositivo {#device-id}
 

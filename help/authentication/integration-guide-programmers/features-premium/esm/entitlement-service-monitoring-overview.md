@@ -2,7 +2,7 @@
 title: Visão Geral do Monitoramento do Serviço de Direito
 description: Visão Geral do Monitoramento do Serviço de Direito
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 0%
@@ -129,11 +129,3 @@ Você pode usar os dados ESM para os seguintes casos de uso:
 - **Depuração/Teste de Qualidade** - Como os dados também são detalhados por plataforma, dispositivo, navegador e sistema operacional, a análise de padrões de uso pode apontar problemas em combinações específicas (por exemplo, Safari no OSX).
 
 - **Analytics** - Os dados fornecidos podem ser usados para complementar/auditar os dados do cliente coletados pelo Adobe Analytics ou outra ferramenta de análise.
-
-<!--
-## Related Information {#related-information}
-
-- [ESM API](/help/authentication/entitlement-service-monitoring-api.md)
-- [Degradation API Overview](/help/authentication/degradation-api-overview.md)
-- [Server-side Metrics](/help/authentication/understanding-serverside-metrics.md)
--->
