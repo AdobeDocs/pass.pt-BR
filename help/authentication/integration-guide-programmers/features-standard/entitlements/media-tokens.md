@@ -2,9 +2,9 @@
 title: Tokens de mídia
 description: Tokens de mídia
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 >
 > O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
 
-O token de mídia é um token gerado pela [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) da Autenticação da Adobe Pass como resultado de uma decisão de autorização destinada a fornecer acesso de exibição a conteúdo protegido (recurso). O token de mídia é válido por um período limitado e curto (alguns minutos) especificado no momento do problema, indicando a quantidade de tempo que ele deve ser verificado e usado pelo aplicativo cliente.
+O token de mídia é um token gerado pela [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) da Autenticação da Adobe Pass como resultado de uma decisão de autorização destinada a fornecer acesso de exibição a conteúdo protegido (recurso).
+
+O token de mídia é válido por um período limitado e curto (padrão de 7 minutos) especificado no momento do problema, indicando o limite de tempo antes que ele seja verificado e usado pelo aplicativo cliente. O token de mídia é restrito ao uso único e nunca deve ser armazenado em cache.
 
 O token de mídia consiste em uma sequência de caracteres assinada com base na Infraestrutura de Chave Pública (PKI) enviada em texto não criptografado. Com a proteção baseada em PKI, o token é assinado usando uma chave assimétrica emitida para o Adobe por uma Autoridade de Certificação (CA).
 
@@ -25,7 +27,7 @@ O Media Token Verifier é uma biblioteca distribuída pela autenticação da Ado
 
 ## Verificador de token de mídia {#media-token-verifier}
 
-A autenticação da Adobe Pass recomenda que os programadores enviem o token de mídia para um serviço de backend que integre a biblioteca Verificador de token de mídia para garantir acesso seguro antes de iniciar o fluxo de vídeo. O TTL (time-to-live) do token de mídia foi projetado para levar em conta possíveis problemas de sincronização de relógio entre o servidor que gera o token e o servidor de validação.
+A autenticação da Adobe Pass recomenda que os programadores enviem o token de mídia para seu próprio serviço de backend, integrando a biblioteca Verificador de token de mídia, para garantir acesso seguro antes de iniciar o fluxo de vídeo. O TTL (time-to-live) do token de mídia foi projetado para levar em conta possíveis problemas de sincronização de relógio entre o servidor que gera o token e o servidor de validação.
 
 A autenticação da Adobe Pass recomenda não analisar o token de mídia e extrair diretamente os dados, pois o formato do token não é garantido e pode mudar no futuro. A biblioteca do Verificador de token de mídia deve ser a única ferramenta usada para analisar o conteúdo do token.
 

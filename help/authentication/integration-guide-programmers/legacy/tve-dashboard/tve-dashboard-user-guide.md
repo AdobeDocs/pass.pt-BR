@@ -2,9 +2,9 @@
 title: Guia do usuário do Painel Primetime TVE
 description: Guia do usuário do Painel Primetime TVE
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '5526'
+source-wordcount: '5524'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,6 @@ Antes de aprofundar esse guia do usuário, recomendamos que você passe pelos se
 
 * [Documento técnico da TVE](/help/authentication/kickstart/technical-paper.md)
 * [Guia de início rápido do programador](/help/authentication/kickstart/programmer-kickstart-guide.md)
-* [Fluxo de direitos](/help/authentication/integration-guide-programmers/entitlement-flow.md)
 
 Prosseguindo para as próximas seções deste guia do usuário, você descobrirá maneiras de administrar diferentes configurações para os Canais, Programadores ou as Integrações entre Canais e MVPDs (Distribuidores de Programas de Vídeo Multicanais) da sua empresa.
 

@@ -2,9 +2,9 @@
 title: Visão geral do JavaScript SDK
 description: Visão geral do JavaScript SDK
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ A Adobe recomenda que você migre para a versão mais recente do JS v4.x da bibl
 
 A integração do JavaScript de autenticação da Adobe Pass oferece aos programadores uma solução TV em todos os lugares no ambiente familiar de desenvolvimento de aplicativos Web JS. Os principais componentes da integração são seu aplicativo de &quot;alto nível&quot; (interação do usuário, apresentação de vídeo) e a biblioteca de &quot;baixo nível&quot; do AccessEnabler fornecida pelo Adobe, que fornece sua entrada para os fluxos de direitos e lida com a comunicação com os servidores de autenticação da Adobe Pass.
 
-O fluxo de direitos de Autenticação geral do Adobe Pass é coberto pelo [Fluxo de Direitos do Programador](/help/authentication/integration-guide-programmers/entitlement-flow.md), e o Guia de Integração do JavaScript o orienta pela implementação. As seções a seguir fornecem descrições e exemplos específicos para a integração do JavaScript AccessEnabler.
+As seções a seguir fornecem descrições e exemplos específicos para a integração do JavaScript AccessEnabler.
 
 >[!IMPORTANT]
 >
