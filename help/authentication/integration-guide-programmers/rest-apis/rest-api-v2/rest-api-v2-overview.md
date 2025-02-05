@@ -2,7 +2,7 @@
 title: Visão geral da REST API V2
 description: Visão geral da REST API V2
 exl-id: a5595193-82c4-4033-bd98-596b4908b401
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Série de webinários ao vivo](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 Deseja melhorar a relação custo/benefício de seus aplicativos de TVE?
 
@@ -41,7 +43,7 @@ A REST API V2 permite que uma sessão de autenticação seja transmitida com seg
 
 ### Várias sessões de autenticação ativas
 
-Agora, diferentes sessões de MVPD ativas são possíveis e os clientes podem optar por alternar entre o TempPass e a integração MVPD regular, quando necessário.
+Agora, diferentes sessões ativas do MVPD são possíveis, e os clientes podem optar por alternar entre o TempPass e a integração regular do MVPD, quando necessário.
 
 ### Mecanismo de segurança aprimorado
 

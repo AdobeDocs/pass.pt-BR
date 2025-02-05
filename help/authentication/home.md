@@ -2,9 +2,9 @@
 title: Bem- vindo ao Adobe&reg; Passar autenticação
 description: Bem- vindo ao Adobe&reg; Passar autenticação
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: c9e31a036a0300fabd9f75dd85d472c390d9053e
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '423'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,8 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Série de webinários ao vivo](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 A Autenticação do Adobe Pass é uma poderosa solução de direitos do TV Everywhere (TVE), projetada para simplificar e proteger o processo de verificação do direito dos visualizadores de acessar conteúdo protegido. Essa estrutura modular conecta os Provedores de conteúdo (Programadores) aos Provedores de TV por assinatura (MVPDs), facilitando as transações de direito com velocidade, consistência e confiabilidade.
 
