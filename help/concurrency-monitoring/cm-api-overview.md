@@ -2,9 +2,9 @@
 title: Visão geral da API
 description: Visão geral da API do monitoramento de simultaneidade
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
+source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '2102'
 ht-degree: 0%
 
 ---
@@ -73,12 +73,27 @@ Efetuar a chamada de inicialização de sessão. Você receberá a seguinte resp
 
 Todos os dados que precisamos estão contidos nos cabeçalhos de resposta. O cabeçalho **Local** representa a ID da nova sessão criada e os cabeçalhos **Data** e **Expira** representam os valores usados para agendar o aplicativo para fazer a próxima pulsação para manter a sessão ativa.
 
+Com cada chamada, você pode enviar os metadados necessários, não apenas os metadados obrigatórios do aplicativo. O envio de metadados pode ser realizado de duas maneiras:
+* usando **consulta** **parâmetros**:
+
+  ```sh
+  curl -i -XPOST -u "user:pass" "https://streams-stage.adobeprimetime.com/v2/sessions/some_idp/some_user?metadata1=value1&metadata2=value2"
+  ```
+
+* usando **solicitação** **corpo**:
+
+  ```sh
+  curl -i -XPOST -u "user:pass" https://streams-stage.adobeprimetime.com/v2/sessions/some_idp/some_user -d "metadata1=value1" -d "metadata2=value2" -H "Content-Type=application/x-www-form-urlencoded"
+  ```
+
 #### Heartbeat {#heartbeat}
 
 Faça uma chamada de heartbeat. Forneça a **id de sessão** obtida na chamada de inicialização de sessão, juntamente com os parâmetros **subject** e **idp** usados.
 
 ![](assets/heartbeat.png)
 
+Na chamada de heartbeat, você pode enviar metadados da mesma maneira que faz na inicialização da sessão. É possível adicionar novos metadados a qualquer momento e atualizar valores enviados anteriormente com algumas **exceções**. Os seguintes valores, uma vez definidos, não podem ser alterados: **pacote**, **canal**, **plataforma**, **assetId**, **idp**, **mvpd**, **hba_status**, **hba**,
+**mobileDevice**
 
 Se a sessão ainda for válida (não expirou ou foi excluída manualmente), você receberá um resultado bem-sucedido:
 
@@ -111,8 +126,11 @@ Ao fazer a chamada, você receberá a seguinte resposta:
 
 ![](assets/get-all-running-streams-success.png)
 
-Observe que o cabeçalho **Expira**. Esse é o momento em que a primeira sessão deve expirar, a menos que um heartbeat seja enviado. OtherStreams tem o valor 0 porque não há outros fluxos em execução para este usuário em aplicativos de outro locatário.
+Para cada sessão, será obtido o **terminarcode** e os metadados serão concluídos.
+
+Observe que o cabeçalho **Expira**. Esse é o momento em que a primeira sessão deve expirar, a menos que um heartbeat seja enviado.
 O campo de metadados será preenchido com todos os metadados enviados quando a sessão for iniciada. Não o filtramos; você receberá tudo o que enviou.
+A resposta inclui todos os fluxos em execução nos aplicativos de outros locatários, desde que os aplicativos estejam compartilhando a mesma política.
 Se não houver sessões em execução para um usuário específico ao fazer a chamada, você receberá esta resposta:
 
 ![](assets/get-all-running-streams-empty.png)
@@ -126,8 +144,13 @@ Para simular o comportamento do aplicativo quando a política de três fluxos at
 
 ![](assets/breaking-policy-frstapp.png)
 
+Recebemos uma resposta 409 CONFLICT junto com um objeto de resultado de avaliação na carga. Isso indica que as políticas do lado do servidor não permitem que essa sessão seja criada ou continue. O corpo da resposta conterá um objeto EvaluationResult com um AssociatedAdvice não vazio, que é a lista de objetos Advice contendo explicações para cada violação de regra.
 
-Recebemos uma resposta 409 CONFLICT junto com um objeto de resultado de avaliação na carga. Leia uma descrição completa do resultado da avaliação na [especificação da API Swagger](http://docs.adobeptime.io/cm-api-v2/#evaluation-result).
+O aplicativo deve avisar o usuário sobre as mensagens de erro transportadas por cada instância Advice. Além disso, cada dica também indica os detalhes da regra, como atributo, limite, nome da regra e da política. Além disso, os valores conflitantes também serão incluídos na lista de sessões ativas para cada valor.
+
+Essas informações são destinadas à formatação avançada de mensagens de erro e para permitir que o usuário tome medidas em relação às sessões conflitantes.
+
+Cada sessão conflitante terá um **termincode** que pode ser usado para **matar** esse fluxo. Dessa forma, o aplicativo pode permitir que o usuário escolha quais sessões encerrarão para tentar obter acesso à sessão atual.
 
 O aplicativo pode usar as informações do resultado da avaliação para exibir uma determinada mensagem ao usuário ao interromper o vídeo e tomar outras ações, se necessário. Um caso de uso pode ser o de interromper outros fluxos existentes para iniciar um novo. Isso é feito usando o valor **finishCode** presente no campo **conflicts** para um atributo conflitante específico. O valor será fornecido como o cabeçalho HTTP X-Terminate na chamada para uma nova inicialização de sessão.
 
@@ -136,6 +159,30 @@ O aplicativo pode usar as informações do resultado da avaliação para exibir 
 Ao fornecer um ou mais códigos de encerramento na inicialização da sessão, a chamada será bem-sucedida e uma nova sessão será gerada. Se tentarmos fazer um heartbeat com uma das sessões que foram remotamente interrompidas, obteremos uma resposta 410 GONE com uma carga de resultado da avaliação que descreve o fato de que a sessão foi encerrada remotamente, como no exemplo:
 
 ![](assets/remote-termination.png)
+
+O 410 pode ser retornado com ou sem um corpo, com base no que causou o encerramento da sessão atual.
+
+Quando a resposta não tem corpo, 410 significa que uma chamada de heartbeat (ou encerramento) é tentada para uma sessão que não está mais ativa (devido ao tempo limite, a um conflito anterior ou a qualquer outra situação). A única maneira de se recuperar desse estado é o aplicativo iniciar uma nova sessão. Como não há corpo, o aplicativo deve lidar com esse erro sem que o usuário saiba.
+
+Por outro lado, quando um corpo de resposta é fornecido, o aplicativo precisa procurar no atributo **associatedAdvice** para encontrar uma dica de **remote-termination** que indique a sessão remota iniciada com uma intenção explícita de **matar** a atual. Isso deve resultar em uma mensagem de erro como &quot;Sua sessão foi desativada pelo dispositivo/aplicativo&quot;.
+
+### Corpo da resposta {#response-body}
+
+Para todas as chamadas de API do ciclo de vida da sessão, o corpo da resposta (quando presente) será um objeto JSON que contém os seguintes campos:
+
+![](assets/body_small.png)
+
+**Conselho**
+O **EvaluationResult** incluirá uma matriz de objetos Advice em **associatedAdvice**. Os conselhos são destinados ao aplicativo para exibir uma mensagem de erro abrangente para o usuário e (possivelmente) permitir que o usuário tome uma ação.
+
+Atualmente, há dois tipos de avisos (especificados por seu valor de atributo **tipo**): **violação de regras** e **terminação remota**. O primeiro fornece detalhes sobre uma regra que foi quebrada e as sessões que estão em conflito com a atual (incluindo o atributo terminate que pode ser usado para encerrar essa sessão remotamente). A segunda é apenas declarar que a sessão atual foi deliberadamente encerrada por um remoto, para que os usuários saibam quem os expulsou quando os limites foram atingidos.
+
+![](assets/advices.png)
+
+**Obrigação**
+A avaliação também pode conter uma ou mais ações predefinidas que devem ser acionadas pelo aplicativo como resultado dessa avaliação.
+
+![](assets/obligation.png)
 
 ### Segunda aplicação {#second-application}
 
