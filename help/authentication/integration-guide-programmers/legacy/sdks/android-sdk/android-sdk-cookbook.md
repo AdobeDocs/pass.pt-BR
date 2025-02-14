@@ -2,9 +2,9 @@
 title: Guia do Android SDK
 description: Guia do Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
 workflow-type: tm+mt
-source-wordcount: '1704'
+source-wordcount: '1703'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -30,7 +30,7 @@ A solução de direito de autenticação da Adobe Pass para o Android é dividid
 
 - O domínio da interface do usuário — essa é a camada de aplicativo de nível superior que implementa a interface do usuário e usa os serviços fornecidos pela biblioteca do AccessEnabler para fornecer acesso ao conteúdo restrito.
 - O domínio AccessEnabler - é aqui que os workflows de direito são implementados no formato de:
-   - Chamadas de rede feitas para servidores back-end do Adobe
+   - Chamadas de rede feitas aos servidores back-end da Adobe
    - Regras de lógica de negócios relacionadas aos workflows de autenticação e autorização
    - Gerenciamento de vários recursos e processamento do estado do fluxo de trabalho (como o cache de token)
 
@@ -135,7 +135,9 @@ Biblioteca da Android (AccessEnabler)
 
    | NOTA |     |
    | --- | --- |  
-   | ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) | Nenhuma solicitação de direito pode ser concluída até que a identidade do solicitante seja totalmente estabelecida. Isso significa que, enquanto setRequestor() ainda estiver em execução, todas as solicitações de direitos subsequentes (por exemplo, `checkAuthentication()`) serão bloqueadas.<br><br>Você tem duas opções de implementação: Depois que as informações de identificação do solicitante forem enviadas para o servidor back-end, a camada de aplicativo da interface poderá escolher uma das duas seguintes abordagens:<br><br>1.  Aguarde o acionamento do retorno de chamada `setRequestorComplete()` (parte do delegado AccessEnabler).  Essa opção fornece a maior certeza de que `setRequestor()` foi concluído, portanto, ela é recomendada para a maioria das implementações.<br>2.  Continue sem aguardar o acionamento do retorno de chamada `setRequestorComplete()` e comece a emitir solicitações de direito. Essas chamadas (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) são enfileiradas pela biblioteca AccessEnabler, que fará as chamadas de rede reais após `setRequestor(). `Essa opção poderá ser interrompida ocasionalmente se, por exemplo, a conexão de rede estiver instável. |
+   |  | Nenhuma solicitação de direito pode ser concluída até que a identidade do solicitante seja totalmente estabelecida. Isso significa que, enquanto setRequestor() ainda estiver em execução, todas as solicitações de direitos subsequentes (por exemplo, `checkAuthentication()`) serão bloqueadas.<br><br>Você tem duas opções de implementação: Depois que as informações de identificação do solicitante forem enviadas para o servidor back-end, a camada de aplicativo da interface poderá escolher uma das duas seguintes abordagens:<br><br>1.  Aguarde o acionamento do retorno de chamada `setRequestorComplete()` (parte do delegado AccessEnabler).  Essa opção fornece a maior certeza de que `setRequestor()` foi concluído, portanto, ela é recomendada para a maioria das implementações.<br>2.  Continue sem aguardar o acionamento do retorno de chamada `setRequestorComplete()` e comece a emitir solicitações de direito. Essas chamadas (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) são enfileiradas pela biblioteca AccessEnabler, que fará as chamadas de rede reais após `setRequestor(). `Essa opção poderá ser interrompida ocasionalmente se, por exemplo, a conexão de rede estiver instável. |
+
+   <!--Removed bad image link from first note cell above. ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) -->
 
 1. Chame [checkAuthentication()](#$checkAuthN) para verificar uma autenticação existente sem iniciar o fluxo de Autenticação completo.   Se essa chamada for bem-sucedida, você poderá prosseguir diretamente para o Fluxo de autorização.  Caso contrário, prossiga para o Fluxo de autenticação.
 
