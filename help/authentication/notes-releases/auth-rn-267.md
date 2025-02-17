@@ -2,9 +2,9 @@
 title: Notas de versão da Autenticação Adobe Pass 2.67
 description: Notas de versão da Autenticação Adobe Pass 2.67
 exl-id: d899fe96-a273-4681-90a5-bde54cc2f3b3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
-source-wordcount: '131'
+source-wordcount: '127'
 ht-degree: 0%
 
 ---
@@ -13,31 +13,30 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 Esta página descreve novos recursos, alterações e problemas conhecidos com esta versão:
 
 ## Lado do servidor e clientes da Web {#server-side-web-clients-267}
 
 * [Número da Build](#build-number-267)
-* [Novos recursos](#new-features-267)
-* [Atualizações do MVPD](#mvpd-updates-267)
-* [Correções de erros](#bug-fixes-267)
+* [Visão geral da versão](#release-overview-267)
 
 ### Número da Build {#build-number-267}
 
 Autenticação Adobe Pass: adobe-pass-**2.67.0.1**
-Data de lançamento: **09/12/2023 - 09/14/2023**
 
-### Novos recursos {#new-features-267}
+Data de Lançamento: **09/12/2023 - 09/14/2023**
+
+### Visão geral da versão {#release-overview-267}
 
 * Continuação das atualizações internas para a nova API REST.
 * Melhorias contínuas na arquitetura interna.
 
-### Atualizações do MVPD {#mvpd-updates-267}
+#### Atualizações do MVPD
 
-* Atualizações para a integração **DirecTV Puerto Rico** com o Adobe. Entre em contato com seu TAM para obter mais detalhes.
+* Atualizações da integração **DirecTV Puerto Rico** com o Adobe. Entre em contato com seu TAM para obter mais detalhes.
 
-#### Correções de erros {#bug-fixes-267}
+#### Correções de erros
 
-* Correção de um problema que quebrava o SSO, obtido usando o cabeçalho Adobe-Subject-Token, entre aplicativos que usavam a API REST e o SDK FireTV.
+* Correção de um problema que quebrava o SSO, obtido usando o cabeçalho Adobe-Subject-Token, entre aplicativos que usavam a API REST e o FireTV SDK.

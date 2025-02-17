@@ -2,31 +2,30 @@
 title: Notas de versão do JavaScript 4.4.0 de autenticação da Adobe Pass
 description: Notas de versão do JavaScript 4.4.0 de autenticação da Adobe Pass
 exl-id: 28cc0ccc-7a1d-45bd-8455-26cfde25c5c5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '245'
 ht-degree: 0%
 
 ---
 
-# Notas de versão do JavaScript 4.4.0 de autenticação da Adobe Pass {#javascript-sdk-440-release-notes}
+# Notas de versão do JavaScript 4.4.0 de autenticação da Adobe Pass {#javascript-sdk-440-rn}
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 Esta página descreve novos recursos, alterações e problemas conhecidos com esta versão:
 
-## Número da Build {#build-no-javascript-sdk-440}
+## Número da Build {#build-number-440}
 
 Autenticação do Adobe Pass: JavaScript 4.4.0
 
 Data de lançamento: **06/22/2021**
 
+## Visão geral da versão {#release-overview-440}
 
-## Visão geral da versão {#overview-javascript-sdk-440}
-
-### Novos recursos {#new-features-javascript-sdk-440}
+### Novos recursos
 
 Autorização de comprovação
 
@@ -36,20 +35,19 @@ Autorização de comprovação
 
 Identificação da plataforma
 
-* Adiciona o cabeçalho AP-SDK-Identifier em todas as chamadas do SDK para melhor identificar o tipo e a versão do SDK.
+* Adiciona um cabeçalho AP-SDK-Identifier em todas as chamadas do SDK para melhor identificar o tipo e a versão do SDK.
 
 Outros
 
 * Aprimoramentos arquitetônicos internos.
 
-
-### Correções de erros {#bug-fixes-javascript-sdk-440}
+### Correções de erros
 
 * Corrigir a condição de corrida produzida quando setRequestor e getAuthentication são chamados simultaneamente.
 * Correção de um problema que impedia que os direitos fossem carregados corretamente em ambientes de preparo.
 * Solucionado o problema que impedia que o fluxo de logout em segundo plano fosse concluído nos navegadores Safari, portanto, o usuário ainda parecia autenticado até que uma atualização da página ocorresse. Foi introduzido um tempo limite, definido atualmente em 30 segundos, portanto, se não houver resposta do servidor de Autenticação Primetime durante esse período, o SDK chamará o retorno de chamada setAuthenticationStatus.
 
-## Lançar pacote {#rel-pkg-javascript-sdk-440}
+## Lançar pacote {#release-package-440}
 
 O URL de produção é: https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js
 

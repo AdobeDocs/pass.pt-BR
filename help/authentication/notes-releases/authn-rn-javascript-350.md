@@ -2,34 +2,32 @@
 title: Notas de versão do Adobe Pass Authentication JavaScript 3.5.0
 description: Notas de versão do Adobe Pass Authentication JavaScript 3.5.0
 exl-id: 580839ef-4265-422f-8508-339bb8cdd636
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '105'
 ht-degree: 0%
 
 ---
 
-# Notas de versão do Adobe Pass Authentication JavaScript 3.5.0 {#javascript-sdk-350-release-notes}
+# Notas de versão do Adobe Pass Authentication JavaScript 3.5.0 {#javascript-sdk-350-rn}
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 Esta página descreve novos recursos, alterações e problemas conhecidos com esta versão:
 
-## Número da Build {#build-no-javascript-sdk-350}
+## Número da Build {#build-number-350}
 
 Autenticação do Adobe Pass: JavaScript 3.5.0
 
 Data de lançamento: **02/14/2020**
 
-
-## Visão geral da versão {#overview-javascript-sdk-350}
+## Visão geral da versão {#release-overview-350}
 
 * Atualizações para dar suporte à nova política de cookies SameSite (detalhada [aqui](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site-00)).
 
-
-## Lançar pacote {#rel-pkg-javascript-sdk-350}
+## Lançar pacote {#release-package-350}
 
 O URL de produção é: https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js
 
