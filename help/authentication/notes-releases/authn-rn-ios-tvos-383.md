@@ -2,18 +2,18 @@
 title: Notas de versão do Adobe Pass Authentication iOS / tvOS 3.8.3
 description: Notas de versão do Adobe Pass Authentication iOS / tvOS 3.8.3
 exl-id: d465f895-ebc0-4f8d-9172-bcc868741820
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '127'
+source-wordcount: '123'
 ht-degree: 0%
 
 ---
 
 # Notas de versão do Adobe Pass Authentication iOS / tvOS 3.8.3 {#ios-tvos-sdk-383-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 Esta página descreve novos recursos, alterações e problemas conhecidos com esta versão:
 

@@ -2,18 +2,18 @@
 title: Notas de versão da Autenticação do Adobe Pass 2.65.1
 description: Notas de versão da Autenticação do Adobe Pass 2.65.1
 exl-id: 28d112db-b038-4d11-93c5-d6ab67a29700
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '182'
+source-wordcount: '178'
 ht-degree: 0%
 
 ---
 
 # Notas de versão da Autenticação do Adobe Pass 2.65.1 {#authn-2651-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 Esta página descreve novos recursos, alterações e problemas conhecidos com esta versão:
 

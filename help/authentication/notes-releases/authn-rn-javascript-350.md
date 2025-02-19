@@ -2,18 +2,18 @@
 title: Notas de versão do Adobe Pass Authentication JavaScript 3.5.0
 description: Notas de versão do Adobe Pass Authentication JavaScript 3.5.0
 exl-id: 580839ef-4265-422f-8508-339bb8cdd636
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '105'
+source-wordcount: '101'
 ht-degree: 0%
 
 ---
 
 # Notas de versão do Adobe Pass Authentication JavaScript 3.5.0 {#javascript-sdk-350-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 Esta página descreve novos recursos, alterações e problemas conhecidos com esta versão:
 
