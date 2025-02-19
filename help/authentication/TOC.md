@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: O Adobe Pass Authentication é uma solução de concessão de direitos para o TV Everywhere, o qual fornece uma estrutura modular para determinar se a pessoa que solicita o acesso a um recurso possui direito a ele.
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: 4ad5ea619f64a78a72f69228c9ae3c83a7b66f24
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1246'
 ht-degree: 2%
 
 ---
@@ -17,6 +17,9 @@ ht-degree: 2%
 + [Adobe Pass Authentication](home.md)
 + [Anúncios de produto](product-announcements.md)
 + Versões do produto {#product-releases}
+   + 2025 {#2025}
+      + [Notas de versão da Autenticação Adobe Pass 3.1.0](notes-releases/auth-rn-310.md)
+      + [Notas de versão do Adobe Pass Authentication JavaScript 4.7.1](notes-releases/authn-rn-javascript-471.md)
    + 2024 {#2024}
       + [Notas de versão da Autenticação Adobe Pass 3.0.3](notes-releases/auth-rn-303.md)
       + [Notas de versão da Autenticação Adobe Pass 3.0](notes-releases/auth-rn-300.md)
@@ -152,7 +155,7 @@ ht-degree: 2%
          + [Métricas do lado do servidor](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
       + Analytics {#analytics}
          + [Integração dos dados do lado do servidor de autenticação da Adobe Pass ao Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
-         + [Utilização da ID de Experience Cloud na autenticação da Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
+         + [Utilização da Experience Cloud ID na autenticação da Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    + Herdados {#legacy}
       + API REST V1 (Herdada) {#rest-api-v1}
          + [Visão geral da REST API V1 (herdada)](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
@@ -284,5 +287,5 @@ ht-degree: 2%
    + [Log de alterações](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
 + Notas Técnicas {#tech-notes}
    + Ambientes {#environments}
-      + [Compreensão dos ambientes de Adobe](notes-technical/environments/understanding-the-adobe-environments.md)
+      + [Compreensão dos ambientes do Adobe](notes-technical/environments/understanding-the-adobe-environments.md)
       + [Configuração do ambiente e teste na pré-qualificação](notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md)
