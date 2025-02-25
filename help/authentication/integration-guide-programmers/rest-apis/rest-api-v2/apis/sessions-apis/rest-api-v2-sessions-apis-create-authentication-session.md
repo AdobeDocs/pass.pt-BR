@@ -2,9 +2,9 @@
 title: Criar sessão de autenticação
 description: REST API V2 - Criar sessão de autenticação
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1047'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -268,17 +268,15 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  O tipo de motivo usado que explica o 'actionName'.
+                  O tipo de motivo que explica o 'actionName'.
                   <br/><br/>
                   Os valores possíveis são:
                   <ul>
-                    <li><b>nenhum</b></li>
-                    <li><b>autenticado</b></li>
-                    <li><b>temporário</b></li>
-                    <li><b>degradado</b></li>
-                    <li><b>authenticatedSSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>nenhum</b><br/>O aplicativo cliente é necessário para continuar a autenticação.</li>
+                    <li><b>autenticado</b><br/>O aplicativo cliente já está autenticado por meio de fluxos de acesso básicos.</li>
+                    <li><b>temporário</b><br/>O aplicativo cliente já está autenticado por meio de fluxos de acesso temporários.</li>
+                    <li><b>degradado</b><br/>O aplicativo cliente já está autenticado por meio de fluxos de acesso degradados.</li>
+                    <li><b>authenticatedSSO</b><br/>O aplicativo cliente já está autenticado por meio de fluxos de acesso de logon único.</li>
                   </ul>
                <td><i>obrigatório</i></td>
             </tr>
@@ -483,6 +481,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4. Criar sessão de autenticação usando TempPass básico ou promocional (não obrigatório)
 

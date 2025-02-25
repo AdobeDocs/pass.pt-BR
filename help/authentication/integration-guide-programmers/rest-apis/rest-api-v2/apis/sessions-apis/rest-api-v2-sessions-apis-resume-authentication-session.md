@@ -2,9 +2,9 @@
 title: Retomar sessão de autenticação
 description: REST API V2 - Retomar sessão de autenticação
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '841'
+source-wordcount: '876'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -233,17 +233,14 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  O tipo de motivo usado que explica o 'actionName'.
+                  O tipo de motivo que explica o 'actionName'.
                   <br/><br/>
                   Os valores possíveis são:
                   <ul>
-                    <li><b>nenhum</b></li>
-                    <li><b>autenticado</b></li>
-                    <li><b>temporário</b></li>
-                    <li><b>degradado</b></li>
-                    <li><b>authenticatedSSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>nenhum</b><br/>O aplicativo cliente é necessário para continuar a autenticação.</li>
+                    <li><b>autenticado</b><br/>O aplicativo cliente já está autenticado por meio de fluxos de acesso básicos.</li>
+                    <li><b>temporário</b><br/>O aplicativo cliente já está autenticado por meio de fluxos de acesso temporários.</li>
+                    <li><b>degradado</b><br/>O aplicativo cliente já está autenticado por meio de fluxos de acesso degradados.</li>
                   </ul>
                <td><i>obrigatório</i></td>
             </tr>
@@ -353,6 +350,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
+    "reasonType": "none",
     "url": "/api/v2/authenticate/REF30/8ER640M",
     "code": "8ER640M",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
@@ -444,6 +442,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4. Retomar sessão de autenticação usando TempPass básico ou promocional (não obrigatório)
 
