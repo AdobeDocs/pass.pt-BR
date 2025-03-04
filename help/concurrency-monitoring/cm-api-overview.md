@@ -2,9 +2,9 @@
 title: Visão geral da API
 description: Visão geral da API do monitoramento de simultaneidade
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
+source-git-commit: 0cabb090e3c0282f9bcd097719d52374f2d991dd
 workflow-type: tm+mt
-source-wordcount: '2102'
+source-wordcount: '2155'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Este documento ajuda os desenvolvedores de aplicativos a usar nossa especificaç
 
 Durante o processo de desenvolvimento, a documentação pública do Swagger representa a diretriz de referência para entender e testar os fluxos da API. Este é um ótimo local para começar, a fim de ter uma abordagem prática e se familiarizar com a forma como os aplicativos reais se comportariam em diferentes cenários de interação do usuário.
 
-Envie um tíquete no [Zendesk](mailto:tve-support@adobe.com) para registrar sua empresa e aplicativos no Monitoramento de Simultaneidade. O Adobe atribuirá uma ID de aplicativo a cada entidade. Neste guia, usaremos dois aplicativos de referência com ids **demo-app** e **demo-app-2** que estarão no Adobe do locatário.
+Envie um tíquete no [Zendesk](mailto:tve-support@adobe.com) para registrar sua empresa e aplicativos no Monitoramento de Simultaneidade. O Adobe atribuirá uma ID de aplicativo a cada entidade. Neste guia, usaremos dois aplicativos de referência com IDs **demo-app** e **demo-app-2** que estarão sob o locatário do Adobe.
 
 
 ## Casos de uso {#api-use-case}
@@ -36,7 +36,7 @@ Depois disso, pressionamos **Explorar** para definir a ID que será usada no cab
 
 ### Primeira aplicação {#first-app-use-cases}
 
-O aplicativo com a ID **demo-app** recebeu da equipe do Adobe uma política com uma regra que restringe o número de fluxos simultâneos a 3. Uma política é atribuída a um aplicativo específico com base na solicitação enviada no Zendesk.
+O aplicativo com a ID **demo-app** foi atribuído pela equipe da Adobe a uma política com uma regra que restringe o número de fluxos simultâneos a 3. Uma política é atribuída a um aplicativo específico com base na solicitação enviada no Zendesk.
 
 
 #### Recuperando metadados {#retrieve-metadata-use-case}
@@ -137,6 +137,10 @@ Se não houver sessões em execução para um usuário específico ao fazer a ch
 
 Observe também que, nesse caso, o cabeçalho **Expires** não está presente.
 
+Caso uma sessão tenha sido criada matando outra, usando o cabeçalho **X-Terminate**, nos metadados, você encontrará o campo **substituído**. Seu valor é um indicador da sessão eliminada para liberar espaço para a atual.
+
+![](assets/get-all-running-streams-superseded.png)
+
 #### Quebrando a política {#breaking-policy-app-first}
 
 
@@ -175,7 +179,7 @@ Para todas as chamadas de API do ciclo de vida da sessão, o corpo da resposta (
 **Conselho**
 O **EvaluationResult** incluirá uma matriz de objetos Advice em **associatedAdvice**. Os conselhos são destinados ao aplicativo para exibir uma mensagem de erro abrangente para o usuário e (possivelmente) permitir que o usuário tome uma ação.
 
-Atualmente, há dois tipos de avisos (especificados por seu valor de atributo **tipo**): **violação de regras** e **terminação remota**. O primeiro fornece detalhes sobre uma regra que foi quebrada e as sessões que estão em conflito com a atual (incluindo o atributo terminate que pode ser usado para encerrar essa sessão remotamente). A segunda é apenas declarar que a sessão atual foi deliberadamente encerrada por um remoto, para que os usuários saibam quem os expulsou quando os limites foram atingidos.
+Atualmente, há dois tipos de avisos (especificados por seu valor de atributo **tipo**): **violação de regras** e **terminação remota**. O primeiro fornece detalhes sobre uma regra que foi quebrada e as sessões que estão em conflito com a atual (incluindo o atributo terminate que pode ser usado para encerrar essa sessão remotamente). A segunda é apenas declarar que a sessão atual foi deliberadamente encerrada por um remoto, para que os usuários saibam quem os expulsou quando os limites foram atingidos. Caso **substituído** esteja incluído nos metadados, a sessão em questão foi criada usando o cabeçalho **X-Terminate**.
 
 ![](assets/advices.png)
 
