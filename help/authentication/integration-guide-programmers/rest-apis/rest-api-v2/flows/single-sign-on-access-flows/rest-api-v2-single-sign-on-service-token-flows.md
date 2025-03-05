@@ -2,9 +2,9 @@
 title: Logon Único - Token de Serviço - Fluxos
 description: REST API V2 - Logon único - Token de serviço - Fluxos
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1848'
+source-wordcount: '1858'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,15 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
 > A implementação da REST API V2 é limitada pela documentação do [Mecanismo de limitação](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visite também as [Perguntas frequentes sobre a REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 O método de Token de serviço permite que vários aplicativos usem um identificador de usuário exclusivo para obter logon único (SSO) em vários dispositivos e plataformas ao usar os serviços da Adobe Pass.
 
@@ -38,7 +42,7 @@ Antes de executar o fluxo de autenticação por meio do logon único usando um t
 
 * O serviço de identidade externo deve retornar informações consistentes como carga `JWS` em todos os aplicativos em vários dispositivos e plataformas.
 * O primeiro aplicativo de streaming deve recuperar o identificador de usuário exclusivo e incluir a carga `JWS` como parte do cabeçalho [AD-Service-Token](../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md) para todas as solicitações que o especificarem.
-* O primeiro aplicativo de streaming deve selecionar um MVPD.
+* O primeiro aplicativo de streaming deve selecionar uma MVPD.
 * O primeiro aplicativo de streaming deve iniciar uma sessão de autenticação para entrar com o MVPD selecionado.
 * O primeiro aplicativo de streaming deve ser autenticado com o MVPD selecionado em um agente do usuário.
 * O segundo aplicativo de streaming deve recuperar o identificador de usuário exclusivo e incluir a carga `JWS` como parte do cabeçalho [AD-Service-Token](../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md) para todas as solicitações que o especificarem.
@@ -49,7 +53,7 @@ Antes de executar o fluxo de autenticação por meio do logon único usando um t
 > 
 > <br/>
 > 
-> * O primeiro aplicativo de streaming é compatível com a interação do usuário para selecionar um MVPD.
+> * O primeiro aplicativo de streaming é compatível com a interação do usuário para selecionar uma MVPD.
 > * O primeiro aplicativo de streaming suporta a interação do usuário para autenticar com o MVPD selecionado em um agente do usuário.
 
 ### Fluxo de trabalho (WRK) {#workflow-steps-scenario-performing-authentication-flow-using-service-token-single-sign-on-method}
@@ -102,13 +106,13 @@ Execute as etapas fornecidas para implementar o fluxo de autenticação por meio
    > Se a validação falhar, uma resposta de erro será gerada, fornecendo informações adicionais que seguem a documentação de [Códigos de erro aprimorados](../../../../features-standard/error-reporting/enhanced-error-codes.md).
 
 1. **Abrir URL no agente do usuário:** A resposta do ponto de extremidade Sessões contém os seguintes dados:
-   * O `url` que pode ser usado para iniciar a autenticação interativa na página de logon MVPD.
+   * O `url` que pode ser usado para iniciar a autenticação interativa na página de logon do MVPD.
    * O atributo `actionName` está definido como &quot;autenticar&quot;.
    * O atributo `actionType` está definido como &quot;interativo&quot;.
 
    Se o back-end do Adobe Pass não identificar um perfil válido, o primeiro aplicativo de streaming abrirá um agente do usuário para carregar o `url` fornecido, fazendo uma solicitação ao ponto de extremidade de Autenticação. Esse fluxo pode incluir vários redirecionamentos, levando o usuário à página de logon do MVPD e fornecendo credenciais válidas.
 
-1. **Autenticação MVPD concluída:** Se o fluxo de autenticação for bem-sucedido, a interação do agente do usuário salvará um perfil regular no back-end do Adobe Pass e atingirá o `redirectUrl` fornecido.
+1. **Concluir autenticação do MVPD:** Se o fluxo de autenticação for bem-sucedido, a interação do agente do usuário salvará um perfil regular no back-end do Adobe Pass e atingirá o `redirectUrl` fornecido.
 
 1. **Recuperar perfil para código específico:** O primeiro aplicativo de streaming reúne todos os dados necessários para recuperar informações de perfil, enviando uma solicitação ao ponto de extremidade de Perfis.
 
@@ -256,7 +260,7 @@ Execute as etapas fornecidas para implementar o fluxo de autorização por meio 
 
 1. **Localizar perfil de logon único:** O servidor do Adobe Pass identifica um perfil de logon único válido com base nos parâmetros e cabeçalhos recebidos.
 
-1. **Recuperar decisão MVPD para o recurso solicitado:** O servidor do Adobe Pass chama o ponto de extremidade de autorização MVPD para obter uma decisão `Permit` ou `Deny` para o recurso específico recebido do aplicativo de streaming.
+1. **Recuperar decisão do MVPD para o recurso solicitado:** O servidor do Adobe Pass chama o ponto de extremidade de autorização do MVPD para obter uma decisão `Permit` ou `Deny` para o recurso específico recebido do aplicativo de streaming.
 
 1. **Retornar a decisão `Permit` com o token de mídia:** A resposta do ponto de extremidade de Autorização de Decisões contém uma decisão `Permit` e um token de mídia.
 

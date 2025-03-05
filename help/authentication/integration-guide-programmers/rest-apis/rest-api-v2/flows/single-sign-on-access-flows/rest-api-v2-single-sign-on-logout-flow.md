@@ -2,9 +2,9 @@
 title: Logout único - Fluxo
 description: REST API V2 - Logout único - Fluxo
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -13,17 +13,21 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
 > A implementação da REST API V2 é limitada pela documentação do [Mecanismo de limitação](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
+>[!MORELIKETHIS]
+>
+> Visite também as [Perguntas frequentes sobre a REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
+
 ## Iniciar logout único para mvpd específico {#initiate-single-logout-for-specific-mvpd}
 
 ### Pré-requisitos {#prerequisites-initiate-single-logout-for-specific-mvpd}
 
-Antes de iniciar o logout único para um MVPD específico, verifique se os seguintes pré-requisitos foram atendidos:
+Antes de iniciar o logout único para uma MVPD específica, verifique se os seguintes pré-requisitos foram atendidos:
 
 * O segundo aplicativo de streaming deve ter um perfil de logon único válido que tenha sido criado com êxito para o MVPD usando um dos fluxos de autenticação de logon único:
    * [Executar autenticação por meio de logon único usando a identidade da plataforma](rest-api-v2-single-sign-on-platform-identity-flows.md)
@@ -40,7 +44,7 @@ Antes de iniciar o logout único para um MVPD específico, verifique se os segui
 
 ### Fluxo de trabalho (WRK) {#workflow-initiate-single-logout-for-specific-mvpd}
 
-Execute as etapas fornecidas para implementar o fluxo de logout único para um MVPD específico, conforme mostrado no diagrama a seguir.
+Execute as etapas fornecidas para implementar o fluxo de logout único para uma MVPD específica, conforme mostrado no diagrama a seguir.
 
 ![Iniciar logout único para mvpd específico](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
 
@@ -89,7 +93,7 @@ Execute as etapas fornecidas para implementar o fluxo de logout único para um M
    > 
    > Se a validação falhar, uma resposta de erro será gerada, fornecendo informações adicionais que seguem a documentação de [Códigos de erro aprimorados](../../../../features-standard/error-reporting/enhanced-error-codes.md).
 
-1. **Indicar logout concluído:** Se o MVPD não oferecer suporte ao fluxo de logout, o aplicativo de streaming processará a resposta e poderá usá-la para exibir uma mensagem específica na interface do usuário.
+1. **Indicar logout concluído:** Se a MVPD não oferecer suporte ao fluxo de logout, o aplicativo de streaming processará a resposta e poderá usá-la para exibir uma mensagem específica na interface do usuário.
 
 1. **Iniciar logout do MVPD:** Se o MVPD não oferecer suporte ao fluxo de logout, o aplicativo de streaming processará a resposta e usará um agente do usuário para iniciar o fluxo de logout com o MVPD. O fluxo pode incluir vários redirecionamentos para sistemas MVPD. Ainda assim, o resultado é que o MVPD executa sua limpeza interna e envia a confirmação de logout final de volta para o back-end do Adobe Pass.
 

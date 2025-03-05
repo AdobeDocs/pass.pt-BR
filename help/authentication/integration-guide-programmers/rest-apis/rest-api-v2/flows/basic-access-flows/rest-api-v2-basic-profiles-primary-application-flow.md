@@ -2,9 +2,9 @@
 title: Perfis básicos — Aplicativo principal — Fluxo
 description: REST API V2 - Perfis básicos - Aplicativo principal - Fluxo
 exl-id: 19ddf382-9a32-4b94-aa84-7611c0e1780e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '964'
+source-wordcount: '974'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,15 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
 > A implementação da REST API V2 é limitada pela documentação do [Mecanismo de limitação](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visite também as [Perguntas frequentes sobre a REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 O **Fluxo de perfis** dentro do direito de Autenticação Adobe Pass permite que o aplicativo de streaming acesse informações sobre logons de usuários ativos.
 
@@ -79,13 +83,13 @@ Siga as etapas fornecidas para implementar o fluxo de recuperação de perfis b�
 
 ### Pré-requisitos {#prerequisites-retrieve-profile-for-specific-mvpd}
 
-Antes de recuperar o perfil para um MVPD específico, verifique se os seguintes pré-requisitos foram atendidos:
+Antes de recuperar o perfil de uma MVPD específica, verifique se os seguintes pré-requisitos foram atendidos:
 
-* O aplicativo de streaming, que tem um identificador `mvpd` selecionado ou armazenado em cache, deseja recuperar o perfil regular de um MVPD específico.
+* O aplicativo de streaming, que tem um identificador `mvpd` selecionado ou armazenado em cache, deseja recuperar o perfil regular de uma MVPD específica.
 
 ### Fluxo de trabalho (WRK) {#workflow-retrieve-profile-for-specific-mvpd}
 
-Siga as etapas fornecidas para implementar o fluxo básico de recuperação de perfil para um MVPD específico executado em um aplicativo principal, conforme mostrado no diagrama a seguir.
+Siga as etapas fornecidas para implementar o fluxo básico de recuperação de perfil para uma MVPD específica executada em um aplicativo principal, conforme mostrado no diagrama a seguir.
 
 ![Recuperar perfil para mvpd](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-primary-application-for-specific-mvpd.png) específico
 
@@ -130,7 +134,7 @@ Siga as etapas fornecidas para implementar o fluxo básico de recuperação de p
 
 Antes de recuperar o perfil para um código de autenticação específico, verifique se os seguintes pré-requisitos foram atendidos:
 
-* O aplicativo de streaming, que tem um `code` usado para executar a autenticação interativa com o MVPD, deseja recuperar o perfil de um código de autenticação específico.
+* O aplicativo de streaming, que tem um `code` usado para executar a autenticação interativa com o MVPD, deseja recuperar o perfil para um código de autenticação específico.
 
 ### Fluxo de trabalho (WRK) {#workflow-retrieve-profile-for-specific-code}
 

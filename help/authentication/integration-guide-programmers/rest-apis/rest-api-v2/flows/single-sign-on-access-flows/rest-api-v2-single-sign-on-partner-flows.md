@@ -2,9 +2,9 @@
 title: Logon único - Parceiro - Fluxos
 description: REST API V2 - Logon único - Parceiro - Fluxos
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1444'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,15 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
 > A implementação da REST API V2 é limitada pela documentação do [Mecanismo de limitação](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visite também as [Perguntas frequentes sobre a REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 O método Parceiro permite que vários aplicativos usem uma carga de status da estrutura do parceiro para obter logon único (SSO) no nível do dispositivo ao usar os serviços da Adobe Pass.
 
@@ -37,7 +41,7 @@ Para obter mais detalhes sobre o logon único (SSO) para a plataforma Apple, con
 
 Antes de recuperar a solicitação de autenticação do parceiro, verifique se os seguintes pré-requisitos foram atendidos:
 
-* A estrutura do parceiro deve selecionar um MVPD.
+* A estrutura do parceiro deve selecionar uma MVPD.
 * O aplicativo de transmissão deve obter as informações de status da estrutura do parceiro da estrutura do parceiro e transmiti-las para o servidor do Adobe Pass.
 * O aplicativo de transmissão deve obter a solicitação de autenticação de parceiro do servidor do Adobe Pass e transmiti-la para a estrutura do parceiro.
 
@@ -47,8 +51,8 @@ Antes de recuperar a solicitação de autenticação do parceiro, verifique se o
 > 
 > <br/>
 > 
-> * A estrutura do parceiro é compatível com a interação do usuário para selecionar um MVPD.
-> * A estrutura do parceiro oferece suporte à interação do usuário para autenticação com o MVPD selecionado.
+> * A estrutura do parceiro é compatível com a interação do usuário para selecionar uma MVPD.
+> * A estrutura do parceiro é compatível com a interação do usuário para autenticação com o MVPD selecionado.
 > * A estrutura do parceiro fornece permissão de usuário e informações do provedor.
 
 ### Fluxo de trabalho (WRK) {#workflow-retrieve-partner-authentication-request}
@@ -115,11 +119,11 @@ Execute as etapas fornecidas para recuperar a solicitação de autenticação do
 1. **Continue com o fluxo de recuperação de perfil usando a resposta de autenticação de parceiro:** A resposta do ponto de extremidade do Parceiro de Sessões contém os seguintes dados:
    * O atributo `actionName` está definido como &quot;partner_profile&quot;.
    * O atributo `actionType` está definido como &quot;direto&quot;.
-   * O atributo `authenticationRequest - type` inclui o protocolo de segurança usado pela estrutura do parceiro para logon MVPD (atualmente definido somente como SAML).
+   * O atributo `authenticationRequest - type` inclui o protocolo de segurança usado pela estrutura do parceiro para logon do MVPD (atualmente definido somente como SAML).
    * O atributo `authenticationRequest - request` inclui a solicitação SAML passada para a estrutura do parceiro.
    * O atributo `authenticationRequest - attributesNames` inclui os atributos SAML passados para a estrutura do parceiro.
 
-   Se o back-end do Adobe Pass não identificar um perfil válido e a validação de logon único de parceiro passar, o aplicativo de streaming receberá uma resposta com ações e dados para transmitir à estrutura do parceiro para iniciar o fluxo de autenticação com o MVPD.
+   Se o back-end do Adobe Pass não identificar um perfil válido e a validação de logon único de parceiro passar, o aplicativo de transmissão receberá uma resposta com ações e dados para transmitir à estrutura do parceiro para iniciar o fluxo de autenticação com a MVPD.
 
    Para obter mais detalhes sobre o fluxo de recuperação de perfil usando uma resposta de autenticação de parceiro, consulte a seção [Recuperar perfil usando resposta de autenticação de parceiro](#retrieve-profile-using-partner-authentication-response).
 
@@ -138,7 +142,7 @@ Execute as etapas fornecidas para recuperar a solicitação de autenticação do
    * O atributo `actionName` está definido como &quot;autorize&quot;.
    * O atributo `actionType` está definido como &quot;direto&quot;.
 
-   Se o back-end do Adobe Pass identificar um perfil válido, o aplicativo de transmissão não precisará reautenticar com o MVPD selecionado, pois já existe um perfil que pode ser usado para fluxos de decisões subsequentes.
+   Se o back-end do Adobe Pass identificar um perfil válido, o aplicativo de transmissão não precisará reautenticar com o MVPD selecionado, pois já há um perfil que pode ser usado para fluxos de decisões subsequentes.
 
    >[!IMPORTANT]
    >
@@ -161,8 +165,8 @@ Antes de recuperar o perfil usando uma resposta de autenticação de parceiro, v
 >
 > Suposição
 >
-> * A estrutura do parceiro é compatível com a interação do usuário para selecionar um MVPD.
-> * A estrutura do parceiro oferece suporte à interação do usuário para autenticação com o MVPD selecionado.
+> * A estrutura do parceiro é compatível com a interação do usuário para selecionar uma MVPD.
+> * A estrutura do parceiro é compatível com a interação do usuário para autenticação com o MVPD selecionado.
 > * A estrutura do parceiro fornece permissão de usuário e informações do provedor.
 
 ### Fluxo de trabalho (WRK) {#workflow-retrieve-profile-using-partner-authentication-response}
@@ -173,7 +177,7 @@ Execute as etapas fornecidas para implementar o fluxo de recuperação de perfil
 
 *Recuperar perfil autenticado usando a resposta de autenticação de parceiro*
 
-1. **Conclua a autenticação MVPD com a estrutura do parceiro:** Se o fluxo de autenticação for bem-sucedido, a interação da estrutura do parceiro com o MVPD produzirá uma resposta de autenticação do parceiro (resposta SAML) que será retornada junto com as informações de status da estrutura do parceiro.
+1. **Concluir a autenticação do MVPD com a estrutura do parceiro:** Se o fluxo de autenticação for bem-sucedido, a interação da estrutura do parceiro com a MVPD produzirá uma resposta de autenticação do parceiro (resposta SAML) que será retornada junto com as informações de status da estrutura do parceiro.
 
 1. **Resposta de autenticação de parceiro de retorno:** o aplicativo de streaming valida os dados de resposta para garantir que as condições básicas sejam atendidas:
    * O status de acesso da permissão do usuário é concedido.

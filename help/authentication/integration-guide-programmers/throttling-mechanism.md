@@ -2,7 +2,7 @@
 title: Mecanismo de limitação
 description: Saiba mais sobre o mecanismo de limitação usado na autenticação do Adobe Pass. Explore uma visão geral desse mecanismo nesta página.
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '1141'
 ht-degree: 0%
@@ -42,7 +42,7 @@ As implementações de servidor para servidor devem encaminhar os endereços IP 
 
 Você pode encontrar mais detalhes sobre como passar o cabeçalho X-Forwarded-For [aqui](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md).
 
-### Limites e endpoints reais
+### Limites e endpoints reais {#throttling-mechanism-limits}
 
 Atualmente, o limite padrão permite no máximo 1 solicitação por segundo, com uma intermitência inicial de 10 solicitações (permissão única na primeira interação do cliente identificado, o que deve permitir que a inicialização seja concluída com êxito). Isso não deve afetar nenhum caso comercial normal em todos os nossos clientes.
 
@@ -77,27 +77,27 @@ Como os clientes que usam a Autenticação Adobe Pass fornecidos pelos SDKs não
 
 #### setRequestor
 
-Ao atingir o limite de aceleração usando a função `setRequestor` do SDK, o SDK retornará um código de erro CFG429 por meio do retorno de chamada `errorHandler`.
+Ao atingir o limite usando a função `setRequestor` da SDK, o SDK retornará um código de erro CFG429 por meio do retorno de chamada `errorHandler`.
 
 #### getAuthorization
 
-Ao atingir o limite de aceleração usando a função `getAuthorization` do SDK, o SDK retornará um código de erro Z100 pela chamada de retorno `errorHandler`.
+Ao atingir o limite de aceleração usando a função `getAuthorization` da SDK, o SDK retornará um código de erro Z100 pela chamada de retorno `errorHandler`.
 
 #### checkPreauthorizedResources
 
-Ao atingir o limite de aceleração usando a função `checkPreauthorizedResources` do SDK, o SDK retornará um código de erro P100 pela chamada de retorno `errorHandler`.
+Ao atingir o limite de aceleração usando a função `checkPreauthorizedResources` da SDK, o SDK retornará um código de erro P100 pela chamada de retorno `errorHandler`.
 
 #### getMetadata
 
-Ao atingir o limite de aceleração usando a função `getMetadata` do SDK, o SDK retornará uma resposta vazia por meio do retorno de chamada `setMetadataStatus`.
+Ao atingir o limite usando a função `getMetadata` da SDK, o SDK retornará uma resposta vazia por meio do retorno de chamada `setMetadataStatus`.
 
-Para cada detalhe de implementação específico, consulte a documentação do SDK.
+Para cada detalhe de implementação específico, consulte a documentação específica do SDK.
 
-- [Referência da API do SDK do JavaScript](legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-- [Referência da API do SDK do Android](legacy/sdks/android-sdk/android-sdk-api-reference.md)
+- [Referência da API do JavaScript SDK](legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+- [Referência da API do Android SDK](legacy/sdks/android-sdk/android-sdk-api-reference.md)
 - [Referência da API do iOS/tvOS](legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
 
-### Alterações na resposta da API e resposta
+### Alterações na resposta da API e resposta {#throttling-mechanism-response}
 
 Quando identificamos que o limite foi violado, marcaremos essa solicitação com um status de resposta específico (HTTP 429 Demasiadas solicitações), instruindo que você tenha consumido todos os tokens atribuídos ao dispositivo do usuário (endereço IP) para o intervalo de tempo.
 

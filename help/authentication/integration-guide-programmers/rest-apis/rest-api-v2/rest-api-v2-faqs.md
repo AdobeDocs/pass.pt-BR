@@ -2,9 +2,9 @@
 title: Perguntas frequentes sobre REST API V2
 description: Perguntas frequentes sobre REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '6963'
+source-wordcount: '8198'
 ht-degree: 0%
 
 ---
@@ -123,7 +123,51 @@ A finalidade da Fase de autenticação é fornecer ao aplicativo cliente a capac
 
 A Fase de autenticação atua como uma etapa de pré-requisito para a Fase de pré-autorização ou Fase de autorização quando o aplicativo cliente precisa reproduzir o conteúdo.
 
-#### 2. Como o aplicativo cliente pode saber se o usuário já está autenticado? {#authentication-phase-faq2}
+#### 2. O que é uma sessão de autenticação e por quanto tempo ela é válida? {#authentication-phase-faq2}
+
+A sessão de autenticação é um termo definido na documentação do [Glossário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#session).
+
+A sessão de autenticação armazena informações sobre o processo de autenticação iniciado que podem ser recuperadas do endpoint de Sessões.
+
+A sessão de autenticação é válida por um período curto e limitado especificado no momento da emissão pelo carimbo de data/hora `notAfter`, indicando o tempo que o usuário tem para concluir o processo de autenticação antes de exigir a reinicialização do fluxo.
+
+O aplicativo cliente pode usar a resposta da sessão de autenticação para saber como proceder com o processo de autenticação. Observe que há casos em que o usuário não precisa se autenticar, como fornecer acesso temporário, acesso degradado ou quando o usuário já está autenticado.
+
+Para obter mais informações, consulte os seguintes documentos:
+
+* [Criar API de sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+* [Retomar API de sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
+* [Fluxo de autenticação básica executado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+* [Fluxo de autenticação básico executado no aplicativo secundário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+
+#### 3. Qual é um código de autenticação e por quanto tempo ele é válido? {#authentication-phase-faq3}
+
+O código de autenticação é um termo definido na documentação do [Glossário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code).
+
+O código de autenticação armazena um valor exclusivo gerado quando um usuário inicia o processo de autenticação e identifica exclusivamente a sessão de autenticação de um usuário até que o processo seja concluído ou até que a sessão de autenticação expire.
+
+O código de autenticação é válido por um período curto e limitado especificado no momento do início da sessão de autenticação pelo carimbo de data/hora `notAfter`, indicando o tempo que o usuário tem para concluir o processo de autenticação antes de solicitar a reinicialização do fluxo.
+
+O aplicativo cliente pode usar o código de autenticação para verificar se o usuário concluiu com êxito a autenticação e recuperar as informações de perfil do usuário, normalmente por meio de um mecanismo de pesquisa.
+
+O aplicativo cliente também pode usar o código de autenticação para permitir que o usuário conclua ou retome o processo de autenticação no mesmo dispositivo ou em um segundo (tela), considerando que a sessão de autenticação não expirou.
+
+Para obter mais informações, consulte os seguintes documentos:
+
+* [Criar API de sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+* [Retomar API de sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
+* [Fluxo de autenticação básica executado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+* [Fluxo de autenticação básico executado no aplicativo secundário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+
+#### 4. Como o aplicativo cliente pode saber se o usuário digitou um código de autenticação válido e se a sessão de autenticação ainda não expirou? {#authentication-phase-faq4}
+
+O aplicativo cliente pode validar o código de autenticação digitado pelo usuário em um aplicativo secundário (tela) enviando uma solicitação a um dos pontos de extremidade das sessões responsáveis por retomar a sessão de autenticação ou recuperar as informações da sessão de autenticação associadas ao código de autenticação.
+
+O aplicativo cliente receberia um [erro](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) se o código de autenticação fornecido fosse digitado incorretamente ou caso a sessão de autenticação expirasse.
+
+Para obter mais informações, consulte os documentos [Retomar sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) e [Recuperar sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md).
+
+#### 5. Como o aplicativo cliente pode saber se o usuário já está autenticado? {#authentication-phase-faq5}
 
 O aplicativo cliente pode consultar um dos seguintes endpoints, capazes de verificar se um usuário já está autenticado e retornar informações do perfil:
 
@@ -136,7 +180,128 @@ Para obter mais detalhes, consulte os seguintes documentos:
 * [Fluxo de perfis básicos realizado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Fluxo de perfis básicos realizado no aplicativo secundário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### 3. Como o aplicativo cliente pode obter as informações de metadados do usuário? {#authentication-phase-faq3}
+#### 6. Qual é um perfil e por quanto tempo ele é válido? {#authentication-phase-faq6}
+
+O perfil é um termo definido no [Glossário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile).
+
+O perfil armazena informações sobre a validade de autenticação do usuário, informações de metadados e muito mais que podem ser recuperadas do endpoint de Perfis.
+
+O aplicativo cliente pode usar o perfil para saber o status de autenticação do usuário, acessar informações de metadados do usuário, encontrar o método usado para autenticar ou a entidade usada para fornecer a identidade.
+
+Para obter mais detalhes, consulte os seguintes documentos:
+
+* [API do endpoint de perfis](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
+* [Endpoint de perfis para API MVPD específica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+* [Endpoint de perfis para API de código específica (autenticação)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
+* [Fluxo de perfis básicos realizado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
+* [Fluxo de perfis básicos realizado no aplicativo secundário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+O perfil é válido por um período limitado especificado quando consultado pelo carimbo de data/hora `notAfter`, indicando o tempo que o usuário tem uma autenticação válida antes de passar pela Fase de Autenticação novamente.
+
+Esse período de tempo limitado, conhecido como autenticação (authN) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl), pode ser visualizado e alterado no [Painel TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da Adobe Pass por um dos administradores da organização ou por um representante de Autenticação da Adobe Pass que atue em seu nome.
+
+Para obter mais detalhes, consulte a documentação do [Guia do Usuário de Integrações do Painel do TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
+
+#### 7. O aplicativo cliente deve armazenar em cache as informações de perfil do usuário em um armazenamento persistente? {#authentication-phase-faq7}
+
+O aplicativo cliente deve armazenar em cache as informações de perfil do usuário em um armazenamento persistente para evitar solicitações desnecessárias e melhorar a experiência do usuário considerando os seguintes aspectos:
+
+| Atributo | Experiência do usuário |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `attributes` | O aplicativo cliente pode usar isso para personalizar a experiência do usuário com base em diferentes chaves [de metadados de usuário](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) (por exemplo, `zip`, `maxRating` etc.). |
+| `mvpd` | O aplicativo cliente pode usar isso para monitorar o provedor de TV selecionado pelo usuário.<br/><br/>Quando o perfil de usuário atual expira, o aplicativo cliente pode usar a seleção MVPD lembrada e solicitar apenas que o usuário confirme. |
+| `notAfter` | O aplicativo cliente pode usar isso para rastrear a data de expiração do perfil do usuário e acionar o processo de reautenticação quando ele expirar, evitando erros durante as fases de Pré-autorização ou Autorização.<br/><br/>A manipulação de erros do aplicativo cliente deve ser capaz de manipular o código de erro [authenticated_profile_expired](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2), que indica que o aplicativo cliente requer que o usuário seja autenticado novamente. |
+
+#### 8. O aplicativo cliente pode estender o perfil do usuário sem exigir reautenticação? {#authentication-phase-faq8}
+
+Não.
+
+O perfil do usuário não pode ser estendido além de sua validade sem interação do usuário, pois sua expiração é determinada pelo TTL de autenticação estabelecido com MVPDs.
+
+Portanto, o aplicativo cliente deve solicitar que o usuário se autentique novamente e interaja com a página de logon do MVPD para atualizar seu perfil no sistema.
+
+No entanto, para os MVPDs que oferecem suporte à [autenticação baseada em página inicial](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) (HBA), o usuário não precisará inserir credenciais.
+
+#### 9. Quais são os casos de uso para cada endpoint de Perfis disponível? {#authentication-phase-faq9}
+
+Os endpoints de Perfis são projetados para fornecer ao aplicativo cliente a capacidade de saber o status de autenticação do usuário, acessar informações de metadados do usuário, encontrar o método usado para autenticar ou a entidade usada para fornecer identidade.
+
+Cada endpoint se adapta a um caso de uso específico, da seguinte maneira:
+
+| API | Descrição | Caso de uso |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [API de ponto de extremidade de perfis](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | Recuperar todos os perfis de usuário. | **O usuário abre o aplicativo cliente pela primeira vez**<br/><br/> Neste cenário, o aplicativo cliente não tem o identificador MVPD selecionado pelo usuário em cache no armazenamento persistente.<br/><br/>Como resultado, ele enviará uma única solicitação para recuperar todos os perfis de usuário disponíveis. |
+| [Ponto de extremidade de perfis para a API do MVPD específica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | Recupere o perfil de usuário associado a uma MVPD específica. | **O usuário retorna ao aplicativo cliente após a autenticação em uma visita anterior**<br/><br/> Nesse caso, o aplicativo cliente deve ter o identificador MVPD selecionado anteriormente pelo usuário em cache no armazenamento persistente.<br/><br/>Como resultado, ele enviará uma única solicitação para recuperar o perfil do usuário para essa MVPD específica. |
+| [Ponto de extremidade de perfis para API de código (autenticação) específica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | Recupere o perfil de usuário associado a um código de autenticação específico. | **O usuário inicia o processo de autenticação**<br/><br/> Neste cenário, o aplicativo cliente deve determinar se o usuário concluiu com êxito a autenticação e recuperar suas informações de perfil.<br/><br/>Como resultado, ele iniciará um mecanismo de sondagem para recuperar o perfil do usuário associado ao código de autenticação. |
+
+#### 10. O que o aplicativo cliente deve fazer se o usuário tiver vários perfis do MVPD? {#authentication-phase-faq10}
+
+Quando o usuário tem vários perfis do MVPD, o aplicativo cliente é responsável por determinar a melhor abordagem para lidar com esse cenário.
+
+O aplicativo cliente pode optar por solicitar que o usuário selecione o perfil do MVPD desejado ou fazer a seleção automaticamente, como escolher o primeiro perfil de usuário da resposta ou aquele com o período de validade mais longo.
+
+#### 11. O que acontece quando os perfis de usuários expiram? {#authentication-phase-faq11}
+
+Quando os perfis de usuário expiram, eles não são mais incluídos na resposta do endpoint Perfis.
+
+Se o endpoint de Perfis retornar uma resposta vazia do mapa de perfis, o aplicativo cliente deverá criar uma nova sessão de autenticação e solicitar que o usuário se autentique novamente.
+
+Para obter mais informações, consulte a documentação da [Criar API de sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
+
+#### 12. Quando os perfis de usuário se tornam inválidos? {#authentication-phase-faq12}
+
+Os perfis de usuário se tornam inválidos nos seguintes cenários:
+
+* Quando o TTL de autenticação expira, conforme indicado pelo carimbo de data/hora `notAfter` na resposta do ponto de extremidade Profiles.
+* Quando o aplicativo cliente altera o valor do cabeçalho [AP-Device-Identifier](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md).
+* Quando o aplicativo cliente atualiza, as credenciais de cliente usadas para recuperar o valor do cabeçalho [Autorização](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md).
+* Quando o aplicativo cliente revoga ou atualiza a instrução de software usada para obter credenciais do cliente.
+
+#### 13. Quando o aplicativo cliente deve iniciar o mecanismo de polling? {#authentication-phase-faq13}
+
+Para garantir a eficiência e evitar solicitações desnecessárias, o aplicativo cliente deve iniciar o mecanismo de pesquisa nas seguintes condições:
+
+**Autenticação executada no aplicativo (tela) primário**
+
+O aplicativo principal (streaming) deve iniciar a pesquisa quando o usuário atingir a página de destino final, depois que o componente do navegador carregar a URL especificada para o parâmetro `redirectUrl` na solicitação de ponto de extremidade [Sessões](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
+
+**Autenticação executada em um aplicativo secundário (tela)**
+
+O aplicativo principal (transmissão) deve iniciar a sondagem assim que o usuário iniciar o processo de autenticação, logo após receber a resposta do ponto de extremidade [Sessões](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) e exibir o código de autenticação ao usuário.
+
+#### 14. Quando o aplicativo cliente deve interromper o mecanismo de polling? {#authentication-phase-faq14}
+
+Para garantir a eficiência e evitar solicitações desnecessárias, o aplicativo cliente deve interromper o mecanismo de pesquisa nas seguintes condições:
+
+**Autenticação bem-sucedida**
+
+As informações de perfil do usuário foram recuperadas com êxito, confirmando o status de autenticação. Neste ponto, a pesquisa não é mais necessária.
+
+**Sessão de autenticação e expiração do código**
+
+A sessão de autenticação e o código expiram, conforme indicado pelo carimbo de data/hora `notAfter` na resposta do ponto de extremidade [Sessões](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Se isso acontecer, o usuário deverá reiniciar o processo de autenticação e a pesquisa usando o código de autenticação anterior deverá ser interrompida imediatamente.
+
+**Novo código de autenticação gerado**
+
+Se o usuário solicitar um novo código de autenticação no dispositivo principal (tela), a sessão existente não será mais válida e o polling usando o código de autenticação anterior deverá ser interrompido imediatamente.
+
+#### 15. Que intervalo entre chamadas o aplicativo cliente deve usar para o mecanismo de polling? {#authentication-phase-faq15}
+
+Para garantir a eficiência e evitar solicitações desnecessárias, o aplicativo cliente deve configurar a frequência do mecanismo de polling nas seguintes condições:
+
+| **Autenticação executada no aplicativo (tela) primário** | **Autenticação executada em um aplicativo secundário (tela)** |
+|----------------------------------------------------------------------|----------------------------------------------------------------------|
+| O aplicativo principal (transmissão) deve pesquisar a cada 1-5 segundos. | O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos. |
+
+#### 16. Qual é o número máximo de solicitações de sondagem que o aplicativo cliente pode enviar? {#authentication-phase-faq16}
+
+O aplicativo cliente deve seguir os limites atuais definidos pelo [Mecanismo de limitação](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits) da Autenticação Adobe Pass.
+
+A manipulação de erros do aplicativo cliente deve poder manipular o código de erro [429 Muitas Solicitações](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-response), que indica que o aplicativo cliente excedeu o número máximo de solicitações permitidas.
+
+Para obter mais detalhes, consulte a documentação do [Mecanismo de limitação](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+#### 17. Como o aplicativo cliente pode obter as informações de metadados do usuário? {#authentication-phase-faq17}
 
 O aplicativo cliente pode consultar um dos seguintes pontos de extremidade capazes de retornar informações de [metadados do usuário](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) como parte das informações do perfil:
 
@@ -144,74 +309,18 @@ O aplicativo cliente pode consultar um dos seguintes pontos de extremidade capaz
 * [Endpoint de perfis para API MVPD específica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
 * [Endpoint de perfis para API de código específica (autenticação)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
 
+O aplicativo cliente não precisa consultar um endpoint separado para recuperar as informações de metadados do usuário, pois elas já estão incluídas nas informações de perfil obtidas ao verificar se o usuário está autenticado.
+
 Para obter mais detalhes, consulte os seguintes documentos:
 
 * [Fluxo de perfis básicos realizado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Fluxo de perfis básicos realizado no aplicativo secundário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### 4. O que é uma sessão de autenticação e por quanto tempo ela é válida? {#authentication-phase-faq4}
+#### 18. Como o aplicativo cliente deve gerenciar o acesso degradado? {#authentication-phase-faq18}
 
-A sessão de autenticação é um termo definido na documentação do [Glossário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#session).
+Considerando que sua organização pretende usar o recurso [degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md), o aplicativo cliente deve lidar com fluxos de acesso degradados, que descrevem como os pontos de extremidade da API REST v2 se comportam nesses cenários.
 
-A sessão de autenticação armazena informações sobre o processo de autenticação iniciado que podem ser recuperadas do endpoint de Sessões.
-
-A sessão de autenticação é válida por um período limitado e curto especificado no momento do problema, indicando o tempo que o usuário tem para concluir o processo de autenticação antes de exigir a reinicialização do fluxo.
-
-O aplicativo cliente pode usar a resposta da sessão de autenticação para saber como proceder com o processo de autenticação. Observe que há casos em que o usuário não precisa se autenticar, como fornecer acesso temporário, acesso degradado ou quando o usuário já está autenticado.
-
-Para obter mais informações, consulte os seguintes documentos:
-
-* [Criar API de sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
-* [Retomar API de sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
-* [Fluxo de autenticação básica executado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
-* [Fluxo de autenticação básico executado no aplicativo secundário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
-
-#### 5. Qual é um código de autenticação e por quanto tempo ele é válido? {#authentication-phase-faq5}
-
-O código de autenticação é um termo definido na documentação do [Glossário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code).
-
-O código de autenticação armazena um valor exclusivo gerado quando um usuário inicia o processo de autenticação e identifica exclusivamente a sessão de autenticação de um usuário até que o processo seja concluído ou até que a sessão de autenticação expire.
-
-O código de autenticação é válido por um período limitado e curto especificado no momento do início da sessão de autenticação, indicando o tempo que o usuário tem para concluir o processo de autenticação antes de solicitar a reinicialização do fluxo.
-
-O aplicativo cliente pode usar o código de autenticação para permitir que o usuário conclua ou retome o processo de autenticação no mesmo dispositivo ou em um segundo, considerando que a sessão de autenticação não expirou.
-
-Para obter mais informações, consulte os seguintes documentos:
-
-* [Criar API de sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
-* [Retomar API de sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
-* [Fluxo de autenticação básica executado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
-* [Fluxo de autenticação básico executado no aplicativo secundário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
-
-#### 6. Como o aplicativo cliente pode saber se o usuário digitou um código de autenticação válido e se a sessão de autenticação ainda não expirou? {#authentication-phase-faq6}
-
-O aplicativo cliente pode validar o código de autenticação digitado pelo usuário em um aplicativo secundário (tela) enviando uma solicitação ao endpoint de Sessões responsável por recuperar as informações da sessão de autenticação associadas ao código de autenticação.
-
-O aplicativo cliente receberia um [erro](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) se o código de autenticação fornecido fosse digitado incorretamente ou caso a sessão de autenticação expirasse.
-
-Para obter mais informações, consulte a documentação [Recuperar sessão de autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md).
-
-#### 7. Qual é um perfil e por quanto tempo ele é válido? {#authentication-phase-faq7}
-
-O perfil é um termo definido no [Glossário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile).
-
-O perfil armazena informações sobre a validade de autenticação do usuário, informações de metadados e muito mais que podem ser recuperadas do endpoint de Perfis.
-
-O aplicativo cliente pode usar o perfil para saber o status de autenticação do usuário, acessar informações de metadados do usuário ou encontrar o método usado para autenticação.
-
-Para obter mais detalhes, consulte os seguintes documentos:
-
-* [API do endpoint de perfis](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-* [Endpoint de perfis para API MVPD específica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
-* [Endpoint de perfis para API de código específica (autenticação)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
-* [Fluxo de perfis básicos realizado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
-* [Fluxo de perfis básicos realizado no aplicativo secundário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
-
-O perfil é válido por um período limitado especificado quando consultado, indicando o tempo que o usuário tem uma autenticação válida antes de passar pela Fase de Autenticação novamente.
-
-Esse período de tempo limitado, conhecido como autenticação (authN) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl), pode ser visualizado e alterado no [Painel TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da Adobe Pass por um dos administradores da organização ou por um representante de Autenticação da Adobe Pass que atue em seu nome.
-
-Para obter mais detalhes, consulte a documentação do [Guia do Usuário de Integrações do Painel do TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
+Para obter mais detalhes, consulte a documentação dos [Fluxos de acesso degradados](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md).
 
 +++
 
@@ -476,9 +585,17 @@ Portanto, o usuário precisará autenticar novamente no novo aplicativo cliente 
 
 Sim.
 
-Os aplicativos clientes que integram a REST API V2 se beneficiam do recurso de códigos de erro aprimorado habilitado por padrão.
+Por padrão, os aplicativos clientes que migram para a REST API V2 se beneficiam automaticamente desse recurso, fornecendo informações de erro mais detalhadas e precisas.
 
 Para obter mais detalhes, consulte a documentação dos [Códigos de erro aprimorados](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2).
+
+#### 5. As integrações existentes exigem alterações de configuração ao migrar para a REST API V2? {#migration-faq5}
+
+Não.
+
+Os aplicativos clientes que estão migrando para a REST API V2 não exigem alterações de configuração nas integrações existentes do MVPD. Além disso, eles continuarão a usar os mesmos identificadores para os [provedores de serviços](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#service-provider) e [MVPDs](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd) existentes.
+
+Além disso, os protocolos usados pela Autenticação Adobe Pass para se comunicar com os endpoints do MVPD permanecem inalterados.
 
 +++
 

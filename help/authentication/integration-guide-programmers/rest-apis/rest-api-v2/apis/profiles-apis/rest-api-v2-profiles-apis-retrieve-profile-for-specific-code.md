@@ -2,9 +2,9 @@
 title: Recuperar perfil para código específico
 description: REST API V2 - Recuperar perfil para código específico
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '711'
 ht-degree: 2%
 
 ---
@@ -13,11 +13,15 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
 > A implementação da REST API V2 é limitada pela documentação do [Mecanismo de limitação](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visite também as [Perguntas frequentes sobre a REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 ## Solicitação {#request}
 
@@ -127,7 +131,7 @@ ht-degree: 2%
       <td>403</td>
       <td>Proibido</td>
       <td>
-        O TTL (time-to-live) de acesso temporário expirou ou o número máximo de recursos foi excedido. O cliente precisa indicar ao usuário que inicie um fluxo de autenticação básico usando um MVPD normal. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
+        O TTL (time-to-live) de acesso temporário expirou ou o número máximo de recursos foi excedido. O cliente precisa indicar ao usuário que inicie um fluxo de autenticação básico usando um MVPD comum. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
       </td>
    </tr> 
    <tr>
