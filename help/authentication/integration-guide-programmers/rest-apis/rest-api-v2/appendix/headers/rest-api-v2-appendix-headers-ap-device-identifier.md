@@ -2,9 +2,9 @@
 title: Cabeçalho - AP-Identificador de dispositivo
 description: REST API V2 - Cabeçalho - AP-Identificador de dispositivo
 exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '485'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Visão geral {#overview}
 
@@ -21,7 +21,7 @@ O cabeçalho de solicitação <b>AP-Device-Identifier</b> contém o identificado
 
 ## Sintaxe {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>Identificador-dispositivo-AP</b>: &lt;tipo&gt; &lt;identificador&gt;</td>
    </tr>
@@ -43,7 +43,7 @@ O tipo de identificador do dispositivo.
 
 Há apenas um tipo compatível, conforme apresentado abaixo.
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Tipo</th>
       <th style="background-color: #EFF2F7;"></th>
@@ -51,9 +51,9 @@ Há apenas um tipo compatível, conforme apresentado abaixo.
    <tr>
       <td>impressão digital</td>
       <td>
-            O identificador do dispositivo consiste em um identificador estável e exclusivo criado e gerenciado pelo aplicativo cliente.
+            O identificador de dispositivo consiste em um identificador estável e exclusivo criado e gerenciado pelo aplicativo cliente para cada dispositivo.
             <br/>
-            O aplicativo cliente deve impedir alterações de valor causadas pelas ações do usuário, como desinstalação, reinstalação ou atualizações de aplicativos.
+            O aplicativo cliente deve armazenar o identificador do dispositivo em cache no armazenamento persistente, pois perdê-lo ou alterá-lo invalidará a autenticação. O aplicativo cliente deve evitar alterações de valor causadas por ações do usuário, como desinstalação, reinstalação ou atualizações de aplicativos.
       </td>
    </tr>
 </table>
@@ -134,3 +134,9 @@ Para criar o cabeçalho `AP-Device-Identifier` para dispositivos que executam o 
 * Documentação do desenvolvedor do Roku para [GetChannelClientId](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string).
 
 _(*) Recomendamos aplicar uma função de hash SHA-256 sobre o valor fornecido pelo sistema operacional._
+
+### Outros {#others}
+
+Para plataformas de dispositivos não cobertas na documentação, o identificador do dispositivo deve ser vinculado a qualquer identificação de hardware disponível, normalmente especificada no manual de hardware do dispositivo.
+
+Se nenhum identificador de hardware estiver disponível, um identificador gerado exclusivamente com base nos atributos do aplicativo cliente deverá ser usado e armazenado em cache no armazenamento persistente.

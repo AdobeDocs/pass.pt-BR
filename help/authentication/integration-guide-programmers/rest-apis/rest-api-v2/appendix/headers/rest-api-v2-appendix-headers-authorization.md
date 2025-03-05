@@ -2,7 +2,7 @@
 title: Cabeçalho - autorização
 description: REST API V2 - Cabeçalho - Autorização
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 3%
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Visão geral {#overview}
 
@@ -24,7 +24,7 @@ Para obter mais detalhes sobre o mecanismo de acesso a APIs protegidas pelo Adob
 
 ## Sintaxe {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>Autorização</b>: Portador &lt;access_token&gt;</td>
    </tr>

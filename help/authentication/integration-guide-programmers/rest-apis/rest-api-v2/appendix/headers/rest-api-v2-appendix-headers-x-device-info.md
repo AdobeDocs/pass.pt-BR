@@ -2,9 +2,9 @@
 title: Cabeçalho - X-Device-Info
 description: REST API V2 - Cabeçalho - X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '1085'
+source-wordcount: '1122'
 ht-degree: 4%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Visão geral {#overview}
 
@@ -21,7 +21,7 @@ O cabeçalho de solicitação <b>X-Device-Info</b> contém as informações do c
 
 ## Sintaxe {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>X-Device-Info</b>: &lt;informações_do_dispositivo&gt;</td>
    </tr>
@@ -41,7 +41,7 @@ O cabeçalho de solicitação <b>X-Device-Info</b> contém as informações do c
 
 O valor `Base64-encoded` do elemento JSON que contém pelo menos os atributos marcados como exigidos pela tabela a seguir.
 
-<table>
+<table style="table-layout:auto">
     <tr>
         <th style="background-color: #EFF2F7; width: 15%;">Presença</th>
         <th style="background-color: #EFF2F7; width: 15%;">Chave</th>
@@ -721,3 +721,7 @@ As informações do aplicativo podem ser construídas da seguinte maneira:
 | Chave | Source | Valor (exemplo) |
 |---------------|-----------|-----------------|
 | applicationId | codificado | REF30 |
+
+### Outros {#others}
+
+Para plataformas de dispositivos não abordadas na documentação, as informações do cliente (dispositivo, conexão e aplicativo) devem ser vinculadas a todos os atributos de hardware e sistema operacional (SO) disponíveis, normalmente especificados nos manuais de hardware e SO do dispositivo.

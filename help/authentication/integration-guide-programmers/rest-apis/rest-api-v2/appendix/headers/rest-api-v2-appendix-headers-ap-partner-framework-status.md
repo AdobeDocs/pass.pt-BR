@@ -2,7 +2,7 @@
 title: Cabeçalho - AP-Parceiro-Estrutura-Status
 description: REST API V2 - Cabeçalho - AP-Parceiro-Estrutura-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '388'
 ht-degree: 1%
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Visão geral {#overview}
 
@@ -21,7 +21,7 @@ O cabeçalho de solicitação <b>AP-Partner-Framework-Status</b> contém informa
 
 ## Sintaxe {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>AP-Partner-Framework-Status</b>: &lt;informações_de_status_do_framework_do_parceiro&gt;</td>
    </tr>
@@ -41,7 +41,7 @@ O cabeçalho de solicitação <b>AP-Partner-Framework-Status</b> contém informa
 
 O valor `Base64-encoded` do elemento JSON que contém os seguintes atributos:
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Atributo</th>
       <th style="background-color: #EFF2F7;"></th>
@@ -68,10 +68,10 @@ O valor `Base64-encoded` do elemento JSON que contém os seguintes atributos:
                   É uma enumeração com os seguintes valores possíveis:
                   <br/>
                   <ul>
-                     <li>granted - O usuário permitiu que o aplicativo acessasse informações de assinatura.</li>
-                     <li>denied - o usuário negou o aplicativo para acessar informações de assinatura.</li>
-                     <li>pendente - o usuário ainda não optou por permitir que o aplicativo acessasse as informações de assinatura.</li>
-                     <li>notDetermined - O aplicativo não tem permissão para acessar informações de assinatura.</li>
+                     <li><b>concedido</b><br/>O usuário permitiu que o aplicativo acessasse informações de assinatura.</li>
+                     <li><b>negado</b><br/>O usuário negou o aplicativo para acessar informações de assinatura.</li>
+                     <li><b>pendente</b><br/>O usuário não escolheu ainda permitir que o aplicativo acessasse informações de assinatura.</li>
+                     <li><b>nãoDeterminado</b><br/>O aplicativo não tem permissão para acessar informações de assinatura.</li>
                   </ul>
                </td>
             </tr>
@@ -122,7 +122,7 @@ O valor `Base64-encoded` do elemento JSON que contém os seguintes atributos:
                <td>
                   Este é um atributo obrigatório.
                   <br/><br/>
-                  É a mappingId que identifica o MVPD usado durante o fluxo de autenticação no nível da estrutura do parceiro.
+                  É a mappingId que identifica a MVPD usada durante o fluxo de autenticação no nível da estrutura do parceiro.
                </td>
             </tr>
             <tr>

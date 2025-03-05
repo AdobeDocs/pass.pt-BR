@@ -2,7 +2,7 @@
 title: Cabeçalho - Adobe-Subject-Token
 description: REST API V2 - Cabeçalho - Adobe-Subject-Token
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Visão geral {#overview}
 
@@ -25,9 +25,9 @@ Para obter mais detalhes sobre os fluxos habilitados para o logon único (SSO) q
 
 ## Sintaxe {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <td style="background-color: #DEEBFF;" colspan="2"><b>Token de Assunto do Adobe</b>: &lt;identificador_plataforma_exclusiva&gt;</td>
+      <td style="background-color: #DEEBFF;" colspan="2"><b>Adobe-Subject-Token</b>: &lt;identificador_plataforma_exclusiva&gt;</td>
    </tr>
    <tr>
       <td>Tipo de cabeçalho</td>
