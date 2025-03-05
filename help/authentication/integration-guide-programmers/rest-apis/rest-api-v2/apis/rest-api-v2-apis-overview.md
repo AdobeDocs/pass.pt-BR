@@ -2,9 +2,9 @@
 title: Visão geral das APIs REST API V2
 description: Visão geral das APIs REST API V2
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '149'
+source-wordcount: '151'
 ht-degree: 1%
 
 ---
@@ -48,7 +48,7 @@ Para começar, visite a documentação pública das APIs nas quais você está i
 ## Logon único de parceiro {#rest-api-v2-apis-partner-single-sign-on}
 
 * [Recuperar solicitação de autenticação do parceiro](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [Recuperar perfil usando resposta de autenticação de parceiro](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [Criar e recuperar perfil usando a resposta de autenticação do parceiro](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 ## Deseja experimentar a REST API V2?
 

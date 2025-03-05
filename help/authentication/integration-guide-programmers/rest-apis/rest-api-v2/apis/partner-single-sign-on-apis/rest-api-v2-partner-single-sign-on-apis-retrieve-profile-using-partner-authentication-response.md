@@ -1,19 +1,19 @@
 ---
-title: Recuperar perfil usando resposta de autenticação de parceiro
-description: REST API V2 - Recuperar perfil usando resposta de autenticação de parceiro
+title: Criar e recuperar perfil usando a resposta de autenticação do parceiro
+description: REST API V2 - Criar e recuperar perfil usando resposta de autenticação de parceiro
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '734'
 ht-degree: 2%
 
 ---
 
-# Recuperar perfil usando resposta de autenticação de parceiro {#retrieve-profile-using-partner-authentication-response}
+# Criar e recuperar perfil usando a resposta de autenticação do parceiro {#create-and-retrieve-profile-using-partner-authentication-response}
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -321,7 +321,7 @@ ht-degree: 2%
 
 ## Amostras {#samples}
 
-### 1. Recuperar perfil usando a resposta de autenticação do parceiro
+### 1. Criar e recuperar perfil usando a resposta de autenticação do parceiro
 
 >[!BEGINTABS]
 
@@ -378,7 +378,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Recuperar o perfil usando a resposta de autenticação do parceiro, mas a degradação é aplicada
+### 2. Criar e recuperar perfis usando a resposta de autenticação do parceiro, mas a degradação é aplicada
 
 >[!BEGINTABS]
 

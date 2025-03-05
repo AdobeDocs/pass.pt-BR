@@ -2,9 +2,9 @@
 title: Logon único - Parceiro - Fluxos
 description: REST API V2 - Logon único - Parceiro - Fluxos
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1468'
 ht-degree: 0%
 
 ---
@@ -125,7 +125,7 @@ Execute as etapas fornecidas para recuperar a solicitação de autenticação do
 
    Se o back-end do Adobe Pass não identificar um perfil válido e a validação de logon único de parceiro passar, o aplicativo de transmissão receberá uma resposta com ações e dados para transmitir à estrutura do parceiro para iniciar o fluxo de autenticação com a MVPD.
 
-   Para obter mais detalhes sobre o fluxo de recuperação de perfil usando uma resposta de autenticação de parceiro, consulte a seção [Recuperar perfil usando resposta de autenticação de parceiro](#retrieve-profile-using-partner-authentication-response).
+   Para obter mais detalhes sobre o fluxo de recuperação de perfil usando uma resposta de autenticação de parceiro, consulte a seção [Criar e recuperar perfil usando a resposta de autenticação de parceiro](#create-and-retrieve-profile-using-partner-authentication-response).
 
 1. **Continuar com o fluxo de autenticação básico:** A resposta do ponto de extremidade do Parceiro de Sessões contém os seguintes dados:
    * O atributo `actionName` está definido como &quot;autenticar&quot; ou &quot;retomar&quot;.
@@ -152,9 +152,9 @@ Execute as etapas fornecidas para recuperar a solicitação de autenticação do
    > 
    > Para obter mais detalhes sobre o cabeçalho `AP-Partner-Framework-Status`, consulte a documentação [AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md).
 
-## Recuperar perfil usando resposta de autenticação de parceiro {#retrieve-profile-using-partner-authentication-response}
+## Criar e recuperar perfil usando a resposta de autenticação do parceiro {#create-and-retrieve-profile-using-partner-authentication-response}
 
-### Pré-requisitos {#prerequisites-retrieve-profile-using-partner-authentication-response}
+### Pré-requisitos {#prerequisites-create-and-retrieve-profile-using-partner-authentication-response}
 
 Antes de recuperar o perfil usando uma resposta de autenticação de parceiro, verifique se os seguintes pré-requisitos foram atendidos:
 
@@ -169,13 +169,13 @@ Antes de recuperar o perfil usando uma resposta de autenticação de parceiro, v
 > * A estrutura do parceiro é compatível com a interação do usuário para autenticação com o MVPD selecionado.
 > * A estrutura do parceiro fornece permissão de usuário e informações do provedor.
 
-### Fluxo de trabalho (WRK) {#workflow-retrieve-profile-using-partner-authentication-response}
+### Fluxo de trabalho (WRK) {#workflow-create-and-retrieve-profile-using-partner-authentication-response}
 
 Execute as etapas fornecidas para implementar o fluxo de recuperação de perfil usando uma resposta de autenticação de parceiro, conforme mostrado no diagrama a seguir.
 
-![Recuperar perfil usando a resposta de autenticação de parceiro](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![Criar e recuperar perfil usando a resposta de autenticação do parceiro](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
-*Recuperar perfil autenticado usando a resposta de autenticação de parceiro*
+*Criar e recuperar perfil autenticado usando a resposta de autenticação do parceiro*
 
 1. **Concluir a autenticação do MVPD com a estrutura do parceiro:** Se o fluxo de autenticação for bem-sucedido, a interação da estrutura do parceiro com a MVPD produzirá uma resposta de autenticação do parceiro (resposta SAML) que será retornada junto com as informações de status da estrutura do parceiro.
 
@@ -184,11 +184,11 @@ Execute as etapas fornecidas para implementar o fluxo de recuperação de perfil
    * O identificador de mapeamento do provedor do usuário está presente e é válido.
    * A data de expiração do perfil do provedor do usuário (se disponível) é válida.
 
-1. **Recuperar perfil usando a resposta de autenticação de parceiro:** O aplicativo de streaming reúne todos os dados necessários para criar e recuperar um perfil, chamando o ponto de extremidade Parceiro de Perfis.
+1. **Criar e recuperar perfil usando a resposta de autenticação de parceiro:** o aplicativo de streaming reúne todos os dados necessários para criar e recuperar um perfil, chamando o ponto de extremidade Parceiro de Perfis.
 
    >[!IMPORTANT]
    >
-   > Consulte a documentação da API [Recuperar perfil usando a resposta de autenticação de parceiro](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) para obter detalhes sobre:
+   > Consulte a documentação da API [Criar e recuperar perfil usando a resposta de autenticação de parceiro](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) para obter detalhes sobre:
    >
    > * Todos os parâmetros _necessários_, como `serviceProvider`, `partner` e `SAMLResponse`
    > * Todos os cabeçalhos _necessários_, como `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` e `AP-Partner-Framework-Status`
@@ -208,7 +208,7 @@ Execute as etapas fornecidas para implementar o fluxo de recuperação de perfil
 
    >[!IMPORTANT]
    >
-   > Consulte a documentação da API [Recuperar perfil usando a resposta de autenticação de parceiro](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) para obter detalhes sobre as informações fornecidas em uma resposta de perfil.
+   > Consulte a documentação da API [Criar e recuperar perfil usando a resposta de autenticação de parceiro](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) para obter detalhes sobre as informações fornecidas em uma resposta de perfil.
    > 
    > <br/>
    > 

@@ -2,9 +2,9 @@
 title: Guia do Apple SSO (REST API V2)
 description: Guia do Apple SSO (REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '3443'
+source-wordcount: '3615'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 A API REST V2 de autenticação do Adobe Pass tem suporte para Logon único de parceiro (SSO) para usuários finais de aplicativos clientes em execução no iOS, iPadOS ou tvOS.
 
@@ -284,7 +284,7 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
    * [Realizar autenticação no aplicativo secundário com mvpd pré-selecionado](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [Executar autenticação no aplicativo secundário sem mvpd pré-selecionado](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-1. **Continue com a recuperação do perfil usando o fluxo de resposta de autenticação de parceiro:** A resposta do ponto de extremidade do Parceiro de Sessões contém os seguintes dados:
+1. **Continue com a criação e recuperação de perfil usando o fluxo de resposta de autenticação de parceiro:** A resposta do ponto de extremidade do Parceiro de Sessões contém os seguintes dados:
    * O atributo `actionName` está definido como &quot;partner_profile&quot;.
    * O atributo `actionType` está definido como &quot;direto&quot;.
    * O atributo `authenticationRequest - type` inclui o protocolo de segurança usado pela estrutura do parceiro para logon do MVPD (atualmente definido somente como SAML).
@@ -316,11 +316,11 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
    * A data de expiração do perfil do provedor do usuário (se disponível) é válida.
    * A resposta de autenticação de parceiro (resposta SAML) está presente e é válida.
 
-1. **Recuperar perfil usando a resposta de autenticação de parceiro:** O aplicativo de streaming reúne todos os dados necessários para criar e recuperar um perfil, chamando o ponto de extremidade Parceiro de Perfis.
+1. **Criar e recuperar perfil usando a resposta de autenticação de parceiro:** o aplicativo de streaming reúne todos os dados necessários para criar e recuperar um perfil, chamando o ponto de extremidade Parceiro de Perfis.
 
    >[!IMPORTANT]
    >
-   > Consulte a documentação da API [Recuperar perfil usando a resposta de autenticação de parceiro](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) para obter detalhes sobre:
+   > Consulte a documentação da API [Criar e recuperar perfil usando a resposta de autenticação de parceiro](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) para obter detalhes sobre:
    >
    > * Todos os parâmetros _necessários_, como `serviceProvider`, `partner` e `SAMLResponse`
    > * Todos os cabeçalhos _necessários_, como `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` e `AP-Partner-Framework-Status`
@@ -338,7 +338,7 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
 
    >[!IMPORTANT]
    >
-   > Consulte a documentação da API [Recuperar perfil usando a resposta de autenticação de parceiro](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response) para obter detalhes sobre as informações fornecidas em uma resposta de perfil.
+   > Consulte a documentação da API [Criar e recuperar perfil usando a resposta de autenticação de parceiro](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response) para obter detalhes sobre as informações fornecidas em uma resposta de perfil.
    >
    > <br/>
    >
@@ -371,6 +371,10 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
 1. **Recuperar status da estrutura do parceiro:** O aplicativo de streaming chama a [Estrutura da Conta de Assinante de Vídeo](https://developer.apple.com/documentation/videosubscriberaccount) desenvolvida pela Apple para obter permissões de usuário e informações do provedor.
 
    >[!IMPORTANT]
+   > 
+   > O aplicativo de transmissão pode ignorar essa etapa se o tipo de perfil de usuário selecionado não for &quot;appleSSO&quot;.
+
+   >[!IMPORTANT]
    >
    > Consulte a documentação da [Estrutura da Conta de Assinante de Vídeo](https://developer.apple.com/documentation/videosubscriberaccount) para obter detalhes sobre:
    >
@@ -386,13 +390,17 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
    > O aplicativo de streaming deve garantir que ele especifique um valor booliano igual a `false` para a propriedade [`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed) no objeto `VSAccountMetadataRequest`, para indicar que o usuário não pode ser interrompido nesta fase.
 
    >[!TIP]
-   > 
-   > Sugestão: o aplicativo de transmissão pode usar um valor em cache para as informações de status da estrutura do parceiro, que recomendamos atualizar quando o aplicativo passa do estado de segundo plano para o primeiro plano.
+   >
+   > Sugestão: o aplicativo de transmissão pode usar um valor em cache para as informações de status da estrutura do parceiro, que recomendamos atualizar quando o aplicativo passar do estado de segundo plano para o primeiro plano. Nesse caso, o aplicativo de transmissão deve garantir que ele armazene em cache e use apenas valores válidos para o status da estrutura do parceiro, conforme descrito pela etapa &quot;Retornar informações de status da estrutura do parceiro&quot;.
 
 1. **Retornar informações de status da estrutura do parceiro:** o aplicativo de streaming valida os dados de resposta para garantir que as condições básicas sejam atendidas:
    * O status de acesso da permissão do usuário é concedido.
    * O identificador de mapeamento do provedor do usuário está presente e é válido.
-   * A data de expiração do perfil do provedor do usuário (se disponível) é válida.
+   * A data de expiração do perfil do provedor de usuário é válida.
+
+   >[!IMPORTANT]
+   >
+   > O aplicativo de transmissão pode ignorar essa etapa se o tipo de perfil de usuário selecionado não for &quot;appleSSO&quot;.
 
 1. **Recuperar decisões de pré-autorização:** O aplicativo de streaming reúne todos os dados necessários para obter decisões de pré-autorização para uma lista de recursos, chamando o ponto de extremidade de Pré-autorização de Decisões.
 
@@ -406,7 +414,7 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
    >
    > <br/>
    >
-   > O aplicativo de transmissão deve garantir que inclua um valor válido para o status da estrutura do parceiro antes de fazer uma solicitação adicional, quando o perfil escolhido for um perfil de tipo &quot;appleSSO&quot;.
+   > O aplicativo de transmissão deve garantir que inclua um valor válido para o status da estrutura do parceiro antes de fazer uma solicitação adicional, quando o perfil escolhido for um perfil de tipo &quot;appleSSO&quot;. No entanto, essa etapa poderá ser ignorada se o tipo de perfil de usuário selecionado não for &quot;appleSSO&quot;.
    >
    > <br/>
    >
@@ -435,6 +443,10 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
 
    >[!IMPORTANT]
    >
+   > O aplicativo de transmissão pode ignorar essa etapa se o tipo de perfil de usuário selecionado não for &quot;appleSSO&quot;.
+
+   >[!IMPORTANT]
+   >
    > Consulte a documentação da [Estrutura da Conta de Assinante de Vídeo](https://developer.apple.com/documentation/videosubscriberaccount) para obter detalhes sobre:
    >
    > <br/>
@@ -450,12 +462,16 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
 
    >[!TIP]
    >
-   > Sugestão: o aplicativo de transmissão pode usar um valor em cache para as informações de status da estrutura do parceiro, que recomendamos atualizar quando o aplicativo passa do estado de segundo plano para o primeiro plano.
+   > Sugestão: o aplicativo de transmissão pode usar um valor em cache para as informações de status da estrutura do parceiro, que recomendamos atualizar quando o aplicativo passar do estado de segundo plano para o primeiro plano. Nesse caso, o aplicativo de transmissão deve garantir que ele armazene em cache e use apenas valores válidos para o status da estrutura do parceiro, conforme descrito pela etapa &quot;Retornar informações de status da estrutura do parceiro&quot;.
 
 1. **Retornar informações de status da estrutura do parceiro:** o aplicativo de streaming valida os dados de resposta para garantir que as condições básicas sejam atendidas:
    * O status de acesso da permissão do usuário é concedido.
    * O identificador de mapeamento do provedor do usuário está presente e é válido.
-   * A data de expiração do perfil do provedor do usuário (se disponível) é válida.
+   * A data de expiração do perfil do provedor de usuário é válida.
+
+   >[!IMPORTANT]
+   >
+   > O aplicativo de transmissão pode ignorar essa etapa se o tipo de perfil de usuário selecionado não for &quot;appleSSO&quot;.
 
 1. **Recuperar decisão de autorização:** o aplicativo de streaming reúne todos os dados necessários para obter uma decisão de autorização para um recurso específico, chamando o ponto de extremidade de Autorização de Decisões.
 
@@ -469,7 +485,7 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
    >
    > <br/>
    >
-   > O aplicativo de transmissão deve garantir que inclua um valor válido para o status da estrutura do parceiro antes de fazer uma solicitação adicional, quando o perfil escolhido for um perfil de tipo &quot;appleSSO&quot;.
+   > O aplicativo de transmissão deve garantir que inclua um valor válido para o status da estrutura do parceiro antes de fazer uma solicitação adicional, quando o perfil escolhido for um perfil de tipo &quot;appleSSO&quot;. No entanto, essa etapa poderá ser ignorada se o tipo de perfil de usuário selecionado não for &quot;appleSSO&quot;.
    >
    > <br/>
    >
@@ -515,6 +531,10 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
 
    >[!IMPORTANT]
    >
+   > O aplicativo de streaming deve solicitar que o usuário conclua o processo de logout no nível do parceiro, conforme especificado pelos atributos `actionName` e `actionType`, quando o tipo de perfil de usuário removido for &quot;appleSSO&quot;.
+
+   >[!IMPORTANT]
+   >
    > Consulte a documentação da API [Iniciar logout para mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response) específica para obter detalhes sobre as informações fornecidas em uma resposta de logout.
    >
    > <br/>
@@ -527,9 +547,5 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
    > <br/>
    >
    > Se a validação falhar, uma resposta de erro será gerada, fornecendo informações adicionais que seguem a documentação de [Códigos de erro aprimorados](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
-
-   >[!IMPORTANT]
-   > 
-   > O aplicativo de streaming deve garantir que ele indique ao usuário que continue fazendo logoff do nível do parceiro ainda mais.
 
 +++
