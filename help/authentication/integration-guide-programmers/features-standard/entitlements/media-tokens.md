@@ -2,9 +2,9 @@
 title: Tokens de mídia
 description: Tokens de mídia
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '682'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 O token de mídia é um token gerado pela [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) da Autenticação da Adobe Pass como resultado de uma decisão de autorização destinada a fornecer acesso de exibição a conteúdo protegido (recurso).
 
 O token de mídia é válido por um período limitado e curto (padrão de 7 minutos) especificado no momento do problema, indicando o limite de tempo antes que ele seja verificado e usado pelo aplicativo cliente. O token de mídia é restrito ao uso único e nunca deve ser armazenado em cache.
 
-O token de mídia consiste em uma sequência de caracteres assinada com base na Infraestrutura de Chave Pública (PKI) enviada em texto não criptografado. Com a proteção baseada em PKI, o token é assinado usando uma chave assimétrica emitida para o Adobe por uma Autoridade de Certificação (CA).
+O token de mídia consiste em uma sequência de caracteres assinada com base na Infraestrutura de Chave Pública (PKI) enviada em texto não criptografado. Com a proteção baseada em PKI, o token é assinado usando uma chave assimétrica emitida para a Adobe por uma Autoridade de Certificação (CA).
 
 O token de mídia é transmitido ao programador, que pode validá-lo usando o Verificador de token de mídia antes de iniciar o fluxo de vídeo para garantir a segurança de acesso desse recurso.
 
@@ -39,7 +39,7 @@ A biblioteca Verificador de Token de Mídia requer o JDK versão 1.5 ou superior
 
 A biblioteca Verificador de Token de Mídia representada pelo arquivo Java `mediatoken-verifier-VERSION.jar` inclui:
 
-* Adobe chave pública.
+* Chave pública do Adobe.
 * API de verificação de token (`ITokenVerifier.java`).
 * Implementação de referência (`com.adobe.entitlement.test.EntitlementVerifierTest.java`).
 * Dependências e armazenamentos de chaves de certificado.
@@ -198,10 +198,14 @@ O token de mídia pode ser recuperado usando a seguinte API:
 
 Consulte as seções **Resposta** e **Amostras** da API acima para entender a estrutura das decisões de autorização e dos tokens de mídia.
 
+>[!IMPORTANT]
+>
+> O aplicativo cliente não precisa consultar um ponto de extremidade separado para recuperar os [tokens de mídia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md), pois eles já estão incluídos nas decisões de autorização que permitem acesso do usuário.
+
 Para obter mais detalhes sobre como e quando integrar a API acima, consulte o seguinte documento:
 
 * [Fluxo de autorização básico executado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
->[!IMPORTANT]
+>[!MORELIKETHIS]
 >
-> O aplicativo cliente deve passar o valor `serializedToken` do `token` retornado para o [Verificador de Token de Mídia](#media-token-verifier) para validação.
+> [Perguntas frequentes sobre a Fase de Autorização](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)

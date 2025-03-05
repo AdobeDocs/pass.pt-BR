@@ -1,9 +1,10 @@
 ---
 title: Decisões
 description: Decisões
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+exl-id: 1efd70af-8c1d-43c4-87fc-14488d42b23d
+source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '988'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 As decisões são geradas pela [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) da Autenticação do Adobe Pass com base nas consultas de autorização ou pré-autorização do MVPD do usuário, determinando se o acesso a [conteúdo protegido](#protected-resources) é concedido ou negado.
 
@@ -68,6 +69,17 @@ O uso da API de autorização é obrigatório. O aplicativo cliente não pode ig
 >[!IMPORTANT]
 >
 > O número máximo de recursos pode ser aumentado somente após chegar a um acordo com os MVPDs e representantes de autenticação da Adobe Pass.
+
+## Gerenciamento de TTL (Time-to-Live) de autorização {#authorization-ttl-management}
+
+O TTL (Time-to-Live) de autorização define por quanto tempo um recurso permanece autorizado antes de precisar ser reautorizado. Esse período é limitado e deve ser acordado com os representantes da MVPD. Os valores de TTL podem variar com base em:
+
+* Categoria da plataforma (por exemplo, desktop, dispositivo móvel, dispositivos conectados à TV)
+* Plataforma específica (por exemplo, iOS, Android, tvOS, Roku, FireTV)
+
+O TTL de autorização (authZ) pode ser exibido e alterado no [Painel do TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da Adobe Pass por um dos administradores da organização ou por um representante da Autenticação da Adobe Pass que atue em seu nome.
+
+Para obter mais detalhes, consulte a documentação do [Guia do Usuário de Integrações do Painel do TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
 ## Recursos protegidos {#protected-resources}
 
@@ -133,3 +145,8 @@ Para obter mais detalhes sobre como e quando integrar as APIs acima, consulte os
 
 * [Fluxo básico de pré-autorização executado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 * [Fluxo de autorização básico executado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+
+>[!MORELIKETHIS]
+>
+> [Perguntas frequentes sobre a Fase de Pré-autorização](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
+> [Perguntas Frequentes da Fase de Autorização](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
