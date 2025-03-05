@@ -2,10 +2,10 @@
 title: Recuperar configuração para provedor de serviços específico
 description: REST API V2 - Recuperar configuração para provedor de serviço específico
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
 workflow-type: tm+mt
-source-wordcount: '515'
-ht-degree: 3%
+source-wordcount: '725'
+ht-degree: 2%
 
 ---
 
@@ -13,11 +13,15 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
 > A implementação da REST API V2 é limitada pela documentação do [Mecanismo de limitação](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visite também as [Perguntas frequentes sobre a REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#configuration-phase-faqs-general).
 
 ## Solicitação {#request}
 
@@ -210,9 +214,9 @@ ht-degree: 3%
                 <td>
                     Objeto JSON com os seguintes atributos:
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>name</b></li>
-                        <li><b>domínios</b></li>
+                        <li><b>id</b><br/>O identificador exclusivo interno associado ao Provedor de Serviços durante o processo de integração.</li>
+                        <li><b>nome</b><br/>O nome comercial (marca) associado ao Provedor de Serviços durante o processo de integração.</li>
+                        <li><b>domínios</b><br/>A lista de nomes de domínio listados para a Autenticação Adobe Pass para representar o Provedor de Serviços.</li>
                     </ul>
                 </td>
                 <td><i>obrigatório</i></td>
@@ -222,16 +226,16 @@ ht-degree: 3%
                 <td>
                     Objeto JSON com os seguintes atributos:
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>displayName</b></li>
-                        <li><b>logoUrl</b></li>
-                        <li><b>isTempPass</b></li>
-                        <li><b>isProxy</b></li>
-                        <li><b>boardingStatus</b></li>
-                        <li><b>platformMappingId</b></li>
-                        <li><b>enablePlatformServices</b></li>
-                        <li><b>displayInPlatformPicker</b></li>
-                        <li><b>forcePlatformPermissions</b></li>
+                        <li><b>id</b><br/>O identificador exclusivo interno associado ao Provedor de Identidade durante o processo de integração.</li>
+                        <li><b>displayName</b><br/>O nome comercial (marca) associado ao Provedor de Identidade durante o processo de integração.</li>
+                        <li><b>logoUrl</b><br>A URL de onde baixar o logotipo associado ao Provedor de Identidade.</li>
+                        <li><b>isTempPass</b><br/>O sinalizador que especifica se o MVPD foi criado para fornecer a funcionalidade de recurso <a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a>.</li>
+                        <li><b>isProxy</b><br/>O sinalizador que especifica se o MVPD é um MVPD com proxy aplicado.</li>
+                        <li><b>boardingStatus</b><br/>O status que especifica se o Provedor de Identidade é integrado pela plataforma do dispositivo de streaming para fluxos de logon único.</li>
+                        <li><b>platformMappingId</b><br/>O identificador exclusivo interno associado ao Provedor de Identidade pela plataforma do dispositivo de streaming para fluxos de logon único.</li>
+                        <li><b>enablePlatformServices</b><br/>O sinalizador que especifica se a configuração do Provedor de Identidade está habilitada para a plataforma do dispositivo de streaming para fluxos de logon único.</li>
+                        <li><b>displayInPlatformPicker</b><br/>O sinalizador que especifica se o Provedor de Identidade pode ser exibido no seletor de plataforma do dispositivo de streaming para fluxos de logon único.</li>
+                        <li><b>forcePlatformPermissions</b><br/>O sinalizador que especifica se o dispositivo de streaming deve aplicar as permissões de usuário fornecidas pela plataforma para fluxos de logon único.</li>
                     </ul>
                 </td>
                 <td><i>obrigatório</i></td>
