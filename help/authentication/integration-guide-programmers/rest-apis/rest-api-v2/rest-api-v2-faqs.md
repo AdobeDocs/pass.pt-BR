@@ -2,7 +2,7 @@
 title: Perguntas frequentes sobre REST API V2
 description: Perguntas frequentes sobre REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 1795b4aba2940879f2dcb575048d553db4f0bf35
 workflow-type: tm+mt
 source-wordcount: '9072'
 ht-degree: 0%
@@ -303,7 +303,7 @@ Para garantir a eficiência e evitar solicitações desnecessárias, o aplicativ
 
 | **Autenticação executada no aplicativo (tela) primário** | **Autenticação executada em um aplicativo secundário (tela)** |
 |----------------------------------------------------------------------|----------------------------------------------------------------------|
-| O aplicativo principal (transmissão) deve pesquisar a cada 1-5 segundos. | O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos. |
+| O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos. | O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos. |
 
 #### 16. Qual é o número máximo de solicitações de sondagem que o aplicativo cliente pode enviar? {#authentication-phase-faq16}
 
