@@ -2,9 +2,9 @@
 title: Guia de integração do programador
 description: Guia de integração do programador
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '2073'
+source-wordcount: '2119'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,9 @@ Para Programadores, a Autenticação do Adobe Pass fornece APIs como parte de um
 
 * APIs de autenticação Premium do Adobe Pass:
    * [Redefinir API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [Recurso TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
    * [API de degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Recurso de degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
    * [API de monitoramento do serviço de qualificação](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### Casos de uso {#use-cases}
@@ -323,4 +325,6 @@ Para obter mais informações sobre direitos, consulte os seguintes documentos:
 
 * **[Tokens de mídia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md)**
 
-  Após a autorização bem-sucedida, a Autenticação do Adobe Pass cria um token de mídia (&quot;vida curta&quot;) associado a uma solicitação de reprodução bem-sucedida.
+  Após a autorização bem-sucedida, a Autenticação do Adobe Pass cria um token de mídia (&quot;vida curta&quot;) que é associado a uma solicitação de reprodução bem-sucedida e fornece suporte às práticas recomendadas do setor para mitigar fraudes (por exemplo, extração de fluxo).
+
+Os valores de vida útil (&quot;TTL&quot;) para perfis e decisões são definidos com base em acordos entre programadores e provedores de TV por assinatura, que concordam em um valor que melhor atende a todos os envolvidos.
