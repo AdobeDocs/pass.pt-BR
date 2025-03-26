@@ -2,9 +2,9 @@
 title: Metadados do usuário
 description: Metadados do usuário
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '1793'
+source-wordcount: '1902'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 Os metadados do usuário se referem aos [atributos](#attributes) específicos do usuário (por exemplo, códigos postais, classificações dos pais, IDs de usuário etc.) que são mantidos pelos MVPDs e fornecidos aos Programadores por meio da [REST API V2](#apis) de Autenticação da Adobe Pass.
+
+Os metadados do usuário ficam disponíveis após a conclusão do fluxo de autenticação, mas determinados atributos de metadados podem ser atualizados durante o fluxo de autorização, dependendo do MVPD e do atributo de metadados específico em questão.
 
 Os metadados do usuário podem ser usados para aprimorar a personalização para os usuários, mas também podem ser usados para análises. Por exemplo, um programador pode usar o CEP de um usuário para fornecer notícias localizadas ou atualizações meteorológicas, ou para aplicar os controles dos pais.
 
@@ -168,7 +170,17 @@ Os atributos de metadados do usuário podem ser recuperados usando as seguintes 
 
 Consulte as seções **Resposta** e **Amostras** das APIs acima para entender a estrutura dos atributos de metadados do usuário.
 
+>[!IMPORTANT]
+>
+> Os metadados do usuário ficam disponíveis após a conclusão do fluxo de autenticação, portanto, o aplicativo cliente não precisa consultar um ponto de extremidade separado para recuperar as informações de [metadados do usuário](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md), pois elas já estão incluídas nas informações do perfil.
+
 Para obter mais detalhes sobre como e quando integrar as APIs acima, consulte os seguintes documentos:
 
 * [Fluxo de perfis básicos realizado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Fluxo de perfis básicos realizado no aplicativo secundário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+Determinados atributos de metadados podem ser atualizados durante o fluxo de autorização, dependendo do MVPD e do atributo de metadados específico. Como resultado, o aplicativo cliente pode precisar consultar as APIs acima novamente para recuperar os metadados do usuário mais recentes.
+
+>[!MORELIKETHIS]
+>
+> [Perguntas frequentes sobre a Fase de Autenticação](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)

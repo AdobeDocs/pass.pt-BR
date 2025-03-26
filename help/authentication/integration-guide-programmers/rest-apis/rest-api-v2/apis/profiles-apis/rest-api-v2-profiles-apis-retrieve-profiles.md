@@ -2,9 +2,9 @@
 title: Recuperar perfis
 description: REST API V2 - Recuperar perfis
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: 751ebec3372145dda318c8415be5676adb3f13b5
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '865'
 ht-degree: 1%
 
 ---
@@ -265,9 +265,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">atributos</td>
                <td>
-                    A lista de atributos de metadados do usuário.
+                    JSON que contém um mapa de pares de chaves e valores.
                     <br/><br/>
-                    Esses atributos podem ser:
+                    O elemento principal é definido pelos atributos de metadados do usuário e pode ser:
                     <ul>
                         <li>Obrigatório, como "userID"</li>
                         <li>Não obrigatório, como "zip", "householdID", "maxRating" etc.</li>
@@ -278,6 +278,7 @@ ht-degree: 1%
                         <li>lista</li>
                         <li>mapa</li>
                     </ul>
+                    Os metadados do usuário ficam disponíveis após a conclusão do fluxo de autenticação, mas determinados atributos de metadados podem ser atualizados durante o fluxo de autorização, dependendo do MVPD e do atributo de metadados específico em questão.
                </td>
                <td><i>obrigatório</i></td>
             </tr>

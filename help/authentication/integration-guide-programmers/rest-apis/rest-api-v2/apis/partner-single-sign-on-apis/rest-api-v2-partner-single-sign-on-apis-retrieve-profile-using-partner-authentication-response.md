@@ -2,9 +2,9 @@
 title: Criar e recuperar perfil usando a resposta de autenticação do parceiro
 description: REST API V2 - Criar e recuperar perfil usando resposta de autenticação de parceiro
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '734'
+source-wordcount: '775'
 ht-degree: 2%
 
 ---
@@ -268,9 +268,9 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">atributos</td>
                <td>
-                    A lista de atributos de metadados do usuário.
+                    JSON que contém um mapa de pares de chaves e valores.
                     <br/><br/>
-                    Esses atributos podem ser:
+                    O elemento principal é definido pelos atributos de metadados do usuário e pode ser:
                     <ul>
                         <li>Obrigatório, como "userID"</li>
                         <li>Não obrigatório, como "zip", "householdID", "maxRating" etc.</li>
@@ -281,6 +281,7 @@ ht-degree: 2%
                         <li>lista</li>
                         <li>mapa</li>
                     </ul>
+                    Os metadados do usuário ficam disponíveis após a conclusão do fluxo de autenticação, mas determinados atributos de metadados podem ser atualizados durante o fluxo de autorização, dependendo do MVPD e do atributo de metadados específico em questão.
                </td>
                <td><i>obrigatório</i></td>
             </tr>
