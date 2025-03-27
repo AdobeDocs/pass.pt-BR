@@ -2,39 +2,14 @@
 title: Anúncios de produto
 description: Anúncios de produto
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: 6b309f66bfe1376bd62ad5e99b4f6383194af6c6
+source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
-source-wordcount: '973'
+source-wordcount: '784'
 ht-degree: 2%
 
 ---
 
 # Anúncios de produto {#product-announcements}
-
-<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Série de webinários ao vivo](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
-
-Como um importante parceiro de autenticação da Adobe Pass, gostaríamos de convidá-lo para nosso próximo webinário em tempo real sobre a nova API REST. A nova API foi lançada no ano passado para aprimorar a experiência do usuário final e simplificar a integração com os serviços da Adobe Pass. 
-
-Conduziremos uma série de dois webinários para fornecer uma visão geral da nova API, benefícios e casos de uso adicionais que podem ser ativados ao migrar para a nova API.
-
-Inscreva-se no webinário que funciona melhor para você e sua equipe.
-
-* [Webinário 1 - 19 de fevereiro de 2025](https://events.teams.microsoft.com/event/83c6ec1e-2522-4918-910f-c529b4fb0574@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
-* [Webinário 2 - 5 de março de 2025](https://events.teams.microsoft.com/event/6f673689-e848-4c00-93d9-4f5d8f108977@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
-
-Durante a sessão, você aprenderá sobre:
-
-* Visão geral e benefícios da REST API v2
-* Apresentação de fluxos básicos
-* Linhas do tempo e próximas etapas
-
-O webinário será útil se você estiver:
-
-* Um novo cliente que planeja iniciar um novo aplicativo TVE
-* Clientes existentes que precisam migrar para as novas APIs
-* Parceiros de implementação que implementariam APIs para clientes do
-
-Você pode encontrar a documentação técnica sobre a nova API [aqui](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md). Recomendamos que você e sua equipe preencham todas as perguntas que você gostaria de discutir durante a sessão [aqui](https://forms.office.com/r/sJea78tUy3).
 
 ## Fim da vida útil (EOL) {#eol}
 

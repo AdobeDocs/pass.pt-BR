@@ -2,9 +2,9 @@
 title: Visão geral de fluxos da REST API V2
 description: Visão geral de fluxos da REST API V2
 exl-id: 84a9ac0f-c26a-4159-82a8-3a31bb31f529
-source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
+source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '166'
 ht-degree: 0%
 
 ---
@@ -14,8 +14,6 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
-
-<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Série de webinários ao vivo](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 Para começar, visite a documentação pública dos fluxos nos quais você está interessado, na lista abaixo.
 
