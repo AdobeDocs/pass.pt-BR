@@ -2,10 +2,10 @@
 title: Cabeçalho - X-Device-Info
 description: REST API V2 - Cabeçalho - X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1122'
-ht-degree: 4%
+source-wordcount: '1133'
+ht-degree: 3%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 4%
 
 ## Visão geral {#overview}
 
-O cabeçalho de solicitação <b>X-Device-Info</b> contém as informações do cliente (dispositivo, conexão e aplicativo) relacionadas ao dispositivo de streaming real.
+O cabeçalho de solicitação <b>X-Device-Info</b> contém as informações do cliente (dispositivo, conexão e aplicativo) relacionadas ao dispositivo de streaming real e é usado para determinar regras específicas da plataforma que os MVPDs podem impor.
 
 ## Sintaxe {#syntax}
 
