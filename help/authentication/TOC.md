@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: O Adobe Pass Authentication é uma solução de concessão de direitos para o TV Everywhere, o qual fornece uma estrutura modular para determinar se a pessoa que solicita o acesso a um recurso possui direito a ele.
-source-git-commit: 7e56c0a3651290376a72752638f463cf9415ec0e
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '1248'
+source-wordcount: '1257'
 ht-degree: 2%
 
 ---
@@ -68,6 +68,7 @@ ht-degree: 2%
             + [Fluxo de registro dinâmico do cliente](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
       + REST API V2 {#rest-api-v2}
          + [Visão geral da REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
+         + [Lista de verificação da REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
          + [Glossário da REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
          + [Perguntas frequentes sobre REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)
          + APIs {#rest-api-v2-apis}
@@ -120,6 +121,7 @@ ht-degree: 2%
                + [Cabeçalho - X-Device-Info](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
                + [Cabeçalho - AD-Service-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
                + [Cabeçalho - Adobe-Subject-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
+               + [Cabeçalho - X-Roku-Reserved-Roku-Connect-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)
                + [Cabeçalho - AP-Parceiro-Estrutura-Status](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
                + [Cabeçalho - AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + Recursos Padrão {#standard-features}
@@ -138,7 +140,7 @@ ht-degree: 2%
             + Logon único no Amazon {#amazon-sso}
                + [Guia do Amazon SSO (REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
             + Logon único do Roku {#roku-sso}
-               + [Visão geral do SSO do Roku](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
+               + [Guia do Roku SSO (REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
       + Acesso de Autenticação Baseado na Página Inicial {#hba-access}
          + [Autenticação baseada em casa (HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
       + Suporte à privacidade {#privacy-support}

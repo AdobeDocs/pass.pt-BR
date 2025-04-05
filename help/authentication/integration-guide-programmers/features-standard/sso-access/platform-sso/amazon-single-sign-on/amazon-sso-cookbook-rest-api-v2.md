@@ -2,9 +2,9 @@
 title: Guia do Amazon SSO (REST API V2)
 description: Guia do Amazon SSO (REST API V2)
 exl-id: 63e4fa63-8ca3-40eb-b49a-84dd75c2ca1d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 A API REST V2 de autenticação do Adobe Pass é compatível com o Logon único (SSO) da plataforma para usuários finais de aplicativos clientes em execução no FireOS.
 
@@ -21,15 +21,17 @@ Este documento atua como uma extensão para a [Visão geral da REST API V2](/hel
 
 ## Logon único do Amazon usando fluxos de identidade da plataforma {#cookbook}
 
+A Autenticação do Adobe Pass colabora com o Amazon para melhorar a experiência de logon do usuário e facilitar o Logon único (SSO) em aplicativos do TV Everywhere para assinantes de TV.
+
 ### Pré-requisitos {#prerequisites}
 
 Antes de prosseguir com o logon único da Amazon usando fluxos de identidade da plataforma, verifique se os seguintes pré-requisitos foram atendidos.
 
-#### Integrar SDK SSO do Amazon {#integrate-amazon-sso-sdk}
+#### Integrar o Amazon SSO SDK {#integrate-amazon-sso-sdk}
 
 O aplicativo de streaming deve integrar a biblioteca [Amazon SSO SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) para Logon Único (SSO) em sua compilação.
 
-* Baixe e copie a biblioteca do SDK do Amazon SSO mais recente em uma pasta `/SSOEnabler` paralela ao diretório do aplicativo.
+* Baixe e copie a biblioteca Amazon SSO SDK mais recente em uma pasta `/SSOEnabler` paralela ao diretório do aplicativo.
 
 * Atualize os arquivos manifest e Gradle para usar a biblioteca SDK de SSO do Amazon.
 
@@ -55,11 +57,11 @@ O aplicativo de streaming deve integrar a biblioteca [Amazon SSO SDK](https://tv
   provided fileTree(include: ['ottSSOTokenStub.jar'], dir: '../SSOEnabler')
   ```
 
-#### Usar o SDK do Amazon SSO {#use-amazon-sso-sdk}
+#### Usar o Amazon SSO SDK {#use-amazon-sso-sdk}
 
-O aplicativo de streaming deve usar o SDK de SSO do Amazon para obter a carga do token de SSO (identidade da plataforma).
+O aplicativo de transmissão deve usar o SDK de SSO do Amazon para obter a carga do token de SSO (identidade da plataforma).
 
-O SDK de SSO do Amazon fornece APIs síncronas e assíncronas para obter a carga do token de SSO (identidade da plataforma).
+O Amazon SSO SDK fornece APIs síncronas e assíncronas para obter a carga do token de SSO (identidade da plataforma).
 
 O aplicativo de transmissão pode escolher uma das duas opções com base em sua arquitetura.
 

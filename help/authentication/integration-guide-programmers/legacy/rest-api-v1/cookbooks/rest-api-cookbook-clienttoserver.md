@@ -2,9 +2,9 @@
 title: Cookbook da API REST (cliente para servidor)
 description: Cliente do guia da API rest para o servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -72,7 +72,7 @@ O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicat
 
 1. Obtenha um código de registro e um URL que seu usuário poderá usar para acessar seu aplicativo de logon de 2ª tela e apresente-os ao usuário:
 
-   a. Envie uma solicitação de POST para o Serviço de código de registro de Adobe, transmitindo uma ID de dispositivo com hash e um &quot;URL de registro&quot;.  Por exemplo: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+   a. Envie uma solicitação POST para o Serviço de código de registro da Adobe, transmitindo uma ID de dispositivo com hash e um &quot;URL de registro&quot;.  Por exemplo: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
 
    b. Apresente o código de registro e o URL retornados ao usuário.
 
@@ -140,7 +140,6 @@ Alguns dispositivos fornecem suporte dedicado para Logon Único de Parceiro (SSO
 Alguns dispositivos fornecem suporte dedicado para Logon único da plataforma (SSO):
 
 * [AMAZON SSO](../../sso-access/amazon-sso-cookbook-rest-api-v1.md)
-* [SSO do Roku](../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
 
 ## TempPass e TempPass promocional para API REST {#temppass}
 
