@@ -2,9 +2,9 @@
 title: Criar sessão de autenticação
 description: REST API V2 - Criar sessão de autenticação
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '1057'
+source-wordcount: '1060'
 ht-degree: 1%
 
 ---
@@ -134,9 +134,9 @@ ht-degree: 1%
       <td>opcional</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>ou<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        A geração da carga de logon único para o método de identidade da plataforma está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
+        A geração da carga de logon único para o método de identidade da Platform está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
         <br/><br/>
         Para obter mais detalhes sobre os fluxos habilitados para logon único usando uma identidade de plataforma, consulte a documentação do <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Logon único usando fluxos de identidade de plataforma</a>.
       </td>

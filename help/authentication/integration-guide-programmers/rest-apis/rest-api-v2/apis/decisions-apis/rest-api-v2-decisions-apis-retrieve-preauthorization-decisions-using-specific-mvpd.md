@@ -2,9 +2,9 @@
 title: Recuperar decisões de pré-autorização usando mvpd específico
 description: REST API V2 - Recuperar decisões de pré-autorização usando mvpd específico
 exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '792'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -59,7 +59,7 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">recursos</td>
-      <td>A lista de recursos que exigem uma decisão MVPD antes de serem exibidos.</td>
+      <td>A lista de recursos que exigem uma decisão do MVPD antes de serem exibidos.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
@@ -111,9 +111,9 @@ ht-degree: 2%
       <td>opcional</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>ou<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        A geração da carga de logon único para o método de identidade da plataforma está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
+        A geração da carga de logon único para o método de identidade da Platform está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
         <br/><br/>
         Para obter mais detalhes sobre os fluxos habilitados para logon único usando uma identidade de plataforma, consulte a documentação do <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Logon único usando fluxos de identidade de plataforma</a>.
       </td>
@@ -257,7 +257,7 @@ ht-degree: 2%
                   <br/><br/>
                   Os valores possíveis são:
                   <ul>
-                    <li><b>mvpd</b><br/>A decisão é emitida pelo ponto de extremidade de pré-autorização do MVPD.</li>
+                    <li>A decisão <b>mvpd</b><br/>é emitida pelo ponto de extremidade de pré-autorização do MVPD.</li>
                     <li><b>degradação</b><br/>A decisão é emitida como resultado de acesso degradado.</li>
                     <li><b>temppass</b><br/>A decisão é emitida como resultado de acesso temporário.</li>
                     <li><b>fictício</b><br/>A decisão é emitida como resultado do recurso de pré-autorização fictício.</li>
