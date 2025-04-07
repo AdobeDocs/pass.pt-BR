@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: O Adobe Pass Authentication é uma solução de concessão de direitos para o TV Everywhere, o qual fornece uma estrutura modular para determinar se a pessoa que solicita o acesso a um recurso possui direito a ele.
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: f054da9a4c35fa0715039e8e06e2d10737b91b57
 workflow-type: tm+mt
-source-wordcount: '1257'
+source-wordcount: '1251'
 ht-degree: 2%
 
 ---
@@ -251,7 +251,6 @@ ht-degree: 2%
                + [Suporte a SFSafariViewController (herdado) no iOS SDK 3.2+](integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)
                + [SSO (herdado) no iOS ao usar o Adobe Pass Authentication Access Enabler](integration-guide-programmers/legacy/notes-technical/sso-on-ios-when-using-the-primetime-authentication-access-enabler.md)
                + [Erro de autenticação do iOS (herdado) - adobepass.ios.app Não Foi Encontrado](integration-guide-programmers/legacy/notes-technical/ios-authentication-error-adobepassiosapp-cannot-be-found.md)
-               + [(Herdado) Redefinir Temp Pass no iOS](integration-guide-programmers/legacy/notes-technical/reset-temp-pass-on-ios.md)
                + [(Herdado) Depuração do AccessEnabler iOS/tvOS SDK usando logs de aplicativo do console](integration-guide-programmers/legacy/notes-technical/debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
                + [Caminho de atualização do AccessEnabler iOS/tvOS 3.7.0 (herdado)](integration-guide-programmers/legacy/notes-technical/accessenabler-iostvos-370-upgrade-path.md)
          + Experiência do Usuário (Herdada) {#user-experience}
