@@ -2,9 +2,9 @@
 title: Fluxo de registro dinâmico do cliente
 description: Fluxo de registro dinâmico do cliente
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '564'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -70,7 +70,7 @@ Siga as etapas fornecidas para acessar APIs protegidas pelo Adobe Pass, conforme
 
    >[!TIP]
    >
-   > Sugestão: As credenciais do cliente devem ser armazenadas em cache e podem ser usadas indefinidamente.
+   > As credenciais do cliente devem ser armazenadas em cache e usadas indefinidamente.
 
 1. **Recuperar token de acesso:** O aplicativo cliente reúne todos os dados necessários para recuperar o token de acesso chamando o ponto de extremidade do Token do Cliente.
 
@@ -100,7 +100,7 @@ Siga as etapas fornecidas para acessar APIs protegidas pelo Adobe Pass, conforme
 
    >[!TIP]
    >
-   > Sugestão: o token de acesso deve ser armazenado em cache e usado somente dentro da duração especificada (por exemplo, tempo de vida útil de 24 horas). Após a expiração, o aplicativo cliente deve solicitar um novo token de acesso.
+   > O token de acesso deve ser armazenado em cache e usado somente durante o período especificado (por exemplo, 24 horas de vida útil). Após a expiração, o aplicativo cliente deve solicitar um novo token de acesso.
 
 1. **Continuar com o acesso a APIs protegidas:** o aplicativo cliente usa o token de acesso para acessar outras APIs protegidas do Adobe Pass. O aplicativo cliente deve incluir o token de acesso no cabeçalho da solicitação `Authorization` usando o esquema de autenticação `Bearer` (ou seja, `Authorization: Bearer <access_token>`).
 

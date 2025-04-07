@@ -2,9 +2,9 @@
 title: Perguntas frequentes sobre REST API V2
 description: Perguntas frequentes sobre REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '9697'
+source-wordcount: '9703'
 ht-degree: 0%
 
 ---
@@ -311,7 +311,7 @@ As informações de perfil do usuário foram recuperadas com êxito, confirmando
 
 **Sessão de autenticação e expiração do código**
 
-A sessão de autenticação e o código expiram, conforme indicado pelo carimbo de data/hora `notAfter` na resposta do ponto de extremidade [Sessões](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Se isso acontecer, o usuário deverá reiniciar o processo de autenticação e a pesquisa usando o código de autenticação anterior deverá ser interrompida imediatamente.
+A sessão de autenticação e o código expiram, conforme indicado pelo carimbo de data/hora `notAfter` (por exemplo, 30 minutos) na resposta do ponto de extremidade [Sessões](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Se isso acontecer, o usuário deverá reiniciar o processo de autenticação e a pesquisa usando o código de autenticação anterior deverá ser interrompida imediatamente.
 
 **Novo código de autenticação gerado**
 
@@ -322,8 +322,8 @@ Se o usuário solicitar um novo código de autenticação no dispositivo princip
 Para garantir a eficiência e evitar solicitações desnecessárias, o aplicativo cliente deve configurar a frequência do mecanismo de polling nas seguintes condições:
 
 | **Autenticação executada no aplicativo (tela) primário** | **Autenticação executada em um aplicativo secundário (tela)** |
-|----------------------------------------------------------------------|----------------------------------------------------------------------|
-| O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos. | O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos. |
+|----------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos ou mais. | O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos ou mais. |
 
 #### 17. Qual é o número máximo de solicitações de sondagem que o aplicativo cliente pode enviar? {#authentication-phase-faq17}
 
@@ -526,7 +526,7 @@ O aplicativo cliente deve validar o token de mídia antes de iniciar a reproduç
 
 Não.
 
-O aplicativo cliente não é necessário para atualizar um token de mídia expirado enquanto o fluxo estiver sendo reproduzido ativamente. Se o token de mídia expirar durante a reprodução, o fluxo deverá continuar sem interrupções. No entanto, o cliente deve solicitar uma nova decisão de autorização — e obter um novo token de mídia — na próxima vez que o usuário tentar reproduzir o mesmo recurso.
+O aplicativo cliente não é necessário para atualizar um token de mídia expirado enquanto o fluxo estiver sendo reproduzido ativamente. Se o token de mídia expirar durante a reprodução, o fluxo deverá continuar sem interrupções. No entanto, o cliente deve solicitar uma nova decisão de autorização — e obter um novo token de mídia — na próxima vez que o usuário tentar reproduzir um recurso.
 
 #### 9. Qual é o objetivo de cada atributo de carimbo de data e hora na decisão de autorização? {#authorization-phase-faq9}
 

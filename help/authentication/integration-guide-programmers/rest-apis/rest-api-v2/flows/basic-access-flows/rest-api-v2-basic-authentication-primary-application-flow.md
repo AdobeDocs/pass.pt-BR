@@ -2,9 +2,9 @@
 title: Autenticação Básica - Aplicativo Principal - Fluxo
 description: REST API V2 - Autenticação básica - Aplicativo principal - Fluxo
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '903'
 ht-degree: 0%
 
 ---
@@ -127,7 +127,7 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
 
    >[!TIP]
    >
-   > Sugestão: O aplicativo de streaming pode esperar que o agente do usuário acesse o `redirectUrl` fornecido para verificar se o perfil regular foi gerado e salvo com êxito.
+   > O aplicativo de streaming deve aguardar o agente de usuário acessar o `redirectUrl` fornecido para verificar se o perfil regular foi gerado e salvo com êxito.
 
 1. **Retornar informações sobre o perfil regular:** A resposta do ponto de extremidade Perfis contém informações sobre o perfil regular associado aos parâmetros e cabeçalhos recebidos.
 

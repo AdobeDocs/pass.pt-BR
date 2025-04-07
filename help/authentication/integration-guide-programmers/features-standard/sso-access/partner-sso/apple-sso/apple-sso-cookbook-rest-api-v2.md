@@ -2,9 +2,9 @@
 title: Guia do Apple SSO (REST API V2)
 description: Guia do Apple SSO (REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '3615'
+source-wordcount: '3609'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
 
    >[!TIP]
    >
-   > Sugestão: As credenciais do cliente devem ser armazenadas em cache e podem ser usadas indefinidamente.
+   > As credenciais do cliente devem ser armazenadas em cache e usadas indefinidamente.
 
 1. **Recuperar token de acesso:** o aplicativo de streaming reúne todos os dados necessários para recuperar o token de acesso chamando o ponto de extremidade Token do Cliente.
 
@@ -109,7 +109,7 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
 
    >[!TIP]
    >
-   > Sugestão: o token de acesso deve ser armazenado em cache e usado somente dentro da duração especificada (por exemplo, tempo de vida útil de 24 horas). Após a expiração, o aplicativo de streaming deve solicitar um novo token de acesso.
+   > O token de acesso deve ser armazenado em cache e usado somente durante o período especificado (por exemplo, 24 horas de vida útil). Após a expiração, o aplicativo de streaming deve solicitar um novo token de acesso.
 
 +++
 
@@ -391,7 +391,7 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
 
    >[!TIP]
    >
-   > Sugestão: o aplicativo de transmissão pode usar um valor em cache para as informações de status da estrutura do parceiro, que recomendamos atualizar quando o aplicativo passar do estado de segundo plano para o primeiro plano. Nesse caso, o aplicativo de transmissão deve garantir que ele armazene em cache e use apenas valores válidos para o status da estrutura do parceiro, conforme descrito pela etapa &quot;Retornar informações de status da estrutura do parceiro&quot;.
+   > O aplicativo de transmissão pode usar um valor em cache para as informações de status da estrutura do parceiro, que recomendamos atualizar quando o aplicativo passa do estado de segundo plano para o primeiro plano. Nesse caso, o aplicativo de transmissão deve garantir que ele armazene em cache e use apenas valores válidos para o status da estrutura do parceiro, conforme descrito pela etapa &quot;Retornar informações de status da estrutura do parceiro&quot;.
 
 1. **Retornar informações de status da estrutura do parceiro:** o aplicativo de streaming valida os dados de resposta para garantir que as condições básicas sejam atendidas:
    * O status de acesso da permissão do usuário é concedido.
@@ -462,7 +462,7 @@ Execute as etapas fornecidas para implementar o logon único do Apple usando flu
 
    >[!TIP]
    >
-   > Sugestão: o aplicativo de transmissão pode usar um valor em cache para as informações de status da estrutura do parceiro, que recomendamos atualizar quando o aplicativo passar do estado de segundo plano para o primeiro plano. Nesse caso, o aplicativo de transmissão deve garantir que ele armazene em cache e use apenas valores válidos para o status da estrutura do parceiro, conforme descrito pela etapa &quot;Retornar informações de status da estrutura do parceiro&quot;.
+   > O aplicativo de transmissão pode usar um valor em cache para as informações de status da estrutura do parceiro, que recomendamos atualizar quando o aplicativo passa do estado de segundo plano para o primeiro plano. Nesse caso, o aplicativo de transmissão deve garantir que ele armazene em cache e use apenas valores válidos para o status da estrutura do parceiro, conforme descrito pela etapa &quot;Retornar informações de status da estrutura do parceiro&quot;.
 
 1. **Retornar informações de status da estrutura do parceiro:** o aplicativo de streaming valida os dados de resposta para garantir que as condições básicas sejam atendidas:
    * O status de acesso da permissão do usuário é concedido.

@@ -2,9 +2,9 @@
 title: Logon Único - Token de Serviço - Fluxos
 description: REST API V2 - Logon único - Token de serviço - Fluxos
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '1858'
+source-wordcount: '1857'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ Execute as etapas fornecidas para implementar o fluxo de autenticação por meio
 
    >[!TIP]
    >
-   > Sugestão: O aplicativo de streaming pode esperar que o agente do usuário acesse o `redirectUrl` fornecido para verificar se o perfil regular foi gerado e salvo com êxito.
+   > O aplicativo de streaming deve aguardar o agente de usuário acessar o `redirectUrl` fornecido para verificar se o perfil regular foi gerado e salvo com êxito.
 
 1. **Localizar perfil regular:** O servidor Adobe Pass identifica um perfil válido com base nos parâmetros e cabeçalhos recebidos.
 

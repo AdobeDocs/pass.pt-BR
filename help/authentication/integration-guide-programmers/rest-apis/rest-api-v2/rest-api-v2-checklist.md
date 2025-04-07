@@ -1,9 +1,10 @@
 ---
 title: Lista de verificação da REST API V2
 description: Lista de verificação da REST API V2
-source-git-commit: f0001d86f595040f4be74f357c95bd2919dadf15
+exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '2535'
+source-wordcount: '2545'
 ht-degree: 0%
 
 ---
@@ -40,7 +41,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Cache de tokens de acesso</i></td>
-      <td>Armazene os tokens de acesso no armazenamento persistente e reutilize-os até que expirem — não solicite um novo token para cada chamada REST API v2.</td>
+      <td>Armazene os tokens de acesso no armazenamento persistente e reutilize-os até que expirem.<br/><br/>Não solicite um novo token para cada chamada REST API v2. Atualize os tokens de acesso somente quando eles expirarem.</td>
       <td>Riscos de sobrecarga dos recursos do sistema, aumento da latência e possível acionamento de respostas de erro HTTP 429 "Muitas solicitações".</td>
    </tr>
 </table>
@@ -85,7 +86,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Configuração do mecanismo de pesquisa</i></td>
-      <td>Configure a frequência do mecanismo de sondagem nas seguintes condições:<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">Autenticação executada no aplicativo (tela) primário</a></b><ul><li>O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos.</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">Autenticação executada em um aplicativo secundário (tela)</a></b><ul><li>O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos.</li></ul></td>
+      <td>Configure a frequência do mecanismo de sondagem nas seguintes condições:<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">Autenticação executada no aplicativo (tela) primário</a></b><ul><li>O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos ou mais.</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">Autenticação executada em um aplicativo secundário (tela)</a></b><ul><li>O aplicativo principal (transmissão) deve pesquisar a cada 3-5 segundos.</li></ul></td>
       <td>Riscos de sobrecarga dos recursos do sistema, aumento da latência e possível acionamento de respostas de erro HTTP 429 "Muitas solicitações".</td>
    </tr>
    <tr>
@@ -237,7 +238,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Validação de tokens de acesso</i></td>
-      <td>Verifique proativamente a validade do token de acesso e atualize-o quando expirar.<br/><br/>Verifique se qualquer mecanismo de repetição para manipular erros "Não autorizados" do HTTP 401 atualiza primeiro o token de acesso antes de repetir a solicitação original.</td>
+      <td>Verifique proativamente a validade do token de acesso para atualizá-lo quando expirar.<br/><br/>Verifique se qualquer mecanismo de repetição para manipular erros "Não autorizados" do HTTP 401 atualiza primeiro o token de acesso antes de repetir a solicitação original.</td>
       <td>Riscos de acionamento de respostas de erro "Não autorizado" HTTP 401, sobrecarga de recursos do sistema e latência crescente.</td>
    </tr>
 </table>

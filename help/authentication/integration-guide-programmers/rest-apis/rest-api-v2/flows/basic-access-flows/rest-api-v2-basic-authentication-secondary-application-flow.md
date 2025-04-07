@@ -2,9 +2,9 @@
 title: Autenticação básica - Aplicativo secundário - Fluxo
 description: REST API V2 - Autenticação básica - Aplicativo secundário - Fluxo
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '2010'
+source-wordcount: '2006'
 ht-degree: 0%
 
 ---
@@ -143,7 +143,7 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
 
    >[!TIP]
    >
-   > Sugestão: O aplicativo secundário pode informar os usuários que o `code` usado é inválido no caso de uma resposta de erro indicando uma sessão de autenticação ausente, e aconselhá-los a tentar novamente usando um novo.
+   > O aplicativo secundário pode informar aos usuários que o `code` usado é inválido no caso de uma resposta de erro indicando uma sessão de autenticação ausente, e aconselhá-los a tentar novamente usando um novo.
 
 1. **Abrir URL no agente do usuário:** o aplicativo secundário abre um agente do usuário para carregar o `url` autocomputado, fazendo uma solicitação ao ponto de extremidade de Autenticação. Esse fluxo pode incluir vários redirecionamentos, levando o usuário à página de logon do MVPD e fornecendo credenciais válidas.
 
@@ -168,7 +168,7 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
 
    >[!TIP]
    >
-   > Sugestão: O aplicativo de streaming pode implementar um mecanismo de sondagem usando o `code` para verificar se o perfil regular foi gerado e salvo com êxito.
+   > O aplicativo de streaming deve implementar um mecanismo de sondagem usando o `code` para verificar se o perfil regular foi gerado e salvo com êxito.
 
 1. **Retornar informações sobre o perfil regular:** A resposta do ponto de extremidade Perfis contém informações sobre o perfil regular associado aos parâmetros e cabeçalhos recebidos.
 
@@ -277,7 +277,7 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
 
    >[!TIP]
    >
-   > Sugestão: O aplicativo secundário pode informar os usuários que o `code` usado é inválido no caso de uma resposta de erro indicando uma sessão de autenticação ausente, e aconselhá-los a tentar novamente usando um novo.
+   > O aplicativo secundário pode informar aos usuários que o `code` usado é inválido no caso de uma resposta de erro indicando uma sessão de autenticação ausente, e aconselhá-los a tentar novamente usando um novo.
 
 1. **Indicar perfil existente:** A resposta do ponto de extremidade Sessions contém os seguintes dados:
    * O atributo `actionName` está definido como &quot;autorize&quot;.
@@ -306,7 +306,7 @@ Siga as etapas fornecidas para implementar o fluxo de autenticação básico exe
 
    >[!TIP]
    >
-   > Sugestão: O aplicativo de streaming pode implementar um mecanismo de sondagem usando o `code` para verificar se o perfil regular foi gerado e salvo com êxito.
+   > O aplicativo de streaming deve implementar um mecanismo de sondagem usando o `code` para verificar se o perfil regular foi gerado e salvo com êxito.
 
 1. **Retornar informações sobre o perfil regular:** A resposta do ponto de extremidade Perfis contém informações sobre o perfil regular associado aos parâmetros e cabeçalhos recebidos.
 
