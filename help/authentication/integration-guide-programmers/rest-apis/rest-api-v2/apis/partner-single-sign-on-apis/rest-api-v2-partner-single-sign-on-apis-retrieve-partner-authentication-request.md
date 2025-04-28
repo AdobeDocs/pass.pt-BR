@@ -2,7 +2,7 @@
 title: Recuperar solicitação de autenticação do parceiro
 description: REST API V2 - Recuperar solicitação de autenticação do parceiro
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: e8836c76aec10607717c0a67434b2ba5a78a8954
 workflow-type: tm+mt
 source-wordcount: '1219'
 ht-degree: 1%
@@ -307,7 +307,7 @@ ht-degree: 1%
                     <ul>
                         <li><b>tipo</b><br/>Indica o tipo de protocolo ao qual a MVPD oferece suporte (somente SAML).</li>
                         <li><b>solicitação</b><br/>A solicitação SAML.</li>
-                        <li><b>Atributos</b><br/>Os atributos da solicitação SAML.</li>
+                        <li><b>attributesNames</b><br/>Os atributos de solicitação SAML.</li>
                     </ul>
                </td>
                <td>opcional</td>
