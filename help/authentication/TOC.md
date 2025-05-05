@@ -184,7 +184,7 @@ ht-degree: 2%
          + Cookbooks (herdados) {#rest-api-v1-cookbooks}
             + [Cookbook REST API V1 (herdado) (cliente para servidor)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-clienttoserver.md)
             + [Cookbook REST API V1 (herdado) (servidor para servidor)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)
-      + SDKs {#sdks} (Herdados)
+      + SDKs (Herdados) {#sdks}
          + (Herdado) JavaScript SDK {#javascript-sdk}
             + [Visão geral do JavaScript SDK (herdado)](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-overview.md)
             + [Guia do JavaScript SDK (herdado)](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-cookbook.md)
@@ -226,7 +226,7 @@ ht-degree: 2%
          + [(Herdado) Guia de SSO do Amazon (REST API V1)](integration-guide-programmers/legacy/sso-access/amazon-sso-cookbook-rest-api-v1.md)
          + [(Herdado) Guia de SSO do Apple (REST API V1)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
          + [(Herdado) Guia de SSO do Apple (iOS/tvOS SDK)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)
-      + Painel TVE {#tve-dashboard} (Herdado)
+      + Painel TVE (Herdado) {#tve-dashboard}
          + [Guia do usuário do Painel TVE (herdado)](integration-guide-programmers/legacy/tve-dashboard/tve-dashboard-user-guide.md)
       + Notas Técnicas (Herdadas) {#tech-notes}
          + API REST V1 (Herdada) {#rest-api-v1}
@@ -235,7 +235,7 @@ ht-degree: 2%
             + [(Herdado) Sem cliente: Evitar o uso de &#39;&amp;&#39;reg_code in /authenticate Request](integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
             + [(Herdado) Ativação dos Serviços de Qualificações da Adobe Pass para um Programador no Xbox 360 e no Xbox One Clientless](integration-guide-programmers/legacy/notes-technical/enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
             + [Tipo de dispositivo e métricas (herdadas) sem cliente](integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)
-         + SDKs {#sdks} (Herdados)
+         + SDKs (Herdados) {#sdks}
             + [Perguntas e respostas sobre certificados (herdados)](integration-guide-programmers/legacy/notes-technical/certificates-qa.md)
             + [(Herdado) Compreensão de IDs de usuário](integration-guide-programmers/legacy/notes-technical/understanding-user-ids.md)
             + (Herdado) JavaScript SDK {#javascript-sdk}

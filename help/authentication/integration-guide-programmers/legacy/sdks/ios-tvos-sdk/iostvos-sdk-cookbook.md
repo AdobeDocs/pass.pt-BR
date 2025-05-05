@@ -136,6 +136,7 @@ está autorizado a visualizar.
 gerente para organizar isso).
 
    * **Acionadores:**
+
      Retorno de chamada [setRequestorComplete()](#$setReqComplete).
 
    >[!NOTE]

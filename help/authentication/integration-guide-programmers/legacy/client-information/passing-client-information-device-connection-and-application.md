@@ -164,7 +164,7 @@ As informações do aplicativo podem ser construídas da seguinte maneira:
 
 >[!IMPORTANT]
 >
-As informações do dispositivo, da conexão e do aplicativo devem ser adicionadas ao mesmo objeto JSON. Depois, o objeto resultante deve ser **Base64 codificado**. Além disso, no caso das REST APIs de autenticação da Adobe Pass, o valor deve ser **codificado por URL**.
+>As informações do dispositivo, da conexão e do aplicativo devem ser adicionadas ao mesmo objeto JSON. Depois, o objeto resultante deve ser **Base64 codificado**. Além disso, no caso das REST APIs de autenticação da Adobe Pass, o valor deve ser **codificado por URL**.
 
 **Código de exemplo**
 
@@ -243,8 +243,8 @@ private JSONObject computeClientInformation() {
 
 >[!NOTE]
 >
-**Recursos:**
-* classe pública [build](https://developer.android.com/reference/android/os/Build.html){target=_blank} na documentação dos desenvolvedores Java.
+>**Recursos:**
+>* classe pública [build](https://developer.android.com/reference/android/os/Build.html){target=_blank} na documentação dos desenvolvedores Java.
 
 ### FireTV {#fire-tv}
 
@@ -276,13 +276,13 @@ As informações do aplicativo podem ser construídas da seguinte maneira:
 
 >[!IMPORTANT]
 >
-As informações do dispositivo, da conexão e do aplicativo devem ser adicionadas ao mesmo objeto JSON. Depois, o objeto resultante deve ser **Base64 codificado**. Além disso, no caso das REST APIs de autenticação da Adobe Pass, o valor deve ser **codificado por URL**.
+>As informações do dispositivo, da conexão e do aplicativo devem ser adicionadas ao mesmo objeto JSON. Depois, o objeto resultante deve ser **Base64 codificado**. Além disso, no caso das REST APIs de autenticação da Adobe Pass, o valor deve ser **codificado por URL**.
 
 >[!NOTE]
 >
-**Recursos:**
-* classe pública [Build](https://developer.android.com/reference/android/os/Build.html){target=_blank} na documentação dos desenvolvedores do Android.
-* [Identificando dispositivos FireTV](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html){target=_blank}
+>**Recursos:**
+>* classe pública [Build](https://developer.android.com/reference/android/os/Build.html){target=_blank} na documentação dos desenvolvedores do Android.
+>* [Identificando dispositivos FireTV](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html){target=_blank}
 
 ### iOS/tvOS {#ios-tvos}
 
@@ -315,7 +315,7 @@ As informações do aplicativo podem ser construídas da seguinte maneira:
 
 >[!IMPORTANT]
 >
-As informações do dispositivo, da conexão e do aplicativo devem ser adicionadas ao mesmo objeto JSON. Posteriormente, o objeto resultante deve ser codificado na Base64. Além disso, no caso das REST APIs de autenticação da Adobe Pass, o valor deve ser codificado no URL.
+>As informações do dispositivo, da conexão e do aplicativo devem ser adicionadas ao mesmo objeto JSON. Posteriormente, o objeto resultante deve ser codificado na Base64. Além disso, no caso das REST APIs de autenticação da Adobe Pass, o valor deve ser codificado no URL.
 
 **Código de exemplo**
 
@@ -387,10 +387,10 @@ As informações do dispositivo, da conexão e do aplicativo devem ser adicionad
 
 >[!NOTE]
 >
-**Recursos:**
-* [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
-* [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
-* [Sobre Acessibilidade](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
+>**Recursos:**
+>* [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
+>* [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
+>* [Sobre Acessibilidade](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
 
 ### Roku {#roku}
 
@@ -422,11 +422,11 @@ As informações do aplicativo podem ser construídas da seguinte maneira:
 
 >[!IMPORTANT]
 >
-As informações do dispositivo, da conexão e do aplicativo devem ser adicionadas ao mesmo objeto JSON. Depois, o objeto resultante deve ser **Base64 codificado**. Além disso, no caso das REST APIs de autenticação da Adobe Pass, o valor deve ser codificado no URL.
+>As informações do dispositivo, da conexão e do aplicativo devem ser adicionadas ao mesmo objeto JSON. Depois, o objeto resultante deve ser **Base64 codificado**. Além disso, no caso das REST APIs de autenticação da Adobe Pass, o valor deve ser codificado no URL.
 
 >[!NOTE]
 >
-Para obter mais informações, consulte [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
+>Para obter mais informações, consulte [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
 
 ### XBOX 1/360 {#xbox}
 
@@ -458,7 +458,7 @@ As informações do aplicativo podem ser construídas da seguinte maneira:
 
 >[!IMPORTANT]
 >
-As informações do dispositivo, da conexão e do aplicativo devem ser adicionadas ao mesmo objeto JSON. Depois, o objeto resultante deve ser **Base64 codificado**. Além disso, no caso das REST APIs de autenticação da Adobe Pass, o valor deve ser **codificado por URL**.
+>As informações do dispositivo, da conexão e do aplicativo devem ser adicionadas ao mesmo objeto JSON. Depois, o objeto resultante deve ser **Base64 codificado**. Além disso, no caso das REST APIs de autenticação da Adobe Pass, o valor deve ser **codificado por URL**.
 
 **Recursos**
 

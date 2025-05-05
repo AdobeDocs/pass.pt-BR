@@ -34,6 +34,7 @@ Siga as etapas nas seções abaixo para obter acesso.
    3. Vá para a guia *Aplicativos Registrados*
    4. Selecionar aplicativo
    5. Clique em download na linha de aplicativo registrado para a qual deseja obter uma declaração de software e salve-a como um arquivo em seu computador local
+
       <figure>
           <img src="assets/programmer-download-software-statement-button.png"
                alt="Baixar Declaração de Software">
@@ -46,6 +47,7 @@ Siga as etapas nas seções abaixo para obter acesso.
 
 3. Obter token de acesso
    1. Obtenha credenciais do cliente usando a instrução de software obtida acima e executando a chamada abaixo. Dessa forma, um par client_id - client_secret será obtido, e poderá ser usado para obter o token de acesso.
+
       *Esta etapa não deve ser executada todas as vezes. Isso só deve ser feito novamente quando as credenciais expirarem.*
       <figure>
           <img src="assets/dcr_request_1_get_client_credentials.png"
@@ -53,6 +55,7 @@ Siga as etapas nas seções abaixo para obter acesso.
        </figure>
 
    2. Obtenha o token de acesso usando a chamada abaixo. Use esse token de acesso para chamar qualquer API CMU até que o token expire.
+
       *Esta etapa só deverá ser executada se o último token gerado tiver expirado.*
       <figure>
           <img src="assets/dcr_get_access_token_call.png"

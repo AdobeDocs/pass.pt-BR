@@ -178,7 +178,7 @@ Quando bem-sucedido, o cria e armazena um token de autenticação para o usuári
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**Descrição:** Este método é usado pelo aplicativo para verificar o status de autorização do cliente atual e do recurso fornecido. Ela é iniciada verificando o status de autenticação primeiro. Se não for autenticado, o retorno de chamada tokenRequestFailed() será acionado e o método será encerrado. Se o usuário estiver autenticado, ele também acionará o fluxo de autorização. Consulte detalhes sobre o [getAuthorization()](#getAuthZ method.
+**Descrição:** Este método é usado pelo aplicativo para verificar o status de autorização do cliente atual e do recurso fornecido. Ela é iniciada verificando o status de autenticação primeiro. Se não for autenticado, o retorno de chamada tokenRequestFailed() será acionado e o método será encerrado. Se o usuário estiver autenticado, ele também acionará o fluxo de autorização. Consulte detalhes sobre o [getAuthorization()] (#getAuthZ method.
 
 >[!TIP]
 >
@@ -415,7 +415,7 @@ Você deve implementar esses retornos de chamada para lidar com as respostas às
 
 **Descrição:** implemente esse retorno de chamada se o usuário tiver selecionado uma MVPD que exija um iFrame no qual ele possa exibir sua interface da página de logon de autenticação.
 
-**Acionado por:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Acionado por:**&#x200B;[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Voltar ao início](#top)
 

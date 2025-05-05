@@ -47,7 +47,7 @@ fluxo de direitos de autenticação usando esta API, consulte o [Guia de Integra
 
 * [`setOptions:options:`](#setOptions) - Configura as opções globais do SDK, como profile ou visitorID.
 
-* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Estabelece a identidade do Programador.
+* [`setRequestor:`](#setReqV3) [`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Estabelece a identidade do Programador.
 
 * **[OBSOLETO]** [`setRequestor:signedRequestorId:`](#setReq),[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) - Estabelece a identidade do Programador.
 
@@ -59,7 +59,7 @@ fluxo de direitos de autenticação usando esta API, consulte o [Guia de Integra
 
 * [`getAuthentication`](#getAuthN), [`getAuthentication:withData:`](#getAuthN) - Inicia o fluxo de trabalho de autenticação completa.
 
-* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) - Inicia o fluxo de trabalho de autenticação completa.
+* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN) [andFilter](#getAuthN_filter) - Inicia o fluxo de trabalho de autenticação completa.
 
 * [`displayProviderDialog:`](#dispProvDialog) - Informa seu aplicativo a instanciar os elementos apropriados da interface do usuário para que o usuário selecione uma MVPD.
 
@@ -716,7 +716,7 @@ Como o controlador UIWebView/WKWebView` `passa por vários redirecionamentos, se
 
 Semelhante ao retorno de chamada `navigateToUrl:`, o `navigateToUrl:useSVC:` é acionado pelo AccessEnabler para solicitar que seu aplicativo instancie um controlador `SFSafariViewController` e carregue a URL fornecida no parâmetro **`url`** do retorno de chamada. O retorno de chamada passa o parâmetro **`url`**, que representa a URL do ponto de extremidade de autenticação ou a URL do ponto de extremidade de logout, e o parâmetro **`useSVC`**, que especifica que o aplicativo deve usar um `SFSafariViewController`.
 
-À medida que o controlador `SFSafariViewController` passa por vários redirecionamentos, seu aplicativo deve monitorar a atividade do controlador e detectar o momento em que carrega um URL personalizado específico definido pelo seu `application's custom scheme` (por exemplo,** **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Observe que esse URL personalizado específico é realmente inválido e não se destina ao controlador para carregá-lo. Ela deve ser interpretada somente pelo seu aplicativo como um sinal de que o fluxo de autenticação ou logout foi concluído e que é seguro fechar a controladora. Quando o controlador carrega esta URL personalizada específica, seu aplicativo deve fechar o `SFSafariViewController` e chamar o método de API `handleExternalURL:url ` do AccessEnabler.
+À medida que o controlador `SFSafariViewController` passa por vários redirecionamentos, seu aplicativo deve monitorar a atividade do controlador e detectar o momento em que carrega um URL personalizado específico definido pelo seu `application's custom scheme` (por exemplo,**&#x200B; **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Observe que esse URL personalizado específico é realmente inválido e não se destina ao controlador para carregá-lo. Ela deve ser interpretada somente pelo seu aplicativo como um sinal de que o fluxo de autenticação ou logout foi concluído e que é seguro fechar a controladora. Quando o controlador carrega esta URL personalizada específica, seu aplicativo deve fechar o `SFSafariViewController` e chamar o método de API `handleExternalURL:url ` do AccessEnabler.
 
 **Observação:** observe que, no caso do fluxo de autenticação, esse é um ponto em que o usuário pode pressionar o botão &quot;Voltar&quot;, o que equivale à anulação do fluxo de autenticação. Nesse cenário, o aplicativo deve chamar o método [setSelectedProvider:](#setSelProv) transmitindo **`nil`** como parâmetro e dando ao AccessEnabler a chance de redefinir seu computador de estado de autenticação.
 
@@ -732,19 +732,19 @@ Semelhante ao retorno de chamada `navigateToUrl:`, o `navigateToUrl:useSVC:` é 
 <tbody>
 <tr class="odd">
 <td><pre><code>@optional
-- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
+&#x200B;- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
 </tr>
 </tbody>
 </table>
 
-**Disponibilidade:**v 3.2+
+**Disponibilidade:**&#x200B;v 3.2+
 
 **Parâmetros**:
 
 * *url:* a URL que aponta para a página de logon do MVPD
 * *useSVC:* se a URL deve ser carregada em SFSafariViewController.
 
-**Acionado por:**[ setOptions:](#setOptions) antes de [setSelectedProvider:](#setSelProv)
+**Acionado por:**&#x200B;[ setOptions:](#setOptions) antes de [setSelectedProvider:](#setSelProv)
 
 [Voltar ao início...](#apis)
 

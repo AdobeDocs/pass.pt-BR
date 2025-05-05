@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Assunto {#subj-defn}
 
-* O consumidor do conteúdo (vídeo) na Internet. Estamos deliberadamente evitando o termo _**usuário**_, já que o Monitoramento de Simultaneidade geralmente lida com IDs de conta MVPD (que envolvem vários usuários reais compartilhando o mesmo contrato, por exemplo, membros da família de uma família).
+* O consumidor do conteúdo (vídeo) na Internet. Estamos deliberadamente evitando o termo _&#x200B;**usuário**&#x200B;_, já que o Monitoramento de Simultaneidade geralmente lida com IDs de conta MVPD (que envolvem vários usuários reais compartilhando o mesmo contrato, por exemplo, membros da família de uma família).
 
 * Para cada fluxo, o sujeito pode ser aprimorado com atributos relacionados à pessoa real usando o serviço, seu dispositivo conectado à rede e assim por diante.
 

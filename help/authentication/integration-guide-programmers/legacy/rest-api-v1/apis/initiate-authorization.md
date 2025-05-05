@@ -87,6 +87,7 @@ Obtém a resposta de autorização.
 * **Caso 1: Sucesso**
 </br>
   * **XML:**
+
   </br>
 
     &quot;XML
