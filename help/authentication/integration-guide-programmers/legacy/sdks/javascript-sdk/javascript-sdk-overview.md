@@ -55,7 +55,7 @@ A amostra de código a seguir demonstra como descobrir e exibir o provedor de se
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer"> 
+        <a href="http://www.adobe.com/go/getflashplayer_br"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 

@@ -21,7 +21,7 @@ Harman mantém produtos de publicidade e publicação do Primetime, enquanto o A
 
 | Guia | Descrição |
 |--- |--- |
-| [Ad Insertion Dinâmico do Primetime](https://experienceleague.adobe.com/docs/primetime/ad-insertion/home.html) | Ajuda do Adobe Pass Ad Insertion |
+| [Ad Insertion Dinâmico do Primetime](https://experienceleague.adobe.com/docs/primetime/ad-insertion/home.html?lang=pt-BR) | Ajuda do Adobe Pass Ad Insertion |
 
 ## Guias do Adobe Pass
 
