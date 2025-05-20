@@ -2,9 +2,9 @@
 title: Recuperar solicitação de autenticação do parceiro
 description: REST API V2 - Recuperar solicitação de autenticação do parceiro
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: e8836c76aec10607717c0a67434b2ba5a78a8954
+source-git-commit: 9f872ad94e0aaa0546c8fcac9f88c50f47e10f6e
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1236'
 ht-degree: 1%
 
 ---
@@ -270,6 +270,7 @@ ht-degree: 1%
                     <li><b>authenticatedSSO</b><br/>O aplicativo cliente já está autenticado por meio de fluxos de acesso de logon único.</li>
                     <li><b>pfs_fallback</b><br/>O aplicativo cliente deve retornar ao fluxo de autenticação básico devido ao valor do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> ausente ou inválido.</li>
                     <li><b>configuration_fallback</b><br/>O aplicativo cliente é necessário para retornar ao fluxo de autenticação básico devido à configuração de logon único de parceiro no back-end do Adobe Pass.</li>
+                    <li><b>missing_parameters_fallback</b><br />O aplicativo cliente deve reverter para o fluxo de retomada devido a um parâmetro ausente ou inválido.</li>
                   </ul>
                <td><i>obrigatório</i></td>
             </tr>
@@ -574,7 +575,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "resume",
     "actionType": "direct",
-    "reasonType": "none",
+    "reasonType": "missing_parameters_fallback",
     "missingParameters": [
           "redirectUrl"
     ],
