@@ -2,9 +2,9 @@
 title: Recuperar decisões de autorização usando mvpd específico
 description: REST API V2 - Recuperar decisões de autorização usando mvpd específico
 exl-id: e8889395-4434-4bec-a212-a8341bb9c310
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '927'
+source-wordcount: '935'
 ht-degree: 1%
 
 ---
@@ -276,20 +276,20 @@ ht-degree: 1%
                   <br/><br/>
                   Objeto JSON com os seguintes atributos:
                   <ul>
-                    <li><b>notBefore</b><br/>O carimbo de data/hora antes do qual o token de mídia não é válido.</li>
-                    <li><b>notAfter</b><br/>O carimbo de data/hora após o qual o token de mídia não é válido.</li>
+                    <li><b>notBefore</b><br/>O carimbo de data/hora em milissegundos antes do qual o token de mídia não é válido.</li>
+                    <li><b>notAfter</b><br/>O carimbo de data/hora em milissegundos após o qual o token de mídia não é válido.</li>
                     <li><b>serializedToken</b><br/>O token de mídia codificado em Base64.</li>
                   </ul>
                <td>opcional</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>O carimbo de data e hora antes do qual a decisão não é válida.</td>
+               <td>O carimbo de data e hora em milissegundos antes do qual a decisão não é válida.</td>
                <td>opcional</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>O carimbo de data e hora após o qual a decisão não é válida.</td>
+               <td>O carimbo de data e hora em milissegundos após o qual a decisão não é válida.</td>
                <td>opcional</td>
             </tr>
             <tr>
@@ -334,7 +334,7 @@ ht-degree: 1%
 
 ## Amostras {#samples}
 
-### 1. Recuperar decisões de autorização usando mvpd específico enquanto a decisão é permitida
+### &#x200B;1. Recuperar decisões de autorização usando mvpd específico enquanto a decisão é permitida
 
 >[!BEGINTABS]
 
@@ -386,7 +386,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Recuperar decisões de autorização usando mvpd específico enquanto a decisão é negada
+### &#x200B;2. Recuperar decisões de autorização usando mvpd específico enquanto a decisão é negada
 
 >[!BEGINTABS]
 
@@ -430,7 +430,7 @@ Content-Type: application/json;charset=UTF-8
                 "code": "authorization_denied_by_mvpd",
                 "message": "The MVPD has returned a "Deny" decision when requesting authorization for the specified resource",
                 "details": "Your subscription package does not include the "Live" channel",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
             },
             "notBefore": 1697094207324,
@@ -442,7 +442,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Recuperar decisões de autorização usando mvpd específico enquanto a degradação é aplicada
+### &#x200B;3. Recuperar decisões de autorização usando mvpd específico enquanto a degradação é aplicada
 
 >[!BEGINTABS]
 
@@ -562,7 +562,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -576,7 +576,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -586,7 +586,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Recuperar decisões de autorização usando TempPass básico
+### &#x200B;4. Recuperar decisões de autorização usando TempPass básico
 
 >[!BEGINTABS]
 
@@ -655,7 +655,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_duration_limit_exceeded",
                 "message": "The temporary access duration limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -682,7 +682,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 500,
                 "code": "invalid_configuration_temporary_access",
                 "message": "The temporary access configuration is invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "configuration"
             }
         }
@@ -692,7 +692,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Recuperar decisões de autorização usando TempPass promocional
+### &#x200B;5. Recuperar decisões de autorização usando TempPass promocional
 
 >[!BEGINTABS]
 
@@ -762,7 +762,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_duration_limit_exceeded",
                 "message": "The temporary access duration limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -789,7 +789,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_resources_limit_exceeded",
                 "message": "The temporary access resources limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -816,7 +816,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 500,
                 "code": "invalid_configuration_temporary_access",
                 "message": "The temporary access configuration is invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "configuration"
             }
         }
@@ -843,7 +843,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 400,
                 "code": "invalid_header_identity_for_temporary_access",
                 "message": "The identity for temporary access header value is missing or invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }

@@ -2,9 +2,9 @@
 title: Criar sessão de autenticação
 description: REST API V2 - Criar sessão de autenticação
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1064'
 ht-degree: 1%
 
 ---
@@ -316,12 +316,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>O carimbo de data/hora antes do qual o código de autenticação não é válido.</td>
+               <td>O carimbo de data/hora em milissegundos antes do qual o código de autenticação não é válido.</td>
                <td>opcional</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>O carimbo de data/hora após o qual o código de autenticação não é válido.</td>
+               <td>O carimbo de data/hora em milissegundos após o qual o código de autenticação não é válido.</td>
                <td>opcional</td>
             </tr>
 </table>
@@ -361,7 +361,7 @@ ht-degree: 1%
 
 ## Amostras {#samples}
 
-### 1. Criar sessão de autenticação sem parâmetros ausentes
+### &#x200B;1. Criar sessão de autenticação sem parâmetros ausentes
 
 >[!BEGINTABS]
 
@@ -405,7 +405,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Criar sessão de autenticação com parâmetros ausentes
+### &#x200B;2. Criar sessão de autenticação com parâmetros ausentes
 
 >[!BEGINTABS]
 
@@ -447,7 +447,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Criar sessão de autenticação enquanto já existir um perfil válido
+### &#x200B;3. Criar sessão de autenticação enquanto já existir um perfil válido
 
 >[!BEGINTABS]
 
@@ -488,7 +488,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Criar sessão de autenticação usando TempPass básico ou promocional (não obrigatório)
+### &#x200B;4. Criar sessão de autenticação usando TempPass básico ou promocional (não obrigatório)
 
 >[!BEGINTABS]
 
@@ -529,7 +529,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Criar sessão de autenticação enquanto a degradação é aplicada
+### &#x200B;5. Criar sessão de autenticação enquanto a degradação é aplicada
 
 >[!BEGINTABS]
 

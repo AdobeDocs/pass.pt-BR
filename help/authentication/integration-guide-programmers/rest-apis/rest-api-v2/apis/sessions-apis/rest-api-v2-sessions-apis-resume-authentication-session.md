@@ -2,9 +2,9 @@
 title: Retomar sessão de autenticação
 description: REST API V2 - Retomar sessão de autenticação
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '890'
 ht-degree: 1%
 
 ---
@@ -280,12 +280,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>O carimbo de data/hora antes do qual o código de autenticação não é válido.</td>
+               <td>O carimbo de data/hora em milissegundos antes do qual o código de autenticação não é válido.</td>
                <td>opcional</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>O carimbo de data/hora após o qual o código de autenticação não é válido.</td>
+               <td>O carimbo de data/hora em milissegundos após o qual o código de autenticação não é válido.</td>
                <td>opcional</td>
             </tr>
          </table>
@@ -325,7 +325,7 @@ ht-degree: 1%
 
 ## Amostras {#samples}
 
-### 1. Retomar sessão de autenticação sem parâmetros ausentes
+### &#x200B;1. Retomar sessão de autenticação sem parâmetros ausentes
 
 >[!BEGINTABS]
 
@@ -367,7 +367,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Retomar sessão de autenticação com parâmetros ausentes
+### &#x200B;2. Retomar sessão de autenticação com parâmetros ausentes
 
 >[!BEGINTABS]
 
@@ -410,7 +410,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Retomar sessão de autenticação enquanto já existir um perfil válido
+### &#x200B;3. Retomar sessão de autenticação enquanto já existir um perfil válido
 
 >[!BEGINTABS]
 
@@ -449,7 +449,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Retomar sessão de autenticação usando TempPass básico ou promocional (não obrigatório)
+### &#x200B;4. Retomar sessão de autenticação usando TempPass básico ou promocional (não obrigatório)
 
 >[!BEGINTABS]
 
@@ -488,7 +488,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Retomar a sessão de autenticação enquanto a degradação é aplicada
+### &#x200B;5. Retomar a sessão de autenticação enquanto a degradação é aplicada
 
 >[!BEGINTABS]
 

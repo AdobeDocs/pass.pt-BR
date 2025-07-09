@@ -2,9 +2,9 @@
 title: Criar e recuperar perfil usando a resposta de autenticação do parceiro
 description: REST API V2 - Criar e recuperar perfil usando resposta de autenticação de parceiro
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '779'
 ht-degree: 2%
 
 ---
@@ -233,12 +233,12 @@ ht-degree: 2%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>O carimbo de data/hora antes do qual o perfil não é válido.</td>
+               <td>O carimbo de data/hora em milissegundos antes do qual o perfil não é válido.</td>
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>O carimbo de data/hora após o qual o perfil não é válido.</td>
+               <td>O carimbo de data/hora em milissegundos após o qual o perfil não é válido.</td>
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
@@ -322,7 +322,7 @@ ht-degree: 2%
 
 ## Amostras {#samples}
 
-### 1. Criar e recuperar perfil usando a resposta de autenticação do parceiro
+### &#x200B;1. Criar e recuperar perfil usando a resposta de autenticação do parceiro
 
 >[!BEGINTABS]
 
@@ -379,7 +379,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Criar e recuperar perfis usando a resposta de autenticação do parceiro, mas a degradação é aplicada
+### &#x200B;2. Criar e recuperar perfis usando a resposta de autenticação do parceiro, mas a degradação é aplicada
 
 >[!BEGINTABS]
 

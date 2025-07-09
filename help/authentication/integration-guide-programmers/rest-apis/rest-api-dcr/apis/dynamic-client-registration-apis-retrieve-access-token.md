@@ -2,9 +2,9 @@
 title: Recuperar token de acesso
 description: API de registro dinâmico do cliente - Recuperar token de acesso
 exl-id: 23287acf-5d56-46f0-b65e-79bf7d667708
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '456'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -159,7 +159,7 @@ ht-degree: 2%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">created_at</td>
-               <td>A hora em que o token de acesso foi emitido.</td>
+               <td>O tempo em milissegundos em que o token de acesso foi emitido.</td>
                <td><i>obrigatório</i></td>
             </tr>
             <tr>
