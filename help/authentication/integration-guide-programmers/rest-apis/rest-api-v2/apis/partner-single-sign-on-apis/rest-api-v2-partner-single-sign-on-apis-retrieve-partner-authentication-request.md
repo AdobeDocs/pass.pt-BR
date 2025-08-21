@@ -2,9 +2,9 @@
 title: Recuperar solicitação de autenticação do parceiro
 description: REST API V2 - Recuperar solicitação de autenticação do parceiro
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 9f872ad94e0aaa0546c8fcac9f88c50f47e10f6e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1252'
 ht-degree: 1%
 
 ---
@@ -135,6 +135,12 @@ ht-degree: 1%
          <br/><br/>
          Para implementações de cliente para servidor, o endereço IP do dispositivo de transmissão é enviado implicitamente.
       </td>
+      <td>opcional</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        A geração da carga do identificador de visitante é descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>opcional</td>
    </tr>
    <tr>
@@ -364,7 +370,7 @@ ht-degree: 1%
 
 ## Amostras {#samples}
 
-### 1. Recuperar solicitação de autenticação do parceiro
+### &#x200B;1. Recuperar solicitação de autenticação do parceiro
 
 >[!BEGINTABS]
 
@@ -411,7 +417,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Recuperar solicitação de autenticação do parceiro, mas a degradação é aplicada
+### &#x200B;2. Recuperar solicitação de autenticação do parceiro, mas a degradação é aplicada
 
 >[!BEGINTABS]
 
@@ -453,7 +459,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Recuperar solicitação de autenticação do parceiro, mas fallback para o fluxo de autenticação básico devido ao valor ausente ou inválido do cabeçalho AP-Partner-Framework-Status
+### &#x200B;3. Recuperar solicitação de autenticação do parceiro, mas fallback para o fluxo de autenticação básico devido ao valor ausente ou inválido do cabeçalho AP-Partner-Framework-Status
 
 >[!BEGINTABS]
 
@@ -498,7 +504,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Recuperar solicitação de autenticação do parceiro, mas fallback para o fluxo de autenticação básico devido à configuração de logon único do parceiro no back-end do Adobe Pass
+### &#x200B;4. Recuperar solicitação de autenticação do parceiro, mas fallback para o fluxo de autenticação básico devido à configuração de logon único do parceiro no back-end do Adobe Pass
 
 >[!BEGINTABS]
 
@@ -543,7 +549,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Recuperar solicitação de autenticação do parceiro, mas fallback para fluxo de autenticação básico devido a parâmetros ausentes
+### &#x200B;5. Recuperar solicitação de autenticação do parceiro, mas fallback para fluxo de autenticação básico devido a parâmetros ausentes
 
 >[!BEGINTABS]
 

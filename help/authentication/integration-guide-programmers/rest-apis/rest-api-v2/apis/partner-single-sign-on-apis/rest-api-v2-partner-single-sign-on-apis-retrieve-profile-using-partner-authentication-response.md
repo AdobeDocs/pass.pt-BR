@@ -2,9 +2,9 @@
 title: Criar e recuperar perfil usando a resposta de autenticação do parceiro
 description: REST API V2 - Criar e recuperar perfil usando resposta de autenticação de parceiro
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: be2b75d3dcde92c0b83700705892403291dcab2e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '795'
 ht-degree: 2%
 
 ---
@@ -120,6 +120,12 @@ ht-degree: 2%
          <br/><br/>
          Para implementações de cliente para servidor, o endereço IP do dispositivo de transmissão é enviado implicitamente.
       </td>
+      <td>opcional</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        A geração da carga do identificador de visitante é descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>opcional</td>
    </tr>
    <tr>

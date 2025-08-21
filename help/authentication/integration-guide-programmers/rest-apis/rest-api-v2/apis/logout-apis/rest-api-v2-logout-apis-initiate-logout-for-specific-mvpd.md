@@ -2,9 +2,9 @@
 title: Iniciar logout para mvpd específico
 description: REST API V2 - Iniciar logout para mvpd específico
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1009'
+source-wordcount: '1025'
 ht-degree: 1%
 
 ---
@@ -121,6 +121,12 @@ ht-degree: 1%
         <br/><br/>
         Para obter mais detalhes sobre os fluxos habilitados para logon único usando um token de serviço, consulte a documentação do <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Logon único usando fluxos de token de serviço</a>.
       </td>
+      <td>opcional</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        A geração da carga do identificador de visitante é descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>opcional</td>
    </tr>
    <tr>
@@ -313,7 +319,7 @@ ht-degree: 1%
 
 ## Amostras {#samples}
 
-### 1. Iniciar logout para mvpd específico com ponto de extremidade de logout
+### &#x200B;1. Iniciar logout para mvpd específico com ponto de extremidade de logout
 
 >[!BEGINTABS]
 
@@ -350,7 +356,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Iniciar logout para mvpd específico sem ponto de extremidade de logout
+### &#x200B;2. Iniciar logout para mvpd específico sem ponto de extremidade de logout
 
 >[!BEGINTABS]
 
@@ -386,7 +392,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Inicie o logout único para mvpd específico, incluindo perfis obtidos por logon único usando o método Token de serviço
+### &#x200B;3. Inicie o logout único para mvpd específico, incluindo perfis obtidos por logon único usando o método Token de serviço
 
 >[!IMPORTANT]
 >
@@ -432,7 +438,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Inicie o logout único para mvpd específico, incluindo perfis obtidos por logon único usando o método de identidade da plataforma
+### &#x200B;4. Inicie o logout único para mvpd específico, incluindo perfis obtidos por logon único usando o método de identidade da plataforma
 
 >[!IMPORTANT]
 >
@@ -478,7 +484,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Inicie o logout para mvpd específico, incluindo perfis obtidos por logon único usando Partner (Apple)
+### &#x200B;5. Inicie o logout para mvpd específico, incluindo perfis obtidos por logon único usando Partner (Apple)
 
 >[!BEGINTABS]
 
@@ -514,7 +520,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 6. Iniciar logout para mvpd específico enquanto a degradação é aplicada
+### &#x200B;6. Iniciar logout para mvpd específico enquanto a degradação é aplicada
 
 >[!BEGINTABS]
 
@@ -550,7 +556,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 7. Iniciar logout para TempPass básico ou promocional (não obrigatório)
+### &#x200B;7. Iniciar logout para TempPass básico ou promocional (não obrigatório)
 
 >[!BEGINTABS]
 

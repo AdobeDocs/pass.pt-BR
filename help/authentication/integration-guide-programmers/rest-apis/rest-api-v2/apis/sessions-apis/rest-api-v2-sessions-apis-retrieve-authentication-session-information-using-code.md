@@ -2,9 +2,9 @@
 title: Recuperar sessão de autenticação usando código
 description: REST API V2 - Recuperar sessão de autenticação usando código
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '441'
 ht-degree: 3%
 
 ---
@@ -75,6 +75,12 @@ ht-degree: 3%
          <br/><br/>
          Para implementações de cliente para servidor, o endereço IP do dispositivo de transmissão é enviado implicitamente.
       </td> 
+      <td>opcional</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        A geração da carga do identificador de visitante é descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>opcional</td>
    </tr>
    <tr>
@@ -200,7 +206,7 @@ ht-degree: 3%
 
 ## Amostras {#samples}
 
-### 1. Recuperar sessão de autenticação sem parâmetros ausentes
+### &#x200B;1. Recuperar sessão de autenticação sem parâmetros ausentes
 
 >[!BEGINTABS]
 
@@ -233,7 +239,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 1. Recuperar sessão de autenticação com parâmetros ausentes
+### &#x200B;1. Recuperar sessão de autenticação com parâmetros ausentes
 
 >[!BEGINTABS]
 
