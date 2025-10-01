@@ -2,9 +2,9 @@
 title: Cabeçalho - AP-Parceiro-Estrutura-Status
 description: REST API V2 - Cabeçalho - AP-Parceiro-Estrutura-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '404'
 ht-degree: 1%
 
 ---
@@ -131,6 +131,8 @@ O valor `Base64-encoded` do elemento JSON que contém os seguintes atributos:
                   Este é um atributo obrigatório.
                   <br/><br/>
                   Essa é a data de expiração do perfil do usuário autenticado, caso o usuário tenha se conectado com êxito usando um MVPD compatível no nível da estrutura do parceiro.
+                  <br/><br/>
+                  Deve ser um carimbo de data e hora em milissegundos desde a época do Unix (por exemplo, "1735689600000"), expresso como uma string.
                </td>
             </tr>
             <tr>
