@@ -305,7 +305,7 @@ Para criar uma nova integração com um novo MVPD na configuração atual, siga 
    >
    >Não altere os pontos de extremidade padrão em nenhum fluxo, a menos que seja declarado especificamente pelo MVPD.
 
-   ![Selecionar pontos de extremidade ](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![Selecionar pontos de extremidade &#x200B;](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *Selecionar pontos de extremidade*
 
