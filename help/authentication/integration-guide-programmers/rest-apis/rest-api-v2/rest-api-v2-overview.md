@@ -2,9 +2,9 @@
 title: Visão geral da REST API V2
 description: Visão geral da REST API V2
 exl-id: a5595193-82c4-4033-bd98-596b4908b401
-source-git-commit: a02ba4ca1b6579781e40ecd0d12dbfdd23ea7398
+source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '530'
 ht-degree: 0%
 
 ---
@@ -76,6 +76,7 @@ Para começar, visite nossa documentação pública:
 - [Webinário](#rest-api-v2-webinar)
 - [Glossário](rest-api-v2-glossary.md)
 - [Lista de verificação](rest-api-v2-checklist.md)
+- [Regras de IA](rest-api-v2-ai-rules.md)
 - [Perguntas frequentes](rest-api-v2-faqs.md)
 - [APIs](apis/rest-api-v2-apis-overview.md)
 - [Fluxos](flows/rest-api-v2-flows-overview.md)

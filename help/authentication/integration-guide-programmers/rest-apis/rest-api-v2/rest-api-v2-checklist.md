@@ -2,9 +2,9 @@
 title: Lista de verificação da REST API V2
 description: Lista de verificação da REST API V2
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2545'
+source-wordcount: '2563'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,13 @@ Este documento agrega em um local os requisitos obrigatórios e as práticas rec
 
 O documento a seguir deve ser considerado parte de seus critérios de aceitação ao implementar a REST API V2 e deve ser usado como uma lista de verificação para garantir que todas as etapas necessárias tenham sido tomadas para obter uma integração bem-sucedida.
 
+>[!TIP]
+>
+> Para o desenvolvimento assistido por IA, consulte nossas [Regras de IA](rest-api-v2-ai-rules.md), que transformam esses requisitos em regras estruturadas para os assistentes de codificação de IA.
+
 ## Requisitos obrigatórios {#mandatory-requirements}
 
-### 1. Fase de registro {#mandatory-requirements-registration-phase}
+### &#x200B;1. Fase de registro {#mandatory-requirements-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -46,7 +50,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 2. Fase de configuração {#mandatory-requirements-configuration-phase}
+### &#x200B;2. Fase de configuração {#mandatory-requirements-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -66,7 +70,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 3. Fase de autenticação {#mandatory-requirements-authentication-phase}
+### &#x200B;3. Fase de autenticação {#mandatory-requirements-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -96,7 +100,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 4. (Opcional) Fase de pré-autorização {#mandatory-requirements-preauthorization-phase}
+### &#x200B;4. (Opcional) Fase de pré-autorização {#mandatory-requirements-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -121,7 +125,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 5. Fase de autorização {#mandatory-requirements-authorization-phase}
+### &#x200B;5. Fase de autorização {#mandatory-requirements-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -141,7 +145,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 6. Fase de saída {#mandatory-requirements-logout-phase}
+### &#x200B;6. Fase de saída {#mandatory-requirements-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -156,7 +160,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 7. Parâmetros e cabeçalhos {#mandatory-requirements-parameters-headers}
+### &#x200B;7. Parâmetros e cabeçalhos {#mandatory-requirements-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -191,7 +195,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 8. Tratamento de erros {#mandatory-requirements-error-handling}
+### &#x200B;8. Tratamento de erros {#mandatory-requirements-error-handling}
 
 <table style="table-layout:auto">
    <tr>
@@ -211,7 +215,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 9. Ensaios {#mandatory-requirements-testing}
+### &#x200B;9. Ensaios {#mandatory-requirements-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -228,7 +232,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
 
 ## Práticas recomendadas {#recommended-practices}
 
-### 1. Fase de registro {#recommended-practices-registration-phase}
+### &#x200B;1. Fase de registro {#recommended-practices-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -243,7 +247,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 2. Fase de configuração {#recommended-practices-configuration-phase}
+### &#x200B;2. Fase de configuração {#recommended-practices-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -258,7 +262,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 3. Fase de autenticação {#recommended-practices-authentication-phase}
+### &#x200B;3. Fase de autenticação {#recommended-practices-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -283,7 +287,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 4. (Opcional) Fase de pré-autorização {#recommended-practices-preauthorization-phase}
+### &#x200B;4. (Opcional) Fase de pré-autorização {#recommended-practices-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -298,7 +302,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 5. Fase de autorização {#recommended-practices-authorization-phase}
+### &#x200B;5. Fase de autorização {#recommended-practices-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -318,7 +322,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 6. Fase de saída {#recommended-practices-logout-phase}
+### &#x200B;6. Fase de saída {#recommended-practices-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -333,7 +337,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 7. Parâmetros e cabeçalhos {#recommended-practices-parameters-headers}
+### &#x200B;7. Parâmetros e cabeçalhos {#recommended-practices-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -348,7 +352,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### 8. Ensaios {#recommended-practices-testing}
+### &#x200B;8. Ensaios {#recommended-practices-testing}
 
 <table style="table-layout:auto">
    <tr>
