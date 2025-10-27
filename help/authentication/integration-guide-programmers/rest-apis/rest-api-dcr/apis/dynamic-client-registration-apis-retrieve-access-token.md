@@ -2,9 +2,9 @@
 title: Recuperar token de acesso
 description: API de registro dinâmico do cliente - Recuperar token de acesso
 exl-id: 23287acf-5d56-46f0-b65e-79bf7d667708
-source-git-commit: be2b75d3dcde92c0b83700705892403291dcab2e
+source-git-commit: f0969a692380af3d20df37c49c37f7d1e85c7cfd
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '474'
 ht-degree: 2%
 
 ---
@@ -230,7 +230,11 @@ ht-degree: 2%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">unauthorized_client</td>
-               <td>O tipo de concessão usado é inválido.</td>
+               <td>O aplicativo cliente não está autorizado a usar este tipo de concessão de autorização.</td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">unsupported_grant_type</td>
+               <td>O tipo de concessão de autorização não tem suporte no servidor de autorização.</td>
             </tr>
          </table>
       </td>
