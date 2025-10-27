@@ -2,9 +2,9 @@
 title: Recuperar solicitação de autenticação do parceiro
 description: REST API V2 - Recuperar solicitação de autenticação do parceiro
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
 workflow-type: tm+mt
-source-wordcount: '1252'
+source-wordcount: '1280'
 ht-degree: 1%
 
 ---
@@ -292,7 +292,7 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">url</td>
                <td>O URL no qual o aplicativo cliente precisa navegar.</td>
-               <td><i>obrigatório</i></td>
+               <td>opcional</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">código</td>
@@ -333,6 +333,16 @@ ht-degree: 1%
                <td style="background-color: #DEEBFF;">serviceProvider</td>
                <td>O identificador exclusivo interno associado ao provedor de serviços durante o processo de integração.</td>
                <td><i>obrigatório</i></td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notBefore</td>
+               <td>O carimbo de data/hora em milissegundos antes do qual o código de autenticação não é válido.</td>
+               <td>opcional</td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notAfter</td>
+               <td>O carimbo de data/hora em milissegundos após o qual o código de autenticação não é válido.</td>
+               <td>opcional</td>
             </tr>
          </table>
       </td>
