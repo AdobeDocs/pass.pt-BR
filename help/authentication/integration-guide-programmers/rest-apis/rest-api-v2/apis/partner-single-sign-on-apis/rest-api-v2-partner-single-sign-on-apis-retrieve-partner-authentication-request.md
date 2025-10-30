@@ -2,9 +2,9 @@
 title: Recuperar solicitação de autenticação do parceiro
 description: REST API V2 - Recuperar solicitação de autenticação do parceiro
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1280'
+source-wordcount: '1283'
 ht-degree: 1%
 
 ---
@@ -148,7 +148,7 @@ ht-degree: 1%
       <td>
          O tipo de mídia aceito pelo aplicativo cliente.
          <br/><br/>
-         Se especificado, deve ser application/json.
+         Se especificado, deve ser application/json;charset=utf-8.
       </td>
       <td>opcional</td>
    </tr>

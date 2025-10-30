@@ -2,9 +2,9 @@
 title: Criar e recuperar perfil usando a resposta de autenticação do parceiro
 description: REST API V2 - Criar e recuperar perfil usando resposta de autenticação de parceiro
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '847'
+source-wordcount: '850'
 ht-degree: 1%
 
 ---
@@ -133,7 +133,7 @@ ht-degree: 1%
       <td>
          O tipo de mídia aceito pelo aplicativo cliente.
          <br/><br/>
-         Se especificado, deve ser application/json.
+         Se especificado, deve ser application/json;charset=utf-8.
       </td>
       <td>opcional</td>
    </tr>

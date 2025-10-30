@@ -2,9 +2,9 @@
 title: Recuperar credenciais do cliente
 description: API de registro dinâmico do cliente - Recuperar credenciais do cliente
 exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '437'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -66,7 +66,7 @@ ht-degree: 2%
       <td>
          O tipo de mídia aceito para os recursos que estão sendo enviados.
          <br/><br/>
-         Deve ser application/json.
+         Deve ser application/json;charset=utf-8.
       </td>
       <td><i>obrigatório</i></td>
    </tr>
@@ -88,7 +88,7 @@ ht-degree: 2%
       <td>
          O tipo de mídia aceito pelo aplicativo cliente.
          <br/><br/>
-         Se especificado, deve ser application/json.
+         Se especificado, deve ser application/json;charset=utf-8.
       </td>
       <td>opcional</td>
    </tr>
