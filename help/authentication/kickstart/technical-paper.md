@@ -2,9 +2,9 @@
 title: Sobre a autenticação do Adobe Pass
 description: Sobre a autenticação do Adobe Pass
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
+source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
 workflow-type: tm+mt
-source-wordcount: '1832'
+source-wordcount: '1828'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ Para superar esses obstáculos, a **Adobe® Pass Authentication** simplifica e s
 
 A autenticação do Adobe Pass realiza de maneira segura as transações de direitos entre os programadores e os provedores de TV por assinatura, garantindo que os clientes certos possam acessar o conteúdo certo sem esforço.
 
-![](../assets/programmers-connect-authn.png)
+![](/help/authentication/assets/programmers-connect-authn.png)
 
 *Alguns dos programadores e provedores de TV por Assinatura que se conectam por meio da Autenticação Adobe Pass*
 
@@ -127,12 +127,12 @@ Orientações adicionais estão disponíveis assim que a integração é iniciad
 
 **Tarefas de integração**
 
-* Integre o DCR [&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) da API REST de Autenticação da Adobe Pass.
+* Integre o DCR [ da API REST ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)de Autenticação da Adobe Pass.
 * Integre a Autenticação Adobe Pass [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md).
 * Integre o [Verificador de token de mídia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier) da Autenticação do Adobe Pass.
 * Desenvolva uma interface de usuário para o fluxo de trabalho de autenticação, autorização e logout.
 
-Para obter mais detalhes sobre o processo de integração do Programador, consulte os documentos [Guia de início rápido do Programador](/help/authentication/kickstart/programmer-kickstart-guide.md) e [Guia de integração do Programador](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md).
+Para obter mais detalhes sobre o processo de integração do Programador, consulte os [documentos do Guia de início rápido do Programador](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md).
 
 #### Processo de integração do provedor de TV por assinatura {#pay-tv-provider-integration-process}
 
@@ -169,11 +169,11 @@ Para Programadores, a Autenticação do Adobe Pass fornece APIs como parte de um
    * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * APIs de autenticação Premium do Adobe Pass:
-   * [Redefinir API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [Recurso TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [API de degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Recurso de degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [API de monitoramento do serviço de qualificação](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+   * [Redefinir API Temp Pass](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [Recurso TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)
+   * [API de degradação](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Recurso de degradação](/help/premium-workflow/degraded-access/degradation-feature.md)
+   * [API de monitoramento do serviço de qualificação](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
 
 Para obter mais detalhes sobre o fluxo de qualificação, consulte a documentação do [Guia de Integração do Programador](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
 
@@ -229,7 +229,7 @@ TV Everywhere é uma iniciativa do setor que permite que os clientes de TV por a
 
 **O que é a Autenticação do Adobe Pass e como ela oferece suporte à TV em Qualquer Lugar?**
 
-A Autenticação Adobe Pass dá vida à TV em todos os lugares ao verificar com segurança o direito do usuário ao conteúdo de maneira simples e eficiente. É um serviço hospedado que facilita a rápida integração de back-end com base em regras de negócios definidas por programadores e provedores de TV por assinatura. Isso resulta em um tempo de entrada no mercado mais rápido para todas as partes interessadas, um ambiente mais seguro que minimiza as fraudes e uma melhor experiência do usuário, com mais conteúdo de TV acessível em várias plataformas.
+A Autenticação Adobe Pass dá vida à TV em todos os lugares, verificando com segurança o direito do usuário ao conteúdo de maneira simples e eficiente. É um serviço hospedado que facilita a rápida integração de back-end com base em regras de negócios definidas por programadores e provedores de TV por assinatura. Isso resulta em um tempo de entrada no mercado mais rápido para todas as partes interessadas, um ambiente mais seguro que minimiza as fraudes e uma melhor experiência do usuário, com mais conteúdo de TV acessível em várias plataformas.
 
 **Como a Autenticação do Adobe Pass é entregue?**
 
@@ -245,7 +245,7 @@ A Autenticação Adobe Pass oferece várias vantagens em relação às soluçõe
 
 **Qual é o nível de segurança da Autenticação Adobe Pass?**
 
-A segurança é uma prioridade. A autenticação da Adobe Pass garante que somente os usuários autorizados possam acessar o conteúdo premium ao vincular o acesso ao dispositivo do usuário. Também fornece opções para limitar o número de fluxos, sessões ou dispositivos simultâneos por residência.
+A segurança é uma prioridade. A autenticação da Adobe Pass garante que somente usuários autorizados possam acessar conteúdo premium ao vincular o acesso ao dispositivo do usuário. Também fornece opções para limitar o número de fluxos, sessões ou dispositivos simultâneos por residência.
 
 **A quais dispositivos a Autenticação do Adobe Pass oferece suporte?**
 

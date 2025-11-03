@@ -2,7 +2,7 @@
 title: Autenticação básica - Aplicativo secundário - Fluxo
 description: REST API V2 - Autenticação básica - Aplicativo secundário - Fluxo
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '2006'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Antes de iniciar o fluxo de autenticação em um aplicativo principal e finaliz�
 
 Siga as etapas fornecidas para implementar o fluxo de autenticação básico executado em um aplicativo secundário com um MVPD pré-selecionado, conforme mostrado no diagrama a seguir.
 
-![Executar autenticação no aplicativo secundário com mvpd pré-selecionado](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
+![Executar autenticação no aplicativo secundário com mvpd pré-selecionado](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
 
 *Executar autenticação no aplicativo secundário com mvpd pré-selecionado*
 
@@ -209,7 +209,7 @@ Antes de iniciar o fluxo de autenticação em um aplicativo principal e finaliz�
 
 Siga as etapas fornecidas para implementar o fluxo de autenticação básico executado em um aplicativo secundário sem um MVPD pré-selecionado, conforme mostrado no diagrama a seguir.
 
-![Executar autenticação no aplicativo secundário sem mvpd pré-selecionado](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
+![Executar autenticação no aplicativo secundário sem mvpd pré-selecionado](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
 
 *Executar autenticação no aplicativo secundário sem mvpd pré-selecionado*
 

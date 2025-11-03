@@ -2,7 +2,7 @@
 title: Notas de versão da Autenticação Adobe Pass 2.69
 description: Notas de versão da Autenticação Adobe Pass 2.69
 exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 0%
@@ -34,7 +34,7 @@ Data de Lançamento: **27/02/2024 - 29/02/2024**
 
 * Vulnerabilidades de segurança corrigidas.
 * Melhorias na redefinição da camada de segurança Temp Pass com o Dynamic Client Registration (DCR).
-   * Você pode encontrar mais detalhes aqui: [Recurso TempPass](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * Você pode encontrar mais detalhes aqui: [Recurso TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)
 * Melhorias nos relatórios de Identificação de plataforma.
 
 #### REST APIs

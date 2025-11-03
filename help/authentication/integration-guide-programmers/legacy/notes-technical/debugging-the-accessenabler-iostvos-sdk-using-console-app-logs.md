@@ -2,7 +2,7 @@
 title: Depuração do AccessEnabler iOS/tvOS SDK usando logs de aplicativo do console
 description: Depuração do AccessEnabler iOS/tvOS SDK usando logs de aplicativo do console
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '576'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -50,19 +50,19 @@ Dependendo dos problemas investigados, talvez você queira incluir ou excluir as
 
 Primeiro, para poder ver qualquer mensagem de log emitida pela estrutura AccessEnabler, você **deve** selecionar &quot;Incluir Mensagens de Informações&quot; e &quot;Incluir Mensagens de Depuração&quot; na seção Ação do aplicativo Console, conforme apresentado na imagem abaixo.
 
-![](../../../assets/include-info-debug-msg.png)
+![](/help/authentication/assets/include-info-debug-msg.png)
 
 
 Para poder depurar a funcionalidade do AccessEnabler iOS/tvOS SDK e **ver** os logs de estrutura do AccessEnabler, você pode:
 
 * Pesquise no aplicativo Console usando a opção **Subsystem**, que é igual ao valor com.adobe.pass.AccessEnabler como na imagem abaixo.
 
-![](../../../assets/subsys-console-app.png)
+![](/help/authentication/assets/subsys-console-app.png)
 
 * Pesquise no aplicativo Console usando a opção **Any** que Contém o
   Valor [AccessEnabler] como na imagem abaixo.
 
-![](../../../assets/any-optn-console-app.png)
+![](/help/authentication/assets/any-optn-console-app.png)
 
 Juntamente com os dois critérios acima, você também pode usar a opção **Categoria** em conjunto com o **Subsistema** ou **Qualquer um (prefixo)** para procurar explicitamente por mensagens de nível **depuração** ou **erro** emitidas pelo SDK do AccessEnabler iOS/tvOS.
 

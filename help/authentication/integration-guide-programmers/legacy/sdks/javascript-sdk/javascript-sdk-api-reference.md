@@ -2,7 +2,7 @@
 title: Referência da API do JavaScript SDK
 description: Referência da API do JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -34,7 +34,7 @@ Essas funções iniciam solicitações de interação com uma MVPD. Todas as cha
 - [logout()](#logout)
 
 
-## setRequestor (inRequestorID, pontos de extremidade, opções){#setrequestor(inRequestorID,endpoints,options)}
+## setRequestor (inRequestorID, endpoints, opções){#setrequestor(inRequestorID,endpoints,options)}
 
 **Descrição:** Identifica o site do qual as solicitações se originam.  Você deve fazer essa chamada antes de qualquer outra chamada de API em uma sessão de comunicação.
 
@@ -50,8 +50,8 @@ Essas funções iniciam solicitações de interação com uma MVPD. Todas as cha
    - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *opções* - Um objeto JSON que contém o valor da ID do aplicativo, o valor da ID do visitante e as configurações sem atualização (logout em segundo plano) e as configurações do MVPD (iFrame). Todos os valores são opcionais.
-   1. Se especificado, o Experience Cloud visitorID será relatado em todas as chamadas de rede executadas pela biblioteca. O valor pode ser usado posteriormente para relatórios de análise avançada.
-   2. Se o identificador exclusivo do aplicativo for especificado -`applicationId` - o valor será adicionado a todas as chamadas subsequentes feitas pelo aplicativo como parte do cabeçalho HTTP X-Device-Info. Este valor pode ser obtido posteriormente dos relatórios [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) usando a consulta adequada.
+   1. Se especificada, a visitorID do Experience Cloud seria relatada em todas as chamadas de rede realizadas pela biblioteca. O valor pode ser usado posteriormente para relatórios de análise avançada.
+   2. Se o identificador exclusivo do aplicativo for especificado -`applicationId` - o valor será adicionado a todas as chamadas subsequentes feitas pelo aplicativo como parte do cabeçalho HTTP X-Device-Info. Este valor pode ser obtido posteriormente dos relatórios [ESM](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md) usando a consulta adequada.
 
   **Observação:** todas as chaves JSON diferenciam maiúsculas de minúsculas.
 
@@ -178,7 +178,7 @@ Quando bem-sucedido, o cria e armazena um token de autenticação para o usuári
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**Descrição:** Este método é usado pelo aplicativo para verificar o status de autorização do cliente atual e do recurso fornecido. Ela é iniciada verificando o status de autenticação primeiro. Se não for autenticado, o retorno de chamada tokenRequestFailed() será acionado e o método será encerrado. Se o usuário estiver autenticado, ele também acionará o fluxo de autorização. Consulte detalhes sobre o [getAuthorization()] (#getAuthZ method.
+**Descrição:** Este método é usado pelo aplicativo para verificar o status de autorização do cliente atual e do recurso fornecido. Ela é iniciada verificando o status de autenticação primeiro. Se não for autenticado, o retorno de chamada tokenRequestFailed() será acionado e o método será encerrado. Se o usuário estiver autenticado, ele também acionará o fluxo de autorização. Consulte detalhes sobre o [getAuthorization()]&#x200B;(#getAuthZ method.
 
 >[!TIP]
 >
@@ -194,7 +194,7 @@ Quando bem-sucedido, o cria e armazena um token de autenticação para o usuári
 
 </br>
 
-## checkPreauthorizedResources(resources) {#checkPreauthorizedResources(resources)}
+## checkPreauthorizedResources(recursos) {#checkPreauthorizedResources(resources)}
 
 **Descrição:** Solicita o status de autorização de &quot;comprovação&quot; para uma lista de
 recursos.
@@ -241,7 +241,7 @@ Há dois tipos de metadados:
 
    - Se a chave for `"TTL_AUTHZ"` e params for uma matriz contendo a ID do recurso como uma cadeia de caracteres, a consulta será feita para obter a hora de expiração do token de autorização associado ao recurso especificado.
 
-   - Se a chave for `"DEVICEID"`, será feita a consulta para obter a ID do dispositivo atual. Observe que esse recurso está desativado por padrão e os programadores devem entrar em contato com o Adobe para obter informações sobre ativação e taxas.
+   - Se a chave for `"DEVICEID"`, será feita a consulta para obter a ID do dispositivo atual. Observe que esse recurso está desativado por padrão e os programadores devem entrar em contato com a Adobe para obter informações sobre ativação e taxas.
 
    - Se a chave for da seguinte lista de tipos de metadados de usuário, um objeto JSON contendo os metadados de usuário correspondentes será enviado para a função de retorno de chamada [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata):
 
@@ -309,7 +309,7 @@ Por exemplo:
 **Descrição:** Chame esta função quando o usuário tiver selecionado uma MVPD na sua interface de seleção de provedor para enviar a seleção de provedor para o Habilitador de Acesso ou chame esta função com um parâmetro nulo caso o usuário tenha descartado sua interface de seleção de provedor sem selecionar um provedor.
 
 **Retornos de chamada
-acionado:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+acionado:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Você deve implementar esses retornos de chamada para lidar com as respostas às
 
 **Descrição:** implemente esse retorno de chamada se o usuário tiver selecionado uma MVPD que exija um iFrame no qual ele possa exibir sua interface da página de logon de autenticação.
 
-**Acionado por:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Acionado por:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Voltar ao início](#top)
 
@@ -448,7 +448,7 @@ Você deve implementar esses retornos de chamada para lidar com as respostas às
 
 >[!CAUTION]
 >
->O tipo de dispositivo e o sistema operacional são derivados através do uso de uma biblioteca Java pública (<http://java.net/projects/user-agent-utils>) e da sequência de agente do usuário. Esteja ciente de que essas informações são fornecidas apenas como uma forma grosseira de dividir as métricas operacionais em categorias de dispositivos, mas esse Adobe não pode assumir nenhuma responsabilidade por resultados incorretos. Use a nova funcionalidade adequadamente.
+>O tipo de dispositivo e o sistema operacional são derivados através do uso de uma biblioteca Java pública (<http://java.net/projects/user-agent-utils>) e da sequência de agente do usuário. Esteja ciente de que essas informações são fornecidas apenas como uma forma grosseira de dividir as métricas operacionais em categorias de dispositivos, mas que a Adobe não pode assumir nenhuma responsabilidade por resultados incorretos. Use a nova funcionalidade adequadamente.
 
 **Descrição:** implemente essa chamada de retorno para receber dados de rastreamento quando eventos específicos ocorrerem. Você pode usar isso, por exemplo, para rastrear quantos usuários fizeram logon com as mesmas credenciais. O rastreamento não está configurável no momento. Com a Autenticação Adobe Pass 1.6, o `sendTrackingData()` também relata informações sobre o dispositivo, o cliente do Ativador de Acesso e o tipo de sistema operacional. O retorno de chamada `sendTrackingData()` permanece compatível com versões anteriores.
 
@@ -609,7 +609,7 @@ Por exemplo:
 
 </br>
 
-## seletedProvider(result) {#selectedProvider(result)}
+## seletedProvider(resultado) {#selectedProvider(result)}
 
 **Descrição:** Implemente este retorno de chamada para receber o MVPD selecionado no momento e o resultado da autenticação do usuário atual encapsulado no parâmetro `result`. O parâmetro `result` é um Objeto com as seguintes propriedades:
 

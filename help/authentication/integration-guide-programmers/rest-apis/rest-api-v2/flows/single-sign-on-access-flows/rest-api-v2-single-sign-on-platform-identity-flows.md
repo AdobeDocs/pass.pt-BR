@@ -2,7 +2,7 @@
 title: Logon único - Identidade da plataforma - Fluxos
 description: REST API V2 - Logon único - Identidade da plataforma - Fluxos
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 2afe9ea2a814817757f1ab28484a84466da68d62
 workflow-type: tm+mt
 source-wordcount: '1855'
 ht-degree: 0%
@@ -33,8 +33,8 @@ Para obter mais detalhes sobre o cabeçalho `Adobe-Subject-Token` / `X-Roku-Rese
 
 >[!MORELIKETHIS]
 > 
-> * [Guia de SSO do Amazon](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-> * [Guia de SSO do Roku](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
+> * [Guia de SSO do Amazon](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+> * [Guia de SSO do Roku](/help/premium-workflow/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
 
 ## Executar autenticação por meio de logon único usando a identidade da plataforma {#perform-authentication-through-single-sign-on-using-platform-identity}
 
@@ -62,7 +62,7 @@ Antes de executar o fluxo de autenticação por meio do logon único usando uma 
 
 Execute as etapas fornecidas para implementar o fluxo de autenticação por meio do logon único usando uma identidade de plataforma conforme mostrado no diagrama a seguir.
 
-![Executar autenticação por meio de logon único usando a identidade da plataforma](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-platform-identity-flow.png)
+![Executar autenticação por meio de logon único usando a identidade da plataforma](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-platform-identity-flow.png)
 
 *Executar autenticação por meio de logon único usando a identidade da plataforma*
 
@@ -232,7 +232,7 @@ Antes de executar o fluxo de autorização por meio do logon único usando uma i
 
 Execute as etapas fornecidas para implementar o fluxo de autorização por meio do logon único usando uma identidade de plataforma conforme mostrado no diagrama a seguir.
 
-![Recuperar decisões de autorização por meio do logon único usando a identidade da plataforma](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-platform-identity-flow.png)
+![Recuperar decisões de autorização por meio do logon único usando a identidade da plataforma](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-platform-identity-flow.png)
 
 *Recuperar decisões de autorização por meio do logon único usando a identidade da plataforma*
 

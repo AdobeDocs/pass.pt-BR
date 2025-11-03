@@ -2,7 +2,7 @@
 title: Recuperar configuração para provedor de serviços específico
 description: REST API V2 - Recuperar configuração para provedor de serviço específico
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
+source-git-commit: 1c96904f67507ad127c29628963d74a9fb010e99
 workflow-type: tm+mt
 source-wordcount: '728'
 ht-degree: 2%
@@ -229,7 +229,7 @@ ht-degree: 2%
                         <li><b>id</b><br/>O identificador exclusivo interno associado ao Provedor de Identidade durante o processo de integração.</li>
                         <li><b>displayName</b><br/>O nome comercial (marca) associado ao Provedor de Identidade durante o processo de integração.</li>
                         <li><b>logoUrl</b><br>A URL de onde baixar o logotipo associado ao Provedor de Identidade.</li>
-                        <li><b>isTempPass</b><br/>O sinalizador que especifica se o MVPD foi criado para fornecer a funcionalidade de recurso <a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a>.</li>
+                        <li><b>isTempPass</b><br/>O sinalizador que especifica se o MVPD foi criado para fornecer a funcionalidade de recurso <a href="/help/premium-workflow/temporary-access/temp-pass-feature.md">TempPass</a>.</li>
                         <li><b>isProxy</b><br/>O sinalizador que especifica se o MVPD é um MVPD com proxy aplicado.</li>
                         <li><b>boardingStatus</b><br/>O status que especifica se o Provedor de Identidade é integrado pela plataforma do dispositivo de streaming para fluxos de logon único.</li>
                         <li><b>platformMappingId</b><br/>O identificador exclusivo interno associado ao Provedor de Identidade pela plataforma do dispositivo de streaming para fluxos de logon único.</li>

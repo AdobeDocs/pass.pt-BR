@@ -2,7 +2,7 @@
 title: Iniciar autenticação
 description: Iniciar autenticação
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -46,7 +46,7 @@ Inicia o processo de autenticação informando sobre um evento de seleção do M
 
 | Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/authenticate | Módulo AuthN | 1. requestor_id (Obrigatório)</br>2.  mso_id (Obrigatório)</br>3.  reg_code (obrigatório)</br>4.  nome_domínio (Obrigatório)</br>5.  noflash=true - </br>    (Obrigatório, Parâmetro residual)</br>6.  no_iframe=true (Obrigatório, parâmetro Residual)</br>7.  parâmetros extras (Opcional)</br>8.  redirect_url (Obrigatório) | GET | O Aplicativo web de logon é redirecionado para a página de logon do MVPD. | 302 para implementações de redirecionamento completo |
+| &lt;SP_FQDN>/api/v1/authenticate | Módulo AuthN | &#x200B;1. requestor_id (Obrigatório)</br>2.  mso_id (Obrigatório)</br>3.  reg_code (obrigatório)</br>4.  nome_domínio (Obrigatório)</br>5.  noflash=true - </br>    (Obrigatório, Parâmetro residual)</br>6.  no_iframe=true (Obrigatório, parâmetro Residual)</br>7.  parâmetros extras (Opcional)</br>8.  redirect_url (Obrigatório) | GET | O Aplicativo web de logon é redirecionado para a página de logon do MVPD. | 302 para implementações de redirecionamento completo |
 
 {style="table-layout:auto"}
 
@@ -85,7 +85,7 @@ Inicia o processo de autenticação informando sobre um evento de seleção do M
 >
 >A chamada também pode conter parâmetros opcionais que habilitam outras funcionalidades como:
 >
-> * generic\_data - habilita o uso de [TempPass Promocional](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)
+> * generic\_data - habilita o uso de [TempPass Promocional](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)
 >
 >```JSON
 >Example:

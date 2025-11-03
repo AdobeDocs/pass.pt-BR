@@ -2,7 +2,7 @@
 title: Guia do JavaScript SDK
 description: Guia do JavaScript SDK
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '957'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -36,7 +36,7 @@ link para um conjunto de amostras de código do JavaScript.
 
 </br>
 
-![](../../../../assets/javascript-flows.png)
+![](/help//authentication/assets/javascript-flows.png)
 
 
 ## Pré-requisitos {#prereq}
@@ -86,7 +86,7 @@ O parâmetro mvpds é uma matriz de provedores disponíveis para o usuário.
 
 - `selectedProvider(mvpd)`
 
-  **Acionador:** [`getSelectedProvider()`] (#$getSelProv O parâmetro `mvpd` fornece informações sobre o provedor selecionado por
+  **Acionador:** [`getSelectedProvider()`]&#x200B;(#$getSelProv O parâmetro `mvpd` fornece informações sobre o provedor selecionado por
 o usuário.
 
 - `setMetadataStatus(metadata, key, arguments)`
@@ -95,7 +95,7 @@ o usuário.
   O parâmetro `metadata` fornece os dados específicos solicitados; o parâmetro de chave é a chave usada na solicitação `getMetadata()`; e o parâmetro `arguments` é o mesmo dicionário passado para `getMetadata()`.
 
 
-## 2. Fluxo de inicialização
+## &#x200B;2. Fluxo de inicialização
 
 **I. Carregar o AccessEnabler JavaScript:**
 
@@ -136,7 +136,7 @@ identidade do Programador; passe no `requestorID` e
 
 </br>
 
-## 3. Fluxo de Autenticação</span>
+## &#x200B;3. Fluxo de Autenticação</span>
 
 
 **Dependência:** uma chamada bem-sucedida para `setRequestor()`(essa dependência também se aplica a todas as chamadas subsequentes).
@@ -151,7 +151,7 @@ Chame `getAuthentication()` para obter o status de autenticação OU para aciona
 
 A conclusão do fluxo de autenticação é alcançada quando o AccessEnabler chama `setAuthenticationStatus()`com `isAuthenticated == 1`.
 
-## 4. Fluxo de autorização {#authz}
+## &#x200B;4. Fluxo de autorização {#authz}
 
 **Dependências:**
 
@@ -175,7 +175,7 @@ AccessEnabler (biblioteca)
 - Se a validação for bem-sucedida: Exibir/Reproduzir a mídia solicitada para o usuário.
 - Se falhar: O token AuthZ era inválido, a solicitação de mídia deve ser recusada e uma mensagem de erro deve ser exibida ao usuário.
 
-## 5. Exibir Fluxo De Mídia {#logout}
+## &#x200B;5. Exibir Fluxo De Mídia {#logout}
 
 - O usuário seleciona a mídia para visualizar.
    - A mídia está protegida?
@@ -186,7 +186,7 @@ AccessEnabler (biblioteca)
 
 ## Configurar a ID do visitante {#visitorID}
 
-Configurar um valor de [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=pt-BR) é muito importante do ponto de vista de análise. Depois que um valor de EC visitorID é definido, o SDK envia essas informações junto com cada chamada de rede e o serviço de autenticação da Adobe Pass coleta essas informações. Dessa forma, é possível correlacionar os dados de análise do serviço de Autenticação da Adobe Pass com quaisquer outros relatórios de análise que você tenha de outros aplicativos ou sites. Informações sobre como configurar a EC visitorID podem ser encontradas [aqui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=pt-BR).
+Configurar um valor de [visitorID do Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/home.html) é muito importante do ponto de vista analítico. Depois que um valor de EC visitorID é definido, o SDK envia essas informações junto com cada chamada de rede e o serviço de autenticação da Adobe Pass coleta essas informações. Dessa forma, é possível correlacionar os dados de análise do serviço de Autenticação da Adobe Pass com quaisquer outros relatórios de análise que você tenha de outros aplicativos ou sites. Informações sobre como configurar a EC visitorID podem ser encontradas [aqui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

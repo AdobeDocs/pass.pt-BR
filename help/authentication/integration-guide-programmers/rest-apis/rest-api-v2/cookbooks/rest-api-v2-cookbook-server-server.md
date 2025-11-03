@@ -2,9 +2,9 @@
 title: Cookbook REST API V2 (servidor para servidor)
 description: Cookbook REST API V2 (servidor para servidor)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
-source-wordcount: '2510'
+source-wordcount: '2497'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ O ambiente de produção deve estar altamente disponível e dimensionado de form
 
 * O Programador deve fornecer o intervalo IP público de seu ambiente de produção.
 
-   * Esses IPs serão adicionados a um incluo na lista de permissões na infraestrutura da Adobe Pass.
+   * Esses IPs serão adicionados a um incluo na lista de permissões na Infraestrutura do Adobe Pass.
 
 * O Serviço de programador deve limitar o cache DNS a um máximo de 30 segundos para permitir o redirecionamento dinâmico caso o Adobe precise redirecionar o tráfego devido à indisponibilidade de um data center.
 
@@ -183,7 +183,7 @@ Perguntas frequentes
 * **Cenário 2:** Não há perfis existentes, o Serviço Programador pode prosseguir para a próxima etapa para [Autenticar o usuário](#step-3-authenticate-the-user).
 
 
-* **Cenário 3:** Não há perfis existentes, o Serviço de Programador pode continuar a fornecer ao usuário acesso temporário por meio do recurso [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
+* **Cenário 3:** Não há perfis existentes, o Serviço de Programador pode continuar a fornecer ao usuário acesso temporário por meio do recurso [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md).
 
    * Este cenário está fora do escopo deste documento. Consulte a documentação [Fluxos de Acesso Temporário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) para obter mais informações.
 
@@ -266,7 +266,7 @@ Perguntas frequentes
 
    * O Serviço do Programador não é necessário para armazenar decisões de pré-autorização em armazenamento persistente. No entanto, é recomendável armazenar em cache as decisões de permissão na memória para melhorar a experiência do usuário. Isso ajuda a evitar chamadas desnecessárias para recursos que já foram pré-autorizados, reduzindo a latência e melhorando o desempenho.
 
-   * O Serviço de Programador pode determinar o motivo de uma decisão de pré-autorização negada ao inspecionar o [código de erro e a mensagem](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) incluídos na resposta do ponto de extremidade de Pré-autorização de Decisões. Esses detalhes fornecem informações sobre o motivo específico pelo qual a solicitação de pré-autorização foi negada, ajudando a informar a experiência do usuário ou acionar qualquer manipulação necessária no aplicativo. Certifique-se de que qualquer mecanismo de repetição implementado para recuperar decisões de pré-autorização não resulte em um loop infinito se a decisão de pré-autorização for negada. Considere limitar as tentativas a um número razoável e lidar com as negações normalmente ao exibir comentários claros para o usuário.
+   * O Serviço de Programador pode determinar o motivo de uma decisão de pré-autorização negada ao inspecionar o [código de erro e a mensagem](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) incluídos na resposta do ponto de extremidade de Pré-autorização de Decisões. Esses detalhes fornecem ao insight o motivo específico pelo qual a solicitação de pré-autorização foi negada, ajudando a informar a experiência do usuário ou acionar qualquer manipulação necessária no aplicativo. Certifique-se de que qualquer mecanismo de repetição implementado para recuperar decisões de pré-autorização não resulte em um loop infinito se a decisão de pré-autorização for negada. Considere limitar as tentativas a um número razoável e lidar com as negações normalmente ao exibir comentários claros para o usuário.
 
    * O Serviço do programador pode obter uma decisão de pré-autorização para um número limitado de recursos em uma única solicitação de API, geralmente até 5, devido a condições impostas pelos MVPDs. Este número máximo de recursos pode ser exibido e alterado após a aceitação dos MVPDs por meio do [Painel TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da Adobe Pass por um dos administradores da organização ou por um representante da Autenticação Adobe Pass que atue em seu nome.
 

@@ -2,7 +2,7 @@
 title: Guia do Apple SSO (REST API V1)
 description: Guia do Apple SSO (REST API V1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '1496'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -43,21 +43,21 @@ Para se beneficiar da experiência do usuário do Apple SSO, o aplicativo precis
 
 ### Autenticação {#apple-sso-cookbook-rest-api-v1-authentication}
 
-* [Há um token de autenticação de Adobe válido?](#step1)
+* [Há um token de autenticação Adobe válido?](#step1)
 * [O usuário está conectado por meio do SSO do parceiro?](#step2)
-* [Buscar configuração de Adobe](#step3)
-* [Iniciar fluxo de trabalho SSO do parceiro com configuração Adobe](#step4)
+* [Buscar configuração do Adobe](#step3)
+* [Iniciar fluxo de trabalho SSO do parceiro com a configuração do Adobe](#step4)
 * [O logon do usuário foi bem-sucedido?](#step5)
 * [Obter uma solicitação de perfil do Adobe para o MVPD selecionado](#step6)
-* [Encaminhe a solicitação de Adobe para o SSO do parceiro para obter o perfil](#step7)
-* [Trocar o perfil SSO do parceiro por um token de autenticação de Adobe](#step8)
-* [O token de Adobe foi gerado com sucesso?](#step9)
+* [Encaminhar a solicitação do Adobe ao SSO do parceiro para obter o perfil](#step7)
+* [Trocar o perfil SSO do parceiro por um token de autenticação do Adobe](#step8)
+* [O token do Adobe foi gerado com sucesso?](#step9)
 * [Iniciar fluxo de trabalho de autenticação regular](#step10)
 * [Continuar com fluxos de autorização](#step11)
 
-![](../../../assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
+![](/help/authentication/assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
 
-#### Etapa: &quot;Há um token de autenticação de Adobe válido?&quot; {#step1}
+#### Etapa: &quot;Há um token de autenticação válido do Adobe?&quot; {#step1}
 
 >[!TIP]
 >
@@ -131,7 +131,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 ...  
 ```
 
-#### Etapa: &quot;Buscar configuração de Adobe&quot; {#step3}
+#### Etapa: &quot;Buscar configuração do Adobe&quot; {#step3}
 
 >[!TIP]
 >
@@ -141,7 +141,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >
 > **<u>Dica Profissional:</u>** esteja ciente das propriedades do MVPD: *`enablePlatformServices`*, *`boardingStatus`*, *`displayInPlatformPicker`*, *`platformMappingId`*, *`requiredMetadataFields`* e preste atenção extra aos comentários apresentados em trechos de código de outras etapas.
 
-#### Etapa &quot;Iniciar fluxo de trabalho SSO do parceiro com configuração Adobe&quot; {#step4}
+#### Etapa &quot;Iniciar fluxo de trabalho SSO do parceiro com a configuração do Adobe&quot; {#step4}
 
 >[!TIP]
 >
@@ -255,7 +255,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Dica de Profissional:</u>** esteja ciente do trecho de código da etapa [&quot;Iniciar fluxo de trabalho SSO de Parceiro com configuração Adobe&quot;](#step4). O logon do usuário é bem-sucedido caso o *`vsaMetadata!.accountProviderIdentifier`* contenha um valor válido e a data atual não tenha passado o valor *`vsaMetadata!.authenticationExpirationDate`*.
+> **<u>Dica de Profissional:</u>** esteja ciente do trecho de código da etapa [&quot;Iniciar fluxo de trabalho SSO de Parceiro com a configuração do Adobe&quot;](#step4). O logon do usuário é bem-sucedido caso o *`vsaMetadata!.accountProviderIdentifier`* contenha um valor válido e a data atual não tenha passado o valor *`vsaMetadata!.authenticationExpirationDate`*.
 
 #### Etapa &quot;Obter uma solicitação de perfil do Adobe para o MVPD selecionado&quot; {#step6}
 
@@ -267,7 +267,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >
 > **<u>Dica de Profissional:</u>** esteja ciente de que o identificador do provedor obtido da Estrutura de Conta de Assinante de Vídeo representa o *`platformMappingId`* em termos de configuração de Autenticação do Adobe Pass. Portanto, o aplicativo deve determinar o valor da propriedade da MVPD id, usando o valor *`platformMappingId`*, por meio do serviço de API Autenticação da Adobe Pass [Fornecer Lista da MVPD](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md).
 
-#### Etapa: &quot;Encaminhar a solicitação de Adobe para o SSO do parceiro para obter o perfil&quot; {#step7}
+#### Etapa: &quot;Encaminhar a solicitação do Adobe para o SSO do parceiro para obter o perfil&quot; {#step7}
 
 >[!TIP]
 >
@@ -344,7 +344,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
     ...
 ```
 
-#### Etapa: &quot;Trocar o perfil SSO do parceiro por um token de autenticação Adobe&quot; {#step8}
+#### Etapa: &quot;Trocar o perfil SSO do parceiro por um token de autenticação da Adobe&quot; {#step8}
 
 >[!TIP]
 >
@@ -352,9 +352,9 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Dica do Profissional:</u>** esteja ciente do trecho de código da etapa [&quot;Encaminhar a solicitação de Adobe para o SSO do Parceiro para obter o perfil&quot;](#step7). Este *`vsaMetadata!.samlAttributeQueryResponse!`* representa o *`SAMLResponse`*, que precisa ser passado no [Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) e requer manipulação e codificação de cadeia de caracteres (*Base64* codificada e *URL* codificada posteriormente) antes de fazer a chamada.
+> **<u>Dica do Profissional:</u>** esteja ciente do trecho de código da etapa [&quot;Encaminhar a solicitação do Adobe para o SSO do Parceiro para obter o perfil&quot;](#step7). Este *`vsaMetadata!.samlAttributeQueryResponse!`* representa o *`SAMLResponse`*, que precisa ser passado no [Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) e requer manipulação e codificação de cadeia de caracteres (*Base64* codificada e *URL* codificada posteriormente) antes de fazer a chamada.
 
-#### Etapa: &quot;O token Adobe foi gerado com êxito?&quot; {#step9}
+#### Etapa: &quot;O token do Adobe foi gerado com êxito?&quot; {#step9}
 
 >[!TIP]
 >
@@ -402,7 +402,7 @@ A [Estrutura de Conta de Assinante de Vídeo](https://developer.apple.com/docume
 >
 > **<u>Dica do profissional:</u>** siga as etapas abaixo para a implementação do tvOS.
 
-* O aplicativo teria que determinar se a autenticação ocorreu como resultado de uma entrada através do SSO parceiro, usando os &quot;*metadados de usuário[&#128279;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) do tokenSource&quot;* do serviço de Autenticação do Adobe Pass.
+* O aplicativo teria que determinar se a autenticação ocorreu como resultado de uma entrada através do SSO parceiro, usando os &quot;*metadados de usuário* do [tokenSource&quot;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) do serviço de Autenticação do Adobe Pass.
 * O aplicativo teria que instruir/solicitar que o usuário saia explicitamente de *`Settings -> Accounts -> TV Provider`* no tvOS **only** caso o valor *&quot;tokenSource&quot;* fosse igual a &quot;*Apple&quot;.*
 * O aplicativo teria que [iniciar o logout](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) do serviço de Autenticação do Adobe Pass usando uma chamada HTTP direta. Isso não facilitaria a limpeza da sessão no lado do MVPD.
 
@@ -410,6 +410,6 @@ A [Estrutura de Conta de Assinante de Vídeo](https://developer.apple.com/docume
 >
 > **<u>Dica dos profissionais:</u>** Siga as etapas abaixo para a(s) implementação(ões) do iOS/iPadOS.
 
-* O aplicativo teria que determinar se a autenticação ocorreu como resultado de uma entrada através do SSO parceiro, usando os &quot;*metadados de usuário[&#128279;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) do tokenSource&quot;* do serviço de Autenticação do Adobe Pass.
+* O aplicativo teria que determinar se a autenticação ocorreu como resultado de uma entrada através do SSO parceiro, usando os &quot;*metadados de usuário* do [tokenSource&quot;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) do serviço de Autenticação do Adobe Pass.
 * O aplicativo teria que instruir/solicitar que o usuário saia explicitamente de *`Settings -> TV Provider`* no iOS/iPadOS **only** caso o valor *&quot;tokenSource&quot;* fosse igual a *&quot;Apple&quot;*.
 * O aplicativo teria que [iniciar o logout](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) do serviço de Autenticação do Adobe Pass usando um [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) ou um componente [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller). Isso facilitaria a limpeza da sessão no lado do MVPD.

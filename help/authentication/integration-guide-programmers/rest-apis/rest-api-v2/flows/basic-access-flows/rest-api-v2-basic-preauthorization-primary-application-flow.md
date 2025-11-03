@@ -2,7 +2,7 @@
 title: Pré-autorização Básica - Aplicativo Principal - Fluxo
 description: REST API V2 - Pré-autorização básica - Aplicativo principal - Fluxo
 exl-id: f557f6c3-d5b2-4ec8-be51-91a90fbd31c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -13,19 +13,19 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
 > A implementação da REST API V2 é limitada pela documentação do [Mecanismo de limitação](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-O **Fluxo de pré-autorização** no direito de Autenticação Adobe Pass permite que o aplicativo de streaming determine se um MVPD pode permitir ou negar ao usuário acesso a uma lista de recursos. Essa verificação garante que o aplicativo possa apresentar informações precisas ao usuário sobre o conteúdo que ele pode estar qualificado a visualizar.
+O **Fluxo de pré-autorização** no direito de Autenticação Adobe Pass permite que o aplicativo de streaming determine se uma MVPD pode permitir ou negar o acesso do usuário a uma lista de recursos. Essa verificação garante que o aplicativo possa apresentar informações precisas ao usuário sobre o conteúdo que ele pode estar qualificado a visualizar.
 
 ## Recuperar decisões de pré-autorização usando mvpd específico {#retrieve-preauthorization-decisions-using-specific-mvpd}
 
 ### Pré-requisitos {#prerequisites-retrieve-preauthorization-decisions-using-specific-mvpd}
 
-Antes de recuperar decisões de pré-autorização usando um MVPD específico, verifique se os seguintes pré-requisitos foram atendidos:
+Antes de recuperar decisões de pré-autorização usando uma MVPD específica, verifique se os seguintes pré-requisitos foram atendidos:
 
 * O aplicativo de streaming deve ter um perfil regular válido, criado com êxito para o MVPD usando um dos fluxos de autenticação básicos:
    * [Executar autenticação no aplicativo principal](rest-api-v2-basic-authentication-primary-application-flow.md)
@@ -35,9 +35,9 @@ Antes de recuperar decisões de pré-autorização usando um MVPD específico, v
 
 ### Fluxo de trabalho (WRK) {#workflow-retrieve-preauthorization-decisions-using-specific-mvpd}
 
-Siga as etapas fornecidas para implementar o fluxo básico de pré-autorização usando um MVPD específico executado em um aplicativo principal, conforme mostrado no diagrama a seguir.
+Siga as etapas fornecidas para implementar o fluxo básico de pré-autorização usando uma MVPD específica executada em um aplicativo principal, conforme mostrado no diagrama a seguir.
 
-![Recuperar decisões de pré-autorização usando mvpd](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png) específico
+![Recuperar decisões de pré-autorização usando mvpd](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png) específico
 
 *Recuperar decisões de pré-autorização usando mvpd* específico
 
@@ -53,7 +53,7 @@ Siga as etapas fornecidas para implementar o fluxo básico de pré-autorização
 
 1. **Localizar perfil regular:** O servidor Adobe Pass identifica um perfil válido com base nos parâmetros e cabeçalhos recebidos.
 
-1. **Recuperar decisões de MVPD para recursos solicitados:** O servidor do Adobe Pass chama o ponto de extremidade de pré-autorização de MVPD para obter uma decisão `Permit` ou `Deny` para cada recurso recebido do aplicativo de streaming.
+1. **Recupere decisões do MVPD para os recursos solicitados:** O servidor do Adobe Pass chama o ponto de extremidade de pré-autorização do MVPD para obter uma decisão `Permit` ou `Deny` para cada recurso recebido do aplicativo de streaming.
 
 1. **Retornar decisões de pré-autorização:** A resposta de Ponto de Extremidade de Pré-autorização de Decisões contém uma decisão `Permit` ou `Deny` para cada recurso:
    * Uma decisão `Permit` significa que o recurso é reproduzível. A resposta não inclui um token de mídia, pois o fluxo de pré-autorização não deve ser usado para reproduzir recursos.

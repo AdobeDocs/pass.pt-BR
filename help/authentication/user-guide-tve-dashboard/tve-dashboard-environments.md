@@ -2,7 +2,7 @@
 title: Ambientes do painel TVE
 description: Entenda o uso e o funcionamento de diferentes ambientes no Painel de TVE.
 exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso dessa API exige uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso dessa API exige uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 O painel TVE fornece diferentes ambientes personalizados para atender a objetivos específicos na autenticação do Adobe Pass. Há dois ambientes principais:
 
@@ -23,9 +23,9 @@ O painel TVE fornece diferentes ambientes personalizados para atender a objetivo
 
 Em cada ambiente, há dois perfis diferentes:
 
-* **Estágios**: o perfil de preparo se conecta ao servidor de preparo do MVPD para testes e validação de integrações antes de entrar em funcionamento.
+* **Estágios**: o perfil de preparo se conecta ao servidor de preparo da MVPD para testar e validar integrações antes de entrar em funcionamento.
 
-* **Produção**: o perfil de produção se conecta ao perfil de produção do MVPD para atividades de produção reais.
+* **Produção**: o perfil de produção se conecta ao perfil de produção da MVPD para atividades de produção reais.
 
 ## Casos de uso
 
@@ -33,18 +33,18 @@ Os ambientes no painel TVE atendem a vários casos de uso durante todo o ciclo d
 
 ### Estágios desiguais
 
-* Valide novos recursos não lançados do servidor de Autenticação do Adobe Pass usando pontos de extremidade de preparo do MVPD.
-* Usado principalmente pela equipe de produtos de autenticação da Adobe Pass para adicionar e validar novas integrações MVPD.
+* Valide novos recursos não lançados do servidor de Autenticação do Adobe Pass usando os pontos de extremidade de preparo do MVPD.
+* Usado principalmente pela equipe de produtos de autenticação da Adobe Pass para adicionar e validar novas integrações do MVPD.
 
 ### Produção Pré-Igual
 
-* Valide novos recursos ou configurações não lançados do servidor de Autenticação da Adobe Pass usando os endpoints de produção do MVPD.
-* Valide novas versões de aplicativos para cada canal usando os endpoints de produção do MVPD.
+* Valide novos recursos ou configurações não lançados do servidor de autenticação da Adobe Pass usando os endpoints de produção da MVPD.
+* Valide novas versões de aplicativos para cada canal usando os endpoints de produção da MVPD.
 * Valide cada alteração de configuração antes de enviá-la para produção.
 
 ### Estágios de lançamento
 
-* Valide novas versões de aplicativos para cada canal usando os pontos de extremidade de preparo do MVPD.
+* Valide novas versões de aplicativos para cada canal usando os endpoints de preparo do MVPD.
 * Realizar testes de desempenho ou capacidade nesse ambiente.
 
 ### Liberar produção
@@ -60,7 +60,7 @@ Siga as etapas para alternar entre os ambientes do Painel TVE de autenticação 
 
 1. Selecione o ambiente de preparo ou produção necessário no menu suspenso **Ambiente**, na parte superior do painel esquerdo.
 
-   ![Lista suspensa de ambientes do Painel do TVE](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
+   ![Lista suspensa de ambientes do Painel do TVE](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
 
    *Menu suspenso do ambiente do Painel TVE de Autenticação do Adobe Pass*
 

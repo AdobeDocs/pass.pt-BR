@@ -2,7 +2,7 @@
 title: Logon Único - Token de Serviço - Fluxos
 description: REST API V2 - Logon único - Token de serviço - Fluxos
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1857'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Antes de executar o fluxo de autenticação por meio do logon único usando um t
 
 Execute as etapas fornecidas para implementar o fluxo de autenticação por meio do logon único usando um token de serviço, conforme mostrado no diagrama a seguir.
 
-![Executar autenticação por meio do logon único usando o token de serviço](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
+![Executar autenticação por meio do logon único usando o token de serviço](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
 
 *Executar autenticação por meio do logon único usando o token de serviço*
 
@@ -230,7 +230,7 @@ Antes de executar o fluxo de autorização por meio do logon único usando um to
 
 Execute as etapas fornecidas para implementar o fluxo de autorização por meio do logon único usando um token de serviço, conforme mostrado no diagrama a seguir.
 
-![Recuperar decisões de autorização por meio do logon único usando o token de serviço](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
+![Recuperar decisões de autorização por meio do logon único usando o token de serviço](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
 
 *Recuperar decisões de autorização por meio do logon único usando o token de serviço*
 

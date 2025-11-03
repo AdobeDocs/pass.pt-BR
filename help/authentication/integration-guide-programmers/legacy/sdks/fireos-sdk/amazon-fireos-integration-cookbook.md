@@ -2,7 +2,7 @@
 title: Guia de integração do Amazon FireOS
 description: Guia de integração do Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1447'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -30,7 +30,7 @@ A solução de direito de autenticação da Adobe Pass para o Amazon FireOS é d
 
 - O domínio da interface do usuário - esta é a camada de aplicativo de nível superior que implementa a interface do usuário e usa os serviços fornecidos pela biblioteca `AccessEnabler` para fornecer acesso ao conteúdo restrito.
 - O domínio `AccessEnabler` - é aqui que os fluxos de trabalho de direito são implementados na forma de:
-   - Chamadas de rede feitas para servidores back-end do Adobe
+   - Chamadas de rede feitas aos servidores back-end da Adobe
    - Regras de lógica de negócios relacionadas aos workflows de autenticação e autorização
    - Gerenciamento de vários recursos e processamento do estado do fluxo de trabalho (como o cache de token)
 
@@ -107,7 +107,7 @@ O parâmetro `event` indica qual evento de direito ocorreu; o parâmetro `data` 
       - O parâmetro `authorizedResources` apresenta os recursos que o usuário está autorizado a exibir.
 
 
-![](../../../../assets/android-entitlement-flows.png)
+![](/help//authentication/assets/android-entitlement-flows.png)
 
 
 ### B. Fluxo de inicialização {#startup_flow}

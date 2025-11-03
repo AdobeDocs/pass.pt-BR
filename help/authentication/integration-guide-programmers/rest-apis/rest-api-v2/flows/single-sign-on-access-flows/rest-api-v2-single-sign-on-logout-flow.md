@@ -2,7 +2,7 @@
 title: Logout único - Fluxo
 description: REST API V2 - Logout único - Fluxo
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Antes de iniciar o logout único para uma MVPD específica, verifique se os segu
 
 Execute as etapas fornecidas para implementar o fluxo de logout único para uma MVPD específica, conforme mostrado no diagrama a seguir.
 
-![Iniciar logout único para mvpd específico](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
+![Iniciar logout único para mvpd específico](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
 
 *Iniciar logout único para mvpd específico*
 

@@ -2,7 +2,7 @@
 title: Registro do aplicativo Android
 description: Registro do aplicativo Android
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -21,15 +21,15 @@ ht-degree: 0%
 
 ## Introdução {#intro}
 
-A partir da versão 3.0 do Android AccessEnabler SDK, estamos alterando o mecanismo de autenticação com servidores Adobe. Em vez de usar uma chave pública e um sistema secreto para assinar o requestorID, estamos introduzindo o conceito de uma string de Declaração de Software que pode ser usada para obter um token de acesso usado posteriormente para todas as chamadas que o SDK faz aos nossos servidores. Além de uma Declaração de Software, você também precisará criar um deep link para o seu aplicativo.
+A partir da versão 3.0 do Android AccessEnabler SDK, estamos alterando o mecanismo de autenticação com os servidores da Adobe. Em vez de usar uma chave pública e um sistema secreto para assinar o requestorID, estamos introduzindo o conceito de uma string de Declaração de Software que pode ser usada para obter um token de acesso usado posteriormente para todas as chamadas que o SDK faz aos nossos servidores. Além de uma Declaração de Software, você também precisará criar um deep link para o seu aplicativo.
 
-Para obter mais informações, consulte [Visão Geral do Registro de Cliente Dinâmico](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Para obter mais informações, consulte [Visão Geral do Registro de Cliente Dinâmico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## O que é uma Declaração de Software? {#what}
 
-Uma Declaração de Software é um token JWT que contém informações sobre seu aplicativo. Cada aplicativo deve ter uma instrução de software exclusiva usada pelos nossos servidores para identificar o aplicativo no sistema Adobe.
+Uma Declaração de Software é um token JWT que contém informações sobre seu aplicativo. Cada aplicativo deve ter uma instrução de software exclusiva usada pelos nossos servidores para identificar o aplicativo no sistema da Adobe.
 
-A Instrução de Software precisa ser passada quando você inicializa o SDK `AccessEnabler`. É usado para registrar o aplicativo com o Adobe. Após o registro, a SDK recebe uma ID do cliente e um segredo do cliente, que é usado para obter um token de acesso. Qualquer chamada feita pela SDK para servidores Adobe requer um token de acesso válido. A SDK é responsável por registrar o aplicativo, obter e atualizar o token de acesso.
+A Instrução de Software precisa ser passada quando você inicializa o SDK `AccessEnabler`. É usado para registrar o aplicativo no Adobe. Após o registro, a SDK recebe uma ID do cliente e um segredo do cliente, que é usado para obter um token de acesso. Qualquer chamada feita pela SDK para servidores da Adobe requer um token de acesso válido. A SDK é responsável por registrar o aplicativo, obter e atualizar o token de acesso.
 
 >[!NOTE]
 >
@@ -61,9 +61,9 @@ Estas são as maneiras de obter uma Declaração de software.
 
    Um arquivo de texto é baixado. Use seu conteúdo como a Declaração de Software.
 
-Para obter mais informações, consulte [Dynamic Client Registration Management](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
+Para obter mais informações, consulte [Dynamic Client Registration Management](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
-### Se você não tiver acesso ao Painel Adobe TVE
+### Se você não tiver acesso ao Painel TVE do Adobe
 
 Enviar tíquete para `tve-support@adobe.com`. Inclua as informações necessárias, como canal, nome do aplicativo, versão e plataformas. Alguém da nossa equipe de suporte criará uma declaração de software para você.
 

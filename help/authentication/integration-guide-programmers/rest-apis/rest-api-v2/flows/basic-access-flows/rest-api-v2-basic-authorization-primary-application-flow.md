@@ -2,7 +2,7 @@
 title: Autorização Básica - Aplicativo Principal - Fluxo
 description: REST API V2 - Autorização básica - Aplicativo principal - Fluxo
 exl-id: 46bc9326-966e-44fc-8546-2f58be01b7bc
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
 > A implementação da REST API V2 é limitada pela documentação do [Mecanismo de limitação](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-O **Fluxo de autorização** dentro do direito de Autenticação Adobe Pass permite que o aplicativo de streaming determine se um MVPD permite ou nega a solicitação do usuário para transmitir conteúdo. Se a decisão for `Permit`, a resposta incluirá um token de mídia. O servidor do Adobe Pass assina o token de mídia e permite que o aplicativo de transmissão use a biblioteca de verificação de token de mídia para verificar sua autenticidade antes que o fluxo seja lançado.
+O **Fluxo de autorização** dentro do direito de Autenticação Adobe Pass permite que o aplicativo de streaming determine se uma MVPD permite ou nega a solicitação do usuário para transmitir conteúdo. Se a decisão for `Permit`, a resposta incluirá um token de mídia. O servidor do Adobe Pass assina o token de mídia e permite que o aplicativo de transmissão use a biblioteca de verificação de token de mídia para verificar sua autenticidade antes que o fluxo seja lançado.
 
 A verificação com a biblioteca do verificador de token de mídia deve ocorrer no serviço de back-end do aplicativo de streaming vinculado à cadeia de permissões para liberar um fluxo do CDN.
 
@@ -27,7 +27,7 @@ A verificação com a biblioteca do verificador de token de mídia deve ocorrer 
 
 ### Pré-requisitos {#prerequisites-retrieve-authorization-decisions-using-specific-mvpd}
 
-Antes de recuperar decisões de autorização usando um MVPD específico, verifique se os seguintes pré-requisitos foram atendidos:
+Antes de recuperar decisões de autorização usando uma MVPD específica, verifique se os seguintes pré-requisitos foram atendidos:
 
 * O aplicativo de streaming deve ter um perfil regular válido, criado com êxito para o MVPD usando um dos fluxos de autenticação básicos:
    * [Executar autenticação no aplicativo principal](rest-api-v2-basic-authentication-primary-application-flow.md)
@@ -37,9 +37,9 @@ Antes de recuperar decisões de autorização usando um MVPD específico, verifi
 
 ### Fluxo de trabalho (WRK) {#workflow-retrieve-authorization-decisions-using-specific-mvpd}
 
-Siga as etapas fornecidas para implementar o fluxo de autorização básico usando um MVPD específico executado em um aplicativo principal, conforme mostrado no diagrama a seguir.
+Siga as etapas fornecidas para implementar o fluxo de autorização básico usando uma MVPD específica executada em um aplicativo principal, conforme mostrado no diagrama a seguir.
 
-![Recuperar decisões de autorização usando mvpd](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-authorization-decisions-within-primary-application-using-specific-mvpd.png) específico
+![Recuperar decisões de autorização usando mvpd](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-authorization-decisions-within-primary-application-using-specific-mvpd.png) específico
 
 *Recuperar decisões de autorização usando mvpd* específico
 
@@ -55,7 +55,7 @@ Siga as etapas fornecidas para implementar o fluxo de autorização básico usan
 
 1. **Localizar perfil regular:** O servidor Adobe Pass identifica um perfil válido com base nos parâmetros e cabeçalhos recebidos.
 
-1. **Recuperar decisão MVPD para o recurso solicitado:** O servidor do Adobe Pass chama o ponto de extremidade de autorização MVPD para obter uma decisão `Permit` ou `Deny` para o recurso específico recebido do aplicativo de streaming.
+1. **Recuperar decisão do MVPD para o recurso solicitado:** O servidor do Adobe Pass chama o ponto de extremidade de autorização do MVPD para obter uma decisão `Permit` ou `Deny` para o recurso específico recebido do aplicativo de streaming.
 
 1. **Retornar a decisão `Permit` com o token de mídia:** A resposta do ponto de extremidade de Autorização de Decisões contém uma decisão `Permit` e um token de mídia.
 

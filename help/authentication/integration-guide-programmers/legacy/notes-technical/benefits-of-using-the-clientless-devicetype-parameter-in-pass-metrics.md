@@ -2,9 +2,9 @@
 title: Benefícios do uso do parâmetro deviceType sem cliente nas métricas de autenticação do Adobe Pass
 description: Benefícios do uso do parâmetro deviceType sem cliente nas métricas de autenticação do Adobe Pass
 exl-id: a5004887-d5fa-468e-971b-10806519175b
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
-source-wordcount: '374'
+source-wordcount: '368'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## Contexto
 
-Embora seja opcional, o parâmetro `deviceType` da API sem Cliente, quando presente, é usado nas métricas de Autenticação do Adobe Pass que estão sendo expostas por meio de [Monitoramento do Serviço de Qualificação](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md).
+Embora seja opcional, o parâmetro `deviceType` da API sem Cliente, quando presente, é usado nas métricas de Autenticação do Adobe Pass que estão sendo expostas por meio de [Monitoramento do Serviço de Qualificação](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md).
 
 Considerando que a conexão entre o parâmetro `deviceType` e seus **benefícios** nas métricas de Autenticação do Adobe Pass não foi declarada inicialmente, o escopo desta nota técnica é adicionar mais informações sobre eles.
 
@@ -35,10 +35,10 @@ O parâmetro `deviceType` estava presente na API sem cliente desde a primeira ve
 
 >[!IMPORTANT]
 >
->Se o parâmetro `deviceType` estiver definido corretamente, ele terá o seguinte **benefício** no Monitoramento do Serviço de Qualificação: ele oferece métricas que são [analisadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) ao usar Clientless, para que diferentes tipos de análise possam ser executados para, por exemplo, Roku, Apple TV, Xbox etc.
+>Se o parâmetro `deviceType` estiver definido corretamente, ele terá o seguinte **benefício** no Monitoramento do Serviço de Qualificação: ele oferece métricas que são [analisadas por tipo de dispositivo](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type) ao usar Clientless, para que diferentes tipos de análise possam ser executados para, por exemplo, Roku, Apple TV, Xbox etc.
 
 
-Para obter mais informações sobre a API de Monitoramento do Serviço de Qualificação, consulte a [árvore de detalhamento](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md#drill-down_tree), que ilustra as [dimensões](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#esm_dimensions) (recursos) disponíveis no ESM 2.0.
+Para obter mais informações sobre a API de Monitoramento do Serviço de Qualificação, consulte a [árvore de detalhamento,](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#esm_dimensions) (recursos) disponível no ESM 2.0.
 
 >[!NOTE]
 >
@@ -52,7 +52,7 @@ Para obter mais informações sobre a API de Monitoramento do Serviço de Qualif
 Para se beneficiar totalmente das métricas de Autenticação do Adobe Pass, há dois tipos de [APIs sem cliente](#web_srvs_summary) que estão sendo usadas no momento e que precisam ter o `deviceType` correto definido:
 
 1. As APIs que têm `regcode` como parâmetro obrigatório e usarão o parâmetro `deviceType` definido ao criar o `regcode`, com a seguinte chamada de API:
-   - [\&lt;REGGIE\_FQDN\>/reggie/v1/{requestorId}/regcode](#reg_serv)
+   - [\&lt;REGGIE\_FQDN\>/reggie/v1/](#reg_serv)
 
 1. APIs que têm `deviceType` como parâmetro opcional:
    - [\&lt;SP\_FQDN\>/api/v1/checkauthn](#check_authn_token)

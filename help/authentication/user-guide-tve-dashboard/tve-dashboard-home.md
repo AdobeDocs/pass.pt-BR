@@ -2,7 +2,7 @@
 title: Painel
 description: Saiba mais sobre a página inicial do Painel TVE.
 exl-id: 3073cd86-89f8-4c65-996b-24edda24f25b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '276'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso dessa API exige uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso dessa API exige uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 A seção **Dashboard** no painel esquerdo serve como página inicial do Painel TVE de Autenticação do Adobe Pass.
 
@@ -31,7 +31,7 @@ Nesta seção, você pode acessar a documentação pública diretamente da mensa
 * **Atualizações do banco de dados**: o número de alterações de configuração feitas no ambiente atual. Selecione **Exibir mais na seção Log de Alterações** para acessar informações detalhadas na seção [Log de Alterações](tve-dashboard-changes-log.md).
 * **Painel do ESM**: fique de olho no próximo Painel do ESM, oferecendo métricas detalhadas sobre o uso de propriedades no ambiente atual. Essa funcionalidade estará acessível em atualizações futuras.
 
-![Tela de boas-vindas](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
+![Tela de boas-vindas](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
 
 *Tela de boas-vindas*
 
@@ -43,7 +43,7 @@ Esta seção apresenta as 10 alterações de configuração mais recentes que in
 * **Enviado por**: a conta responsável pela alteração.
 * **Data de push**: a data em que a alteração foi feita.
 
-![Status de Configuração de um Log de alterações](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-configuration-status-panel-view.png)
+![Status de Configuração de um Log de alterações](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-configuration-status-panel-view.png)
 
 *Status de Configuração de um Log de alterações*
 

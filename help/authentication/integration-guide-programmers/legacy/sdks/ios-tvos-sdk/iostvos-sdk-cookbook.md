@@ -2,7 +2,7 @@
 title: Guia do iOS/tvOS
 description: Guia do iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '2424'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -29,7 +29,7 @@ A solução de direitos de autenticação da Adobe Pass para iOS/tvOS é dividid
 
 * O domínio AccessEnabler - é aqui que os workflows de direito são implementados no formato de:
 
-   * Chamadas de rede feitas para servidores back-end do Adobe
+   * Chamadas de rede feitas aos servidores back-end da Adobe
    * Regras de lógica de negócios relacionadas aos workflows de autenticação e autorização
    * Gerenciamento de vários recursos e processamento do estado do fluxo de trabalho (como o cache de token)
 
@@ -46,9 +46,9 @@ A atividade de rede do AccessEnabler ocorre em seu próprio thread, portanto, o 
 * A camada de aplicativo da interface envia mensagens para o domínio AccessEnabler por meio das chamadas de API expostas pela biblioteca AccessEnabler.
 * O AccessEnabler responde à camada da interface do usuário por meio dos métodos de retorno de chamada incluídos no protocolo AccessEnabler que a camada da interface do usuário registra na biblioteca AccessEnabler.
 
-## Configurar o serviço de ID do Experience Cloud (ID do visitante) {#visitorIDSetup}
+## Configurar o serviço da Experience Cloud ID (ID do visitante) {#visitorIDSetup}
 
-Configurar o valor [ID de Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=pt-BR) é importante do ponto de vista [!DNL Analytics]. Depois que um valor `visitorID` é definido, o SDK envia essas informações junto com cada chamada de rede e o servidor de Autenticação [!DNL Adobe Pass] coleta essas informações. É possível correlacionar a análise do serviço de Autenticação da Adobe Pass com quaisquer outros relatórios de análise que você tenha de outros aplicativos ou sites. Informações sobre como configurar visitorID podem ser encontradas [aqui](#setOptions).
+Configurar o valor [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html) é importante do ponto de vista [!DNL Analytics]. Depois que um valor `visitorID` é definido, o SDK envia essas informações junto com cada chamada de rede e o servidor de Autenticação [!DNL Adobe Pass] coleta essas informações. É possível correlacionar a análise do serviço de Autenticação da Adobe Pass com quaisquer outros relatórios de análise que você tenha de outros aplicativos ou sites. Informações sobre como configurar visitorID podem ser encontradas [aqui](#setOptions).
 
 ## Fluxos de Direitos {#entitlement}
 
@@ -120,7 +120,7 @@ está autorizado a visualizar.
       * Acionado por uma ação do usuário (selecionando &quot;Cancelar&quot; ou &quot;Outros provedores de TV&quot; na caixa de diálogo SSO do Apple).
       * O parâmetro viewController é a Caixa de Diálogo de SSO do Apple e precisa ser descartado do controlador de exibição principal.
 
-![](../../../../assets/iOS-flows.png)
+![](/help//authentication/assets/iOS-flows.png)
 
 ### B. Fluxo de inicialização {#startup_flow}
 
@@ -136,7 +136,6 @@ está autorizado a visualizar.
 gerente para organizar isso).
 
    * **Acionadores:**
-
      Retorno de chamada [setRequestorComplete()](#$setReqComplete).
 
    >[!NOTE]

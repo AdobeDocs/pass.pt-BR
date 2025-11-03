@@ -2,7 +2,7 @@
 title: Glossário da REST API V2
 description: Glossário da REST API V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 Este documento fornece definições para termos usados ao integrar a API REST V2 de autenticação da Adobe Pass.
 
@@ -23,7 +23,7 @@ Este documento fornece definições para termos usados ao integrar a API REST V2
 
 ## Termos do Glossário {#glossary-terms}
 
-### Um {#a}
+### A {#a}
 
 #### Autenticação {#authentication}
 
@@ -63,7 +63,7 @@ A decisão é um conceito de Autenticação da Adobe Pass que armazena informaç
 
 A degradação é um recurso de Autenticação Adobe Pass que permite que um usuário acesse conteúdo protegido mesmo quando seu [MVPD](#mvpd) sofrer uma interrupção de serviço.
 
-Para obter mais informações, consulte a documentação do [Recurso de Degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md).
+Para obter mais informações, consulte a documentação do [Recurso de Degradação](/help/premium-workflow/degraded-access/degradation-feature.md).
 
 #### ID do dispositivo {#device-id}
 
@@ -121,7 +121,7 @@ Para obter mais informações, consulte a documentação do [Verificador de Toke
 
 O distribuidor de programação de vídeo multicanal (MVPD) é uma empresa que fornece serviços de televisão aos consumidores por cabo, satélite ou serviços baseados na Internet.
 
-O MVPD é identificado por um valor único definido durante o processo de integração entre o MVPD e o Adobe.
+A MVPD é identificada por um valor único definido durante o processo de integração entre a MVPD e a Adobe.
 
 Sinônimo de [Provedor de TV](#tv-provider) e [Provedor de Identidade](#identity-provider).
 
@@ -131,7 +131,7 @@ Sinônimo de [Provedor de TV](#tv-provider) e [Provedor de Identidade](#identity
 
 O parceiro é uma empresa que fornece um serviço ou uma estrutura a um [Programador](#programmer) para habilitar uma experiência de usuário de logon único.
 
-O parceiro é identificado por um valor único (por exemplo, &quot;apple&quot;) que é definido durante o processo de integração entre o parceiro e a Adobe.
+O parceiro é identificado por um valor único (por exemplo, &quot;apple&quot;) definido durante o processo de integração entre o parceiro e a Adobe.
 
 #### Pré-autorização {#preauthorization}
 
@@ -207,7 +207,7 @@ Para obter mais informações, consulte a documentação do [Logon único usando
 
 O provedor de serviços é uma marca (canal) pertencente a um [Programador](#programmer).
 
-O provedor de serviços é identificado por um valor único definido durante o processo de integração entre o Programador e o Adobe.
+O provedor de serviços é identificado por um valor único definido durante o processo de integração entre o Programador e a Adobe.
 
 Sinônimo do termo usado anteriormente pela ID do solicitante.
 
@@ -229,13 +229,13 @@ O SSO (logon único) é um processo que permite ao usuário autenticar uma vez e
 
 O TempPass básico é um recurso de Autenticação da Adobe Pass que permite que um usuário acesse conteúdo protegido por um tempo limitado sem a necessidade de autenticação com um [MVPD](#mvpd).
 
-Para obter mais informações, consulte a documentação do [Basic TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#basic-temp-pass).
+Para obter mais informações, consulte a documentação do [Basic TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#basic-temp-pass).
 
 #### TempPass Promocional {#temp-pass-promotional}
 
 O TempPass promocional é um recurso de Autenticação da Adobe Pass que permite que um usuário acesse conteúdo protegido por um número máximo de recursos e um tempo limitado sem a necessidade de autenticação com uma [MVPD](#mvpd).
 
-Para obter mais informações, consulte a documentação do [TempPass Promocional](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass).
+Para obter mais informações, consulte a documentação do [TempPass Promocional](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass).
 
 #### TTL {#ttl}
 
@@ -257,7 +257,7 @@ Para obter mais informações, consulte a documentação do [Guia do Usuário do
 
 O provedor de TV é uma empresa que fornece serviços de televisão aos consumidores por cabo, satélite ou serviços baseados na Internet.
 
-O provedor de TV é identificado por um valor único definido durante o processo de integração entre o provedor de TV e o Adobe.
+O provedor de TV é identificado por um valor único definido durante o processo de integração entre o provedor de TV e a Adobe.
 
 Sinônimo de [MVPD](#mvpd) e [Provedor de Identidade](#identity-provider).
 

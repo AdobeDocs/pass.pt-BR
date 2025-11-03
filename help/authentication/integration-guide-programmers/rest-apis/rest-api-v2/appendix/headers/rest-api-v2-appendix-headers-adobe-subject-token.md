@@ -2,7 +2,7 @@
 title: Cabeçalho - Adobe-Subject-Token
 description: REST API V2 - Cabeçalho - Adobe-Subject-Token
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 2%
@@ -47,10 +47,10 @@ A Assinatura Web JSON (`JWS`) ou a Criptografia Web JSON (`JWE`), que é um Toke
 
 Isso está disponível para as seguintes plataformas:
 
-* [Guia do Amazon SSO (REST API V2)](../../../../features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+* [Guia do Amazon SSO (REST API V2)](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
 
 ## Exemplos {#examples}
 
 Consulte os exemplos descritos para as seguintes plataformas:
 
-* [Guia do Amazon SSO (REST API V2)](../../../../features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+* [Guia do Amazon SSO (REST API V2)](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)

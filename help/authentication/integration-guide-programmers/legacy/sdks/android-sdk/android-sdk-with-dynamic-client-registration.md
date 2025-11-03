@@ -2,7 +2,7 @@
 title: Android SDK com registro dinâmico do cliente
 description: Android SDK com registro dinâmico do cliente
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1301'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -37,12 +37,12 @@ Para o Android, o uso das Guias personalizadas do Chrome restringe o acesso a co
 
 ## Registro de cliente dinâmico {#DCR}
 
-O Android SDK v3.0+ usará o procedimento de Registro Dinâmico do Cliente conforme definido na [Visão Geral do Registro Dinâmico do Cliente](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+O Android SDK v3.0+ usará o procedimento de Registro Dinâmico do Cliente conforme definido na [Visão Geral do Registro Dinâmico do Cliente](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ## Demonstração de recursos {#Demo}
 
-Assista a [este webinário](https://my.adobeconnect.com/pzkp8ujrigg1/), que fornece mais contexto sobre o recurso e contém uma demonstração sobre como gerenciar as instruções de software usando o Painel TVE e como testar as geradas usando um aplicativo de demonstração fornecido pelo Adobe como parte do Android SDK.
+Assista a [este webinário](https://my.adobeconnect.com/pzkp8ujrigg1/), que fornece mais contexto sobre o recurso e contém uma demonstração sobre como gerenciar as instruções de software usando o Painel TVE e como testar as geradas usando um aplicativo de demonstração fornecido pela Adobe como parte do Android SDK.
 
 ## Alterações na API {#API}
 
@@ -75,7 +75,7 @@ Observação: o parâmetro redirectUrl ou redirect\_uri em strings.xml deve ser 
 
 A resposta do servidor contém uma lista de MVPDs juntamente com algumas informações de configuração anexadas à identidade do Canal. A resposta do servidor é usada internamente pelo código Access Enabler. Somente o status da operação (ou seja, SUCCESS/FAIL) é apresentado ao seu aplicativo por meio do retorno de chamada setRequestorComplete().
 
-Se o parâmetro *urls* não for usado, a chamada de rede resultante será direcionada ao URL do provedor de serviços padrão: o ambiente de Liberação/Produção do Adobe.
+Se o parâmetro *urls* não for usado, a chamada de rede resultante será direcionada à URL do provedor de serviços padrão: o ambiente de Versão/Produção do Adobe.
 
 Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante será direcionada a todas as URLs fornecidas no parâmetro *urls*. Todas as solicitações de configuração são acionadas simultaneamente em threads separados. O primeiro respondente tem prioridade ao compilar a lista de MVPDs. Para cada MVPD na lista, o Ativador de acesso lembra o URL do provedor de serviços associado. Todas as solicitações de direito subsequentes são direcionadas ao URL associado ao provedor de serviços que foi emparelhado com o MVPD de destino durante a fase de configuração.
 
@@ -136,7 +136,7 @@ Chame AccessEnabler.getInstance(appContext,softwareStatement,
 redirectUrl)
 
 
-### 2. Configurar Aplicativo
+### &#x200B;2. Configurar Aplicativo
 
 a. setRequestor(requestor\_id)
 

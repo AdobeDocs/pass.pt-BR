@@ -2,9 +2,9 @@
 title: Referência da API REST
 description: Referência da API Rest
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
-source-wordcount: '669'
+source-wordcount: '661'
 ht-degree: 3%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -58,14 +58,14 @@ A tabela abaixo lista os serviços Web disponíveis para a abordagem sem cliente
 
 | Sr | Ponto Final do Serviço Web | Descrição | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->. | Hospedado em | Chamado por |
 |-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------|
-| 1. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) | Retorna o código de registro gerado aleatoriamente e o URI da página de logon | 2 | Serviço de código Adobe </br>Reg | Dispositivo inteligente |
-| 2. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | Retorna o registro do código de registro contendo o código de registro UUID, o código de registro e a ID do dispositivo com hash | 8 | Serviço de código Adobe </br>Reg | Adobe Pass Authentication |
-| 3. | [&lt;SP_FQDN>/api/v1/config/ </br> {requestorId}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) | Retorna a lista de MVPDs configurados para o solicitante | 5 | Serviço </br>de autenticação </br>do Adobe </br>Adobe Pass | Logon </br>Aplicativo </br>Web |
-| 4. | [&lt;SP_FQDN>/api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | Inicia o processo de Autenticação informando o evento de seleção do MVPD. Cria um registro no banco de dados de autenticação, que é reconciliado quando uma resposta bem-sucedida é recebida do MVPD (Etapa 13) | 7 | Serviço </br>de autenticação </br>do Adobe </br>Adobe Pass | Logon </br>Aplicativo </br>Web |
+| 1. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) | Retorna o código de registro gerado aleatoriamente e o URI da página de logon | 2 | Serviço de código do Adobe </br>Reg | Dispositivo inteligente |
+| 2. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | Retorna o registro do código de registro contendo o código de registro UUID, o código de registro e a ID do dispositivo com hash | 8 | Serviço de código do Adobe </br>Reg | Adobe Pass Authentication |
+| 3. | [&lt;SP_FQDN>/api/v1/config/ </br>{requestorId}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) | Retorna a lista de MVPDs configurados para o solicitante | 5 | Serviço </br>de autenticação </br>do Adobe Pass </br>do Adobe | Logon </br>Aplicativo </br>Web |
+| 4. | [&lt;SP_FQDN>/api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | Inicia o processo de Autenticação informando o evento de seleção do MVPD. Cria um registro no banco de dados de autenticação, que é reconciliado quando uma resposta bem-sucedida é recebida do MVPD (Etapa 13) | 7 | Serviço </br>de autenticação </br>do Adobe Pass </br>do Adobe | Logon </br>Aplicativo </br>Web |
 | 5. | Consumidor de Asserção SAML | Fluxo de trabalho SAML existente entre a Autenticação do Adobe Pass e o MVPD | 13 | Serviço </br>de autenticação </br>do Adobe Pass | Adobe Pass Authentication |
-| 6. | [&lt;SP_FQDN>/api/v1/checkauthn/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | O Aplicativo Web de Logon pode verificar se a tentativa de fluxo de logon foi bem-sucedida |                                                                                             | Autenticação </br> do Adobe Pass   </br>Serviço | Logon   </br>Web   </br>Aplicativo |
+| 6. | [&lt;SP_FQDN>/api/v1/checkauthn/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | O Aplicativo Web de Logon pode verificar se a tentativa de fluxo de logon foi bem-sucedida |                                                                                             | Autenticação </br> do Adobe Pass   </br>Serviço | Logon   </br>Web   </br>Aplicativo |
 | 7. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | Obtém metadados relacionados ao token de Autenticação | 15 | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
-| 8. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md) | Exclui o registro de código regulamentar e libera o código regulamentar para reutilização | 16 | Serviço de código Adobe </br>Reg | Adobe Pass Authentication |
+| 8. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md) | Exclui o registro de código regulamentar e libera o código regulamentar para reutilização | 16 | Serviço de código do Adobe </br>Reg | Adobe Pass Authentication |
 | 9. | [&lt;SP_FQDN>/api/v1/authorize](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md) | Obtém a resposta de autorização. | 17 | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
 | 10. | [&lt;SP_FQDN>/api/v1/checkauthn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) | Indica se o dispositivo tem um token de autenticação não expirado. |                                                                                             | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
 | 11. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | Retorna o token de autenticação se for encontrado. |                                                                                             | Serviço </br>de autenticação </br>do Adobe Pass | Dispositivo inteligente |
@@ -81,4 +81,4 @@ A tabela abaixo lista os serviços Web disponíveis para a abordagem sem cliente
 
 ## Segurança da API REST {#security}
 
-Todas as APIs REST de Autenticação do Adobe Pass devem ser chamadas usando o protocolo HTTPS para comunicação segura. Além disso, a maioria das APIs chamadas deve conter um token de acesso obtido conforme descrito na documentação da API [Recuperar token de acesso](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+Todas as APIs REST de Autenticação do Adobe Pass devem ser chamadas usando o protocolo HTTPS para comunicação segura. Além disso, a maioria das APIs chamadas deve conter um token de acesso obtido conforme descrito na documentação da API [Recuperar token de acesso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).

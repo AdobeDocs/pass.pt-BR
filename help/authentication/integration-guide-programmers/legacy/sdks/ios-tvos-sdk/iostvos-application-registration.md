@@ -2,7 +2,7 @@
 title: Registro de aplicativo iOS/tvOS
 description: Registro de aplicativo iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '632'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -22,13 +22,13 @@ ht-degree: 0%
 
 ## Introdução {#Intro}
 
-A partir da versão 3.0 do iOS/tvOS AccessEnabler SDK, estamos alterando o mecanismo de autenticação com servidores Adobe. Em vez de usar uma chave pública e um sistema secreto para assinar o requestorID, estamos introduzindo o conceito de uma string de instrução de software que pode ser usada para obter um token de acesso usado posteriormente para todas as chamadas que o SDK faz aos nossos servidores. Além de uma declaração de software, você também precisará de um esquema de URL personalizado para seu aplicativo.
+A partir da versão 3.0 do iOS/tvOS AccessEnabler SDK, estamos alterando o mecanismo de autenticação com os servidores da Adobe. Em vez de usar uma chave pública e um sistema secreto para assinar o requestorID, estamos introduzindo o conceito de uma string de instrução de software que pode ser usada para obter um token de acesso usado posteriormente para todas as chamadas que o SDK faz aos nossos servidores. Além de uma declaração de software, você também precisará de um esquema de URL personalizado para seu aplicativo.
 
-Para obter mais informações, consulte [Visão Geral do Registro de Cliente Dinâmico](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Para obter mais informações, consulte [Visão Geral do Registro de Cliente Dinâmico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## O que é uma Declaração de Software? {#Soft_state}
 
-Uma Declaração de Software é um token JWT que contém informações sobre seu aplicativo. Cada aplicativo deve ter uma instrução de software exclusiva, usada por nossos servidores para identificar o aplicativo no sistema Adobe. A Instrução de Software precisa ser passada quando você inicializar o AccessEnabler SDK e será usada para registrar o aplicativo com o Adobe. Após o registro, a SDK receberá uma ID do cliente e um segredo do cliente que será usado para obter um token de acesso. Qualquer chamada feita pela SDK para nossos servidores exigirá um token de acesso válido. A SDK é responsável por registrar o aplicativo, obter e atualizar o token de acesso.
+Uma Declaração de Software é um token JWT que contém informações sobre seu aplicativo. Cada aplicativo deve ter uma declaração de software exclusiva, usada pelos nossos servidores para identificar o aplicativo no sistema da Adobe. A Instrução de Software precisa ser passada ao inicializar o AccessEnabler SDK e será usada para registrar o aplicativo no Adobe. Após o registro, a SDK receberá uma ID do cliente e um segredo do cliente que será usado para obter um token de acesso. Qualquer chamada feita pela SDK para nossos servidores exigirá um token de acesso válido. A SDK é responsável por registrar o aplicativo, obter e atualizar o token de acesso.
 
 **Observação:** uma Instrução de Software é específica para o aplicativo e a mesma instrução de software não pode ser usada em mais de um aplicativo. Observe que as instruções de software de nível de programador também seguem o mesmo, ou seja, elas só podem ser usadas para um único aplicativo - seja de canal único ou de vários canais. Esta limitação também se aplica ao regime personalizado.
 
@@ -45,9 +45,9 @@ Uma Declaração de Software é um token JWT que contém informações sobre seu
 - Você deve ver uma lista com todos os aplicativos registrados. Clique em   Botão `Download` no aplicativo recém-criado. Talvez seja necessário aguardar alguns minutos antes que a Declaração de software esteja pronta para download.
 - Um arquivo de texto será baixado. Use seu conteúdo como sua Declaração de Software.
 
-Para obter mais informações, consulte [Dynamic Client Registration Management](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
+Para obter mais informações, consulte [Dynamic Client Registration Management](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
-### Se você não tiver acesso ao Painel do Adobe TVE:
+### Se você não tiver acesso ao Painel TVE do Adobe:
 
 Enviar tíquete para <tve-support@adobe.com>. Inclua todas as informações necessárias, como canal, nome do aplicativo, versão e plataformas. Uma pessoa da nossa equipe de suporte criará uma declaração de software para você.
 
@@ -66,7 +66,7 @@ Depois de obter a Instrução de Software, você precisará passá-la como um pa
 - Um novo esquema personalizado será gerado para seu aplicativo. Exemplo: `adbe.1JqxQsYhQOCIrwPjaooY8w://`
 - Enviar as alterações para o servidor.
 
-### Se você não tiver acesso ao Painel do Adobe TVE:
+### Se você não tiver acesso ao Painel TVE do Adobe:
 
 Enviar tíquete para <tve-support@adobe.com>. Inclua a ID do canal e alguém de nossa equipe de suporte criará um esquema personalizado para você.
 

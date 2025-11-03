@@ -2,7 +2,7 @@
 title: Cookbook da API REST (cliente para servidor)
 description: Cliente do guia da API rest para o servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%
@@ -49,12 +49,12 @@ Em uma solução cliente para servidor que funciona, os seguintes componentes es
 
 ### Registro dinâmico de cliente (DCR)
 
-O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicativo ou servidor do programador e os serviços da Adobe Pass. O fluxo do DCR é separado e está descrito na [Documentação de Visão Geral do Registro Dinâmico de Clientes](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicativo ou servidor do programador e os serviços da Adobe Pass. O fluxo do DCR é separado e está descrito na [Documentação de Visão Geral do Registro Dinâmico de Clientes](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Fluxos de aplicativo de transmissão (dispositivo inteligente)
 
-![](../../../../assets/smart-device-app-flow.png)
+![](/help//authentication/assets/smart-device-app-flow.png)
 
 #### Fluxo de inicialização
 
@@ -119,7 +119,7 @@ usuário.
 
 ### Fluxo de aplicativo AuthN (2ª tela)
 
-![](../../../../assets/secnd-screen-authn-flow.png)
+![](/help//authentication/assets/secnd-screen-authn-flow.png)
 
 1. Obtenha uma lista de MVPDs para este usuário. Por exemplo: [`<SP_FQDN>/api/v1/config/[requestorID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
 
@@ -148,4 +148,4 @@ Para implementações TempPass e TempPass Promocional em que o usuário não é 
 **Para usar essa API, o Aplicativo de Streaming precisa verificar a exclusividade da ID do dispositivo, pois ela está sendo usada para identificar o token, juntamente com os dados adicionais opcionais.**
 
 
-![](../../../../assets/temp-pass-promo-temppass.png)
+![](/help//authentication/assets/temp-pass-promo-temppass.png)

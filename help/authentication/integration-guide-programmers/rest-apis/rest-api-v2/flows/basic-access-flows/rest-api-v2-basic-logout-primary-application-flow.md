@@ -2,7 +2,7 @@
 title: Logout básico - Aplicativo principal - Fluxo
 description: REST API V2 - Logout básico - Aplicativo principal - Fluxo
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -22,7 +22,7 @@ ht-degree: 0%
 O **fluxo de logout** no direito de Autenticação Adobe Pass permite que o aplicativo de streaming execute duas etapas principais:
 
 * Exclua os perfis comuns salvos no back-end do Adobe Pass.
-* Use um agente do usuário (navegador) para navegar até o endpoint de logout do MVPD, acionando uma limpeza no back-end do MVPD.
+* Use um agente do usuário (navegador) para navegar até o endpoint de logout da MVPD, acionando uma limpeza no back-end do MVPD.
 
 O fluxo de logout básico permite consultar os seguintes cenários:
 
@@ -33,13 +33,13 @@ O fluxo de logout básico permite consultar os seguintes cenários:
 
 ### Pré-requisitos {#prerequisites-initiate-logout-for-specific-mvpd-with-logout-endpoint}
 
-Antes de iniciar o logout de um MVPD específico com um endpoint de logout, verifique se os seguintes pré-requisitos foram atendidos:
+Antes de iniciar o logout de uma MVPD específica com um endpoint de logout, verifique se os seguintes pré-requisitos foram atendidos:
 
 * O aplicativo de streaming deve ter um perfil regular válido, criado com êxito para o MVPD usando um dos fluxos de autenticação básicos:
    * [Executar autenticação no aplicativo principal](rest-api-v2-basic-authentication-primary-application-flow.md)
    * [Realizar autenticação no aplicativo secundário com mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [Executar autenticação no aplicativo secundário sem mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
-* O aplicativo de streaming deve iniciar o fluxo de logout quando precisar fazer logoff do MVPD.
+* O aplicativo de streaming deve iniciar o fluxo de logout quando precisar sair do MVPD.
 
 >[!IMPORTANT]
 >
@@ -51,9 +51,9 @@ Antes de iniciar o logout de um MVPD específico com um endpoint de logout, veri
 
 ### Fluxo de trabalho (WRK) {#workflow-initiate-logout-for-specific-mvpd-with-logout-endpoint}
 
-Siga as etapas fornecidas para implementar o fluxo de logout básico para um MVPD específico com um endpoint de logout executado em um aplicativo primário, conforme mostrado no diagrama a seguir.
+Siga as etapas fornecidas para implementar o fluxo de logout básico para uma MVPD específica com um endpoint de logout executado em um aplicativo principal, conforme mostrado no diagrama a seguir.
 
-![Iniciar logout para mvpd específico com ponto de extremidade de logout](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
+![Iniciar logout para mvpd específico com ponto de extremidade de logout](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
 
 *Iniciar logout para mvpd específico com ponto de extremidade de logout*
 
@@ -72,7 +72,7 @@ Siga as etapas fornecidas para implementar o fluxo de logout básico para um MVP
 1. **Excluir perfil regular:** o servidor do Adobe Pass exclui o perfil regular identificado do back-end do Adobe Pass.
 
 1. **Indique a próxima ação:** A resposta do ponto de extremidade de logout do Adobe Pass contém os dados necessários para orientar o aplicativo de streaming em relação à próxima ação:
-   * O atributo `url` está presente, pois o MVPD dá suporte ao fluxo de logout.
+   * O atributo `url` está presente, pois a MVPD oferece suporte ao fluxo de logout.
    * O atributo `actionName` está definido como &quot;logout&quot;.
    * O atributo `actionType` está definido como &quot;interativo&quot;.
 
@@ -91,7 +91,7 @@ Siga as etapas fornecidas para implementar o fluxo de logout básico para um MVP
    > 
    > Se a validação falhar, uma resposta de erro será gerada, fornecendo informações adicionais que seguem a documentação de [Códigos de erro aprimorados](../../../../features-standard/error-reporting/enhanced-error-codes.md).
 
-1. **Iniciar logout do MVPD:** O aplicativo de streaming lê o `url` e usa um agente do usuário para iniciar o fluxo de logout com o MVPD. O fluxo pode incluir vários redirecionamentos para sistemas MVPD. Ainda assim, o resultado é que o MVPD executa sua limpeza interna e envia a confirmação de logout final de volta para o back-end do Adobe Pass.
+1. **Iniciar logout do MVPD:** o aplicativo de streaming lê o `url` e usa um agente do usuário para iniciar o fluxo de logout com o MVPD. O fluxo pode incluir vários redirecionamentos para sistemas MVPD. Ainda assim, o resultado é que o MVPD executa sua limpeza interna e envia a confirmação de logout final de volta para o back-end do Adobe Pass.
 
 1. **Indicar logout concluído:** O aplicativo de streaming pode esperar que o agente do usuário alcance o `redirectUrl` fornecido e pode usá-lo como um sinal para exibir, opcionalmente, uma mensagem específica na interface do usuário.
 
@@ -99,13 +99,13 @@ Siga as etapas fornecidas para implementar o fluxo de logout básico para um MVP
 
 ### Pré-requisitos {#prerequisites-initiate-logout-for-specific-mvpd-without-logout-endpoint}
 
-Antes de iniciar o logout de um MVPD específico sem um endpoint de logout, verifique se os seguintes pré-requisitos foram atendidos:
+Antes de iniciar o logout de uma MVPD específica sem um endpoint de logout, verifique se os seguintes pré-requisitos foram atendidos:
 
 * O aplicativo de streaming deve ter um perfil regular válido, criado com êxito para o MVPD usando um dos fluxos de autenticação básicos:
    * [Executar autenticação no aplicativo principal](rest-api-v2-basic-authentication-primary-application-flow.md)
    * [Realizar autenticação no aplicativo secundário com mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [Executar autenticação no aplicativo secundário sem mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
-* O aplicativo de streaming deve iniciar o fluxo de logout quando precisar fazer logoff do MVPD.
+* O aplicativo de streaming deve iniciar o fluxo de logout quando precisar sair do MVPD.
 
 >[!IMPORTANT]
 >
@@ -117,9 +117,9 @@ Antes de iniciar o logout de um MVPD específico sem um endpoint de logout, veri
 
 ### Fluxo de trabalho (WRK) {#workflow-initiate-logout-for-specific-mvpd-without-logout-endpoint}
 
-Siga as etapas fornecidas para implementar o fluxo de logout básico para um MVPD específico sem um endpoint de logout executado em um aplicativo primário, conforme mostrado no diagrama a seguir.
+Siga as etapas fornecidas para implementar o fluxo de logout básico para uma MVPD específica sem um endpoint de logout executado em um aplicativo principal, conforme mostrado no diagrama a seguir.
 
-![Iniciar logout para mvpd específico sem ponto de extremidade de logout](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
+![Iniciar logout para mvpd específico sem ponto de extremidade de logout](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
 
 *Iniciar logout para mvpd específico sem ponto de extremidade de logout*
 
@@ -138,7 +138,7 @@ Siga as etapas fornecidas para implementar o fluxo de logout básico para um MVP
 1. **Excluir perfil regular:** o servidor do Adobe Pass exclui o perfil regular identificado.
 
 1. **Indique a próxima ação:** A resposta do ponto de extremidade de logout do Adobe Pass contém os dados necessários para orientar o aplicativo de streaming em relação à próxima ação:
-   * O atributo `url` está ausente, pois o MVPD não oferece suporte ao fluxo de logout.
+   * O atributo `url` está ausente, pois a MVPD não oferece suporte ao fluxo de logout.
    * O atributo `actionName` está definido como &quot;concluído&quot;.
    * O atributo `actionType` está definido como &quot;nenhum&quot;.
 

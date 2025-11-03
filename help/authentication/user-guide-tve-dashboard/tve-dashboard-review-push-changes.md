@@ -2,7 +2,7 @@
 title: Revisar e enviar alterações
 description: Saiba como revisar e enviar alterações no painel da TVE.
 exl-id: 2f29712e-7b3f-472a-a36f-32780bec1508
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso dessa API exige uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso dessa API exige uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 O TVE Dashboard permite revisar as alterações na configuração atual e implantá-las no servidor. Sempre que você modificar a configuração atual, uma notificação será exibida na tela, solicitando que você revise e envie essas alterações.
 
@@ -21,7 +21,7 @@ Siga estas etapas para revisar e enviar alterações.
 
 1. Localize a revisão e a notificação de alterações por push na parte inferior da tela.
 
-   ![Revisar e enviar notificação de alterações](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
+   ![Revisar e enviar notificação de alterações](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
 
    *Caixa de notificação Revisar e enviar alterações*
 
@@ -29,7 +29,7 @@ Siga estas etapas para revisar e enviar alterações.
 
 1. Digite uma breve descrição da alteração em **Descrição da configuração** para acompanhar e entender efetivamente a finalidade de cada alteração.
 
-   ![Adicionar uma Descrição de Configuração](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
+   ![Adicionar uma Descrição de Configuração](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
 
    *Adicionar uma Descrição de Configuração*
 
@@ -39,7 +39,7 @@ Siga estas etapas para revisar e enviar alterações.
 
 1. Selecione **Exibir** para revisar os valores novos e anteriores associados a uma alteração de configuração.
 
-   ![Exibir alterações de configuração](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
+   ![Exibir alterações de configuração](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
 
    *Exibir alterações de configuração*
 
@@ -49,7 +49,7 @@ Siga estas etapas para revisar e enviar alterações.
    >
    >O botão **Enviar alterações** fica ativo somente após adicionar uma **Descrição de Configuração**.
 
-   ![Enviar alterações](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
+   ![Enviar alterações](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
 
    *Enviar alterações*
 

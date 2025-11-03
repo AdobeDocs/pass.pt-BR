@@ -2,7 +2,7 @@
 title: Guia de início rápido do programador
 description: Guia de início rápido do programador
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 37858fa83aecbdf443a4a6058c78e4f9246eee42
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 0%
@@ -13,19 +13,19 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
-Este guia de início rápido destina-se a provedores de conteúdo (programadores) que planejam integrar a Autenticação Adobe® Pass aos seus sites ou aplicativos.
+Este guia de início rápido é destinado a provedores de conteúdo (programadores) que planejam integrar o Adobe® Pass Authentication em seus sites ou aplicativos.
 
 Este documento descreve as principais etapas iniciais para garantir um início tranquilo e eficiente do processo de integração. Ela tem como objetivo esclarecer expectativas e fornecer orientação sobre como colaboraremos com parceiros para obter integrações bem-sucedidas.
 
-O Adobe fornece uma variedade de recursos para ajudar você a integrar a Autenticação Adobe Pass ao seu site ou aplicativo. Consulte as menções **&quot;Você fornecerá&quot;** e **&quot;Adobe fornecerá&quot;** de cada seção abaixo.
+O Adobe fornece uma variedade de recursos para ajudar você a integrar a Autenticação Adobe Pass ao seu site ou aplicativo. Consulte as menções **&quot;Você fornecerá&quot;** e **&quot;A Adobe fornecerá&quot;** de cada seção abaixo.
 
 ## Configurar processo {#setup-process}
 
 O processo de configuração envolve, entre outras, as seguintes etapas:
 
-![Processo de integração de autenticação do Adobe® Pass](../assets/progr-flow-int-lifecycle.png)
+![Processo de integração de autenticação do Adobe® Pass](/help/authentication/assets/progr-flow-int-lifecycle.png)
 
 *Processo de integração de autenticação do Adobe® Pass*
 
@@ -41,7 +41,7 @@ O processo de configuração envolve, entre outras, as seguintes etapas:
 
 * **Nomes de domínio**
 
-  Essa lista incluirá os nomes de domínio reais listados para Adobe para representar o provedor de serviços. Ele garante que somente seus domínios autorizados possam acessar a Autenticação do Adobe Pass usando seus metadados. Certifique-se de fornecer e identificar claramente os nomes de domínio para ambientes de produção e de preparo (teste), pois eles podem ser diferentes.
+  Essa lista incluirá os nomes de domínio reais listados para a Adobe para representar o provedor de serviços. Ele garante que somente seus domínios autorizados possam acessar a Autenticação do Adobe Pass usando seus metadados. Certifique-se de fornecer e identificar claramente os nomes de domínio para ambientes de produção e de preparo (teste), pois eles podem ser diferentes.
 
 **Você fornecerá** via MVPD:
 
@@ -69,13 +69,13 @@ O processo de configuração envolve, entre outras, as seguintes etapas:
 
 ## Acesso ao suporte ao cliente {#access-customer-support}
 
-O **Adobe fornecerá** acesso ao nosso sistema de suporte ao cliente via [Zendesk](https://tve.zendesk.com/home). Para acessar o Zendesk, você deve se registrar e criar uma conta em https://tve.zendesk.com/home. Não há limite para o número de usuários que você pode registrar. Depois de registrado, você pode exibir e compartilhar comentários em qualquer tíquete enviado.
+A **Adobe fornecerá** acesso ao nosso sistema de suporte ao cliente via [Zendesk](https://tve.zendesk.com/home). Para acessar o Zendesk, você deve se registrar e criar uma conta em https://tve.zendesk.com/home. Não há limite para o número de usuários que você pode registrar. Depois de registrado, você pode exibir e compartilhar comentários em qualquer tíquete enviado.
 
 A equipe de autenticação da Adobe Pass está disponível para ajudá-lo com qualquer pergunta ou problema técnico que você possa encontrar durante o processo de integração. Entre em contato conosco em [tve-support@adobe.com](mailto:tve-support@adobe.com).
 
 ## Acesso à documentação {#access-documentation}
 
-O **Adobe fornecerá** acesso à nossa documentação pública via [Adobe Experience League](https://experienceleague.adobe.com/pt-br/docs/pass/authentication/home).
+A **Adobe fornecerá** acesso à nossa documentação pública via [Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).
 
 A equipe de Autenticação da Adobe Pass fornece documentação abrangente para os recursos e APIs disponíveis na seção [Guia de Integração para Programadores](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Consulte o índice desta seção para obter links com informações detalhadas sobre cada tópico.
 

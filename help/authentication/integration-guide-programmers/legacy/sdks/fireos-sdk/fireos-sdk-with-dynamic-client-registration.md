@@ -2,7 +2,7 @@
 title: Amazon FireOS SDK com registro dinâmico de cliente
 description: Amazon FireOS SDK com registro dinâmico de cliente
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 O FireOS AccessEnabler SDK for FireTV foi modificado para habilitar a autenticação sem usar cookies de sessão. À medida que mais e mais navegadores restringem o acesso a cookies, outro método era necessário para permitir a autenticação.
 
-**FireOS SDK 3.0.4** substitui o mecanismo de registro de aplicativo atual com base na ID do solicitante assinada e na autenticação de cookie de sessão com [Visão geral do registro de cliente dinâmico](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+**FireOS SDK 3.0.4** substitui o mecanismo de registro de aplicativo atual com base na ID do solicitante assinada e na autenticação de cookie de sessão com [Visão geral do registro de cliente dinâmico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ## Alterações na API {#API}
@@ -58,7 +58,7 @@ O FireOS AccessEnabler SDK for FireTV foi modificado para habilitar a autentica�
 
 A resposta do servidor contém uma lista de MVPDs juntamente com algumas informações de configuração anexadas à identidade do Canal. A resposta do servidor é usada internamente pelo código Access Enabler. Somente o status da operação (ou seja, SUCCESS/FAIL) é apresentado ao seu aplicativo por meio do retorno de chamada setRequestorComplete().
 
-Se o parâmetro *urls* não for usado, a chamada de rede resultante será direcionada para a URL do provedor de serviços padrão: o ambiente de Produção de Liberação de Adobe.
+Se o parâmetro *urls* não for usado, a chamada de rede resultante será direcionada à URL do provedor de serviços padrão: o ambiente de Produção de Versão do Adobe.
 
 Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante será direcionada a todas as URLs fornecidas no parâmetro *urls*. Todas as solicitações de configuração são acionadas simultaneamente em threads separados. O primeiro respondente tem prioridade ao compilar a lista de MVPDs. Para cada MVPD na lista, o Ativador de acesso lembra o URL do provedor de serviços associado. Todas as solicitações de direito subsequentes são direcionadas ao URL associado ao provedor de serviços que foi emparelhado com o MVPD de destino durante a fase de configuração.
 
@@ -152,7 +152,7 @@ Obsoleto:
    - logon cancelado : redefinir seleção de MVPD
    - O esquema de URL é estabelecido como &quot;adobepass://android.app&quot; para capturar quando a autenticação é concluída
 
-- e. get/checkAuthorization : o SDK incluirá **access\_token &#x200B;** in como Authorization: Bearer **access\_token**
+- e. get/checkAuthorization : o SDK incluirá **access\_token **in como Authorization: Bearer **access\_token**
 
 - se a autorização for bem-sucedida, será feita uma chamada para a obtenção do token de mídia
 

@@ -2,7 +2,7 @@
 title: Autenticação do Adobe Pass e o novo modelo de permissões "Marshmallow" do Android 6
 description: Autenticação do Adobe Pass e o novo modelo de permissões "Marshmallow" do Android 6
 exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -77,10 +77,10 @@ if (ContextCompat.checkSelfPermission(thisActivity,
 >Um recurso que apresenta resiliência de armazenamento está sendo desenvolvido atualmente para o SDK de autenticação da Adobe Pass 1.9. A nova SDK está programada para a versão **na última semana de outubro de**. O aplicativo sofrerá fallback para gravar no armazenamento de sandbox do aplicativo sempre que o armazenamento geral não puder ser usado. Isso abrange o caso em que, para aplicativos desenvolvidos no nível 23 da API, os usuários NÃO aceitam permissões de leitura/gravação no armazenamento global. Os tokens são armazenados individualmente por aplicativo, o que significa que o Logon único entre aplicativos que usam a Autenticação do Adobe Pass será desativado.
 
 
-![](../../../assets/android-permissions-request.png)
+![](/help/authentication/assets/android-permissions-request.png)
 
 *Figura: a caixa de diálogo de solicitação de permissão para aplicativos gravados com API de direcionamento nível 23*
 
 >[!IMPORTANT]
 >
-> O Adobe aconselha **seus parceiros a desenvolver aplicativos usando o nível de API 22 (targetSdkVersion=22) ou mais antigo para garantir a melhor experiência possível do usuário no processo de autenticação**.
+> A Adobe aconselha **seus parceiros a desenvolver aplicativos usando o nível de API 22 (targetSdkVersion=22) ou mais antigo para garantir a melhor experiência possível do usuário no processo de autenticação**.
