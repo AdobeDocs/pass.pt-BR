@@ -127,7 +127,7 @@ Orientações adicionais estão disponíveis assim que a integração é iniciad
 
 **Tarefas de integração**
 
-* Integre o DCR [ da API REST ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)de Autenticação da Adobe Pass.
+* Integre o DCR [&#x200B; da API REST &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)de Autenticação da Adobe Pass.
 * Integre a Autenticação Adobe Pass [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md).
 * Integre o [Verificador de token de mídia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier) da Autenticação do Adobe Pass.
 * Desenvolva uma interface de usuário para o fluxo de trabalho de autenticação, autorização e logout.
