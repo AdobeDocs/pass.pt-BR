@@ -26,7 +26,7 @@ Esta página descreve novos recursos, alterações e problemas conhecidos com es
 
 Autenticação Adobe Pass: adobe-pass-**2.70**
 
-Data de lançamento: 23/04/2024 - 25/04/2024 **&#x200B;**
+Data de lançamento: 23/04/2024 - 25/04/2024 ****
 
 ### Visão geral da versão {#release-overview-270}
 
