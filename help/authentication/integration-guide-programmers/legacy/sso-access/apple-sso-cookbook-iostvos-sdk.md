@@ -180,7 +180,7 @@ a estrutura encontrou um erro.
 
 ### Metadados {#apple-sso-cookbook-iostvos-sdk-metadata}
 
-O aplicativo tem a opção de determinar se a autenticação ocorreu como resultado de uma entrada por meio do SSO do Parceiro ou não, usando a API de &quot;*metadados de* usuário[ do &quot;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta)tokenSource&quot; da SDK do AccessEnabler iOS/tvOS.
+O aplicativo tem a opção de determinar se a autenticação ocorreu como resultado de uma entrada por meio do SSO do Parceiro ou não, usando a API de &quot;*metadados de* usuário[&#x200B; do &quot;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta)tokenSource&quot; da SDK do AccessEnabler iOS/tvOS.
 
 ```swift
     ...

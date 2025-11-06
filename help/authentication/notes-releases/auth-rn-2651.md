@@ -26,7 +26,7 @@ Esta página descreve novos recursos, alterações e problemas conhecidos com es
 
 Autenticação Adobe Pass: adobe-pass-**2.65.1**
 
-Data de lançamento: 20/06/2023 - 22/06/2023 ****
+Data de lançamento: 20/06/2023 - 22/06/2023 **&#x200B;**
 
 ### Visão geral da versão {#release-overview-2651}
 

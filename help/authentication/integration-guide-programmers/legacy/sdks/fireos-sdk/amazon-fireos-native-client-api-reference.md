@@ -260,7 +260,7 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Disponibilidade:**v 1.0+
+**Disponibilidade:**&#x200B;v 1.0+
 
 **Parâmetros:** Nenhum
 
@@ -355,7 +355,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Disponibilidade:**v 1.0+
+**Disponibilidade:**&#x200B;v 1.0+
 
 **Parâmetros:** O parâmetro `resources` é uma matriz de recursos para a qual o usuário já está autorizado a visualizar.
 
@@ -427,7 +427,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Disponibilidade:**v 1.0+
+**Disponibilidade:**&#x200B;v 1.0+
 
 **Parâmetros:**
 

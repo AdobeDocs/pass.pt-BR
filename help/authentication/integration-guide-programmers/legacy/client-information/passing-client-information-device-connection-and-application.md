@@ -116,7 +116,7 @@ O AccessEnabler iOS/tvOS SDK oferece suporte à **substituição do objeto JSON 
 
 O SDK do Android/FireOS `AccessEnabler` compila por padrão um objeto JSON de informações do cliente, que será passado para os serviços de Autenticação da Adobe Pass, a menos que seja substituído.
 
-O SDK do `AccessEnabler` Android/FireOS oferece suporte à **substituição do objeto JSON de todas as** informações do cliente por meio do parâmetro [ de ](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[&#39;s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
+O SDK do `AccessEnabler` Android/FireOS oferece suporte à **substituição do objeto JSON de todas as** informações do cliente por meio do parâmetro [&#x200B; de &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[&#39;s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
 
 >[!NOTE]
 >
