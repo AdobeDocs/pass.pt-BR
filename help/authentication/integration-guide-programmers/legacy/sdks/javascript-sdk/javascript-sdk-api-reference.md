@@ -309,7 +309,7 @@ Por exemplo:
 **Descrição:** Chame esta função quando o usuário tiver selecionado uma MVPD na sua interface de seleção de provedor para enviar a seleção de provedor para o Habilitador de Acesso ou chame esta função com um parâmetro nulo caso o usuário tenha descartado sua interface de seleção de provedor sem selecionar um provedor.
 
 **Retornos de chamada
-acionado:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+acionado:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Você deve implementar esses retornos de chamada para lidar com as respostas às
 
 **Descrição:** implemente esse retorno de chamada se o usuário tiver selecionado uma MVPD que exija um iFrame no qual ele possa exibir sua interface da página de logon de autenticação.
 
-**Acionado por:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Acionado por:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Voltar ao início](#top)
 

@@ -152,7 +152,7 @@ Obsoleto:
    - logon cancelado : redefinir seleção de MVPD
    - O esquema de URL é estabelecido como &quot;adobepass://android.app&quot; para capturar quando a autenticação é concluída
 
-- e. get/checkAuthorization : o SDK incluirá **access\_token **in como Authorization: Bearer **access\_token**
+- e. get/checkAuthorization : o SDK incluirá **access\_token &#x200B;** in como Authorization: Bearer **access\_token**
 
 - se a autorização for bem-sucedida, será feita uma chamada para a obtenção do token de mídia
 
