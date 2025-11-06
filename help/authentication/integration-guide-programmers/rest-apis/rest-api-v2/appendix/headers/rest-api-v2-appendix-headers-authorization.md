@@ -2,7 +2,7 @@
 title: Cabeçalho - autorização
 description: REST API V2 - Cabeçalho - Autorização
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 3%
@@ -20,7 +20,7 @@ ht-degree: 3%
 
 O cabeçalho de solicitação <b>Authorization</b> contém o token de acesso `Bearer` exigido pelo aplicativo cliente para acessar APIs protegidas pelo Adobe Pass.
 
-Para obter mais detalhes sobre o mecanismo de acesso a APIs protegidas pelo Adobe Pass, consulte a [documentação de Visão geral do registro dinâmico de clientes](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Para obter mais detalhes sobre o mecanismo de acesso a APIs protegidas pelo Adobe Pass, consulte a [documentação de Visão geral do registro dinâmico de clientes](../../../rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Sintaxe {#syntax}
 
@@ -42,7 +42,7 @@ Para obter mais detalhes sobre o mecanismo de acesso a APIs protegidas pelo Adob
 
 <b>&lt;access_token></b>
 
-O valor do token de acesso é um valor opaco com tempo de vida limitado (por exemplo, 24 horas) que deve ser obtido do Adobe Pass conforme descrito na documentação da API [Recuperar token de acesso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+O valor do token de acesso é um valor opaco com tempo de vida limitado (por exemplo, 24 horas) que deve ser obtido do Adobe Pass conforme descrito na documentação da API [Recuperar token de acesso](../../../rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
 ## Exemplos {#examples}
 

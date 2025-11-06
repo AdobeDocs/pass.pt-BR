@@ -1,7 +1,8 @@
 ---
 title: Glossário do Dynamic Client Registration (DCR)
 description: Glossário do Dynamic Client Registration (DCR)
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+exl-id: 4ce67fa5-b0e5-4967-b83d-c682426d9329
+source-git-commit: ae02f53afc58b7d31f57bcc1e4dd1328f12abc3e
 workflow-type: tm+mt
 source-wordcount: '299'
 ht-degree: 0%
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+> O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 Este documento fornece definições para termos usados ao integrar o Registro de Cliente Dinâmico (DCR) da Autenticação do Adobe Pass.
 
@@ -22,7 +23,7 @@ Este documento fornece definições para termos usados ao integrar o Registro de
 
 ## Termos do Glossário {#glossary-terms}
 
-### Um {#a}
+### A {#a}
 
 #### Token de acesso {#access-token}
 

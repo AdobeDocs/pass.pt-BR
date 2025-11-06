@@ -4,7 +4,7 @@ description: Relatório de erros
 exl-id: a52bd2cf-c712-40a2-a25e-7d9560b46ba6
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '3012'
+source-wordcount: '3011'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -62,7 +62,7 @@ Sua função de retorno de chamada do manipulador de erros receberá um único o
     }
 ```
 
-### 1. Vincular {#bind}
+### &#x200B;1. Vincular {#bind}
 
 **`.bind(eventType:String, handlerName:String):void`**
 
@@ -85,7 +85,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 Devido a limitações técnicas, você não pode vincular um fechamento ou uma função anônima. Você deve especificar o nome do método no segundo parâmetro.
 
 
-### 2. Desvincular {#unbind}
+### &#x200B;2. Desvincular {#unbind}
 
 **`.unbind(eventType:String, handlerName:String=null):void`**
 
@@ -242,14 +242,14 @@ A tabela a seguir lista e descreve os códigos de erro expostos pela API de erro
 | VSA404 | Informações | A permissão da Conta de Assinante de Vídeo do Aplicativo não foi determinada. | Incentifique os usuários que se recusam a conceder permissão para acessar informações de assinatura explicando os benefícios da experiência do usuário de Logon único (SSO). | O usuário pode alterar sua decisão acessando as configurações do aplicativo (acesso ao Provedor de TV) ou a seção de Configurações -> Provedor de TV no iOS/iPadOS ou Configurações -> Contas -> Provedor de TV no tvOS. | n/d | Sim | n/d |
 | VSA503 | Informações | Falha na solicitação de metadados de Conta de Assinante de Vídeo do Aplicativo. | O terminal MVPD não está respondendo. O aplicativo pode fazer fallback para o fluxo de autenticação normal. | n/d | n/d | Sim | n/d |
 | 500 | Erro | Erro interno | Use AccessEnablerDebug e inspecione logs de depuração (saída console.log) para determinar o que deu errado. | n/d | Sim | Sim | n/d |
-| SEC403 | Erro | Erro de Segurança de Domínio. O solicitante está usando um domínio inválido. Todos os domínios usados por uma ID de solicitante específica precisam ser colocados na lista de permissões pelo Adobe. | - Carregar o AccessEnabler somente da lista de domínios permitidos <br> <br> - Entre em contato com o Adobe para gerenciar a lista de permissões do domínio para a ID do Solicitante usada <br> <br> - iOS: verifique se você está usando o certificado correto e se a assinatura foi criada corretamente | n/d | n/d | Sim | n/d |
+| SEC403 | Erro | Erro de Segurança de Domínio. O solicitante está usando um domínio inválido. Todos os domínios usados por uma ID de solicitante específica precisam ser colocados na lista de permissões pela Adobe. | - Carregar o AccessEnabler somente da lista de domínios permitidos <br> <br> - Contate a Adobe para gerenciar a lista de permissões de domínio para a ID de Solicitante usada <br> <br> - iOS: verifique se você está usando o certificado correto e se a assinatura foi criada corretamente | n/d | n/d | Sim | n/d |
 | SEC412 | Aviso | [Disponível na Versão 2.5] A ID do Dispositivo não corresponde. Isso pode acontecer sempre que a plataforma subjacente alterar a ID do dispositivo. Nesse caso, os tokens existentes serão apagados e o usuário não será mais autenticado. Observe que isso está acontecendo legitimamente quando o usuário está usando a SDK JS e está em roaming (no JS, o IP do cliente faz parte da ID do dispositivo). Caso contrário, isso pode ser uma indicação de uma tentativa de fraude - uma tentativa de copiar tokens de um dispositivo diferente. | - Monitore o número de avisos. Se o pico não ocorrer por um motivo aparente (nenhuma atualização recente do navegador; novos sistemas operacionais), isso pode ser um indicador de tentativas de fraude.  <br> <br>- Opcionalmente, informe ao usuário que ele precisa fazer logon novamente. | Faça logon novamente. | Sim | Sim | Sim, de 3.2 |
 | SEC420 | Erro | Erro de Segurança HTTP ao se comunicar com os servidores de Autenticação do Adobe Pass. Normalmente, esse erro ocorre quando a falsificação/proxies está em vigor. | - Carregue `[https://]{SP_FQDN\}` no navegador e aceite manualmente os certificados SSL, por exemplo, **https://api.auth.adobe.com** ou **https://api.auth-staging.adobe.com** <br> <br>- Marcar os certificados de proxy como confiáveis | Se isso ocorre para um usuário comum, é uma indicação de um possível ataque do tipo &quot;man-in-the-middle&quot;! | Sim | Sim | Sim, de 3.2 |
 | CFG100 | Aviso | A data/hora/fuso horário do computador cliente não está definida corretamente. Isso provavelmente levará a erros de autenticação/autorização. | - Informe o usuário para definir a hora correta. <br> <br> Execute ações para evitar fluxos de direitos, pois eles provavelmente falharão. | Defina a data/hora correta. | Sim | Sim | Sim, de 3.2 |
 | CFG400 | Erro | Uma ID de Solicitante inválida foi fornecida. | O desenvolvedor DEVE especificar uma ID de Solicitante válida. | n/d | Sim | Sim | Sim, de 3.2 |
-| CFG404 | Erro | Os servidores de Autenticação do Adobe Pass não foram encontrados. Isso pode acontecer em 3 instâncias: <br><br> - O desenvolvedor tem uma falsificação inválida em vigor. <br><br> -O usuário tem problemas de rede e não pode acessar os domínios de Autenticação Adobe Pass. <br><br> -Os servidores de Autenticação Adobe Pass estão configurados incorretamente. <br><br>  **Observação:** no Firefox, o CFG400 será exibido em vez do CFG404 (limitação do navegador) | - Verifique a falsificação. <br><br> -Verificar configurações de rede/DNS. <br><br> -Adobe de informação. | Verifique as configurações de rede/DNS. | Sim | Sim | Sim, de 3.2 |
+| CFG404 | Erro | Os servidores de Autenticação do Adobe Pass não foram encontrados. Isso pode acontecer em 3 instâncias: <br><br> - O desenvolvedor tem uma falsificação inválida em vigor. <br><br> -O usuário tem problemas de rede e não pode acessar os domínios de Autenticação Adobe Pass. <br><br> -Os servidores de Autenticação Adobe Pass estão configurados incorretamente. <br><br>  **Observação:** no Firefox, o CFG400 será exibido em vez do CFG404 (limitação do navegador) | - Verifique a falsificação. <br><br> -Verificar configurações de rede/DNS. <br><br> -Informe o Adobe. | Verifique as configurações de rede/DNS. | Sim | Sim | Sim, de 3.2 |
 | CFG410 | Erro | O AccessEnabler é muito antigo. | Informe o usuário para limpar os caches. | Limpe o cache do navegador. | Sim | n/d | Sim, de 3.2 |
-| CFG5xx | Erro | Os servidores de Autenticação do Adobe Pass estão apresentando erros internos. xx pode ser qualquer número. | - Informar o usuário sobre a indisponibilidade da Autenticação do Adobe Pass. <br><br> - Ignorar Autenticação Adobe Pass. <br> <br> - Informar Adobe. | Tente mais tarde. | Sim | Sim | Sim, de 3.2 |
+| CFG5xx | Erro | Os servidores de Autenticação do Adobe Pass estão apresentando erros internos. xx pode ser qualquer número. | - Informar o usuário sobre a indisponibilidade da Autenticação do Adobe Pass. <br><br> - Ignorar Autenticação Adobe Pass. <br> <br> - Informar ao Adobe. | Tente mais tarde. | Sim | Sim | Sim, de 3.2 |
 | N000 | Informações | O usuário não está autenticado. | n/d | Logon. | Sim | Sim | Sim, de 3.2 |
 | N001 | Informações | Uma tentativa de autenticação passiva foi iniciada em segundo plano. Isso ocorrerá para MVPDs configurados com &quot;Autenticação por Solicitante&quot;. Embora o usuário seja autenticado automaticamente, isso afeta o desempenho na inicialização. | Opcionalmente, informe ao usuário, ou apresente uma interface que alerta o usuário, que &quot;o trabalho está em andamento&quot;. | Espere. | Sim | Sim | Sim, de 3.2 |
 | N003 | Informações | O usuário seleciona a opção &quot;Outro provedor de TV&quot; no seletor Apple MVPD. | O retorno de chamada *displayProviderDialog* será chamado e o aplicativo poderá fazer fallback para o fluxo de autenticação regular. | Selecione MVPD regular e continue com a tela de logon. | n/d | Sim | n/d |
@@ -258,7 +258,7 @@ A tabela a seguir lista e descreve os códigos de erro expostos pela API de erro
 | N010 | Aviso | O usuário foi autenticado enquanto a regra de degradação autenticar tudo estava em vigor para o MVPD selecionado. | Como opção, informe ao usuário que ele está recebendo acesso gratuito devido a dificuldades com o MVPD. | n/d | Sim | Sim | Sim, de 3.2 |
 | N011 | Informações | O usuário foi autenticado usando TempPass. | - Informe o usuário. <br> <br> - Opcionalmente, apresentar uma lista de MVPDs comuns. | Opcionalmente, faça logon com sua MVPD normal. | Sim | Sim | Sim, de 3.2 |
 | N111 | Aviso | TempPass Expirado. | - Informar o usuário. <br> <br> - Apresentar uma lista de MVPDs comuns. <br> <br> - Ocultar a opção TempPass. | Faça logon com a MVPD normal. | Sim | Sim | Sim, de 3.2 |
-| N130 | Erro | **Token de autenticação não encontrado na sessão.** Isso pode ser devido a um dos seguintes motivos: <br> <br> 1. O navegador tem cookies (de terceiros) desabilitados (Não se aplica ao AccessEnabler JavaScript SDK versão 4.x) <br> <br> 2. O navegador tem Impedir rastreamento entre sites habilitado (Safari 11+) <br> <br> 3. A sessão expirou <br> <br> 4. Programador chama APIs de autenticação em sucessão incorreta <br> <br> OBSERVAÇÃO: este código de erro não está disponível para fluxos de autenticação de redirecionamento de página inteira. | 1. Avisar usuário para habilitar cookies (de terceiros) <br> <br> 2. Avisar usuário para desabilitar o rastreamento entre sites <br> <br> 3. Avisar usuário para autenticar novamente <br> <br> 4. Chamar APIs na ordem correta | 1. Habilitar cookies (de terceiros) <br> <br> 2. Desabilitar rastreamento entre sites <br> <br> 3. Reautenticar <br> <br> 4. N/A | Sim | Sim | Sim, de 3.2 |
+| N130 | Erro | **Token de autenticação não encontrado na sessão.** Isso pode ser devido a um dos seguintes motivos: <br> <br> 1. O navegador tem cookies (de terceiros) desabilitados (Não se aplica ao AccessEnabler JavaScript SDK versão 4.x) <br> <br> 2. O navegador tem Impedir rastreamento entre sites habilitado (Safari 11+) <br> <br> 3. A sessão expirou <br> <br> 4. Programador chama APIs de autenticação em sucessão incorreta <br> <br> OBSERVAÇÃO: este código de erro não está disponível para fluxos de autenticação de redirecionamento de página inteira. | &#x200B;1. Avisar usuário para habilitar cookies (de terceiros) <br> <br> 2. Avisar usuário para desabilitar o rastreamento entre sites <br> <br> 3. Avisar usuário para autenticar novamente <br> <br> 4. Chamar APIs na ordem correta | &#x200B;1. Habilitar cookies (de terceiros) <br> <br> 2. Desabilitar rastreamento entre sites <br> <br> 3. Reautenticar <br> <br> 4. N/A | Sim | Sim | Sim, de 3.2 |
 | N500 | Erro | Erro interno. <br> <br> Observação: este é o &quot;Erro de Autenticação Genérico&quot; e o &quot;Erro de Autenticação Interna&quot; do sistema de erro original. Esse erro acabará sendo eliminado. | Use AccessEnablerDebug e inspecione logs de depuração (saída console.log) para determinar o que deu errado. | n/d | Sim | Sim | n/d |
 | R401 | Erro | Erro ao tentar obter um token de acesso. <br> <br> Observação: este é um erro irrecuperável. Informe ao usuário que o aplicativo não está disponível. | - iOS: verifique a declaração do software e os esquemas personalizados em seu aplicativo. <br> <br> - JavaScript: verifique a instrução de software no aplicativo do site. <br> <br> Abra um tíquete usando o Zendesk e informe ao usuário que o sistema está temporariamente indisponível | n/d | Sim da v4.0 | Sim da v3.0 | Sim, de 3.2 |
 | R400 | Erro | O aplicativo não está registrado. A instrução de software é inválida ou foi revogada. <br> <br> Observação: este é um erro irrecuperável. Informe ao usuário que o aplicativo não está disponível. | - iOS: verifique a declaração do software e os esquemas personalizados em seu aplicativo. <br> <br> - JavaScript: verifique a instrução de software no aplicativo do site. <br> <br> Abra um tíquete usando o Zendesk e informe ao usuário que o sistema está temporariamente indisponível | n/d | Sim da v4.0 | Sim da v3.0 | Sim, de 3.2 |

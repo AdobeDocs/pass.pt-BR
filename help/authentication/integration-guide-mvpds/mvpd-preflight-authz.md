@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Introdução {#mvpd-preflight-authz-intro}
 
@@ -22,7 +22,7 @@ A &quot;Autorização de comprovação&quot; é uma verificação de autorizaç�
 Atualmente, a Autenticação Adobe Pass pode oferecer suporte à Autorização de comprovação de duas maneiras para MVPDs, por meio de atributos de resposta AuthN ou por meio de uma solicitação AuthZ multicanal.  Os cenários a seguir descrevem o custo/benefício das diferentes maneiras de implementar a autorização de comprovação:
 
 * **Cenário mais adequado** - A MVPD fornece a lista de recursos pré-autorizados durante a fase de autorização (Autorização multicanal).
-* **Cenário de pior caso** - Se uma MVPD não oferecer suporte a nenhuma forma de autorização de vários recursos, o servidor de Autenticação da Adobe Pass executará uma chamada de autorização para a MVPD para cada recurso na lista de recursos. Esse cenário tem um impacto (proporcional ao número de recursos) no tempo de resposta da solicitação de autorização de comprovação. Ele pode aumentar a carga nos servidores Adobe e MVPD, causando problemas de desempenho. Além disso, ele gerará eventos de solicitações/respostas de autorização sem a necessidade real de uma reprodução.
+* **Cenário de pior caso** - Se uma MVPD não oferecer suporte a nenhuma forma de autorização de vários recursos, o servidor de Autenticação da Adobe Pass executará uma chamada de autorização para a MVPD para cada recurso na lista de recursos. Esse cenário tem um impacto (proporcional ao número de recursos) no tempo de resposta da solicitação de autorização de comprovação. Ele pode aumentar a carga em servidores Adobe e MVPD, causando problemas de desempenho. Além disso, ele gerará eventos de solicitações/respostas de autorização sem a necessidade real de uma reprodução.
 * **Obsoleto** - A MVPD fornece a lista de recursos pré-autorizados durante a fase de autenticação; portanto, não serão necessárias chamadas de rede, nem mesmo a solicitação de comprovação, pois a lista está armazenada em cache no cliente.
 
 Embora os MVPDs não precisem oferecer suporte à autorização de comprovação, as seções a seguir descrevem alguns métodos de autorização de comprovação que a Autenticação do Adobe Pass pode oferecer suporte, antes de retornar ao cenário de pior caso acima.
@@ -117,7 +117,7 @@ A Autenticação Adobe Pass recebe a lista de recursos do aplicativo do Programa
 
 Alguns MVPDs têm endpoints de autorização que oferecem suporte à autorização para vários recursos em uma solicitação, mas não se enquadram no cenário descrito em AuthZ multicanal. Esses MVPDs específicos exigem trabalho personalizado.
 
-O Adobe também pode suportar autorização de vários canais sem alterar a implementação existente.  Essa abordagem precisa ser revisada entre o Adobe e a equipe técnica da MVPD para garantir que funcione conforme esperado.
+O Adobe também pode oferecer suporte à autorização de vários canais sem alterar a implementação existente.  Essa abordagem precisa ser revisada entre a Adobe e a equipe técnica da MVPD para garantir que funcione conforme esperado.
 
 ## MVPDs que oferecem suporte à autorização de comprovação {#mvpds-supp-preflight-authz}
 

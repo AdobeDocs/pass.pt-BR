@@ -2,7 +2,7 @@
 title: Amazon FireOS SDK com registro dinâmico de cliente
 description: Amazon FireOS SDK com registro dinâmico de cliente
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 O FireOS AccessEnabler SDK for FireTV foi modificado para habilitar a autenticação sem usar cookies de sessão. À medida que mais e mais navegadores restringem o acesso a cookies, outro método era necessário para permitir a autenticação.
 
-**FireOS SDK 3.0.4** substitui o mecanismo de registro de aplicativo atual com base na ID do solicitante assinada e na autenticação de cookie de sessão com [Visão geral do registro de cliente dinâmico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+**FireOS SDK 3.0.4** substitui o mecanismo de registro de aplicativo atual com base na ID do solicitante assinada e na autenticação de cookie de sessão com [Visão geral do registro de cliente dinâmico](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ## Alterações na API {#API}
@@ -152,7 +152,7 @@ Obsoleto:
    - logon cancelado : redefinir seleção de MVPD
    - O esquema de URL é estabelecido como &quot;adobepass://android.app&quot; para capturar quando a autenticação é concluída
 
-- e. get/checkAuthorization : o SDK incluirá **access\_token &#x200B;** in como Authorization: Bearer **access\_token**
+- e. get/checkAuthorization : o SDK incluirá **access\_token **in como Authorization: Bearer **access\_token**
 
 - se a autorização for bem-sucedida, será feita uma chamada para a obtenção do token de mídia
 

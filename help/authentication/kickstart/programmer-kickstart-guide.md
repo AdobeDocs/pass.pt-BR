@@ -2,7 +2,7 @@
 title: Guia de início rápido do programador
 description: Guia de início rápido do programador
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 37858fa83aecbdf443a4a6058c78e4f9246eee42
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 0%
@@ -25,7 +25,7 @@ O Adobe fornece uma variedade de recursos para ajudar você a integrar a Autenti
 
 O processo de configuração envolve, entre outras, as seguintes etapas:
 
-![Processo de integração de autenticação do Adobe® Pass](/help/authentication/assets/progr-flow-int-lifecycle.png)
+![Processo de integração de autenticação do Adobe® Pass](../assets/progr-flow-int-lifecycle.png)
 
 *Processo de integração de autenticação do Adobe® Pass*
 
@@ -75,7 +75,7 @@ A equipe de autenticação da Adobe Pass está disponível para ajudá-lo com qu
 
 ## Acesso à documentação {#access-documentation}
 
-A **Adobe fornecerá** acesso à nossa documentação pública via [Adobe Experience League](https://experienceleague.adobe.com/pt-br/docs/pass/authentication/home).
+A **Adobe fornecerá** acesso à nossa documentação pública via [Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).
 
 A equipe de Autenticação da Adobe Pass fornece documentação abrangente para os recursos e APIs disponíveis na seção [Guia de Integração para Programadores](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Consulte o índice desta seção para obter links com informações detalhadas sobre cada tópico.
 

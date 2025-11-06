@@ -4,7 +4,7 @@ description: Página de registro
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '509'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Retorna o Código de registro gerado aleatoriamente e o URI da página de logon.
 
 | Endpoint | Chamado <br>por | Entrada   <br>Parâmetro | HTTP <br>Método | Resposta | Resposta HTTP <br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Por exemplo:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Aplicativo de Streaming<br>ou<br>Serviço de Programador | 1. solicitante <br>    (Componente do caminho)<br>2.  deviceId (com hash)   <br>    (Obrigatório)<br>3.  device_info/X-Device-Info (Obrigatório)<br>4.  mvpd (Opcional)<br>5.  ttl (Opcional)<br> | POST | XML ou JSON que contém um código de registro e informações ou detalhes de erro, caso seja malsucedido. Consulte os exemplos abaixo. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Por exemplo:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Aplicativo de Streaming<br>ou<br>Serviço de Programador | &#x200B;1. solicitante <br>    (Componente do caminho)<br>2.  deviceId (com hash)   <br>    (Obrigatório)<br>3.  device_info/X-Device-Info (Obrigatório)<br>4.  mvpd (Opcional)<br>5.  ttl (Opcional)<br> | POST | XML ou JSON que contém um código de registro e informações ou detalhes de erro, caso seja malsucedido. Consulte os exemplos abaixo. | 201 |
 
 {style="table-layout:auto"}
 
@@ -53,7 +53,7 @@ Retorna o Código de registro gerado aleatoriamente e o URI da página de logon.
 | Aceitar | Cabeçalho <br> Valor: application/json | indicar que tipo de conteúdo o cliente deve entender |
 | solicitante | Parâmetro da consulta | O requestorId do Programador para o qual esta operação é válida. |
 | deviceId | Parâmetro da consulta | Os bytes de id do dispositivo. |
-| device_info/<br>X-Device-Info | device_info: Corpo <br> X-Device-Info: Cabeçalho | Informações do dispositivo de transmissão.<br>**Observação**: isso PODE ser passado para device_info como um parâmetro de URL, mas devido ao tamanho potencial desse parâmetro e às limitações no comprimento de uma URL GET, DEVE ser passado como X-Device-Info no cabeçalho http. <br>Veja os detalhes completos em [Passando Informações sobre Dispositivo e Conexão](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| device_info/<br>X-Device-Info | device_info: Corpo <br> X-Device-Info: Cabeçalho | Informações do dispositivo de transmissão.<br>**Observação**: isso PODE ser passado para device_info como um parâmetro de URL, mas devido ao tamanho potencial desse parâmetro e às limitações no comprimento de uma URL GET, ELE DEVE ser passado como X-Device-Info no cabeçalho http. <br>Veja os detalhes completos em [Passando Informações sobre Dispositivo e Conexão](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | mvpd | Parâmetro da consulta | A MVPD ID para a qual esta operação é válida. |
 | ttl | Parâmetro da consulta | Por quanto tempo esse regcode deve durar em segundos.<br>**Observação**: o valor máximo permitido para ttl é de 36.000 segundos (10 horas). Valores mais altos resultam em uma resposta HTTP 400 (solicitação incorreta). Se `ttl` for deixado em branco, a Autenticação Adobe Pass definirá um valor padrão de 30 minutos. |
 | _deviceType_ | Parâmetro da consulta | Obsoleto, não deve ser usado. |
@@ -81,7 +81,7 @@ Retorna o Código de registro gerado aleatoriamente e o URI da página de logon.
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### Resposta JSON
 
@@ -122,12 +122,12 @@ Retorna o Código de registro gerado aleatoriamente e o URI da página de logon.
 | gerado | Carimbo de data e hora de criação do Código de registro (em milissegundos desde 1° de janeiro de 1970 GMT) |
 | expira em | Carimbo de data e hora quando o código de registro expira (em milissegundos desde 1° de janeiro de 1970 GMT) |
 | deviceId | ID de Dispositivo Exclusiva Base64 |
-| info:deviceId | Tipo de dispositivo Base64 |
-| info:deviceInfo | Informações de Dispositivo Normalizado Base64 criadas com base em informações recebidas do Agente do Usuário, Informações do Dispositivo X ou informações do dispositivo |
-| info:userAgent | Agente do usuário enviado pelo aplicativo |
-| info:originalUserAgent | Agente do usuário enviado pelo aplicativo |
-| info:authorizationType | OAUTH2 para chamadas usando DCR |
-| info:sourceApplicationInformation | Informações do aplicativo conforme configurado no DCR |
+| informações:deviceId | Tipo de dispositivo Base64 |
+| informações:deviceInfo | Informações de Dispositivo Normalizado Base64 criadas com base em informações recebidas do Agente do Usuário, Informações do Dispositivo X ou informações do dispositivo |
+| informações:userAgent | Agente do usuário enviado pelo aplicativo |
+| informações:originalUserAgent | Agente do usuário enviado pelo aplicativo |
+| informações:authorizationType | OAUTH2 para chamadas usando DCR |
+| informações:sourceApplicationInformation | Informações do aplicativo conforme configurado no DCR |
 
 {style="table-layout:auto"}
 

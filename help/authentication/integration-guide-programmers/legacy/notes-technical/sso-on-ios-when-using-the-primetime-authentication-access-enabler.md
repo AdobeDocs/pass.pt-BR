@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -27,7 +27,7 @@ O Logon único (SSO) entre aplicativos alimentados pela Autenticação da Adobe 
 
 Este documento aborda o **SSO no iOS**, ao usar o **Ativador de Acesso** da Autenticação do Adobe Pass.
 
-O **Ativador de Acesso** **1.10** é a versão mais recente do SDK nativo do iOS de Autenticação da Adobe Pass. A Adobe recomenda que você mude para essa versão em vez de ficar com uma versão mais antiga. Se você estiver usando uma versão mais antiga do Access Enabler, poderá baixar a versão mais recente [aqui](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
+O **Ativador de Acesso** **1.10** é a versão mais recente do SDK nativo do iOS de Autenticação da Adobe Pass. A Adobe recomenda mudar para essa versão em vez de ficar com uma versão mais antiga. Se você estiver usando uma versão mais antiga do Access Enabler, poderá baixar a versão mais recente [aqui](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
 
 O SSO no iOS é ditado pelas seguintes condições:
 

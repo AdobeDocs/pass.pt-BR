@@ -2,7 +2,7 @@
 title: Avaliação de prevenção de rastreamento no Apple Safari
 description: Avaliação de prevenção de rastreamento no Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -33,7 +33,7 @@ para as seguintes versões do AccessEnabler JavaScript SDK: v2 (versões 2.x), v
 
 Para atenuar essas limitações, você pode instruir o usuário a alterar as configurações de privacidade do navegador Safari 10 e usar a opção &quot;**Sempre permitir**&quot; para a entrada &quot;**Cookies e dados do site**&quot; na guia Privacidade do navegador, em Preferências, conforme mostrado na imagem abaixo.
 
-![](/help/authentication/assets/always-allow-safari10.png)
+![](../../../assets/always-allow-safari10.png)
 
 
 ## Safari 11 {#safari11}
@@ -64,12 +64,12 @@ Quando o retorno de chamada de erro [N130](/help/authentication/integration-guid
 
 * No caso do Mac OS X High Sierra e posterior: ao desmarcar a opção &quot;**Impedir rastreamento entre sites**&quot; para a entrada &quot;**Rastreamento de sites**&quot; na guia Privacidade do navegador em Preferências, conforme mostrado na imagem abaixo.
 
-  ![](/help/authentication/assets/uncheck-prvnt-cr-st-tr-safari11.png)
+  ![](../../../assets/uncheck-prvnt-cr-st-tr-safari11.png)
 
 
 * No caso do Mac OS X Sierra e anteriores: Marcar a opção &quot;**Sempre permitir**&quot; para a entrada &quot;**Cookies e dados do site**&quot; na guia Privacidade do navegador em Preferências, conforme mostrado na imagem abaixo.
 
-  ![](/help/authentication/assets/always-allow-safari11.png)
+  ![](../../../assets/always-allow-safari11.png)
 
 ## Safari 12 {#safari12}
 
@@ -126,14 +126,14 @@ Casos de uso afetados por esse problema:
 
 Não há mitigação conhecida disponível ou possível no momento da redação desses artigos. A Apple introduziu uma &quot;API de acesso de armazenamento&quot; no Safari 12 (`https://webkit.org/blog/8124/introducing-storage-access-api`), mas a implementação atual não se aplica ao localStorage, mas somente a cookies. Além disso, a API exige interação do usuário para ser usada. Depois de usá-la, o usuário também receberá uma caixa de diálogo de permissão semelhante à mostrada abaixo.
 
-![](/help/authentication/assets/permission-dialog-apple.png)
+![](../../../assets/permission-dialog-apple.png)
 
 
 Neste ponto, esses requisitos/prompts do Safari não se alinham aos nossos requisitos de UX e não temos um comportamento consistente como em outros navegadores, em que o SSO &quot;apenas funciona&quot; depois de salvar um token em um domínio comum localStorage.
 
 **Temp Pass**
 
-Para atenuar os problemas de individualização e ter uma interação com o usuário, recomendamos que você use o **[Temp Pass Promocional](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)** de forma interativa e forneça pelo menos uma informação adicional sobre o usuário (por exemplo, endereço de email).
+Para atenuar os problemas de individualização e ter uma interação com o usuário, recomendamos que você use o **[Temp Pass Promocional](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)** de forma interativa e forneça pelo menos uma informação adicional sobre o usuário (por exemplo, endereço de email).
 
 ## Safari 13 {#safari13}
 
@@ -164,8 +164,8 @@ Quando o retorno de chamada de erro [N130](/help/authentication/integration-guid
 
 * No caso do Mac OS X High Sierra e posterior: ao desmarcar a opção &quot;**Impedir rastreamento entre sites**&quot; para a entrada &quot;**Rastreamento de sites**&quot; na guia Privacidade do navegador em Preferências, conforme mostrado na imagem abaixo.
 
-  ![](/help/authentication/assets/prvnt-cross-site-tr-safari13.png)
+  ![](../../../assets/prvnt-cross-site-tr-safari13.png)
 
 * No caso do Mac OS X Sierra e anteriores: Marcando a opção &quot;</span>A opção &quot;**Sempre permitir**&quot; para a entrada &quot;**Dados de cookies e sites**&quot; na guia Privacidade do navegador, em Preferências, conforme mostrado na imagem abaixo.
 
-  ![](/help/authentication/assets/always-allow-safari13.png)
+  ![](../../../assets/always-allow-safari13.png)

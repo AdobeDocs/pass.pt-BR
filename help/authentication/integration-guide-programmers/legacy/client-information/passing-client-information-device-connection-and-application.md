@@ -4,7 +4,7 @@ description: Transmissão de informações do cliente (dispositivo, conexão e a
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1665'
 ht-degree: 3%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -65,7 +65,7 @@ As informações do cliente são um objeto JSON criado com chaves apresentadas n
 |            | displayHeight | Não | A altura da tela física do dispositivo. |                                                                                                                                                                                                                                                                                                                                                           |
 |            | displayPpi | Não | A densidade de pixels da tela física do dispositivo. | por exemplo, 294 |
 |            | diagonalScreenSize | Não | A dimensão diagonal da tela física do dispositivo em polegadas. | Por exemplo, 5.5, 10.1 |
-|            | connectionIp | Não | O IP do dispositivo usado para enviar solicitações HTTP. | Por exemplo, 8.8.4.4 |
+|            | connectionIp | Não | O IP do dispositivo usado para enviar solicitações HTTP. | ex.: 8.8.4.4 |
 |            | connectionPort | Não | A porta do dispositivo usada para enviar solicitações HTTP. | por exemplo, 53124 |
 |            | connectionType | Não | O tipo de conexão de rede. | por exemplo, WiFi, LAN, 3G, 4G, 5G |
 |            | connectionSecure | # Sim | O status de segurança da conexão de rede. | # Os valores são restritos:                                                   true - no caso de uma rede segura                   false - no caso de um ponto de acesso público |
@@ -93,7 +93,7 @@ Os serviços de Autenticação da Adobe Pass oferecem suporte para o recebimento
 
 O AccessEnabler JavaScript SDK cria por padrão um objeto JSON de informações do cliente, que será passado para os serviços de autenticação da Adobe Pass, a menos que seja substituído.
 
-O AccessEnabler JavaScript SDK oferece suporte **à substituição somente** da chave &quot;applicationId&quot; do objeto JSON de informações do cliente por meio do parâmetro de opções *applicationId* de [setRequestor](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options)).
+O AccessEnabler JavaScript SDK oferece suporte **à substituição somente** da chave &quot;applicationId&quot; do objeto JSON de informações do cliente por meio do parâmetro de opções [applicationId](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options)) de *setRequestor*.
 
 >[!CAUTION]
 >
@@ -116,7 +116,7 @@ O AccessEnabler iOS/tvOS SDK oferece suporte à **substituição do objeto JSON 
 
 O SDK do Android/FireOS `AccessEnabler` compila por padrão um objeto JSON de informações do cliente, que será passado para os serviços de Autenticação da Adobe Pass, a menos que seja substituído.
 
-O SDK do `AccessEnabler` Android/FireOS oferece suporte à **substituição do objeto JSON de todas as** informações do cliente por meio do parâmetro `device_info` de [setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)&#39;s/[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption).
+O SDK do `AccessEnabler` Android/FireOS oferece suporte à **substituição do objeto JSON de todas as** informações do cliente por meio do parâmetro [ de ](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[&#39;s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
 
 >[!NOTE]
 >
@@ -390,7 +390,7 @@ As informações do aplicativo podem ser construídas da seguinte maneira:
 >**Recursos:**
 >* [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
 >* [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
->* [Sobre Acessibilidade](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
+>* [Sobre acessibilidade](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
 
 ### Roku {#roku}
 

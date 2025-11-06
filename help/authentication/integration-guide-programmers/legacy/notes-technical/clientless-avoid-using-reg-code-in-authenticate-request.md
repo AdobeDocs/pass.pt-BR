@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -45,7 +45,7 @@ Se a solicitação `/authenticate` for composta da seguinte maneira...
 ```
 
 
-O requestor\_id será interpretado como univision®\_code=EKAFIFM, já que não há &#39;&amp;&#39; e o Adobe não encontrará um parâmetro `regCode` para associar ao token.  Há uma chance de o token de Autenticação não ser criado, caso em que `/checkauthn` chamadas não encontrarão nenhum token.
+O requestor\_id será interpretado como univision®\_code=EKAFIFM, já que não há &quot;&amp;&quot; e o Adobe não encontrará um parâmetro `regCode` para associar ao token.  Há uma chance de o token de Autenticação não ser criado, caso em que `/checkauthn` chamadas não encontrarão nenhum token.
 
 
 

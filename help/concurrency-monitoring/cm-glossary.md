@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## ID da Conta {#accid-defn}
 
-* Conta MVPD de um assinante, geralmente correspondente à conta de faturamento real. Essa conta deve ser identificável pelo MVPD em seu próprio sistema.
+* Conta de MVPD de um assinante, geralmente correspondente à conta de faturamento real. Essa conta deve ser identificável pela MVPD em seu próprio sistema.
 
 ## Ação {#action-defn}
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 * Desenvolvido pelo locatário para acesso ao conteúdo de vídeo
 * Toma e impõe decisões sobre o acesso ao conteúdo com base nas informações fornecidas pelo Serviço de Monitoramento de Simultaneidade (isso é válido no caso [Ponto de Informações de Política](/help/concurrency-monitoring/policy-info-pt-versionone.md))
-* Terá uma **ID de aplicativo** exclusiva fornecida pelo Adobe.
+* Terá uma **ID de aplicativo** exclusiva fornecida pela Adobe.
 
 ## Serviço de monitoramento de concorrência {#cm-service-defn}
 
@@ -73,7 +73,7 @@ ht-degree: 0%
 
 * Atua como um provedor de serviço e conteúdo.
 * Depende do aplicativo cliente implantado que se integra ao serviço de Monitoramento de simultaneidade para aplicar as políticas de segurança definidas com base nos dados de serviço mencionados acima.
-* Precisa oferecer suporte ao MVPD para coletar a atividade do assinante e aplicar as regras de limitação quando em suas propriedades.
+* Precisa oferecer suporte à MVPD para coletar a atividade do assinante e aplicar as regras de limitação quando estiver em suas propriedades.
 * Também pode estar interessado em limitar o acesso simultâneo ao conteúdo em todos os portais de destino, como uma regra separada.
 
   *P: Por que o Programador e a ID do Solicitante não são como no restante da Autenticação do Adobe Pass?*
@@ -94,13 +94,13 @@ ht-degree: 0%
 
 ## Assunto {#subj-defn}
 
-* O consumidor do conteúdo (vídeo) na Internet. Estamos deliberadamente evitando o termo _&#x200B;**usuário**&#x200B;_, já que o Monitoramento de Simultaneidade geralmente lida com IDs de conta MVPD (que envolvem vários usuários reais compartilhando o mesmo contrato, por exemplo, membros da família de uma família).
+* O consumidor do conteúdo (vídeo) na Internet. Estamos deliberadamente evitando o termo _**usuário**_, já que o Monitoramento de simultaneidade geralmente lida com IDs de conta da MVPD (que envolvem vários usuários reais compartilhando o mesmo contrato, por exemplo, membros da família de uma família).
 
 * Para cada fluxo, o sujeito pode ser aprimorado com atributos relacionados à pessoa real usando o serviço, seu dispositivo conectado à rede e assim por diante.
 
 ## Assinante {#subscriber-defn}
 
-* O cliente pagante de um MVPD ou uma pessoa que compartilha as credenciais de um cliente pagante
+* O cliente pagante de uma MVPD ou uma pessoa que compartilha as credenciais de um cliente pagante
 * Pode ser interrompido para assistir ao conteúdo pelo Serviço de monitoramento de simultaneidade, pelo aplicativo cliente usando o serviço mencionado acima.
 * Na melhor das hipóteses, ele nunca nota a existência do Serviço de monitoramento de simultaneidade
 

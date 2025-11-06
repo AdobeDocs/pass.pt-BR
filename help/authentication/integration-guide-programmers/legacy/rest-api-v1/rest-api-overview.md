@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -95,12 +95,12 @@ Os itens a seguir se aplicam aos aplicativos Servidor para servidor e Dispositiv
 | Detecção implícita e uniforme de dispositivos | Programadores | Os SDKs detectam automaticamente o tipo de dispositivo e enviam essas informações de forma padrão. As implementações da REST API são propensas ao envio de informações diferentes, dependendo do implementador, distorcendo/quebrando regras de negócios e estatísticas entre sites. **Os programadores precisam verificar se nos enviaram as informações corretas sobre o dispositivo** em cada um de seus aplicativos. Para implementações de servidor para servidor, a API REST não identifica corretamente o endereço IP do usuário final, a menos que etapas adicionais sejam executadas. O endereço IP é importante em certos casos de uso, como prevenção de fraudes ou HBA. |
 | TempPass à prova de adulteração | Programadores | A imposição de TempPass é baseada em uma ID de dispositivo estável. Os SDKs usam informações de hardware/técnicas de impressão digital para identificar o dispositivo e esse mecanismo não é público e, portanto, mais seguro e livre de colisões. Para implementações da API REST, os programadores precisam implementar seus próprios algoritmos de identificação/impressão digital do dispositivo. |
 | Vinculação de dispositivo | Programadores | Os tokens gerados em um dispositivo com um aplicativo por meio do SDK não são portáteis, dificultando que um usuário mal-intencionado compartilhe seus tokens e forneça acesso a outros usuários. Isso se baseia no mesmo mecanismo de ID de dispositivo que o &quot;TempPass à prova de adulteração&quot;. Para a API REST, os tokens permanecem na nuvem, o que significa que dois dispositivos com as mesmas deviceIDs fazendo as mesmas chamadas obterão as mesmas respostas/acesso. Os programadores precisam garantir que tenham um mecanismo robusto, seguro e sem colisões para gerar/alocar IDs de dispositivos. |
-| Conjunto de recursos previsível e certificado | Programadores | O conjunto existente de recursos em cada SDK é consistente, previsível e totalmente certificado e testado. Alguns requisitos de negócios são aplicados por meio dos SDKs, tornando arriscado para o programador violar contratos ao usar a REST API. Embora a REST API possa ser mais flexível, o Adobe garante que as implementações do SDK reforcem as decisões e as configurações dos negócios no TVE Dashboard. No caso dos sem clientes, cada Programador implementa seu próprio subconjunto de regras de negócios que suíça seus aplicativos em um determinado momento. |
+| Conjunto de recursos previsível e certificado | Programadores | O conjunto existente de recursos em cada SDK é consistente, previsível e totalmente certificado e testado. Alguns requisitos de negócios são aplicados por meio dos SDKs, tornando arriscado para o programador violar contratos ao usar a REST API. Embora a REST API possa ser mais flexível, a Adobe garante que as implementações do SDK reforcem as decisões e as configurações dos negócios no TVE Dashboard. No caso dos sem clientes, cada Programador implementa seu próprio subconjunto de regras de negócios que suíça seus aplicativos em um determinado momento. |
 
 
 1. Como parte de nossa nova iniciativa Uma API, pretendemos corrigir essa limitação e poder aplicar regras por plataforma com base na identificação do dispositivo.
 
-2. O Adobe continua a funcionar com todas as principais plataformas para implementar o Platform SSO, que pode ser usado com nossa API REST. Nossa iniciativa Uma API oferecerá suporte a SSO entre aplicativos implementados com SDKs nativos e aplicativos implementados com a API REST.
+2. A Adobe continua trabalhando com todas as principais plataformas para implementar o Platform SSO, que pode ser usado com nossa API REST. Nossa iniciativa Uma API oferecerá suporte a SSO entre aplicativos implementados com SDKs nativos e aplicativos implementados com a API REST.
 
 ## Requisitos mínimos do dispositivo {#min_reqs}
 

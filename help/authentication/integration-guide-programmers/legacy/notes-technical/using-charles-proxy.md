@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -52,7 +52,7 @@ Marque a caixa de seleção &quot;Ativar proxy SSL&quot; e adicione todos os loc
 - Proxying SSL de dispositivos móveis - Consulte abaixo.
 
 
-## Ignorar / Excluir Hosts {#ignore-/-exclude-hosts}
+## Ignorar / Excluir hosts {#ignore-/-exclude-hosts}
 
 Se a saída ficar muito desorganizada, você poderá optar por ignorar ou excluir locais. Você pode ignorar ou excluir locais seguindo um destes procedimentos:
 
@@ -95,7 +95,7 @@ Com o Map Remote, é possível redirecionar uma solicitação &quot;recebida&quo
 
 <http://www.charlesproxy.com/documentation/proxying/reverse-proxy/>
 
-## Celular {#mobile}
+## Dispositivos móveis {#mobile}
 
 ### Usar o Charles em um dispositivo iOS (iPhone/iPad) {#use-charles-on-an-ios-device-(iphone-/-ipad)}
 

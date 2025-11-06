@@ -2,7 +2,7 @@
 title: Referência da API REST
 description: Referência da API Rest
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '661'
 ht-degree: 3%
@@ -81,4 +81,4 @@ A tabela abaixo lista os serviços Web disponíveis para a abordagem sem cliente
 
 ## Segurança da API REST {#security}
 
-Todas as APIs REST de Autenticação do Adobe Pass devem ser chamadas usando o protocolo HTTPS para comunicação segura. Além disso, a maioria das APIs chamadas deve conter um token de acesso obtido conforme descrito na documentação da API [Recuperar token de acesso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+Todas as APIs REST de Autenticação do Adobe Pass devem ser chamadas usando o protocolo HTTPS para comunicação segura. Além disso, a maioria das APIs chamadas deve conter um token de acesso obtido conforme descrito na documentação da API [Recuperar token de acesso](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).

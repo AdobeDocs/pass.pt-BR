@@ -2,7 +2,7 @@
 title: Visão geral do registro dinâmico do cliente
 description: Visão geral do registro dinâmico do cliente
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
+source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
 source-wordcount: '809'
 ht-degree: 0%
@@ -20,10 +20,10 @@ O registro de cliente dinâmico representa um mecanismo de autorização definid
 O Adobe Pass fornece um serviço dinâmico de registro de cliente que permite o acesso às seguintes APIs protegidas:
 
 * APIs de gerenciamento de autenticação da Adobe Pass:
-   * [Redefinir API Temp Pass](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-   * [API de degradação](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
+   * [Redefinir API Temp Pass](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+   * [API de degradação](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
    * [API de MVPD do proxy](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
-   * [API de monitoramento do serviço de qualificação](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
+   * [API de monitoramento do serviço de qualificação](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * APIs REST de autenticação da Adobe Pass:
    * [REST API V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
    * [API REST V1 (herdada)](../../legacy/rest-api-v1/rest-api-reference.md)
@@ -114,6 +114,6 @@ Em resumo, o mecanismo dinâmico de autorização de registro de cliente envolve
 **Fluxo**
 
 * O aplicativo cliente deve obter as credenciais do cliente conforme descrito na documentação da API [Recuperar credenciais do cliente](apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
-* O aplicativo cliente deve obter o token de acesso conforme descrito na documentação da API [Recuperar token de acesso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+* O aplicativo cliente deve obter o token de acesso conforme descrito na documentação da API [Recuperar token de acesso](apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
 Consulte a documentação do [Fluxo de Registro Dinâmico do Cliente](flows/dynamic-client-registration-flow.md) para entender melhor como acessar APIs protegidas pelo Adobe Pass. Além disso, você também pode assistir a esta gravação de [webinário](https://my.adobeconnect.com/pzkp8ujrigg1/), que fornece mais contexto e inclui uma demonstração.

@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -49,7 +49,7 @@ Retorna o registro do código de registro contendo o código de registro UUID, o
 
 | Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Por exemplo:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJJCFK?format=xml | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | 1. solicitante </br>    (Componente do caminho)</br>2.  código de registro </br>    (Componente do caminho) | GET | XML ou JSON contendo um código de registro e informações. Consulte esquema e amostra abaixo. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Por exemplo:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJJCFK?format=xml | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | &#x200B;1. solicitante </br>    (Componente do caminho)</br>2.  código de registro </br>    (Componente do caminho) | GET | XML ou JSON contendo um código de registro e informações. Consulte esquema e amostra abaixo. | 200 |
 
 {style="table-layout:auto"}
 

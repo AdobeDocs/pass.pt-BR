@@ -27,7 +27,7 @@ Data de lançamento: **03/26/2024**
 
 * Atualiza o Manifesto de privacidade do SDK em conformidade com os requisitos de privacidade do iOS 17.
 * Correção de um problema que, em algumas situações, fazia com que os usuários permanecessem em uma tela em branco durante o fluxo de autenticação.
-* Adiciona registro de dispositivo e registro de servidor para obter informações de insight sobre o estado do Chaveiro.
+* Adiciona o registro do dispositivo e do servidor para obter informações do insight sobre o estado do Chaveiro.
 
 ## Lançar pacote {#release-package-392}
 

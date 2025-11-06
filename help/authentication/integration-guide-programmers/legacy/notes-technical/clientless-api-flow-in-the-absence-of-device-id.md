@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Depois que essas etapas forem concluídas, a Autenticação do Adobe Pass usará
 
 ## Solução permanente
 
-O Adobe alterará isso em uma versão futura, tornando `deviceId` uma carga opcional ao criar o código de registro e usando UUID como a chave de token em vez de `deviceId`, quando `deviceId` não estiver presente.
+O Adobe alterará isso em uma versão futura, tornando `deviceId` uma carga opcional ao criar o código de registro e usando UUID como a chave do token em vez de `deviceId`, quando `deviceId` não estiver presente.
 
 <!--
 ## Related Information

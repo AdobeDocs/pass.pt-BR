@@ -4,7 +4,7 @@ description: Como migrar a página de logon do MVPD do iFrame para o pop-up
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '708'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -36,7 +36,7 @@ Considerando que uma implementação de iFrame já existe, a primeira parte da n
 
 ## Seletor de MVPD com página de logon em um iFrame {#mvpd-pickr-iframe}
 
-Exemplos de código anteriores mostraram uma página de HTML que contém a tag &lt;div>, onde o iFrame deve ser criado junto com o botão Fechar iFrame:
+Exemplos de código anteriores mostraram uma página do HTML que contém a tag &lt;div>, onde o iFrame deve ser criado junto com o botão Fechar iFrame:
 
 ```HTML
 <body> 
@@ -109,7 +109,7 @@ function setSelectedProvider(providerID) {
 
 ## Seletor de MVPD com página de logon em uma janela pop-up {#mvpd-pickr-popup}
 
-Como não utilizaremos mais um **iFrame**, o código de HTML não conterá o iFrame nem o botão para fechar o iFrame. A div que continha anteriormente o iFrame - **mvpddiv** - será mantida e usada para o seguinte:
+Como não usaremos mais um **iFrame**, o código HTML não conterá o iFrame ou o botão para fechar o iFrame. A div que continha anteriormente o iFrame - **mvpddiv** - será mantida e usada para o seguinte:
 
 * para notificar o usuário que a página de logon do MVPD já está aberta se o foco pop-up for perdido
 * para fornecer um link para recuperar o foco no pop-up
@@ -183,7 +183,7 @@ function displayProviderDialog(providers) {
 }
 ```
 
-Depois que o usuário seleciona uma MVPD no seletor, o pop-up precisa ser criado. Alguns navegadores podem bloquear o pop-up se ele for criado com about:blank ou com uma página que esteja em outro domínio; portanto, é recomendável abri-lo com o nome do host de onde o AccessEnabler é carregado.
+Depois que o usuário seleciona uma MVPD no seletor, o pop-up precisa ser criado. Alguns navegadores podem bloquear o pop-up se ele for criado com aproximadamente :blank ou com uma página que esteja em outro domínio; portanto, é recomendável abri-lo com o nome do host de onde o AccessEnabler é carregado.
 
 Na implementação do iFrame, a redefinição do fluxo de autenticação estava sendo feita pelo botão btnCloseIframe e pela função de JavaScript closeIframeAction(), mas agora a decoração do iFrame não é mais possível. Assim, o mesmo comportamento é obtido observando o momento em que o pop-up é fechado (pelo usuário ou finalizando o fluxo de autenticação). Um trecho de código foi adicionado que também ajuda caso o usuário perca o foco do pop-up:
 

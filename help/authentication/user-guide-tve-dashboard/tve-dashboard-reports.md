@@ -2,7 +2,7 @@
 title: Relatórios
 description: Saiba como os dados são agregados nos relatórios do painel TVE.
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -29,7 +29,7 @@ Siga estas etapas para exibir um relatório específico.
    * [Relatórios TTL AuthZ](#authz-ttl-reports)
    * [Relatórios de SSO](#sso-reports)
 
-   ![Tipo de relatórios](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
+   ![Tipo de relatórios](../assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
 
    *Tipo de relatórios*
 
@@ -39,7 +39,7 @@ Os relatórios AuthN TTL, também chamados de TTL (Tempo de vida útil da autent
 
 Você também pode visualizar e baixar dados de [canais específicos ou MVPDs](#selecting-specific-channels-mvpds).
 
-![Exportar Relatórios AuthN TTL](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
+![Exportar Relatórios AuthN TTL](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
 
 *Exportar Relatórios AuthN TTL*
 
@@ -55,7 +55,7 @@ Os relatórios AuthZ TTL, também conhecidos como Autorização de Vida Útil (T
 
 Você também pode visualizar e baixar os dados de [canais específicos ou MVPDs](#selecting-specific-channels-mvpds).
 
-![Exportar relatórios AuthZ TTL](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
+![Exportar relatórios AuthZ TTL](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
 
 *Exportar relatórios AuthZ TTL*
 
@@ -71,7 +71,7 @@ Os relatórios de SSO, também chamados de logon único, exibem o status de logo
 
 Você também pode visualizar e baixar dados de [canais específicos ou MVPDs](#selecting-specific-channels-mvpds).
 
-![Exportar relatórios de SSO](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
+![Exportar relatórios de SSO](../assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
 
 *Exportar relatórios de SSO*
 
@@ -129,7 +129,7 @@ Para gerar um relatório para canais específicos:
 
 1. Selecione o menu suspenso **Canais incluídos** na parte superior do relatório selecionado.
 
-   ![Menu suspenso Canais incluídos](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
+   ![Menu suspenso Canais incluídos](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
 
    *Menu suspenso Canais incluídos*
 
@@ -145,7 +145,7 @@ Para gerar um relatório para MVPDs específicos:
 
 1. Selecione o menu suspenso **MVPDs** incluídos na parte superior do relatório selecionado.
 
-   ![Menu suspenso MVPDs incluídos](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
+   ![Menu suspenso MVPDs incluídos](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
 
    *Menu suspenso MVPDs incluídos*
 

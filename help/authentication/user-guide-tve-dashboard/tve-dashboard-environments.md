@@ -2,7 +2,7 @@
 title: Ambientes do painel TVE
 description: Entenda o uso e o funcionamento de diferentes ambientes no Painel de TVE.
 exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Siga as etapas para alternar entre os ambientes do Painel TVE de autenticação 
 
 1. Selecione o ambiente de preparo ou produção necessário no menu suspenso **Ambiente**, na parte superior do painel esquerdo.
 
-   ![Lista suspensa de ambientes do Painel do TVE](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
+   ![Lista suspensa de ambientes do Painel do TVE](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
 
    *Menu suspenso do ambiente do Painel TVE de Autenticação do Adobe Pass*
 

@@ -4,7 +4,7 @@ description: Guia de migração do iOS/tvOS v3.x
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '581'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -24,7 +24,7 @@ ht-degree: 0%
 > **Notas:**
 >
 > - A partir do iOS sdk versão 3.1, os implementadores agora podem usar WKWebView ou UIWebView alternadamente. Como a UIWebView está obsoleta, os aplicativos devem migrar para a WKWebView para evitar problemas com versões futuras do iOS.
-> - Observe que a migração implicaria simplesmente alternar a classe UIWebView com WKWebView; não há trabalho específico a ser feito em relação ao Adobe AccessEnabler.
+> - Observe que a migração implicaria simplesmente alternar a classe UIWebView com WKWebView; não há trabalho específico a ser feito em relação ao AccessEnabler da Adobe.
 
 </br>
 

@@ -25,4 +25,4 @@ Para se inscrever no serviço de Monitoramento de Simultaneidade, contate nossa 
 1. Aplicativos que você deseja integrar ao Monitoramento de Simultaneidade. Para cada aplicativo, forneça:
    * Nome do aplicativo
    * Plataforma(s) de aplicativos
-1. O terceiro que solicitou a integração (caso você esteja assinando o Monitoramento de simultaneidade na solicitação de outra parte, programador ou MVPD)
+1. O terceiro que solicitou a integração (caso você esteja assinando o Monitoramento de simultaneidade na solicitação de outro participante, programador ou MVPD)

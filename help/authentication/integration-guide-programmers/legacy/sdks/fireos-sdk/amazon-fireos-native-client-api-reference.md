@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -95,7 +95,7 @@ Consulte <https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-TV-Native-
 
 A resposta do servidor contém uma lista de MVPDs juntamente com algumas informações de configuração anexadas à identidade do Programador. A resposta do servidor é usada internamente pelo código Access Enabler. Somente o status da operação (ou seja, SUCCESS/FAIL) é apresentado ao seu aplicativo por meio do retorno de chamada setRequestorComplete().
 
-Se o parâmetro *urls* não for usado, a chamada de rede resultante será direcionada ao URL do provedor de serviços padrão: o ambiente de Liberação/Produção do Adobe.
+Se o parâmetro *urls* não for usado, a chamada de rede resultante será direcionada à URL do provedor de serviços padrão: o ambiente de Versão/Produção do Adobe.
 
 Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante será direcionada a todas as URLs fornecidas no parâmetro *urls*. Todas as solicitações de configuração são acionadas simultaneamente em threads separados. O primeiro respondente tem prioridade ao compilar a lista de MVPDs. Para cada MVPD na lista, o Ativador de acesso lembra o URL do provedor de serviços associado. Todas as solicitações de direito subsequentes são direcionadas ao URL associado ao provedor de serviços que foi emparelhado com o MVPD de destino durante a fase de configuração.
 
@@ -175,7 +175,7 @@ Os valores serão passados ao servidor independentemente do fluxo atual (autenti
 
 - *options*: Um Mapa\&lt;String, String\> contendo opções globais do SDK. Atualmente, as seguintes opções estão disponíveis:
    - **applicationProfile** - Ele pode ser usado para fazer configurações de servidor baseadas nesse valor.
-   - **ap\_vi** - O Serviço de ID de Experience Cloud. Esse valor pode ser usado posteriormente para relatórios de análise avançada.
+   - **ap\_vi** - O Serviço da Experience Cloud ID. Esse valor pode ser usado posteriormente para relatórios de análise avançada.
    - **device\_info** - Informações do dispositivo conforme descrito em **Passing device information cookbook**
 
 </br>
@@ -224,7 +224,7 @@ Finalmente, o status de autenticação é comunicado ao aplicativo por meio do r
 **Parâmetros:**
 
 - *forceAuthn*: um sinalizador que especifica se o fluxo de autenticação deve ser iniciado, independentemente de o usuário já estar autenticado ou não.
-- *dados*: um mapa que consiste em pares de valores chave a serem enviados para o serviço de passe de TV por Assinatura. O Adobe pode usar esses dados para habilitar funcionalidades futuras sem alterar o SDK.
+- *dados*: um mapa que consiste em pares de valores chave a serem enviados para o serviço de passe de TV por Assinatura. A Adobe pode usar esses dados para habilitar funcionalidades futuras sem alterar o SDK.
 
 **Retornos de chamada disparados:** `setAuthenticationStatus(), displayProviderDialog(), sendTrackingData()`
 
@@ -260,7 +260,7 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Disponibilidade:**&#x200B;v 1.0+
+**Disponibilidade:**v 1.0+
 
 **Parâmetros:** Nenhum
 
@@ -355,7 +355,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Disponibilidade:**&#x200B;v 1.0+
+**Disponibilidade:**v 1.0+
 
 **Parâmetros:** O parâmetro `resources` é uma matriz de recursos para a qual o usuário já está autorizado a visualizar.
 
@@ -382,7 +382,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 **Parâmetros:**
 
 - *resourceId*: a identificação do recurso para o qual o usuário solicita autorização.
-- *dados*: um mapa que consiste em pares de valores chave a serem enviados para o serviço de passe de TV por Assinatura. O Adobe pode usar esses dados para habilitar funcionalidades futuras sem alterar o SDK.
+- *dados*: um mapa que consiste em pares de valores chave a serem enviados para o serviço de passe de TV por Assinatura. A Adobe pode usar esses dados para habilitar funcionalidades futuras sem alterar o SDK.
 
 **Retornos de chamada disparados:** `tokenRequestFailed(), setToken(), sendTrackingData(), setAuthenticationStatus()`
 
@@ -407,7 +407,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 **Parâmetros:**
 
 - *resourceId*: a identificação do recurso para o qual o usuário solicita autorização.
-- *dados*: um mapa que consiste em pares de valores chave a serem enviados para o serviço de passe de TV por Assinatura. O Adobe pode usar esses dados para habilitar funcionalidades futuras sem alterar o SDK.
+- *dados*: um mapa que consiste em pares de valores chave a serem enviados para o serviço de passe de TV por Assinatura. A Adobe pode usar esses dados para habilitar funcionalidades futuras sem alterar o SDK.
 
 **Retornos de chamada disparados:** `tokenRequestFailed(), setToken(), sendTrackingData()`
 
@@ -427,7 +427,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Disponibilidade:**&#x200B;v 1.0+
+**Disponibilidade:**v 1.0+
 
 **Parâmetros:**
 
@@ -529,7 +529,7 @@ Há dois tipos de metadados disponíveis para programadores:
 - *metadataKey*: uma estrutura de dados que encapsula uma variável key e args, com o seguinte significado:
    - Se a chave for `METADATA_KEY_TTL_AUTHN`, a consulta será feita para obter o tempo de expiração do token de autenticação.
    - Se a chave for `METADATA_KEY_TTL_AUTHZ` e os argumentos contiverem um objeto SerializableNameValuePair com nome = `METADATA_ARG_RESOURCE_ID` e valor = `[resource_id]`, a consulta será feita para obter a hora de expiração do token de autorização associado ao recurso especificado.
-   - Se a chave for `METADATA_KEY_DEVICE_ID`, será feita a consulta para obter a ID do dispositivo atual. Observe que esse recurso está desativado por padrão e os programadores devem entrar em contato com o Adobe para obter informações sobre ativação e taxas.
+   - Se a chave for `METADATA_KEY_DEVICE_ID`, será feita a consulta para obter a ID do dispositivo atual. Observe que esse recurso está desativado por padrão e os programadores devem entrar em contato com a Adobe para obter informações sobre ativação e taxas.
    - Se a chave for `METADATA_KEY_USER_META` e os argumentos contiverem um objeto SerializableNameValuePair com nome = `METADATA_KEY_USER_META` e valor = `[metadata_name]`, a consulta será feita para metadados de usuário. A lista atual de tipos de metadados de usuário disponíveis:
       - `zip` - CEP
       - `householdID` - Identificador da família. Se uma MVPD não oferecer suporte a subcontas, será idêntico a `userID`.
@@ -625,7 +625,7 @@ O Ativador de acesso aciona um retorno de chamada adicional que não é necessar
 
 >[!WARNING]
 >
-> O tipo de dispositivo e o sistema operacional são derivados por meio do uso de uma biblioteca Java pública (http://java.net/projects/user-agent-utils) e a sequência de agente do usuário. Esteja ciente de que essas informações são fornecidas apenas como uma forma grosseira de dividir as métricas operacionais em categorias de dispositivos, mas esse Adobe não pode assumir nenhuma responsabilidade por resultados incorretos. Use a nova funcionalidade adequadamente.
+> O tipo de dispositivo e o sistema operacional são derivados por meio do uso de uma biblioteca Java pública (http://java.net/projects/user-agent-utils) e a sequência de agente do usuário. Esteja ciente de que essas informações são fornecidas apenas como uma forma grosseira de dividir as métricas operacionais em categorias de dispositivos, mas que a Adobe não pode assumir nenhuma responsabilidade por resultados incorretos. Use a nova funcionalidade adequadamente.
 
 - Valores possíveis para o tipo de dispositivo:
    - `computer`

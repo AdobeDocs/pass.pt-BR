@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Visão geral {#mvpd-authz-overview}
 
-A autorização (AuthZ) é executada através de comunicações back-channel (servidor para servidor) entre um servidor back-end hospedado em Adobe e o endpoint MVPD AuthZ.
+A autorização (AuthZ) é executada por meio de comunicações de canal de retorno (servidor para servidor) entre um servidor de back-end hospedado pela Adobe e o terminal AuthZ da MVPD.
 
 Para solicitações AuthZ, o endpoint de autorização deve ser capaz de processar pelo menos os seguintes parâmetros:
 
@@ -25,7 +25,7 @@ Para solicitações AuthZ, o endpoint de autorização deve ser capaz de process
 
 * **Identificação do recurso**. Uma string que identifica um determinado recurso de conteúdo. Essa ID de recurso é especificada pelo Programador e o MVPD deve reforçar as regras de negócios desses recursos (por exemplo, verificando se o usuário está inscrito em um determinado canal).
 
-Além de determinar se o usuário está autorizado, a resposta deve incluir o TTL (time-to-live) dessa autorização, ou seja, quando a autorização expira. Se o TTL não for definido, a solicitação AuthZ falhará.  Por esse motivo, **o TTL é uma configuração obrigatória no lado da Autenticação do Adobe Pass**, para abranger o caso quando um MVPD não incluir o TTL em sua solicitação.
+Além de determinar se o usuário está autorizado, a resposta deve incluir o TTL (time-to-live) dessa autorização, ou seja, quando a autorização expira. Se o TTL não for definido, a solicitação AuthZ falhará.  Por esse motivo, **o TTL é uma configuração obrigatória no lado da Autenticação da Adobe Pass**, para abranger os casos em que uma MVPD não inclui o TTL em sua solicitação.
 
 ## A solicitação de autorização {#authz-req}
 
@@ -40,7 +40,7 @@ Uma solicitação AuthZ deve incluir um assunto em nome do qual a solicitação 
 
 
 
-A controladora de armazenamento neste ponto deve preparar uma consulta de decisão de autorização XACML e enviá-la (via POST HTTP) ao ponto de decisão de política (PDP) (previamente acordado) para o IdP. Abaixo está um exemplo de uma solicitação XACML simples (consulte a especificação principal XACML):
+A controladora de armazenamento neste ponto deve preparar uma Consulta de decisão de autorização XACML e enviá-la (via HTTP POST) ao Ponto de decisão de política (PDP) (previamente acordado) para o IdP. Abaixo está um exemplo de uma solicitação XACML simples (consulte a especificação principal XACML):
 
 ```XML
 POST https://authz.site.com/XACML_endpoint
@@ -84,7 +84,7 @@ Depois de receber a solicitação AuthZ, o PDP do MVPD avalia a solicitação e 
 
 ## A Resposta de Autorização {#authz-response}
 
-A resposta à solicitação de AuthZ vem depois que o MVPD avalia a solicitação e aplica as regras de negócios solicitadas para determinar se o sujeito tem permissão para executar a ação solicitada no recurso. A resposta retornada à autenticação da Adobe Pass é expressa novamente seguindo a especificação principal da XACML com uma Decisão, um Código de status, uma mensagem e Obrigações que a controladora tem como PEP (Ponto de aplicação de política). Este é um exemplo de Resposta:
+A resposta à solicitação de AuthZ vem depois que o MVPD avalia a solicitação e aplica as regras de negócios solicitadas para determinar se o assunto tem permissão para executar a ação solicitada no recurso. A resposta retornada à autenticação da Adobe Pass é expressa novamente seguindo a especificação principal da XACML com uma Decisão, um Código de status, uma mensagem e Obrigações que a controladora tem como PEP (Ponto de aplicação de política). Este é um exemplo de Resposta:
 
 ```XML
 <Response xmlns="urn:oasis:names:tc:xacml:2.0:context:schema:os">

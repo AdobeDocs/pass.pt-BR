@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -118,7 +118,7 @@ Estes são os fluxos para cancelar a autenticação:
 
 1. **Guia Navegador -** Como a guia é basicamente uma nova janela, capturar seu evento de fechamento tem as mesmas limitações discutidas no cenário 3 dos fluxos de autenticação antigos. Além disso, a abordagem de cronômetro não é possível aqui, pois não há como distinguir entre uma guia que foi fechada manualmente pelo usuário e uma guia que foi fechada automaticamente no final do fluxo de logon. A solução aqui é que o AccessEnabler permaneça &quot;silencioso&quot; (nenhum retorno de chamada é acionado) quando o usuário cancela o fluxo. Além disso, o programador não é obrigado a tomar qualquer ação específica. O usuário poderá iniciar outro fluxo de autenticação sem receber o erro &quot;Erro de várias solicitações de autenticação&quot; (esse erro foi desativado no AccessEnabler para logon em segundo plano).
 
-1. **iFrame -** O Programador pode usar a abordagem discutida no cenário 2 a partir dos fluxos de autenticação antigos (crie a interface do usuário do wrapper a partir do iFrame e do botão Fechar associado que aciona `setSelectedProvider(null)`. Embora essa abordagem não seja mais um requisito forte (vários fluxos de autenticação são permitidos para logon em segundo plano, conforme discutido no cenário 1 acima), ela ainda é recomendada pelo Adobe.
+1. **iFrame -** O Programador pode usar a abordagem discutida no cenário 2 a partir dos fluxos de autenticação antigos (crie a interface do usuário do wrapper a partir do iFrame e do botão Fechar associado que aciona `setSelectedProvider(null)`. Embora essa abordagem não seja mais um requisito forte (vários fluxos de autenticação são permitidos para logon em segundo plano, conforme discutido no cenário 1 acima), ela ainda é recomendada pela Adobe.
 
 1. **Pop-up -** É idêntico ao fluxo da guia Navegador acima.
 

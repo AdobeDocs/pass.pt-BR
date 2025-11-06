@@ -2,7 +2,7 @@
 title: Pré-autorização Básica - Aplicativo Principal - Fluxo
 description: REST API V2 - Pré-autorização básica - Aplicativo principal - Fluxo
 exl-id: f557f6c3-d5b2-4ec8-be51-91a90fbd31c0
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -37,7 +37,7 @@ Antes de recuperar decisões de pré-autorização usando uma MVPD específica, 
 
 Siga as etapas fornecidas para implementar o fluxo básico de pré-autorização usando uma MVPD específica executada em um aplicativo principal, conforme mostrado no diagrama a seguir.
 
-![Recuperar decisões de pré-autorização usando mvpd](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png) específico
+![Recuperar decisões de pré-autorização usando mvpd](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png) específico
 
 *Recuperar decisões de pré-autorização usando mvpd* específico
 

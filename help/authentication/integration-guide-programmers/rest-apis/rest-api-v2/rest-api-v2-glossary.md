@@ -2,7 +2,7 @@
 title: Glossário da REST API V2
 description: Glossário da REST API V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -63,7 +63,7 @@ A decisão é um conceito de Autenticação da Adobe Pass que armazena informaç
 
 A degradação é um recurso de Autenticação Adobe Pass que permite que um usuário acesse conteúdo protegido mesmo quando seu [MVPD](#mvpd) sofrer uma interrupção de serviço.
 
-Para obter mais informações, consulte a documentação do [Recurso de Degradação](/help/premium-workflow/degraded-access/degradation-feature.md).
+Para obter mais informações, consulte a documentação do [Recurso de Degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md).
 
 #### ID do dispositivo {#device-id}
 
@@ -229,13 +229,13 @@ O SSO (logon único) é um processo que permite ao usuário autenticar uma vez e
 
 O TempPass básico é um recurso de Autenticação da Adobe Pass que permite que um usuário acesse conteúdo protegido por um tempo limitado sem a necessidade de autenticação com um [MVPD](#mvpd).
 
-Para obter mais informações, consulte a documentação do [Basic TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#basic-temp-pass).
+Para obter mais informações, consulte a documentação do [Basic TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#basic-temp-pass).
 
 #### TempPass Promocional {#temp-pass-promotional}
 
 O TempPass promocional é um recurso de Autenticação da Adobe Pass que permite que um usuário acesse conteúdo protegido por um número máximo de recursos e um tempo limitado sem a necessidade de autenticação com uma [MVPD](#mvpd).
 
-Para obter mais informações, consulte a documentação do [TempPass Promocional](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass).
+Para obter mais informações, consulte a documentação do [TempPass Promocional](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass).
 
 #### TTL {#ttl}
 

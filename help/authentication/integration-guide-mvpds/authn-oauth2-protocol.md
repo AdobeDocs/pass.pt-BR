@@ -2,7 +2,7 @@
 title: Autenticação usando o protocolo OAuth 2.0
 description: Autenticação usando o protocolo OAuth 2.0
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '1088'
 ht-degree: 0%
@@ -67,7 +67,7 @@ No fluxo de autenticação, a Autenticação do Adobe Pass se comunicará com a 
 
 
 
-![Diagrama para mostrar o Fluxo de autenticação na Autenticação do Adobe que se comunica com o MVPD no protocolo selecionado na configuração.](/help/authentication/assets/authn-flow.png)
+![Diagrama para mostrar o Fluxo de autenticação na Autenticação do Adobe que se comunica com o MVPD no protocolo selecionado na configuração.](../assets/authn-flow.png)
 
 **Figura 1: Fluxo de autenticação do OAuth 2.0**
 

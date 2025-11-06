@@ -2,7 +2,7 @@
 title: Guia do iOS/tvOS
 description: Guia do iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '2424'
 ht-degree: 0%
@@ -48,7 +48,7 @@ A atividade de rede do AccessEnabler ocorre em seu próprio thread, portanto, o 
 
 ## Configurar o serviço da Experience Cloud ID (ID do visitante) {#visitorIDSetup}
 
-Configurar o valor [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=pt-BR) é importante do ponto de vista [!DNL Analytics]. Depois que um valor `visitorID` é definido, o SDK envia essas informações junto com cada chamada de rede e o servidor de Autenticação [!DNL Adobe Pass] coleta essas informações. É possível correlacionar a análise do serviço de Autenticação da Adobe Pass com quaisquer outros relatórios de análise que você tenha de outros aplicativos ou sites. Informações sobre como configurar visitorID podem ser encontradas [aqui](#setOptions).
+Configurar o valor [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html) é importante do ponto de vista [!DNL Analytics]. Depois que um valor `visitorID` é definido, o SDK envia essas informações junto com cada chamada de rede e o servidor de Autenticação [!DNL Adobe Pass] coleta essas informações. É possível correlacionar a análise do serviço de Autenticação da Adobe Pass com quaisquer outros relatórios de análise que você tenha de outros aplicativos ou sites. Informações sobre como configurar visitorID podem ser encontradas [aqui](#setOptions).
 
 ## Fluxos de Direitos {#entitlement}
 
@@ -120,7 +120,7 @@ está autorizado a visualizar.
       * Acionado por uma ação do usuário (selecionando &quot;Cancelar&quot; ou &quot;Outros provedores de TV&quot; na caixa de diálogo SSO do Apple).
       * O parâmetro viewController é a Caixa de Diálogo de SSO do Apple e precisa ser descartado do controlador de exibição principal.
 
-![](/help//authentication/assets/iOS-flows.png)
+![](../../../../assets/iOS-flows.png)
 
 ### B. Fluxo de inicialização {#startup_flow}
 

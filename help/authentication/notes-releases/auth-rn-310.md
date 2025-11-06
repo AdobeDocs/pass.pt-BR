@@ -1,7 +1,8 @@
 ---
 title: Notas de versão da Autenticação Adobe Pass 3.1.0
 description: Notas de versão da Autenticação Adobe Pass 3.1.0
-source-git-commit: 4ad5ea619f64a78a72f69228c9ae3c83a7b66f24
+exl-id: cf9fc8e2-4b37-4b0a-a6ed-cda1b6738e76
+source-git-commit: 0c6aec04ae9df410228730b5bce6ced1aeecd312
 workflow-type: tm+mt
 source-wordcount: '192'
 ht-degree: 0%

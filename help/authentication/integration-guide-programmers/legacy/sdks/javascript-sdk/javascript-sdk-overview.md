@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 A Adobe recomenda que você migre para a versão mais recente do JS v4.x da biblioteca do AccessEnabler.
 
-A integração do JavaScript de autenticação da Adobe Pass oferece aos programadores uma solução TV em todos os lugares no ambiente familiar de desenvolvimento de aplicativos Web JS. Os principais componentes da integração são seu aplicativo de &quot;alto nível&quot; (interação do usuário, apresentação de vídeo) e a biblioteca de &quot;baixo nível&quot; do AccessEnabler fornecida pelo Adobe, que fornece sua entrada para os fluxos de direitos e lida com a comunicação com os servidores de autenticação da Adobe Pass.
+A integração do JavaScript de autenticação da Adobe Pass oferece aos programadores uma solução TV em todos os lugares no ambiente familiar de desenvolvimento de aplicativos Web JS. Os principais componentes da integração são seu aplicativo de &quot;alto nível&quot; (interação do usuário, apresentação de vídeo) e a biblioteca de &quot;baixo nível&quot; AccessEnabler fornecida pela Adobe, que fornece sua entrada para os fluxos de direitos e lida com a comunicação com os servidores de autenticação da Adobe Pass.
 
 As seções a seguir fornecem descrições e exemplos específicos para a integração do JavaScript AccessEnabler.
 
@@ -55,7 +55,7 @@ A amostra de código a seguir demonstra como descobrir e exibir o provedor de se
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer_br"> 
+        <a href="http://www.adobe.com/go/getflashplayer"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 

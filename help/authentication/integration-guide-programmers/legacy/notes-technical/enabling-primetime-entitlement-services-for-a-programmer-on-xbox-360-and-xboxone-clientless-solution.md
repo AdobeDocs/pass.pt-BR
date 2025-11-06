@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -26,7 +26,7 @@ ht-degree: 0%
 
    1. ID do solicitante: por exemplo, netgeo, CNN etc.
 
-1. O Adobe criará Certificados X509 e configurará a chave privada e a senha no final.
+1. O Adobe criará Certificados X509 e configurará a chave privada e a senha ao final.
 
 1. O Adobe fornecerá o certificado Público (de certificado X509) ao Programador no tíquete ou por email.
 
@@ -49,4 +49,4 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Devido ao grande comprimento do token XSTS, o console XBox tem uma limitação técnica: não pode enviar o token como um GET HTTP para as APIs de autenticação de TV paga do Adobe Pass. Para lidar com isso, a autenticação de TV por assinatura do Adobe Pass permite enviar o token XSTS como parte da &quot;Autorização&quot; do cabeçalho HTTP ao chamar as APIs. O token XSTS deve ser criptografado usando a chave pública do certificado X.509 emitido para o Programador da autenticação de TV paga do Adobe Pass. A autenticação de TV por assinatura do Adobe Pass armazena a chave privada associada e a usa para descriptografar o token XSTS e extrair o deviceId dele.
+>Devido ao grande comprimento do token XSTS, o console XBox tem uma limitação técnica: não pode enviar o token como um parâmetro HTTP GET para as APIs de autenticação de TV paga do Adobe Pass. Para lidar com isso, a autenticação de TV por assinatura do Adobe Pass permite enviar o token XSTS como parte da &quot;Autorização&quot; do cabeçalho HTTP ao chamar as APIs. O token XSTS deve ser criptografado usando a chave pública do certificado X.509 emitido para o Programador da autenticação de TV paga do Adobe Pass. A autenticação de TV por assinatura do Adobe Pass armazena a chave privada associada e a usa para descriptografar o token XSTS e extrair o deviceId dele.

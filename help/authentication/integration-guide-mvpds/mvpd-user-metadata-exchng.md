@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Introdução {#intro-user-metadata-exchange}
 
@@ -27,15 +27,15 @@ Os tipos de metadados de usuário disponíveis para o Exchange atualmente inclue
 * ID da família
 * ID do canal
 
-Usando esse recurso, os MVPDs e Programadores podem implementar casos de uso especiais, como o controle dos pais. Por exemplo, um MVPD pode transmitir dados de classificação dos pais a um Programador, que os usa para filtrar as opções de exibição disponíveis para um usuário.
+Usando esse recurso, os MVPDs e Programadores podem implementar casos de uso especiais, como o controle dos pais. Por exemplo, uma MVPD pode enviar dados de classificação dos pais para um Programador, que os usa para filtrar as opções de exibição disponíveis para um usuário.
 
 Pontos principais dos metadados do usuário:
 
-* O MVPD transmite metadados do usuário para o aplicativo do Programador durante os fluxos de autenticação e autorização
+* O MVPD transmite os metadados do usuário para o aplicativo do programador durante os fluxos de autenticação e autorização
 * A Autenticação Adobe Pass salva os valores de metadados nos tokens AuthN e AuthZ
 * A Autenticação do Adobe Pass pode normalizar valores para MVPDs que fornecem metadados do usuário em diferentes formatos
 * Alguns parâmetros podem ser criptografados usando a chave do programador
-* Valores específicos são disponibilizados por Adobe, por meio de uma alteração de configuração
+* Valores específicos são disponibilizados pela Adobe, por meio de uma alteração de configuração
 
 >[!NOTE]
 >
@@ -49,11 +49,11 @@ Este exemplo mostra a troca do seguinte:
 
 * [Programador para o MVPD Metadata Exchange](#progr-mvpd-metadata-exch)
 
-* [Fluxo de MVPD para Intercâmbio de Metadados de Programador](#mvpd-progr-exchange-flow)
+* [Fluxo de troca de metadados do MVPD para o programador](#mvpd-progr-exchange-flow)
 
 ### Programador para o MVPD Metadata Exchange {#progr-mvpd-metadata-exch}
 
-Atualmente, a API do programador, a Autenticação do Adobe Pass e os Autorizadores MVPD suportam apenas a autorização no nível do canal. O canal é especificado como uma cadeia de texto sem formatação na chamada da API getAuthorization() do programador. Essa cadeia de caracteres é propagada completamente para o back-end de autorização do MVPD:
+Atualmente, a API do programador, a Autenticação do Adobe Pass e os Autorizadores da MVPD são compatíveis apenas com a autorização no nível do canal. O canal é especificado como uma cadeia de texto sem formatação na chamada da API getAuthorization() do programador. Essa cadeia de caracteres é propagada todo o caminho para o back-end de autorização do MVPD:
 
 No aplicativo ou site do Programador, o usuário escolhe um MVPD compatível com XACML (neste exemplo, &quot;TNT&quot;). Para obter informações sobre XACML, consulte [eXtensible Access Control Markup Language](https://en.wikipedia.org/wiki/XACML){target=_blank}.
 O aplicativo do Programador forma uma solicitação AuthZ que inclui o recurso e seus metadados.  Este exemplo inclui uma classificação MPAA de &quot;pg&quot; no atributo de mídia do elemento de canal:
@@ -68,13 +68,13 @@ var resource = '<rss version="2.0" xmlns:media="http://video.search.yahoo.com/mr
 getAuthorization(resource);
 ```
 
-A Autenticação do Adobe Pass realmente oferece suporte a autorizações mais granulares, até o nível do ativo, quando suportado pelo MVPD e pelo Programador. O recurso e seus metadados são opacos ao Adobe; a intenção é estabelecer um formato padrão para especificar a ID do recurso e os metadados de uma maneira normalizada, a fim de enviar IDs de recurso para MVPDs diferentes.
+A Autenticação do Adobe Pass realmente oferece suporte a autorizações mais granulares, até o nível do ativo, quando suportado pela MVPD e pelo Programador. O recurso e seus metadados são opacos para o Adobe; a intenção é estabelecer um formato padrão para especificar a ID do recurso e os metadados de forma normalizada, a fim de enviar IDs de recurso para MVPDs diferentes.
 
 >[!NOTE]
 >
->Se o usuário escolher um MVPD compatível somente com canal, a Autenticação do Adobe Pass extrairá SOMENTE o título do canal (&quot;TNT&quot; no exemplo acima) e transmitirá somente o título para o MVPD.
+>Se o usuário escolher um MVPD compatível somente com canais, a Autenticação Adobe Pass extrairá SOMENTE o título do canal (&quot;TNT&quot; no exemplo acima) e transmitirá somente o título para o MVPD.
 
-### Fluxo de MVPD para Intercâmbio de Metadados de Programador {#mvpd-progr-exchange-flow}
+### Fluxo de troca de metadados do MVPD para o programador {#mvpd-progr-exchange-flow}
 
 A Autenticação Adobe Pass assume as seguintes premissas:
 
@@ -105,51 +105,51 @@ A Autenticação Adobe Pass assume as seguintes premissas:
 
 ### Notas {#notes-mvpd-progr-metadata-exch-flow}
 
-**Validação e Normalização de Recursos.** As IDs de recursos podem ser passadas como uma cadeia de caracteres simples ou uma cadeia de caracteres MRSS. Um programador pode decidir usar o formato de string simples ou o MRSS, mas precisará de um acordo prévio com o MVPD para que o MVPD saiba como tratar esse recurso.
+**Validação e Normalização de Recursos.** As IDs de recursos podem ser passadas como uma cadeia de caracteres simples ou uma cadeia de caracteres MRSS. Um Programador pode decidir usar o formato de string simples ou o MRSS, mas precisará de um acordo prévio com o MVPD para que o MVPD saiba como tratar esse recurso.
 
 **Especificação de Metadados e ID de Recursos.A Autenticação do Adobe Pass** usa o padrão RSS com a extensão RSS de Mídia para especificar um recurso e seus metadados. Juntamente com a extensão RSS de Mídia, a Autenticação da Adobe Pass oferece suporte a uma grande variedade de metadados, como controles dos pais (via `<media:rating>`) ou geolocalização (`<media:location>`).
 
 A Autenticação do Adobe Pass também pode oferecer suporte à conversão transparente da cadeia de caracteres do canal herdado para o recurso RSS correspondente para MVPDs que exigem RSS. Na outra direção, a Autenticação do Adobe Pass oferece suporte à conversão de RSS+MRSS em título de canal simples, para MVPDs somente de canal.
 
-A Autenticação do **Adobe Pass garante total compatibilidade com versões anteriores de integrações existentes.** Ou seja, para Programadores que usam autenticação no nível do canal, a Autenticação da Adobe Pass cuida de empacotar a ID do canal no formato necessário antes de enviá-la para um MVPD que entenda esse formato. O inverso também se aplica: se um Programador especificar todos os seus recursos em um novo formato, a Autenticação do Adobe Pass converterá o novo formato em uma string de canal simples se autorizar em relação a um MVPD que apenas faz autorização no nível do canal.
+A Autenticação do **Adobe Pass garante total compatibilidade com versões anteriores de integrações existentes.** Ou seja, para programadores que usam autenticação no nível do canal, a Autenticação da Adobe Pass cuida de disponibilizar a ID do canal no formato necessário antes de enviá-la para uma MVPD que entenda esse formato. O inverso também se aplica: se um Programador especificar todos os seus recursos em um novo formato, a Autenticação do Adobe Pass converterá o novo formato em uma string de canal simples se autorizar em uma MVPD que apenas faz autorização no nível do canal.
 
 ## Casos de uso de metadados do usuário {#user-metadata-use-cases}
 
 Os casos de uso estão em constante mudança e expansão à medida que mais MVPDs fazem acordos legais e adicionam funcionalidade. Veja a seguir exemplos de para que os metadados do usuário podem ser usados.
 
-* [ID de usuário MVPD](#mvpd-user-id)
+* [ID de usuário do MVPD](#mvpd-user-id)
 * [ID da família](#household-user-id)
 * [Código postal](#zip-code)
 * [Classificação máxima (controle dos pais)](#max-rating-parental-control)
 * [Alinhamento de canais](#channel-line-up)
 
-### ID de usuário MVPD {#mvpd-user-id}
+### ID de usuário do MVPD {#mvpd-user-id}
 
-* Conforme fornecido pelo MVPD
+* Conforme fornecido pela MVPD
 * Não as informações de logon reais do usuário, pois são transformadas em hash pelo MVPD
 * Pode ser usado para indicar problemas com ou para usuários específicos
 * Criptografado
-* Suporte MVPD: Todos os MVPDs
+* Suporte ao MVPD: todos os MVPDs
 
 ### ID de Usuário Doméstico {#household-user-id}
 
 * Permite informações de boa métrica
 * Criptografado
-* Suporte a MVPD: alguns MVPDs
+* Suporte ao MVPD: alguns MVPDs
 
 ### Código postal {#zip-code}
 
 * O CEP de faturamento do usuário
 * Usado principalmente para aplicar regras de período de congelamento de evento esportivo
 * Pode ser fornecido com a resposta AuthZ para atualizações rápidas
-* Suporte a MVPD: alguns MVPDs
+* Suporte ao MVPD: alguns MVPDs
 
 ### Classificação máxima (controle dos pais) {#max-rating-parental-control}
 
 * AuthN inicialmente, mais atualização AuthZ
 * Filtrar conteúdo por meio da interface
 * Classificações de MPAA ou VChip
-* Suporte a MVPD: alguns MVPDs
+* Suporte ao MVPD: alguns MVPDs
 
 ### Alinhamento de canais {#channel-line-up}
 

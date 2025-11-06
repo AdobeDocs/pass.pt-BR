@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## Descrição do caso de uso
 
-O MVPD M tem um aplicativo do iPhone, um aplicativo do iPad e um site. Ele precisa se integrar com o Monitoramento de Simultaneidade de Adobe (CM) a pedido do Programador P. O Programador P definiu no CM um conjunto de políticas com regras que restringirão o uso simultâneo. O CM tomará decisões sobre quais fluxos podem ser reproduzidos com base nas políticas e regras definidas. Isso significa que, mesmo que um fluxo tenha sido permitido de iniciar e reproduzir, durante a reprodução, o CM pode decidir pará-lo.
+O MVPD M tem um aplicativo do iPhone, um aplicativo do iPad e um site. Ele precisa se integrar ao Adobe Concurrency Monitoring (CM) a pedido do Programador P. O Programador P definiu no CM um conjunto de políticas com regras que restringirão o uso simultâneo. O CM tomará decisões sobre quais fluxos podem ser reproduzidos com base nas políticas e regras definidas. Isso significa que, mesmo que um fluxo tenha sido permitido de iniciar e reproduzir, durante a reprodução, o CM pode decidir pará-lo.
 
 
 
@@ -38,12 +38,12 @@ Depois de criar o ticket, as seguintes informações serão liberadas para uso:
 
 | type | descrição | exemplo de valor | valor padrão |
 | --- | --- | --- | --- |
-| endpoint | o endpoint para Monitoramento de simultaneidade de Adobe | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
+| endpoint | o terminal para o Monitoramento de simultaneidade do Adobe | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
 | applicationId | ID do aplicativo iPhone | iphone54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | ID do aplicativo iPad | ipad5d54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | ID do aplicativo do site | site4-75b4-431b-adb2-eb6b9e546013 | - |
-| intervalo para pulsações | Intervalo em segundos para enviar chamadas de pulsação para o Monitoramento de Simultaneidade de Adobe | 60 | 60 |
-| intervalo para conformidade de fluxo | Intervalo em segundos para verificar a conformidade do fluxo com o Monitoramento de simultaneidade de Adobe | 180 | 180 |
+| intervalo para pulsações | Intervalo em segundos para enviar chamadas de pulsação para o Monitoramento de simultaneidade do Adobe | 60 | 60 |
+| intervalo para conformidade de fluxo | Intervalo em segundos para verificar a conformidade do fluxo com o Adobe Concurrency Monitoring | 180 | 180 |
 
 
 ## Diretrizes de implementação

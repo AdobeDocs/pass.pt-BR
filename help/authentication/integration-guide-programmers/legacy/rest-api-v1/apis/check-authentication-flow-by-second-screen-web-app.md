@@ -4,7 +4,7 @@ description: Verificar Fluxo de Autenticação por Aplicativo Web de Segunda Tel
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -44,7 +44,7 @@ Essa API deve ser consumida pelo segundo aplicativo Web de logon de tela para co
 
 | Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{código de registro} | Aplicativo Web de Logon | 1. código de registro </br>    (Componente do caminho)</br>2.  solicitante </br>    (Obrigatório) | GET | XML ou JSON que contém detalhes de erros, caso não seja bem-sucedido. | 200 - Sucesso   </br>403 - Proibido |
+| SP_FQDN/api/v1/checkauthn/{registration code} | Aplicativo Web de Logon | &#x200B;1. código de registro </br>    (Componente do caminho)</br>2.  solicitante </br>    (Obrigatório) | GET | XML ou JSON que contém detalhes de erros, caso não seja bem-sucedido. | 200 - Sucesso   </br>403 - Proibido |
 
 </br>
 

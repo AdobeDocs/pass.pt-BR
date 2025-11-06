@@ -2,7 +2,7 @@
 title: Cabeçalho - AP-Visitor-Identifier
 description: REST API V2 - Cabeçalho - AP-Visitor-Identifier
 exl-id: 216f398b-1cfa-4453-a81d-963675b33ec2
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 7d19319d83af0122624ab3b80b1f31fc0cbbf182
 workflow-type: tm+mt
 source-wordcount: '91'
 ht-degree: 4%
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 O cabeçalho de solicitação <b>AP-Visitor-Identifier</b> contém o `ECID` exigido pelo aplicativo cliente para identificar exclusivamente um visitante nas soluções da Adobe Experience Cloud.
 
-Para obter mais detalhes sobre o uso da ECID na Autenticação do Adobe Pass, consulte a documentação [Uso da Experience Cloud ID na Autenticação do Adobe Pass](/help/authentication/integration-guide-programmers/features-standard/analytics/exp-cloud-id-authn.md).
+Para obter mais detalhes sobre o uso da ECID na Autenticação do Adobe Pass, consulte a documentação [Uso da Experience Cloud ID na Autenticação do Adobe Pass](../../../../features-premium/analytics/exp-cloud-id-authn.md).
 
 ## Sintaxe {#syntax}
 

@@ -4,7 +4,7 @@ description: Guia do Apple SSO (iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1834'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -106,14 +106,14 @@ Para se beneficiar da experiência do usuário do Apple SSO, o aplicativo precis
    * ***VSA404*** - A permissão Provedor de TV do usuário não foi determinada para o aplicativo.
    * ***APPL*** - A comunicação entre o AccessEnabler iOS/tvOS SDK e a Estrutura de Conta de Assinante de Vídeo encontrou um erro.
 
-   Esta segunda etapa tentaria trocar silenciosamente o perfil de SSO do Apple por um token de autenticação Adobe, caso **todas as opções acima sejam falsas** e **todas as opções a seguir sejam verdadeiras**:
+   Esta segunda etapa tentaria trocar silenciosamente o perfil de SSO do Apple por um token de autenticação do Adobe, caso **todas as opções acima sejam falsas** e **todas as opções a seguir sejam verdadeiras**:
 
    * A permissão Provedor de TV do usuário é concedida para o aplicativo.
    * O usuário está conectado à sua conta do Provedor de TV no nível do sistema do dispositivo.
    * O AccessEnabler iOS/tvOS SDK recebeu o identificador de Provedor de TV do usuário da Estrutura de conta do assinante de vídeo.
-   * A integração do Provedor de TV do usuário com o aplicativo é habilitada por meio do Painel do Adobe Primetime TVE.
+   * A integração do Provedor de TV do usuário com o aplicativo é habilitada por meio do Painel de TV do Adobe Primetime.
    * O Logon único do provedor de TV do usuário com o aplicativo é ativado por meio do painel do Adobe Primetime TVE.
-   * O provedor de TV do usuário não é degradado pelo painel do Adobe Primetime TVE.
+   * O provedor de TV do usuário não é degradado pelo painel de TV do Adobe Primetime.
    * O AccessEnabler iOS/tvOS SDK recebeu a resposta SAML do Provedor de TV do usuário da Estrutura de conta do assinante de vídeo.
 
    **<u>Dica Pro:</u>** Esta segunda etapa não acionará nenhum outro retorno de chamada, além do retorno de chamada [setRequestorComplete](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setrequestorcomplete-setreqcomplete), pois a autenticação não foi iniciada explicitamente pelo aplicativo.
@@ -138,8 +138,8 @@ a estrutura encontrou um erro.
 
    * O usuário não está conectado à sua conta do Provedor de TV no nível do sistema do dispositivo ou por meio de um fluxo de autenticação regular.
    * O usuário está conectado à sua conta do Provedor de TV no nível do sistema do dispositivo ou por meio de um fluxo de autenticação regular, mas o token de autenticação do Provedor de TV TTL do usuário foi aprovado.
-   * O usuário faz logon em sua conta do Provedor de TV no nível do sistema do dispositivo ou por meio de um fluxo de autenticação regular, mas a integração do Provedor de TV do usuário com o aplicativo é desativada por meio do Painel do Adobe Primetime TVE.
-   * O usuário faz logon em sua conta do Provedor de TV no nível do sistema do dispositivo, mas o Logon único do Provedor de TV com o aplicativo é desativado por meio do Painel do Adobe Primetime TVE.
+   * O usuário faz logon em sua conta do Provedor de TV no nível do sistema do dispositivo ou por meio de um fluxo de autenticação regular, mas a integração do Provedor de TV do usuário com o aplicativo é desativada por meio do Painel de TV do Adobe Primetime.
+   * O usuário está conectado à sua conta do Provedor de TV no nível do sistema do dispositivo, mas o Logon único do Provedor de TV do usuário com o aplicativo é desativado por meio do Painel do Adobe Primetime TVE.
    * O usuário está conectado à sua conta do Provedor de TV no nível do sistema do dispositivo, mas a permissão do Provedor de TV do usuário é negada para o aplicativo.
    * O usuário está conectado à sua conta do Provedor de TV no nível do sistema do dispositivo, mas a permissão do Provedor de TV do usuário não foi determinada para o aplicativo.
    * O usuário está conectado à sua conta do Provedor de TV no nível do sistema do dispositivo, mas a comunicação entre o AccessEnabler iOS/tvOS SDK e a Estrutura da Conta do Assinante de Vídeo encontrou um erro.
@@ -162,25 +162,25 @@ a estrutura encontrou um erro.
 
    **Importante:** esta quarta etapa retornará ao fluxo de autenticação regular, acionando o retorno de chamada [displayProviderDialog](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#dispProvDialog) e **one** dos [códigos de erro avançados](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) acima, caso **uma das opções acima seja verdadeira**.
 
-   **Importante:** esta quarta etapa retornará ao fluxo de autenticação normal, acionando o [navigateToUrl](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2url) ou o [navigateToUrl:useSVC](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2urlSVC) de retorno e **nenhum** dos [códigos de erro avançados](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) acima, caso o usuário tenha selecionado um provedor de TV, que não dá suporte ao Apple SSO, mas está presente no seletor do Apple MVPD.
+   **Importante:** esta quarta etapa retornará ao fluxo de autenticação normal, acionando o retorno de chamada [navigateToUrl](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2url) ou [navigateToUrl:useSVC](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2urlSVC) e **none** dos [códigos de erro avançados](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) acima, caso o usuário tenha selecionado um provedor de TV, que não oferece suporte ao Apple SSO, mas esteja presente no seletor de Apple MVPD.
 
    **<u>Dica Pro:</u>** o AccessEnabler iOS/tvOS SDK chama silenciosamente a API [setSelectedProvider](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setSelProv), caso o usuário tenha selecionado um provedor de TV, que não dá suporte ao Apple SSO, mas está presente no seletor do Apple MVPD.
 
-   **Importante:** esta quarta etapa tentaria trocar silenciosamente o perfil de SSO do Apple por um token de autenticação Adobe, caso **todas as opções acima sejam falsas** e **todas as opções a seguir sejam verdadeiras**:
+   **Importante:** esta quarta etapa tentaria trocar silenciosamente o perfil de SSO do Apple por um token de autenticação do Adobe, caso **todas as opções acima sejam falsas** e **todas as opções a seguir sejam verdadeiras**:
 
    * A permissão Provedor de TV do usuário é concedida para o aplicativo.
    * O usuário está conectado/no momento faz logon em sua conta do Provedor de TV no nível do sistema do dispositivo.
    * O AccessEnabler iOS/tvOS SDK recebeu o identificador de Provedor de TV do usuário da Estrutura de conta do assinante de vídeo.
-   * A integração do Provedor de TV do usuário com o aplicativo é habilitada por meio do Painel do Adobe Primetime TVE.
+   * A integração do Provedor de TV do usuário com o aplicativo é habilitada por meio do Painel de TV do Adobe Primetime.
    * O Logon único do provedor de TV do usuário com o aplicativo é ativado por meio do painel do Adobe Primetime TVE.
-   * O provedor de TV do usuário não é degradado pelo painel do Adobe Primetime TVE.
+   * O provedor de TV do usuário não é degradado pelo painel de TV do Adobe Primetime.
    * O AccessEnabler iOS/tvOS SDK recebeu a resposta SAML do Provedor de TV do usuário da Estrutura de conta do assinante de vídeo.
 
    **<u>Dica de Profissional:</u>** Esta quarta etapa acionará o retorno de chamada [*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setAuthNStatus), independentemente do resultado de *status*, pois a autenticação foi iniciada explicitamente pelo aplicativo.
 
 ### Metadados {#apple-sso-cookbook-iostvos-sdk-metadata}
 
-O aplicativo tem a opção de determinar se a autenticação ocorreu como resultado de uma entrada por meio do SSO do Parceiro ou não, usando a API de &quot;*metadados de [usuário* do &quot;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta)tokenSource&quot; da SDK do AccessEnabler iOS/tvOS.
+O aplicativo tem a opção de determinar se a autenticação ocorreu como resultado de uma entrada por meio do SSO do Parceiro ou não, usando a API de &quot;*metadados de* usuário[ do &quot;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta)tokenSource&quot; da SDK do AccessEnabler iOS/tvOS.
 
 ```swift
     ...

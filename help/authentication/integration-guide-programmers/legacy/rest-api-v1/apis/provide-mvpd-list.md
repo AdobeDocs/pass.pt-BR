@@ -4,7 +4,7 @@ description: Fornecer lista do MVPD
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '254'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Retorna a lista de MVPDs configurados para o solicitante.
 
 | Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Por exemplo:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass Authentication | 1. Solicitante</br>    (Componente do caminho)</br>_2.  deviceType (desaprovado)_ | GET | XML ou JSON contendo a lista de MVPDs. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Por exemplo:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestId | Adobe Pass Authentication | &#x200B;1. Solicitante</br>    (Componente do caminho)</br>_2.  deviceType (desaprovado)_ | GET | XML ou JSON contendo a lista de MVPDs. | 200 |
 
 {style="table-layout:auto"}
 

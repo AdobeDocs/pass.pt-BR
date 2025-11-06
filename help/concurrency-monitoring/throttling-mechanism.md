@@ -4,7 +4,7 @@ description: Mecanismo de limitação
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
 source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '614'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 ## Introdução {#introduction}
 
-O Adobe, na sua função de processador de dados, deve tomar as medidas apropriadas para garantir que os usuários de nossos clientes usem os recursos de forma equitativa e que o serviço não seja inundado por solicitações desnecessárias de API. Para isso, implantamos um mecanismo de controle.
+A Adobe, na sua função de processador de dados, deve tomar as medidas apropriadas para garantir que os usuários dos clientes usem os recursos de forma equitativa e que o serviço não seja inundado por solicitações desnecessárias de API. Para isso, implantamos um mecanismo de controle.
 Um aplicativo de Monitoramento de simultaneidade pode ser usado por vários usuários e um deles pode ter várias sessões. Portanto, o serviço terá limites configurados para o número de chamadas aceitas por usuário/sessão em um intervalo de tempo específico.
 Quando o limite for atingido, as solicitações serão marcadas com um status de resposta específico (HTTP 429 Demasiadas solicitações). Qualquer chamada subsequente feita após o recebimento de uma resposta &quot;429 Muitas solicitações&quot; deve ser feita com pelo menos um minuto de resfriamento para garantir que obtenha uma resposta comercial válida.
 
@@ -73,4 +73,4 @@ x-content-type-options: nosniff
 ## Recomendações de integração do cliente {#customer-integration-recommendations}
 
 Com uma implementação correta, os clientes não receberão a resposta &quot;429 muitas solicitações&quot;.
-Além disso, a Adobe recomenda que cada cliente manipule a resposta &quot;429 muitas solicitações&quot; apropriadamente, usando os detalhes técnicos apresentados acima. Ao manipular a resposta, o cabeçalho &quot;Expira&quot; deve ser usado para determinar quando enviar a próxima solicitação válida.
+Além disso, a Adobe recomenda que cada cliente trate a resposta &quot;429 muitas solicitações&quot; apropriadamente, usando os detalhes técnicos apresentados acima. Ao manipular a resposta, o cabeçalho &quot;Expira&quot; deve ser usado para determinar quando enviar a próxima solicitação válida.

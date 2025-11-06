@@ -2,7 +2,7 @@
 title: Canais
 description: Saiba mais sobre os canais e suas várias configurações no Painel da TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 0%
@@ -23,7 +23,7 @@ A guia **Canais** no painel esquerdo exibe uma lista de canais vinculados com os
 * **ID do canal**: um identificador exclusivo, também conhecido como ID do Solicitante.
 * **Integrações**: o número de conexões estabelecidas com [MVPDs](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd).
 
-![Lista de canais existentes](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
+![Lista de canais existentes](../assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
 
 *Lista de canais existentes*
 
@@ -46,7 +46,7 @@ Siga as etapas para gerenciar várias configurações de um canal específico.
    * [Aplicativos registrados](#registered-applications)
    * [Esquemas personalizados](#custom-schemes)
 
-   ![Configurações de canal](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-tabs-view.png)
+   ![Configurações de canal](../assets/tve-dashboard/new-tve-dashboard/channels/channel-tabs-view.png)
 
    *Configurações de canal*
 
@@ -68,7 +68,7 @@ Nesta seção, você pode editar os seguintes detalhes:
 
 * **Relatório de erros**: ao selecionar **Sim**, os SDKs da Adobe Pass enviam relatórios de erros ao back-end da Adobe Pass para análise.
 
-![Editar informações do canal](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-general-settings-tab-view.png)
+![Editar informações do canal](../assets/tve-dashboard/new-tve-dashboard/channels/channel-general-settings-tab-view.png)
 
 *Editar informações do canal*
 
@@ -78,7 +78,7 @@ Esta seção permite configurar o encaminhamento de eventos de Autenticação do
 
 Para habilitar a **Configuração do Analytics**, entre em contato com o TAM (Gerente técnico de conta) para obter mais detalhes sobre como configurar a RSID (ID de conjunto de relatórios).
 
-![Habilitar configurações do Analytics](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-analytics-configuration-button.png)
+![Habilitar configurações do Analytics](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-analytics-configuration-button.png)
 
 *Habilitar configurações do Analytics*
 
@@ -90,7 +90,7 @@ Uma nova alteração de configuração foi criada e está pronta para atualizaç
 
 Essa guia exibe uma lista de integrações disponíveis entre o canal selecionado no momento e os MVPDs. A lista apresenta cada integração junto com seu status, indicando se está ativada ou não. Selecione uma integração específica na lista para acessar informações detalhadas na seção [Integrações](tve-dashboard-integrations.md).
 
-![Lista de Integrações Disponíveis](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-integrations-tab-view.png)
+![Lista de Integrações Disponíveis](../assets/tve-dashboard/new-tve-dashboard/channels/channel-integrations-tab-view.png)
 
 *Lista de Integrações Disponíveis*
 
@@ -120,7 +120,7 @@ Para adicionar um novo certificado, siga estas etapas:
 
 1. Selecione **Adicionar novo certificado** na parte superior da seção **Certificados disponíveis**.
 
-   ![Adicionar um novo certificado](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-certificate-button.png)
+   ![Adicionar um novo certificado](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-certificate-button.png)
 
    *Adicionar um novo certificado*
 
@@ -146,7 +146,7 @@ Siga estas etapas para excluir um certificado.
 
 1. Selecione **Remover**.
 
-   ![Remover o certificado selecionado](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-delete-certificate-button.png)
+   ![Remover o certificado selecionado](../assets/tve-dashboard/new-tve-dashboard/channels/channel-delete-certificate-button.png)
 
    *Remover o certificado selecionado*
 
@@ -158,7 +158,7 @@ Uma nova alteração de configuração foi criada e está pronta para atualizaç
 
 As empresas de mídia definem esses certificados em seu próprio nível. Todos os canais associados à mesma empresa de mídia podem usar esses certificados.
 
-![Certificados disponíveis herdados](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-available-certificates-panel-view.png)
+![Certificados disponíveis herdados](../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-available-certificates-panel-view.png)
 
 *Certificados disponíveis herdados*
 
@@ -181,7 +181,7 @@ Siga estas etapas para adicionar um domínio.
 
 1. Selecione **Adicionar novo domínio** no canto superior direito da seção **Domínios disponíveis**.
 
-   ![Adicionar um novo domínio](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-domain-button.png)
+   ![Adicionar um novo domínio](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-domain-button.png)
 
    *Adicionar um novo domínio*
 
@@ -199,7 +199,7 @@ Siga estas etapas para excluir um domínio.
 
 1. Selecione **Remover**.
 
-   ![Remover o domínio selecionado](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-remove-domain-button.png)
+   ![Remover o domínio selecionado](../assets/tve-dashboard/new-tve-dashboard/channels/channel-remove-domain-button.png)
 
    *Remover o domínio selecionado*
 
@@ -211,7 +211,7 @@ O domínio selecionado não está mais disponível para uso. Como resultado, o a
 
 ### Aplicativos registrados {#registered-applications}
 
-Esta guia exibe uma lista de aplicativos registrados. Para obter mais detalhes relacionados ao uso de aplicativos registrados, consulte a documentação da [visão geral do registro dinâmico de clientes](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Esta guia exibe uma lista de aplicativos registrados. Para obter mais detalhes relacionados ao uso de aplicativos registrados, consulte a documentação da [visão geral do registro dinâmico de clientes](../integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 Você pode realizar as seguintes ações com aplicativos registrados:
 
@@ -224,7 +224,7 @@ Siga estas etapas para adicionar um novo aplicativo registrado.
 
 1. Selecione **Adicionar novo aplicativo** no canto superior direito da seção **Aplicativos Registrados**.
 
-   ![Adicionar um novo aplicativo](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-application-button.png)
+   ![Adicionar um novo aplicativo](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-application-button.png)
 
    *Adicionar um novo aplicativo*
 
@@ -262,7 +262,7 @@ Siga estas etapas para baixar uma instrução de software.
 
 1. Selecione **Baixar**.
 
-   ![Baixar uma instrução de software](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-download-software-statement-button.png)
+   ![Baixar uma instrução de software](../assets/tve-dashboard/new-tve-dashboard/channels/channel-download-software-statement-button.png)
 
    *Baixar uma instrução de software*
 
@@ -280,7 +280,7 @@ Siga estas etapas para gerar um novo esquema personalizado.
 
 1. Selecione **Gerar novo esquema personalizado**.
 
-   ![Gerar um novo esquema personalizado](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-custom-scheme-button.png)
+   ![Gerar um novo esquema personalizado](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-custom-scheme-button.png)
 
    *Gerar um novo esquema personalizado*
 
@@ -290,7 +290,7 @@ Uma nova alteração de configuração foi criada e está pronta para atualizaç
 
 As empresas de mídia definem esses esquemas personalizados em seu próprio nível. Todos os canais associados à mesma empresa de mídia podem usar esses esquemas personalizados.
 
-![Esquemas personalizados herdados](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
+![Esquemas personalizados herdados](../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
 
 *Esquemas personalizados herdados*
 
@@ -302,7 +302,7 @@ Siga estas etapas para adicionar um novo canal.
 
 1. Selecione **Adicionar novo canal** no canto superior direito da seção **Canais**.
 
-   ![Adicionar um novo canal](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-channel-button.png)
+   ![Adicionar um novo canal](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-channel-button.png)
 
    *Adicionar um novo canal*
 

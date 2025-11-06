@@ -2,7 +2,7 @@
 title: Logout básico - Aplicativo principal - Fluxo
 description: REST API V2 - Logout básico - Aplicativo principal - Fluxo
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -53,7 +53,7 @@ Antes de iniciar o logout de uma MVPD específica com um endpoint de logout, ver
 
 Siga as etapas fornecidas para implementar o fluxo de logout básico para uma MVPD específica com um endpoint de logout executado em um aplicativo principal, conforme mostrado no diagrama a seguir.
 
-![Iniciar logout para mvpd específico com ponto de extremidade de logout](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
+![Iniciar logout para mvpd específico com ponto de extremidade de logout](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
 
 *Iniciar logout para mvpd específico com ponto de extremidade de logout*
 
@@ -119,7 +119,7 @@ Antes de iniciar o logout de uma MVPD específica sem um endpoint de logout, ver
 
 Siga as etapas fornecidas para implementar o fluxo de logout básico para uma MVPD específica sem um endpoint de logout executado em um aplicativo principal, conforme mostrado no diagrama a seguir.
 
-![Iniciar logout para mvpd específico sem ponto de extremidade de logout](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
+![Iniciar logout para mvpd específico sem ponto de extremidade de logout](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
 
 *Iniciar logout para mvpd específico sem ponto de extremidade de logout*
 

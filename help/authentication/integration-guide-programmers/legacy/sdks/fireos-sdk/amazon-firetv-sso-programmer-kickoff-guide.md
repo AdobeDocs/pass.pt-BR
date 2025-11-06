@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -27,13 +27,13 @@ Este documento descreve as informações necessárias para integrar a nova **Fir
 
 ## Arquitetura de alto nível e integração no nível do SO {#high}
 
-Para alcançar o Logon único entre os aplicativos da TV Everywhere na plataforma fireTV da Amazon e para melhorar a experiência geral nessa plataforma, decidimos integrar nosso SDK principal no nível do sistema operacional fireTV. Os programadores serão solicitados a compilar em uma biblioteca de stub fornecida pelo Adobe. A funcionalidade real será fornecida pela biblioteca Adobe presente no FireTV OS da Amazon.
+Para alcançar o Logon único entre os aplicativos da TV Everywhere na plataforma fireTV da Amazon e para melhorar a experiência geral nessa plataforma, decidimos integrar nosso SDK principal no nível do sistema operacional fireTV. Os programadores serão solicitados a compilar em uma biblioteca de stub fornecida pelo Adobe. A funcionalidade real será fornecida pela biblioteca da Adobe presente no FireTV OS da Amazon.
 
 Até que o Amazon forneça um simulador fireTV que incorpore nossa biblioteca no nível do SO, o desenvolvimento será possível somente usando dispositivos fireTV reais.
 
 ## Benefícios {#bene}
 
-* Single Sign On entre todos os aplicativos de TV Everywhere alimentados por Adobe na plataforma FireTV da Amazon com todos os MVPDs integrados.
+* Logon único entre todos os aplicativos da TV Everywhere alimentados pela Adobe na plataforma FireTV da Amazon com todos os MVPDs integrados.
 * Capacidade de se beneficiar do HBA (com MVPDs compatíveis).
 * Capacidade de usar o FireTV SDK mais recente sem a necessidade de atualizar seus aplicativos sempre que uma nova versão do SDK for lançada.
 * Todos os aplicativos TVE se beneficiam do uso da biblioteca de sistema compartilhado, removendo a necessidade de ter uma cópia local da biblioteca do AccessEnabler. Isso também garante que todos os aplicativos estejam usando a mesma versão do SDK.
@@ -83,6 +83,6 @@ Em comparação com o Android SDK existente, no fireTV SDK o processo de autenti
 
    * Os fluxos do TempPass são de tela única e se comportam como em qualquer outro dispositivo nativo.
 
-1. Outra funcionalidade de Adobe funcionará como antes?
+1. Outra funcionalidade do Adobe funcionará como antes?
 
    * Toda a funcionalidade de Autenticação do Adobe Pass funcionará no fireTV como em dispositivos Android.

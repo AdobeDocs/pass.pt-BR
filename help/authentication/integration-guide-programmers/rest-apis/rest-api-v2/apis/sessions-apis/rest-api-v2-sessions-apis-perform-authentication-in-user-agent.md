@@ -142,7 +142,7 @@ A resposta bem-sucedida é uma série de um ou vários redirecionamentos até ch
 
 ## Amostras {#samples}
 
-### 1. Realizar autenticação no agente do usuário
+### &#x200B;1. Realizar autenticação no agente do usuário
 
 >[!BEGINTABS]
 

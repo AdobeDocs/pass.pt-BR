@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -24,13 +24,13 @@ A interface externa da API de pré-autorização não foi alterada. Nenhuma atua
 
 Há três maneiras de calcular os recursos de Comprovação:
 
-* **Fork and join method to MVPD**: envolve o Adobe fazer várias chamadas de autorização para o MVPD (embora o cliente ainda tenha que fazer uma chamada de comprovação).
-* **Linha de canal**: a MVPD expõe a linha de canal para o usuário conectado na resposta de autenticação SAML e o Adobe retorna os recursos autorizados com base nisso. A resposta authN do SAML no rastreador SAML deve expor essa lista.
-* **Autorização multicanal**: o cliente e a autenticação Adobe fazem uma única chamada para a MVPD para um conjunto de recursos.
+* **Fork and join method to MVPD**: envolve a Adobe fazendo várias chamadas de autorização para a MVPD (embora o cliente ainda tenha que fazer uma chamada de comprovação).
+* **Linha de canal**: a MVPD expõe a linha de canal para o usuário conectado na resposta de autenticação SAML e a Adobe retorna os recursos autorizados com base nisso. A resposta authN do SAML no rastreador SAML deve expor essa lista.
+* **Autorização de vários canais**: a autenticação de cliente e Adobe faz uma única chamada à MVPD para um conjunto de recursos.
 
-Independentemente do MVPD, o aplicativo cliente fará uma única chamada para o endpoint de Comprovação (checkPreauthorizedResources API), transmitindo um conjunto de resourceIDs. Com base em uma das formas descritas acima com suporte do MVPD, o Adobe retornará as resourceIDs pré-autorizadas.
+Independentemente do MVPD, o aplicativo cliente fará uma única chamada para o endpoint de Comprovação (checkPreauthorizedResources API), transmitindo um conjunto de resourceIDs. Com base em uma das formas acima compatíveis com o MVPD, a Adobe retornará as resourceIDs pré-autorizadas.
 
-Se a Comprovação for baseada no método fork &amp; join, o back-end de Autenticação do Adobe Pass verificará um valor definido para o &quot;máximo de chamadas de pré-autorização&quot; em sua configuração. Isso é configurado pelo Adobe.
+Se a Comprovação for baseada no método fork &amp; join, o back-end de Autenticação do Adobe Pass verificará um valor definido para o &quot;máximo de chamadas de pré-autorização&quot; em sua configuração. Isso é configurado pela Adobe.
 
 O valor padrão para a configuração &quot;máximo de chamadas de pré-autorização&quot; é &quot;5&quot;, o que significa que, no máximo, apenas 5 recursos podem ser enviados na Comprovação para os MVPDs fork &amp; join. Transmitir mais de 5 recursos resultará em uma exceção e uma lista nula será retornada. Esse é o comportamento esperado. Podemos configurá-lo com qualquer valor se o MVPD não for compatível com a programação de canais ou autorização de vários canais, mas somente depois de consultá-los, pois várias chamadas de autorização de bifurcação e ingresso aumentarão o tempo de carregamento.
 

@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 Os casos de uso de logout podem ser implementados por uma solicitação de logout SAML enviada ao IdP ou por um endpoint de logout personalizado que está sendo chamado.  Os exemplos de solicitação e resposta abaixo fornecem amostras da implementação de logout SAML.
 

@@ -1,6 +1,6 @@
 ---
-title: Troca de metadados de conteúdo MVPD
-description: Troca de metadados de conteúdo MVPD
+title: MVPD Content Metadata Exchange
+description: MVPD Content Metadata Exchange
 exl-id: d17e60dc-6c61-4ca2-bad8-1840c95261e0
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# Troca de metadados de conteúdo MVPD
+# MVPD Content Metadata Exchange
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Visão geral {#content-metadat-exchange-overview}
 
@@ -27,11 +27,11 @@ No lado do Programador, a Autenticação do Adobe Pass oferece suporte a recurso
    * título do item
    * identificador de recurso
    * valor e tipo de classificação
-1. Os valores extraídos do MRSS são utilizados para criar a solicitação de autorização transmitida para o MVPD.
+1. Os valores extraídos do MRSS são usados para criar a solicitação de autorização transmitida para o MVPD.
 
 A Autenticação do Adobe Pass é compatível com duas abordagens para traduzir o MRSS em formatos compatíveis com MVPDs:
 
-* **XACML**.  A primeira abordagem se alinha à norma OLCA.  Ele usa XACML, no qual os valores de MRSS são extraídos para criar um XACMLResource com atributos que mapeiam para os elementos de MRSS.  Isso é passado para o MVPD.
+* **XACML**.  A primeira abordagem se alinha à norma OLCA.  Ele usa XACML, no qual os valores de MRSS são extraídos para criar um XACMLResource com atributos que mapeiam para os elementos de MRSS.  Ele é passado para a MVPD.
 * **REST**.  A segunda abordagem é baseada em REST.  O MRSS é codificado em base64 e passado como um parâmetro de URL na chamada REST.
 
 Em ambas as abordagens, o MVPD processa a solicitação de autorização incluindo os valores extraídos dentro de seu próprio fluxo lógico e retornando uma resposta de autorização.

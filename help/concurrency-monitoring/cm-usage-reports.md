@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 
 
 ## Visão geral {#usage-rep-overview}
 
-O serviço **Relatórios de Uso de Monitoramento de Simultaneidade** está disponível por meio de uma API REST que fornece informações sobre o uso simultâneo conforme relatado pelos aplicativos do cliente.
+O serviço **Relatórios de Uso de Monitoramento de Simultaneidade** está disponível por meio de uma API REST que fornece o insight para o uso simultâneo conforme relatado pelos aplicativos do cliente.
 
 ## Pré-requisitos {#usage-rep-prerequisites}
 
@@ -63,7 +63,7 @@ Para acessar o produto Relatórios de Uso de Monitoramento de Simultaneidade, um
 | aplicativo | O nome do aplicativo registrado no Monitoramento de Simultaneidade usado para gerenciar sessões |
 | application-id | A ID do aplicativo registrada no Monitoramento de simultaneidade usada para gerenciar sessões |
 | channel | Os metadados do canal enviados durante a inicialização da sessão (marcado como Desconhecido se nenhum metadado for enviado) |
-| mvpd | O MVPD fornecido na gestão da sessão |
+| mvpd | A MVPD fornecida no gerenciamento da sessão |
 | platform | Os metadados da plataforma fornecidos na inicialização da sessão ou predefinidos para um aplicativo no nível de configuração |
 
 ## Detalhamentos e métricas do relatório de simultaneidade {#concurrency-reports-metrics-breakdown}
@@ -87,7 +87,7 @@ O objetivo principal deste relatório é ajudá-lo a entender o impacto de defin
 | dia | O dia do mês (1-31) |
 | nível de concorrência | Representa qualquer **atividade de fluxo distinta que foi aprovada na fase de inicialização da sessão** para um usuário a fim de observar quantos fluxos simultâneos **foram abertos** por um usuário e entender o impacto da aplicação de um determinado limite de simultaneidade |
 | nível de atividade | Representa qualquer atividade de fluxo **distinta (independentemente de seu estado: iniciada, ativa, interrompida, rejeitada)** para um usuário para que ele possa observar quantos fluxos simultâneos tentaram ser abertos por um usuário e entender o impacto da aplicação de um determinado limite de simultaneidade |
-| mvpd | O MVPD fornecido na gestão da sessão |
+| mvpd | A MVPD fornecida no gerenciamento da sessão |
 
 ### Exemplos de relatórios
 

@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -90,7 +90,7 @@ Para clientes nativos, o logout é tratado de forma semelhante ao processo de au
 
 1. No final, o AccessEnabler chamará o retorno de chamada [`setAuthenticationStatus()`](#setAuthNStatus) com um código de status 0, indicando sucesso do fluxo de logout.
 
-O fluxo de logout difere do fluxo de autenticação na medida em que o usuário não é obrigado a interagir com o controlador `UIWebView/WKWebView or SFSafariViewController` de nenhuma maneira. Portanto, o Adobe recomenda que você torne o controle invisível (ou seja, oculto) durante o processo de logout.
+O fluxo de logout difere do fluxo de autenticação na medida em que o usuário não é obrigado a interagir com o controlador `UIWebView/WKWebView or SFSafariViewController` de nenhuma maneira. Portanto, a Adobe recomenda que você torne o controle invisível (ou seja, oculto) durante o processo de logout.
 
 ## Tokens {#tokens}
 
@@ -317,7 +317,7 @@ Nas listagens de XML acima, observe a marca intitulada `simpleTokenFingerprint`.
 
 
 
-Como esse é obviamente um recurso relacionado à segurança, essas informações são inerentemente &quot;confidenciais&quot; do ponto de vista da segurança. Como resultado, essas informações precisam ser protegidas contra violações e espionagem. O problema de espionagem é resolvido enviando as solicitações de autenticação/autorização pelo protocolo HTTPS. A proteção contra violação é tratada assinando digitalmente as informações de identificação do dispositivo. A biblioteca do AccessEnabler calcula uma ID de dispositivo a partir das informações fornecidas pelo dispositivo e, em seguida, envia a ID de dispositivo &quot;em branco&quot; para os servidores de autenticação da Adobe Pass como um parâmetro de solicitação. Os servidores de Autenticação do Adobe Pass assinam digitalmente a ID do dispositivo com a chave privada Adobe e a adicionam ao token de autenticação retornado ao AccessEnabler. Assim, a ID do dispositivo é vinculada ao token de autenticação. Durante o fluxo de autorização, o AccessEnabler envia novamente a ID do dispositivo sem criptografia, juntamente com o token de autenticação. A falha do processo de validação resultará automaticamente na falha dos workflows de autenticação/autorização. Os servidores de Autenticação do Adobe Pass aplicam a chave privada à ID do dispositivo e a comparam com o valor no token de autenticação. Se não corresponderem, o fluxo de direitos falhará.
+Como esse é obviamente um recurso relacionado à segurança, essas informações são inerentemente &quot;confidenciais&quot; do ponto de vista da segurança. Como resultado, essas informações precisam ser protegidas contra violações e espionagem. O problema de espionagem é resolvido enviando as solicitações de autenticação/autorização pelo protocolo HTTPS. A proteção contra violação é tratada assinando digitalmente as informações de identificação do dispositivo. A biblioteca do AccessEnabler calcula uma ID de dispositivo a partir das informações fornecidas pelo dispositivo e, em seguida, envia a ID de dispositivo &quot;em branco&quot; para os servidores de autenticação da Adobe Pass como um parâmetro de solicitação. Os servidores de Autenticação do Adobe Pass assinam digitalmente a ID do dispositivo com a chave privada da Adobe e a adicionam ao token de autenticação retornado ao AccessEnabler. Assim, a ID do dispositivo é vinculada ao token de autenticação. Durante o fluxo de autorização, o AccessEnabler envia novamente a ID do dispositivo sem criptografia, juntamente com o token de autenticação. A falha do processo de validação resultará automaticamente na falha dos workflows de autenticação/autorização. Os servidores de Autenticação do Adobe Pass aplicam a chave privada à ID do dispositivo e a comparam com o valor no token de autenticação. Se não corresponderem, o fluxo de direitos falhará.
 
 
 

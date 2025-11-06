@@ -4,7 +4,7 @@ description: Recuperar solicitação de perfil SSO da plataforma
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '212'
+source-wordcount: '210'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 >[!IMPORTANT]
 >
@@ -44,7 +44,7 @@ Esse recurso produz solicitações de perfil para uma ID do solicitante e uma tu
 
 | Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | 1. solicitante (parâmetro de caminho)</br>2. mvpd (parâmetro de caminho)</br>3. deviceType (Obrigatório) | GET | O Content-Type da resposta será application/octet-stream, pois a carga real é opaca para o aplicativo cliente.</br></br>A resposta deve ser encaminhada pelo aplicativo para o mecanismo SSO da Plataforma</br></br>para obter um SSO de Perfil. | 200 - Sucesso   </br>400 - Solicitação inválida |
+| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | &#x200B;1. solicitante (parâmetro de caminho)</br>2. mvpd (parâmetro de caminho)</br>3. deviceType (Obrigatório) | GET | O Content-Type da resposta será application/octet-stream, pois a carga real é opaca para o aplicativo cliente.</br></br>A resposta deve ser encaminhada pelo aplicativo para o mecanismo SSO da Plataforma</br></br>para obter um SSO de Perfil. | 200 - Sucesso   </br>400 - Solicitação inválida |
 
 
 | Parâmetro de entrada | Descrição |

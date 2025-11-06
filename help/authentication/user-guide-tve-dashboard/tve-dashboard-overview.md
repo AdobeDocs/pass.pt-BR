@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso dessa API exige uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso dessa API exige uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 O [[!DNL Adobe] Painel TVE de Passagem](https://experience.adobe.com/pass/authentication) é uma ferramenta para os clientes (programadores) de Autenticação do Adobe Pass gerenciarem suas configurações e dados. Esse painel de controle do autoatendimento permite várias funcionalidades, como:
 
@@ -48,7 +48,7 @@ A Autenticação Adobe Pass fornece as seguintes seções no Painel TVE:
 
 ## Recursos {#resources-tve-dashboard}
 
-Adobe sugere usar os seguintes recursos para entender completamente os fluxos e recursos, ajudando você a se familiarizar com a terminologia empregada neste guia:
+A Adobe sugere usar os seguintes recursos para entender completamente os fluxos e recursos, ajudando você a se familiarizar com a terminologia empregada neste guia:
 
 * [Documento técnico da TVE](/help/authentication/kickstart/technical-paper.md)
 * [Guia de início rápido do programador](/help/authentication/kickstart/programmer-kickstart-guide.md)

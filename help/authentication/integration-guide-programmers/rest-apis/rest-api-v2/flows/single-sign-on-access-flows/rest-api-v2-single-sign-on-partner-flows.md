@@ -2,7 +2,7 @@
 title: Logon único - Parceiro - Fluxos
 description: REST API V2 - Logon único - Parceiro - Fluxos
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Para obter mais detalhes sobre o cabeçalho `AP-Partner-Framework-Status`, consu
 
 A API REST V2 de autenticação do Adobe Pass tem suporte para Logon único de parceiro (SSO) para usuários finais de aplicativos clientes em execução no iOS, iPadOS ou tvOS.
 
-Para obter mais detalhes sobre o logon único (SSO) para a plataforma Apple, consulte a [Documentação do Guia de SSO do Apple (REST API V2)](/help/premium-workflow/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
+Para obter mais detalhes sobre o logon único (SSO) para a plataforma Apple, consulte a [Documentação do Guia de SSO do Apple (REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
 
 ## Recuperar solicitação de autenticação do parceiro {#retrieve-partner-authentication-request}
 
@@ -59,7 +59,7 @@ Antes de recuperar a solicitação de autenticação do parceiro, verifique se o
 
 Execute as etapas fornecidas para recuperar a solicitação de autenticação do parceiro, conforme mostrado no diagrama a seguir.
 
-![Recuperar solicitação de autenticação de parceiro](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
+![Recuperar solicitação de autenticação de parceiro](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
 
 *Recuperar solicitação de autenticação de parceiro*
 
@@ -173,7 +173,7 @@ Antes de recuperar o perfil usando uma resposta de autenticação de parceiro, v
 
 Execute as etapas fornecidas para implementar o fluxo de recuperação de perfil usando uma resposta de autenticação de parceiro, conforme mostrado no diagrama a seguir.
 
-![Criar e recuperar perfil usando a resposta de autenticação do parceiro](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![Criar e recuperar perfil usando a resposta de autenticação do parceiro](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
 *Criar e recuperar perfil autenticado usando a resposta de autenticação do parceiro*
 

@@ -2,7 +2,7 @@
 title: Iniciar autenticação
 description: Iniciar autenticação
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%
@@ -85,7 +85,7 @@ Inicia o processo de autenticação informando sobre um evento de seleção do M
 >
 >A chamada também pode conter parâmetros opcionais que habilitam outras funcionalidades como:
 >
-> * generic\_data - habilita o uso de [TempPass Promocional](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)
+> * generic\_data - habilita o uso de [TempPass Promocional](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)
 >
 >```JSON
 >Example:

@@ -2,7 +2,7 @@
 title: Cookbook REST API V2 (servidor para servidor)
 description: Cookbook REST API V2 (servidor para servidor)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2497'
 ht-degree: 0%
@@ -183,7 +183,7 @@ Perguntas frequentes
 * **Cenário 2:** Não há perfis existentes, o Serviço Programador pode prosseguir para a próxima etapa para [Autenticar o usuário](#step-3-authenticate-the-user).
 
 
-* **Cenário 3:** Não há perfis existentes, o Serviço de Programador pode continuar a fornecer ao usuário acesso temporário por meio do recurso [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md).
+* **Cenário 3:** Não há perfis existentes, o Serviço de Programador pode continuar a fornecer ao usuário acesso temporário por meio do recurso [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
    * Este cenário está fora do escopo deste documento. Consulte a documentação [Fluxos de Acesso Temporário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) para obter mais informações.
 

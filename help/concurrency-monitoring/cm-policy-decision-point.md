@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Esta página serve como referência para diferentes casos de uso e implementações de políticas. Recomendamos que você também consulte a parte do [Glossário](/help/concurrency-monitoring/cm-glossary.md) da documentação para obter as definições de termos.
 
-Um **locatário** possui **aplicativos** para os quais deseja impor **políticas**. **Aplicativos cliente** devem ser configurados com a **ID do aplicativo** (fornecida pelo Adobe).
+Um **locatário** possui **aplicativos** para os quais deseja impor **políticas**. Os **aplicativos cliente** devem ser configurados com a **ID do aplicativo** (fornecida pela Adobe).
 
 Em seguida, o locatário associa cada aplicativo a uma ou mais políticas, criadas por ele ou criadas e compartilhadas por outros. As políticas podem ser vinculadas entre vários locatários.
 
@@ -33,7 +33,7 @@ Para cada uma das políticas aplicáveis, precisamos coletar todas as **atividad
 
 A apresentação abaixo tem como objetivo validar o modelo em relação a alguns casos de uso. Faremos isso gradualmente, começando com uma configuração básica e adicionando complexidade de várias maneiras.
 
-### 1. Um locatário. Um aplicativo. Uma política. Um fluxo {#onetenant-oneapp-onepolicy-onestream}
+### &#x200B;1. Um locatário. Um aplicativo. Uma política. Um fluxo {#onetenant-oneapp-onepolicy-onestream}
 
 Começaremos com um único locatário, com um único aplicativo e uma única política associada. Vamos supor que a política determine que possa haver no máximo um fluxo ativo para qualquer usuário (o fluxo mais recente tem permissão para reprodução).
 
@@ -42,7 +42,7 @@ Depois que um fluxo é iniciado, a atividade só consistirá nesse fluxo e ela p
 ![Um locatário. Um aplicativo. Uma política. Um fluxo](assets/onetenant-app-policy-stream.png)
 
 
-### 2. Um locatário. Um aplicativo. Uma política. Dois fluxos. {#onetenant-oneapp-onepolicy-twostreams}
+### &#x200B;2. Um locatário. Um aplicativo. Uma política. Dois fluxos. {#onetenant-oneapp-onepolicy-twostreams}
 
 Depois que um segundo fluxo for iniciado (pelo mesmo assunto usando o mesmo aplicativo), a atividade usada para validação consistirá em **s1** e **s2**.
 
@@ -54,7 +54,7 @@ O limite foi excedido porque a política declara que apenas um fluxo tem permiss
 >
 >Os diagramas representam a visualização do sistema na atividade do usuário. Para tentativas de inicialização de fluxo, a decisão de acesso será incluída na resposta. Para fluxos ativos, a decisão será retornada na resposta do heartbeat.
 
-### 3. Dois inquilinos. Duas aplicações. Uma política. Dois fluxos. {#twotenant-twoapp-onepolicy-twostreams}
+### &#x200B;3. Dois inquilinos. Duas aplicações. Uma política. Dois fluxos. {#twotenant-twoapp-onepolicy-twostreams}
 
 Vamos supor agora que um novo locatário deseje aplicar a mesma política em seus aplicativos:
 
@@ -62,7 +62,7 @@ Vamos supor agora que um novo locatário deseje aplicar a mesma política em seu
 
 Devido ao fato de os dois locatários estarem vinculados pela mesma política, a situação descrita no caso de uso 2 é aplicável aqui e **s3** tem permissão para reprodução, pois é o fluxo mais recente.
 
-### 4. Dois inquilinos. Três aplicativos. Duas políticas. Dois fluxos. {#twotenants-threeapps-twopolicies-twostreams}
+### &#x200B;4. Dois inquilinos. Três aplicativos. Duas políticas. Dois fluxos. {#twotenants-threeapps-twopolicies-twostreams}
 
 Agora, vamos supor que o segundo locatário implante um novo aplicativo e queira definir uma nova política que será compartilhada entre o **aplicativo2** e o **aplicativo3**.
 
@@ -72,7 +72,7 @@ No momento, os fluxos ativos **s3** e **s4** são permitidos. Para **s3**, quand
 
 A política **P2** é aplicada a ambos os fluxos e incluirá **s3** e **s4** como atividade relevante. Como essa atividade está dentro dos limites de dois fluxos, ambos os fluxos são permitidos.
 
-### 5. Dois inquilinos. Três aplicativos. Duas políticas. Três correntes. {#twotenants-threeapps-twopolicies-threestreams}
+### &#x200B;5. Dois inquilinos. Três aplicativos. Duas políticas. Três correntes. {#twotenants-threeapps-twopolicies-threestreams}
 
 Agora assumindo que uma nova tentativa de inicialização de fluxo é executada usando o **app2**:
 

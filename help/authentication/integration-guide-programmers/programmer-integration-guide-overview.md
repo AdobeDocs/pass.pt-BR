@@ -2,7 +2,7 @@
 title: Guia de integração do programador
 description: Guia de integração do programador
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Este guia de integração é destinado a provedores de conteúdo (programadores) que planejam integrar com a Autenticação de passagem Adobe®.
 
-No cenário digital atual, os visualizadores podem acessar a Internet a qualquer hora, em qualquer lugar e solicitar acesso ao seu conteúdo protegido. Eles podem estar olhando para assistir a um evento único ou buscar os direitos para transmitir uma série de televisão inteira que você está transmitindo.
+No cenário digital de hoje, os visualizadores podem acessar a Internet a qualquer hora, em qualquer lugar e solicitar acesso ao conteúdo protegido. Eles podem estar olhando para assistir a um evento único ou buscar os direitos para transmitir uma série de televisão inteira que você está transmitindo.
 
 Antes de conceder acesso a um conteúdo protegido, você deve determinar se o visualizador tem direito a ele. As principais perguntas incluem:
 
@@ -28,13 +28,13 @@ Antes de conceder acesso a um conteúdo protegido, você deve determinar se o vi
 
 Para programadores, determinar o direito nem sempre é simples. Os MVPDs são os responsáveis pelos dados de identificação e privilégios de acesso de seus clientes. Para complicar ainda mais a situação, os telespectadores dos programadores podem assinar uma grande variedade de MVPDs, cada um operando com sistemas únicos. Essas complexidades tornam a verificação de direitos tecnicamente desafiadora e exigente em recursos.
 
-![Direito De Usuário Determinado Diretamente Pelo Programador](/help/authentication/assets/user-ent-by-progr.png){align="center"}
+![Direito De Usuário Determinado Diretamente Pelo Programador](../assets/user-ent-by-progr.png){align="center"}
 
 *Direito De Usuário Determinado Diretamente Pelo Programador*
 
 A autenticação do Adobe Pass facilita com segurança as transações de direitos entre programadores e MVPDs, tornando rápido, fácil e seguro o fornecimento de conteúdo protegido a visualizadores elegíveis.
 
-![Direitos de Usuário Mediados pela Autenticação Adobe Pass](/help/authentication/assets/user-ent-mediatedby-authn.png){align="center"}
+![Direitos de Usuário Mediados pela Autenticação Adobe Pass](../assets/user-ent-mediatedby-authn.png){align="center"}
 
 *Direitos de Usuário Mediados pela Autenticação Adobe Pass*
 
@@ -47,11 +47,11 @@ Para Programadores, a Autenticação do Adobe Pass fornece APIs como parte de um
    * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * APIs de autenticação Premium do Adobe Pass:
-   * [Redefinir API Temp Pass](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [Recurso TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)
-   * [API de degradação](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Recurso de degradação](/help/premium-workflow/degraded-access/degradation-feature.md)
-   * [API de monitoramento do serviço de qualificação](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
+   * [Redefinir API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [Recurso TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * [API de degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Recurso de degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * [API de monitoramento do serviço de qualificação](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### Casos de uso {#use-cases}
 
@@ -72,7 +72,7 @@ Esta seção descreve mais detalhadamente os casos de uso de integração do Pro
 | **Fase** | **Prioridade** | **Caso de uso** | **Documentos** |
 |----------------------|--------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Autenticação** | **Alta** | Autenticação | Para obter mais detalhes, consulte os documentos agregados na seção [Fase de autenticação](#authentication-phase). |
-|                      | **Alta** | Autenticação baseada em casa (HBA) | Para obter mais detalhes, consulte a [Autenticação baseada em página inicial](/help/premium-workflow/hba-access/home-based-authentication.md). |
+|                      | **Alta** | Autenticação baseada em casa (HBA) | Para obter mais detalhes, consulte a [Autenticação baseada em página inicial](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md). |
 |                      | **Alta** | Logon único (SSO) | Para obter mais detalhes, consulte os documentos agregados na seção [Logon Único (SSO)](#sso). |
 |                      | **Alta** | Selecionar MVPD | Para obter mais detalhes, consulte os documentos agregados na seção [Fase de Configuração](#configuration-phase). |
 |                      | **Medium** | Página de logon com marca MVPD | Permite que os MVPDs forneçam páginas de logon com marcas específicas para o Programador ou provedor de serviços, incluindo suporte para preferências de idioma padrão. |

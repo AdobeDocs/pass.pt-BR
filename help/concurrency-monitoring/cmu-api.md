@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Visão geral da API {#api-overview}
 
@@ -22,7 +22,7 @@ O CMU (Monitoramento de Simultaneidade de Uso) é implementado como um projeto W
 
 >[!NOTE]
 >
->A API da CMU não está geralmente disponível. Entre em contato com o representante da Adobe para tirar dúvidas sobre disponibilidade.
+>A API da CMU não está geralmente disponível. Entre em contato com seu representante da Adobe para tirar dúvidas sobre disponibilidade.
 
 A API CMU fornece uma exibição hierárquica dos cubos OLAP subjacentes. Cada recurso ([dimensão](/help/concurrency-monitoring/cm-usage-reports.md#dimensions-2-filter-metrics) na hierarquia de dimensão, mapeado como um segmento de caminho de URL) gera relatórios com [métricas](/help/concurrency-monitoring/cm-usage-reports.md#monitor-metrics) (agregadas) para a seleção atual. Cada recurso aponta para seu recurso pai (para roll-up) e seus sub-recursos (para drill-down). O corte e a divisão são obtidos por meio de parâmetros de sequência de consulta que fixam dimensões a valores ou intervalos específicos.
 
@@ -36,7 +36,7 @@ Os caminhos de URL disponíveis são detectáveis por meio de links contidos na 
 
 As árvores de detalhamento a seguir ilustram as dimensões (recursos) disponíveis na CMU 2.0:
 
-**Dimension disponíveis para locatários CM**
+**Dimensões disponíveis para locatários CM**
 
 ![](assets/new_breakdown.png)
 
@@ -99,7 +99,7 @@ Parâmetros de string de consulta reservados para CMU API:
 | start | Sim | Hora de início do relatório como ISO8601; o servidor preencherá a parte restante se apenas um prefixo for fornecido: por exemplo, start=2012 resultará em start=2012-01-01:00:00:00 | Relatado pelo servidor no autolink; o servidor tenta fornecer padrões razoáveis com base na granularidade de tempo selecionada | start=15/07/2012 |
 
 
-O único método HTTP disponível atualmente é o GET. Suporte para métodos OPTIONS / HEAD pode ser fornecido em versões futuras.
+O único método HTTP disponível atualmente é o GET. O suporte para métodos do OPTIONS/HEAD pode ser fornecido em versões futuras.
 
 
 
@@ -112,7 +112,7 @@ O único método HTTP disponível atualmente é o GET. Suporte para métodos OPT
 | 401 | Não autorizado | Causado por uma solicitação que não contém os cabeçalhos OAuth adequados para autenticar o usuário |
 | 403 | Proibido | Indica que a solicitação não é permitida no contexto de segurança atual; isso ocorre quando o usuário é autenticado, mas não tem permissão para acessar as informações solicitadas |
 | 404 | Não encontrado | Ocorre caso um caminho de URL inválido seja fornecido com a solicitação. Isso nunca deve ocorrer se o cliente seguir os links &quot;detalhar&quot;/&quot;detalhar&quot; fornecidos com 200 respostas |
-| 405 | Método não permitido | Sinaliza que um método sem suporte foi usado na solicitação. Embora atualmente apenas o método GET seja suportado, as versões futuras podem permitir HEAD ou OPTIONS |
+| 405 | Método não permitido | Sinaliza que um método sem suporte foi usado na solicitação. Embora atualmente apenas o método do GET seja compatível, as versões futuras podem permitir o HEAD ou o OPTIONS |
 | 406 | Não aceitável | Sinaliza que um tipo de mídia sem suporte foi solicitado pelo cliente |
 | 500 | Erro interno do servidor | &quot;Isso nunca deve acontecer&quot; |
 | 503 | Serviço indisponível | Sinaliza um erro no aplicativo ou em suas dependências |

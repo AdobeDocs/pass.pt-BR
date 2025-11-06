@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Visão geral {#overview}
 
-A implementação padrão de uma integração da Autenticação Adobe Pass com um MVPD é baseada na **Especificação OLCA**. A seção Authentication Requirements da especificação OLCA (6.5, Subject Identifier) indica que é possível indicar o escopo do Service Provider (SP) para o identificador de assunto. (O identificador de assunto é a ID de usuário ofuscada que o MVPD retorna à controladora.)  Em uma integração de Autenticação do Adobe Pass, é necessário que os MVPDs habilitem o escopo das solicitações de Autenticação do SP.
+A implementação padrão de uma integração da Autenticação Adobe Pass com uma MVPD é baseada na **Especificação OLCA**. A seção Authentication Requirements da especificação OLCA (6.5, Subject Identifier) indica que é possível indicar o escopo do Service Provider (SP) para o identificador de assunto. (O identificador de assunto é a ID de usuário ofuscada que o MVPD retorna à controladora.)  Em uma integração de Autenticação do Adobe Pass, é necessário que os MVPDs habilitem o escopo das solicitações de Autenticação do SP.
 
-Com a Autenticação do Adobe Pass assumindo a função de SP para o Programador, é necessário implementar uma personalização que permita o escopo de SP da solicitação de autenticação.  Isso precisa ser feito para que o MVPD possa identificar a marca de rede transmitida na asserção SAML para o Provedor de identidade (IdP) do MVPD.  O escopo pode ser implementado de uma das duas maneiras descritas na próxima seção.
+Com a Autenticação do Adobe Pass assumindo a função de SP para o Programador, é necessário implementar uma personalização que permita o escopo de SP da solicitação de autenticação.  Isso precisa ser feito para que o MVPD possa identificar a marca de rede transmitida na asserção SAML para o Provedor de identidade (IdP) da MVPD.  O escopo pode ser implementado de uma das duas maneiras descritas na próxima seção.
 
 ## Escopo do provedor de serviços {#service-provider-scoping}
 

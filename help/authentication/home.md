@@ -4,7 +4,7 @@ description: Bem-vindo à Adobe&reg; Passar a autenticação
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
 source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '414'
 ht-degree: 0%
 
 ---
@@ -23,12 +23,12 @@ Para programadores, a autenticação da Adobe Pass garante acesso seguro a visua
 
 Como uma solução SaaS (Software as a Service), a autenticação da Adobe Pass acelera o tempo de entrada no mercado, reduz os riscos de fraudes e permite o acesso ininterrupto ao conteúdo em várias plataformas, garantindo que os visualizadores certos recebam o conteúdo certo sem esforço.
 
-## ?? Comunidade e atualizações
+## Comunidade e atualizações do 📢
 
 * [Anúncios de produto](/help/authentication/product-announcements.md)\
   Mantenha-se informado sobre os anúncios mais recentes do produto de autenticação da Adobe Pass e os cronogramas de desativação.
 
-## ❓ e solução de problemas
+## Suporte e solução de problemas do ❓
 
 * [Portal de Suporte ao Cliente do Zendesk](https://tve.zendesk.com/home)\
   Faça logon para acessar tickets, enviar consultas ou exibir a base de conhecimento.
@@ -42,7 +42,7 @@ Perguntas frequentes sobre os procedimentos de suporte à autenticação da Adob
 * [Perguntas frequentes sobre a REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)\
   Perguntas frequentes sobre a API REST V2 de autenticação da Adobe Pass.
 
-## ?? Documentação
+## Documentação de 📄
 
 **Para Programadores:**
 
@@ -62,7 +62,7 @@ Perguntas frequentes sobre os procedimentos de suporte à autenticação da Adob
 
 *Procure tópicos específicos usando a barra de pesquisa na parte superior da página ou navegue pelo menu à esquerda.*
 
-## ??️ Ferramentas e bibliotecas
+## 🛠️ Ferramentas e bibliotecas
 
 * [Site do Adobe Developer](https://developer.adobe.com/adobe-pass/)\
   Acesse o site do Adobe Developer para experimentar as APIs REST de autenticação da Adobe Pass.
@@ -70,7 +70,7 @@ Perguntas frequentes sobre os procedimentos de suporte à autenticação da Adob
 * [Verificador de token de mídia](https://tve.zendesk.com/hc/en-us/articles/204963159-Media-Token-Verifier-library)\
   Integre a biblioteca que valida tokens de mídia gerados pela autenticação da Adobe Pass.
 
-## ?? Contato
+## 📧 Contato
 
 * [Contate o Suporte da Adobe](mailto:tve-support@adobe.com)\
   Para obter ajuda adicional ou fazer consultas comerciais, envie um email para a equipe de suporte da Adobe.

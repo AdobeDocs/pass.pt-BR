@@ -1,6 +1,6 @@
 ---
-title: Compreensão dos ambientes de Adobe
-description: Compreensão dos ambientes de Adobe
+title: Compreensão dos ambientes do Adobe
+description: Compreensão dos ambientes do Adobe
 exl-id: bb6cf37f-48cd-47bb-b3c2-f7a96e49b12d
 source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# Compreensão dos ambientes de Adobe {#understanding-the-adobe-environments}
+# Compreensão dos ambientes do Adobe {#understanding-the-adobe-environments}
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
-A documentação oficial que descreve os ambientes de Adobe está disponível [Configurando seu ambiente e testando em Pré-Igual](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md):
+A documentação oficial que descreve os ambientes do Adobe está disponível [Configurando seu ambiente e testando em Pré-Igual](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md):
 
-Os ambientes de Adobe, resumidos em poucas palavras:
+Os ambientes do Adobe, resumidos em algumas palavras:
 
 O Adobe tem dois ambientes: **Pré-qualificação** e **Versão**.
 

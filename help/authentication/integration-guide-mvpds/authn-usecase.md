@@ -4,7 +4,7 @@ description: Autenticação MVPD
 exl-id: 9ff4a46e-a37b-414c-a163-9e586252a9c3
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
-source-wordcount: '1882'
+source-wordcount: '1851'
 ht-degree: 0%
 
 ---
@@ -13,23 +13,23 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual do Adobe. Não é permitida nenhuma utilização não autorizada.
+>O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
 ## Visão geral {#mvpd-authn-overview}
 
 A função real de provedor de serviços (SP) é mantida por um programador, mas a autenticação da Adobe Pass serve como proxy do SP para esse programador. Usar a Autenticação do Adobe Pass como intermediário permite que os MVPDs e os Programadores evitem a necessidade de personalizar seus processos de direito de acordo com cada caso.
 
-As etapas abaixo apresentam a sequência de eventos, usando a Autenticação do Adobe Pass, quando um Programador solicita autenticação de um MVPD compatível com SAML. Observe que o componente Ativador de acesso para autenticação da Adobe Pass está ativo no cliente do usuário/assinante. A partir daí, o Access Enabler facilita todas as etapas do fluxo de autenticação.
+As etapas abaixo apresentam a sequência de eventos, usando a Autenticação do Adobe Pass, quando um Programador solicita autenticação de uma MVPD compatível com SAML. Observe que o componente Ativador de acesso para autenticação da Adobe Pass está ativo no cliente do usuário/assinante. A partir daí, o Access Enabler facilita todas as etapas do fluxo de autenticação.
 
 1. Quando o usuário solicita acesso ao conteúdo protegido, o Ativador de acesso inicia a autenticação (AuthN) em nome do Programador (SP).
-1. O aplicativo do SP apresenta um &quot;Seletor de MVPD&quot; ao usuário para obter seu provedor de TV por assinatura (MVPD). O SP redireciona o navegador do usuário para o serviço de provedor de identidade (IdP) do MVPD selecionado.  Este é &quot;**Logon iniciado pelo programador**&quot;.  O MVPD envia a resposta do IdP para o serviço de consumidor de asserção SAML do Adobe, onde é processado.
+1. O aplicativo do SP apresenta um &quot;Seletor de MVPD&quot; ao usuário para obter seu provedor de TV por assinatura (MVPD). Em seguida, o SP redireciona o navegador do usuário para o serviço de provedor de identidade (IdP) selecionado da MVPD.  Este é &quot;**Logon iniciado pelo programador**&quot;.  O MVPD envia a resposta do IdP para o serviço de consumidor de asserção SAML da Adobe, onde é processado.
 1. Por fim, o Access Enabler redireciona o navegador de volta para o site da controladora de armazenamento, informando a controladora do status (sucesso/falha) da solicitação de Autenticação.
 
 ## A solicitação de autenticação {#authn-req}
 
 Conforme apresentado nas etapas acima, durante o fluxo de Autenticação, um MVPD deve aceitar uma solicitação de Autenticação baseada em SAML e enviar uma resposta de Autenticação SAML.
 
-A [Especificação de Interface de Autenticação e Autorização de Acesso a Conteúdo Online (OLCA)](https://www.cablelabs.com/specifications/search?query=&category=&subcat=&doctype=&content=false&archives=false){target=_blanck} apresenta uma solicitação e uma resposta AuthN padrão. Embora a Autenticação Adobe Pass não exija que os MVPDs baseiem suas mensagens de direito nesse padrão, observar a especificação pode fornecer informações sobre os atributos-chave necessários para uma transação de Autenticação.
+A [Especificação de Interface de Autenticação e Autorização de Acesso a Conteúdo Online (OLCA)](https://www.cablelabs.com/specifications/search?query=&category=&subcat=&doctype=&content=false&archives=false){target=_blanck} apresenta uma solicitação e uma resposta AuthN padrão. Embora a Autenticação Adobe Pass não exija que os MVPDs baseiem suas mensagens de direito nesse padrão, observar a especificação pode fornecer ao insight os atributos-chave necessários para uma transação de Autenticação.
 
 >[!NOTE]
 >
@@ -67,24 +67,24 @@ A tabela abaixo explica os atributos e as tags que precisam estar em uma solicit
 
 | samlp:AuthnRequest | &lt;AuthnRequest> emitido pelo provedor de serviços para o provedor de identidade. |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| URLdoServiçoConsumidorAsserção | Esse é o endpoint de Adobe a ser usado na resposta subsequente. Valor padrão: **http://sp.auth.adobe.com/sp/saml/SAMLAssertionConsumer** |
+| URLdoServiçoConsumidorAsserção | Este é o endpoint do Adobe para ser usado na resposta subsequente. Valor padrão: **http://sp.auth.adobe.com/sp/saml/SAMLAssertionConsumer** |
 | Destino | Uma referência de URI que indica o endereço para o qual essa solicitação foi enviada. Isso é útil para impedir o encaminhamento mal-intencionado de solicitações a recipients não intencionais, uma proteção exigida por algumas associações de protocolo. Se estiver presente, o recipient real DEVERÁ verificar se a referência do URI identifica o local em que a mensagem foi recebida. Caso contrário, a solicitação DEVE ser descartada. Algumas associações de protocolo podem exigir o uso deste atributo. |
 | ForceAuthn | O atributo ForceAuthn, se presente com um valor true, obriga o provedor de identidade a estabelecer essa identidade recentemente, em vez de depender de uma sessão existente que possa ter com o principal. |
 | ID | Um identificador para a solicitação. Consulte [SAML core 2.0-os](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} seção 1.3.4 para obter detalhes. |
 | IsPassive | Um valor booleano. Se &quot;true&quot;, o provedor de identidade e o próprio agente do usuário NÃO DEVEM assumir visivelmente o controle da interface do usuário do solicitante e interagir com o apresentador de maneira perceptível. Se um valor não for fornecido, o padrão será &quot;false&quot;. |
-| IssueInstant | O momento em que a resposta foi emitida. O valor de hora é codificado em UTC conforme descrito na Seção 1.3.3 do [SAML core 2.0-os](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank}. |
+| IssueInstant | O momento em que a resposta foi emitida. O valor de hora é codificado em UTC conforme descrito no [SAML core 2.0-os](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} Seção 1.3.3. |
 | ProtocolBinding | Uma referência de URI que identifica uma associação de protocolo SAML a ser usada ao retornar a mensagem &lt;Response>. Consulte [SAMLBind] para obter mais informações sobre associações de protocolo e referências URI definidas para elas. Valor padrão : urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST |
 | Versão | A versão desta solicitação. |
-| saml:Emissor | Identifica a entidade que gerou a mensagem de resposta. (Para obter mais informações sobre esse elemento, consulte SAML core 2.0-os Seção 2.2.5) |
+| saml:Issuer | Identifica a entidade que gerou a mensagem de resposta. (Para obter mais informações sobre esse elemento, consulte SAML core 2.0-os Seção 2.2.5) |
 | ds:Signature | Uma Assinatura XML que protege a integridade da declaração e a autentica, conforme descrito na Seção 5 do SAML Core 2.0-os |
 | samlp:NameIDPolicy | Especifica restrições no identificador de nome a ser usado para representar o assunto solicitado. |
 | AllowCreate | Um valor booliano usado para indicar se o provedor de identidade pode, no decorrer do atendimento da solicitação, criar um novo identificador para representar o principal. Padrão: verdadeiro |
-| Formato | Especifica a referência de URI correspondente a um formato de identificador de nome Padrão: urn:oasis:names:tc:SAML:2.0:nameid-format:transient Adobe recommendations: urn:oasis:names:tc:SAML:2.0:nameid-format:persistent |
+| Formato | Especifica a referência de URI correspondente a um formato de identificador de nome Padrão: urn:oasis:names:tc:SAML:2.0:nameid-format:transient que a Adobe recomenda: urn:oasis:names:tc:SAML:2.0:nameid-format:persistent |
 | SPNameQualifier | Especifica opcionalmente que o identificador da entidade da asserção seja retornado (ou criado) no namespace de um provedor de serviços que não seja o solicitante. Padrão: http://saml.sp.adobe.adobe.com |
 
 ## A resposta da autenticação {#authn-response}
 
-Após receber e manipular a solicitação de autenticação, o MVPD deve enviar uma resposta de autenticação.
+Após receber e manipular a solicitação de autenticação, o MVPD agora deve enviar uma resposta de autenticação.
 
 **Exemplo de Resposta de Autenticação SAML**
 
@@ -168,7 +168,7 @@ Após receber e manipular a solicitação de autenticação, o MVPD deve enviar 
 ```
 
 
-No exemplo acima, o SP de Adobe espera buscar a ID do usuário do Subject/NameId. O SP Adobe pode ser configurado para obter a ID do usuário de um atributo definido pelo cliente; a resposta deve conter um elemento como o seguinte:
+No exemplo acima, o Adobe SP espera buscar a ID do usuário do Subject/NameId. É possível configurar o Adobe SP para obter a ID do usuário de um atributo definido pelo cliente; a resposta deve conter um elemento como o seguinte:
 
 ```XML
 <saml:AttributeStatement>
@@ -182,17 +182,17 @@ No exemplo acima, o SP de Adobe espera buscar a ID do usuário do Subject/NameId
 
 **Detalhes de resposta de Autenticação SAML**
 
-| sample:Response | Resposta recebida pela Autenticação Adobe Pass. |
+| samlp:Response | Resposta recebida pela Autenticação Adobe Pass. |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Destino | Uma referência de URI que indica o endereço para o qual essa solicitação foi enviada. Isso é útil para impedir o encaminhamento mal-intencionado de solicitações a recipients não intencionais, uma proteção exigida por algumas associações de protocolo. Se estiver presente, o recipient real DEVERÁ verificar se a referência do URI identifica o local em que a mensagem foi recebida. Caso contrário, a solicitação DEVE ser descartada. Algumas associações de protocolo podem exigir o uso deste atributo. |
-| ID | Um identificador para a solicitação. Ela é do tipo xs:ID e DEVE seguir os requisitos especificados na Seção 1.3.4 do [SAML core 2.0-os](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} para exclusividade do identificador. Os valores do atributo ID em uma solicitação e do atributo InResponseTo na resposta correspondente DEVEM corresponder. |
+| ID | Um identificador para a solicitação. Ele é do tipo xs:ID e DEVE seguir os requisitos especificados na Seção 1.3.4 do [SAML core 2.0-os](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} para exclusividade do identificador. Os valores do atributo ID em uma solicitação e do atributo InResponseTo na resposta correspondente DEVEM corresponder. |
 | InResponseTo | A ID de uma mensagem de protocolo SAML em resposta à qual uma entidade de atestado pode apresentar a declaração. O valor deve ser igual ao do atributo ID enviado na Solicitação de autenticação. Consulte SAML core 2.0-os |
 | IssueInstant | A hora em que a solicitação foi emitida. |
 | Versão | A versão da solicitação. |
-| saml:Emissor | Identifica a entidade que gerou a mensagem de solicitação. (Para obter mais informações sobre esse elemento, consulte a Seção 2.2.5. SAML core 2.0-os ) |
+| saml:Issuer | Identifica a entidade que gerou a mensagem de solicitação. (Para obter mais informações sobre esse elemento, consulte a Seção 2.2.5. SAML core 2.0-os ) |
 | samlp:Status | Um código que representa o status da solicitação correspondente. |
 | samlp:StatusCode | Um código que representa o status da atividade realizada em resposta à solicitação correspondente. |
-| saml:Asserção | Este tipo especifica a informação básica comum a todas as afirmações. |
+| saml:Assertion | Este tipo especifica a informação básica comum a todas as afirmações. |
 | ID | O identificador para esta asserção. |
 | Versão | A versão desta afirmação. |
 | IssueInstant | A hora em que a solicitação foi emitida. |
@@ -201,7 +201,7 @@ No exemplo acima, o SP de Adobe espera buscar a ID do usuário do Subject/NameId
 | ds:CanonicalizationMethod | CanonicalizationMethod é um elemento obrigatório que especifica o algoritmo de canonização aplicado ao elemento SignedInfo antes da execução dos cálculos de assinatura. Consulte Sintaxe e processamento de assinatura XML |
 | ds:SignatureMethod | SignatureMethod é um elemento necessário que especifica o algoritmo usado para a geração e validação de assinatura. Este algoritmo identifica todas as funções criptográficas envolvidas na operação de assinatura (por exemplo, hash, algoritmos de chave pública, MACs, preenchimento, etc.) Consulte Sintaxe e processamento de assinatura XML |
 | ds:Reference | Referência é um elemento que pode ocorrer uma ou mais vezes. Especifica um algoritmo de compilação e um valor de compilação e, opcionalmente, um identificador do objeto que está sendo assinado, o tipo do objeto e/ou uma lista de transformações a serem aplicadas antes da compilação. Consulte Sintaxe e processamento de assinatura XML |
-| ds:Transformações | O elemento opcional Transforms contém uma lista ordenada de elementos Transform; eles descrevem como o signatário obteve o objeto de dados que foi assimilado. A saída de cada Transformação serve como entrada para a próxima Transformação. A entrada para a primeira Transformação é o resultado da desreferência do atributo URI do elemento Reference. A saída da última transformação é a entrada para o algoritmo DigestMethod. Consulte Sintaxe e processamento de assinatura XML |
+| ds:Transforms | O elemento opcional Transforms contém uma lista ordenada de elementos Transform; eles descrevem como o signatário obteve o objeto de dados que foi assimilado. A saída de cada Transformação serve como entrada para a próxima Transformação. A entrada para a primeira Transformação é o resultado da desreferência do atributo URI do elemento Reference. A saída da última transformação é a entrada para o algoritmo DigestMethod. Consulte Sintaxe e processamento de assinatura XML |
 | ds:DigestMethod | DigestMethod é um elemento obrigatório que identifica o algoritmo de compilação a ser aplicado ao objeto assinado. Consulte Sintaxe e processamento de assinatura XML |
 | ds:DigestValue | DigestValue é um elemento que contém o valor codificado do resumo. O resumo é sempre codificado usando base64. Consulte Sintaxe e processamento de assinatura XML |
 | ds:SignatureValue | O elemento SignatureValue contém o valor real da assinatura digital; ele é sempre codificado usando base64. Consulte Sintaxe e processamento de assinatura XML |
@@ -216,7 +216,7 @@ No exemplo acima, o SP de Adobe espera buscar a ID do usuário do Subject/NameId
 | saml:SubjectConfirmationData | Informações de confirmação adicionais a serem usadas por um método de confirmação específico. Por exemplo, o conteúdo típico desse elemento pode ser um elemento <!--<ds:KeyInfo>-->, conforme definido na Sintaxe de Assinatura XML e na Especificação de processamento |
 | NotOnOrAfter | Momento em que o assunto não pode mais ser confirmado. |
 | Recipient | Um URI que especifica a entidade ou o local ao qual uma entidade de certificação pode apresentar a declaração. Por exemplo, esse atributo pode indicar que a asserção deve ser entregue a um endpoint de rede específico para impedir que um intermediário a redirecione para outro lugar. |
-| saml:Condições | O elemento &lt;Condição> serve como um ponto de extensão para novas condições. |
+| saml:Conditions | O elemento &lt;Condição> serve como um ponto de extensão para novas condições. |
 | NotBefore | O atributo NotBefore especifica o momento em que o intervalo de validade começa. |
 | saml:AudienceRestriction | O elemento &lt;AudienceRestriction> especifica que a asserção é endereçada para um ou mais públicos-alvo específicos identificados pelos elementos &lt;Audience>. |
 | saml:Audience | Uma referência de URI que identifica um público-alvo pretendido. |
