@@ -2,7 +2,7 @@
 title: Programadores
 description: Saiba mais sobre os programadores e suas configurações no painel TVE.
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%

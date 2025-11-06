@@ -2,7 +2,7 @@
 title: Relatórios
 description: Saiba como os dados são agregados nos relatórios do painel TVE.
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%

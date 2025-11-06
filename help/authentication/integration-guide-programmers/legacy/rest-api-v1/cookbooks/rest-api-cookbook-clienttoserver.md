@@ -2,7 +2,7 @@
 title: Cookbook da API REST (cliente para servidor)
 description: Cliente do guia da API rest para o servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%

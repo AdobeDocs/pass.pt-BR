@@ -2,7 +2,7 @@
 title: Referência da API REST
 description: Referência da API Rest
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '661'
 ht-degree: 3%

@@ -2,7 +2,7 @@
 title: Notas de versão da Autenticação Adobe Pass 2.69
 description: Notas de versão da Autenticação Adobe Pass 2.69
 exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 0%

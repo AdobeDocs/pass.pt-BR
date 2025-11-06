@@ -2,7 +2,7 @@
 title: Perguntas frequentes sobre REST API V2
 description: Perguntas frequentes sobre REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 0b8ef6c6b326d1a9de52b24823886c708c2aad33
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '9682'
 ht-degree: 0%

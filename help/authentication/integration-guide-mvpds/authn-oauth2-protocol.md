@@ -2,7 +2,7 @@
 title: Autenticação usando o protocolo OAuth 2.0
 description: Autenticação usando o protocolo OAuth 2.0
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1088'
 ht-degree: 0%

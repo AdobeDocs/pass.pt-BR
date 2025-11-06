@@ -2,7 +2,7 @@
 title: MVPDs do painel TVE
 description: Saiba mais sobre os MVPDs e suas configurações no Painel do TVE.
 exl-id: 802c1570-9a5b-4bec-8fb2-6c7738b28bc9
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '133'
 ht-degree: 0%

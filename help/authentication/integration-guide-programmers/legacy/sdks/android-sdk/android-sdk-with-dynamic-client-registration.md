@@ -2,7 +2,7 @@
 title: Android SDK com registro dinâmico do cliente
 description: Android SDK com registro dinâmico do cliente
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1301'
 ht-degree: 0%

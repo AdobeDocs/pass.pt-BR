@@ -2,7 +2,7 @@
 title: Iniciar autenticação
 description: Iniciar autenticação
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%

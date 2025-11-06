@@ -2,7 +2,7 @@
 title: Guia do Android SDK
 description: Guia do Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1703'
 ht-degree: 0%

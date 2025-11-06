@@ -2,7 +2,7 @@
 title: Logon único - Identidade da plataforma - Fluxos
 description: REST API V2 - Logon único - Identidade da plataforma - Fluxos
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1855'
 ht-degree: 0%

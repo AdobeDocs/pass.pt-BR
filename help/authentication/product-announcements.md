@@ -2,7 +2,7 @@
 title: Anúncios de produto
 description: Anúncios de produto
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: 2276066d453701dc5e034da29cb971b090688afe
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '820'
 ht-degree: 2%

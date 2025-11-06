@@ -2,7 +2,7 @@
 title: Notas de versão da Autenticação Adobe Pass 2.70
 description: Notas de versão da Autenticação Adobe Pass 2.70
 exl-id: 81713f8e-bc51-4057-9b00-6a2d6c83cd02
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Esta página descreve novos recursos, alterações e problemas conhecidos com es
 
 Autenticação Adobe Pass: adobe-pass-**2.70**
 
-Data de lançamento: 23/04/2024 - 25/04/2024 **&#x200B;**
+Data de lançamento: 23/04/2024 - 25/04/2024 ****
 
 ### Visão geral da versão {#release-overview-270}
 

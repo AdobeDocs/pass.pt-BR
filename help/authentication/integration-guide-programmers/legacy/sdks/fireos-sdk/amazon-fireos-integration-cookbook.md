@@ -2,7 +2,7 @@
 title: Guia de integração do Amazon FireOS
 description: Guia de integração do Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1447'
 ht-degree: 0%

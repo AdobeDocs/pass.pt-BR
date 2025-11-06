@@ -2,7 +2,7 @@
 title: Cookbook da API REST (servidor para servidor)
 description: Servidor do guia da API rest para o servidor.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1856'
 ht-degree: 0%
@@ -106,7 +106,7 @@ A pré-autorização pode ser usada para determinar rapidamente, a partir de um 
 
 1. Depois que o usuário é autenticado, o dispositivo de streaming pode chamar o serviço de programador para solicitar o conteúdo para o qual o usuário tem direito a streaming.
 
-1. O Serviço Programador deve chamar a API **pré-autorizar** do Adobe Pass com uma lista de IDs de Recursos, que são uma cadeia de caracteres simples que geralmente representa um canal que um usuário pode ter direito a transmitir. *Observação: Atualmente, a chamada* **&#x200B;**&#x200B;**&#x200B; pré-autorizar *está configurada para limitar a lista a cinco (5) IDs de Recursos. Quando são necessários mais de cinco recursos, várias chamadas* &#x200B;**&#x200B;**&#x200B;** pré-autorizadas *podem ser feitas, ou a chamada pode ser configurada para aceitar mais de cinco recursos com um contrato dos MVPDs. Os implementadores devem ter em mente o custo de uma chamada* ***pré-autorizada*** *tanto para os recursos da MVPD quanto para o tempo de resposta ao Programador e estruturar seu uso da chamada criteriosamente.*
+1. O Serviço Programador deve chamar a API **pré-autorizar** do Adobe Pass com uma lista de IDs de Recursos, que são uma cadeia de caracteres simples que geralmente representa um canal que um usuário pode ter direito a transmitir. *Observação: Atualmente, a chamada* ****** pré-autorizar *está configurada para limitar a lista a cinco (5) IDs de Recursos. Quando são necessários mais de cinco recursos, várias chamadas* ****** pré-autorizadas *podem ser feitas, ou a chamada pode ser configurada para aceitar mais de cinco recursos com um contrato dos MVPDs. Os implementadores devem ter em mente o custo de uma chamada* ***pré-autorizada*** *tanto para os recursos da MVPD quanto para o tempo de resposta ao Programador e estruturar seu uso da chamada criteriosamente.*
 
 1. A chamada **pré-autorizar** responderá ao Serviço do Programador com um objeto JSON contendo um valor TRUE ou FALSE para cada ID de Recurso na solicitação que indica se o usuário tem direito ao canal associado ou não. *Observação: se uma MVPD não fornecer uma resposta para uma determinada ID de Recurso (por exemplo, devido a erros de rede ou tempos limite), o valor padrão será FALSE.*
 

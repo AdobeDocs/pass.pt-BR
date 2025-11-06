@@ -2,7 +2,7 @@
 title: Cabeçalho - autorização
 description: REST API V2 - Cabeçalho - Autorização
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 3%

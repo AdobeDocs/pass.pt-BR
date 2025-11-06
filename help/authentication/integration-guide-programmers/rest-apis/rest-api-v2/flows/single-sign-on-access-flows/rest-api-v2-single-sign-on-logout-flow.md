@@ -2,7 +2,7 @@
 title: Logout único - Fluxo
 description: REST API V2 - Logout único - Fluxo
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%

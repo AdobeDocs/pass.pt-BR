@@ -2,7 +2,7 @@
 title: Autorização Básica - Aplicativo Principal - Fluxo
 description: REST API V2 - Autorização básica - Aplicativo principal - Fluxo
 exl-id: 46bc9326-966e-44fc-8546-2f58be01b7bc
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%

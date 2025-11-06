@@ -2,7 +2,7 @@
 title: Metadados do usuário
 description: Metadados do usuário
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '518'
 ht-degree: 0%

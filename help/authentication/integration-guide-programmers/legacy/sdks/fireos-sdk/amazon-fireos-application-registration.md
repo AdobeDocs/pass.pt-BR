@@ -2,7 +2,7 @@
 title: Registro do aplicativo Amazon FireOS
 description: Registro do aplicativo Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%

@@ -2,7 +2,7 @@
 title: Autenticação básica - Aplicativo secundário - Fluxo
 description: REST API V2 - Autenticação básica - Aplicativo secundário - Fluxo
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2006'
 ht-degree: 0%

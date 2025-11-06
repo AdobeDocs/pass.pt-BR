@@ -2,7 +2,7 @@
 title: Amazon FireOS SDK com registro dinâmico de cliente
 description: Amazon FireOS SDK com registro dinâmico de cliente
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -152,7 +152,7 @@ Obsoleto:
    - logon cancelado : redefinir seleção de MVPD
    - O esquema de URL é estabelecido como &quot;adobepass://android.app&quot; para capturar quando a autenticação é concluída
 
-- e. get/checkAuthorization : o SDK incluirá **access\_token &#x200B;** in como Authorization: Bearer **access\_token**
+- e. get/checkAuthorization : o SDK incluirá **access\_token **in como Authorization: Bearer **access\_token**
 
 - se a autorização for bem-sucedida, será feita uma chamada para a obtenção do token de mídia
 

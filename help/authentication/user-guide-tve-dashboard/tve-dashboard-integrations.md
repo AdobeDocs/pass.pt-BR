@@ -2,7 +2,7 @@
 title: Integrações do painel TVE
 description: Saiba mais sobre as integrações entre seus canais e MVPDs e como gerenciar integrações.
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2093'
 ht-degree: 0%
@@ -305,7 +305,7 @@ Para criar uma nova integração com uma nova MVPD na configuração atual, siga
    >
    >Não altere os endpoints padrão em nenhum fluxo, a menos que determinado especificamente pela MVPD.
 
-   ![Selecionar pontos de extremidade &#x200B;](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![Selecionar pontos de extremidade ](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *Selecionar pontos de extremidade*
 

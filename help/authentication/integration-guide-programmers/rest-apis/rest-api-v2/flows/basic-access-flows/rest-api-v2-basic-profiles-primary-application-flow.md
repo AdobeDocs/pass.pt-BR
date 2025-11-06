@@ -2,7 +2,7 @@
 title: Perfis básicos — Aplicativo principal — Fluxo
 description: REST API V2 - Perfis básicos - Aplicativo principal - Fluxo
 exl-id: 19ddf382-9a32-4b94-aa84-7611c0e1780e
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '974'
 ht-degree: 0%

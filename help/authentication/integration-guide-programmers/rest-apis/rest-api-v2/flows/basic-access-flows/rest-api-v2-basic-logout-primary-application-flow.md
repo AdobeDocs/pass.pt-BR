@@ -2,7 +2,7 @@
 title: Logout básico - Aplicativo principal - Fluxo
 description: REST API V2 - Logout básico - Aplicativo principal - Fluxo
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%

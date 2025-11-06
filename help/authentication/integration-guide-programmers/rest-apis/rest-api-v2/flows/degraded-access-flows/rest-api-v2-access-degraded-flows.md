@@ -2,7 +2,7 @@
 title: Fluxos de acesso degradados
 description: REST API V2 - Fluxos de acesso degradados
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%

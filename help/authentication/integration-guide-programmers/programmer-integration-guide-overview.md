@@ -2,7 +2,7 @@
 title: Guia de integração do programador
 description: Guia de integração do programador
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
