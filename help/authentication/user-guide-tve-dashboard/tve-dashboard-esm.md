@@ -25,7 +25,7 @@ O painel ESM fornece uma visão unificada dos dados de direitos e eventos para a
 - Comparar desempenhos do MVPD
 - Compreender o uso do cliente por aplicativo
 
-Mais detalhes sobre dados e eventos ESM podem ser encontrados em [Visão geral do monitoramento do serviço de qualificação](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
+Mais detalhes sobre dados e eventos ESM podem ser encontrados em [Visão geral do monitoramento do serviço de qualificação](https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
 
 ## Relatórios {#reports}
 
