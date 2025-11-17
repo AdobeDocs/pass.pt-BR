@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: O Adobe Pass Authentication é uma solução de concessão de direitos para o TV Everywhere, o qual fornece uma estrutura modular para determinar se a pessoa que solicita o acesso a um recurso possui direito a ele.
-source-git-commit: 151c64276377be5ef21bca4c0d3eaa04ac3da495
+source-git-commit: 53ebbd82fc160f68fccdddb18cf98e249ad6ecce
 workflow-type: tm+mt
-source-wordcount: '1285'
+source-wordcount: '1287'
 ht-degree: 3%
 
 ---
@@ -292,6 +292,7 @@ ht-degree: 3%
    - [Integrações](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
    - [Relatórios](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md)
    - [Log de alterações](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
+   - [Painel ESM](/help/authentication/user-guide-tve-dashboard/tve-dashboard-esm.md)
 - Notas técnicas {#tech-notes}
    - Ambientes {#environments}
       - [Compreensão dos ambientes do Adobe](notes-technical/environments/understanding-the-adobe-environments.md)
