@@ -2,27 +2,36 @@
 title: Introdução ao monitoramento de simultaneidade
 description: Introdução ao monitoramento de simultaneidade
 exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '221'
 ht-degree: 0%
 
 ---
 
 # Introdução ao monitoramento de simultaneidade {#intro}
 
-Para saber mais sobre [procedimentos de escalonamento](/help/concurrency-monitoring/cm-escalation-procedures.md) relacionados ao Monitoramento de simultaneidade, consulte o artigo sobre procedimentos de escalonamento.
+O Monitoramento de simultaneidade é um serviço que permite que provedores de conteúdo e de identidade (MVPDs e Programadores) definam e apliquem limites no streaming de vídeo simultâneo em vários aplicativos, dispositivos e plataformas. Quer você seja um programador que deseja controlar quantos fluxos um assinante pode assistir simultaneamente ou um MVPD que deseja aplicar políticas de uso em seus parceiros de conteúdo, o Monitoramento de simultaneidade fornece as ferramentas necessárias.
 
-O monitoramento de simultaneidade permite que provedores de identidade e conteúdo (MVPDs e programadores) definam e apliquem limites sobre o uso simultâneo em vários aplicativos (possivelmente de propriedade de vários parceiros).
+## O que é Monitoramento de simultaneidade? {#what-is-cm}
 
-**A API de Monitoramento de Simultaneidade está hospedada no seguinte local:**
+O Monitoramento de simultaneidade é um serviço centralizado que rastreia e gerencia sessões ativas de transmissão de vídeo em tempo real. Ele permite:
 
-* **V2.0: [API de Monitoramento de Simultaneidade](http://docs.adobeptime.io/cm-api-v2/)**
+- **Limitar fluxos simultâneos por assinante** - Controla quantos fluxos de vídeo simultâneos um usuário pode acessar
+- **Impor restrições de dispositivo** - Limitar streaming a tipos ou quantidades de dispositivo específicos
+- **Implementar políticas baseadas em localização** - Restringir streaming com base na localização geográfica
+- **Criar regras específicas de conteúdo** - Aplicar limites diferentes para conteúdo dinâmico vs. conteúdo do VOD
+- **Monitorar padrões de uso** - Obtenha insights sobre como seu conteúdo está sendo consumido
 
-Para se inscrever no serviço de Monitoramento de Simultaneidade, contate nossa [Equipe de Suporte](mailto:tve-support@adobe.com). Especifique as seguintes informações e nossa equipe terá o prazer de ajudá-lo:
+## Como funciona {#how-it-works}
 
-1. Nome da sua empresa
-1. Aplicativos que você deseja integrar ao Monitoramento de Simultaneidade. Para cada aplicativo, forneça:
-   * Nome do aplicativo
-   * Plataforma(s) de aplicativos
-1. O terceiro que solicitou a integração (caso você esteja assinando o Monitoramento de simultaneidade na solicitação de outro participante, programador ou MVPD)
+O monitoramento de simultaneidade opera por meio de uma API simples, mas eficiente:
+
+1. **Inicialização da sessão** - Quando um usuário começa a assistir ao conteúdo, seu aplicativo cria uma sessão
+2. **Avaliação de Política** - O serviço avalia as políticas definidas em relação ao uso atual
+3. **Monitoramento em Tempo Real** - As chamadas de pulsação mantêm as sessões ativas e monitoram a conformidade
+
+## Novo no monitoramento de simultaneidade? {#new-to-cm}
+
+Comece com nosso [Guia de Introdução](getting-started/getting-started-overview.md) para entender as noções básicas e configurar sua primeira integração.
+

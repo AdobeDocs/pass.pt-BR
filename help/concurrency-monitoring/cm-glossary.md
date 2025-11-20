@@ -2,7 +2,7 @@
 title: Glossário
 description: Glossário de termos no Monitoramento de simultaneidade
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
@@ -28,7 +28,7 @@ ht-degree: 0%
 ## Aplicativo {#application-defn}
 
 * Desenvolvido pelo locatário para acesso ao conteúdo de vídeo
-* Toma e impõe decisões sobre o acesso ao conteúdo com base nas informações fornecidas pelo Serviço de Monitoramento de Simultaneidade (isso é válido no caso [Ponto de Informações de Política](/help/concurrency-monitoring/policy-info-pt-versionone.md))
+* Toma e impõe decisões sobre o acesso ao conteúdo com base nas informações fornecidas pelo Serviço de Monitoramento de Simultaneidade (isso é válido no caso [Ponto de Informações de Política](/help/concurrency-monitoring/technical/policy-info-pt-versionone.md))
 * Terá uma **ID de aplicativo** exclusiva fornecida pela Adobe.
 
 ## Serviço de monitoramento de concorrência {#cm-service-defn}
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Assunto {#subj-defn}
 
-* O consumidor do conteúdo (vídeo) na Internet. Estamos deliberadamente evitando o termo _&#x200B;**usuário**&#x200B;_, já que o Monitoramento de simultaneidade geralmente lida com IDs de conta da MVPD (que envolvem vários usuários reais compartilhando o mesmo contrato, por exemplo, membros da família de uma família).
+* O consumidor do conteúdo (vídeo) na Internet. Estamos deliberadamente evitando o termo _**usuário**_, já que o Monitoramento de simultaneidade geralmente lida com IDs de conta da MVPD (que envolvem vários usuários reais compartilhando o mesmo contrato, por exemplo, membros da família de uma família).
 
 * Para cada fluxo, o sujeito pode ser aprimorado com atributos relacionados à pessoa real usando o serviço, seu dispositivo conectado à rede e assim por diante.
 
