@@ -18,7 +18,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements).
+> Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](https://experienceleague.adobe.com/pt-br/docs/pass/authentication/product-announcements).
 
 Esta página descreve novos recursos, alterações e problemas conhecidos com esta versão:
 
