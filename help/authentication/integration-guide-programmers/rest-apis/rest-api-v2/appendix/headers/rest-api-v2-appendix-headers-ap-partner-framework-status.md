@@ -2,9 +2,9 @@
 title: Cabeçalho - AP-Parceiro-Estrutura-Status
 description: REST API V2 - Cabeçalho - AP-Parceiro-Estrutura-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
+source-git-commit: 22529618db679f7dbfb493906e1aeb4a0443a40c
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '415'
 ht-degree: 1%
 
 ---
@@ -70,8 +70,8 @@ O valor `Base64-encoded` do elemento JSON que contém os seguintes atributos:
                   <ul>
                      <li><b>concedido</b><br/>O usuário permitiu que o aplicativo acessasse informações de assinatura.</li>
                      <li><b>negado</b><br/>O usuário negou o aplicativo para acessar informações de assinatura.</li>
-                     <li><b>pendente</b><br/>O usuário não escolheu ainda permitir que o aplicativo acessasse informações de assinatura.</li>
-                     <li><b>nãoDeterminado</b><br/>O aplicativo não tem permissão para acessar informações de assinatura.</li>
+                     <li><b>restrito</b><br/>O aplicativo não tem permissão para acessar informações de assinatura.</li>
+                     <li><b>nãoDeterminado</b><br/>O usuário não optou por permitir que o aplicativo acesse as informações de assinatura.</li>
                   </ul>
                </td>
             </tr>
