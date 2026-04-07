@@ -1,7 +1,7 @@
 ---
 title: Notas de versão da Autenticação Adobe Pass 3.6.0
 description: Notas de versão da Autenticação Adobe Pass 3.6.0
-source-git-commit: a406afacfe95321f46a740ab9c84fdaf576c971a
+source-git-commit: 41bfd38eec7cd3eaf18a6dd41965244376ac61ec
 workflow-type: tm+mt
 source-wordcount: '126'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Esta página descreve novos recursos, alterações e problemas conhecidos com es
 ### Número da Build {#build-number-360}
 
 Autenticação Adobe Pass: adobe-pass-**3.6.0**\
-Data de lançamento: **04/07/2025 - 09/04/2025**
+Data de Lançamento: **04/07/2026 - 09/04/2026**
 
 ### Visão geral da versão {#release-overview-360}
 
