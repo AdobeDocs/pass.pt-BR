@@ -2,9 +2,9 @@
 title: Cookbook da API REST (cliente para servidor)
 description: Cliente do guia da API rest para o servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '906'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## Visão geral {#overview}
 
-Este documento fornece instruções passo a passo para a equipe de engenharia de um programador integrar um &quot;dispositivo inteligente&quot; (console de jogos, aplicativo de TV inteligente, set top box, etc.) com a autenticação do Adobe Pass usando os serviços de API REST. Essa abordagem de cliente para servidor, que usa REST APIs em vez de um SDK cliente, permite um suporte mais amplo de diferentes plataformas para as quais o desenvolvimento de um número significativo de SDKs únicos não seria viável. Para obter uma visão geral técnica abrangente de como a solução sem cliente funciona, consulte a [Visão geral técnica sem cliente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md).
+Este documento fornece instruções passo a passo para a equipe de engenharia de um programador integrar um &quot;dispositivo inteligente&quot; (console de jogos, aplicativo de TV inteligente, set top box etc.) com Autenticação Adobe Pass usando serviços REST API. Essa abordagem de cliente para servidor, que usa REST APIs em vez de um SDK cliente, permite um suporte mais amplo de diferentes plataformas para as quais o desenvolvimento de um número significativo de SDKs únicos não seria viável. Para obter uma visão geral técnica abrangente de como a solução sem cliente funciona, consulte a [Visão geral técnica sem cliente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md).
 
 
 Essa abordagem requer dois componentes (aplicativo de streaming e aplicativo AuthN) para concluir os fluxos necessários: inicialização, registro, autorização e fluxos de mídia de visualização no aplicativo de streaming e o fluxo de autenticação no aplicativo AuthN.
@@ -72,11 +72,11 @@ O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicat
 
 1. Obtenha um código de registro e um URL que seu usuário poderá usar para acessar seu aplicativo de logon de 2ª tela e apresente-os ao usuário:
 
-   a. Envie uma solicitação POST para o Serviço de código de registro da Adobe, transmitindo uma ID de dispositivo com hash e um &quot;URL de registro&quot;.  Por exemplo: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+   a)  Envie uma solicitação de POST para o Serviço de código de registro da Adobe, transmitindo uma ID de dispositivo com hash e um &quot;URL de registro&quot;.  Por exemplo: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
 
-   b. Apresente o código de registro e o URL retornados ao usuário.
+   b)  Apresente o código de registro e o URL retornados ao usuário.
 
-   c. Instrua o usuário a alternar para um dispositivo compatível com a Web, navegar até o URL e inserir o código de registro.
+   c)  Instrua o usuário a alternar para um dispositivo compatível com a Web, navegar até o URL e inserir o código de registro.
 
 
 
@@ -96,7 +96,7 @@ O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicat
 
    * Se foi um erro de AuthZ, o usuário não está autorizado a assistir à mídia solicitada e algum tipo de mensagem de erro deve ser exibido para o usuário.
 
-   * Se houver algum outro erro (erro de conexão, erro de rede etc.), exiba uma mensagem de erro apropriada para o usuário.
+   * Se houve algum outro erro (erro de conexão, erro de rede etc.) em seguida, exiba uma mensagem de erro apropriada para o usuário.
 
 
 
@@ -106,12 +106,12 @@ O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicat
 
 2. A mídia está protegida?
 
-   a. Seu aplicativo verifica se a mídia está protegida.
+   a)  Seu aplicativo verifica se a mídia está protegida.
 
-   b. Se a mídia estiver protegida, o aplicativo iniciará a Autorização
+   b)  Se a mídia estiver protegida, o aplicativo iniciará a Autorização
 (AuthZ) Fluxo acima.
 
-   c. Se a mídia não estiver protegida, reproduza-a para o
+   c)  Se a mídia não estiver protegida, reproduza-a para o
 usuário.
 
 3. Reproduza a mídia.

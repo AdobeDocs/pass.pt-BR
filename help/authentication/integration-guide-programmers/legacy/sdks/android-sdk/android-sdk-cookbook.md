@@ -2,9 +2,9 @@
 title: Guia do Android SDK
 description: Guia do Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '1703'
+source-wordcount: '1690'
 ht-degree: 0%
 
 ---
@@ -71,7 +71,7 @@ A atividade de rede do AccessEnabler ocorre em um thread diferente, de modo que 
      Disparado por `getAuthentication()` somente se o usuário não tiver selecionado um provedor (MVPD) e ainda não estiver autenticado.\
      O parâmetro `mvpds` é uma matriz de provedores disponíveis para o usuário.
 
-   - [&quot;setAuthenticationStatus(status, errorcode)&quot;](#$setAuthNStatus)
+   - [`setAuthenticationStatus(status, errorcode)`](#$setAuthNStatus)
 
      Disparado por `checkAuthentication()` toda vez.\
      Disparado por `getAuthentication()` somente se o usuário já estiver autenticado e tiver selecionado um provedor.
@@ -82,7 +82,7 @@ A atividade de rede do AccessEnabler ocorre em um thread diferente, de modo que 
 
      Disparado por `getAuthentication()` depois que o usuário seleciona uma MVPD. O parâmetro `url` fornece o local da página de logon do MVPD.
 
-   - [&quot;sendTrackingData(event, data)&quot;](#$sendTrackingData)
+   - [`sendTrackingData(event, data)`](#$sendTrackingData)
 
      Disparado por `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`.\
      O parâmetro `event` indica qual evento de direito ocorreu; o parâmetro `data` é uma lista de valores relacionados ao evento.
@@ -92,22 +92,22 @@ A atividade de rede do AccessEnabler ocorre em um thread diferente, de modo que 
      Acionado por `checkAuthorization()` e `getAuthorization()` após uma autorização bem-sucedida para exibir um recurso.\
      O parâmetro `token` é o token de mídia de vida curta; o parâmetro `resource` é o conteúdo que o usuário está autorizado a exibir.
 
-   - [&quot;tokenRequestFailed(resource, code, description)&quot;](#$tokenRequestFailed)
+   - [`tokenRequestFailed(resource, code, description)`](#$tokenRequestFailed)
 
      Acionado por `checkAuthorization()` e `getAuthorization()` após uma autorização sem êxito.\
      O parâmetro `resource` é o conteúdo que o usuário estava tentando exibir; o parâmetro `code` é o código de erro que indica que tipo de falha ocorreu; o parâmetro `description` descreve o erro associado ao código de erro.
 
-   - [`seletedProvider(mvpd)`](#$selectedProvider)
+   - [`selectedProvider(mvpd)`](#$selectedProvider)
 
      Disparado por `getSelectedProvider()`.\
      O parâmetro `mvpd` fornece informações sobre o provedor selecionado pelo usuário.
 
-   - [`setMetadataStatus(metadados, chave, argumentos)`](#$setMetadataStatus)
+   - [`setMetadataStatus(metadata, key, arguments)`](#$setMetadataStatus)
 
      Acionado por `getMetadata().`\
      O parâmetro `metadata` fornece os dados específicos solicitados; o parâmetro `key` é a chave usada na solicitação `getMetadata()`; e o parâmetro `arguments` é o mesmo dicionário passado para `getMetadata()`.
 
-   - [&quot;preauthorizedResources(resources)&quot;](#$preauthResources)
+   - [`preauthorizedResources(resources)`](#$preauthResources)
 
      Disparado por `checkPreauthorizedResources()`.\
      O parâmetro `authorizedResources` apresenta os recursos que o usuário está autorizado a exibir.
@@ -121,12 +121,12 @@ A atividade de rede do AccessEnabler ocorre em um thread diferente, de modo que 
 1. Inicie o aplicativo de nível superior.
 1. Iniciar autenticação do Adobe Pass
 
-   a. Chame [`getInstance`](#$getInstance) para criar uma única instância do Adobe Pass Authentication AccessEnabler.
+   a)  Chame [`getInstance`](#$getInstance) para criar uma única instância do Adobe Pass Authentication AccessEnabler.
 
    - **Dependência:** Autenticação Adobe Pass Nativa
 Biblioteca da Android (AccessEnabler)
 
-   b. Chame ` setRequestor()` para estabelecer a identificação do Programador; transmita no `requestorID` do Programador e (opcionalmente) uma matriz de pontos de extremidade de Autenticação Adobe Pass.
+   b)  Chame ` setRequestor()` para estabelecer a identificação do Programador; transmita no `requestorID` do Programador e (opcionalmente) uma matriz de pontos de extremidade de Autenticação Adobe Pass.
 
    - **Dependência:** RequestorID de Autenticação Adobe Pass Válido\
      (Trabalhe com seu gerente de conta de autenticação da Adobe Pass para organizar isso.)
@@ -134,8 +134,8 @@ Biblioteca da Android (AccessEnabler)
    - **Acionadores:** retorno de chamada setRequestorComplete()
 
    | NOTA |     |
-   | --- | --- |  
-   |  | Nenhuma solicitação de direito pode ser concluída até que a identidade do solicitante seja totalmente estabelecida. Isso significa que, enquanto setRequestor() ainda estiver em execução, todas as solicitações de direitos subsequentes (por exemplo, `checkAuthentication()`) serão bloqueadas.<br><br>Você tem duas opções de implementação: Depois que as informações de identificação do solicitante forem enviadas para o servidor back-end, a camada de aplicativo da interface poderá escolher uma das duas seguintes abordagens:<br><br>1.  Aguarde o acionamento do retorno de chamada `setRequestorComplete()` (parte do delegado AccessEnabler).  Essa opção fornece a maior certeza de que `setRequestor()` foi concluído, portanto, ela é recomendada para a maioria das implementações.<br>2.  Continue sem aguardar o acionamento do retorno de chamada `setRequestorComplete()` e comece a emitir solicitações de direito. Essas chamadas (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) são enfileiradas pela biblioteca AccessEnabler, que fará as chamadas de rede reais após `setRequestor(). `Essa opção poderá ser interrompida ocasionalmente se, por exemplo, a conexão de rede estiver instável. |
+   | --- | --- |
+   |  | Nenhuma solicitação de direito pode ser concluída até que a identidade do solicitante seja totalmente estabelecida. Isso significa que, enquanto setRequestor() ainda estiver em execução, todas as solicitações de direitos subsequentes (por exemplo, `checkAuthentication()`) serão bloqueadas.<br><br>Você tem duas opções de implementação: Depois que as informações de identificação do solicitante forem enviadas para o servidor back-end, a camada de aplicativo da interface poderá escolher uma das duas seguintes abordagens:<br><br>1.  Aguarde o acionamento do retorno de chamada `setRequestorComplete()` (parte do delegado AccessEnabler).  Esta opção fornece a maior certeza de que `setRequestor()` foi concluído, portanto, ela é recomendada para a maioria das implementações.<br>2.  Continue sem aguardar o acionamento do retorno de chamada `setRequestorComplete()` e comece a emitir solicitações de direito. Essas chamadas (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) são enfileiradas pela biblioteca AccessEnabler, que fará as chamadas de rede reais após `setRequestor(). `Essa opção poderá ser interrompida ocasionalmente se, por exemplo, a conexão de rede estiver instável. |
 
    <!--Removed bad image link from first note cell above. ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) -->
 
@@ -187,7 +187,7 @@ fluxo.
    - Se `getAuthorization()` falhar: examine a exceção lançada para determinar seu tipo (AuthN, AuthZ ou algo mais):
       - Se foi um erro de autenticação (AuthN), reinicie o fluxo de autenticação.
       - Se foi um erro de autorização (AuthZ), o usuário não está autorizado a assistir à mídia solicitada, e algum tipo de mensagem de erro deve ser exibido para o usuário.
-      - Se houver algum outro tipo de erro (erro de conexão, erro de rede etc.), exiba uma mensagem de erro apropriada para o usuário.
+      - Se houver algum outro tipo de erro (erro de conexão, erro de rede etc.) em seguida, exiba uma mensagem de erro apropriada para o usuário.
 
 1. Valide o token de mídia curta.\
    Use a biblioteca do Verificador de Token de Mídia de Autenticação do Adobe Pass para verificar o token de mídia de curta duração retornado da chamada `getAuthorization()` acima:
@@ -211,9 +211,9 @@ fluxo.
 1. Ligue para [`logout()`](#$logout) para desconectar o usuário.\
    O AccessEnabler apaga todos os valores e tokens em cache para o MVPD atual para o solicitante atual e também para os solicitantes com Logon único. Depois de limpar o cache, o AccessEnabler faz uma chamada de servidor para limpar as sessões do lado do servidor.  Como a chamada do servidor pode resultar em um redirecionamento SAML para o IdP (isso permite a limpeza da sessão no lado do IdP), essa chamada deve seguir todos os redirecionamentos. Por esse motivo, essa chamada deve ser tratada em um controle WebView.
 
-   a. Seguindo o mesmo padrão do fluxo de trabalho de autenticação, o domínio AccessEnabler faz uma solicitação à camada de aplicativo da interface do usuário (por meio do retorno de chamada `navigateToUrl()`) para criar um controle WebView e instruir esse controle a carregar a URL do ponto de extremidade de logout no servidor back-end.
+   a)  Seguindo o mesmo padrão do fluxo de trabalho de autenticação, o domínio AccessEnabler faz uma solicitação à camada de aplicativo da interface do usuário (por meio do retorno de chamada `navigateToUrl()`) para criar um controle WebView e instruir esse controle a carregar a URL do ponto de extremidade de logout no servidor back-end.
 
-   b. Novamente, a interface do usuário deve monitorar a atividade do controle WebView e detectar o momento em que o controle, à medida que passa por vários redirecionamentos, carrega a URL personalizada do aplicativo (ou seja: `http://adobepass.android.app/`). Depois que esse evento ocorrer, a camada de aplicativo da interface do usuário fechará o WebView e o processo de logout será concluído.
+   b)  Novamente, a interface do usuário deve monitorar a atividade do controle WebView e detectar o momento em que o controle, à medida que passa por vários redirecionamentos, carrega a URL personalizada do aplicativo (ou seja: `http://adobepass.android.app/`). Depois que esse evento ocorrer, a camada de aplicativo da interface do usuário fechará o WebView e o processo de logout será concluído.
 
    **Observação:** o fluxo de logout difere do fluxo de autenticação na medida em que o usuário não precisa interagir com o WebView de nenhuma maneira. A camada de aplicativo da interface do usuário usa uma WebView para verificar se todos os redirecionamentos estão sendo seguidos. Assim, é possível (e recomendado) tornar o controle do WebView invisível (ou seja, oculto) durante o processo de logout.
 

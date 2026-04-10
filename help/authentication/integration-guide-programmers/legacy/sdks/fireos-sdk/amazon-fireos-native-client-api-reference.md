@@ -2,9 +2,9 @@
 title: Referência da API do cliente nativo do Amazon FireOS
 description: Referência da API do cliente nativo do Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '3451'
+source-wordcount: '3498'
 ht-degree: 0%
 
 ---
@@ -62,14 +62,13 @@ Consulte <https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-TV-Native-
 
 </br>
 
-### Factory.getInstance {#getInstance}
+### Fatory.getInstance {#getInstance}
 
 **Descrição:** Instancia o objeto do Ativador de Acesso. Deve haver uma única instância do Access Enabler por instância do aplicativo.
 
 | Chamada de API: construtor |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br> |
-| ```public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) throws AccessEnablerException``` |
+| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code> AccessEnabler estático público getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) gera AccessEnablerException </code> |
 
 **Disponibilidade:** v3.0+
 
@@ -159,7 +158,7 @@ falha na fase
 
 ### setOptions {#fire_setOption}
 
-**Descrição:** Configura as opções globais do SDK. Aceita um **Map\&lt;String, String\>** como argumento. Os valores do mapa serão passados para o servidor junto com cada chamada de rede feita pelo SDK.
+**Descrição:** Configura as opções globais do SDK. Ele aceita um **Map\&lt;String, String\>** como argumento. Os valores do mapa serão passados para o servidor junto com cada chamada de rede feita pelo SDK.
 
 Os valores serão passados ao servidor independentemente do fluxo atual (autenticação/autorização). Se quiser alterar os valores, você pode chamar esse método a qualquer momento.
 
@@ -260,7 +259,7 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Disponibilidade:**&#x200B;v 1.0+
+**Disponibilidade:**v 1.0+
 
 **Parâmetros:** Nenhum
 
@@ -341,7 +340,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 **Disponibilidade:** v1.0+
 
-**&lt;Parâmetros:** O parâmetro `resources` é uma matriz de recursos cuja autorização deve ser verificada. Cada elemento na lista deve ser uma string que representa a ID do recurso. A ID do recurso está sujeita às mesmas limitações que a ID do recurso na chamada `getAuthorization()`, ou seja, ela deve ser um valor acordado estabelecido entre o Programador e a MVPD ou um fragmento de RSS de mídia.
+**&lt;Parameters:** O parâmetro `resources` é uma matriz de recursos cuja autorização deve ser verificada. Cada elemento na lista deve ser uma string que representa a ID do recurso. A ID do recurso está sujeita às mesmas limitações que a ID do recurso na chamada `getAuthorization()`, ou seja, ela deve ser um valor acordado estabelecido entre o Programador e a MVPD ou um fragmento de RSS de mídia.
 
 **Retorno de chamada disparado:** `preauthorizedResources()`
 
@@ -355,7 +354,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Disponibilidade:**&#x200B;v 1.0+
+**Disponibilidade:**v 1.0+
 
 **Parâmetros:** O parâmetro `resources` é uma matriz de recursos para a qual o usuário já está autorizado a visualizar.
 
@@ -427,7 +426,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Disponibilidade:**&#x200B;v 1.0+
+**Disponibilidade:**v 1.0+
 
 **Parâmetros:**
 

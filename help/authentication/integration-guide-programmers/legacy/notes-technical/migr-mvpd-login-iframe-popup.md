@@ -2,9 +2,9 @@
 title: Como migrar a página de logon do MVPD do iFrame para o pop-up
 description: Como migrar a página de logon do MVPD do iFrame para o pop-up
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '712'
 ht-degree: 0%
 
 ---
@@ -22,10 +22,12 @@ ht-degree: 0%
 ## Pop-up versus iFrame {#popup-vs-iframe}
 
 Alguns usuários encontraram problemas de cookies de terceiros com a implementação do iFrame de uma página de logon do MVPD.
-<!--These issues are described in the tech notes linked below:
+<!--
+These issues are described in the tech notes linked below:
 
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
-* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
+* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)
+-->
 
 A equipe de Autenticação do Adobe Pass **recomenda implementar a pop-up/nova página de logon de janela** em vez da versão iFrame no Firefox e no Safari.  No entanto, se estiver implementando uma página de logon para o Internet Explorer, você pode encontrar problemas com a implementação pop-up. Os problemas do IE são causados pelo fato de que, depois que o usuário é autenticado com sua MVPD na janela pop-up, a Autenticação da Adobe Pass força um redirecionamento de página pai, que é visto pelo Internet Explorer como um bloqueador de pop-up. A equipe de Autenticação do Adobe Pass **recomenda implementar o logon de iFrame para o Internet Explorer**.
 

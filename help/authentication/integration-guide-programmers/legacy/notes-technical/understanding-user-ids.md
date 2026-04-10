@@ -2,9 +2,9 @@
 title: Compreensão das IDs de usuário
 description: Compreensão das IDs de usuário
 exl-id: 813a8501-db72-4850-a387-c8db6120db80
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '625'
+source-wordcount: '627'
 ht-degree: 1%
 
 ---

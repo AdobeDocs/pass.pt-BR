@@ -2,9 +2,9 @@
 title: Visão Geral do Monitoramento do Serviço de Direito
 description: Visão Geral do Monitoramento do Serviço de Direito
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '1303'
+source-wordcount: '1349'
 ht-degree: 0%
 
 ---
@@ -44,8 +44,8 @@ A API ESM geralmente não está disponível.  Entre em contato com seu represent
 | authz-rejected | Número de tentativas de autorização consideradas mal-intencionadas pelo Provedor de Serviços da Adobe e rejeitadas como resultado de uma prevenção de ataque de DoS |
 | authz-latency | Número total de milissegundos gastos no ponto de extremidade do MVPD |
 | media-tokens | Número de tokens de mídia curtos gerados (que são assimilados pelo número de solicitações de reprodução) |
-| contas únicas | Número de usuários únicos que executaram ações de autorização (AuthN / AuthZ) no intervalo selecionado. (Essa métrica só será mostrada se forem solicitados valores diários.) </br> Isso é computado para cada Data Center individual. Quando a dimensão &quot;dc&quot; não é solicitada, essa métrica não é exibida. |
-| unique-sessions | Número de sessões exclusivas que executaram chamadas de fluxo de autenticação para o serviço de Autenticação do Adobe Pass dentro do intervalo selecionado. (Essa métrica só será mostrada se forem solicitados valores diários.) </br> Isso é computado para cada Data Center individual. Quando a dimensão &quot;dc&quot; não é solicitada, essa métrica não é exibida. |
+| contas únicas | Número de usuários únicos que executaram ações de autorização (AuthN / AuthZ) no intervalo selecionado. (Esta métrica só será mostrada se forem solicitados valores diários.) </br> Isso é calculado para cada data center individual. Quando a dimensão &quot;dc&quot; não é solicitada, essa métrica não é exibida. |
+| unique-sessions | Número de sessões exclusivas que executaram chamadas de fluxo de autenticação para o serviço de Autenticação do Adobe Pass dentro do intervalo selecionado. (Esta métrica só será mostrada se forem solicitados valores diários.) </br> Isso é calculado para cada data center individual. Quando a dimensão &quot;dc&quot; não é solicitada, essa métrica não é exibida. |
 | count | Um contador simples usado nos relatórios orientados a eventos |
 
 </br>
@@ -68,10 +68,10 @@ A API ESM geralmente não está disponível.  Entre em contato com seu represent
 | channel | O site do canal, extraído do campo de recurso (extraído do conteúdo MRSS como o canal/título, se fornecido, ou mapeado para o valor do recurso, se ele não estiver no formato RSS). |
 | resource-id | O título do recurso real envolvido na solicitação de autorização (extraído da carga MRSS como o item/título, se fornecido) |
 | dispositivo | A plataforma do dispositivo (PC, dispositivo móvel, console etc.) |
-| eap | O provedor de autenticação externa quando o fluxo de autenticação é executado por meio de um sistema externo. </br> Os valores podem ser: </br> - N/A - a autenticação foi fornecida pela Autenticação Adobe Pass </br> - Apple - o sistema externo que forneceu a autenticação é o Apple |
+| eap | O provedor de autenticação externa quando o fluxo de autenticação é executado por meio de um sistema externo. </br> Os valores podem ser: </br> - N/D - a autenticação foi fornecida pela Autenticação Adobe Pass </br> - Apple - o sistema externo que forneceu a autenticação é o Apple |
 | os-family | Sistema operacional em execução no dispositivo |
 | browser-family | Agente do usuário usado para acessar a autenticação da Adobe Pass |
-| cdt | A plataforma do dispositivo (alternativa), usada atualmente para Clientless. </br> Os valores podem ser: </br> - N/A - o evento não se originou de um SDK sem Cliente </br> - Desconhecido - Como o parâmetro deviceType de uma API sem Cliente é opcional, há chamadas que não contêm nenhum valor. </br> - qualquer outro valor que tenha sido enviado por meio da API sem cliente, por exemplo xbox, appletv, roku etc. </br> |
+| cdt | A plataforma do dispositivo (alternativa), usada atualmente para Clientless. </br>  Os valores podem ser: </br> - N/D - o evento não se originou de um SDK sem cliente </br> - Desconhecido - Como o parâmetro deviceType de uma API sem cliente é opcional, há chamadas que não contêm nenhum valor. </br> - qualquer outro valor que tenha sido enviado por meio da API sem cliente, por exemplo xbox, appletv, roku etc. </br> |
 | platform-version | A versão do SDK sem cliente |
 | os-type | Sistema operacional em execução no dispositivo, alternativo (não usado no momento) |
 | browser-version | Versão do agente do usuário |
@@ -113,8 +113,8 @@ A API ESM geralmente não está disponível.  Entre em contato com seu represent
 | minuto | O minuto da hora |
 | mvpd | A ID do mvpd usada para executar a solicitação de direito |
 | requestor-id | A ID do solicitante usada para executar a solicitação de direito |
-| eap | O provedor de autenticação externa quando o fluxo de autenticação é executado por meio de um sistema externo. </br> Os valores podem ser: </br> - N/A - a autenticação foi fornecida pela Autenticação Adobe Pass </br> - Apple - o sistema externo que forneceu a autenticação é o Apple |
-| cdt | A plataforma do dispositivo (alternativa), usada atualmente para Clientless. </br> Os valores podem ser: </br> - N/A - o evento não se originou de um SDK sem Cliente </br> - Desconhecido - Como o parâmetro deviceType de uma API sem Cliente é opcional, há chamadas que não contêm nenhum valor. </br> - qualquer outro valor que tenha sido enviado por meio da API sem cliente, por exemplo xbox, appletv, roku etc. </br> |
+| eap | O provedor de autenticação externa quando o fluxo de autenticação é executado por meio de um sistema externo. </br> Os valores podem ser: </br> - N/D - a autenticação foi fornecida pela Autenticação Adobe Pass </br> - Apple - o sistema externo que forneceu a autenticação é o Apple |
+| cdt | A plataforma do dispositivo (alternativa), usada atualmente para Clientless. </br>  Os valores podem ser: </br> - N/D - o evento não se originou de um SDK sem cliente </br> - Desconhecido - Como o parâmetro deviceType de uma API sem cliente é opcional, há chamadas que não contêm nenhum valor. </br> - qualquer outro valor que tenha sido enviado por meio da API sem cliente, por exemplo xbox, appletv, roku etc. </br> |
 | sdk-type | O SDK cliente usado (Flash, HTML5, nativo do Android, iOS, sem clientes etc.) |
 | platform | A plataforma identificada pelo dispositivo. Valores possíveis: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - etc |
 | nsdk | O SDK cliente usado (android, fireTV, js, iOS, tvOS, não sdk) |
