@@ -1,8 +1,8 @@
 ---
 source-git-commit: e1fcfc03f1084e9159a73ad4e18b864d796bff3c
 workflow-type: tm+mt
-source-wordcount: '483'
-ht-degree: 5%
+source-wordcount: '521'
+ht-degree: 0%
 
 ---
 # Contribuir com o artigo
@@ -11,7 +11,7 @@ Agradecemos as contribuições de nossa comunidade e de funcionários da Adobe d
 
 ## Código de conduta do Adobe Open Source
 
-Este projeto adotou o [Código de conduta de código aberto da Adobe](code-of-conduct.md) ou o [Código de conduta do .NET Foundation](https://dotnetfoundation.org/code-of-conduct). Para obter mais informações, consulte o artigo [Contribuição](contributing.md).
+Este projeto adotou o [Código de Conduta do Adobe Open Source](code-of-conduct.md) ou o [ Código de Conduta do .NET Foundation](https://dotnetfoundation.org/code-of-conduct). Para obter mais informações, consulte o artigo [Contribuição](contributing.md).
 
 ## Como contribuir para o conteúdo do Adobe
 
@@ -29,7 +29,7 @@ Se você estiver contribuindo com uma pequena atualização:
 1. Na mensagem &quot;Este conteúdo foi útil?&quot;, banner que aparece na parte inferior da janela do navegador clique em **Opções detalhadas de feedback**.
 1. Clique em **Sugerir uma edição** e envie uma solicitação de pull com suas alterações na interface do GitHub.
 
-   Consulte o [guia geral do colaborador do Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=pt-BR) para obter mais informações.
+   Consulte o [guia geral do colaborador do Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) para obter mais informações.
 
 Pequenas correções ou esclarecimentos que você envia para documentação e exemplos de código neste repositório são cobertos pelos termos de uso da Adobe.
 
@@ -43,7 +43,7 @@ Se você fizer parte da comunidade da Adobe e quiser criar um novo tópico ou en
 
 Os colaboradores da comunidade podem usar a interface do usuário do GitHub para a edição básica ou bifurcar o repositório para fazer grandes contribuições.
 
-Consulte o [Guia do colaborador do Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=pt-BR) para obter mais detalhes.
+Consulte o [Guia do colaborador do Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) para obter mais detalhes.
 
 ## Colaboradores internos
 
