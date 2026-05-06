@@ -5,9 +5,9 @@ audience: end-user
 user-guide-title: Monitoramento de simultaneidade do Adobe Pass
 user-guide-description: Saiba como definir e aplicar limites ao uso simultâneo em vários aplicativos.
 nudge: true
-source-git-commit: e02007a3ec5bd581f84c887ac50249009a2121fd
+source-git-commit: 80ffef1e8e0cfb3752c01e155854f7d87dfa134c
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '257'
 ht-degree: 6%
 
 ---
@@ -45,6 +45,7 @@ ht-degree: 6%
    - [Como fazer: distinguir entre VOD e conteúdo em tempo real no monitoramento de simultaneidade](technical/vod-live-dist.md)
    - [Política de retenção de dados](technical/data-retention-policy.md)
 - Versões {#cm-release-notes}
+   - [Monitoramento de simultaneidade - Notas de versão 4.0.1](releases/rn-cm-services-401.md)
    - [Monitoramento de simultaneidade - Notas de versão da 3.6.2](releases/rn-cm-services-362.md)
    - [Monitoramento de simultaneidade - Notas de versão da 3.6.1](releases/rn-cm-services-361.md)
    - [Monitoramento de simultaneidade - notas de versão 3.6.0](releases/rn-cm-services-360.md)
