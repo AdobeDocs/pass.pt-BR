@@ -1,10 +1,9 @@
 ---
 title: Notas de versão da Autenticação Adobe Pass 3.7.0
 description: Notas de versão da Autenticação Adobe Pass 3.7.0
-hold: true
-source-git-commit: 170d49b06e4ac8b31a840ee1bc5fac114bb3aa0b
+source-git-commit: 89b5fbd8e8510cbf84ce7908e8cf86551e7a0cb9
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '141'
 ht-degree: 0%
 
 ---
@@ -33,7 +32,7 @@ Esta versão do está focada em atualizações de integração do MVPD, correç�
 
 #### Integrações do MVPD
 
-* Adição de suporte para Bell MVPD usando OAuth2 com PKCE.
+* Adição de suporte a PKCE para autenticação do MVPD com base em OAuth2.
 
 #### Aprimoramentos
 
