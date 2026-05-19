@@ -1,13 +1,13 @@
 ---
 title: Principais conceitos
 description: Saiba mais sobre os conceitos fundamentais do Monitoramento de simultaneidade, incluindo sessões, políticas, metadados e muito mais
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 9721055a-70e6-4ba1-a1e0-04406eec25e6
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
-
 
 # Principais conceitos {#key-concepts}
 
@@ -269,4 +269,3 @@ Tenant: "Streaming Company"
 | **FIFO** | Resolução de conflitos de primeiro a entrar, primeiro a sair |
 | **Locatário** | Organização que possui aplicativos |
 | **Aplicativo** | Programa de software usando CM |
-
