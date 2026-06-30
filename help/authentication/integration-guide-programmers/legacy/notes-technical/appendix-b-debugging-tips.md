@@ -2,9 +2,9 @@
 title: Apêndice B "Dicas de depuração"
 description: Apêndice B "Dicas de depuração"
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '184'
+source-wordcount: '192'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ A Autenticação do Adobe Pass armazena dados temporários, como cache do navega
 
 Acesse a [ajuda do Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
-Selecione o ```entitlement.\*``` (dependendo do que for testado) e clique em &quot;Excluir site&quot;.
+Selecione o `entitlement.\*` (dependendo do que for testado) e clique em &quot;Excluir site&quot;.
 
 
 ## Ferramentas de depuração {#tools}

@@ -2,10 +2,10 @@
 title: Android SDK com registro dinâmico do cliente
 description: Android SDK com registro dinâmico do cliente
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1301'
-ht-degree: 0%
+source-wordcount: '1321'
+ht-degree: 1%
 
 ---
 
@@ -47,13 +47,13 @@ Assista a [este webinário](https://my.adobeconnect.com/pzkp8ujrigg1/), que forn
 ## Alterações na API {#API}
 
 
-### Factory.getInstance
+### Fatory.getInstance
 
 **Descrição:** Instancia o objeto do Ativador de Acesso. Deve haver uma única instância do Access Enabler por instância do aplicativo.
 
 | Chamada de API: construtor |
 | --- |
-| público estático AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        gera AccessEnablerException |
+| público estático AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> gera AccessEnablerException |
 
 
 **Disponibilidade:** v3.0+
@@ -64,8 +64,7 @@ Assista a [este webinário](https://my.adobeconnect.com/pzkp8ujrigg1/), que forn
 - softwareStatement: valor obtido do Painel TVE ou *null* se &quot;software\_statement&quot; estiver definido em strings.xml
 - redirectUrl : url exclusiva, um dos domínios na ordem inversa que foi explicitamente adicionado no Painel TVE ou *null* se &quot;redirect\_uri&quot; estiver definido em strings.xml
 
-Observação: um softwareStatement ou um redirectUrl inválido fará com que o aplicativo não inicialize o AccessEnabler ou não registre o aplicativo para Autenticação e autorização do Adobe Pass
-</br>
+Observação: um softwareStatement ou um redirectUrl inválido fará com que o aplicativo não inicialize o AccessEnabler ou não registre o aplicativo para Autenticação e autorização do Adobe Pass</br>
 Observação: o parâmetro redirectUrl ou redirect\_uri em strings.xml deve ser o valor do domínio adicionado no Painel TVE para o aplicativo na ordem inversa ( por exemplo: para o domínio &#39;adobe.com&#39; adicionado no Painel TVE, o redirectUrl deve ser &#39;com.adobe&#39;.
 
 
@@ -81,13 +80,13 @@ Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante
 
 | Chamada de API: configuração do solicitante |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **Disponibilidade:** v3.0+
 
 | Chamada de API: configuração do solicitante |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilidade:** v3.0+
 
@@ -114,16 +113,16 @@ Obsoleto:
 
 **Parâmetros:** Nenhum
 
-**Retornos de chamada disparados:** `setAuthenticationStatus()`
-</br></br>
+**Retornos de chamada disparados:** 
+
 
 ## Fluxo de implementação do programador {#Progr}
 
 ### **1. Registrar Aplicativo**
 
-a. Obter software\_statement e redirect\_uri da Adobe Pass ( Painel TVE )
+a) Obter software\_statement e redirect\_uri da Adobe Pass ( Painel TVE )
 
-b. Há duas opções para transmitir esses valores para o Adobe Pass SDK:
+b) Há duas opções para transmitir esses valores para o Adobe Pass SDK:
 
 Em strings.xml, adicione :
 
@@ -136,9 +135,9 @@ Chame AccessEnabler.getInstance(appContext,softwareStatement,
 redirectUrl)
 
 
-### &#x200B;2. Configurar Aplicativo
+### &#x200B;2. Configurar aplicativo
 
-a. setRequestor(requestor\_id)
+a) setRequestor(requestor\_id)
 
 O SDK realizará as seguintes operações:
 
@@ -156,18 +155,18 @@ O SDK realizará as seguintes operações:
 
 - caso uma MVPD exija a Autenticação passiva, uma Guia personalizada do Chrome será aberta para ser executada de forma passiva com essa MVPD e será fechada ao concluir
 
-b. checkAuthentication()
+b) checkAuthentication()
 
 - true : ir para Autorização
 - false : acesse Selecionar MVPD
 
-c. getAuthentication : o SDK incluirá **access_token** nos parâmetros de chamada
+c) getAuthentication : o SDK incluirá **access_token** nos parâmetros de chamada
 
 - mvpd lembrado : ir para setSelectedProvider(mvpd_id)
 - mvpd não selecionado : displayProviderDialog
 - mvpd selecionado : ir para setSelectedProvider(mvpd_id)
 
-d. setSelectedProvider
+d) setSelectedProvider
 
 - O URL de autenticação mvpd\_id é carregado no ChromeCustomTabs
 - logon bem-sucedido : delegate.setAuthenticationStatus ( SUCCESS )
@@ -179,7 +178,7 @@ e. get/checkAuthorization : o SDK incluirá **access_token** no cabeçalho como 
 - se a autorização for bem-sucedida, será feita uma chamada para obter a
 token de mídia
 
-f. logout:
+f) logout:
 
 - O SDK excluirá um token válido para o solicitante atual (as autenticações obtidas por outros aplicativos e não via SSO permanecerão válidas)
 - O SDK abrirá as Guias personalizadas do Chrome para alcançar o ponto de extremidade de logout mvpd_id. Depois de concluídas, as Guias personalizadas do Chrome serão fechadas

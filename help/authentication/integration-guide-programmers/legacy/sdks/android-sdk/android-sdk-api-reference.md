@@ -2,9 +2,9 @@
 title: Referência da API do Android SDK
 description: Referência da API do Android SDK
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '4560'
+source-wordcount: '4628'
 ht-degree: 0%
 
 ---
@@ -56,7 +56,7 @@ Consulte [https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-Acc
 - [setMetadataStatus](#setMetadaStatus)
 - [getVersion](#getVersion)
 
-### Factory.getInstance {#getInstance}
+### Fatory.getInstance {#getInstance}
 
 **Descrição:** Instancia o objeto do Ativador de Acesso. Deve haver uma única instância do Access Enabler por instância do aplicativo.
 
@@ -92,13 +92,13 @@ Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante
 
 | Chamada de API: configuração do solicitante |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **Disponibilidade:** v3.0+
 
 | Chamada de API: configuração do solicitante |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilidade:** v3.0+
 
@@ -232,9 +232,7 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 
 >[!NOTE]
 >
-> Anulando o fluxo de autenticação
-> </br></br>
-> Observe que esse é um ponto em que o usuário pode pressionar o botão &quot;Voltar&quot;, o que é equivalente à anulação do fluxo de autenticação. Nesse cenário, seu aplicativo deve chamar o método `setSelectedProvider()`, transmitindo *null* como o parâmetro, para dar ao Ativador de Acesso a oportunidade de redefinir sua máquina de estado de autenticação.
+> Anulando o fluxo de autenticaçãoObserve que esse é um ponto em que o usuário pode pressionar o botão &quot;Voltar&quot;, o que é equivalente à anulação do fluxo de autenticação. Nesse cenário, seu aplicativo deve chamar o método `setSelectedProvider()`, transmitindo *null* como o parâmetro, para dar ao Ativador de Acesso a oportunidade de redefinir sua máquina de estado de autenticação.
 
 | Retorno de chamada: exibir a interface do usuário de seleção do MVPD |
 | --- |
@@ -493,7 +491,7 @@ O parâmetro `cache` especifica se a resposta de pré-autorização em cache pod
 
 | Retorno de chamada: falha no fluxo de autorização |
 | --- |
-| public void tokenRequestFailed(String resourceId, <br>        String errorCode, String errorDescription) |
+| public void tokenRequestFailed(String resourceId, <br> String errorCode, String errorDescription) |
 
 **Disponibilidade:** v1.0+
 
@@ -624,7 +622,7 @@ Há dois tipos de metadados disponíveis para programadores:
 
 | Callback: resultado de solicitação de recuperação de metadados |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **Disponibilidade:** v1.0+
 
@@ -688,7 +686,7 @@ Esse valor é nulo quando a solicitação foi feita para metadados simples (TTL 
 
 | Chamada de API: obter versão do AccessEnabler |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 
 [Voltar à API do Android...](#api)
@@ -727,7 +725,7 @@ O Ativador de acesso aciona um retorno de chamada adicional que não é necessar
 
 | Retorno de chamada: rastreamento de eventos |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **Disponibilidade:** v1.0+
 
@@ -739,7 +737,7 @@ O Ativador de acesso aciona um retorno de chamada adicional que não é necessar
    - **mvpdSelection:** quando o usuário seleciona um MVPD no formulário de seleção do MVPD (o tipo de evento é `EVENT_MVPD_SELECTION`)
 - *dados*: dados adicionais associados ao evento relatado. Esses dados são apresentados no formato de uma lista de valores.
 
-A seguir estão instruções para interpretar os valores nos *dados*
+A seguir estão instruções para interpretar os valores nos dados **
 matriz:
 
 - Para o tipo de evento *`EVENT_AUTHN_DETECTION`:*

@@ -2,9 +2,9 @@
 title: Visão geral da API
 description: Visão geral da API
 exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '2043'
+source-wordcount: '2102'
 ht-degree: 1%
 
 ---
@@ -64,8 +64,8 @@ As seguintes opções de filtro estão disponíveis:
 
 * **Igual a** filtros são fornecidos definindo o nome da dimensão para um valor específico na cadeia de caracteres de consulta.
 * Filtros **IN** podem ser especificados adicionando o mesmo parâmetro de nome de dimensão várias vezes com valores diferentes: dimension=value1&amp;dimension=value2
-* **Não é igual a** filtros devem usar o caractere &#39;!&#39; após o nome da dimensão, resultando no caractere &#39;!=&#39; &quot;operator&quot;: dimensão!=valor
-* **NOT IN** filtros exigem o caractere &#39;!Operador =&#39; a ser usado várias vezes, uma vez para cada valor no conjunto: dimension!=value1&amp;dimension!=value2&amp;...
+* **Diferente de** filtros devem usar o símbolo &#39;!&#39; após o nome da dimensão, resultando no &#39;!=&#39; &quot;operador&quot;: dimension!=value
+* **NOT IN** os filtros exigem que o operador &#39;!=&#39; seja usado várias vezes, uma vez para cada valor no conjunto: dimension!=value1&amp;dimension!=value2&amp;...
 
 
 Também há um uso especial para os nomes de dimensão na sequência de consulta: se o nome da dimensão for usado como um parâmetro da sequência de consulta sem valor, isso instruirá a API a retornar uma projeção que inclua essa dimensão no relatório.
@@ -76,8 +76,8 @@ Exemplo de consultas CMU:
 |:---|:---|
 | /dimension1/dimension2/dimension3?dimension1=value1 | SELECT * da projeção WHERE dimension1 = &#39;value1&#39; GROUP BY dimension1, dimension2, dimension3 |
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * da projeção WHERE dimension1 IN (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=valor1 | SELECT * da projeção WHERE dimension1 &lt;> &#39;value1&#39; GROUP BY dimension1, dimension2, dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=valor1&amp;dimensão2!=valor2 | SELECT * da projeção WHERE dimension1 NOT IN (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * da projeção WHERE dimension1 &lt;> &#39;value1&#39; GROUP BY dimension1, dimension2, dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1&amp;dimension2!=value2 | SELECT * da projeção WHERE dimension1 NOT IN (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
 | Supondo que não haja caminho direto: /dimension1/dimension3, mas haja um caminho: /dimension1/dimension2/dimension3 </br></br> /dimension1?dimension3 | SELECT * da projeção GROUP BY dimension1,dimension3 |
 
 >[!NOTE]
@@ -99,7 +99,7 @@ Parâmetros de string de consulta reservados para CMU API:
 | start | Sim | Hora de início do relatório como ISO8601; o servidor preencherá a parte restante se apenas um prefixo for fornecido: por exemplo, start=2012 resultará em start=2012-01-01:00:00:00 | Relatado pelo servidor no autolink; o servidor tenta fornecer padrões razoáveis com base na granularidade de tempo selecionada | start=15/07/2012 |
 
 
-O único método HTTP disponível atualmente é o GET. O suporte para métodos do OPTIONS/HEAD pode ser fornecido em versões futuras.
+O único método HTTP disponível atualmente é o GET. O suporte para métodos OPTIONS / HEAD pode ser fornecido em versões futuras.
 
 
 
@@ -112,7 +112,7 @@ O único método HTTP disponível atualmente é o GET. O suporte para métodos d
 | 401 | Não autorizado | Causado por uma solicitação que não contém os cabeçalhos OAuth adequados para autenticar o usuário |
 | 403 | Proibido | Indica que a solicitação não é permitida no contexto de segurança atual; isso ocorre quando o usuário é autenticado, mas não tem permissão para acessar as informações solicitadas |
 | 404 | Não encontrado | Ocorre caso um caminho de URL inválido seja fornecido com a solicitação. Isso nunca deve ocorrer se o cliente seguir os links &quot;detalhar&quot;/&quot;detalhar&quot; fornecidos com 200 respostas |
-| 405 | Método não permitido | Sinaliza que um método sem suporte foi usado na solicitação. Embora atualmente apenas o método do GET seja compatível, as versões futuras podem permitir o HEAD ou o OPTIONS |
+| 405 | Método não permitido | Sinaliza que um método sem suporte foi usado na solicitação. Embora atualmente apenas o método GET seja compatível, as versões futuras podem permitir HEAD ou OPTIONS |
 | 406 | Não aceitável | Sinaliza que um tipo de mídia sem suporte foi solicitado pelo cliente |
 | 500 | Erro interno do servidor | &quot;Isso nunca deve acontecer&quot; |
 | 503 | Serviço indisponível | Sinaliza um erro no aplicativo ou em suas dependências |
@@ -232,7 +232,7 @@ O CSV conterá uma linha de cabeçalho e, em seguida, os dados do relatório com
 
 A ordem dos campos na linha de cabeçalho refletirá a ordem de classificação dos dados da tabela.
 
-Exemplo: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv produzirá um arquivo chamado ```report__2012-07-20_2012-08-20_1000.csv``` com o seguinte conteúdo:
+Exemplo: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv produzirá um arquivo chamado `report__2012-07-20_2012-08-20_1000.csv` com o seguinte conteúdo:
 
 | Ano | Month | Clientes |
 |:----:|:-----:|:-------:|

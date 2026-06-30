@@ -2,9 +2,9 @@
 title: Configuração do ambiente e teste na pré-qualificação
 description: Configuração do ambiente e teste na pré-qualificação
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: ca95bc45027410becf8987154c7c9f8bb8c2d5f8
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ As etapas 1 e 2 estão configurando o ambiente de teste em uma das máquinas de 
               54.184.208.150
   ```
 
-```Choose any IP from **addresses** section (e.g. `52.13.71.11)```
+``Choose any IP from **addresses** section (e.g. `52.13.71.11)``
 
 ```cmd
 C:\>nslookup entitlement-prequal.auth.adobe.com 
@@ -48,7 +48,7 @@ Addresses:  52.26.79.43
             54.190.212.171
 ```
 
-```Choose any IP from **addresses** section (e.g. `54.190.212.171)```
+``Choose any IP from **addresses** section (e.g. `54.190.212.171)``
 
 
 * **No Linux/Mac**
@@ -62,7 +62,7 @@ Addresses:  52.26.79.43
     ............ 60 IN A      54.184.208.150
 ```
 
-```Choose any IP from **A records (**e.g `52.13.71.11)```
+``Choose any IP from **A records (**e.g `52.13.71.11)``
 
 ```sh
     $ dig entitlement-prequal.auth.adobe.com
@@ -73,7 +73,7 @@ Addresses:  52.26.79.43
     ............ 60 IN A      54.190.212.171
 ```
 
-```Choose any IP from **A records (**e.g `54.190.212.171)```
+``Choose any IP from **A records (**e.g `54.190.212.171)``
 
 >[!NOTE]
 >

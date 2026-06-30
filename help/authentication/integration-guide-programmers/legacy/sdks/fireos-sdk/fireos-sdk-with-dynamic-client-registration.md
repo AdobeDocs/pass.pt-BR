@@ -2,10 +2,10 @@
 title: Amazon FireOS SDK com registro dinâmico de cliente
 description: Amazon FireOS SDK com registro dinâmico de cliente
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1169'
-ht-degree: 0%
+source-wordcount: '1185'
+ht-degree: 1%
 
 ---
 
@@ -31,13 +31,13 @@ O FireOS AccessEnabler SDK for FireTV foi modificado para habilitar a autentica�
 
 ## Alterações na API {#API}
 
-### Factory.getInstance
+### Fatory.getInstance
 
 **Descrição:** Instancia o objeto do Ativador de Acesso. Deve haver uma única instância do Access Enabler por instância do aplicativo.
 
 | Chamada de API: construtor |
 | --- |
-| público estático AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        gera AccessEnablerException |
+| público estático AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> gera AccessEnablerException |
 
 **Disponibilidade:** v3.0+
 
@@ -70,7 +70,7 @@ Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante
 
 | Chamada de API: configuração do solicitante |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilidade:** v3.0+
 
@@ -119,7 +119,7 @@ Obsoleto:
 
 ### **2. Configurar Aplicativo**
 
-- a. setRequestor(requestor\_id)
+- a)  setRequestor(requestor\_id)
 
   O SDK executará as seguintes operações:
 
@@ -134,29 +134,29 @@ Obsoleto:
 
 - caso uma MVPD exija a Autenticação passiva, um WebView será aberto para execução passiva com essa MVPD e será fechado quando concluído
 
-- b. checkAuthentication()
+- b) checkAuthentication()
 
    - *true* : ir para Autorização
    - *false* : ir para Selecionar MVPD
 
-- c. getAuthentication : a SDK incluirá **access_token** nos parâmetros de chamada
+- c) getAuthentication : o SDK incluirá **access_token** nos parâmetros de chamada
 
    - mvpd lembrado : ir para setSelectedProvider (mvpd\_id)
    - mvpd não selecionado : displayProviderDialog
    - mvpd selecionado : ir para setSelectedProvider(mvpd\_id)
 
-- d. setSelectedProvider
+- d) setSelectedProvider
 
    - O URL de autenticação mvpd\_id é carregado no ChromeCustomTabs
    - logon bem-sucedido : delegate.setAuthenticationStatus ( SUCCESS )
    - logon cancelado : redefinir seleção de MVPD
    - O esquema de URL é estabelecido como &quot;adobepass://android.app&quot; para capturar quando a autenticação é concluída
 
-- e. get/checkAuthorization : o SDK incluirá **access\_token &#x200B;** in como Authorization: Bearer **access\_token**
+- e. get/checkAuthorization : o SDK incluirá **access\_token** in como Authorization: Bearer **access\_token**
 
 - se a autorização for bem-sucedida, será feita uma chamada para a obtenção do token de mídia
 
-- f. logout:
+- f) logout:
 
    - O SDK excluirá um token válido para o solicitante atual (as autenticações obtidas por outros aplicativos e não via SSO permanecerão válidas)
    - O SDK abrirá as Guias personalizadas do Chrome para alcançar o ponto de extremidade de logout mvpd\_id. Depois de concluídas, as Guias personalizadas do Chrome serão fechadas
