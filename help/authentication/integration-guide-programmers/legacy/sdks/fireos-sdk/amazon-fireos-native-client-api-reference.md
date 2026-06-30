@@ -2,9 +2,9 @@
 title: Referência da API do cliente nativo do Amazon FireOS
 description: Referência da API do cliente nativo do Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '3498'
+source-wordcount: '3519'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ Consulte <https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-TV-Native-
 
 | Chamada de API: construtor |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code> AccessEnabler estático público getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) gera AccessEnablerException </code> |
+| <code>AccessEnabler estático público getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> gera AccessEnablerException<br><br> AccessEnabler estático público getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) gera AccessEnablerException </code> |
 
 **Disponibilidade:** v3.0+
 
@@ -100,7 +100,7 @@ Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante
 
 | Chamada de API: configuração do solicitante |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 
 **Disponibilidade:** v3.0+
@@ -108,7 +108,7 @@ Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante
 
 | Chamada de API: configuração do solicitante |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilidade:** v3.0+
 
@@ -139,7 +139,7 @@ Se um valor for fornecido para o parâmetro *urls*, a chamada de rede resultante
 
 | Retorno de chamada: configuração do solicitante concluída |
 | --- |
-| ```public void setRequestorComplete(int status)``` |
+| `public void setRequestorComplete(int status)` |
 
 **Disponibilidade:** v1.0+
 
@@ -158,7 +158,7 @@ falha na fase
 
 ### setOptions {#fire_setOption}
 
-**Descrição:** Configura as opções globais do SDK. Ele aceita um **Map\&lt;String, String\>** como argumento. Os valores do mapa serão passados para o servidor junto com cada chamada de rede feita pelo SDK.
+**Descrição:** Configura as opções globais do SDK. Aceita um **Map\&lt;String, String\>** como argumento. Os valores do mapa serão passados para o servidor junto com cada chamada de rede feita pelo SDK.
 
 Os valores serão passados ao servidor independentemente do fluxo atual (autenticação/autorização). Se quiser alterar os valores, você pode chamar esse método a qualquer momento.
 
@@ -166,7 +166,7 @@ Os valores serão passados ao servidor independentemente do fluxo atual (autenti
 
 | Chamada de API: setOptions |
 | --- |
-| ```public void setOptions(HashMap<String,String> options)``` |
+| `public void setOptions(HashMap<String,String> options)` |
 
 **Disponibilidade:** v3.0+
 
@@ -187,7 +187,7 @@ Se uma MVPD suportar o recurso &quot;Autenticação por solicitante&quot;, vári
 
 | Chamada de API: verificar status de autenticação |
 | --- |
-| ```public void checkAuthentication()``` |
+| `public void checkAuthentication()` |
 
 **Disponibilidade:** v1.0+
 
@@ -210,13 +210,13 @@ Finalmente, o status de autenticação é comunicado ao aplicativo por meio do r
 
 | Chamada de API: inicia o fluxo de autenticação |
 | --- |
-| ```public void getAuthentication()``` |
+| `public void getAuthentication()` |
 
 **Disponibilidade:** v1.0+
 
 | Chamada de API: inicia o fluxo de autenticação |
 | --- |
-| ```public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)``` |
+| `public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)` |
 
 **Disponibilidade:** v1.0+
 
@@ -238,7 +238,7 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 
 | **Retorno de chamada: exibir a interface de seleção do MVPD** |
 | --- |
-| ```public void displayProviderDialog(ArrayList<Mvpd> mvpds)``` |
+| `public void displayProviderDialog(ArrayList<Mvpd> mvpds)` |
 
 **Disponibilidade:** v1.0+
 
@@ -256,15 +256,15 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 
 | **Chamada de API: definir o provedor atualmente selecionado** |
 | --- |
-| ```public void setSelectedProvider(String mvpdId)``` |
+| `public void setSelectedProvider(String mvpdId)` |
 
 
 **Disponibilidade:**&#x200B;v 1.0+
 
 **Parâmetros:** Nenhum
 
-**Retornos de chamada disparados:** `setAuthenticationStatus(), sendTrackingData()`
-</br>
+**Retornos de chamada disparados:** 
+
 
 ### navigateToUrl {#navigagteToUrl}
 
@@ -272,7 +272,7 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 
 | **Retorno de chamada: exibir página de logon do MVPD** |
 | --- |
-| ```public void navigateToUrl(String url)``` |
+| `public void navigateToUrl(String url)` |
 
 **Disponibilidade:** v1.0+
 
@@ -290,7 +290,7 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 
 | **Chamada de API: recuperar o token de autenticação** |
 | --- |
-| ```public void getAuthenticationToken(String cookies)``` |
+| `public void getAuthenticationToken(String cookies)` |
 
 **Disponibilidade:** v1.0+
 
@@ -310,7 +310,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 | **Retorno de chamada: relatar o status do fluxo de autenticação** |
 | --- |
-| ```public void setAuthenticationStatus(int status, String errorCode)``` |
+| `public void setAuthenticationStatus(int status, String errorCode)` |
 
 **Disponibilidade:** v1.0+
 
@@ -336,7 +336,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 | **Chamada de API: definir o provedor atualmente selecionado** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **Disponibilidade:** v1.0+
 
@@ -352,7 +352,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 | **Chamada de API: definir o provedor atualmente selecionado** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **Disponibilidade:**&#x200B;v 1.0+
 
@@ -368,13 +368,13 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 | **Chamada de API: verificar status de autorização** |
 | --- |
-| ```public void checkAuthorization(String resourceId)``` |
+| `public void checkAuthorization(String resourceId)` |
 
 **Disponibilidade:** v1.0+
 
 | **Chamada de API: verificar status de autorização** |
 | --- |
-| ```public void checkAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void checkAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **Disponibilidade:** v1.0+
 
@@ -393,13 +393,13 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 | **Chamada de API: iniciar o fluxo de autorização** |
 | --- |
-| ```public void getAuthorization(String resourceId)``` |
+| `public void getAuthorization(String resourceId)` |
 
 **Disponibilidade:** v1.0+
 
 | **Chamada de API: iniciar o fluxo de autorização** |
 | --- |
-| ```public void getAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void getAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **Disponibilidade:** v1.0+
 
@@ -424,7 +424,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 | **Retorno de chamada: fluxo de autorização concluído com êxito** |
 | --- |
-| ```public void setToken(String token, String resourceId)``` |
+| `public void setToken(String token, String resourceId)` |
 
 **Disponibilidade:**&#x200B;v 1.0+
 
@@ -443,7 +443,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 | **Retorno de chamada: falha no fluxo de autorização** |
 | --- |
-| ```public void tokenRequestFailed(String resourceId, <br>        String errorCode, String errorDescription)``` |
+| <code>public void tokenRequestFailed(String resourceId, <br> String errorCode, String errorDescription)</code> |
 
 **Disponibilidade:** v1.0+
 
@@ -464,7 +464,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 | **Chamada de API: iniciar o fluxo de logout** |
 | --- |
-| ```public void logout()``` |
+| `public void logout()` |
 
 **Disponibilidade:** v1.0+
 
@@ -480,7 +480,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 | **Chamada de API: determine o MVPD atualmente selecionado** |
 | --- |
-| ```public void getSelectedProvider()``` |
+| `public void getSelectedProvider()` |
 
 **Disponibilidade:** v1.0+
 
@@ -496,7 +496,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 | **Retorno de chamada: informações sobre a MVPD atualmente selecionada** |
 | --- |
-| ```public void selectedProvider(Mvpd mvpd)``` |
+| `public void selectedProvider(Mvpd mvpd)` |
 
 **Disponibilidade:** v1.0+
 
@@ -514,7 +514,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 
 | **Chamada de API: consulte o AccessEnabler para obter os metadados** |
 | --- |
-| ```public void getMetadata(MetadataKey metadataKey)``` |
+| `public void getMetadata(MetadataKey metadataKey)` |
 
 **Disponibilidade:** v1.0+
 
@@ -550,7 +550,7 @@ Os metadados reais do usuário disponíveis para um programador dependem do que 
 
 | **Retorno de chamada: resultado da solicitação de recuperação de metadados** |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **Disponibilidade:** v1.0+
 
@@ -612,7 +612,7 @@ Esse valor é nulo quando a solicitação foi feita para metadados simples (TTL 
 
 | **Chamada de API: obter versão do AccessEnabler** |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 ## Rastreamento de eventos {#tracking}
 
@@ -643,7 +643,7 @@ O Ativador de acesso aciona um retorno de chamada adicional que não é necessar
 
 | Retorno de chamada: rastreamento de eventos |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **Disponibilidade:** v1.0+
 
