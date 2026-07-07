@@ -2,7 +2,7 @@
 title: Apêndice B "Dicas de depuração"
 description: Apêndice B "Dicas de depuração"
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '192'
 ht-degree: 0%
@@ -48,3 +48,4 @@ Os engenheiros de autenticação da Adobe Pass usam as seguintes ferramentas de 
 - Filtro - <http://www.fiddler2.com/fiddler2/>
 - Charles - <http://www.charlesproxy.com/>
 - Wireshark - <http://www.wireshark.org/>
+

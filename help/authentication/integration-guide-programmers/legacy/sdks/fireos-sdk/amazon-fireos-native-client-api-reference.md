@@ -2,7 +2,7 @@
 title: Referência da API do cliente nativo do Amazon FireOS
 description: Referência da API do cliente nativo do Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '3519'
 ht-degree: 0%
@@ -259,7 +259,7 @@ Depois que o usuário seleciona o MVPD desejado, o aplicativo de camada superior
 | `public void setSelectedProvider(String mvpdId)` |
 
 
-**Disponibilidade:**&#x200B;v 1.0+
+**Disponibilidade:**v 1.0+
 
 **Parâmetros:** Nenhum
 
@@ -354,7 +354,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 | --- |
 | `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
-**Disponibilidade:**&#x200B;v 1.0+
+**Disponibilidade:**v 1.0+
 
 **Parâmetros:** O parâmetro `resources` é uma matriz de recursos para a qual o usuário já está autorizado a visualizar.
 
@@ -426,7 +426,7 @@ Essa chamada de retorno também sinaliza quando o fluxo de logout é concluído.
 | --- |
 | `public void setToken(String token, String resourceId)` |
 
-**Disponibilidade:**&#x200B;v 1.0+
+**Disponibilidade:**v 1.0+
 
 **Parâmetros:**
 
@@ -684,3 +684,4 @@ A seguir estão instruções para interpretar os valores na matriz *dados*:
    - **3** - Tipo de sistema operacional
 
 **Acionado por:** `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`
+
