@@ -4,7 +4,7 @@ description: Cookbook REST API V2 (servidor para servidor)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2497'
+source-wordcount: '2524'
 ht-degree: 0%
 
 ---
@@ -234,7 +234,7 @@ Perguntas frequentes
 
    * O Serviço de programador deve armazenar em cache partes das informações de perfil do usuário em um armazenamento persistente para evitar solicitações desnecessárias e melhorar a experiência do usuário.
 
-## C. Fase de pré-autorização (facultativa) {#preauthorization-phase}
+## C (Opcional) Fase de pré-autorização {#preauthorization-phase}
 
 O objetivo da Fase de pré-autorização é fornecer ao aplicativo de streaming a capacidade de apresentar um subconjunto de recursos de seu catálogo que o usuário teria direito de acessar.
 

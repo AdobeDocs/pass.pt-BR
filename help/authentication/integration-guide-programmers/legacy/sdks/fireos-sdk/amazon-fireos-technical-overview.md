@@ -4,7 +4,7 @@ description: Visão geral técnica do Amazon FireOS
 exl-id: 939683ee-0dd9-42ab-9fde-8686d2dc0cd0
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '2189'
+source-wordcount: '2216'
 ht-degree: 0%
 
 ---

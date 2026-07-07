@@ -4,8 +4,8 @@ description: REST API V2 - Criar e recuperar perfil usando resposta de autentica
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '850'
-ht-degree: 1%
+source-wordcount: '934'
+ht-degree: 2%
 
 ---
 
@@ -60,10 +60,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">SAMLResponse</td>
       <td>
-        A resposta de autenticação de parceiro que contém os metadados de usuário necessários para criar e salvar um perfil de parceiro.
-        <br/><br/>
-        O valor deve ser codificado em Base64 e depois codificado em URL.
-      </td>
+        A resposta de autenticação de parceiro que contém os metadados de usuário necessários para criar e salvar um perfil de parceiro.<br/><br/>
+        O valor deve ser codificado em Base64 e depois codificado em URL.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
@@ -79,10 +77,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Tipo de conteúdo</td>
       <td>
-         O tipo de mídia aceito para os recursos que estão sendo enviados.
-         <br/><br/>
-         Deve ser application/x-www-form-urlencoded.
-      </td>
+         O tipo de mídia aceito para os recursos que estão sendo enviados.<br/><br/>
+         Deve ser application/x-www-form-urlencoded.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
@@ -93,33 +89,25 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         A geração da carga de informações do dispositivo está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
-         <br/><br/>
-         É altamente recomendável sempre usá-lo quando a plataforma do dispositivo do aplicativo permitir a provisão explícita de valores válidos.
-         <br/><br/>
-         Quando fornecido, o back-end da Autenticação do Adobe Pass mesclará explicitamente valores definidos com valores extraídos implicitamente (por padrão).
-         <br/><br/>
-         Quando não for fornecido, o back-end da Autenticação do Adobe Pass usará os valores extraídos implicitamente (por padrão).
-      </td>
+         A geração da carga de informações do dispositivo está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.<br/><br/>
+         É altamente recomendável sempre usá-lo quando a plataforma do dispositivo do aplicativo permitir a provisão explícita de valores válidos.<br/><br/>
+         Quando fornecido, o back-end da Autenticação do Adobe Pass mesclará explicitamente valores definidos com valores extraídos implicitamente (por padrão).<br/><br/>
+         Quando não for fornecido, o back-end da Autenticação do Adobe Pass usará os valores extraídos implicitamente (por padrão).</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        A geração da carga de logon único para o método Partner está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
-        <br/><br/>
+        A geração da carga de logon único para o método Partner está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.<br/><br/>
         Para obter mais detalhes sobre os fluxos habilitados para logon único usando um parceiro, consulte a documentação do <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Logon único usando fluxos do parceiro</a>.</td>
       <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Encaminhado-Para</td>
       <td>
-         O endereço IP do dispositivo de streaming.
-         <br/><br/>
-         É altamente recomendável sempre usá-lo para implementações de servidor para servidor, especialmente quando a chamada é feita pelo serviço do programador, em vez do dispositivo de transmissão.
-         <br/><br/>
-         Para implementações de cliente para servidor, o endereço IP do dispositivo de transmissão é enviado implicitamente.
-      </td>
+         O endereço IP do dispositivo de streaming.<br/><br/>
+         É altamente recomendável sempre usá-lo para implementações de servidor para servidor, especialmente quando a chamada é feita pelo serviço do programador, em vez do dispositivo de transmissão.<br/><br/>
+         Para implementações de cliente para servidor, o endereço IP do dispositivo de transmissão é enviado implicitamente.</td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -131,10 +119,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Aceitar</td>
       <td>
-         O tipo de mídia aceito pelo aplicativo cliente.
-         <br/><br/>
-         Se especificado, deve ser application/json;charset=utf-8.
-      </td>
+         O tipo de mídia aceito pelo aplicativo cliente.<br/><br/>
+         Se especificado, deve ser application/json;charset=utf-8.</td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -163,29 +149,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Solicitação inválida</td>
       <td>
-        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-      </td>
+        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Não autorizado</td>
       <td>
-        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Visão geral do registro dinâmico do cliente</a>.
-      </td>
+        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Visão geral do registro dinâmico do cliente</a>.</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Método não permitido</td>
       <td>
-        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.
-      </td>
+        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erro interno do servidor</td>
       <td>
-        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-      </td>
+        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
    </tr>
 </table>
 
@@ -215,10 +197,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">perfis</td>
       <td>
-         JSON que contém um mapa de pares de chaves e valores.
-         <br/><br/>
-         O elemento principal é definido pelo seguinte valor:
-         <table style="table-layout:auto">
+         JSON que contém um mapa de pares de chaves e valores.<br/><br/>
+         O elemento principal é definido pelo seguinte valor:<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Valor</th>
                <th style="background-color: #EFF2F7"></th>
@@ -250,10 +230,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">emissor</td>
                <td>
-                  A entidade proprietária do perfil.
-                  <br/><br/>
-                  Os valores possíveis são:
-                  <ul>
+                  A entidade proprietária do perfil.<br/><br/>
+                  Os valores possíveis são:<ul>
                     <li><b>Apple</b><br/>O perfil foi criado como resultado de: logon único usando Apple parceiro.</li>
                   </ul>
                </td>
@@ -262,10 +240,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
                <td>
-                  O tipo do perfil.
-                  <br/><br/>
-                  Os valores possíveis são:
-                  <ul>
+                  O tipo do perfil.<br/><br/>
+                  Os valores possíveis são:<ul>
                     <li><b>appleSSO</b><br/>O perfil foi criado como resultado de: logon único usando o Apple parceiro.</li>
                   </ul>
                </td>
@@ -274,10 +250,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">atributos</td>
                <td>
-                    JSON que contém um mapa de pares de chaves e valores.
-                    <br/><br/>
-                    O elemento principal é definido pelos atributos de metadados do usuário e pode ser:
-                    <ul>
+                    JSON que contém um mapa de pares de chaves e valores.<br/><br/>
+                    O elemento principal é definido pelos atributos de metadados do usuário e pode ser:<ul>
                         <li>Obrigatório, como "userID"</li>
                         <li>Não obrigatório, como "zip", "householdID", "maxRating" etc.</li>
                     </ul>
@@ -322,10 +296,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-            <br/><br/>
-            O aplicativo cliente deve implementar um mecanismo de tratamento de erros capaz de processar corretamente os códigos de erro retornados com mais frequência por essa API:
-            <ul>
+            O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.<br/><br/>
+            O aplicativo cliente deve implementar um mecanismo de tratamento de erros capaz de processar corretamente os códigos de erro retornados com mais frequência por essa API:<ul>
                 <li>invalid_header_pfs_permission_access_not_present</li>
                 <li>invalid_header_pfs_permission_access_not_determination</li>
                 <li>invalid_header_pfs_permission_access_not_granted</li>
@@ -335,8 +307,7 @@ ht-degree: 1%
                 <li>invalid_parameter_saml_response</li>
                 <li>etc.</li>
             </ul>
-            A lista acima não é exaustiva. O aplicativo cliente deve ser capaz de manipular todos os códigos de erro aprimorados definidos na <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentação pública</a>.
-      </td>
+            A lista acima não é exaustiva. O aplicativo cliente deve ser capaz de manipular todos os códigos de erro aprimorados definidos na <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentação pública</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>

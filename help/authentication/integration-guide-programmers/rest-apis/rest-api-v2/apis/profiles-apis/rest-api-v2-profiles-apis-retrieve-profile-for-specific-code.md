@@ -4,8 +4,8 @@ description: REST API V2 - Recuperar perfil para código específico
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '822'
-ht-degree: 2%
+source-wordcount: '851'
+ht-degree: 3%
 
 ---
 
@@ -69,12 +69,9 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">X-Encaminhado-Para</td>
       <td>
-         O endereço IP do dispositivo de streaming.
-         <br/><br/>
-         É altamente recomendável sempre usá-lo para implementações de servidor para servidor, especialmente quando a chamada é feita pelo serviço do programador, em vez do dispositivo de transmissão.
-         <br/><br/>
-         Para implementações de cliente para servidor, o endereço IP do dispositivo de transmissão é enviado implicitamente.
-      </td>
+         O endereço IP do dispositivo de streaming.<br/><br/>
+         É altamente recomendável sempre usá-lo para implementações de servidor para servidor, especialmente quando a chamada é feita pelo serviço do programador, em vez do dispositivo de transmissão.<br/><br/>
+         Para implementações de cliente para servidor, o endereço IP do dispositivo de transmissão é enviado implicitamente.</td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -91,10 +88,8 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">Aceitar</td>
       <td>
-         O tipo de mídia aceito pelo aplicativo cliente.
-         <br/><br/>
-         Se especificado, deve ser application/json;charset=utf-8.
-      </td>
+         O tipo de mídia aceito pelo aplicativo cliente.<br/><br/>
+         Se especificado, deve ser application/json;charset=utf-8.</td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -123,36 +118,31 @@ ht-degree: 2%
       <td>400</td>
       <td>Solicitação inválida</td>
       <td>
-        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-      </td>
+        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Não autorizado</td>
       <td>
-        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Visão geral do registro dinâmico do cliente</a>.
-      </td>
+        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Visão geral do registro dinâmico do cliente</a>.</td>
    </tr>
    <tr>
       <td>403</td>
       <td>Proibido</td>
       <td>
-        O TTL (time-to-live) de acesso temporário expirou ou o número máximo de recursos foi excedido. O cliente precisa indicar ao usuário que inicie um fluxo de autenticação básico usando um MVPD comum. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-      </td>
+        O TTL (time-to-live) de acesso temporário expirou ou o número máximo de recursos foi excedido. O cliente precisa indicar ao usuário que inicie um fluxo de autenticação básico usando um MVPD comum. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
    </tr> 
    <tr>
       <td>405</td>
       <td>Método não permitido</td>
       <td>
-        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.
-      </td>
+        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erro interno do servidor</td>
       <td>
-        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-      </td>
+        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
    </tr>
 </table>
 
@@ -182,10 +172,8 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">perfis</td>
       <td>
-        JSON que contém um mapa de pares de chaves e valores.
-        <br/><br/>
-        O elemento principal é definido pelo seguinte valor:
-        <table style="table-layout:auto">
+        JSON que contém um mapa de pares de chaves e valores.<br/><br/>
+        O elemento principal é definido pelo seguinte valor:<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Valor</th>
                <th style="background-color: #EFF2F7"></th>
@@ -217,10 +205,8 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">emissor</td>
                <td>
-                  A entidade proprietária do perfil.
-                  <br/><br/>
-                  Os valores possíveis são:
-                  <ul>
+                  A entidade proprietária do perfil.<br/><br/>
+                  Os valores possíveis são:<ul>
                     <li><b>mvpd (por exemplo, Spectrum, Cablevision, etc.)</b><br/>O perfil foi criado como resultado de: autenticação básica.</li>
                     <li><b>Adobe</b><br/>O perfil foi criado como resultado de: acesso degradado, acesso temporário.</li>
                   </ul>
@@ -229,10 +215,8 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
                <td>
-                  O tipo do perfil.
-                  <br/><br/>
-                  Os valores possíveis são:
-                  <ul>
+                  O tipo do perfil.<br/><br/>
+                  Os valores possíveis são:<ul>
                     <li><b>regular</b><br/>O perfil foi criado como resultado de: autenticação básica.</li>
                     <li><b>degradado</b><br/>O perfil foi criado como resultado de: acesso degradado.</li>
                     <li><b>temporário</b><br/>O perfil foi criado como resultado de: acesso temporário.</li>
@@ -242,10 +226,8 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">atributos</td>
                <td>
-                    JSON que contém um mapa de pares de chaves e valores.
-                    <br/><br/>
-                    O elemento principal é definido pelos atributos de metadados do usuário e pode ser:
-                    <ul>
+                    JSON que contém um mapa de pares de chaves e valores.<br/><br/>
+                    O elemento principal é definido pelos atributos de metadados do usuário e pode ser:<ul>
                         <li>Obrigatório, como "userID"</li>
                         <li>Não obrigatório, como "zip", "householdID", "maxRating" etc.</li>
                     </ul>
@@ -290,23 +272,20 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-            <br/><br/>
-            O aplicativo cliente deve implementar um mecanismo de tratamento de erros capaz de processar corretamente os códigos de erro retornados com mais frequência por essa API:
-            <ul>
+            O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.<br/><br/>
+            O aplicativo cliente deve implementar um mecanismo de tratamento de erros capaz de processar corretamente os códigos de erro retornados com mais frequência por essa API:<ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>etc.</li>
             </ul>
-            A lista acima não é exaustiva. O aplicativo cliente deve ser capaz de manipular todos os códigos de erro aprimorados definidos na <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentação pública</a>.
-      </td>
+            A lista acima não é exaustiva. O aplicativo cliente deve ser capaz de manipular todos os códigos de erro aprimorados definidos na <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentação pública</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>
 
 ## Amostras {#samples}
 
-### &#x200B;1. Recuperar perfil para código específico obtido por meio de autenticação básica
+### &#x200B;1. Recuperar perfil para código específico obtido por meio da autenticação básica
 
 >[!BEGINTABS]
 
@@ -355,7 +334,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;2. Recupere o perfil para um código específico enquanto o TempPass básico estiver selecionado
+### &#x200B;2. Recuperar perfil para código específico enquanto o TempPass básico estiver selecionado
 
 >[!BEGINTABS]
 
@@ -432,7 +411,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;3. Recupere o perfil para um código específico enquanto o TempPass promocional estiver selecionado
+### &#x200B;3. Recuperar perfil para código específico enquanto o TempPass promocional estiver selecionado
 
 >[!BEGINTABS]
 
@@ -555,7 +534,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;4. Recuperar o perfil para código específico enquanto a degradação é aplicada
+### &#x200B;4. Recuperar perfil para código específico enquanto a degradação é aplicada
 
 >[!BEGINTABS]
 

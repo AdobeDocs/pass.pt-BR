@@ -4,7 +4,7 @@ description: REST API V2 - Cabeçalho - AP-Identificador de dispositivo
 exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
 source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '561'
 ht-degree: 1%
 
 ---
@@ -51,10 +51,8 @@ Há apenas um tipo compatível, conforme apresentado abaixo.
    <tr>
       <td>impressão digital</td>
       <td>
-            O identificador de dispositivo consiste em um identificador estável e exclusivo criado e gerenciado pelo aplicativo cliente para cada dispositivo.
-            <br/>
-            O aplicativo cliente deve armazenar o identificador do dispositivo em cache no armazenamento persistente, pois perdê-lo ou alterá-lo invalidará a autenticação. O aplicativo cliente deve evitar alterações de valor causadas por ações do usuário, como desinstalação, reinstalação ou atualizações de aplicativos.
-      </td>
+            O identificador de dispositivo consiste em um identificador estável e exclusivo criado e gerenciado pelo aplicativo cliente para cada dispositivo.<br/>
+            O aplicativo cliente deve armazenar o identificador do dispositivo em cache no armazenamento persistente, pois perdê-lo ou alterá-lo invalidará a autenticação. O aplicativo cliente deve evitar alterações de valor causadas por ações do usuário, como desinstalação, reinstalação ou atualizações de aplicativos.</td>
    </tr>
 </table>
 

@@ -4,7 +4,7 @@ description: Glossário da REST API V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1742'
+source-wordcount: '1762'
 ht-degree: 0%
 
 ---
@@ -273,7 +273,7 @@ A ID do usuário é um identificador exclusivo associado ao usuário e é origin
 
 #### Metadados do usuário {#user-metadata}
 
-Os metadados do usuário se referem a atributos específicos do usuário (por exemplo, códigos postais, classificações dos pais, IDs de usuário etc.) que são mantidos pela [MVPD](#mvpd) e fornecidos pela Autenticação Adobe Pass como parte de um [perfil](#profile).
+Os metadados do usuário se referem a atributos específicos do usuário (por exemplo, códigos postais, classificações dos pais, IDs do usuário etc.) que são mantidos pelo [MVPD](#mvpd) e fornecidos pela Autenticação Adobe Pass como parte de um [perfil](#profile).
 
 Para obter mais informações, consulte a documentação dos [Metadados do usuário](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md).
 
