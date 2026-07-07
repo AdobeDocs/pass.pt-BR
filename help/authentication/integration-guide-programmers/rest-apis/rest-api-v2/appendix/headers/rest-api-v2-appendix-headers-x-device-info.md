@@ -4,8 +4,8 @@ description: REST API V2 - Cabeçalho - X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
 source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1133'
-ht-degree: 3%
+source-wordcount: '1234'
+ht-degree: 4%
 
 ---
 
@@ -53,7 +53,7 @@ O valor `Base64-encoded` do elemento JSON que contém pelo menos os atributos ma
         <td></td>
         <td>primaryHardwareType</td>
         <td>O tipo de hardware principal do dispositivo.</td>
-        <td>&verificar;</td>
+        <td>&amp;verificar;</td>
         <td>
             Os valores são restritos:
             <ul>
@@ -110,7 +110,7 @@ O valor `Base64-encoded` do elemento JSON que contém pelo menos os atributos ma
         <td><i>obrigatório</i></td>
         <td>osName</td>
         <td>O nome do sistema operacional do dispositivo.</td>
-        <td>&verificar;</td>
+        <td>&amp;verificar;</td>
         <td>
             Os valores são restritos:
             <ul>
@@ -132,7 +132,7 @@ O valor `Base64-encoded` do elemento JSON que contém pelo menos os atributos ma
         <td></td>
         <td>osFamily</td>
         <td>O nome do grupo do Sistema Operacional (SO) do dispositivo.</td>
-        <td>&verificar;</td>
+        <td>&amp;verificar;</td>
         <td>
             Os valores são restritos:
             <ul>
@@ -155,7 +155,7 @@ O valor `Base64-encoded` do elemento JSON que contém pelo menos os atributos ma
         <td></td>
         <td>osVendor</td>
         <td>O fornecedor do sistema operacional do dispositivo.</td>
-        <td>&verificar;</td>
+        <td>&amp;verificar;</td>
         <td>
             Os valores são restritos:
             <ul>
@@ -185,7 +185,7 @@ O valor `Base64-encoded` do elemento JSON que contém pelo menos os atributos ma
         <td></td>
         <td>browserName</td>
         <td>O nome do navegador.</td>
-        <td>&verificar;</td>
+        <td>&amp;verificar;</td>
         <td>
             Os valores são restritos:
             <ul>
@@ -205,7 +205,7 @@ O valor `Base64-encoded` do elemento JSON que contém pelo menos os atributos ma
         <td></td>
         <td>browserVendor</td>
         <td>A empresa/organização de construção do navegador.</td>
-        <td>&verificar;</td>
+        <td>&amp;verificar;</td>
         <td>
             Os valores são restritos:
             <ul>
@@ -228,7 +228,7 @@ O valor `Base64-encoded` do elemento JSON que contém pelo menos os atributos ma
         <td>browserVersion</td>
         <td>A versão do navegador do dispositivo.</td>
         <td></td>
-        <td>ex: 60.0.3112</td>
+        <td>e.g. 60.0.3112</td>
     </tr>
     <tr>
         <td></td>
@@ -256,28 +256,28 @@ O valor `Base64-encoded` do elemento JSON que contém pelo menos os atributos ma
         <td>displayPpi</td>
         <td>A densidade de pixels da tela física do dispositivo.</td>
         <td></td>
-        <td>por exemplo, 294</td>
+        <td>e.g. 294</td>
     </tr>
     <tr>
         <td></td>
         <td>diagonalScreenSize</td>
         <td>A dimensão diagonal da tela física do dispositivo em polegadas.</td>
         <td></td>
-        <td>Por exemplo, 5.5, 10.1</td>
+        <td>e.g. 5.5, 10.1</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionIp</td>
         <td>O IP do dispositivo usado para enviar solicitações HTTP.</td>
         <td></td>
-        <td>Por exemplo, 8.8.4.4</td>
+        <td>e.g. 8.8.4.4</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionPort</td>
         <td>A porta do dispositivo usada para enviar solicitações HTTP.</td>
         <td></td>
-        <td>por exemplo, 53124</td>
+        <td>e.g. 53124</td>
     </tr>
     <tr>
         <td><i>obrigatório</i></td>
@@ -290,7 +290,7 @@ O valor `Base64-encoded` do elemento JSON que contém pelo menos os atributos ma
         <td></td>
         <td>connectionSecure</td>
         <td>O status de segurança da conexão de rede.</td>
-        <td>&verificar;</td>
+        <td>&amp;verificar;</td>
         <td>
             Os valores são restritos:
             <ul>
@@ -431,10 +431,10 @@ As informações do dispositivo podem ser construídas da seguinte maneira:
 | fornecedor | codificado | Apple |
 | fabricante | codificado | Apple |
 | version | uname.machine | 8,1 |
-| displayWidth | UIScreen.mainScreen | 320 |
-| displayHeight | UIScreen.mainScreen | 568 |
+| displayWidth | UISscreen.mainScreen | 320 |
+| displayHeight | UISscreen.mainScreen | 568 |
 | osName | UIDevice.systemName | iOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 As informações de conexão podem ser construídas da seguinte maneira:
 
@@ -535,10 +535,10 @@ As informações do dispositivo podem ser construídas da seguinte maneira:
 |---------------|-----------------------------|-----------------|
 | modelo | Build.MODEL | GT-I9505 |
 | fornecedor | Build.BRAND | samsung |
-| fabricante | Build.MANUFACTURER | samsung |
+| fabricante | Build.MANUFATURER | samsung |
 | version | Build.DEVICE | jflet |
-| displayWidth | DisplayMetrics.widthPixels | 600 |
-| displayHeight | DisplayMetrics.heightPixels | 800 |
+| displayWidth | ExibirMétricas.larguraPixels | 600 |
+| displayHeight | ExibirMétricas.alturaPixels | 800 |
 | osName | codificado | Android |
 | osVersion | Build.VERSION.RELEASE | 5.0.1 |
 
@@ -639,10 +639,10 @@ As informações do dispositivo podem ser construídas da seguinte maneira:
 | fornecedor | codificado | Apple |
 | fabricante | codificado | Apple |
 | version | uname.machine | 8,1 |
-| displayWidth | UIScreen.mainScreen | 1920 |
-| displayHeight | UIScreen.mainScreen | 1080 |
+| displayWidth | UISscreen.mainScreen | 1920 |
+| displayHeight | UISscreen.mainScreen | 1080 |
 | osName | UIDevice.systemName | tvOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 As informações de conexão podem ser construídas da seguinte maneira:
 
@@ -670,10 +670,10 @@ As informações do dispositivo podem ser construídas da seguinte maneira:
 |---------------|-----------------------------|-----------------|
 | modelo | Build.MODEL | AFTM |
 | fornecedor | Build.BRAND | Amazon |
-| fabricante | Build.MANUFACTURER | Amazon |
+| fabricante | Build.MANUFATURER | Amazon |
 | version | Build.DEVICE | montoya |
-| displayWidth | DisplayMetrics.widthPixels |                 |
-| displayHeight | DisplayMetrics.heightPixels |                 |
+| displayWidth | ExibirMétricas.larguraPixels |                 |
+| displayHeight | ExibirMétricas.alturaPixels |                 |
 | osName | codificado | Android |
 | osVersion | Build.VERSION.RELEASE | 5.1.1 |
 

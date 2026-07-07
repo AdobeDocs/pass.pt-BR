@@ -4,8 +4,8 @@ description: REST API V2 - Recuperar decisões de pré-autorização usando mvpd
 exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '864'
-ht-degree: 1%
+source-wordcount: '991'
+ht-degree: 2%
 
 ---
 
@@ -75,10 +75,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Tipo de conteúdo</td>
       <td>
-         O tipo de mídia aceito para os recursos que estão sendo enviados.
-         <br/><br/>
-         Deve ser application/json;charset=utf-8.
-      </td>
+         O tipo de mídia aceito para os recursos que estão sendo enviados.<br/><br/>
+         Deve ser application/json;charset=utf-8.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
@@ -89,50 +87,38 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         A geração da carga de informações do dispositivo está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
-         <br/><br/>
-         É altamente recomendável sempre usá-lo quando a plataforma do dispositivo do aplicativo permitir a provisão explícita de valores válidos.
-         <br/><br/>
-         Quando fornecido, o back-end da Autenticação do Adobe Pass mesclará explicitamente valores definidos com valores extraídos implicitamente (por padrão).
-         <br/><br/>
-         Quando não for fornecido, o back-end da Autenticação do Adobe Pass usará os valores extraídos implicitamente (por padrão).
-      </td>
+         A geração da carga de informações do dispositivo está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.<br/><br/>
+         É altamente recomendável sempre usá-lo quando a plataforma do dispositivo do aplicativo permitir a provisão explícita de valores válidos.<br/><br/>
+         Quando fornecido, o back-end da Autenticação do Adobe Pass mesclará explicitamente valores definidos com valores extraídos implicitamente (por padrão).<br/><br/>
+         Quando não for fornecido, o back-end da Autenticação do Adobe Pass usará os valores extraídos implicitamente (por padrão).</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Encaminhado-Para</td>
       <td>
-         O endereço IP do dispositivo de streaming.
-         <br/><br/>
-         É altamente recomendável sempre usá-lo para implementações de servidor para servidor, especialmente quando a chamada é feita pelo serviço do programador, em vez do dispositivo de transmissão.
-         <br/><br/>
-         Para implementações de cliente para servidor, o endereço IP do dispositivo de transmissão é enviado implicitamente.
-      </td>
+         O endereço IP do dispositivo de streaming.<br/><br/>
+         É altamente recomendável sempre usá-lo para implementações de servidor para servidor, especialmente quando a chamada é feita pelo serviço do programador, em vez do dispositivo de transmissão.<br/><br/>
+         Para implementações de cliente para servidor, o endereço IP do dispositivo de transmissão é enviado implicitamente.</td>
       <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>ou<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        A geração da carga de logon único para o método de identidade da Platform está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
-        <br/><br/>
-        Para obter mais detalhes sobre os fluxos habilitados para logon único usando uma identidade de plataforma, consulte a documentação do <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Logon único usando fluxos de identidade de plataforma</a>.
-      </td>
+        A geração da carga de logon único para o método de identidade da Platform está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.<br/><br/>
+        Para obter mais detalhes sobre os fluxos habilitados para logon único usando uma identidade de plataforma, consulte a documentação do <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Logon único usando fluxos de identidade de plataforma</a>.</td>
       <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        A geração da carga de logon único para o método Token de Serviço está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
-        <br/><br/>
-        Para obter mais detalhes sobre os fluxos habilitados para logon único usando um token de serviço, consulte a documentação do <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Logon único usando fluxos de token de serviço</a>.
-      </td>
+        A geração da carga de logon único para o método Token de Serviço está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.<br/><br/>
+        Para obter mais detalhes sobre os fluxos habilitados para logon único usando um token de serviço, consulte a documentação do <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Logon único usando fluxos de token de serviço</a>.</td>
       <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        A geração da carga de logon único para o método Partner está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
-        <br/><br/>
+        A geração da carga de logon único para o método Partner está descrita na documentação do cabeçalho <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.<br/><br/>
         Para obter mais detalhes sobre os fluxos habilitados para logon único usando um parceiro, consulte a documentação do <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Logon único usando fluxos do parceiro</a>.</td>
       <td>opcional</td>
    </tr>
@@ -145,10 +131,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Aceitar</td>
       <td>
-         O tipo de mídia aceito pelo aplicativo cliente.
-         <br/><br/>
-         Se especificado, deve ser application/json;charset=utf-8.
-      </td>
+         O tipo de mídia aceito pelo aplicativo cliente.<br/><br/>
+         Se especificado, deve ser application/json;charset=utf-8.</td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -177,29 +161,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Solicitação inválida</td>
       <td>
-        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-      </td>
+        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Não autorizado</td>
       <td>
-        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Visão geral do registro dinâmico do cliente</a>.
-      </td>
+        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Visão geral do registro dinâmico do cliente</a>.</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Método não permitido</td>
       <td>
-        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.
-      </td>
+        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erro interno do servidor</td>
       <td>
-        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-      </td>
+        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
    </tr>
 </table>
 
@@ -259,10 +239,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">origem</td>
                <td>
-                  Informações sobre a fonte de decisão:
-                  <br/><br/>
-                  Os valores possíveis são:
-                  <ul>
+                  Informações sobre a fonte de decisão:<br/><br/>
+                  Os valores possíveis são:<ul>
                     <li>A decisão <b>mvpd</b><br/>é emitida pelo ponto de extremidade de pré-autorização do MVPD.</li>
                     <li><b>degradação</b><br/>A decisão é emitida como resultado de acesso degradado.</li>
                     <li><b>temppass</b><br/>A decisão é emitida como resultado de acesso temporário.</li>
@@ -306,10 +284,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-            <br/><br/>
-            O aplicativo cliente deve implementar um mecanismo de tratamento de erros capaz de processar corretamente os códigos de erro retornados com mais frequência por essa API:
-            <ul>
+            O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.<br/><br/>
+            O aplicativo cliente deve implementar um mecanismo de tratamento de erros capaz de processar corretamente os códigos de erro retornados com mais frequência por essa API:<ul>
                 <li>authenticated_profile_missing</li>
                 <li>authenticated_profile_expired</li>
                 <li>preauthorization_denied_by_mvpd</li>
@@ -317,8 +293,7 @@ ht-degree: 1%
                 <li>recursos_demais</li>
                 <li>etc.</li>
             </ul>
-            A lista acima não é exaustiva. O aplicativo cliente deve ser capaz de manipular todos os códigos de erro aprimorados definidos na <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentação pública</a>.
-      </td>
+            A lista acima não é exaustiva. O aplicativo cliente deve ser capaz de manipular todos os códigos de erro aprimorados definidos na <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentação pública</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>
@@ -381,7 +356,7 @@ Content-Type: application/json;charset=UTF-8
             "status": 403,
             "code": "preauthorization_denied_by_mvpd",
             "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
-            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
             "action": "none"
          }
       }
@@ -487,7 +462,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -501,7 +476,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }

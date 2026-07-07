@@ -4,8 +4,8 @@ description: REST API V2 - Executar autenticação no agente do usuário
 exl-id: d615dde0-71a8-4b6c-a12e-1e3b5e20728c
 source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '240'
-ht-degree: 4%
+source-wordcount: '242'
+ht-degree: 6%
 
 ---
 
@@ -94,8 +94,7 @@ ht-degree: 4%
       <td>405</td>
       <td>Método não permitido</td>
       <td>
-        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.
-      </td>
+        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.</td>
    </tr>
    <tr>
       <td>500</td>
@@ -142,7 +141,7 @@ A resposta bem-sucedida é uma série de um ou vários redirecionamentos até ch
 
 ## Amostras {#samples}
 
-### &#x200B;1. Realizar autenticação no agente do usuário
+### &#x200B;1. Executar autenticação no agente do usuário
 
 >[!BEGINTABS]
 

@@ -4,7 +4,7 @@ description: Visão geral do iOS/tvOS SDK
 exl-id: b02a6234-d763-46c0-bc69-9cfd65917a19
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '3754'
+source-wordcount: '3801'
 ht-degree: 0%
 
 ---
@@ -187,8 +187,7 @@ Como no tvOS a área de transferência não está disponível, a biblioteca tvOS
 
 **Alterações na área de transferência do iOS 7 -** Devido a alterações em como as áreas de transferência funcionam no iOS 7, haverá um SSO cruzado limitado entre os aplicativos em execução no iOS 7. Aplicativos com o mesmo `<Bundle Seed ID>` (também conhecido como `<Team ID>`) compartilharão tokens, o que significa que os aplicativos A1 e A2 do mesmo Programador X compartilharão tokens, enquanto o aplicativo A1 (Programador X) e o aplicativo A3 (Programador Y) não compartilharão tokens.
 
-- A ID de propagação do pacote/ID da equipe é a mesma entre 2 aplicativos se forem gerados pelo mesmo perfil de provisionamento. Encontre mais informações neste link:
-  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
+- A ID de propagação do pacote/ID da equipe é a mesma entre 2 aplicativos se forem gerados pelo mesmo perfil de provisionamento. Encontre mais informações neste link:  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
 - Essa limitação de &quot;SSO cruzado&quot; estará presente no iOS 7, independentemente do SDK de autenticação da Adobe Pass usado.
 
 Leia esta nota técnica para obter mais informações sobre como configurar o SSO no iOS 7 e superior (a nota técnica se aplica ao Access Enabler v1.8 e superior): <https://tve.zendesk.com/entries/58233434-Configuring-Pay-TV-pass-SSO-on-iOS>

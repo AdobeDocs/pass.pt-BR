@@ -1,15 +1,15 @@
 ---
-title: Utilização da Experience Cloud ID na autenticação da Adobe Pass
-description: Utilização da Experience Cloud ID na autenticação da Adobe Pass
+title: Uso da Experience Cloud ID na autenticação da Adobe Pass
+description: Uso da Experience Cloud ID na autenticação da Adobe Pass
 exl-id: 03354c01-5aad-4d81-beee-1c3834599134
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '426'
+source-wordcount: '428'
 ht-degree: 0%
 
 ---
 
-# Utilização da Experience Cloud ID na autenticação da Adobe Pass
+# Uso da Experience Cloud ID na autenticação da Adobe Pass
 
 >[!NOTE]
 >
@@ -17,11 +17,11 @@ ht-degree: 0%
 
 ## O que é a Experience Cloud ID e como obtê-la? {#what-exp-cloud-id-obtain}
 
-A Experience Cloud ID (ECID para abreviar) é uma ID exclusiva gerada pela Adobe Experience Cloud para cada usuário individual em seu aplicativo/site. A ECID é muito usada em todos os relatórios do Experience Cloud usados para vincular informações sobre um usuário específico em vários aplicativos/sites.
+A Experience Cloud ID (ECID) é uma ID exclusiva gerada pela Adobe Experience Cloud para cada usuário individual no aplicativo/site. A ECID é muito usada em todos os relatórios da Experience Cloud usados para vincular informações sobre um usuário específico em vários aplicativos/sites.
 
 Se você já tiver um sistema em vigor que forneça uma ID de visitante, use a mesma ID para o escopo deste documento.
 
-Uma maneira de obter a ECID é usar o Serviço da Experience Cloud ID. Você pode usar seu tipo de implementação preferido, com base no TDM, biblioteca JS, no lado do servidor, integração direta ou bibliotecas nativas para plataformas móveis. Para obter uma visão abrangente dos serviços, bibliotecas, guias de implementação e da SDK disponíveis, consulte: <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html?lang=pt-BR>
+Uma maneira de obter a ECID é usar o Serviço da Experience Cloud ID. Você pode usar seu tipo de implementação preferido, com base no TDM, biblioteca JS, no lado do servidor, integração direta ou bibliotecas nativas para plataformas móveis. Para obter uma visão abrangente dos serviços, bibliotecas, guias de implementação e da SDK disponíveis, consulte: <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html>
 
 ## Qual é o benefício de usar a Experience Cloud ID na autenticação da Adobe Pass? {#benefit-ex-cloud-id}
 

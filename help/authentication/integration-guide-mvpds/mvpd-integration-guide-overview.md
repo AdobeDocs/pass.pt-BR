@@ -4,7 +4,7 @@ description: Guia de integração do MVPD
 exl-id: b918550b-96a8-4e80-af28-0a2f63a02396
 source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '1307'
+source-wordcount: '1326'
 ht-degree: 0%
 
 ---
@@ -71,7 +71,7 @@ Na visita inicial de um usuário a um aplicativo de Programador (TVE), o fluxo d
 
 >[!NOTE]
 >
-> O aplicativo Programador (TVE) é usado neste documento para se referir coletivamente aos tipos de aplicativos em execução em diferentes plataformas (navegadores, dispositivos móveis, dispositivos conectados à TV etc.) compatíveis com a Autenticação Adobe Pass.
+> O aplicativo Programador (TVE) é usado neste documento para se referir coletivamente aos tipos de aplicativos em execução em diferentes plataformas (navegadores, dispositivos móveis, dispositivos conectados à TV etc.) suportado pela Autenticação Adobe Pass.
 
 ### Fase de autenticação {#authentication-phase}
 

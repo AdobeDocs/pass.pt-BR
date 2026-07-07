@@ -4,7 +4,7 @@ description: Lista de verificação da REST API V2
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
 source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2563'
+source-wordcount: '2578'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Recuperação de configuração</i></td>
-      <td>Recupere a resposta de configuração somente quando for necessário solicitar que o usuário selecione o MVPD (provedor de TV) antes da Fase de autenticação.<br/><br/>Não há necessidade de recuperar a resposta da configuração quando:<ul><li>O usuário já está autenticado.</li><li>O usuário recebe acesso temporário.</li><li>A autenticação do usuário expirou, mas o usuário pode ser solicitado a confirmar que ainda é assinante do MVPD selecionado anteriormente.</li></ul></td>
+      <td>Recupere a resposta de configuração somente quando for necessário solicitar que o usuário selecione o MVPD (provedor de TV) antes da Fase de Autenticação.<br/><br/>Não há necessidade de recuperar a resposta de configuração quando:<ul><li>O usuário já está autenticado.</li><li>O usuário recebe acesso temporário.</li><li>A autenticação do usuário expirou, mas o usuário pode ser solicitado a confirmar que ainda é assinante do MVPD selecionado anteriormente.</li></ul></td>
       <td>Riscos de sobrecarga dos recursos do sistema e aumento da latência.</td>
    </tr>
    <tr>
@@ -111,7 +111,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    <tr>
       <td style="background-color: #DEEBFF;"><i>Recuperação de decisões de pré-autorização</i></td>
       <td>Use decisões de pré-autorização para filtragem de conteúdo e nunca para decisões de reprodução.</td>
-      <td>Riscos de violação de acordos contratuais entre programadores, MVPDs e Adobe.<br/><br/>Riscos ao ignorar nossos sistemas de monitoramento e alerta.</td>
+      <td>Riscos de violação de contratos entre Programador, MVPDs e Adobe.<br/><br/>Riscos de ignorar nossos sistemas de monitoramento e alerta.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Nova Tentativa de Recuperação de Decisões de Pré-autorização</i></td>
@@ -136,7 +136,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    <tr>
       <td style="background-color: #DEEBFF;"><i>Recuperação de decisões de autorização</i></td>
       <td>Obter decisões de autorização antes da reprodução — independentemente se uma decisão de pré-autorização existe.<br/><br/>Permitir que os fluxos continuem sem interrupções mesmo que o token de mídia expire durante a reprodução e solicite uma nova decisão de autorização contendo um token de mídia (novo) quando o usuário fizer sua próxima solicitação de reprodução, independentemente de ser para o mesmo recurso ou para um diferente.<br/><br/>Os fluxos ao vivo executados por longos períodos podem optar por solicitar uma nova decisão de autorização após operações de vídeo, como pausar conteúdo, iniciar interrupções comerciais ou modificar configurações no nível do ativo quando o MRSS for alterado.</td>
-      <td>Riscos de violação de acordos contratuais entre programadores, MVPDs e Adobe.<br/><br/>Riscos ao ignorar nossos sistemas de monitoramento e alerta.</td>
+      <td>Riscos de violação de contratos entre Programador, MVPDs e Adobe.<br/><br/>Riscos de ignorar nossos sistemas de monitoramento e alerta.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Nova Tentativa de Recuperação de Decisões de Autorização</i></td>
@@ -181,7 +181,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    <tr>
       <td style="background-color: #DEEBFF;"><i>Enviar Cabeçalho X-Device-Info</i></td>
       <td>Envie o cabeçalho <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> para cada solicitação REST API v2.<br/><br/>Mesmo quando a solicitação se origina de um servidor em nome de um dispositivo, o valor do cabeçalho X-Device-Info deve refletir as informações reais do dispositivo de streaming.</td>
-      <td>Os riscos são classificados como originários de uma plataforma desconhecida e tratados como inseguros, ficando sujeitos a regras mais restritivas, como TTLs de autenticação mais curtas.<br/><br/>Além disso, alguns campos, como o dispositivo de streaming connectionIp e connectionPort, são obrigatórios para recursos como Autenticação da Base Inicial do Spectrum.</td>
+      <td>Riscos de serem classificados como originários de uma plataforma desconhecida e tratados como inseguros, ficando sujeitos a regras mais restritivas, como TTLs de autenticação mais curtas.<br/><br/>Além disso, alguns campos, como o dispositivo de transmissão connectionIp e connectionPort, são obrigatórios para recursos como a Autenticação da Base Inicial do Spectrum.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Identificador de dispositivo estável</i></td>
@@ -215,7 +215,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### &#x200B;9. Ensaios {#mandatory-requirements-testing}
+### &#x200B;9. Testes {#mandatory-requirements-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -225,7 +225,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Teste do ciclo de vida</i></td>
-      <td>Desenvolva e teste o aplicativo usando os ambientes oficiais de não produção de Autenticação do Adobe Pass:<ul><li>Pré-produção</li><li>Estágios de lançamento</li></ul><br/>Execute controle de qualidade (QA) completo nesses ambientes antes de iniciar a produção da versão.<br/><br/>Os aplicativos cliente não devem prosseguir para a Produção de Versão sem antes concluir a validação completa em ambientes que não sejam de produção.</td>
+      <td>Desenvolva e teste o aplicativo usando os ambientes oficiais de não produção de Autenticação do Adobe Pass:<ul><li>Pré-produção</li><li>Estágios de lançamento</li></ul><br/>Execute controle de qualidade (QA) completo nesses ambientes antes de iniciar a Liberação-Produção.<br/><br/>Os aplicativos clientes não devem prosseguir para a Liberação-Produção sem primeiro concluir a validação completa em ambientes não relacionados à produção.</td>
       <td>Há riscos de lançamento com defeitos críticos e graves.<br/><br/>A falta de um caminho de depuração curto e eficiente pode impedir que o Suporte e a Engenharia da Adobe intervenham rapidamente.</td>
    </tr>
 </table>
@@ -352,7 +352,7 @@ O documento a seguir deve ser considerado parte de seus critérios de aceitaçã
    </tr>
 </table>
 
-### &#x200B;8. Ensaios {#recommended-practices-testing}
+### &#x200B;8. Testes {#recommended-practices-testing}
 
 <table style="table-layout:auto">
    <tr>

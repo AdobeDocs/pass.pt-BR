@@ -4,7 +4,7 @@ description: Sobre a autenticação do Adobe Pass
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1832'
+source-wordcount: '1863'
 ht-degree: 0%
 
 ---
@@ -127,7 +127,7 @@ Orientações adicionais estão disponíveis assim que a integração é iniciad
 
 **Tarefas de integração**
 
-* Integre o DCR [&#x200B; da API REST &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)de Autenticação da Adobe Pass.
+* Integre o DCR ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) da API REST [de Autenticação da Adobe Pass.
 * Integre a Autenticação Adobe Pass [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md).
 * Integre o [Verificador de token de mídia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier) da Autenticação do Adobe Pass.
 * Desenvolva uma interface de usuário para o fluxo de trabalho de autenticação, autorização e logout.

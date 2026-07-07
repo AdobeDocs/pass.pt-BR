@@ -4,7 +4,7 @@ description: Visão geral do Android SDK
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '2754'
+source-wordcount: '2801'
 ht-degree: 0%
 
 ---

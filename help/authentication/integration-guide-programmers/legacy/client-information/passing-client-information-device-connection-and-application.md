@@ -4,7 +4,7 @@ description: Transmissão de informações do cliente (dispositivo, conexão e a
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1665'
+source-wordcount: '1725'
 ht-degree: 3%
 
 ---
@@ -48,27 +48,27 @@ As informações do cliente são um objeto JSON criado com chaves apresentadas n
 
 |   | Chave | Restrito | Descrição | Valores possíveis |
 |---|---|---|---|---|
-|            | primaryHardwareType | # Sim | O tipo de hardware principal do dispositivo. | # Os valores são restritos:                                                                     Câmera                                                      DataCollectionTerminal                                                      Desktop                                                      EmbeddedNetworkModule                                                      eReader                                                      GamesConsole                                                      GeolocationTracker                                                      Óculos                                                      MediaPlayer                                                      Celular                                                      TerminalDePagamento                                                      PluginModem                                                      DefinirCaixaSuperior                                                      TV                                                      Tablet                                                      Ponto de acesso sem fio                                                      Relógio de pulso                                                      Desconhecido |
+|            | primaryHardwareType | # Sim | O tipo de hardware principal do dispositivo. | # Os valores são restritos: Camera DataCollectionTerminal Desktop EmbeddedNetworkModule eReader GamesConsole GeolocationTracker Glasses MediaPlayer MobilePhone PaymentTerminal PluginModem SetTopBox TV Tablet WirelessHotspot Wristwatch Unknown |
 | #mandatory | modelo | Não | O nome do modelo do dispositivo. | Por exemplo, iPhone, SM-G930V, Apple TV etc. |
 |            | version | Não | A versão do dispositivo. | Por exemplo, 2.0.1, etc. |
 |            | fabricante | Não | A empresa/organização de fabricação do dispositivo. | Por exemplo, Samsung, LG, ZTE, Huawei, Motorola, Apple, etc. |
 |            | fornecedor | Não | A empresa/organização de venda do dispositivo. | Por exemplo, Apple, Samsung, LG, Google, etc. |
-| #mandatory | osName | # Sim | O nome do sistema operacional do dispositivo. | # Os valores são restritos:                                                   Android                   SO CHROME                   Linux                   SO MAC                   OS X                   OpenBSD                   Roku OS                   Windows                   iOS                   tvOS                   webOS |
-|            | osFamily | Sim | O nome do grupo do Sistema Operacional (SO) do dispositivo. | # Os valores são restritos:                                                   Android                   BSD                   Linux                   PlayStation OS                   Roku OS                   Symbian                   Tizen                   Windows                   iOS                   macOS                   tvOS                   webOS |
-|            | osVendor | Não | O fornecedor do sistema operacional do dispositivo. | Amazon                   Apple                   Google                   LG                   Microsoft                   Mozilla                   Nintendo                   Nokia                   Roku                   Samsung                   Sony                   Projeto Tizen |
+| #mandatory | osName | # Sim | O nome do sistema operacional do dispositivo. | # Os valores são restritos: Android Chrome OS Linux Mac OS X OpenBSD Roku OS Windows iOS tvOS webOS |
+|            | osFamily | Sim | O nome do grupo do Sistema Operacional (SO) do dispositivo. | # Os valores são restritos: Android BSD Linux PlayStation OS Roku OS Symbian Tizen Windows iOS macOS tvOS webOS |
+|            | osVendor | Não | O fornecedor do sistema operacional do dispositivo. | Amazon Apple Google LG Microsoft Mozilla Nintendo Nokia Roku Samsung Projeto Sony Tizen |
 |            | osVersion | Não | A versão do sistema operacional do dispositivo. | Por exemplo, 10.2, 9.0.1, etc. |
-|            | browserName | # Sim | O nome do navegador. | # Os valores são restritos:                                                   Navegador Android                   Chrome                   Edge                   Firefox                   Internet Explorer                   Opera                   Safari                   SeaMonkey                   Navegador Symbian |
-|            | browserVendor | # Sim | A empresa/organização de construção do navegador. | # Os valores são restritos:                                                   Amazon                   Apple                   Google                   Microsoft                   Motorola                   Mozilla                   Netscape                   Nintendo                   Nokia                   Samsung                   Sony Ericsson |
-|            | browserVersion | Não | A versão do navegador do dispositivo. | ex: 60.0.3112 |
+|            | browserName | # Sim | O nome do navegador. | # Os valores são restritos: Android Browser Chrome Edge Firefox Internet Explorer Opera Safari SeaMonkey Symbian Browser |
+|            | browserVendor | # Sim | A empresa/organização de construção do navegador. | # Os valores são restritos: Amazon Apple Google Microsoft Motorola Mozilla Netscape Nintendo Nokia Samsung Sony Ericsson |
+|            | browserVersion | Não | A versão do navegador do dispositivo. | e.g. 60.0.3112 |
 |            | userAgent | Não | O agente do usuário do dispositivo. | por exemplo, Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, como Gecko) Versão/10.0.3 Safari/602.4.8 |
 |            | displayWidth | Não | A largura da tela física do dispositivo. |                                                                                                                                                                                                                                                                                                                                                           |
 |            | displayHeight | Não | A altura da tela física do dispositivo. |                                                                                                                                                                                                                                                                                                                                                           |
-|            | displayPpi | Não | A densidade de pixels da tela física do dispositivo. | por exemplo, 294 |
-|            | diagonalScreenSize | Não | A dimensão diagonal da tela física do dispositivo em polegadas. | Por exemplo, 5.5, 10.1 |
-|            | connectionIp | Não | O IP do dispositivo usado para enviar solicitações HTTP. | ex.: 8.8.4.4 |
-|            | connectionPort | Não | A porta do dispositivo usada para enviar solicitações HTTP. | por exemplo, 53124 |
+|            | displayPpi | Não | A densidade de pixels da tela física do dispositivo. | e.g. 294 |
+|            | diagonalScreenSize | Não | A dimensão diagonal da tela física do dispositivo em polegadas. | e.g. 5.5, 10.1 |
+|            | connectionIp | Não | O IP do dispositivo usado para enviar solicitações HTTP. | e.g. 8.8.4.4 |
+|            | connectionPort | Não | A porta do dispositivo usada para enviar solicitações HTTP. | e.g. 53124 |
 |            | connectionType | Não | O tipo de conexão de rede. | por exemplo, WiFi, LAN, 3G, 4G, 5G |
-|            | connectionSecure | # Sim | O status de segurança da conexão de rede. | # Os valores são restritos:                                                   true - no caso de uma rede segura                   false - no caso de um ponto de acesso público |
+|            | connectionSecure | # Sim | O status de segurança da conexão de rede. | # Os valores são restritos: true - no caso de uma rede segura false - no caso de um hot spot público |
 |            | applicationId | Não | O identificador exclusivo do aplicativo. | por exemplo, CNN |
 
 ## Referências de API {#api-ref}
@@ -93,12 +93,11 @@ Os serviços de Autenticação da Adobe Pass oferecem suporte para o recebimento
 
 O AccessEnabler JavaScript SDK cria por padrão um objeto JSON de informações do cliente, que será passado para os serviços de autenticação da Adobe Pass, a menos que seja substituído.
 
-O AccessEnabler JavaScript SDK oferece suporte **à substituição somente** da chave &quot;applicationId&quot; do objeto JSON de informações do cliente por meio do parâmetro de opções [applicationId](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options)) de *setRequestor*.
+O AccessEnabler JavaScript SDK oferece suporte **à substituição somente** da chave &quot;applicationId&quot; do objeto JSON de informações do cliente por meio do parâmetro de opções *applicationId* de [setRequestor](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options)).
 
 >[!CAUTION]
 >
->O valor do parâmetro `applicationId` deve ser um valor de cadeia de caracteres de texto sem formatação.
->Caso o aplicativo Programmer decida passar o applicationId, o restante das chaves de informações do cliente ainda será calculado pelo AccessEnabler JavaScript SDK.
+>O valor do parâmetro `applicationId` deve ser um valor de cadeia de caracteres de texto sem formatação.Caso o aplicativo Programmer decida passar o applicationId, o restante das chaves de informações do cliente ainda será calculado pelo AccessEnabler JavaScript SDK.
 
 #### iOS/tvOS SDK {#ios-tvos-sdk}
 
@@ -116,7 +115,7 @@ O AccessEnabler iOS/tvOS SDK oferece suporte à **substituição do objeto JSON 
 
 O SDK do Android/FireOS `AccessEnabler` compila por padrão um objeto JSON de informações do cliente, que será passado para os serviços de Autenticação da Adobe Pass, a menos que seja substituído.
 
-O SDK do `AccessEnabler` Android/FireOS oferece suporte à **substituição do objeto JSON de todas as** informações do cliente por meio do parâmetro [&#x200B; de &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[&#39;s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
+O SDK do `AccessEnabler` Android/FireOS oferece suporte à **substituição do objeto JSON de todas as** informações do cliente por meio do parâmetro `device_info` de [setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)&#39;s/[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption).
 
 >[!NOTE]
 >
@@ -132,7 +131,7 @@ Esta seção apresenta um guia para criar o objeto JSON de informações do clie
 
 >[!IMPORTANT]
 >
->As chaves que estão marcadas com **!** são obrigatórios para serem enviados.
+>As chaves marcadas com **!** são obrigatórios para serem enviados.
 
 ### Android {#android}
 
@@ -142,10 +141,10 @@ As informações do dispositivo podem ser construídas da seguinte maneira:
 |---|---------------|-----------------------------|---------------|
 | ! | modelo | Build.MODEL | GT-I9505 |
 |   | fornecedor | Build.BRAND | samsung |
-|   | fabricante | Build.MANUFACTURER | samsung |
+|   | fabricante | Build.MANUFATURER | samsung |
 | ! | version | Build.DEVICE | jflet |
-|   | displayWidth | DisplayMetrics.widthPixels | 600 |
-|   | displayHeight | DisplayMetrics.heightPixels | 800 |
+|   | displayWidth | ExibirMétricas.larguraPixels | 600 |
+|   | displayHeight | ExibirMétricas.alturaPixels | 800 |
 | ! | osName | codificado | Android |
 | ! | osVersion | Build.VERSION.RELEASE | 5.0.1 |
 
@@ -254,10 +253,10 @@ As informações do dispositivo podem ser construídas da seguinte maneira:
 |---|---------------|-----------------------------|--------------|
 | ! | modelo | Build.MODEL | AFTM |
 |   | fornecedor | Build.BRAND | Amazon |
-|   | fabricante | Build.MANUFACTURER | Amazon |
+|   | fabricante | Build.MANUFATURER | Amazon |
 | ! | version | Build.DEVICE | montoya |
-|   | displayWidth | DisplayMetrics.widthPixels |              |
-|   | displayHeight | DisplayMetrics.heightPixels |              |
+|   | displayWidth | ExibirMétricas.larguraPixels |              |
+|   | displayHeight | ExibirMétricas.alturaPixels |              |
 | ! | osName | codificado | Android |
 | ! | osVersion | Build.VERSION.RELEASE | 5.1.1 |
 
@@ -294,10 +293,10 @@ As informações do dispositivo podem ser construídas da seguinte maneira:
 |   | fornecedor | codificado | Apple |
 |   | fabricante | codificado | Apple |
 | ! | version | uname.machine | 8,1 |
-|   | displayWidth | UIScreen.mainScreen | 320 |
-|   | displayHeight | UIScreen.mainScreen | 568 |
+|   | displayWidth | UISscreen.mainScreen | 320 |
+|   | displayHeight | UISscreen.mainScreen | 568 |
 | ! | osName | UIDevice.systemName | iOS |
-| ! | osVersion | UIDevice.systemVersion | 10,2 |
+| ! | osVersion | UIDevice.systemVersion | 10.2 |
 
 As informações de conexão podem ser construídas da seguinte maneira:
 
@@ -439,7 +438,7 @@ As informações do dispositivo podem ser construídas da seguinte maneira:
 |   | fabricante | codificado | Microsoft |
 | ! | version | EasClientDeviceInformation.SystemHardwareVersion |                 |
 |   | displayWidth | DisplayInformation.ScreenWidthInRawPixels | 1920 |
-|   | displayHeight | DisplayInformation.ScreenHeightInRawPixels | 1080 |
+|   | displayHeight | ExibirInformações.AlturaTelaEmPixelsBrutos | 1080 |
 | ! | osName | EasClientDeviceInformation.OperatingSystem |                 |
 | ! | osVersion | EasClientDeviceInformation.SystemFirmwareVersion |                 |
 

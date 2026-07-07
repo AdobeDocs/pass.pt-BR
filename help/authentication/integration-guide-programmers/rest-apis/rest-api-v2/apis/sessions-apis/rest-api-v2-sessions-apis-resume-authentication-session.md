@@ -4,8 +4,8 @@ description: REST API V2 - Retomar sessão de autenticação
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '956'
-ht-degree: 1%
+source-wordcount: '985'
+ht-degree: 2%
 
 ---
 
@@ -64,30 +64,23 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
       <td>
-        O identificador exclusivo interno associado ao Provedor de identidade durante o processo de integração.
-        <br/><br/>
-        Se a plataforma do dispositivo de transmissão tiver limitações no fornecimento de um valor, um aplicativo terá que retomar a sessão de autenticação e fornecer um valor válido.
-      </td>
+        O identificador exclusivo interno associado ao Provedor de identidade durante o processo de integração.<br/><br/>
+        Se a plataforma do dispositivo de transmissão tiver limitações no fornecimento de um valor, um aplicativo terá que retomar a sessão de autenticação e fornecer um valor válido.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        O domínio de origem do aplicativo que executa o logon no MVPD.
-        <br/><br/>
-        Se a plataforma do dispositivo de transmissão tiver limitações no fornecimento de um valor, um aplicativo terá que retomar a sessão de autenticação e fornecer um valor válido.
-      </td>
+        O domínio de origem do aplicativo que executa o logon no MVPD.<br/><br/>
+        Se a plataforma do dispositivo de transmissão tiver limitações no fornecimento de um valor, um aplicativo terá que retomar a sessão de autenticação e fornecer um valor válido.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        O URL final de redirecionamento para o qual o agente do usuário navega quando o fluxo de autenticação do MVPD é concluído.
-        <br/><br/>
-        O valor deve ser codificado em URL.
-        <br/><br/>
-        Se a plataforma do dispositivo de transmissão tiver limitações no fornecimento de um valor, um aplicativo terá que retomar a sessão de autenticação e fornecer um valor válido.
-        </td>
+        O URL final de redirecionamento para o qual o agente do usuário navega quando o fluxo de autenticação do MVPD é concluído.<br/><br/>
+        O valor deve ser codificado em URL.<br/><br/>
+        Se a plataforma do dispositivo de transmissão tiver limitações no fornecimento de um valor, um aplicativo terá que retomar a sessão de autenticação e fornecer um valor válido.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
@@ -103,21 +96,16 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Tipo de conteúdo</td>
       <td>
-         O tipo de mídia aceito para os recursos que estão sendo enviados.
-         <br/><br/>
-         Deve ser application/x-www-form-urlencoded.
-      </td>
+         O tipo de mídia aceito para os recursos que estão sendo enviados.<br/><br/>
+         Deve ser application/x-www-form-urlencoded.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Encaminhado-Para</td>
       <td>
-         O endereço IP do dispositivo de streaming.
-         <br/><br/>
-         É altamente recomendável sempre usá-lo para implementações de servidor para servidor, especialmente quando a chamada é feita pelo serviço do programador, em vez do dispositivo de transmissão.
-         <br/><br/>
-         Para implementações de cliente para servidor, o endereço IP do dispositivo de transmissão é enviado implicitamente.
-      </td>
+         O endereço IP do dispositivo de streaming.<br/><br/>
+         É altamente recomendável sempre usá-lo para implementações de servidor para servidor, especialmente quando a chamada é feita pelo serviço do programador, em vez do dispositivo de transmissão.<br/><br/>
+         Para implementações de cliente para servidor, o endereço IP do dispositivo de transmissão é enviado implicitamente.</td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -129,10 +117,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Aceitar</td>
       <td>
-         O tipo de mídia aceito pelo aplicativo cliente.
-         <br/><br/>
-         Se especificado, deve ser application/json;charset=utf-8.
-      </td>
+         O tipo de mídia aceito pelo aplicativo cliente.<br/><br/>
+         Se especificado, deve ser application/json;charset=utf-8.</td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -161,29 +147,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Solicitação inválida</td>
       <td>
-        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-      </td>
+        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Não autorizado</td>
       <td>
-        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Visão geral do registro dinâmico do cliente</a>.
-      </td>
+        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Visão geral do registro dinâmico do cliente</a>.</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Método não permitido</td>
       <td>
-        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.
-      </td>
+        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erro interno do servidor</td>
       <td>
-        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-      </td>
+        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.</td>
    </tr>
 </table>
 
@@ -218,10 +200,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  A ação que o dispositivo de streaming precisa executar para concluir o fluxo de autenticação.
-                  <br/><br/>
-                  Os valores possíveis são:
-                  <ul>
+                  A ação que o dispositivo de streaming precisa executar para concluir o fluxo de autenticação.<br/><br/>
+                  Os valores possíveis são:<ul>
                     <li><b>autenticar</b><br/>O dispositivo de streaming ou outro dispositivo precisa abrir a URL fornecida em um agente de usuário.</li>
                     <li><b>repetir</b><br/>O dispositivo de streaming ou outro dispositivo precisa fornecer os parâmetros ausentes e tentar retomar a sessão de autenticação usando o código.</li>
                     <li><b>autorizar</b><br/>O dispositivo de streaming pode continuar diretamente com fluxos de decisões.</li>
@@ -231,10 +211,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  O tipo de interação que o dispositivo de streaming deve executar para continuar o fluxo com a ação especificada pelo atributo "actionName".
-                  <br/><br/>
-                  Os valores possíveis são:
-                  <ul>
+                  O tipo de interação que o dispositivo de streaming deve executar para continuar o fluxo com a ação especificada pelo atributo "actionName".<br/><br/>
+                  Os valores possíveis são:<ul>
                     <li><b>interativo</b><br/>O fluxo continua com uma navegação até a URL fornecida usando um agente de usuário.</li>
                     <li><b>direct</b><br/>O fluxo continua com uma chamada direta para a URL fornecida usando um cliente HTTP disponível para a implementação do cliente.</li>
                   </ul>
@@ -243,10 +221,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  O tipo de motivo que explica o 'actionName'.
-                  <br/><br/>
-                  Os valores possíveis são:
-                  <ul>
+                  O tipo de motivo que explica o 'actionName'.<br/><br/>
+                  Os valores possíveis são:<ul>
                     <li><b>nenhum</b><br/>O aplicativo cliente é necessário para continuar a autenticação.</li>
                     <li><b>autenticado</b><br/>O aplicativo cliente já está autenticado por meio de fluxos de acesso básicos.</li>
                     <li><b>temporário</b><br/>O aplicativo cliente já está autenticado por meio de fluxos de acesso temporários.</li>
@@ -325,16 +301,13 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.
-            <br/><br/>
-            O aplicativo cliente deve implementar um mecanismo de tratamento de erros capaz de processar corretamente os códigos de erro retornados com mais frequência por essa API:
-            <ul>
+            O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de erro aprimorados</a>.<br/><br/>
+            O aplicativo cliente deve implementar um mecanismo de tratamento de erros capaz de processar corretamente os códigos de erro retornados com mais frequência por essa API:<ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>etc.</li>
             </ul>
-            A lista acima não é exaustiva. O aplicativo cliente deve ser capaz de manipular todos os códigos de erro aprimorados definidos na <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentação pública</a>.
-      </td>
+            A lista acima não é exaustiva. O aplicativo cliente deve ser capaz de manipular todos os códigos de erro aprimorados definidos na <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentação pública</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>
@@ -383,7 +356,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;2. Retomar sessão de autenticação com parâmetros ausentes
+### &#x200B;2. Retomar sessão de autenticação sem parâmetros
 
 >[!BEGINTABS]
 
@@ -504,7 +477,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;5. Retomar a sessão de autenticação enquanto a degradação é aplicada
+### &#x200B;5. Retomar sessão de autenticação enquanto a degradação é aplicada
 
 >[!BEGINTABS]
 
