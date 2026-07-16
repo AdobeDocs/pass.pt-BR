@@ -4,7 +4,7 @@ description: Saiba mais sobre as integrações entre seus canais e MVPDs e como 
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2093'
+source-wordcount: '2105'
 ht-degree: 0%
 
 ---
@@ -175,7 +175,7 @@ Siga estas etapas para habilitar ou desabilitar a autenticação baseada em pág
 
    *Habilitar autenticação baseada em casa para uma plataforma específica*
 
-   **A.** Tentativa de propriedade HBA **B.** Propriedade HBA AuthN TTL
+   **A.** Tentativa de propriedade do HBA **B.** Propriedade HBA AuthN TTL
 
 1. Selecione **Sim** para habilitar e **Não** para desabilitar no menu suspenso **Tentar HBA**.
 
