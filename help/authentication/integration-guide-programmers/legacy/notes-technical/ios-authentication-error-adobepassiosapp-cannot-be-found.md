@@ -4,7 +4,7 @@ description: Erro de autenticação do iOS - adobepass.ios.app não pode ser enc
 exl-id: cd97c6fb-f0fa-45c2-82c1-f28aa6b2fd12
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '389'
 ht-degree: 0%
 
 ---
