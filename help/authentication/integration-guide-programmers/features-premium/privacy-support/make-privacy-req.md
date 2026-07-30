@@ -4,7 +4,7 @@ description: Como fazer uma solicitação de privacidade
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '596'
 ht-degree: 0%
 
 ---
@@ -239,7 +239,7 @@ A **documentação da API do Privacy Service** aborda detalhadamente como um cli
 **Visualizar chamadas de API com o Postman (um software gratuito de terceiros):**
 
 * [Coleção de Postman da API do Privacy Service no GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [Guia de vídeo para criar o ambiente do Postman](https://video.tv.adobe.com/v/31682?captions=por_br)
+* [Guia em vídeo para criar o ambiente do Postman](https://video.tv.adobe.com/v/31682?captions=por_br)
 * [Etapas para importar ambientes e coleções no Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
