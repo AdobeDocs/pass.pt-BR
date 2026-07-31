@@ -2,10 +2,10 @@
 title: Verificar Fluxo de Autenticação por Aplicativo Web de Segunda Tela
 description: Verificar Fluxo de Autenticação por Aplicativo Web de Segunda Tela
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
 workflow-type: tm+mt
-source-wordcount: '232'
-ht-degree: 0%
+source-wordcount: '240'
+ht-degree: 1%
 
 ---
 
@@ -42,9 +42,9 @@ ht-degree: 0%
 Essa API deve ser consumida pelo segundo aplicativo Web de logon de tela para confirmar que a Autenticação do Adobe Pass reconheceu o logon bem-sucedido do MVPD. Recomendamos chamar essa API antes de mostrar uma mensagem de sucesso para o usuário final que o instrui a prosseguir para o console do dispositivo para continuar com os workflows.
 
 
-| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
+| Endpoint | Chamado </br>por | </br>Parâmetros de entrada | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{registration code} | Aplicativo Web de Logon | &#x200B;1. código de registro </br>    (Componente do caminho)</br>2.  solicitante </br>    (Obrigatório) | GET | XML ou JSON que contém detalhes de erros, caso não seja bem-sucedido. | 200 - Sucesso   </br>403 - Proibido |
+| SP_FQDN/api/v1/checkauthn/{registration code} | Aplicativo Web de Logon | &#x200B;1.  código de registro </br> (componente do Caminho)</br>2.  solicitante </br> (Obrigatório) | GET | XML ou JSON que contém detalhes de erros, caso não seja bem-sucedido. | 200 - Êxito </br>403 - Proibido |
 
 </br>
 
@@ -63,4 +63,4 @@ Essa API deve ser consumida pelo segundo aplicativo Web de logon de tela para co
     }
 ```
 
-### [Voltar à Referência da API REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+**[Voltar à Referência da API REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)**
