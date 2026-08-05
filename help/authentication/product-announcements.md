@@ -2,10 +2,10 @@
 title: Anúncios de produto
 description: Anúncios de produto
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: ce9e8de3d69699d03cf68c86be1bb811967501dc
+source-git-commit: 8d13375f86f4e28cafffe231e8b0c9b36a9a4132
 workflow-type: tm+mt
 source-wordcount: '1003'
-ht-degree: 20%
+ht-degree: 22%
 
 ---
 
@@ -33,9 +33,8 @@ Esta seção compila referências ao histórico de versões e às notas de vers�
 
 | Notas de versão | Datas |
 |------------------------------------------------------------------------------------------------|-------------------------|
-<!-- | [Adobe Pass Authentication 3.8.0 release notes](notes-releases/auth-rn-380.md) | 08/11/2026 - 08/13/2026 | -->
-| [Notas de versão da Autenticação do Adobe Pass 3.7.0](notes-releases/auth-rn-370.md) | 12/05/2026 - 14/05/2026 |
-| [Notas de versão da Autenticação do Adobe Pass 3.6.0](notes-releases/auth-rn-360.md)                 | 07/04/2026 - 09/04/2026 |
+| [Notas de versão da Autenticação do Adobe Pass 3.7.0](notes-releases/auth-rn-370.md) | 05/12/2026 - 05/14/2026 |
+| [Notas de versão da Autenticação do Adobe Pass 3.6.0](notes-releases/auth-rn-360.md) | 04/07/2026 - 04/09/2026 |
 
 ### 2025 {#product-releases-2025}
 
