@@ -4,7 +4,7 @@ description: Guia do Amazon SSO (REST API V1)
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '629'
 ht-degree: 0%
 
 ---
@@ -89,13 +89,13 @@ O aplicativo de transmissão pode escolher uma das duas opções com base em sua
   ```
 
   O pacote de resposta de sucesso do token de SSO conterá:
-   * Um token SSO como um `string` com a chave &quot;SSOToken&quot;.
+  * Um token SSO como um `string` com a chave &quot;SSOToken&quot;.
 
   <br/>
 
   O pacote de resposta de falha do token de SSO conterá:
-   * Um código de erro como um `int` com a chave &quot;ErrorCode&quot;.
-   * Uma descrição de erro como `string` com a chave &quot;ErrorDescription&quot;.
+  * Um código de erro como um `int` com a chave &quot;ErrorCode&quot;.
+  * Uma descrição de erro como `string` com a chave &quot;ErrorDescription&quot;.
 
   <br/>
 
@@ -136,10 +136,10 @@ O aplicativo de transmissão deve lidar com cenários de fallback do fluxo de SS
 Verifique se o aplicativo de transmissão está lidando com:
 
 * A ausência do aplicativo associado do Amazon que deve estar em execução no dispositivo Amazon.
-   * O aplicativo de streaming pode encontrar um `ClassNotFoundException` em tempo de execução na seguinte classe `com.amazon.ottssotokenlib.SSOEnabler`.
+  * O aplicativo de streaming pode encontrar um `ClassNotFoundException` em tempo de execução na seguinte classe `com.amazon.ottssotokenlib.SSOEnabler`.
 
 * A ausência da carga do token SSO (identidade da plataforma) que deve ser retornada pelas APIs acima.
-   * O aplicativo de transmissão pode entrar em contato com os representantes da Amazon e da Adobe para investigar.
+  * O aplicativo de transmissão pode entrar em contato com os representantes da Amazon e da Adobe para investigar.
 
 ### Fluxo de trabalho (WRK) {#workflow}
 
