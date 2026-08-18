@@ -4,7 +4,7 @@ description: Mecanismo de limitação
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '616'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Quando o limite for atingido, as solicitações serão marcadas com um status de
 ## Visão geral do mecanismo {#mechanism-overview}
 
 O mecanismo determina o número máximo de chamadas aceitas para cada endpoint de Monitoramento de simultaneidade em um intervalo de tempo específico.
-Quando esse número máximo de chamadas for atingido, nosso serviço responderá com &quot;429 Muitas solicitações&quot;. O cabeçalho &quot;Expira&quot; da resposta 429 inclui o carimbo de data e hora quando a próxima chamada seria considerada válida ou quando a limitação expira. No momento, a limitação expira após uma   minuto a partir da primeira resposta 429.
+Quando esse número máximo de chamadas for atingido, nosso serviço responderá com &quot;429 Muitas solicitações&quot;. O cabeçalho &quot;Expira&quot; da resposta 429 inclui o carimbo de data e hora quando a próxima chamada seria considerada válida ou quando a limitação expira. No momento, a limitação expira após um minuto da primeira resposta 429.
 
 Os endpoints configurados com limitação são:
 1. Criar uma nova sessão: POST /sessions/{idp}/{subject}
