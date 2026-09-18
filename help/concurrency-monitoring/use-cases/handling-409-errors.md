@@ -1,14 +1,12 @@
 ---
 title: Tratamento de erros de conflito 409
 description: Saiba como lidar com erros de conflito 409 quando os limites de uso simultâneo são atingidos
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 23a73e48-8ae0-4e0e-85db-dfc09d1386a7
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
 source-wordcount: '283'
-ht-degree: 0%
-
+ht-degree: 1%
 ---
-
-
 # Tratamento de erros de conflito 409 {#handling-409-errors}
 
 Quando um usuário tenta iniciar um novo fluxo e atinge um limite de uso simultâneo, o Monitoramento de Simultaneidade retorna uma resposta de **409 Conflito**. Entender como lidar com esse erro é fundamental para fornecer uma boa experiência ao usuário.
@@ -104,13 +102,13 @@ Um conflito 409 ocorre quando:
 
 ## Práticas recomendadas {#best-practices}
 
-### &#x200B;1. Comunicação clara com o utilizador
+### &#x200B;1. Comunicação clara com o usuário
 
 - **Explicar o limite** - Os usuários devem entender por que estão bloqueados
 - **Mostrar opções disponíveis** - O que eles podem fazer para resolver o conflito
 - **Fornecer contexto** - Mostrar quais sessões estão ativas
 
-### &#x200B;2. Tratamento de erros adequado
+### &#x200B;2. Tratamento de erros gracioso
 
 - **Não travar** - Manipular erros 409 normalmente
 - **Fornecer alternativas** - Oferecer maneiras de resolver o conflito
@@ -127,5 +125,3 @@ Um conflito 409 ocorre quando:
 - **Analisar a resposta com cuidado** - Extrair todas as informações relevantes
 - **Tratar casos de borda** - E se nenhum conflito for retornado?
 - **Registrar conflitos** - Rastrear violações de política para análise
-
-

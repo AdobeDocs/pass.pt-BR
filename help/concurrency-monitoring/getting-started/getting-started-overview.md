@@ -1,14 +1,12 @@
 ---
 title: Introdução ao monitoramento de simultaneidade
 description: Saiba mais sobre as noções básicas de Monitoramento de simultaneidade e como começar a usar a integração
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: d2b8c7c4-b02d-4bea-9310-162064fd7216
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '372'
 ht-degree: 0%
-
 ---
-
-
 # Introdução ao monitoramento de simultaneidade {#getting-started-overview}
 
 Bem-vindo ao Monitoramento de simultaneidade! Este guia ajudará você a entender os fundamentos e colocar sua integração em funcionamento rapidamente.
@@ -87,5 +85,5 @@ Para começar a usar o Monitoramento de Simultaneidade, contate nossa [Equipe de
 
 - **API Explorer** - APIs de teste interativamente na [Interface do usuário do Swagger](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)
 - **Termos e definições principais** - [Glossário](../cm-glossary.md)
-- **Como obter ajuda?** - [Procedimentos de suporte](../support/cm-escalation-procedures.md)
+- **Como obter ajuda?** - [Procedimentos de Suporte](../support/cm-escalation-procedures.md)
 - **Suporte** - Contate [tve-support@adobe.com](mailto:tve-support@adobe.com)

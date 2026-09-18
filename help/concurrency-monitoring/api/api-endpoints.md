@@ -1,14 +1,12 @@
 ---
 title: Endpoints de API
 description: Lista completa das APIs de monitoramento de simultaneidade
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: e8a9dfd2-cd16-4971-b9bc-9646987dd3ce
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
 source-wordcount: '54'
 ht-degree: 3%
-
 ---
-
-
 # Endpoints de API
 
 ## Gerenciamento de sessão principal

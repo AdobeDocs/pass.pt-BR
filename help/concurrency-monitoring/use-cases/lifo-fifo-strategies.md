@@ -1,14 +1,12 @@
 ---
 title: LIFO versus estratégias FIFO
 description: Entenda a diferença entre as estratégias LIFO e FIFO e quando usar cada abordagem
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 2d7c4bc8-0491-429b-8471-3b5629aa76a6
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '686'
 ht-degree: 0%
-
 ---
-
-
 # LIFO versus estratégias FIFO {#lifo-fifo-strategies}
 
 Ao implementar o Monitoramento de simultaneidade, você precisa escolher entre duas estratégias fundamentais para tratar de conflitos quando os limites de uso são atingidos: **LIFO (Última Entrada, Primeira Saída)** ou **FIFO (Primeira Entrada, Primeira Saída)**. Entender essas estratégias é fundamental para projetar a experiência do usuário correta e implementar a manipulação de erros apropriada.
