@@ -1,14 +1,12 @@
 ---
 title: Notas de versão do Monitoramento de simultaneidade 3.2.0
 description: Notas de versão do Monitoramento de simultaneidade 3.2.0
-exl-id: 6f803884-3c6c-4554-b382-7f1391690cb3
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: a50aa34f-6b88-4859-94f9-9aeb7caf7d7f
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '54'
+source-wordcount: '52'
 ht-degree: 5%
-
 ---
-
 # Notas de versão do Monitoramento de simultaneidade 3.2.0 {#cm-320-rn}
 
 Esta página descreve novos recursos, alterações e problemas conhecidos com esta versão.

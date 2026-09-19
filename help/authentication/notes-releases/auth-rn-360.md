@@ -1,13 +1,12 @@
 ---
 title: Notas de versão da Autenticação Adobe Pass 3.6.0
 description: Notas de versão da Autenticação Adobe Pass 3.6.0
-source-git-commit: 41bfd38eec7cd3eaf18a6dd41965244376ac61ec
+exl-id: a88ec78a-b3b0-46d2-9d79-f0d9a81ba94f
+source-git-commit: cc7123ecf09e1228e2aa4eddb0f0bcfa815da69f
 workflow-type: tm+mt
 source-wordcount: '126'
 ht-degree: 0%
-
 ---
-
 # Notas de versão da Autenticação Adobe Pass 3.6.0 {#authn-360-rn}
 
 >[!IMPORTANT]

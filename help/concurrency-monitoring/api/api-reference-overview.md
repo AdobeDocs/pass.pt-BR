@@ -1,14 +1,12 @@
 ---
 title: Visão geral da referência da API
 description: Referência completa da API de monitoramento de simultaneidade, incluindo endpoints, autenticação e formatos de resposta
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 6a1c6507-03d5-4003-8b88-502eb4019346
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '444'
 ht-degree: 2%
-
 ---
-
-
 # Visão geral da referência da API {#api-reference-overview}
 
 A API de monitoramento de simultaneidade fornece uma interface RESTful para gerenciar sessões de transmissão e aplicar políticas de uso simultâneas. Esta referência fornece documentação completa para todos os endpoints, métodos de autenticação, formatos de solicitação/resposta e manipulação de erros.
@@ -137,7 +135,7 @@ Quando as políticas são avaliadas (especialmente para conflitos 409), as respo
 
 | Código | Descrição | Quando Retornado |
 |------|----------------------|------------------------------------------------|
-| 200 | OK | Solicitações do GET com sucesso |
+| 200 | OK | Solicitações GET com êxito |
 | 202 | Criado/aceito | Criação de sessão/heartbeat registrados com sucesso |
 | 400 | Solicitação inválida | Parâmetros inválidos ou campos obrigatórios ausentes |
 | 401 | Não autorizado | Autenticação inválida ou ausente |
