@@ -4,11 +4,9 @@ description: Notas de versão do JavaScript 4.1.1 de autenticação da Adobe Pas
 exl-id: 00d017b3-700d-48b6-a43f-c0d7b8b67c3d
 source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '106'
+source-wordcount: '113'
 ht-degree: 0%
-
 ---
-
 # Notas de versão do JavaScript 4.1.1 de autenticação da Adobe Pass {#javascript-sdk-411-rn}
 
 >[!IMPORTANT]
