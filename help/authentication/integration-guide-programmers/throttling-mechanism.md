@@ -4,11 +4,9 @@ description: Saiba mais sobre o mecanismo de limitação usado na autenticação
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
 source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1162'
 ht-degree: 0%
-
 ---
-
 # Mecanismo de limitação {#throttling-mechanism}
 
 Todos os clientes do Pass Authentication precisam acessar a API do Pass Authentication para cada um de seus usuários, de acordo com as instruções e o business case.
@@ -65,11 +63,11 @@ O mecanismo de limitação será habilitado nos seguintes pontos de extremidade:
 - /api/v1/mediatoken
 - /api/v1/authenticate/freepreview
 - /api/v1/authenticate/
-- /api/v1/+/profile-requests/.+
+- /api/v1/.+/profile-requests/.+
 - /api/v1/identities
 - /adobe-services/config/
-- /reggie/v1/+/regcode
-- /reggie/v1/+/regcode/+
+- /reggie/v1/.+/regcode
+- /reggie/v1/.+/regcode/.+
 
 ### Desambiguação da implementação do SDK
 

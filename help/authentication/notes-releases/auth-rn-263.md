@@ -4,11 +4,9 @@ description: Notas de versão da Autenticação Adobe Pass 2.63
 exl-id: 40987328-6d41-4948-aa4a-bab31f98a18a
 source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '300'
+source-wordcount: '307'
 ht-degree: 0%
-
 ---
-
 # Notas de versão da Autenticação Adobe Pass 2.63 {#authn-263-rn}
 
 >[!IMPORTANT]
