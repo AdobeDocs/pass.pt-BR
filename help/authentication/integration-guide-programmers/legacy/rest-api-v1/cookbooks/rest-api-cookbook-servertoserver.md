@@ -2,13 +2,14 @@
 title: Cookbook da API REST (servidor para servidor)
 description: Servidor do guia da API rest para o servidor.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1891'
 ht-degree: 1%
-
 ---
-
 # Cookbook da API REST (herdada) (servidor para servidor) {#rest-api-cookbook-server-to-server}
 
 >[!NOTE]
@@ -119,7 +120,8 @@ O diagrama a seguir ilustra o fluxo de pré-autorização:
 
 ### \[Opcional\] Metadados
 
-Os metadados podem ser usados para recuperar informações do usuário compartilhadas pela MVPD.Exemplos disso podem incluir ID de usuário, código postal, etc.
+Os metadados podem ser usados para recuperar informações do usuário compartilhadas pela MVPD.
+Exemplos disso podem incluir ID de usuário, código postal, etc.
 
 1. Depois que o usuário é autenticado, o Serviço de Programador pode chamar a API **usermetadata** do Adobe Pass para solicitar informações sobre o usuário autenticado.
 

@@ -2,13 +2,14 @@
 title: Perguntas frequentes sobre procedimentos de suporte
 description: Perguntas frequentes sobre procedimentos de suporte
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
-source-git-commit: 0ab1fc212752dd4a4d6e12a4ab1287ef74e4a282
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '790'
 ht-degree: 0%
-
 ---
-
 # Perguntas frequentes sobre procedimentos de suporte {#support-procedures-faqs}
 
 >[!IMPORTANT]
@@ -93,6 +94,6 @@ Determinadas situações com ações padrão que serão executadas se o cenário
 
 |    | Cenário | Descrição | Ações |
 |----|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| S1 | O Adobe identifica um problema com a integração de uma MVPD durante as operações normais de produção. | Durante as operações normais de produção, a Adobe identifica um problema com um dos MVPDs que torna impossível executar os fluxos de autenticação/autorização (por exemplo, certificados expirados, respostas SAML expiradas, portas fechadas, parâmetros alterados etc.) | A Adobe notificará a MVPD e os programadores afetados.  </br></br> O Adobe desativará este MVPD para todos os Programadores afetados. </br></br> O Adobe abrirá um tíquete com a MVPD seguindo o procedimento de suporte acordado com essa MVPD |
-| S2 | O Adobe ativa um novo MVPD para um Programador e ele permite o MVPD antes da data de lançamento. | A Adobe está ativando um novo MVPD para o site de um Programador e o site já está exibindo o novo MVPD no seletor, mesmo que não seja necessário. | A Adobe notificará o programador sobre a nova MVPD que aparece no seletor antes da data agendada. O programador </br></br> executará uma ação para removê-lo do seletor, se necessário. |
+| S1 | O Adobe identifica um problema com a integração de uma MVPD durante as operações normais de produção. | Durante as operações normais de produção, a Adobe identifica um problema com um dos MVPDs que torna impossível executar os fluxos de autenticação/autorização (por exemplo, certificados expirados, respostas SAML expiradas, portas fechadas, parâmetros alterados etc.) | A Adobe notificará a MVPD e os programadores afetados.  </br></br> O Adobe desativará este MVPD para todos os programadores afetados. </br></br> A Adobe abrirá um tíquete com a MVPD seguindo o procedimento de suporte acordado com essa MVPD |
+| S2 | O Adobe ativa um novo MVPD para um Programador e ele permite o MVPD antes da data de lançamento. | A Adobe está ativando um novo MVPD para o site de um Programador e o site já está exibindo o novo MVPD no seletor, mesmo que não seja necessário. | A Adobe notificará o programador sobre a nova MVPD que aparece no seletor antes da data agendada. </br></br>  O programador tomará medidas para removê-lo do seletor, se necessário. |
 | S3 | O Adobe ativa um novo MVPD para um programador mesmo se o MVPD não estiver pronto para entrar em produção | A Adobe está ativando um novo MVPD para um Programador, mas o MVPD ainda não implantou o suporte para a integração, portanto, os fluxos de autenticação/autorização não podem ser executados | A Adobe fará a implantação somente se solicitado pelo programador </br></br>. O programador será responsável por garantir a permissão da MVPD depois que todos os testes forem executados. |

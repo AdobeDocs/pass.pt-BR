@@ -2,13 +2,14 @@
 title: Atributos de metadados padrão
 description: Atributos de metadados padrão
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1053'
-ht-degree: 4%
-
+source-wordcount: '1295'
+ht-degree: 3%
 ---
-
 # Atributos de metadados padrão {#std-metadata-attributes}
 
 Esta página tem como objetivo fornecer uma lista completa de atributos de metadados que o serviço de Monitoramento de Simultaneidade pode processar e que podem ser usados como base para políticas que podem ser implementadas. Os atributos de metadados padrão podem ser categorizados da seguinte maneira:
@@ -73,15 +74,15 @@ Os campos de metadados padrão podem ser usados para definir políticas do lado 
 
 * Você pode configurar uma política para ser aplicada somente a valores de campo específicos (por exemplo, uma política iOS dedicada: onde `osType` é `iOS`)
 * É possível limitar o número de valores distintos para um determinado campo. Alguns exemplos são os seguintes:
-   * não mais do que X dispositivos distintos: `HAVING DISTINCT COUNT(deviceId) <= 2`
-   * não mais do que X códigos postais distintos: `HAVING DISTINCT COUNT(zipcode) <= 3`
+  * não mais do que X dispositivos distintos: `HAVING DISTINCT COUNT(deviceId) <= 2`
+  * não mais do que X códigos postais distintos: `HAVING DISTINCT COUNT(zipcode) <= 3`
 * Você pode limitar o número de fluxos ativos por valor de campo. Alguns exemplos são os seguintes:
-   * não mais do que X fluxos ativos para um único tipo de dispositivo: `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
-   * não mais do que X fluxos ativos para fluxos de conteúdo ao vivo: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
+  * não mais do que X fluxos ativos para um único tipo de dispositivo: `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
+  * não mais do que X fluxos ativos para fluxos de conteúdo ao vivo: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
 
 Contate a equipe de Monitoramento de simultaneidade [criando um tíquete no Zendesk](mailto:tve-support@adobe.com) e indique quais políticas você deseja implementar.
 
 Você pode encontrar mais exemplos de políticas e livros de cookies de integração no seguinte:
 
 * [Ponto de decisão da política](/help/concurrency-monitoring/technical/cm-policy-decision-point.md)
-* [Console de API - Monitoramento de Simultaneidade do Adobe](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)
+* [Console da API - Monitoramento de simultaneidade do Adobe](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)

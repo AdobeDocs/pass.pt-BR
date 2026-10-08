@@ -2,13 +2,14 @@
 title: Notas de versão do JavaScript 4.7.0 de autenticação da Adobe Pass
 description: Notas de versão do JavaScript 4.7.0 de autenticação da Adobe Pass
 exl-id: 07f90270-e64a-4c6b-a072-183af0f53352
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '116'
+source-wordcount: '136'
 ht-degree: 0%
-
 ---
-
 # Notas de versão do JavaScript 4.7.0 de autenticação da Adobe Pass {#javascript-sdk-470-rn}
 
 >[!IMPORTANT]
@@ -27,11 +28,11 @@ Data de Lançamento: **27/02/2024 - 29/02/2024**
 
 * Remoção da versão 2.0.1 do Access Enabler JavaScript SDK devido a vulnerabilidades de segurança.
   <br/><br/>
-Os seguintes URLs não são mais suportados e retornarão um código de status HTTP 410:
-   * https://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
-   * http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
-   * https://entitlement.auth.adobe.com/entitlement/AccessEnablerDebug.js
-   * http://entitlement.auth.adobe.com/entitlement/AccessEnablerDebug.js
+  Os seguintes URLs não são mais suportados e retornarão um código de status HTTP 410:
+  * https://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
+  * http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
+  * https://entitlement.auth.adobe.com/entitlement/AccessEnablerDebug.js
+  * http://entitlement.auth.adobe.com/entitlement/AccessEnablerDebug.js
 
 ## Lançar pacote {#release-package-470}
 

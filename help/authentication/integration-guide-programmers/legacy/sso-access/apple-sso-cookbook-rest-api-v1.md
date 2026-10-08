@@ -2,13 +2,14 @@
 title: Guia do Apple SSO (REST API V1)
 description: Guia do Apple SSO (REST API V1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1496'
+source-wordcount: '1596'
 ht-degree: 0%
-
 ---
-
 # (Herdado) Guia de SSO do Apple (REST API V1) {#apple-sso-cookbook-rest-api-v1}
 
 >[!IMPORTANT]
@@ -364,7 +365,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> Adobe Pass **<u>Dica:</u>** implemente isso por meio da [Solicitação de Código de Registro](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md), [Iniciar Autenticação](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) e [Recuperar Token de Autenticação](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) ou [Verificar Token de Autenticação](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) para os serviços de API.
+> **<u>Dica:</u>** implemente isso por meio da [Solicitação de Código de Registro](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md), [Iniciar Autenticação](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) e [Recuperar Token de Autenticação](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) ou [Verificar Token de Autenticação](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) para os serviços de API.
 
 >[!TIP]
 >
@@ -402,7 +403,7 @@ A [Estrutura de Conta de Assinante de Vídeo](https://developer.apple.com/docume
 >
 > **<u>Dica do profissional:</u>** siga as etapas abaixo para a implementação do tvOS.
 
-* O aplicativo teria que determinar se a autenticação ocorreu como resultado de uma entrada através do SSO parceiro, usando os &quot;*metadados de usuário* do [tokenSource&quot;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) do serviço de Autenticação do Adobe Pass.
+* O aplicativo teria que determinar se a autenticação ocorreu como resultado de uma entrada através do SSO parceiro, usando os &quot;*metadados de usuário[&#128279;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) do tokenSource&quot;* do serviço de Autenticação do Adobe Pass.
 * O aplicativo teria que instruir/solicitar que o usuário saia explicitamente de *`Settings -> Accounts -> TV Provider`* no tvOS **only** caso o valor *&quot;tokenSource&quot;* fosse igual a &quot;*Apple&quot;.*
 * O aplicativo teria que [iniciar o logout](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) do serviço de Autenticação do Adobe Pass usando uma chamada HTTP direta. Isso não facilitaria a limpeza da sessão no lado do MVPD.
 
@@ -410,6 +411,6 @@ A [Estrutura de Conta de Assinante de Vídeo](https://developer.apple.com/docume
 >
 > **<u>Dica dos profissionais:</u>** Siga as etapas abaixo para a(s) implementação(ões) do iOS/iPadOS.
 
-* O aplicativo teria que determinar se a autenticação ocorreu como resultado de uma entrada através do SSO parceiro, usando os &quot;*metadados de usuário* do [tokenSource&quot;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) do serviço de Autenticação do Adobe Pass.
+* O aplicativo teria que determinar se a autenticação ocorreu como resultado de uma entrada através do SSO parceiro, usando os &quot;*metadados de usuário[&#128279;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) do tokenSource&quot;* do serviço de Autenticação do Adobe Pass.
 * O aplicativo teria que instruir/solicitar que o usuário saia explicitamente de *`Settings -> TV Provider`* no iOS/iPadOS **only** caso o valor *&quot;tokenSource&quot;* fosse igual a *&quot;Apple&quot;*.
 * O aplicativo teria que [iniciar o logout](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) do serviço de Autenticação do Adobe Pass usando um [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) ou um componente [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller). Isso facilitaria a limpeza da sessão no lado do MVPD.

@@ -2,13 +2,14 @@
 title: Log de alterações
 description: Saber como um administrador pode monitorar as alterações de configuração no Painel TVE.
 exl-id: 9b53a61b-679f-491e-90f3-5d827e21b32c
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '271'
 ht-degree: 0%
-
 ---
-
 # Log de alterações {#changes-log}
 
 >[!NOTE]

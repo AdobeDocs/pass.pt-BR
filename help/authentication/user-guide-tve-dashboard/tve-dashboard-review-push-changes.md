@@ -2,13 +2,14 @@
 title: Revisar e enviar alterações
 description: Saiba como revisar e enviar alterações no painel da TVE.
 exl-id: 2f29712e-7b3f-472a-a36f-32780bec1508
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
-
 ---
-
 # Revisar e enviar alterações
 
 >[!NOTE]

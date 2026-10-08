@@ -2,13 +2,14 @@
 title: Cookbook REST API V2 (servidor para servidor)
 description: Cookbook REST API V2 (servidor para servidor)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2524'
 ht-degree: 0%
-
 ---
-
 # Cookbook REST API V2 (servidor para servidor) {#rest-api-v2-cookbook-server-to-server}
 
 >[!IMPORTANT]
@@ -75,11 +76,11 @@ O ambiente de produção deve estar altamente disponível e dimensionado de form
 
 * O Adobe Pass Service opera em vários data centers geograficamente dispersos nos EUA para otimizar o desempenho e minimizar a latência.
 
-   * O Serviço de programador deve adotar uma estratégia de infraestrutura semelhante, garantindo tempos de resposta de baixa latência da Adobe Pass.
+  * O Serviço de programador deve adotar uma estratégia de infraestrutura semelhante, garantindo tempos de resposta de baixa latência da Adobe Pass.
 
 * O Programador deve fornecer o intervalo IP público de seu ambiente de produção.
 
-   * Esses IPs serão adicionados a um incluo na lista de permissões na Infraestrutura do Adobe Pass.
+  * Esses IPs serão adicionados a um incluo na lista de permissões na Infraestrutura do Adobe Pass.
 
 * O Serviço de programador deve limitar o cache DNS a um máximo de 30 segundos para permitir o redirecionamento dinâmico caso o Adobe precise redirecionar o tráfego devido à indisponibilidade de um data center.
 
@@ -93,9 +94,9 @@ O ambiente de preparo pode ser mínimo, mas deve refletir a produção, incluind
 
 * Idealmente, o ambiente de preparo deve estar conectado aos ambientes de teste do Adobe Pass para:
 
-   * Permitir que os programadores testem em relação à infraestrutura da Adobe.
+  * Permitir que os programadores testem em relação à infraestrutura da Adobe.
 
-   * Ativar o Adobe para auxiliar no teste e na solução de problemas quando necessário.
+  * Ativar o Adobe para auxiliar no teste e na solução de problemas quando necessário.
 
 ## Fluxo de trabalho (WRK) {#workflow}
 
@@ -134,12 +135,12 @@ Perguntas frequentes:
 
 * Recuperar credenciais do cliente: o Serviço Programador recupera credenciais do cliente chamando o ponto de extremidade [**/o/client/register**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
 
-   * O Serviço do programador ou Aplicativo do programador deve armazenar as credenciais do cliente e usá-las indefinidamente quando precisar recuperar um token de acesso.
+  * O Serviço do programador ou Aplicativo do programador deve armazenar as credenciais do cliente e usá-las indefinidamente quando precisar recuperar um token de acesso.
 
 
 * Recuperar token de acesso: o Serviço Programador recupera o token de acesso chamando o ponto de extremidade [**/o/client/token**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
-   * O Serviço do programador ou Aplicativo do programador deve armazenar e usar o token de acesso até que ele expire, depois descartá-lo e obter um novo.
+  * O Serviço do programador ou Aplicativo do programador deve armazenar e usar o token de acesso até que ele expire, depois descartá-lo e obter um novo.
 
 ## B. Fase de autenticação {#authentication-phase}
 
@@ -185,54 +186,54 @@ Perguntas frequentes
 
 * **Cenário 3:** Não há perfis existentes, o Serviço de Programador pode continuar a fornecer ao usuário acesso temporário por meio do recurso [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
-   * Este cenário está fora do escopo deste documento. Consulte a documentação [Fluxos de Acesso Temporário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) para obter mais informações.
+  * Este cenário está fora do escopo deste documento. Consulte a documentação [Fluxos de Acesso Temporário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) para obter mais informações.
 
 ### Etapa 3: Autenticar o usuário {#step-3-authenticate-the-user}
 
 * **Recuperar configuração:** O Serviço Programador recupera a lista de MVPDs disponíveis chamando o ponto de extremidade [**/api/v2/{serviceProvider}/configuration**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md).
 
-   * O Serviço de programador pode implementar um mecanismo de filtragem personalizado para refinar a lista de MVPDs a partir da resposta de configuração, de modo que o Aplicativo de transmissão exiba apenas os provedores pretendidos enquanto oculta outros (por exemplo, MVPDs em desenvolvimento, MVPDs de teste, TempPass). Isso garante que os usuários sejam apresentados a uma seleção com curadoria ao escolher seu provedor de TV.
+  * O Serviço de programador pode implementar um mecanismo de filtragem personalizado para refinar a lista de MVPDs a partir da resposta de configuração, de modo que o Aplicativo de transmissão exiba apenas os provedores pretendidos enquanto oculta outros (por exemplo, MVPDs em desenvolvimento, MVPDs de teste, TempPass). Isso garante que os usuários sejam apresentados a uma seleção com curadoria ao escolher seu provedor de TV.
 
 
 * **Criar sessão de autenticação:** O Serviço Programador inicia uma sessão de autenticação chamando o ponto de extremidade [**/api/v2/{serviceProvider}/sessions**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-   * O Serviço Programador deve retornar `code` e `url` para o Aplicativo de Streaming.
+  * O Serviço Programador deve retornar `code` e `url` para o Aplicativo de Streaming.
 
 
 * **Cenário 1:** O Aplicativo de Streaming pode abrir um navegador ou uma exibição da Web, portanto, deve carregar a autenticação `url`.
 
-   * O usuário envia seu nome de usuário e senha na página de logon do MVPD. Após a autenticação bem-sucedida, o redirecionamento final exibe uma página de sucesso.
+  * O usuário envia seu nome de usuário e senha na página de logon do MVPD. Após a autenticação bem-sucedida, o redirecionamento final exibe uma página de sucesso.
 
 
 * **Cenário 2:** o Aplicativo de Streaming não pode abrir um navegador, portanto, deve exibir a autenticação `code`. É necessário um aplicativo Web separado para solicitar que o usuário insira o `code`, crie a autenticação `url` e abra: [**/api/v2/authenticate/{serviceProvider}/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
 
-   * O usuário envia seu nome de usuário e senha na página de logon do MVPD. Após a autenticação bem-sucedida, o redirecionamento final exibe uma página de sucesso.
+  * O usuário envia seu nome de usuário e senha na página de logon do MVPD. Após a autenticação bem-sucedida, o redirecionamento final exibe uma página de sucesso.
 
 ### Etapa 4: verificar perfis autenticados {#step-4-check-for-authenticated-profiles}
 
 * **Recuperar perfil para código específico:** O Serviço Programador deve implementar um mecanismo de sondagem usando `code` para verificar se o perfil foi gerado e salvo com êxito, chamando o ponto de extremidade [**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md).
 
-   * O Serviço Programador deve **iniciar o mecanismo de sondagem** sob as seguintes condições:
+  * O Serviço Programador deve **iniciar o mecanismo de sondagem** sob as seguintes condições:
 
-      * **Autenticação executada no aplicativo (tela) primário:** O Serviço Programador deve iniciar a sondagem quando o usuário atingir a página de destino final, depois que o componente do navegador carregar a URL especificada para o parâmetro `redirectUrl` na solicitação do ponto de extremidade [Sessões](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
+    * **Autenticação executada no aplicativo (tela) primário:** O Serviço Programador deve iniciar a sondagem quando o usuário atingir a página de destino final, depois que o componente do navegador carregar a URL especificada para o parâmetro `redirectUrl` na solicitação do ponto de extremidade [Sessões](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-      * **Autenticação executada em um aplicativo secundário (tela):** O aplicativo de Serviço Programador deve iniciar a sondagem assim que o usuário iniciar o processo de autenticação, logo após receber a resposta do ponto de extremidade [Sessões](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) e exibir o código de autenticação ao usuário.
+    * **Autenticação executada em um aplicativo secundário (tela):** O aplicativo de Serviço Programador deve iniciar a sondagem assim que o usuário iniciar o processo de autenticação, logo após receber a resposta do ponto de extremidade [Sessões](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) e exibir o código de autenticação ao usuário.
 
-   * O Serviço Programador deve **interromper o mecanismo de sondagem** sob as seguintes condições:
+  * O Serviço Programador deve **interromper o mecanismo de sondagem** sob as seguintes condições:
 
-      * **Autenticação bem-sucedida:** As informações de perfil do usuário foram recuperadas com êxito, confirmando seu status de autenticação. Neste ponto, a pesquisa não é mais necessária.
+    * **Autenticação bem-sucedida:** As informações de perfil do usuário foram recuperadas com êxito, confirmando seu status de autenticação. Neste ponto, a pesquisa não é mais necessária.
 
-      * **Sessão de autenticação e expiração do código:** a sessão de autenticação e o código expiram, conforme indicado pelo carimbo de data/hora `notAfter` (por exemplo, 30 minutos) na resposta do ponto de extremidade [Sessões](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Se isso acontecer, o usuário deverá reiniciar o processo de autenticação e a pesquisa usando o código de autenticação anterior deverá ser interrompida imediatamente.
+    * **Sessão de autenticação e expiração do código:** a sessão de autenticação e o código expiram, conforme indicado pelo carimbo de data/hora `notAfter` (por exemplo, 30 minutos) na resposta do ponto de extremidade [Sessões](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Se isso acontecer, o usuário deverá reiniciar o processo de autenticação e a pesquisa usando o código de autenticação anterior deverá ser interrompida imediatamente.
 
-      * **Novo código de autenticação gerado:** Se o usuário solicitar um novo código de autenticação no dispositivo primário (tela), a sessão existente não será mais válida e a sondagem usando o código de autenticação anterior deverá ser interrompida imediatamente.
+    * **Novo código de autenticação gerado:** Se o usuário solicitar um novo código de autenticação no dispositivo primário (tela), a sessão existente não será mais válida e a sondagem usando o código de autenticação anterior deverá ser interrompida imediatamente.
 
-   * O Serviço Programador deve **configurar a frequência do mecanismo de sondagem** sob as seguintes condições:
+  * O Serviço Programador deve **configurar a frequência do mecanismo de sondagem** sob as seguintes condições:
 
-      * **Autenticação executada no aplicativo (tela) primário:** O Serviço Programador deve sondar a cada 3-5 segundos ou mais.
+    * **Autenticação executada no aplicativo (tela) primário:** O Serviço Programador deve sondar a cada 3-5 segundos ou mais.
 
-      * **Autenticação executada em um aplicativo secundário (tela):** O Serviço Programador deve sondar a cada 3-5 segundos ou mais.
+    * **Autenticação executada em um aplicativo secundário (tela):** O Serviço Programador deve sondar a cada 3-5 segundos ou mais.
 
-   * O Serviço de programador deve armazenar em cache partes das informações de perfil do usuário em um armazenamento persistente para evitar solicitações desnecessárias e melhorar a experiência do usuário.
+  * O Serviço de programador deve armazenar em cache partes das informações de perfil do usuário em um armazenamento persistente para evitar solicitações desnecessárias e melhorar a experiência do usuário.
 
 ## C (Opcional) Fase de pré-autorização {#preauthorization-phase}
 
@@ -262,13 +263,13 @@ Perguntas frequentes
 
 * **Recuperar decisões de pré-autorização:** O Serviço Programador recupera decisões de pré-autorização para uma lista de recursos chamando o ponto de extremidade [**/api/v2/{serviceProvider}/Decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md).
 
-   * O Serviço do programador deve passar a lista de decisões de permissão e negação de pré-autorização para o aplicativo de streaming.
+  * O Serviço do programador deve passar a lista de decisões de permissão e negação de pré-autorização para o aplicativo de streaming.
 
-   * O Serviço do Programador não é necessário para armazenar decisões de pré-autorização em armazenamento persistente. No entanto, é recomendável armazenar em cache as decisões de permissão na memória para melhorar a experiência do usuário. Isso ajuda a evitar chamadas desnecessárias para recursos que já foram pré-autorizados, reduzindo a latência e melhorando o desempenho.
+  * O Serviço do Programador não é necessário para armazenar decisões de pré-autorização em armazenamento persistente. No entanto, é recomendável armazenar em cache as decisões de permissão na memória para melhorar a experiência do usuário. Isso ajuda a evitar chamadas desnecessárias para recursos que já foram pré-autorizados, reduzindo a latência e melhorando o desempenho.
 
-   * O Serviço de Programador pode determinar o motivo de uma decisão de pré-autorização negada ao inspecionar o [código de erro e a mensagem](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) incluídos na resposta do ponto de extremidade de Pré-autorização de Decisões. Esses detalhes fornecem ao insight o motivo específico pelo qual a solicitação de pré-autorização foi negada, ajudando a informar a experiência do usuário ou acionar qualquer manipulação necessária no aplicativo. Certifique-se de que qualquer mecanismo de repetição implementado para recuperar decisões de pré-autorização não resulte em um loop infinito se a decisão de pré-autorização for negada. Considere limitar as tentativas a um número razoável e lidar com as negações normalmente ao exibir comentários claros para o usuário.
+  * O Serviço de Programador pode determinar o motivo de uma decisão de pré-autorização negada ao inspecionar o [código de erro e a mensagem](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) incluídos na resposta do ponto de extremidade de Pré-autorização de Decisões. Esses detalhes fornecem ao insight o motivo específico pelo qual a solicitação de pré-autorização foi negada, ajudando a informar a experiência do usuário ou acionar qualquer manipulação necessária no aplicativo. Certifique-se de que qualquer mecanismo de repetição implementado para recuperar decisões de pré-autorização não resulte em um loop infinito se a decisão de pré-autorização for negada. Considere limitar as tentativas a um número razoável e lidar com as negações normalmente ao exibir comentários claros para o usuário.
 
-   * O Serviço do programador pode obter uma decisão de pré-autorização para um número limitado de recursos em uma única solicitação de API, geralmente até 5, devido a condições impostas pelos MVPDs. Este número máximo de recursos pode ser exibido e alterado após a aceitação dos MVPDs por meio do [Painel TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da Adobe Pass por um dos administradores da organização ou por um representante da Autenticação Adobe Pass que atue em seu nome.
+  * O Serviço do programador pode obter uma decisão de pré-autorização para um número limitado de recursos em uma única solicitação de API, geralmente até 5, devido a condições impostas pelos MVPDs. Este número máximo de recursos pode ser exibido e alterado após a aceitação dos MVPDs por meio do [Painel TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da Adobe Pass por um dos administradores da organização ou por um representante da Autenticação Adobe Pass que atue em seu nome.
 
 ## D. Fase de autorização {#authorization-phase}
 
@@ -296,15 +297,15 @@ Perguntas frequentes
 
 * **Recuperar decisão de autorização:** O Serviço Programador recupera a decisão de autorização para um recurso específico passado pelo Aplicativo de Streaming chamando o ponto de extremidade [**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md).
 
-   * O Serviço do Programador não é necessário para armazenar decisões de autorização em armazenamento persistente.
+  * O Serviço do Programador não é necessário para armazenar decisões de autorização em armazenamento persistente.
 
-   * O Serviço de Programador pode determinar o motivo de uma decisão de autorização negada ao inspecionar o [código de erro e a mensagem](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) incluídos na resposta do ponto de extremidade de Autorização de Decisões. Esses detalhes fornecem ao insight o motivo específico pelo qual a solicitação de autorização foi negada, ajudando a informar a experiência do usuário ou acionar qualquer manipulação necessária no aplicativo de streaming. Certifique-se de que qualquer mecanismo de repetição implementado para recuperar decisões de autorização não resulte em um loop infinito se a decisão de autorização for negada. Considere limitar as tentativas a um número razoável e lidar com as negações normalmente ao exibir comentários claros para o usuário.
+  * O Serviço de Programador pode determinar o motivo de uma decisão de autorização negada ao inspecionar o [código de erro e a mensagem](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) incluídos na resposta do ponto de extremidade de Autorização de Decisões. Esses detalhes fornecem ao insight o motivo específico pelo qual a solicitação de autorização foi negada, ajudando a informar a experiência do usuário ou acionar qualquer manipulação necessária no aplicativo de streaming. Certifique-se de que qualquer mecanismo de repetição implementado para recuperar decisões de autorização não resulte em um loop infinito se a decisão de autorização for negada. Considere limitar as tentativas a um número razoável e lidar com as negações normalmente ao exibir comentários claros para o usuário.
 
-   * O Serviço de programador pode avaliar outras regras de negócio e devolver uma decisão de autorização apropriada ao Aplicativo de streaming.
+  * O Serviço de programador pode avaliar outras regras de negócio e devolver uma decisão de autorização apropriada ao Aplicativo de streaming.
 
-   * O Serviço de programador não é necessário para atualizar um token de mídia expirado enquanto o fluxo estiver sendo reproduzido ativamente. Se o token de mídia expirar durante a reprodução, o fluxo deverá continuar sem interrupções. No entanto, o cliente deve solicitar uma nova decisão de autorização — e obter um novo token de mídia — na próxima vez que o usuário tentar reproduzir um recurso.
+  * O Serviço de programador não é necessário para atualizar um token de mídia expirado enquanto o fluxo estiver sendo reproduzido ativamente. Se o token de mídia expirar durante a reprodução, o fluxo deverá continuar sem interrupções. No entanto, o cliente deve solicitar uma nova decisão de autorização — e obter um novo token de mídia — na próxima vez que o usuário tentar reproduzir um recurso.
 
-   * O Serviço de programador pode obter uma decisão de autorização para um número limitado de recursos em uma única solicitação de API, geralmente até 1, devido a condições impostas pelos MVPDs.
+  * O Serviço de programador pode obter uma decisão de autorização para um número limitado de recursos em uma única solicitação de API, geralmente até 1, devido a condições impostas pelos MVPDs.
 
 ## E. Fase de saída {#logout-phase}
 
@@ -332,12 +333,12 @@ Perguntas frequentes
 
 * Iniciar logout do Adobe Pass: O Serviço Programador inicia o fluxo de logout conforme solicitado pelo Aplicativo de Streaming ao chamar o ponto de extremidade [/api/v2/{serviceProvider}/logout/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md).
 
-   * O Serviço do programador pode apagar todas as informações armazenadas sobre o usuário autenticado.
+  * O Serviço do programador pode apagar todas as informações armazenadas sobre o usuário autenticado.
 
-   * O Serviço Programador deve seguir as instruções fornecidas nos atributos `actionName` e `actionType` da resposta do ponto de extremidade de logout para garantir que o processo de logout seja concluído corretamente.
+  * O Serviço Programador deve seguir as instruções fornecidas nos atributos `actionName` e `actionType` da resposta do ponto de extremidade de logout para garantir que o processo de logout seja concluído corretamente.
 
-      * Se o atributo `actionType` na resposta for definido como &quot;interativo&quot;, o Serviço de Programador deverá retornar o valor do atributo `url` para o Aplicativo de Streaming.
+    * Se o atributo `actionType` na resposta for definido como &quot;interativo&quot;, o Serviço de Programador deverá retornar o valor do atributo `url` para o Aplicativo de Streaming.
 
-         * **Cenário 1:** O Aplicativo de Streaming pode abrir um navegador ou uma exibição da Web, portanto, deve carregar o logout `url`.
+      * **Cenário 1:** O Aplicativo de Streaming pode abrir um navegador ou uma exibição da Web, portanto, deve carregar o logout `url`.
 
-         * **Cenário 2:** o Aplicativo de Streaming não pode abrir um navegador, portanto, o processo de logout pode ser interrompido porque a sessão do MVPD não foi mantida em um cache de navegador do Dispositivo de Streaming.
+      * **Cenário 2:** o Aplicativo de Streaming não pode abrir um navegador, portanto, o processo de logout pode ser interrompido porque a sessão do MVPD não foi mantida em um cache de navegador do Dispositivo de Streaming.

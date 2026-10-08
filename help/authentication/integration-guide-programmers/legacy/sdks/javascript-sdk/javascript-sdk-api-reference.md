@@ -2,13 +2,14 @@
 title: Referência da API do JavaScript SDK
 description: Referência da API do JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2902'
+source-wordcount: '2904'
 ht-degree: 0%
-
 ---
-
 # (Herdado) Referência da API do JavaScript SDK {#javascript-sdk-api-reference}
 
 >[!NOTE]
@@ -44,14 +45,14 @@ Essas funções iniciam solicitações de interação com uma MVPD. Todas as cha
 
 - *endpoints* - Este parâmetro é opcional. Pode ser um dos seguintes valores:
 
-   - Uma matriz que permite especificar endpoints para serviços de autenticação e autorização fornecidos pelo Adobe (instâncias diferentes podem ser usadas para fins de depuração). Caso vários URLs sejam fornecidos, a lista do MVPD é composta pelos endpoints de todos os provedores de serviços. Cada MVPD está associado ao provedor de serviços mais rápido; ou seja, o provedor que respondeu primeiro e que oferece suporte a esse MVPD. Por padrão (se nenhum valor for especificado), o provedor de serviços da Adobe é usado (<http://sp.auth.adobe.com/>).
+  - Uma matriz que permite especificar endpoints para serviços de autenticação e autorização fornecidos pelo Adobe (instâncias diferentes podem ser usadas para fins de depuração). Caso vários URLs sejam fornecidos, a lista do MVPD é composta pelos endpoints de todos os provedores de serviços. Cada MVPD está associado ao provedor de serviços mais rápido; ou seja, o provedor que respondeu primeiro e que oferece suporte a esse MVPD. Por padrão (se nenhum valor for especificado), o provedor de serviços da Adobe é usado (<http://sp.auth.adobe.com/>).
 
   Exemplo:
-   - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
+  - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *opções* - Um objeto JSON que contém o valor da ID do aplicativo, o valor da ID do visitante e as configurações sem atualização (logout em segundo plano) e as configurações do MVPD (iFrame). Todos os valores são opcionais.
-   1. Se especificada, a visitorID do Experience Cloud seria relatada em todas as chamadas de rede realizadas pela biblioteca. O valor pode ser usado posteriormente para relatórios de análise avançada.
-   2. Se o identificador exclusivo do aplicativo for especificado -`applicationId` - o valor será adicionado a todas as chamadas subsequentes feitas pelo aplicativo como parte do cabeçalho HTTP X-Device-Info. Este valor pode ser obtido posteriormente dos relatórios [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) usando a consulta adequada.
+  1. Se especificada, a visitorID da Experience Cloud seria relatada em todas as chamadas de rede realizadas pela biblioteca. O valor pode ser usado posteriormente para relatórios de análise avançada.
+  2. Se o identificador exclusivo do aplicativo for especificado -`applicationId` - o valor será adicionado a todas as chamadas subsequentes feitas pelo aplicativo como parte do cabeçalho HTTP X-Device-Info. Este valor pode ser obtido posteriormente dos relatórios [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) usando a consulta adequada.
 
   **Observação:** todas as chaves JSON diferenciam maiúsculas de minúsculas.
 
@@ -237,39 +238,39 @@ Há dois tipos de metadados:
 **Parâmetros:**
 
 - *chave*: uma ID que especifica os metadados solicitados:
-   - Se a chave for `"TTL_AUTHN",`, a consulta será feita para obter o tempo de expiração do token de autenticação.
+  - Se a chave for `"TTL_AUTHN",`, a consulta será feita para obter o tempo de expiração do token de autenticação.
 
-   - Se a chave for `"TTL_AUTHZ"` e params for uma matriz contendo a ID do recurso como uma cadeia de caracteres, a consulta será feita para obter a hora de expiração do token de autorização associado ao recurso especificado.
+  - Se a chave for `"TTL_AUTHZ"` e params for uma matriz contendo a ID do recurso como uma cadeia de caracteres, a consulta será feita para obter a hora de expiração do token de autorização associado ao recurso especificado.
 
-   - Se a chave for `"DEVICEID"`, será feita a consulta para obter a ID do dispositivo atual. Observe que esse recurso está desativado por padrão e os programadores devem entrar em contato com a Adobe para obter informações sobre ativação e taxas.
+  - Se a chave for `"DEVICEID"`, será feita a consulta para obter a ID do dispositivo atual. Observe que esse recurso está desativado por padrão e os programadores devem entrar em contato com a Adobe para obter informações sobre ativação e taxas.
 
-   - Se a chave for da seguinte lista de tipos de metadados de usuário, um objeto JSON contendo os metadados de usuário correspondentes será enviado para a função de retorno de chamada [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata):
+  - Se a chave for da seguinte lista de tipos de metadados de usuário, um objeto JSON contendo os metadados de usuário correspondentes será enviado para a função de retorno de chamada [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata):
 
-   - `"zip"` - CEP
+  - `"zip"` - CEP
 
-   - `"encryptedZip"` - CEP criptografado
+  - `"encryptedZip"` - CEP criptografado
 
-   - `"householdID"` - Identificador da família. Caso uma MVPD não seja compatível com subcontas, isso será idêntico à ID do usuário.
+  - `"householdID"` - Identificador da família. Caso uma MVPD não seja compatível com subcontas, isso será idêntico à ID do usuário.
 
-   - `"maxRating"` - Classificação máxima dos pais para o usuário
+  - `"maxRating"` - Classificação máxima dos pais para o usuário
 
-   - `"userID"` - O identificador do usuário. Caso uma MVPD seja compatível com subcontas e o usuário não seja a conta principal, a ID do usuário será diferente da ID da família.
+  - `"userID"` - O identificador do usuário. Caso uma MVPD seja compatível com subcontas e o usuário não seja a conta principal, a ID do usuário será diferente da ID da família.
 
-   - `"channelID"` - A lista de canais que o usuário tem direito a visualizar
+  - `"channelID"` - A lista de canais que o usuário tem direito a visualizar
 
-   - `"is_hoh"` - Sinalizador que identifica se um usuário é chefe de família
+  - `"is_hoh"` - Sinalizador que identifica se um usuário é chefe de família
 
-   - `"encryptedZip"` - CEP criptografado
+  - `"encryptedZip"` - CEP criptografado
 
-   - `"typeID"` - Sinalizador que identifica se a conta do usuário é conta primária/secundária
+  - `"typeID"` - Sinalizador que identifica se a conta do usuário é conta primária/secundária
 
-   - `"primaryOID"` - Identificador da família
+  - `"primaryOID"` - Identificador da família
 
-   - `"postalCode"` - Semelhante ao CEP
+  - `"postalCode"` - Semelhante ao CEP
 
-   - `"acctID"` - ID da conta
+  - `"acctID"` - ID da conta
 
-   - `"acctParentID"` - ID da conta principal
+  - `"acctParentID"` - ID da conta principal
 
   **Observação**: os metadados reais do usuário disponíveis para um Programador dependem do que uma MVPD disponibiliza.  Consulte [Metadados do Usuário](#UserMetadata) para obter a lista atual de Metadados do Usuário disponíveis.
 
@@ -453,16 +454,16 @@ Você deve implementar esses retornos de chamada para lidar com as respostas às
 **Descrição:** implemente essa chamada de retorno para receber dados de rastreamento quando eventos específicos ocorrerem. Você pode usar isso, por exemplo, para rastrear quantos usuários fizeram logon com as mesmas credenciais. O rastreamento não está configurável no momento. Com a Autenticação Adobe Pass 1.6, o `sendTrackingData()` também relata informações sobre o dispositivo, o cliente do Ativador de Acesso e o tipo de sistema operacional. O retorno de chamada `sendTrackingData()` permanece compatível com versões anteriores.
 
 - Valores possíveis para o tipo de dispositivo:
-   - computador
-   - tablet
-   - dispositivo móvel
-   - gameconsole
-   - desconhecido
+  - computador
+  - tablet
+  - dispositivo móvel
+  - gameconsole
+  - desconhecido
 
 - Valores possíveis para o tipo de cliente do Access Enabler:
-   - html5
-   - ios
-   - android
+  - html5
+  - ios
+  - android
 
 
 Passa o tipo de evento e uma matriz de informações associadas. Os tipos de evento são:

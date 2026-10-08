@@ -2,13 +2,14 @@
 title: Cookbook da API REST (cliente para servidor)
 description: Cliente do guia da API rest para o servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '906'
 ht-degree: 0%
-
 ---
-
 # Cookbook da API REST (herdada) (cliente para servidor) {#rest-api-cookbook-client-to-server}
 
 >[!NOTE]
@@ -84,7 +85,7 @@ O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicat
 
 1. O usuário retorna do aplicativo de segunda tela e pressiona o botão &quot;Continuar&quot; em seu dispositivo. Como alternativa, você pode implementar um mecanismo de pesquisa para verificar o status de autenticação, mas a Autenticação do Adobe Pass recomenda o método do botão Continuar em vez da pesquisa. <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> Por exemplo: [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
 
-2. Envie uma solicitação GET ao serviço de autorização de Autenticação da Adobe Pass para iniciar a autorização. Por exemplo: `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
+2. Envie uma solicitação GET ao serviço de autorização de Autenticação do Adobe Pass para iniciar a autorização. Por exemplo: `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
 <!-- end list -->
 
@@ -92,11 +93,11 @@ O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicat
 
 * Se a resposta indicar falha: examine a exceção lançada para determinar seu tipo (AuthN, AuthZ ou algo diferente):
 
-   * Se foi um erro de AuthN, reinicie o Fluxo de Registro.
+  * Se foi um erro de AuthN, reinicie o Fluxo de Registro.
 
-   * Se foi um erro de AuthZ, o usuário não está autorizado a assistir à mídia solicitada e algum tipo de mensagem de erro deve ser exibido para o usuário.
+  * Se foi um erro de AuthZ, o usuário não está autorizado a assistir à mídia solicitada e algum tipo de mensagem de erro deve ser exibido para o usuário.
 
-   * Se houve algum outro erro (erro de conexão, erro de rede etc.) em seguida, exiba uma mensagem de erro apropriada para o usuário.
+  * Se houve algum outro erro (erro de conexão, erro de rede etc.) em seguida, exiba uma mensagem de erro apropriada para o usuário.
 
 
 
@@ -109,10 +110,10 @@ O Adobe Pass usa DCR para proteger as comunicações do cliente entre um aplicat
    a)  Seu aplicativo verifica se a mídia está protegida.
 
    b)  Se a mídia estiver protegida, o aplicativo iniciará a Autorização
-(AuthZ) Fluxo acima.
+   (AuthZ) Fluxo acima.
 
    c)  Se a mídia não estiver protegida, reproduza-a para o
-usuário.
+   usuário.
 
 3. Reproduza a mídia.
 

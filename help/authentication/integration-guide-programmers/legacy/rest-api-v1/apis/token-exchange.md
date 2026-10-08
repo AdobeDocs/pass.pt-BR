@@ -2,13 +2,14 @@
 title: Trocar um token SSO da Platform por um token do Adobe
 description: Trocar um token SSO da Platform por um token do Adobe
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '251'
-ht-degree: 0%
-
+source-wordcount: '258'
+ht-degree: 3%
 ---
-
 # (Herdado) Trocar um token SSO da plataforma por um token do Adobe {#exchange-a-platform-sso-token-for-an-adobe-token}
 
 >[!NOTE]
@@ -41,9 +42,9 @@ ht-degree: 0%
 
 Permite que um perfil SSO da Platform seja &quot;trocado&quot; por um token do Adobe.
 
-| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
+| Endpoint | Chamado </br>por | </br>Parâmetros de entrada | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authn | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | &#x200B;1. solicitante (Obrigatório)</br>    </br>2.  deviceId (Obrigatório)</br>    </br>3.  mvpd (Obrigatório)</br>    </br>4.  deviceType (Obrigatório)</br>    </br>5.  SAMLResponse (Obrigatório)</br>    </br>6.  deviceUser (obsoleto)</br>    </br>7.  appId (obsoleto) | POST | A resposta bem-sucedida será 204 Sem conteúdo, indicando que o token foi criado com êxito e está pronto para uso para os fluxos de autorização. | 204 - Sem conteúdo   </br>400 - Solicitação inválida |
+| &lt;SP_FQDN>/api/v1/tokens/authn | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | &#x200B;1.  solicitante (Obrigatório)</br>    </br>2.  deviceId (Obrigatório)</br>    </br>3.  mvpd (Obrigatório)</br>    </br>4.  deviceType (Obrigatório)</br>    </br>5.  SAMLResponse (Obrigatório)</br>    </br>6.  deviceUser (obsoleto)</br>    </br>7.  appId (obsoleto) | POST | A resposta bem-sucedida será 204 Sem conteúdo, indicando que o token foi criado com êxito e está pronto para uso para os fluxos de autorização. | 204 - Sem conteúdo </br>400 - Solicitação inválida |
 
 
 | Parâmetro de entrada | Descrição |

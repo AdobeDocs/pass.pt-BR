@@ -2,13 +2,14 @@
 title: Perguntas frequentes sobre REST API V2
 description: Perguntas frequentes sobre REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '11094'
 ht-degree: 1%
-
 ---
-
 # Perguntas frequentes sobre REST API V2 {#rest-api-v2-faqs}
 
 >[!IMPORTANT]
@@ -830,13 +831,13 @@ Os perfis regulares (SSO não Apple) não têm esses requisitos e seguem os flux
 Ao iniciar o logout de um usuário com um perfil de tipo &quot;appleSSO&quot;:
 
 * A resposta do endpoint de logout da Adobe Pass incluirá:
-   * `actionName` definido como &quot;partner_logout&quot;
-   * `actionType` definido como &quot;partner_interative&quot;
-   * O atributo `url` estará ausente
+  * `actionName` definido como &quot;partner_logout&quot;
+  * `actionType` definido como &quot;partner_interative&quot;
+  * O atributo `url` estará ausente
 
 * O aplicativo de streaming deve solicitar que o usuário conclua o processo de logout no nível do parceiro (sistema) acessando:
-   * `Settings -> TV Provider` no iOS/iPadOS
-   * `Settings -> Accounts -> TV Provider` no tvOS
+  * `Settings -> TV Provider` no iOS/iPadOS
+  * `Settings -> Accounts -> TV Provider` no tvOS
 
 * O usuário deve sair manualmente do provedor de TV no nível do sistema para concluir o processo de logout.
 
@@ -1025,7 +1026,7 @@ Na migração da REST API V1 para REST API V2, há alterações de alto nível a
 |-------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Iniciar autorização do (MVPD) | [GET <br/> /api/v1/authorize](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md) | [POST <br/> /api/v2/{serviceProvider}/Decisions/authorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) | O aplicativo cliente pode usar a resposta desta API para várias finalidades de uma só vez: <br/> <ul><li>Iniciar autorização do (MVPD)</li><li>Recuperar decisão de autorização</li><li>Recuperar token de mídia curto</li></ul> <br/> Para obter mais detalhes, consulte os seguintes documentos: <br/> <ul><li>[Fluxo de autorização básico executado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)</li></ul> |
 | Recuperar token de autorização (decisão de autorização) | [GET <br/> /api/v1/tokens/authz](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md) | [POST <br/> /api/v2/{serviceProvider}/Decisions/authorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) | O aplicativo cliente pode usar a resposta desta API para várias finalidades de uma só vez: <br/> <ul><li>Iniciar autorização do (MVPD)</li><li>Recuperar decisão de autorização</li><li>Recuperar token de mídia curto</li></ul> <br/> Para obter mais detalhes, consulte os seguintes documentos: <br/> <ul><li>[Fluxo de autorização básico executado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)</li></ul> |
-| Recuperar token de autorização curto (token de mídia) | [GET <br/> /api/v1/tokens/media](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | [POST <br/> /api/v2/{serviceProvider}/Decisions/authorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) | O aplicativo cliente pode usar a resposta desta API para várias finalidades de uma só vez: <br/> <ul><li>Iniciar autorização do (MVPD)</li><li>Recuperar decisão de autorização</li><li>Recuperar token de mídia curto</li></ul> <br/> Para obter mais detalhes, consulte os seguintes documentos: <br/> <ul><li>[Fluxo de autorização básico executado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)</li></ul> |
+| Recuperar token de autorização curto (token de mídia) | [OBTER <br/> /api/v1/tokens/media](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | [POST <br/> /api/v2/{serviceProvider}/Decisions/authorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) | O aplicativo cliente pode usar a resposta desta API para várias finalidades de uma só vez: <br/> <ul><li>Iniciar autorização do (MVPD)</li><li>Recuperar decisão de autorização</li><li>Recuperar token de mídia curto</li></ul> <br/> Para obter mais detalhes, consulte os seguintes documentos: <br/> <ul><li>[Fluxo de autorização básico executado no aplicativo principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)</li></ul> |
 
 +++
 

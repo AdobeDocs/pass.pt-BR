@@ -2,13 +2,14 @@
 title: Cabeçalho - AP-Parceiro-Estrutura-Status
 description: REST API V2 - Cabeçalho - AP-Parceiro-Estrutura-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 22529618db679f7dbfb493906e1aeb4a0443a40c
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '439'
 ht-degree: 1%
-
 ---
-
 # Cabeçalho - AP-Parceiro-Estrutura-Status {#header-ap-partner-framework-status}
 
 >[!NOTE]

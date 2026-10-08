@@ -2,13 +2,14 @@
 title: Excluir Registro de Registro
 description: Excluir registro de registro
 exl-id: 42707070-2e1f-4847-93fd-30025aef56c1
-source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '180'
 ht-degree: 2%
-
 ---
-
 # Excluir Registro (Herdado) {#delete-registration-record}
 
 >[!NOTE]

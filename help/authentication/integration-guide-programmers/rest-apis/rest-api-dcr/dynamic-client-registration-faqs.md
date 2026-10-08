@@ -2,13 +2,14 @@
 title: Perguntas frequentes sobre o Registro de cliente dinâmico (DCR)
 description: Perguntas frequentes sobre o Registro de cliente dinâmico (DCR)
 exl-id: 12268163-632e-4884-b35d-a29cc8ef45bf
-source-git-commit: 747c3d9b6de537be5e7e0a0244b2b301603d9b18
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1135'
-ht-degree: 0%
-
+source-wordcount: '1147'
+ht-degree: 1%
 ---
-
 # Perguntas frequentes sobre o Registro de cliente dinâmico (DCR) {#rest-api-dcr-faqs}
 
 >[!IMPORTANT]
@@ -31,7 +32,7 @@ Comece com esta seção se estiver trabalhando em um aplicativo que precisa inte
 
 +++Perguntas frequentes sobre acesso à REST API V2
 
-#### &#x200B;1. Qual é o objetivo da Fase de Registro? {#rest-api-v2-access-faq1}
+#### &#x200B;1. Qual é a finalidade da Fase de Registro? {#rest-api-v2-access-faq1}
 
 A finalidade da Fase de Registro é registrar o aplicativo cliente na Autenticação Adobe Pass por meio do [processo de Registro Dinâmico de Cliente (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#dcr).
 
@@ -43,7 +44,7 @@ Para obter mais informações, consulte a documentação [Visão geral do regist
 
 A Fase de Registro é obrigatória, mas o aplicativo cliente poderá ignorar essa fase se tiver um par de credenciais de cliente em cache e um token de acesso que ainda seja válido.
 
-#### &#x200B;3. O que é uma declaração de software e por quanto tempo ela é válida? {#rest-api-v2-access-faq3}
+#### &#x200B;3. O que é uma instrução de software e por quanto tempo ela é válida? {#rest-api-v2-access-faq3}
 
 A instrução de software é um termo definido na documentação do [Glossário](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#software-statement).
 
@@ -61,7 +62,7 @@ Esta operação pode ser concluída por meio do [Painel do TVE](/help/authentica
 
 Para obter mais detalhes, consulte a documentação do [Guia do Usuário de Canais do Painel do TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#registered-applications) ou o [Guia do Usuário de Programadores do Painel do TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#registered-applications).
 
-#### &#x200B;5. O que acontece se uma instrução de software for revogada? {#rest-api-v2-access-faq5}
+#### &#x200B;5. O que acontece se uma instrução de software é revogada? {#rest-api-v2-access-faq5}
 
 Quando a declaração de software for revogada, há uma consequência importante a ser considerada:
 
@@ -135,7 +136,7 @@ Prossiga com esta seção se estiver trabalhando em um aplicativo que precisa mi
 
 +++Perguntas frequentes sobre a migração para a REST API V2
 
-#### &#x200B;1. O aplicativo cliente pode reutilizar os aplicativos registrados existentes (declarações de software)? {#rest-api-v2-migration-faq1}
+#### &#x200B;1. O aplicativo cliente pode reutilizar os aplicativos registrados existentes (instruções de software)? {#rest-api-v2-migration-faq1}
 
 O aplicativo cliente não pode reutilizar os aplicativos registrados existentes (instruções de software), portanto, deve gerar e baixar novos aplicativos registrados (instruções de software) dedicados ao consumo da REST API V2.
 

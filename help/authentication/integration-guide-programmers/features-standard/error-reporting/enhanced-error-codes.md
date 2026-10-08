@@ -2,13 +2,14 @@
 title: Códigos de erro aprimorados
 description: Códigos de erro aprimorados
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2747'
 ht-degree: 3%
-
 ---
-
 # Códigos de erro aprimorados {#enhanced-error-codes}
 
 >[!IMPORTANT]
@@ -18,12 +19,12 @@ ht-degree: 3%
 Os códigos de erro aprimorados representam um recurso de autenticação da Adobe Pass que fornece informações adicionais sobre erros para aplicativos clientes integrados com o:
 
 * APIs REST de autenticação da Adobe Pass:
-   * [REST API v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [API REST (herdada) v1](../../legacy/rest-api-v1/rest-api-overview.md)
+  * [REST API v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [API REST (herdada) v1](../../legacy/rest-api-v1/rest-api-overview.md)
 * API pré-autorizada dos SDKs de autenticação da Adobe Pass:
-   * [(Herdado) JavaScript SDK (API pré-autorizada)](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
-   * [(Herdado) iOS/tvOS SDK (API pré-autorizada)](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
-   * [(Herdado) Android SDK (API pré-autorizada)](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+  * [(Herdado) JavaScript SDK (API pré-autorizada)](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
+  * [(Herdado) iOS/tvOS SDK (API pré-autorizada)](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+  * [(Herdado) Android SDK (API pré-autorizada)](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
 
   _(*) A API pré-autorizada é a única API SDK de Autenticação do Adobe Pass que fornece suporte para Códigos de Erro Aprimorados._
 

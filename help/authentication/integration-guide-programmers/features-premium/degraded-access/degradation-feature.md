@@ -2,13 +2,14 @@
 title: Recurso de degradação
 description: Recurso de degradação
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '493'
 ht-degree: 0%
-
 ---
-
 # Recurso de degradação {#degradation-feature}
 
 >[!IMPORTANT]
@@ -43,7 +44,7 @@ Para obter instruções abrangentes, consulte a documentação [Visão geral do 
 
 A API de degradação é uma API RESTful que permite aos programadores gerenciar regras de degradação para MVPDs específicos. A API fornece o meio de ativar, remover e recuperar o status das regras de degradação que estão ativas.
 
-Para saber mais sobre a API de degradação, consulte o seguinte documento do Zendesk [Autenticação do Adobe Pass | Degradation API v3](https://tve.zendesk.com/hc/en-us/articles/33912526308372-Adobe-Pass-Authentication-Degradation-API-v3) e procure o arquivo PDF para baixar.
+Para saber mais sobre a API de degradação, consulte o seguinte documento do Zendesk [Autenticação do Adobe Pass | Degradação API v3](https://tve.zendesk.com/hc/en-us/articles/33912526308372-Adobe-Pass-Authentication-Degradation-API-v3) e procure o arquivo PDF para baixar.
 
 ## REST API V2 {#rest-api-v2}
 

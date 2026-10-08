@@ -2,13 +2,14 @@
 title: Logout único - Fluxo
 description: REST API V2 - Logout único - Fluxo
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '599'
 ht-degree: 0%
-
 ---
-
 # Fluxo de logout único {#single-logout-flow}
 
 >[!IMPORTANT]
@@ -30,8 +31,8 @@ ht-degree: 0%
 Antes de iniciar o logout único para uma MVPD específica, verifique se os seguintes pré-requisitos foram atendidos:
 
 * O segundo aplicativo de streaming deve ter um perfil de logon único válido que tenha sido criado com êxito para o MVPD usando um dos fluxos de autenticação de logon único:
-   * [Executar autenticação por meio de logon único usando a identidade da plataforma](rest-api-v2-single-sign-on-platform-identity-flows.md)
-   * [Executar autenticação por meio de logon único usando token de serviço](rest-api-v2-single-sign-on-service-token-flows.md)
+  * [Executar autenticação por meio de logon único usando a identidade da plataforma](rest-api-v2-single-sign-on-platform-identity-flows.md)
+  * [Executar autenticação por meio de logon único usando token de serviço](rest-api-v2-single-sign-on-service-token-flows.md)
 * O segundo aplicativo de streaming deve iniciar o fluxo de logout único quando precisar sair do MVPD.
 
 >[!IMPORTANT]

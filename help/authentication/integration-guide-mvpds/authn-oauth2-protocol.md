@@ -2,13 +2,14 @@
 title: Autenticação usando o protocolo OAuth 2.0
 description: Autenticação usando o protocolo OAuth 2.0
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1111'
 ht-degree: 0%
-
 ---
-
 # Autenticação usando o protocolo OAuth 2.0
 
 >[!NOTE]
@@ -44,21 +45,21 @@ Primeiramente, a MVPD deve se certificar de que ela suporta o fluxo [Concessão 
 Depois de confirmar que ele é compatível com o fluxo, a MVPD deve nos fornecer as seguintes informações:
 
 * o ponto final de autenticação
-   * o ponto de extremidade fornecerá o código de autorização que será usado posteriormente em troca do token de atualização e acesso
+  * o ponto de extremidade fornecerá o código de autorização que será usado posteriormente em troca do token de atualização e acesso
 * o ponto final /token
-   * isso fornecerá o token de atualização e de acesso
-   * o token de atualização precisa ser estável (ele não deve ser alterado sempre que solicitarmos um novo token de acesso)
-   * o MVPD precisa permitir vários tokens de acesso ativos para cada token de atualização
-   * este ponto de extremidade também trocará um token de atualização por um token de acesso
+  * isso fornecerá o token de atualização e de acesso
+  * o token de atualização precisa ser estável (ele não deve ser alterado sempre que solicitarmos um novo token de acesso)
+  * o MVPD precisa permitir vários tokens de acesso ativos para cada token de atualização
+  * este ponto de extremidade também trocará um token de atualização por um token de acesso
 * precisamos de um **ponto final para perfil de usuário**
-   * esse terminal fornecerá a ID do usuário, que precisa ser exclusiva para uma conta e não deve conter informações pessoais identificáveis
+  * esse terminal fornecerá a ID do usuário, que precisa ser exclusiva para uma conta e não deve conter informações pessoais identificáveis
 * o ponto de extremidade **/logout** (opcional)
-   * A Autenticação do Adobe Pass será redirecionada para esse ponto de extremidade, fornecerá ao MVPD um URI de retorno de redirecionamento; nesse ponto de extremidade, o MVPD pode apagar os cookies na máquina cliente ou aplicar qualquer lógica desejada para o logout
+  * A Autenticação do Adobe Pass será redirecionada para esse ponto de extremidade, fornecerá ao MVPD um URI de retorno de redirecionamento; nesse ponto de extremidade, o MVPD pode apagar os cookies na máquina cliente ou aplicar qualquer lógica desejada para o logout
 * é altamente recomendável ter suporte para clientes autorizados (aplicativos clientes que não acionam uma página de autorização do usuário)
 * também precisaremos de:
-   * **clientID** e **client secret** para as configurações de integração
-   * Valores de **tempo de vida** (TTL) para o token de atualização e o token de acesso
-   * Podemos fornecer à MVPD um URI de retorno de chamada de autorização e de retorno de chamada de logout. Além disso, se necessário, podemos fornecer aos MVPDs uma lista de IPs que devem ser incluídos na lista de permissões nas configurações do firewall.
+  * **clientID** e **client secret** para as configurações de integração
+  * Valores de **tempo de vida** (TTL) para o token de atualização e o token de acesso
+  * Podemos fornecer à MVPD um URI de retorno de chamada de autorização e de retorno de chamada de logout. Além disso, se necessário, podemos fornecer aos MVPDs uma lista de IPs que devem ser incluídos na lista de permissões nas configurações do firewall.
 
 
 ## Fluxo de autenticação {#authn-flow}

@@ -2,13 +2,14 @@
 title: Notas de versão da Autenticação Adobe Pass 2.69
 description: Notas de versão da Autenticação Adobe Pass 2.69
 exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '212'
 ht-degree: 0%
-
 ---
-
 # Notas de versão da Autenticação Adobe Pass 2.69 {#authn-269-rn}
 
 >[!IMPORTANT]
@@ -34,22 +35,22 @@ Data de Lançamento: **27/02/2024 - 29/02/2024**
 
 * Vulnerabilidades de segurança corrigidas.
 * Melhorias na redefinição da camada de segurança Temp Pass com o Dynamic Client Registration (DCR).
-   * Você pode encontrar mais detalhes aqui: [Recurso TempPass](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * Você pode encontrar mais detalhes aqui: [Recurso TempPass](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
 * Melhorias nos relatórios de Identificação de plataforma.
 
 #### REST APIs
 
 * Desenvolvimento contínuo de novas APIs REST.
-   * Uma próxima versão dedicada apresentará novos endpoints e fluxos, que serão anunciados em uma notificação separada.
-   * A atualização da documentação para uso dessas novas APIs está em andamento.
+  * Uma próxima versão dedicada apresentará novos endpoints e fluxos, que serão anunciados em uma notificação separada.
+  * A atualização da documentação para uso dessas novas APIs está em andamento.
 
 #### Painel TVE
 
 * Desenvolvimento contínuo para o novo Painel TVE.
-   * Uma próxima versão dedicada apresentará o novo Painel TVE, que será anunciado em uma notificação separada.
-   * A atualização da documentação para uso deste novo Painel TVE está em andamento.
+  * Uma próxima versão dedicada apresentará o novo Painel TVE, que será anunciado em uma notificação separada.
+  * A atualização da documentação para uso deste novo Painel TVE está em andamento.
 
 #### JavaScript SDK 4.7.0
 
 * Remoção da versão obsoleta 2.0.1 do Access Enabler JavaScript SDK devido a vulnerabilidades de segurança.
-   * Siga o link para obter mais detalhes: [Notas de versão do Adobe Pass Authentication JavaScript 4.7.0](authn-rn-javascript-470.md)
+  * Siga o link para obter mais detalhes: [Notas de versão do Adobe Pass Authentication JavaScript 4.7.0](authn-rn-javascript-470.md)

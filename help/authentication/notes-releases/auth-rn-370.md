@@ -1,13 +1,14 @@
 ---
 title: Notas de versão da Autenticação Adobe Pass 3.7.0
 description: Notas de versão da Autenticação Adobe Pass 3.7.0
-source-git-commit: 89b5fbd8e8510cbf84ce7908e8cf86551e7a0cb9
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '141'
 ht-degree: 0%
-
 ---
-
 # Notas de versão da Autenticação Adobe Pass 3.7.0 {#authn-370-rn}
 
 >[!IMPORTANT]

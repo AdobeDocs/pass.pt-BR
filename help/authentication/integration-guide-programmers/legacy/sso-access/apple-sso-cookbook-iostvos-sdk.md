@@ -2,13 +2,14 @@
 title: Guia do Apple SSO (iOS/tvOS SDK)
 description: Guia do Apple SSO (iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1832'
+source-wordcount: '1854'
 ht-degree: 0%
-
 ---
-
 # (Herdado) Guia de SSO do Apple (iOS/tvOS SDK) {#apple-sso-cookbook-iostvos-sdk}
 
 >[!IMPORTANT]
@@ -124,15 +125,15 @@ Para se beneficiar da experiência do usuário do Apple SSO, o aplicativo precis
    **Importante:** esta terceira etapa pode disparar um [código de erro avançado](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) que é específico para o fluxo de trabalho SSO do Apple, no caso de **uma das seguintes opções ser verdadeira**:
 
    * ***VSA403** - O usuário está conectado à sua conta do Provedor de TV em
-o nível do sistema do dispositivo, mas a permissão do Provedor de TV do usuário é
-negado para o aplicativo.
+     o nível do sistema do dispositivo, mas a permissão do Provedor de TV do usuário é
+     negado para o aplicativo.
    * ***VSA404** - O usuário está conectado à sua conta do Provedor de TV em
-o nível do sistema do dispositivo, mas a permissão do Provedor de TV do usuário
-é indeterminado para o aplicativo.
+     o nível do sistema do dispositivo, mas a permissão do Provedor de TV do usuário
+     é indeterminado para o aplicativo.
    * ***APPL\_ERROR** - O usuário está conectado ao seu Provedor de TV
-conta a nível do sistema do dispositivo, mas a comunicação entre os
-a conta do assinante de vídeo e do iOS SDK/tvOS do AccessEnabler
-a estrutura encontrou um erro.
+     conta a nível do sistema do dispositivo, mas a comunicação entre os
+     a conta do assinante de vídeo e do iOS/tvOS do AccessEnabler
+     a estrutura encontrou um erro.
 
    **Importante:** esta terceira etapa disparará o retorno de chamada [*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus) com *status* igual a 0, no caso de **uma das seguintes opções ser verdadeira**:
 
@@ -180,7 +181,7 @@ a estrutura encontrou um erro.
 
 ### Metadados {#apple-sso-cookbook-iostvos-sdk-metadata}
 
-O aplicativo tem a opção de determinar se a autenticação ocorreu como resultado de uma entrada por meio do SSO do Parceiro ou não, usando a API de &quot;*metadados de* usuário[&#x200B; do &quot;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta)tokenSource&quot; da SDK do AccessEnabler iOS/tvOS.
+O aplicativo tem a opção de determinar se a autenticação ocorreu como resultado de uma entrada por meio do SSO do Parceiro ou não, usando a API de &quot;*metadados de [usuário* do &quot;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta)tokenSource&quot; da SDK do AccessEnabler iOS/tvOS.
 
 ```swift
     ...

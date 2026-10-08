@@ -2,13 +2,14 @@
 title: Executar autenticação no agente do usuário
 description: REST API V2 - Executar autenticação no agente do usuário
 exl-id: d615dde0-71a8-4b6c-a12e-1e3b5e20728c
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '242'
 ht-degree: 6%
-
 ---
-
 # Executar autenticação no agente do usuário {#perform-authentication-in-user-agent}
 
 >[!IMPORTANT]
@@ -94,7 +95,8 @@ ht-degree: 6%
       <td>405</td>
       <td>Método não permitido</td>
       <td>
-        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.</td>
+        O método HTTP é inválido, o cliente precisa usar um método HTTP permitido para o recurso solicitado e tentar novamente. Para obter mais detalhes, consulte a seção <a href="#request">Solicitação</a>.
+      </td>
    </tr>
    <tr>
       <td>500</td>

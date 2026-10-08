@@ -2,13 +2,14 @@
 title: Configuração do ambiente e teste na pré-qualificação
 description: Configuração do ambiente e teste na pré-qualificação
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '492'
 ht-degree: 0%
-
 ---
-
 # Configuração do ambiente e teste na pré-qualificação{#setting-up-your-environment-and-testing-in-prequal}
 
 >[!NOTE]
@@ -89,8 +90,8 @@ Addresses:  52.26.79.43
 * Edite o arquivo *c:\\windows\\System32\\drivers\\etc\\hosts* (no Windows) ou o arquivo */etc/hosts* (no Macintosh/Linux/Android) e adicione o seguinte:
 
 * Simular perfil de produção
-   * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
-   * 54.190.212.171 entitlement.auth.adobe.com
+  * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
+  * 54.190.212.171 entitlement.auth.adobe.com
 
 **Falsificação no Android:** Para fazer spoof no Android, é necessário usar um emulador do Android.
 

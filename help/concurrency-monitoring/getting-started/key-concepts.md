@@ -2,13 +2,14 @@
 title: Principais conceitos
 description: Saiba mais sobre os conceitos fundamentais do Monitoramento de simultaneidade, incluindo sessões, políticas, metadados e muito mais
 exl-id: 9721055a-70e6-4ba1-a1e0-04406eec25e6
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '702'
-ht-degree: 0%
-
+source-wordcount: '714'
+ht-degree: 2%
 ---
-
 # Principais conceitos {#key-concepts}
 
 Entender os conceitos principais de Monitoramento de simultaneidade é essencial para uma implementação bem-sucedida. Este guia explica os elementos fundamentais e como eles trabalham juntos.

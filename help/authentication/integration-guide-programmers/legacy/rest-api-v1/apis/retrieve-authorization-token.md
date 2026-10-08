@@ -2,13 +2,14 @@
 title: Recuperar token de autorização
 description: Recuperar token de autorização
 exl-id: 0b010958-efa8-4dd9-b11b-5d10f51f5680
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '373'
-ht-degree: 0%
-
+source-wordcount: '375'
+ht-degree: 1%
 ---
-
 # (Herdado) Recuperar token de autorização {#retrieve-authorization-token}
 
 >[!NOTE]
@@ -42,9 +43,9 @@ ht-degree: 0%
 Recupera o token de autorização (AuthZ).
 
 
-| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
+| Endpoint | Chamado </br>por | </br>Parâmetros de entrada | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authz</br></br>Por exemplo:</br></br>&lt;SP_FQDN>/api/v1/tokens/authz | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | &#x200B;1. solicitante (obrigatório)</br>2.  deviceId (Obrigatório)</br>3.  recurso (obrigatório)</br>4.  device_info/X-Device-Info (Obrigatório)</br>5.  _deviceType_</br> 6.  _deviceUser_ (Obsoleto)</br>7.  _appId_ (obsoleto) | GET | &#x200B;1. Êxito</br>2.  Token de autenticação </br>    não encontrado ou expirado:   </br>    Motivo explicativo XML </br>    token de autenticação não encontrado</br>3.  Token de autorização </br>    não encontrado: </br>    Explicação XML</br>4.  Token de autorização </br>    expirado: </br>    Explicação de XML | 200 - Êxito </br>412 - Sem AuthN</br></br>404 - Sem AuthZ</br></br>410 - AuthZ Expirado |
+| &lt;SP_FQDN>/api/v1/tokens/authz</br></br>Por exemplo:</br></br>&lt;SP_FQDN>/api/v1/tokens/authz | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | &#x200B;1.  solicitante (obrigatório)</br>2.  deviceId (Obrigatório)</br>3.  recurso (obrigatório)</br>4.  device_info/X-Device-Info (Obrigatório)</br>5.  _deviceType_</br> 6.  _deviceUser_ (Obsoleto)</br>7.  _appId_ (obsoleto) | GET | &#x200B;1.  Êxito</br>2.  Token de Autenticação </br> não encontrado ou expirado: </br> XML explicando o motivo </br> para token de autenticação não encontrado</br>3.  Token de autorização </br> não encontrado: </br> explicação XML</br>4.  Token de autorização </br> expirado: </br> explicação XML | 200 - Êxito </br>412 - Sem AuthN</br></br>404 - Sem AuthZ</br></br>410 - AuthZ Expirado |
 
 {style="table-layout:auto"}
 
@@ -55,8 +56,8 @@ Recupera o token de autorização (AuthZ).
 | solicitante | O requestorId do Programador para o qual esta operação é válida. |
 | deviceId | Os bytes de id do dispositivo. |
 | recurso | Uma string que contém um resourceId (ou fragmento MRSS), identifica o conteúdo solicitado por um usuário e é reconhecida pelos endpoints de autorização do MVPD. |
-| device_info/</br></br>X-Device-Info | Informações do dispositivo de transmissão.</br></br>**Observação**: isso PODE ser passado para device_info como um parâmetro de URL, mas devido ao tamanho potencial desse parâmetro e às limitações no comprimento de uma URL GET, ELE DEVE ser passado como X-Device-Info no cabeçalho http. </br></br>Veja os detalhes completos em [Passando Informações sobre Dispositivo e Conexão](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | O tipo de dispositivo (por exemplo, Roku, PC).</br></br>Se este parâmetro estiver definido corretamente, o ESM oferecerá métricas que são [analisadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) ao usar o sem cliente, para que diferentes tipos de análise possam ser executados, por exemplo, Roku, Apple TV e Xbox.</br></br>Consulte, [Vantagens de usar o parâmetro de tipo de dispositivo sem cliente em métricas de passagem &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Observação**: device_info substituirá esse parâmetro. |
+| device_info/</br></br>X-Device-Info | Informações do Dispositivo de Streaming.</br></br>**Observação**: isso PODE ser passado para device_info como um parâmetro de URL, mas devido ao tamanho potencial desse parâmetro e às limitações no comprimento de uma URL GET, ELE DEVE ser passado como X-Device-Info no cabeçalho http. </br></br>Veja os detalhes completos em [Passando Informações sobre Dispositivo e Conexão](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | O tipo de dispositivo (por exemplo, Roku, PC).</br></br>Se esse parâmetro estiver definido corretamente, o ESM oferecerá métricas [detalhadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) ao usar o tipo sem cliente, para que diferentes tipos de análise possam ser executados, por exemplo, Roku, AppleTV e Xbox.</br></br>Consulte [Vantagens de usar o parâmetro de tipo de dispositivo sem cliente nas métricas de passagem &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Observação**: device_info substituirá esse parâmetro. |
 | _deviceUser_ | O identificador do usuário do dispositivo. |
 | _appId_ | O id/nome do aplicativo. </br></br>**Observação**: device_info substitui este parâmetro. |
 

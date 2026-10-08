@@ -2,13 +2,14 @@
 title: Visão geral do Android SDK
 description: Visão geral do Android SDK
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2801'
 ht-degree: 0%
-
 ---
-
 # Visão geral do Android SDK (herdado) {#android-sdk-overview}
 
 >[!NOTE]

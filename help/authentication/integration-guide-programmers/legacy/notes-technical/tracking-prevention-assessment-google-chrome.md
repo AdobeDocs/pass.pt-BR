@@ -2,13 +2,14 @@
 title: Avaliação de prevenção de rastreamento Google Chrome
 description: Avaliação de prevenção de rastreamento Google Chrome
 exl-id: f3d552da-2fd7-4ac8-9f82-876625af5d47
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '673'
+source-wordcount: '812'
 ht-degree: 0%
-
 ---
-
 # Avaliação de prevenção de rastreamento (herdado) - Google Chrome {#tracking-prevention-assessment-google-chrome}
 
 >[!NOTE]
@@ -29,11 +30,11 @@ A avaliação é realizada para aplicativos da TV Everywhere (TVE) em execução
 
 Veja abaixo uma lista de recursos agregados do site do desenvolvedor do Google e também do blog oficial que recomendamos que nossos clientes consultem:
 
-* [A próxima etapa para eliminar os cookies de terceiros no Chrome](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
-* [Documentação do desenvolvedor para a sandbox de privacidade](https://developers.google.com/privacy-sandbox)
-* [Preparar para restrições a cookies de terceiros](https://developers.google.com/privacy-sandbox/3pcd)
-* [Preparar para a eliminação de cookies de terceiros](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
-* [Preparando para o fim de cookies de terceiros](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
+* [A próxima etapa para a eliminação gradual de cookies de terceiros no Chrome](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
+* [Documentação do desenvolvedor para sandbox de privacidade](https://developers.google.com/privacy-sandbox)
+* [Preparar para restrições de cookies de terceiros](https://developers.google.com/privacy-sandbox/3pcd)
+* [Preparar-se para a eliminação de cookies de terceiros](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
+* [Preparação para o fim de cookies de terceiros](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
 * [Cookies de terceiros restritos por padrão a 1% dos usuários do Chrome](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
 
 ## Linha do tempo

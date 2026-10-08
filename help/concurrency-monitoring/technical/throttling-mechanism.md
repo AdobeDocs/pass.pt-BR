@@ -2,13 +2,14 @@
 title: Mecanismo de limitação
 description: Mecanismo de limitação
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '616'
 ht-degree: 1%
-
 ---
-
 # Mecanismo de limitação {#throttling-mechanism}
 
 ## Introdução {#introduction}

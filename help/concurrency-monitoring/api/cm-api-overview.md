@@ -2,13 +2,14 @@
 title: Exemplos de uso da API
 description: Uso de endpoint de API do Monitoramento de simultaneidade
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2052'
+source-wordcount: '2083'
 ht-degree: 0%
-
 ---
-
 # Visão geral da API {#api-overview}
 
 Exiba a [documentação da API online](https://streams-stage.adobeprimetime.com/swagger-ui/index.html) para obter mais detalhes.
