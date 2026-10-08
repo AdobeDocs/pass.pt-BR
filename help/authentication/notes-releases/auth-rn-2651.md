@@ -2,13 +2,14 @@
 title: Notas de versão da Autenticação do Adobe Pass 2.65.1
 description: Notas de versão da Autenticação do Adobe Pass 2.65.1
 exl-id: 28d112db-b038-4d11-93c5-d6ab67a29700
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '178'
+source-wordcount: '179'
 ht-degree: 0%
-
 ---
-
 # Notas de versão da Autenticação do Adobe Pass 2.65.1 {#authn-2651-rn}
 
 >[!IMPORTANT]
@@ -26,7 +27,7 @@ Esta página descreve novos recursos, alterações e problemas conhecidos com es
 
 Autenticação Adobe Pass: adobe-pass-**2.65.1**
 
-Data de lançamento: 20/06/2023 - 22/06/2023 **&#x200B;**
+Data de lançamento: 20/06/2023 - 22/06/2023 ****
 
 ### Visão geral da versão {#release-overview-2651}
 

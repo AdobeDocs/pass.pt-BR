@@ -2,13 +2,14 @@
 title: Códigos de erro aprimorados
 description: Códigos de erro aprimorados
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2747'
 ht-degree: 3%
-
 ---
-
 # Códigos de erro aprimorados {#enhanced-error-codes}
 
 >[!IMPORTANT]
@@ -18,12 +19,12 @@ ht-degree: 3%
 Os códigos de erro aprimorados representam um recurso de autenticação da Adobe Pass que fornece informações adicionais sobre erros para aplicativos clientes integrados com o:
 
 * APIs REST de autenticação da Adobe Pass:
-   * [REST API v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [API REST (herdada) v1](../../legacy/rest-api-v1/rest-api-overview.md)
+  * [REST API v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [API REST (herdada) v1](../../legacy/rest-api-v1/rest-api-overview.md)
 * API pré-autorizada dos SDKs de autenticação da Adobe Pass:
-   * [(Herdado) JavaScript SDK (API pré-autorizada)](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
-   * [(Herdado) iOS/tvOS SDK (API pré-autorizada)](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
-   * [(Herdado) Android SDK (API pré-autorizada)](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+  * [(Herdado) JavaScript SDK (API pré-autorizada)](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
+  * [(Herdado) iOS/tvOS SDK (API pré-autorizada)](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+  * [(Herdado) Android SDK (API pré-autorizada)](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
 
   _(*) A API pré-autorizada é a única API SDK de Autenticação do Adobe Pass que fornece suporte para Códigos de Erro Aprimorados._
 
@@ -45,9 +46,9 @@ Os Códigos de Erro Aprimorados podem ser representados no formato `JSON` ou `XM
 
 | API de autenticação do Adobe Pass | JSON | XML |
 |-------------------------------|---------|---------|
-| REST API v2 | &verificar; |         |
-| REST API v1 | &verificar; | &verificar; |
-| API pré-autorizada de SDKs | &verificar; |         |
+| REST API v2 | &amp;verificar; |         |
+| REST API v1 | &amp;verificar; | &amp;verificar; |
+| API pré-autorizada de SDKs | &amp;verificar; |         |
 
 >[!IMPORTANT]
 >
@@ -101,7 +102,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -120,7 +121,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_parameter_service_provider",
   "message": "The service provider parameter value is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
 }
 ```
@@ -154,7 +155,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -173,7 +174,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_requestor",
   "message": "The requestor parameter is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "8bcb17f9-b172-47d2-86d9-3eb146eba85e"
 }
 ```
@@ -189,7 +190,7 @@ Content-Type: application/xml
   <status>400</status>
   <code>invalid_requestor</code>
   <message>The requestor parameter is missing or invalid.</message>
-  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR</helpUrl>
+  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html</helpUrl>
   <trace>8bcb17f9-b172-47d2-86d9-3eb146eba85e</trace>
 </error>
 ```
@@ -202,12 +203,12 @@ Os Códigos de Erro Aprimorados incluem os seguintes campos `JSON` ou atributos 
 
 | Nome | Tipo | Exemplo | Restrito | Descrição |
 |-----------|-----------|---------------------------------------------------------------------------------------------------------------------|:----------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *ação* | *cadeia de caracteres* | *nenhum* | &verificar; | A Autenticação Adobe Pass recomendou uma ação que pode corrigir a situação conforme definido neste documento. <br/><br/> Para obter mais detalhes, consulte a seção [Ação](#enhanced-error-codes-action). |
-| *status* | *inteiro* | *403* | &verificar; | O código de status de resposta HTTP conforme definido no documento [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6). <br/><br/> Para obter mais detalhes, consulte a seção [Status](#enhanced-error-codes-status). |
-| *código* | *cadeia de caracteres* | *autorização_negada_por_mvpd* | &verificar; | O código do identificador exclusivo de Autenticação do Adobe Pass associado ao erro, conforme definido neste documento. <br/><br/> Para obter mais detalhes, consulte a seção [Código](#enhanced-error-codes-code). |
+| *ação* | *cadeia de caracteres* | *nenhum* | &amp;verificar; | A Autenticação Adobe Pass recomendou uma ação que pode corrigir a situação conforme definido neste documento. <br/><br/> Para obter mais detalhes, consulte a seção [Ação](#enhanced-error-codes-action). |
+| *status* | *inteiro* | *403* | &amp;verificar; | O código de status de resposta HTTP conforme definido no documento [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6). <br/><br/> Para obter mais detalhes, consulte a seção [Status](#enhanced-error-codes-status). |
+| *código* | *cadeia de caracteres* | *autorização_negada_por_mvpd* | &amp;verificar; | O código do identificador exclusivo de Autenticação do Adobe Pass associado ao erro, conforme definido neste documento. <br/><br/> Para obter mais detalhes, consulte a seção [Código](#enhanced-error-codes-code). |
 | *mensagem* | *cadeia de caracteres* | *A MVPD retornou uma decisão de &quot;Negação&quot; ao solicitar autorização para o recurso especificado* |            | A mensagem legível por humanos que pode ser exibida ao usuário final em alguns casos. <br/><br/> Para obter mais detalhes, consulte a seção [Tratamento de Resposta](#enhanced-error-codes-response-handling). |
 | *detalhes* | *cadeia de caracteres* | *O pacote de assinatura não inclui o canal &quot;Online&quot;* |            | A mensagem detalhada que pode ser fornecida por um parceiro de serviços em alguns casos, <br/><br/> Este campo pode não estar presente caso o parceiro de serviços não forneça uma mensagem personalizada. |
-| *urlAjuda* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR* |            | O URL da documentação pública de Autenticação do Adobe Pass, que vincula mais informações sobre por que esse erro ocorreu e possíveis soluções. <br/><br/> Este campo contém um URL absoluto e não deve ser inferido do código de erro, dependendo do contexto de erro, um URL diferente pode ser fornecido. |
+| *urlAjuda* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | O URL da documentação pública de Autenticação do Adobe Pass, que vincula mais informações sobre por que esse erro ocorreu e possíveis soluções. <br/><br/> Este campo contém um URL absoluto e não deve ser inferido do código de erro, dependendo do contexto de erro, um URL diferente pode ser fornecido. |
 | *rastreamento* | *cadeia de caracteres* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* |            | O identificador exclusivo da resposta que pode ser usado ao entrar em contato com o suporte da Autenticação da Adobe Pass para solucionar problemas específicos. |
 
 >[!IMPORTANT]

@@ -2,13 +2,14 @@
 title: Autorização Básica - Aplicativo Principal - Fluxo
 description: REST API V2 - Autorização básica - Aplicativo principal - Fluxo
 exl-id: 46bc9326-966e-44fc-8546-2f58be01b7bc
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
-
 ---
-
 # Fluxo de autorização básico executado no aplicativo principal {#basic-authorization-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -30,9 +31,9 @@ A verificação com a biblioteca do verificador de token de mídia deve ocorrer 
 Antes de recuperar decisões de autorização usando uma MVPD específica, verifique se os seguintes pré-requisitos foram atendidos:
 
 * O aplicativo de streaming deve ter um perfil regular válido, criado com êxito para o MVPD usando um dos fluxos de autenticação básicos:
-   * [Executar autenticação no aplicativo principal](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Realizar autenticação no aplicativo secundário com mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Executar autenticação no aplicativo secundário sem mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Executar autenticação no aplicativo principal](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Realizar autenticação no aplicativo secundário com mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Executar autenticação no aplicativo secundário sem mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * O aplicativo de streaming deve recuperar uma decisão de autorização antes de reproduzir um recurso selecionado pelo usuário.
 
 ### Fluxo de trabalho (WRK) {#workflow-retrieve-authorization-decisions-using-specific-mvpd}

@@ -2,13 +2,14 @@
 title: Verificar token de autenticação
 description: Verificar token de autenticação
 exl-id: 9020f261-44d8-4bd5-b85b-a8667679f563
-source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '301'
-ht-degree: 0%
-
+source-wordcount: '331'
+ht-degree: 9%
 ---
-
 # Verificar token de autenticação (herdado) {#check-authentication-token}
 
 >[!NOTE]
@@ -53,7 +54,7 @@ Indica se o dispositivo tem um token de autenticação não expirado.
 | solicitante | O requestorId do Programador para o qual esta operação é válida. |
 | deviceId | Os bytes de id do dispositivo. |
 | device_info/</br></br>X-Device-Info | Informações do Dispositivo de Streaming.</br></br>**Observação**: isso PODE passar device_info como um parâmetro de URL, mas devido ao tamanho potencial desse parâmetro e às limitações no comprimento de uma URL GET, ELE DEVE ser passado como X-Device-Info no cabeçalho http. </br></br><!--See the full details in [Passing Device and Connection Information](/help/authentication/passing-client-information-device-connection-and-application.md)(/help/authentication/passing-client-information-device-connection-and-application.md)-->. |
-| _deviceType_ | O tipo de dispositivo (por exemplo, Roku, PC).</br></br>Se esse parâmetro estiver definido corretamente, o ESM oferecerá métricas que são [analisadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) ao usar Clientless, para que diferentes tipos de análise possam ser executados para, por exemplo, Roku, AppleTV, Xbox etc.</br></br>Para obter detalhes, consulte [Vantagens de usar o parâmetro deviceType sem cliente nas métricas de Autenticação do Adobe Pass &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**Observação**: device_info substituirá esse parâmetro. |
+| _deviceType_ | O tipo de dispositivo (por exemplo, Roku, PC).</br></br>Se esse parâmetro estiver definido corretamente, o ESM oferecerá métricas que são [analisadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) ao usar Clientless, para que diferentes tipos de análise possam ser executados para, por exemplo, Roku, AppleTV, Xbox etc.</br></br>Para obter detalhes, consulte [Vantagens de usar o parâmetro deviceType sem cliente nas métricas de Autenticação do Adobe Pass ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**Observação**: device_info substituirá esse parâmetro. |
 | _deviceUser_ | O identificador do usuário do dispositivo. |
 | _appId_ | O id/nome do aplicativo.</br>**Observação**: device_info substitui esse parâmetro. |
 

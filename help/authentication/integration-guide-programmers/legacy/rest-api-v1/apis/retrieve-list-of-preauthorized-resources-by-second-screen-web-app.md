@@ -2,13 +2,14 @@
 title: Recuperar lista de recursos pré-autorizados pelo aplicativo web de segunda tela
 description: Recuperar lista de recursos pré-autorizados pelo aplicativo web de segunda tela
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '273'
-ht-degree: 0%
-
+source-wordcount: '278'
+ht-degree: 1%
 ---
-
 # (Herdado) Recuperar lista de recursos pré-autorizados pelo aplicativo web de segunda tela {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
 
 >[!NOTE]
@@ -44,9 +45,9 @@ Uma solicitação para que a Autenticação do Adobe Pass obtenha a lista de rec
 Há dois conjuntos de APIs: um conjunto para o Aplicativo de streaming ou Serviço de programador e um conjunto para o Aplicativo Web de segunda tela. Esta página descreve a API do aplicativo AuthN.
 
 
-| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
+| Endpoint | Chamado </br>por | </br>Parâmetros de entrada | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | Módulo AuthN | &#x200B;1. código de registro </br>    (Componente do caminho)</br>2.  solicitante (Obrigatório)</br>3.  recurso (Obrigatório) | GET | XML ou JSON que contém decisões individuais de pré-autorização ou detalhes de erros. Consulte os exemplos abaixo. | 200 - Êxito</br></br>400 - Solicitação inválida</br></br>401 - Não autorizado</br></br>405 - Método não permitido </br></br>412 - Falha na pré-condição</br></br>500 - Erro Interno do Servidor |
+| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | Módulo AuthN | &#x200B;1.  código de registro </br> (componente do Caminho)</br>2.  solicitante (Obrigatório)</br>3.  recurso (Obrigatório) | GET | XML ou JSON que contém decisões individuais de pré-autorização ou detalhes de erros. Consulte os exemplos abaixo. | 200 - Êxito</br></br>400 - Solicitação inválida</br></br>401 - Não autorizado</br></br>405 - Método não permitido </br></br>412 - Falha na pré-condição</br></br>500 - Erro Interno do Servidor |
 
 
 

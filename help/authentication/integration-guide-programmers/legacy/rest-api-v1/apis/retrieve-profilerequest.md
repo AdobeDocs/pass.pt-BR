@@ -2,13 +2,14 @@
 title: Recuperar solicitação de perfil SSO da plataforma
 description: Recuperar solicitação de perfil SSO da plataforma
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '210'
-ht-degree: 0%
-
+source-wordcount: '222'
+ht-degree: 1%
 ---
-
 # (Herdado) Recuperar solicitação de perfil SSO da plataforma {#retrieve-platform-sso-profile-request}
 
 >[!NOTE]
@@ -42,9 +43,9 @@ ht-degree: 0%
 Esse recurso produz solicitações de perfil para uma ID do solicitante e uma tupla do MVPD.
 
 
-| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
+| Endpoint | Chamado </br>por | </br>Parâmetros de entrada | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | &#x200B;1. solicitante (parâmetro de caminho)</br>2. mvpd (parâmetro de caminho)</br>3. deviceType (Obrigatório) | GET | O Content-Type da resposta será application/octet-stream, pois a carga real é opaca para o aplicativo cliente.</br></br>A resposta deve ser encaminhada pelo aplicativo para o mecanismo SSO da Plataforma</br></br>para obter um SSO de Perfil. | 200 - Sucesso   </br>400 - Solicitação inválida |
+| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Aplicativo de Streaming</br></br>ou</br></br>Serviço de Programador | &#x200B;1. solicitante (parâmetro de caminho)</br>2. mvpd (parâmetro de caminho)</br>3. deviceType (Obrigatório) | GET | O Content-Type da resposta será application/octet-stream, pois a carga real é opaca para o aplicativo cliente.</br></br>A resposta deve ser encaminhada pelo aplicativo para o mecanismo SSO da Plataforma</br></br>para obter um SSO de Perfil. | 200 - Êxito </br>400 - Solicitação inválida |
 
 
 | Parâmetro de entrada | Descrição |

@@ -2,13 +2,14 @@
 title: Referência da API do iOS/tvOS
 description: Referência da API do iOS/tvOS
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '7035'
 ht-degree: 0%
-
 ---
-
 # (Herdado) Referência da API do SDK do iOS/tvOS {#iostvos-sdk-api-reference}
 
 >[!NOTE]
@@ -47,7 +48,7 @@ fluxo de direitos de autenticação usando esta API, consulte o [Guia de Integra
 
 * [`setOptions:options:`](#setOptions) - Configura as opções globais do SDK, como profile ou visitorID.
 
-* [`setRequestor:`](#setReqV3) [`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Estabelece a identidade do Programador.
+* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Estabelece a identidade do Programador.
 
 * **[OBSOLETO]** [`setRequestor:signedRequestorId:`](#setReq),[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) - Estabelece a identidade do Programador.
 
@@ -59,7 +60,7 @@ fluxo de direitos de autenticação usando esta API, consulte o [Guia de Integra
 
 * [`getAuthentication`](#getAuthN), [`getAuthentication:withData:`](#getAuthN) - Inicia o fluxo de trabalho de autenticação completa.
 
-* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN) [andFilter](#getAuthN_filter) - Inicia o fluxo de trabalho de autenticação completa.
+* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) - Inicia o fluxo de trabalho de autenticação completa.
 
 * [`displayProviderDialog:`](#dispProvDialog) - Informa seu aplicativo a instanciar os elementos apropriados da interface do usuário para que o usuário selecione uma MVPD.
 
@@ -164,11 +165,11 @@ fluxo de direitos de autenticação usando esta API, consulte o [Guia de Integra
 **Parâmetros:**
 
 * *options*: um NSDictionary contendo opções globais do SDK. Atualmente, as seguintes opções estão disponíveis:
-   * **applicationProfile** - Ele pode ser usado para fazer configurações de servidor baseadas nesse valor.
-   * **visitorID** - O Serviço da Experience Cloud ID. Esse valor pode ser usado posteriormente para relatórios de análise avançada.
-   * **handleSVC** - Booleano que indica se o programador manipulará o SFSafariViewControllers. Consulte o [Suporte a SFSafariViewController no iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md) para obter mais detalhes.
-      * Se definido como **false**, o SDK apresentará automaticamente ao usuário final um SFSafariViewController. O SDK navegará ainda mais para o URL da página de logon dos MVPDs.
-      * Se definido como **true**, o SDK **NOT** apresentará automaticamente ao usuário final um SFSafariViewController. O SDK acionará ainda **navigate(toUrl:{url}, useSVC:YES)**.
+  * **applicationProfile** - Ele pode ser usado para fazer configurações de servidor baseadas nesse valor.
+  * **visitorID** - O Serviço da Experience Cloud ID. Esse valor pode ser usado posteriormente para relatórios de análise avançada.
+  * **handleSVC** - Booleano que indica se o programador manipulará o SFSafariViewControllers. Consulte o [Suporte a SFSafariViewController no iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md) para obter mais detalhes.
+    * Se definido como **false**, o SDK apresentará automaticamente ao usuário final um SFSafariViewController. O SDK navegará ainda mais para o URL da página de logon dos MVPDs.
+    * Se definido como **true**, o SDK **NOT** apresentará automaticamente ao usuário final um SFSafariViewController. O SDK acionará ainda **navigate(toUrl:{url}, useSVC:YES)**.
 * **device\_info** - Informações do cliente conforme descrito em [Passando informações do cliente](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
 
 [Voltar ao início...](#apis)
@@ -354,8 +355,8 @@ Se chamada sem o parâmetro `serviceProviders`, a biblioteca recuperará a confi
 **Parâmetros**:
 
 * *status*: pode assumir um dos seguintes valores:
-   * `ACCESS_ENABLER_STATUS_SUCCESS` - a fase de configuração foi concluída com êxito
-   * `ACCESS_ENABLER_STATUS_ERROR` - falha na fase de configuração
+  * `ACCESS_ENABLER_STATUS_SUCCESS` - a fase de configuração foi concluída com êxito
+  * `ACCESS_ENABLER_STATUS_ERROR` - falha na fase de configuração
 
 **Acionado por:**
 
@@ -369,8 +370,10 @@ Se chamada sem o parâmetro `serviceProviders`, a biblioteca recuperará a confi
 
 **Arquivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descrição:** verifica o status de autenticação do usuário atual.Ele faz isso procurando um token de autenticação válido no local
-espaço de armazenamento de token. Esse método não executa chamadas de rede e recomendamos chamá-lo na thread principal.Ele é usado pelo aplicativo para consultar o status de autenticação do usuário e
+**Descrição:** verifica o status de autenticação do usuário atual.
+Ele faz isso procurando um token de autenticação válido no local
+espaço de armazenamento de token. Esse método não executa chamadas de rede e recomendamos chamá-lo na thread principal.
+Ele é usado pelo aplicativo para consultar o status de autenticação do usuário e
 atualizar a interface de acordo (ou seja, atualizar a interface de logon/logout). A variável
 o status de autenticação é comunicado ao aplicativo por meio de
 o retorno de chamada [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
@@ -396,8 +399,8 @@ o retorno de chamada [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
 
 **Parâmetros:** Nenhum
 
-**Retornos de chamada disparados:
-
+**Retornos de chamada disparados:**
+[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
 
 [Voltar ao início...](#apis)
 
@@ -528,8 +531,8 @@ Finalmente, o status de autenticação é comunicado ao aplicativo por meio do r
 * *forceAuthn*: um sinalizador que especifica se o fluxo de autenticação deve ser iniciado, independentemente de o usuário já estar autenticado ou não.
 * *dados*: um dicionário que consiste em pares de valores chave a serem enviados para o serviço de passe de TV por Assinatura. A Adobe pode usar esses dados para habilitar funcionalidades futuras sem alterar o SDK.
 * filtro: um dicionário com duas listas de IDs do MVPD que devem aparecer na caixa de diálogo SSO do Apple. Qualquer MVPD que não seja compatível com SSO será ignorada, mas o pedido será respeitado. O dicionário precisa ter duas chaves:
-   * TV\_PROVIDERS: uma lista com todos os MVPDs que devem aparecer no seletor
-   * FEATURED\_TV\_PROVIDERS: uma lista com todos os MVPDs que devem ser marcados como em destaque no seletor. Os MVPDs nessa lista também devem ser especificados na lista TV\_PROVIDERS.
+  * TV\_PROVIDERS: uma lista com todos os MVPDs que devem aparecer no seletor
+  * FEATURED\_TV\_PROVIDERS: uma lista com todos os MVPDs que devem ser marcados como em destaque no seletor. Os MVPDs nessa lista também devem ser especificados na lista TV\_PROVIDERS.
 
 **Disponibilidade:** v2.0 - v2.3.1
 
@@ -714,7 +717,7 @@ Como o controlador UIWebView/WKWebView` `passa por vários redirecionamentos, se
 
 Semelhante ao retorno de chamada `navigateToUrl:`, o `navigateToUrl:useSVC:` é acionado pelo AccessEnabler para solicitar que seu aplicativo instancie um controlador `SFSafariViewController` e carregue a URL fornecida no parâmetro **`url`** do retorno de chamada. O retorno de chamada passa o parâmetro **`url`**, que representa a URL do ponto de extremidade de autenticação ou a URL do ponto de extremidade de logout, e o parâmetro **`useSVC`**, que especifica que o aplicativo deve usar um `SFSafariViewController`.
 
-À medida que o controlador `SFSafariViewController` passa por vários redirecionamentos, seu aplicativo deve monitorar a atividade do controlador e detectar o momento em que carrega um URL personalizado específico definido pelo seu `application's custom scheme` (por exemplo,**&#x200B; **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Observe que esse URL personalizado específico é realmente inválido e não se destina ao controlador para carregá-lo. Ela deve ser interpretada somente pelo seu aplicativo como um sinal de que o fluxo de autenticação ou logout foi concluído e que é seguro fechar a controladora. Quando o controlador carrega esta URL personalizada específica, seu aplicativo deve fechar o `SFSafariViewController` e chamar o método de API `handleExternalURL:url ` do AccessEnabler.
+À medida que o controlador `SFSafariViewController` passa por vários redirecionamentos, seu aplicativo deve monitorar a atividade do controlador e detectar o momento em que carrega um URL personalizado específico definido pelo seu `application's custom scheme` (por exemplo,** **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Observe que esse URL personalizado específico é realmente inválido e não se destina ao controlador para carregá-lo. Ela deve ser interpretada somente pelo seu aplicativo como um sinal de que o fluxo de autenticação ou logout foi concluído e que é seguro fechar a controladora. Quando o controlador carrega esta URL personalizada específica, seu aplicativo deve fechar o `SFSafariViewController` e chamar o método de API `handleExternalURL:url ` do AccessEnabler.
 
 **Observação:** observe que, no caso do fluxo de autenticação, esse é um ponto em que o usuário pode pressionar o botão &quot;Voltar&quot;, o que equivale à anulação do fluxo de autenticação. Nesse cenário, o aplicativo deve chamar o método [setSelectedProvider:](#setSelProv) transmitindo **`nil`** como parâmetro e dando ao AccessEnabler a chance de redefinir seu computador de estado de autenticação.
 
@@ -730,19 +733,19 @@ Semelhante ao retorno de chamada `navigateToUrl:`, o `navigateToUrl:useSVC:` é 
 <tbody>
 <tr class="odd">
 <td><pre><code>@optional
-&#x200B;- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
+- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
 </tr>
 </tbody>
 </table>
 
-**Disponibilidade:**&#x200B;v 3.2+
+**Disponibilidade:**v 3.2+
 
 **Parâmetros**:
 
 * *url:* a URL que aponta para a página de logon do MVPD
 * *useSVC:* se a URL deve ser carregada em SFSafariViewController.
 
-**Acionado por:**&#x200B;[&#x200B; setOptions:](#setOptions) antes de [setSelectedProvider:](#setSelProv)
+**Acionado por:**[ setOptions:](#setOptions) antes de [setSelectedProvider:](#setSelProv)
 
 [Voltar ao início...](#apis)
 
@@ -847,12 +850,12 @@ No caso do fluxo de autenticação, o AccessEnabler conclui o fluxo recuperando 
 **Parâmetros**:
 
 * *status*: pode assumir um dos seguintes valores:
-   * `ACCESS_ENABLER_STATUS_SUCCESS` - fluxo de autenticação concluído com êxito
-   * `ACCESS_ENABLER_STATUS_ERROR` - falha no fluxo de autenticação
+  * `ACCESS_ENABLER_STATUS_SUCCESS` - fluxo de autenticação concluído com êxito
+  * `ACCESS_ENABLER_STATUS_ERROR` - falha no fluxo de autenticação
 * *código*: motivo da falha. Se o *status* for `ACCESS_ENABLER_STATUS_SUCCESS`, então o *código* será uma cadeia de caracteres vazia (isto é, definida pela constante `USER_AUTHENTICATED`). Em caso de falha, esse parâmetro pode ter um dos seguintes valores:
-   * `USER_NOT_AUTHENTICATED_ERROR` - Usuário não autenticado. Em resposta à chamada do método [checkAuthentication:](#checkAuthN) quando não há um token de autenticação válido no cache de token local.
-   * `PROVIDER_NOT_SELECTED_ERROR` - O AccessEnabler redefiniu a máquina de estado de autenticação depois que o aplicativo de camada superior passou *null* para [`setSelectedProvider:`](#setSelProv) para anular o fluxo de autenticação.  Provavelmente, o usuário cancelou o fluxo de autenticação (ou seja, pressionou o botão &quot;Voltar&quot;).
-   * `GENERIC_AUTHENTICATION_ERROR` - Falha no fluxo de autenticação devido a motivos como indisponibilidade da rede ou cancelamento explícito do fluxo de autenticação pelo usuário.
+  * `USER_NOT_AUTHENTICATED_ERROR` - Usuário não autenticado. Em resposta à chamada do método [checkAuthentication:](#checkAuthN) quando não há um token de autenticação válido no cache de token local.
+  * `PROVIDER_NOT_SELECTED_ERROR` - O AccessEnabler redefiniu a máquina de estado de autenticação depois que o aplicativo de camada superior passou *null* para [`setSelectedProvider:`](#setSelProv) para anular o fluxo de autenticação.  Provavelmente, o usuário cancelou o fluxo de autenticação (ou seja, pressionou o botão &quot;Voltar&quot;).
+  * `GENERIC_AUTHENTICATION_ERROR` - Falha no fluxo de autenticação devido a motivos como indisponibilidade da rede ou cancelamento explícito do fluxo de autenticação pelo usuário.
 
 **Acionado por:** `checkAuthentication`, `getAuthentication`, [`getAuthentication:withData:`](#getAuthN), `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ)
 
@@ -1157,8 +1160,8 @@ Este método também pode disparar os seguintes retornos de chamada (se o fluxo 
 
 * *recurso*: o recurso para o qual a autorização foi obtida.
 * *código*: o código de erro associado ao cenário de falha. Valores possíveis:
-   * `USER_NOT_AUTHORIZED_ERROR` - o usuário não pôde autorizar
-para o recurso especificado
+  * `USER_NOT_AUTHORIZED_ERROR` - o usuário não pôde autorizar
+    para o recurso especificado
 * *descrição*: detalhes adicionais sobre o cenário de falha. Se essa cadeia de caracteres descritiva não estiver disponível por algum motivo, a Autenticação Adobe Pass enviará uma cadeia de caracteres vazia **(&quot;)**.\
   Esta cadeia de caracteres pode ser usada por uma MVPD para enviar mensagens de erro personalizadas ou mensagens relacionadas às vendas. Por exemplo, se um assinante tiver a autorização negada para um recurso, o MVPD poderá enviar uma mensagem como: &quot;No momento, você não tem acesso a esse canal em seu pacote. Se quiser atualizar seu pacote, clique **aqui**.&quot; A mensagem é passada pela Autenticação Adobe Pass por meio dessa chamada de retorno ao Programador, que tem a opção de exibi-la ou ignorá-la. A Autenticação do Adobe Pass também pode usar esse parâmetro para fornecer notificação da condição que pode ter levado a um erro. Por exemplo, &quot;Ocorreu um erro de rede ao se comunicar com o serviço de autorização do provedor&quot;.
 
@@ -1312,16 +1315,16 @@ Há dois tipos de metadados disponíveis para programadores:
 
 * *keyDictionary*: uma estrutura de dados de dicionário, com o seguinte
 formato:
-   * Se a chave for `METADATA_OPCODE_KEY` e o valor for `METADATA_AUTHENTICATION`, a consulta será feita para obter o tempo de expiração do token de autenticação.
-   * Se a chave for `METADATA_OPCODE_KEY` e o valor for `METADATA_AUTHORIZATION` **and**\
-     a chave é `METADATA_RESOURCE_ID_KEY` e o valor é uma ID de recurso específica, então a consulta é feita para obter a hora de expiração do token de autorização associado ao recurso especificado.
-   * Se a chave for `METADATA_OPCODE_KEY` e o valor for `METADATA_DEVICE_ID`, será feita a consulta para obter a ID do dispositivo atual. Observe que esse recurso está desativado por padrão e os programadores devem entrar em contato com a Adobe para obter informações sobre ativação e taxas.
-   * Se a chave for `METADATA_OPCODE_KEY` e o valor for `METADATA_USER_META` **e a chave** for `METADATA_USER_META_KEY` e o valor for o nome dos metadados, a consulta será feita para os metadados do usuário. A lista de tipos de metadados de usuário disponíveis:
-      * `zip` - Lista de códigos postais
-      * `householdID` - Identificador da família. Caso uma MVPD não suporte subcontas, será idêntico a `userID`.
-      * `maxRating` - Uma coleção de classificações parentais máximas para o usuário
-      * `userID` - O identificador do usuário. Se uma MVPD der suporte a subcontas e o usuário não for a conta principal, `userID` será diferente de `householdID.`
-      * `channelID` - Uma lista de canais que um usuário está autorizado a visualizar.
+  * Se a chave for `METADATA_OPCODE_KEY` e o valor for `METADATA_AUTHENTICATION`, a consulta será feita para obter o tempo de expiração do token de autenticação.
+  * Se a chave for `METADATA_OPCODE_KEY` e o valor for `METADATA_AUTHORIZATION` **and**\
+    a chave é `METADATA_RESOURCE_ID_KEY` e o valor é uma ID de recurso específica, então a consulta é feita para obter a hora de expiração do token de autorização associado ao recurso especificado.
+  * Se a chave for `METADATA_OPCODE_KEY` e o valor for `METADATA_DEVICE_ID`, será feita a consulta para obter a ID do dispositivo atual. Observe que esse recurso está desativado por padrão e os programadores devem entrar em contato com a Adobe para obter informações sobre ativação e taxas.
+  * Se a chave for `METADATA_OPCODE_KEY` e o valor for `METADATA_USER_META` **e a chave** for `METADATA_USER_META_KEY` e o valor for o nome dos metadados, a consulta será feita para os metadados do usuário. A lista de tipos de metadados de usuário disponíveis:
+    * `zip` - Lista de códigos postais
+    * `householdID` - Identificador da família. Caso uma MVPD não suporte subcontas, será idêntico a `userID`.
+    * `maxRating` - Uma coleção de classificações parentais máximas para o usuário
+    * `userID` - O identificador do usuário. Se uma MVPD der suporte a subcontas e o usuário não for a conta principal, `userID` será diferente de `householdID.`
+    * `channelID` - Uma lista de canais que um usuário está autorizado a visualizar.
 
   >[!NOTE]
   >
@@ -1485,9 +1488,9 @@ formato:
 * (NSString) logoURL - O endereço do logotipo do MVPD.
 * (BOOL) enablePlatformServices - Se true, o MVPD oferecerá suporte a serviços SSO como o [Apple SSO](#presentTvDialog).
 * (NSString) boardingStatus - pode ter 3 valores:
-   * nil - O MVPD não é compatível com o Apple SSO.
-   * SELETOR - O MVPD pode aparecer no seletor de Apple, mas o fluxo de autenticação é feito pela Adobe.
-   * COMPATÍVEL - A MVPD é totalmente compatível com o Apple e usará o token SSO da Apple.
+  * nil - O MVPD não é compatível com o Apple SSO.
+  * SELETOR - O MVPD pode aparecer no seletor de Apple, mas o fluxo de autenticação é feito pela Adobe.
+  * COMPATÍVEL - A MVPD é totalmente compatível com o Apple e usará o token SSO da Apple.
 
 [Voltar ao início...](#apis)
 
@@ -1515,25 +1518,25 @@ O AccessEnabler aciona um retorno de chamada adicional que não está necessaria
 **Observação:** o tipo de dispositivo e o sistema operacional são derivados do uso de uma biblioteca Java pública (<http://java.net/projects/user-agent-utils>) e da cadeia de caracteres do agente do usuário. Esteja ciente de que essas informações são fornecidas apenas como uma forma grosseira de dividir as métricas operacionais em categorias de dispositivos, mas que a Adobe não pode assumir nenhuma responsabilidade por resultados incorretos. Use a nova funcionalidade adequadamente.
 
 * Valores possíveis para o tipo de dispositivo:
-   * `computer`
-   * `tablet`
-   * `mobile`
-   * `gameconsole`
-   * `unknown`
+  * `computer`
+  * `tablet`
+  * `mobile`
+  * `gameconsole`
+  * `unknown`
 
 * Valores possíveis para o tipo de cliente AccessEnabler:
-   * `flash`
-   * `html5`
-   * `ios`
-   * `android`
+  * `flash`
+  * `html5`
+  * `ios`
+  * `android`
 
 
 **Parâmetros**:
 
 * *evento*: o código do evento que está sendo rastreado. Há três tipos possíveis de eventos de rastreamento:
-   * **authorizationDetection:** sempre que uma solicitação de token de autorização retornar (o evento é `TRACKING_AUTHORIZATION`)
-   * **authenticationDetection:** sempre que ocorrer uma verificação de autenticação (o evento é `TRACKING_AUTHENTICATION`)
-   * **mvpdSelection:** quando o usuário seleciona um MVPD no formulário de seleção do MVPD (o evento é `TRACKING_GET_SELECTED_PROVIDER`)
+  * **authorizationDetection:** sempre que uma solicitação de token de autorização retornar (o evento é `TRACKING_AUTHORIZATION`)
+  * **authenticationDetection:** sempre que ocorrer uma verificação de autenticação (o evento é `TRACKING_AUTHENTICATION`)
+  * **mvpdSelection:** quando o usuário seleciona um MVPD no formulário de seleção do MVPD (o evento é `TRACKING_GET_SELECTED_PROVIDER`)
 * *dados*: dados adicionais associados ao evento relatado. Esses dados são apresentados no formato de uma lista de valores.
 
 **Acionado por:** `checkAuthentication`, `getAuthentication`, [`getAuthentication:withData:`](#getAuthN), `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ), `getAuthorization:`, [`getAuthorization:withData:`](#getAuthZ), `setSelectedProvider:`
@@ -1541,29 +1544,29 @@ O AccessEnabler aciona um retorno de chamada adicional que não está necessaria
 Instruções para interpretar os valores na matriz *data*:
 
 * Para trackingEventType `TRACKING_AUTHENTICATION:`
-   * **0** - Se a solicitação de token foi bem-sucedida (true/false) e se bem-sucedida:
-   * **1** - Cadeia de caracteres da ID do MVPD
-   * **2** - GUID (md5 com hash)
-   * **3** - Token já no cache (true/false)
-   * **4** - Tipo de dispositivo
-   * **5** - Tipo de cliente AccessEnabler
-   * **6** - Tipo de sistema operacional
+  * **0** - Se a solicitação de token foi bem-sucedida (true/false) e se bem-sucedida:
+  * **1** - Cadeia de caracteres da ID do MVPD
+  * **2** - GUID (md5 com hash)
+  * **3** - Token já no cache (true/false)
+  * **4** - Tipo de dispositivo
+  * **5** - Tipo de cliente AccessEnabler
+  * **6** - Tipo de sistema operacional
 
 * Para trackingEventType `TRACKING_AUTHORIZATION:`
-   * **0** - Se a solicitação de token foi bem-sucedida (true/false) e se bem-sucedida:
-   * **1** - MVPD ID
-   * **2** - GUID (md5 com hash)
-   * **3** - Token já no cache (true/false)
-   * **4** - Erro
-   * **5** - Detalhes
-   * **6** - Tipo de dispositivo
-   * **7** - Tipo de cliente AccessEnabler
-   * **8** - Tipo de sistema operacional
+  * **0** - Se a solicitação de token foi bem-sucedida (true/false) e se bem-sucedida:
+  * **1** - MVPD ID
+  * **2** - GUID (md5 com hash)
+  * **3** - Token já no cache (true/false)
+  * **4** - Erro
+  * **5** - Detalhes
+  * **6** - Tipo de dispositivo
+  * **7** - Tipo de cliente AccessEnabler
+  * **8** - Tipo de sistema operacional
 * Para trackingEventType `TRACKING_GET_SELECTED_PROVIDER:`
-   * **0** - ID do MVPD selecionado no momento
-   * **1** - Tipo de dispositivo
-   * **2** - Tipo de cliente AccessEnabler
-   * **3** - Tipo de sistema operacional
+  * **0** - ID do MVPD selecionado no momento
+  * **1** - Tipo de dispositivo
+  * **2** - Tipo de cliente AccessEnabler
+  * **3** - Tipo de sistema operacional
 
 </br>
 

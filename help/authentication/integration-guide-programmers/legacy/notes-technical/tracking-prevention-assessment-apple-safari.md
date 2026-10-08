@@ -2,13 +2,14 @@
 title: Avaliação de prevenção de rastreamento no Apple Safari
 description: Avaliação de prevenção de rastreamento no Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1849'
+source-wordcount: '1887'
 ht-degree: 0%
-
 ---
-
 # Avaliação de prevenção de rastreamento (herdado) - Apple Safari {#tracking-prevention-assessment-apple-safari}
 
 >[!NOTE]
@@ -100,11 +101,11 @@ Os fluxos de **Autenticação** que usam a interação do usuário sempre funcio
 
 * SSO e SLO
 
-   * Devido à forma como o localStorage é implementado no Safari a partir do Safari 10, o JS SDK não pode mais compartilhar o estado de logon por meio de um iFrame de domínio comum. Isso significa que o usuário precisa fazer logon em todos os sites que usam o AccessEnabler JavaScript SDK. Fazer logoff também não exclui tokens de autenticação entre sites, portanto, o usuário precisa fazer logoff de cada site habilitado para autenticação da Adobe Pass.
+  * Devido à forma como o localStorage é implementado no Safari a partir do Safari 10, o JS SDK não pode mais compartilhar o estado de logon por meio de um iFrame de domínio comum. Isso significa que o usuário precisa fazer logon em todos os sites que usam o AccessEnabler JavaScript SDK. Fazer logoff também não exclui tokens de autenticação entre sites, portanto, o usuário precisa fazer logoff de cada site habilitado para autenticação da Adobe Pass.
 
 * Temp Pass (Aprovação temporária)
 
-   * Para passagens temporárias, o AccessEnabler JavaScript SDK usa um mecanismo de individualização para bloquear um token de autenticação para um dispositivo específico (instância do navegador). Devido aos novos mecanismos no Safari 12 criados para impedir o rastreamento, a impressão digital que estamos computando e usando no mecanismo de individualização **será a mesma para todos os usuários que têm o mesmo endereço IP**. Levamos o IP do cliente em consideração para fins de individualização, mas mesmo assim o impacto é nos usuários que compartilham o mesmo endereço IP público. Para esses usuários, calcularemos a mesma ID de individualização e a passagem temporária será vinculada a ela. Isso significa que, uma vez que esse usuário use um passe temporário, ninguém mais terá acesso a ele \! Isso afeta especialmente usuários corporativos, instituições de ensino ou qualquer outra organização que tenha vários usuários usando NAT ou um proxy comum para acessar a Internet.
+  * Para passagens temporárias, o AccessEnabler JavaScript SDK usa um mecanismo de individualização para bloquear um token de autenticação para um dispositivo específico (instância do navegador). Devido aos novos mecanismos no Safari 12 criados para impedir o rastreamento, a impressão digital que estamos computando e usando no mecanismo de individualização **será a mesma para todos os usuários que têm o mesmo endereço IP**. Levamos o IP do cliente em consideração para fins de individualização, mas mesmo assim o impacto é nos usuários que compartilham o mesmo endereço IP público. Para esses usuários, calcularemos a mesma ID de individualização e a passagem temporária será vinculada a ela. Isso significa que, uma vez que esse usuário use um passe temporário, ninguém mais terá acesso a ele \! Isso afeta especialmente usuários corporativos, instituições de ensino ou qualquer outra organização que tenha vários usuários usando NAT ou um proxy comum para acessar a Internet.
 
 >[!NOTE]
 >
@@ -112,7 +113,7 @@ Os fluxos de **Autenticação** que usam a interação do usuário sempre funcio
 
 * Fluxos automáticos
 
-   * Tentativa de fluxos de autenticação em um modo automatizado, sem qualquer interação do usuário, não terá êxito no Safari 12 ao usar o JS SDK 4.0. Observe que o próximo JS SDK 4.1 corrige todos os problemas com fluxos automatizados.
+  * Tentativa de fluxos de autenticação em um modo automatizado, sem qualquer interação do usuário, não terá êxito no Safari 12 ao usar o JS SDK 4.0. Observe que o próximo JS SDK 4.1 corrige todos os problemas com fluxos automatizados.
 
 Casos de uso afetados por esse problema:
 

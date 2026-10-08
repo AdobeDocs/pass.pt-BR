@@ -2,13 +2,14 @@
 title: Atualizações de cookies - Sinalizadores SameSite e Seguro
 description: Atualizações de cookies - Sinalizadores SameSite e Seguro
 exl-id: cc1f60fd-fa64-48cb-a185-dba562a54c33
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '956'
+source-wordcount: '973'
 ht-degree: 0%
-
 ---
-
 # Atualizações de cookies (herdados) - Sinalizadores SameSite e Seguro {#cookies-updates---samesite-and-secure-flags}
 
 >[!NOTE]
@@ -58,13 +59,13 @@ Ao navegar por esta seção, lembre-se de que todos os cookies do serviço de Au
 1. É importante observar que os cookies com o atributo *Secure* devem ser enviados por *HTTPS*; caso contrário, o cookie não alcançará o serviço de Autenticação do Adobe Pass.
 
    - AccessEnabler JavaScript SDK:
-      - Obrigatório que a comunicação com *sp.auth.adobe.com* use *HTTPS* para as versões *2.35* e *3.5.0*, antes de introduzir o Registro de Cliente Dinâmico.
+     - Obrigatório que a comunicação com *sp.auth.adobe.com* use *HTTPS* para as versões *2.35* e *3.5.0*, antes de introduzir o Registro de Cliente Dinâmico.
    - AccessEnabler iOS/tvOS SDK:
-      - Obrigatório que a comunicação com *sp.auth.adobe.com* use *HTTPS* para versões anteriores a *3.0.0*, antes de introduzir o Registro de Cliente Dinâmico.
+     - Obrigatório que a comunicação com *sp.auth.adobe.com* use *HTTPS* para versões anteriores a *3.0.0*, antes de introduzir o Registro de Cliente Dinâmico.
    - AccessEnabler Android SDK:
-      - Obrigatório que a comunicação com *sp.auth.adobe.com* use *HTTPS* para versões anteriores a *3.0.0*, antes de introduzir o Registro de Cliente Dinâmico.
+     - Obrigatório que a comunicação com *sp.auth.adobe.com* use *HTTPS* para versões anteriores a *3.0.0*, antes de introduzir o Registro de Cliente Dinâmico.
    - AccessEnabler FireOS SDK:
-      - Obrigatório que a comunicação com *sp.auth.adobe.com* use *HTTPS* para a versão *2.0.4*.
+     - Obrigatório que a comunicação com *sp.auth.adobe.com* use *HTTPS* para a versão *2.0.4*.
 
 </br>
 

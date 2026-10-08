@@ -2,13 +2,14 @@
 title: Sobre a autenticação do Adobe Pass
 description: Sobre a autenticação do Adobe Pass
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1863'
 ht-degree: 0%
-
 ---
-
 # Sobre o Adobe® Pass Authentication {#about-adobe-pass-authentication}
 
 >[!IMPORTANT]
@@ -127,7 +128,7 @@ Orientações adicionais estão disponíveis assim que a integração é iniciad
 
 **Tarefas de integração**
 
-* Integre o DCR [&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) da API REST de Autenticação da Adobe Pass.
+* Integre o DCR ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) da API REST [de Autenticação da Adobe Pass.
 * Integre a Autenticação Adobe Pass [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md).
 * Integre o [Verificador de token de mídia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier) da Autenticação do Adobe Pass.
 * Desenvolva uma interface de usuário para o fluxo de trabalho de autenticação, autorização e logout.
@@ -165,15 +166,15 @@ A Autenticação do Adobe Pass atua como proxy e facilita o fluxo de direitos en
 Para Programadores, a Autenticação do Adobe Pass fornece APIs como parte de uma camada **Standard** ou **Premium**:
 
 * APIs padrão de autenticação da Adobe Pass:
-   * [DCR DA API REST](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-   * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [DCR DA API REST](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+  * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * APIs de autenticação Premium do Adobe Pass:
-   * [Redefinir API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [Recurso TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [API de degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Recurso de degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [API de monitoramento do serviço de qualificação](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+  * [Redefinir API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+    * [Recurso TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * [API de degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+    * [Recurso de degradação](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * [API de monitoramento do serviço de qualificação](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 Para obter mais detalhes sobre o fluxo de qualificação, consulte a documentação do [Guia de Integração do Programador](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
 
@@ -208,18 +209,18 @@ Os programadores são responsáveis por projetar e implementar a interface do us
 No mínimo, os programadores devem:
 
 * **Implementar uma interface de seleção de provedor**
-   * Permitir que novos usuários identifiquem o provedor de TV por assinatura e façam logon pela primeira vez.
-   * Alguns provedores de TV por assinatura redirecionam os usuários para uma página de logon externa, enquanto outros exigem logon em um iframe. Os programadores devem implementar uma função de retorno de chamada para gerar o iframe quando necessário.
+  * Permitir que novos usuários identifiquem o provedor de TV por assinatura e façam logon pela primeira vez.
+  * Alguns provedores de TV por assinatura redirecionam os usuários para uma página de logon externa, enquanto outros exigem logon em um iframe. Os programadores devem implementar uma função de retorno de chamada para gerar o iframe quando necessário.
 
 * **Gerenciar uma lista de provedores de TV por Assinatura com suporte**
-   * Garantir que os usuários possam acessar o conteúdo somente por meio de provedores aprovados.
+  * Garantir que os usuários possam acessar o conteúdo somente por meio de provedores aprovados.
 
 * **Indicar status de autenticação**
-   * Mostrar quando um usuário é autenticado no aplicativo ou site.
+  * Mostrar quando um usuário é autenticado no aplicativo ou site.
 
 * **Identificar recursos protegidos**
-   * Indique claramente qual conteúdo requer autorização antes de visualizar.
-   * Atualize a interface do usuário para refletir a autorização bem-sucedida assim que o acesso for concedido.
+  * Indique claramente qual conteúdo requer autorização antes de visualizar.
+  * Atualize a interface do usuário para refletir a autorização bem-sucedida assim que o acesso for concedido.
 
 ## Perguntas frequentes {#faqs}
 

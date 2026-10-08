@@ -2,13 +2,14 @@
 title: Escopo do provedor de serviços
 description: Escopo do provedor de serviços
 exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
-
 ---
-
 # Escopo do provedor de serviços {#service-provoider-scoping}
 
 >[!NOTE]
@@ -25,9 +26,9 @@ Com a Autenticação do Adobe Pass assumindo a função de SP para o Programador
 
 A Autenticação do Adobe Pass oferece suporte às duas seguintes formas de habilitar o escopo de solicitações de autenticação da controladora de armazenamento:
 
-* **A Abordagem de Emissor SAML.** Nesta abordagem, a &quot;ID do Solicitante&quot; é anexada à cadeia de caracteres do Emissor SAML na solicitação de Autenticação SAML.
+* **A Abordagem de Emissor SAML.**  Nesta abordagem, a &quot;ID do solicitante&quot; é anexada à string do emissor SAML na solicitação de autenticação SAML.
 
-* **A Abordagem De Propriedade De Escopo Personalizado.** Nessa abordagem, a &quot;ID do solicitante&quot; é incluída explicitamente como uma propriedade personalizada de &quot;Escopo&quot; na solicitação de Autenticação SAML.
+* **A Abordagem De Propriedade De Escopo Personalizado.**  Nesta abordagem, a &quot;ID do solicitante&quot; é incluída explicitamente como uma propriedade personalizada &quot;Escopo&quot; na solicitação de autenticação SAML.
 
 >[!NOTE]
 >

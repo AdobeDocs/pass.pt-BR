@@ -2,13 +2,14 @@
 title: Registro de aplicativo iOS/tvOS
 description: Registro de aplicativo iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '634'
 ht-degree: 0%
-
 ---
-
 
 # Registro de aplicativo iOS/tvOS (herdado) {#iostvos-application-registration}
 
@@ -40,9 +41,9 @@ Uma Declaração de Software é um token JWT que contém informações sobre seu
 - Navegue até a seção `Channels` e selecione seu canal.
 - Navegue até a guia `Registered Applications`.
 - Clique em `Add new application`.
-- Forneça um nome e uma versão para o aplicativo e selecione o   plataformas em que estará disponível. iOS/tvOS no nosso caso.
+- Forneça um nome e uma versão para o aplicativo e selecione as plataformas em que ele estará disponível. iOS/tvOS no nosso caso.
 - Envie suas alterações ao servidor e navegue de volta para a guia Aplicativos registrados do canal.
-- Você deve ver uma lista com todos os aplicativos registrados. Clique em   Botão `Download` no aplicativo recém-criado. Talvez seja necessário aguardar alguns minutos antes que a Declaração de software esteja pronta para download.
+- Você deve ver uma lista com todos os aplicativos registrados. Clique no botão `Download` no aplicativo recém-criado. Talvez seja necessário aguardar alguns minutos antes que a Declaração de software esteja pronta para download.
 - Um arquivo de texto será baixado. Use seu conteúdo como sua Declaração de Software.
 
 Para obter mais informações, consulte [Dynamic Client Registration Management](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).

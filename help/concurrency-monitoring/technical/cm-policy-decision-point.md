@@ -2,13 +2,14 @@
 title: Ponto de decisão da política
 description: Ponto de decisão da política
 exl-id: 94bc638c-bef8-45ea-b20a-9b7038adecdd
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '731'
 ht-degree: 0%
-
 ---
-
 # Ponto de decisão da política {#policy-desc-pt}
 
 ## Modelo de domínio {#domain-model}
@@ -33,7 +34,7 @@ Para cada uma das políticas aplicáveis, precisamos coletar todas as **atividad
 
 A apresentação abaixo tem como objetivo validar o modelo em relação a alguns casos de uso. Faremos isso gradualmente, começando com uma configuração básica e adicionando complexidade de várias maneiras.
 
-### &#x200B;1. Um locatário. Um aplicativo. Uma política. Um fluxo {#onetenant-oneapp-onepolicy-onestream}
+### &#x200B;1. Um inquilino. Um aplicativo. Uma política. Um fluxo {#onetenant-oneapp-onepolicy-onestream}
 
 Começaremos com um único locatário, com um único aplicativo e uma única política associada. Vamos supor que a política determine que possa haver no máximo um fluxo ativo para qualquer usuário (o fluxo mais recente tem permissão para reprodução).
 
@@ -42,7 +43,7 @@ Depois que um fluxo é iniciado, a atividade só consistirá nesse fluxo e ela p
 ![Um locatário. Um aplicativo. Uma política. Um fluxo](../assets/onetenant-app-policy-stream.png)
 
 
-### &#x200B;2. Um locatário. Um aplicativo. Uma política. Dois fluxos. {#onetenant-oneapp-onepolicy-twostreams}
+### &#x200B;2. Um inquilino. Um aplicativo. Uma política. Dois fluxos. {#onetenant-oneapp-onepolicy-twostreams}
 
 Depois que um segundo fluxo for iniciado (pelo mesmo assunto usando o mesmo aplicativo), a atividade usada para validação consistirá em **s1** e **s2**.
 

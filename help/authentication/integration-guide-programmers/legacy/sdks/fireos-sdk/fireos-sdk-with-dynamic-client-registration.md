@@ -2,13 +2,14 @@
 title: Amazon FireOS SDK com registro dinâmico de cliente
 description: Amazon FireOS SDK com registro dinâmico de cliente
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 1%
-
 ---
-
 
 # (Herdado) Amazon FireOS SDK com registro de cliente dinâmico {#amazon-fireos-sdk-with-dynamic-client-registration}
 
@@ -123,8 +124,8 @@ Obsoleto:
 
   O SDK executará as seguintes operações:
 
-   - registrar aplicativo: usando **software\_statement**, a SDK obterá um **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Essas informações serão armazenadas no armazenamento interno do aplicativo.
-   - obtenha um **access\_token** usando client\_id, client\_secret e grant\_type=&quot;client\_credentials&quot;. Esse access\_token será usado em cada chamada feita pela SDK aos servidores da Adobe Pass.
+  - registrar aplicativo: usando **software\_statement**, a SDK obterá um **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Essas informações serão armazenadas no armazenamento interno do aplicativo.
+  - obtenha um **access\_token** usando client\_id, client\_secret e grant\_type=&quot;client\_credentials&quot;. Esse access\_token será usado em cada chamada feita pela SDK aos servidores da Adobe Pass.
 
 | Respostas de Erro de Token: |  |  |
 |--- | --- | --- |
@@ -136,21 +137,21 @@ Obsoleto:
 
 - b) checkAuthentication()
 
-   - *true* : ir para Autorização
-   - *false* : ir para Selecionar MVPD
+  - *true* : ir para Autorização
+  - *false* : ir para Selecionar MVPD
 
 - c) getAuthentication : o SDK incluirá **access_token** nos parâmetros de chamada
 
-   - mvpd lembrado : ir para setSelectedProvider (mvpd\_id)
-   - mvpd não selecionado : displayProviderDialog
-   - mvpd selecionado : ir para setSelectedProvider(mvpd\_id)
+  - mvpd lembrado : ir para setSelectedProvider (mvpd\_id)
+  - mvpd não selecionado : displayProviderDialog
+  - mvpd selecionado : ir para setSelectedProvider(mvpd\_id)
 
 - d) setSelectedProvider
 
-   - O URL de autenticação mvpd\_id é carregado no ChromeCustomTabs
-   - logon bem-sucedido : delegate.setAuthenticationStatus ( SUCCESS )
-   - logon cancelado : redefinir seleção de MVPD
-   - O esquema de URL é estabelecido como &quot;adobepass://android.app&quot; para capturar quando a autenticação é concluída
+  - O URL de autenticação mvpd\_id é carregado no ChromeCustomTabs
+  - logon bem-sucedido : delegate.setAuthenticationStatus ( SUCCESS )
+  - logon cancelado : redefinir seleção de MVPD
+  - O esquema de URL é estabelecido como &quot;adobepass://android.app&quot; para capturar quando a autenticação é concluída
 
 - e. get/checkAuthorization : o SDK incluirá **access\_token** in como Authorization: Bearer **access\_token**
 
@@ -158,10 +159,10 @@ Obsoleto:
 
 - f) logout:
 
-   - O SDK excluirá um token válido para o solicitante atual (as autenticações obtidas por outros aplicativos e não via SSO permanecerão válidas)
-   - O SDK abrirá as Guias personalizadas do Chrome para alcançar o ponto de extremidade de logout mvpd\_id. Depois de concluídas, as Guias personalizadas do Chrome serão fechadas
-   - O esquema de URL é estabelecido como &quot;adobepass://logout&quot; para capturar o momento em que o logout é concluído
-   - logout acionará um sendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) e um callback : setAuthenticationStatus(0,&quot;Logout&quot;)
+  - O SDK excluirá um token válido para o solicitante atual (as autenticações obtidas por outros aplicativos e não via SSO permanecerão válidas)
+  - O SDK abrirá as Guias personalizadas do Chrome para alcançar o ponto de extremidade de logout mvpd\_id. Depois de concluídas, as Guias personalizadas do Chrome serão fechadas
+  - O esquema de URL é estabelecido como &quot;adobepass://logout&quot; para capturar o momento em que o logout é concluído
+  - logout acionará um sendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) e um callback : setAuthenticationStatus(0,&quot;Logout&quot;)
 
 
 

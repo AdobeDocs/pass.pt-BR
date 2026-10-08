@@ -2,13 +2,14 @@
 title: Visão geral das APIs REST API V2
 description: Visão geral das APIs REST API V2
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '147'
-ht-degree: 1%
-
+source-wordcount: '152'
+ht-degree: 0%
 ---
-
 # Visão geral das APIs REST API V2 {#rest-api-v2-apis-overview}
 
 >[!IMPORTANT]

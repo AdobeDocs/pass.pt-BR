@@ -2,13 +2,14 @@
 title: Visão geral do JavaScript SDK
 description: Visão geral do JavaScript SDK
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '515'
 ht-degree: 0%
-
 ---
-
 # Visão geral do JavaScript SDK (herdado) {#javascript-sdk-overview}
 
 >[!NOTE]
@@ -55,7 +56,7 @@ A amostra de código a seguir demonstra como descobrir e exibir o provedor de se
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer_br"> 
+        <a href="http://www.adobe.com/go/getflashplayer"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 
@@ -207,7 +208,7 @@ Há alguns casos em que o reprodutor não é responsável por gerenciar logouts 
 
 
 
-- **Quando o logout é iniciado de um site que não está integrado à Autenticação Adobe Pass.** Nesse caso, o MVPD pode invocar o serviço de Logout único da autenticação da Adobe Pass por meio de um redirecionamento do navegador. (No momento, não há suporte para invocar o SLO por meio de uma chamada backchannel.)
+- **Quando o logout é iniciado de um site que não está integrado à Autenticação Adobe Pass.** Nesse caso, o MVPD pode chamar o serviço de Logout único da autenticação da Adobe Pass por meio de um redirecionamento do navegador. (No momento, não há suporte para invocar o SLO por meio de uma chamada backchannel.)
 
 >[!NOTE]
 >

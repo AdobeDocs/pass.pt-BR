@@ -2,13 +2,14 @@
 title: Painel ESM
 description: Saiba como usar o painel do ESM para monitorar os dados de direitos e eventos entre parceiros da MVPD.
 exl-id: ac5f289a-c26d-4156-bc56-7968c49c100f
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '487'
 ht-degree: 1%
-
 ---
-
 # Painel ESM {#esm-dashboard}
 
 >[!NOTE]
@@ -25,7 +26,7 @@ O painel ESM fornece uma visão unificada dos dados de direitos e eventos para a
 - Comparar desempenhos do MVPD
 - Compreender o uso do cliente por aplicativo
 
-Mais detalhes sobre dados e eventos ESM podem ser encontrados em [Visão geral do monitoramento do serviço de qualificação](https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
+Mais detalhes sobre dados e eventos ESM podem ser encontrados em [Visão geral do monitoramento do serviço de qualificação](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
 
 ## Relatórios {#reports}
 

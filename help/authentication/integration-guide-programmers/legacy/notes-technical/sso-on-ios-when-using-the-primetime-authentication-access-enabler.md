@@ -2,13 +2,14 @@
 title: SSO no iOS ao usar o Adobe Pass Authentication Access Enabler
 description: SSO no iOS ao usar o Adobe Pass Authentication Access Enabler
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1216'
 ht-degree: 0%
-
 ---
-
 # SSO (herdado) no iOS ao usar o Adobe Pass Authentication Access Enabler {#sso-on-ios-when-using-the-primetime-authentication-access-enabler}
 
 >[!NOTE]
@@ -39,7 +40,7 @@ O SSO no iOS é ditado pelas seguintes condições:
 O comportamento do SSO é o seguinte:
 
 - **iOS 6 e inferior**: o SSO funciona automaticamente entre aplicativos desenvolvidos pela mesma equipe ou por equipes diferentes. A ID do dispositivo é calculada com base no endereço do MAC (o mesmo valor é produzido em todos os aplicativos) e a área de armazenamento é comum a todos os aplicativos (a área de trabalho personalizada pode ser compartilhada entre aplicativos no iOS 6 e versões anteriores).
-   - **Importante:** observe que a versão 1.9.4 do iOS SDK [aumentou o destino mínimo de implantação do iOS para o iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
+  - **Importante:** observe que a versão 1.9.4 do iOS SDK [aumentou o destino mínimo de implantação do iOS para o iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7 e superior**: o SSO funcionará nas seguintes condições:
 
 1. Os aplicativos são publicados usando o mesmo perfil de distribuição do Apple ou perfis que pertencem à mesma equipe. Essa é a única maneira de os aplicativos compartilharem áreas de trabalho personalizadas no iOS 7 e superior. Em todos os outros cenários, a área de trabalho é colocada em sandbox por aplicativo. De [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[`UIPasteboard pasteboardWithName:create:\`] e +\[`UIPasteboard pasteboardWithUniqueName`\] agora são exclusivos para o nome fornecido, permitindo que somente os aplicativos no mesmo grupo de aplicativos acessem a área de trabalho. Se o desenvolvedor tentar criar uma área de transferência com um nome que já existe e não faz parte do mesmo conjunto de aplicativos, ele obterá sua própria área de transferência exclusiva e privada. Observe que isso não afeta as áreas de trabalho fornecidas pelo sistema, o geral e a localização.

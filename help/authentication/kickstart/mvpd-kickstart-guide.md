@@ -2,13 +2,14 @@
 title: Guia de início rápido do MVPD
 description: Guia de início rápido do MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '965'
 ht-degree: 0%
-
 ---
-
 # Guia de início rápido do MVPD {#mvpd-kickstart-guide}
 
 >[!IMPORTANT]
@@ -135,7 +136,7 @@ A equipe de Autenticação do Adobe Pass está disponível para responder a qual
 
 ## Acesso à documentação {#access-documentation}
 
-A **Adobe fornecerá** acesso à nossa documentação pública via [Adobe Experience League](https://experienceleague.adobe.com/pt-br/docs/pass/authentication/home).
+A **Adobe fornecerá** acesso à nossa documentação pública via [Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).
 
 A equipe de Autenticação da Adobe Pass fornece documentação abrangente para os recursos e fluxos de trabalho disponíveis na seção [Guia de Integração para MVPDs](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md). Consulte o índice desta seção para obter links com informações detalhadas sobre cada tópico.
 

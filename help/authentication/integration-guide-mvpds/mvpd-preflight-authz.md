@@ -2,13 +2,14 @@
 title: Autorização de comprovação do MVPD
 description: Autorização de comprovação do MVPD
 exl-id: da2e7150-b6a8-42f3-9930-4bc846c7eee9
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '750'
+source-wordcount: '755'
 ht-degree: 0%
-
 ---
-
 # Autorização de comprovação do MVPD
 
 >[!NOTE]

@@ -2,13 +2,14 @@
 title: API de monitoramento do serviço de qualificação
 description: API de monitoramento do serviço de qualificação
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2098'
 ht-degree: 1%
-
 ---
-
 # API de monitoramento do serviço de qualificação {#entitlement-service-monitoring-api}
 
 >[!IMPORTANT]
@@ -67,9 +68,9 @@ Um GET para o ponto de extremidade de API `https://mgmt.auth.adobe.com/esm/v3` r
 
 * Links para os caminhos de drill-down raiz disponíveis:
 
-   * `<link rel="drill-down" href="/v3/dimensionA"/>`
+  * `<link rel="drill-down" href="/v3/dimensionA"/>`
 
-   * `<link rel="drill-down" href="/v3/dimensionB"/>`
+  * `<link rel="drill-down" href="/v3/dimensionB"/>`
 
 * Um resumo (valores agregados) de todas as métricas (no padrão
 como nenhum parâmetro de string de consulta é fornecido, consulte abaixo).
@@ -139,7 +140,7 @@ O único método HTTP disponível atualmente é o GET.
 | 401 | Não autorizado | Causado por uma solicitação que não contém os cabeçalhos OAuth adequados para autenticar o usuário |
 | 403 | Proibido | Indica que a solicitação não é permitida no contexto de segurança atual; isso ocorre quando o usuário é autenticado, mas não tem permissão para acessar as informações solicitadas |
 | 404 | Não encontrado | Ocorre caso um caminho de URL inválido seja fornecido com a solicitação. Isso nunca deve ocorrer se o cliente seguir os links &quot;detalhar&quot;/&quot;detalhar&quot; fornecidos com 200 respostas |
-| 405 | Método não permitido | Sinaliza que um método sem suporte foi usado na solicitação. Embora atualmente apenas o método do GET seja compatível, as versões futuras podem permitir o HEAD ou o OPTIONS |
+| 405 | Método não permitido | Sinaliza que um método sem suporte foi usado na solicitação. Embora atualmente apenas o método GET seja compatível, as versões futuras podem permitir HEAD ou OPTIONS |
 | 406 | Não aceitável | Sinaliza que um tipo de mídia sem suporte foi solicitado pelo cliente |
 | 500 | Erro interno do servidor | &quot;Isso nunca deve acontecer&quot; |
 | 503 | Serviço indisponível | Sinaliza um erro no aplicativo ou em suas dependências |

@@ -2,13 +2,14 @@
 title: Guia do iOS/tvOS
 description: Guia do iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2436'
 ht-degree: 0%
-
 ---
-
 # Cookbook do iOS/tvOS SDK (herdado) {#iostvos-sdk-cookbook}
 
 >[!NOTE]
@@ -48,7 +49,7 @@ A atividade de rede do AccessEnabler ocorre em seu próprio thread, portanto, o 
 
 ## Configurar o serviço da Experience Cloud ID (ID do visitante) {#visitorIDSetup}
 
-Configurar o valor da [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=pt-BR) é importante do ponto de vista [!DNL Analytics]. Depois que um valor `visitorID` é definido, o SDK envia essas informações junto com cada chamada de rede e o servidor de Autenticação [!DNL Adobe Pass] coleta essas informações. É possível correlacionar a análise do serviço de Autenticação da Adobe Pass com quaisquer outros relatórios de análise que você tenha de outros aplicativos ou sites. Informações sobre como configurar visitorID podem ser encontradas [aqui](#setOptions).
+Configurar o valor da [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html) é importante do ponto de vista [!DNL Analytics]. Depois que um valor `visitorID` é definido, o SDK envia essas informações junto com cada chamada de rede e o servidor de Autenticação [!DNL Adobe Pass] coleta essas informações. É possível correlacionar a análise do serviço de Autenticação da Adobe Pass com quaisquer outros relatórios de análise que você tenha de outros aplicativos ou sites. Informações sobre como configurar visitorID podem ser encontradas [aqui](#setOptions).
 
 ## Fluxos de Direitos {#entitlement}
 

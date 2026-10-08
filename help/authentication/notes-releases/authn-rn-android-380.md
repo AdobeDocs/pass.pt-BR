@@ -2,13 +2,14 @@
 title: Notas de versão do Adobe Pass Authentication Android 3.8.0
 description: Notas de versão do Adobe Pass Authentication Android 3.8.0
 exl-id: ad020b9a-61ad-492f-9522-d0e7a668196a
-source-git-commit: c9958a17ad9dfb518bab1d24087c85fdcb6fd057
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '148'
 ht-degree: 0%
-
 ---
-
 # Notas de versão do Adobe Pass Authentication Android 3.8.0 {#android-sdk-380-rn}
 
 >[!IMPORTANT]
@@ -27,7 +28,7 @@ Data de lançamento: **09/18/2025**
 
 * Corrija uma vulnerabilidade com o receptor de transmissão de armazenamento da SDK. Um aplicativo mal-intencionado pode apresentar um link falso para interrogar o armazenamento compartilhado dos tokens do Adobe.
 No entanto, nenhuma informação crítica é armazenada e a probabilidade de qualquer usuário ser afetado por essa vulnerabilidade é muito baixa.
-   * Observação: como resultado da alteração, os usuários serão desconectados.
+  * Observação: como resultado da alteração, os usuários serão desconectados.
 
 ## Lançar pacote {#release-package-380}
 

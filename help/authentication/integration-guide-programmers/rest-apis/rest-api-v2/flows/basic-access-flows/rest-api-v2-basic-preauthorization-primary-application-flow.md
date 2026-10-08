@@ -2,13 +2,14 @@
 title: Pré-autorização Básica - Aplicativo Principal - Fluxo
 description: REST API V2 - Pré-autorização básica - Aplicativo principal - Fluxo
 exl-id: f557f6c3-d5b2-4ec8-be51-91a90fbd31c0
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
-
 ---
-
 # Fluxo básico de pré-autorização executado no aplicativo principal {#basic-preauthorization-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -28,9 +29,9 @@ O **Fluxo de pré-autorização** no direito de Autenticação Adobe Pass permit
 Antes de recuperar decisões de pré-autorização usando uma MVPD específica, verifique se os seguintes pré-requisitos foram atendidos:
 
 * O aplicativo de streaming deve ter um perfil regular válido, criado com êxito para o MVPD usando um dos fluxos de autenticação básicos:
-   * [Executar autenticação no aplicativo principal](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Realizar autenticação no aplicativo secundário com mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Executar autenticação no aplicativo secundário sem mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Executar autenticação no aplicativo principal](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Realizar autenticação no aplicativo secundário com mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Executar autenticação no aplicativo secundário sem mvpd pré-selecionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * O aplicativo de transmissão deseja recuperar as decisões de pré-autorização para exibir uma lista de recursos junto com seus status associados.
 
 ### Fluxo de trabalho (WRK) {#workflow-retrieve-preauthorization-decisions-using-specific-mvpd}

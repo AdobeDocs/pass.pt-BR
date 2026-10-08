@@ -2,13 +2,14 @@
 title: Pré-autorização da API do iOS/tvOS
 description: Pré-autorização da API do iOS/tvOS
 exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '414'
 ht-degree: 0%
-
 ---
-
 # (Herdado) Pré-autorizar {#preauthorize}
 
 >[!NOTE]
@@ -239,7 +240,7 @@ Um ou mais recursos estão tendo uma decisão de pré-autorização negada e o r
                    "code" : "authorization_denied_by_mvpd",
                    "message" : "User not authorized",
                    "details" : "Your subscription package does not include the "TestStream3" channel.",
-                   "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+                   "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                    "trace" : "0453f8c8-167a-4429-8784-cd32cfeaee58",
                    "action" : "none"
                 }
@@ -267,7 +268,7 @@ Os serviços de Autenticação do Adobe Pass encontram um erro ao atender à sol
             "code" : "bad_request",
             "message": "Missing required parameter : deviceId",
             "details": "",
-            "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+            "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html",
             "trace" : "9f115e1c-0158-4a41-8805-9f68923f3646",
             "action" : "none"
         }

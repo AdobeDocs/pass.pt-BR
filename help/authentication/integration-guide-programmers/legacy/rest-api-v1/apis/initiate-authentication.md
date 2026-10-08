@@ -2,13 +2,14 @@
 title: Iniciar autenticação
 description: Iniciar autenticação
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '316'
 ht-degree: 0%
-
 ---
-
 # (Herdado) Iniciar autenticação {#initiate-authentication}
 
 >[!NOTE]
@@ -44,9 +45,9 @@ Inicia o processo de autenticação informando sobre um evento de seleção do M
 
 
 
-| Endpoint | Chamado </br>por | Entrada   </br>Parâmetros | HTTP </br>Método | Resposta | Resposta HTTP </br> |
+| Endpoint | Chamado </br>por | </br>Parâmetros de entrada | HTTP </br>Método | Resposta | Resposta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/authenticate | Módulo AuthN | &#x200B;1. requestor_id (Obrigatório)</br>2.  mso_id (Obrigatório)</br>3.  reg_code (obrigatório)</br>4.  nome_domínio (Obrigatório)</br>5.  noflash=true - </br>    (Obrigatório, Parâmetro residual)</br>6.  no_iframe=true (Obrigatório, parâmetro Residual)</br>7.  parâmetros extras (Opcional)</br>8.  redirect_url (Obrigatório) | GET | O Aplicativo web de logon é redirecionado para a página de logon do MVPD. | 302 para implementações de redirecionamento completo |
+| &lt;SP_FQDN>/api/v1/authenticate | Módulo AuthN | &#x200B;1.  requestor_id (Obrigatório)</br>2.  mso_id (Obrigatório)</br>3.  reg_code (obrigatório)</br>4.  nome_domínio (Obrigatório)</br>5.  noflash=true - </br> (Obrigatório, Parâmetro Residual)</br>6.  no_iframe=true (Obrigatório, parâmetro Residual)</br>7.  parâmetros extras (Opcional)</br>8.  redirect_url (Obrigatório) | GET | O Aplicativo web de logon é redirecionado para a página de logon do MVPD. | 302 para implementações de redirecionamento completo |
 
 {style="table-layout:auto"}
 

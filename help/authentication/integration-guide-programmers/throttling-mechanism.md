@@ -2,7 +2,10 @@
 title: Mecanismo de limitação
 description: Saiba mais sobre o mecanismo de limitação usado na autenticação do Adobe Pass. Explore uma visão geral desse mecanismo nesta página.
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1162'
 ht-degree: 0%

@@ -2,7 +2,10 @@
 title: Notas de versão do Adobe Concurrency Monitoring Services 3.3.0
 description: Notas de versão do Adobe Concurrency Monitoring Services 3.3.0
 exl-id: 19789a15-6677-46e3-889e-98ad963e09ac
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '53'
 ht-degree: 5%

@@ -2,13 +2,14 @@
 title: Visão geral do Apple SSO
 description: Visão geral do Apple SSO
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1311'
 ht-degree: 0%
-
 ---
-
 # Visão geral do Apple SSO {#apple-sso-overview}
 
 >[!IMPORTANT]
@@ -36,28 +37,28 @@ Para se beneficiar da experiência do usuário de Logon Único (SSO), um Program
 
 * Entre em contato com a Apple para habilitar a [Estrutura da Conta do Assinante do Vídeo](https://developer.apple.com/documentation/videosubscriberaccount) como parte da sua Identificação da Equipe da Apple e configure a [Qualificação de Logon Único do Assinante do Vídeo](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on) como parte da sua Conta de Desenvolvedor do Apple.
 
-   * Use o Xcode versão 8 ou superior e o iOS/tvOS versão 10 ou superior.
+  * Use o Xcode versão 8 ou superior e o iOS/tvOS versão 10 ou superior.
 
 * Habilite o Logon Único (SSO) para cada integração e plataforma desejada (iOS/tvOS) por meio do [Painel do Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication), definindo a propriedade `Enable Single Sign On` como `Yes`.
 
 | Habilitar logon único no Adobe | Apple **Integrado (com Suporte)** MVPDs | MVPDs do **Seletor** do Apple | Apple **Não Integrado (Sem Suporte)** MVPDs |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| Sim (Ativado) | Os fluxos de autenticação e logout envolvem as soluções de autenticação da Apple e da Adobe Pass, enquanto todos os outros fluxos (autorização, pré-autorização, metadados etc.) são atendidos exclusivamente pela autenticação da Adobe Pass. | Os fluxos de autenticação e logout recorrerão aos fluxos comuns atendidos exclusivamente pela autenticação da Adobe Pass. | Os fluxos de autenticação e logout recorrerão aos fluxos comuns atendidos exclusivamente pela autenticação da Adobe Pass. |
+| Sim (Ativado) | Os fluxos de autenticação e logout envolvem as soluções de autenticação da Apple e da Adobe Pass, enquanto todos os outros fluxos (autorização, pré-autorização, metadados etc.) será atendido exclusivamente pela Autenticação Adobe Pass. | Os fluxos de autenticação e logout recorrerão aos fluxos comuns atendidos exclusivamente pela autenticação da Adobe Pass. | Os fluxos de autenticação e logout recorrerão aos fluxos comuns atendidos exclusivamente pela autenticação da Adobe Pass. |
 | Não (Desabilitado) | Os fluxos de autenticação e logout recorrerão aos fluxos comuns atendidos exclusivamente pela autenticação da Adobe Pass. | Os fluxos de autenticação e logout recorrerão aos fluxos comuns atendidos exclusivamente pela autenticação da Adobe Pass. | Os fluxos de autenticação e logout recorrerão aos fluxos comuns atendidos exclusivamente pela autenticação da Adobe Pass. |
 
 * Integre os fluxos de usuário de Logon único (SSO) usando uma das seguintes soluções oferecidas pela Autenticação do Adobe Pass para usuários finais de aplicativos clientes em execução no iOS, iPadOS ou tvOS.
 
-   * A API REST V2 de Autenticação do Adobe Pass é compatível com o Logon Único de Parceiro (SSO).
+  * A API REST V2 de Autenticação do Adobe Pass é compatível com o Logon Único de Parceiro (SSO).
 
-     Consulte a documentação [Guia de SSO do Apple (REST API V2)](apple-sso-cookbook-rest-api-v2.md).
+    Consulte a documentação [Guia de SSO do Apple (REST API V2)](apple-sso-cookbook-rest-api-v2.md).
 
-   * A API REST V1 herdada da Autenticação do Adobe Pass tem suporte para Logon único de parceiro (SSO).
+  * A API REST V1 herdada da Autenticação do Adobe Pass tem suporte para Logon único de parceiro (SSO).
 
-     Consulte a documentação [(Herdado) Guia de SSO Apple (REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
+    Consulte a documentação [(Herdado) Guia de SSO Apple (REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
 
-   * O herdado Adobe Pass Authentication AccessEnabler iOS/tvOS SDK é compatível com o Partner Single Sign-On (SSO).
+  * O herdado Adobe Pass Authentication AccessEnabler iOS/tvOS SDK é compatível com o Partner Single Sign-On (SSO).
 
-     Consulte a documentação [(Herdado) Guia de SSO do Apple (iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md).
+    Consulte a documentação [(Herdado) Guia de SSO do Apple (iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md).
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 
@@ -65,11 +66,11 @@ Para se beneficiar da experiência do usuário de Logon único (SSO), um MVPD de
 
 * Entre em contato com a Apple para iniciar o processo de integração no lado da Apple.
 
-   * Solicite a documentação técnica sobre como integrar e desenvolver um aplicativo TVML do JavaScript capaz de lidar com o formulário de logon do usuário.
+  * Solicite a documentação técnica sobre como integrar e desenvolver um aplicativo TVML do JavaScript capaz de lidar com o formulário de logon do usuário.
 
 * Entre em contato com a Autenticação da Adobe Pass para iniciar o processo de integração no lado da Adobe.
 
-   * Forneça o valor da string que representa o identificador do provedor de TV atribuído pela Apple durante o processo de integração.
+  * Forneça o valor da string que representa o identificador do provedor de TV atribuído pela Apple durante o processo de integração.
 
 ## Perguntas frequentes {#FAQ}
 

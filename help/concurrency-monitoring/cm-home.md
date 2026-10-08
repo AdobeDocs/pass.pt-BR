@@ -2,13 +2,14 @@
 title: Introdução ao monitoramento de simultaneidade
 description: Introdução ao monitoramento de simultaneidade
 exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '225'
 ht-degree: 0%
-
 ---
-
 # Introdução ao monitoramento de simultaneidade {#intro}
 
 O Monitoramento de simultaneidade é um serviço que permite que provedores de conteúdo e de identidade (MVPDs e Programadores) definam e apliquem limites no streaming de vídeo simultâneo em vários aplicativos, dispositivos e plataformas. Quer você seja um programador que deseja controlar quantos fluxos um assinante pode assistir simultaneamente ou um MVPD que deseja aplicar políticas de uso em seus parceiros de conteúdo, o Monitoramento de simultaneidade fornece as ferramentas necessárias.

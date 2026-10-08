@@ -2,13 +2,14 @@
 title: Exemplos de uso da API
 description: Uso de endpoint de API do Monitoramento de simultaneidade
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2052'
+source-wordcount: '2083'
 ht-degree: 0%
-
 ---
-
 # Visão geral da API {#api-overview}
 
 Exiba a [documentação da API online](https://streams-stage.adobeprimetime.com/swagger-ui/index.html) para obter mais detalhes.
@@ -59,7 +60,7 @@ curl -i -X POST -u ${user}:%{pass} http://streams-stage.adobeprimetime.com/v2/se
 
 Não há necessidade de fornecer um código de encerramento na primeira chamada porque não temos outros fluxos ativos. E nenhum atributo de metadados porque nenhum foi retornado da chamada Recuperando metadados.
 
-Os parâmetros **subject** e **idp** são obrigatórios, eles serão especificados como variáveis de caminho de URI. Você pode obter os parâmetros **subject** e **idp** fazendo uma chamada para os campos de metadados **mvpd** e **upstreamUserID** da Autenticação Adobe Pass. Consulte também a [visão geral das APIs de metadados](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=pt-BR#). Neste exemplo, forneceremos o valor &quot;12345&quot; como o assunto e &quot;adobe&quot; como o idp.
+Os parâmetros **subject** e **idp** são obrigatórios, eles serão especificados como variáveis de caminho de URI. Você pode obter os parâmetros **subject** e **idp** fazendo uma chamada para os campos de metadados **mvpd** e **upstreamUserID** da Autenticação Adobe Pass. Consulte também a [visão geral das APIs de metadados](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#). Neste exemplo, forneceremos o valor &quot;12345&quot; como o assunto e &quot;adobe&quot; como o idp.
 
 ```
 # Response Code

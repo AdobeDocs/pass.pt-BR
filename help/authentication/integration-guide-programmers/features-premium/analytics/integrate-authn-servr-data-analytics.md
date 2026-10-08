@@ -2,13 +2,14 @@
 title: Integração dos dados do lado do servidor de autenticação da Adobe Pass ao Adobe Analytics
 description: Integração dos dados do lado do servidor de autenticação da Adobe Pass ao Adobe Analytics
 exl-id: c1f1f2a3-c98c-4aed-92ad-1f9bfd80b82b
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1140'
 ht-degree: 0%
-
 ---
-
 # Integração dos dados do lado do servidor de autenticação da Adobe Pass ao Adobe Analytics
 
 >[!NOTE]
@@ -49,8 +50,8 @@ Não se destina a substituir uma implementação do lado do cliente, se já exis
 | Versão do SDK | A versão do SDK do cliente de autenticação da Adobe Pass |
 | ID do recurso | O título do recurso real envolvido na solicitação de autorização (extraído da carga MRSS como o item/título, se fornecido) |
 | Tipo de erro de AuthZ | O motivo das falhas, conforme relatado pela Autenticação Adobe Pass <br/>. Estes são os valores mais comuns <br/> **noAuthZ** = a MVPD respondeu que o usuário não tem o canal em seu pacote<br/> **rede** = não foi possível acessar a MVPD (a MVPD tem um problema no momento da chamada e não respondeu)<br/> **norefreshtoken** = isso é estritamente para implementações OAuth e pode ocorrer se o usuário alterou sua senha ou a MVPD a negou por algum motivo. Normalmente resulta em uma nova autenticação<br/> **incompatibilidade** = se a solicitação é feita de um dispositivo diferente daquele que tinha o token de autenticação. Pode ocorrer se os usuários tentarem enganar o sistema, mas a maioria disso ocorreu no contexto do antigo JavaScript SDK, em que a ID do dispositivo estava usando o endereço IP como parte do cálculo. Se um usuário assistisse à TVE em casa e depois no trabalho, esse erro seria disparado e ele teria que se autenticar novamente<br/> **inválido** = solicitação inválida, parâmetros ausentes ou inválidos<br/>  **authzNone** = Os programadores podem negar autorizações para uma combinação específica de channelMVPD. Isso é disparado por uma API de back-end à qual os programadores têm acesso<br/> **fraude** = é um mecanismo de proteção da nossa parte. Se o usuário não conseguir a autorização e, em seguida, solicitar novamente um número de vezes em um curto intervalo (segundos), negamos a chamada diretamente. Normalmente, isso acontece quando um Programador tem um bug em sua implementação que solicita autorização constantemente se falhar. |
-| Tipo de token | Quando os tokens são criados devido à AuthZ All e AuthN All, precisamos saber o que é causado por uma medida de degradação.<br/> São:<br/> &quot;normal&quot; = O caso normal<br/> &quot;authnall&quot; = Quando AuthN All está habilitado<br/> &quot;authzall&quot; = Quando AuthZ All está habilitado<br/> &quot;hba&quot; = Quando HBA está habilitado |
-| Tipo de dispositivo sem cliente | A plataforma do dispositivo (alternativa), usada atualmente para Clientless.<br/> Os valores podem ser:<br/> N/D - o evento não se originou de um SDK sem Cliente<br/> Desconhecido - Como o parâmetro deviceType de uma **API sem Cliente** é opcional, há chamadas que não contêm nenhum valor.<br/> Qualquer outro valor enviado por meio da **API sem cliente**. Por exemplo, xbox, appletv e roku. |
+| Tipo de token | Quando tokens são criados devido a AuthZ All e AuthN All, precisamos saber o que é causado por uma medida de degradação.<br/> São eles:<br/> &quot;normal&quot; = O caso normal<br/> &quot;authnall&quot; = Quando AuthN All está habilitado<br/> &quot;authzall&quot; = Quando AuthZ All está habilitado<br/> &quot;hba&quot; = Quando HBA está habilitado |
+| Tipo de dispositivo sem cliente | A plataforma do dispositivo (alternativa), atualmente usada para Clientless.<br/> Os valores podem ser:<br/> N/D - o evento não se originou de um SDK sem Cliente<br/> Desconhecido - Como o parâmetro deviceType de uma **API sem Cliente** é opcional, há chamadas que não contêm nenhum valor.<br/> Qualquer outro valor enviado por meio da **API sem cliente**. Por exemplo, xbox, appletv e roku. |
 | ID de usuário do MVPD | Substitui a ID de visitante baseada em cookie |
 
 

@@ -2,13 +2,14 @@
 title: Serviço de logon único da Adobe
 description: Saiba mais sobre o Serviço SSO da Adobe Pass que permite autenticação contínua em vários dispositivos e aplicativos.
 exl-id: ffca2bcc-c933-4688-8d98-c5e03390f66c
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '4447'
 ht-degree: 2%
-
 ---
-
 # Serviço de logon único da Adobe {#sso-service}
 
 Este documento descreve casos de uso, endpoints e API do serviço de logon único da Adobe.
@@ -120,7 +121,7 @@ O token de serviço tem &quot;iat&quot; - emitido em e &quot;exp&quot; - hora de
 
 ### Etapa 3 - Autenticar usando a API REST V2 do Adobe Pass com um TVE MVPD {#step-3}
 
-A autenticação com o Adobe Pass deve ser implementada usando o Token de Serviço: [REST API V2 - Fluxos do Token de Serviço de Logon Único](https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-flows/rest-api-v2-single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows)
+A autenticação com o Adobe Pass deve ser implementada usando o Token de Serviço: [REST API V2 - Fluxos do Token de Serviço de Logon Único](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-flows/rest-api-v2-single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows)
 
 ### Etapa 4 - Vincular outro dispositivo {#step-4}
 
@@ -210,43 +211,54 @@ Se a solicitação da API do token de serviço não puder ser atendida devido a 
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorização</td>
-      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Autorização</a>.</td>
+      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Autorização</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Identificador de dispositivo AP</td>
       <td>
-         A geração da carga do identificador de dispositivo está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.<br/><br/>
-         Esse identificador é usado como o identificador SSO padrão quando X-SSO-ID não é fornecido.</td>
+         A geração da carga do identificador de dispositivo está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.
+         <br/><br/>
+         Esse identificador é usado como o identificador SSO padrão quando X-SSO-ID não é fornecido.
+      </td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         As informações do dispositivo conforme especificado na documentação do cabeçalho <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-x-device-info">X-Device-Info</a>.<br/><br/>
-         <b>É altamente recomendável</b> usar quando a plataforma do dispositivo do aplicativo permitir que sejam fornecidos valores válidos explicitamente.<br/><br/>
-         O back-end da Autenticação do Adobe Pass mesclará valores definidos explicitamente com valores extraídos implicitamente. Quando não fornecido, os valores extraídos padrão serão usados.</td>
+         As informações do dispositivo conforme especificado na documentação do cabeçalho <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-x-device-info">X-Device-Info</a>.
+         <br/><br/>
+         <b>É altamente recomendável</b> usar quando a plataforma do dispositivo do aplicativo permitir que sejam fornecidos valores válidos explicitamente.
+         <br/><br/>
+         O back-end da Autenticação do Adobe Pass mesclará valores definidos explicitamente com valores extraídos implicitamente. Quando não fornecido, os valores extraídos padrão serão usados.
+      </td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-SSO-LINK</td>
       <td>
-         O código de link que associa essa solicitação a um perfil autenticado existente. Quando fornecida, a resposta incluirá um token de serviço para SSO com o perfil que gerou o código do link.<br/><br/>
-         Normalmente, isso é usado quando um aplicativo ou dispositivo secundário deseja se conectar a um perfil autenticado de um aplicativo ou dispositivo principal.</td>
+         O código de link que associa essa solicitação a um perfil autenticado existente. Quando fornecida, a resposta incluirá um token de serviço para SSO com o perfil que gerou o código do link.
+         <br/><br/>
+         Normalmente, isso é usado quando um aplicativo ou dispositivo secundário deseja se conectar a um perfil autenticado de um aplicativo ou dispositivo principal.
+      </td>
       <td>obrigatório se x-sso-id não for fornecido</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-SSO-ID</td>
       <td>
-         O identificador comum no qual o aplicativo solicita basear o SSO.<br/><br/>
-         Quando fornecido, esse identificador será usado para estabelecer um perfil de SSO comum entre dispositivos e/ou aplicativos.</td>
+         O identificador comum no qual o aplicativo solicita basear o SSO.
+         <br/><br/>
+         Quando fornecido, esse identificador será usado para estabelecer um perfil de SSO comum entre dispositivos e/ou aplicativos.
+      </td>
       <td>obrigatório se x-sso-link não for fornecido</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Aceitar</td>
       <td>
-         O tipo de mídia aceito pelo aplicativo cliente.<br/><br/>
-         Se especificado, deve ser application/json.</td>
+         O tipo de mídia aceito pelo aplicativo cliente.
+         <br/><br/>
+         Se especificado, deve ser application/json.
+      </td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -275,19 +287,22 @@ Se a solicitação da API do token de serviço não puder ser atendida devido a 
       <td>400</td>
       <td>Solicitação inválida</td>
       <td>
-        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>Não autorizado</td>
       <td>
-        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">Visão geral do registro dinâmico do cliente</a>.</td>
+        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">Visão geral do registro dinâmico do cliente</a>.
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erro interno do servidor</td>
       <td>
-        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.
+      </td>
    </tr>
 </table>
 
@@ -361,7 +376,7 @@ Se a solicitação da API do token de serviço não puder ser atendida devido a 
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>
@@ -472,21 +487,25 @@ Content-Type: application/json
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorização</td>
-      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Autorização</a>.</td>
+      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Autorização</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         Um token de serviço obtido anteriormente que precisa ser atualizado.<br/><br/>
-         Este token deve ser válido ou ter expirado recentemente para se qualificar para atualização.</td>
+         Um token de serviço obtido anteriormente que precisa ser atualizado.
+         <br/><br/>
+         Este token deve ser válido ou ter expirado recentemente para se qualificar para atualização.
+      </td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Aceitar</td>
       <td>
-         O tipo de mídia aceito pelo aplicativo cliente.<br/><br/>
-         Se especificado, deve ser application/json.</td>
+         O tipo de mídia aceito pelo aplicativo cliente.
+         <br/><br/>
+         Se especificado, deve ser application/json.
+      </td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -515,19 +534,22 @@ Content-Type: application/json
       <td>400</td>
       <td>Solicitação inválida</td>
       <td>
-        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>Não autorizado</td>
       <td>
-        O token de acesso ou o token de serviço é inválido. O cliente precisa obter um novo token de acesso ou token de serviço e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">Visão geral do registro dinâmico do cliente</a>.</td>
+        O token de acesso ou o token de serviço é inválido. O cliente precisa obter um novo token de acesso ou token de serviço e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">Visão geral do registro dinâmico do cliente</a>.
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erro interno do servidor</td>
       <td>
-        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.
+      </td>
    </tr>
 </table>
 
@@ -601,7 +623,7 @@ Content-Type: application/json
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>
@@ -689,26 +711,30 @@ Se a solicitação da API de link não puder ser atendida devido a um erro nos s
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorização</td>
-      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Autorização</a>.</td>
+      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Autorização</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Identificador de dispositivo AP</td>
-      <td>A geração da carga do identificador de dispositivo está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
+      <td>A geração da carga do identificador de dispositivo está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         A geração do token de serviço é descrita pela documentação da API do token de serviço.<br/><br/>
-         Este token de serviço identifica o perfil autenticado para o qual o código do link será gerado.</td>
+         A geração do token de serviço é descrita pela documentação da API do token de serviço.
+         <br/><br/>
+         Este token de serviço identifica o perfil autenticado para o qual o código do link será gerado.
+      </td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Aceitar</td>
       <td>
-         O tipo de mídia aceito pelo aplicativo cliente.<br/><br/>
-         Se especificado, deve ser application/json.</td>
+         O tipo de mídia aceito pelo aplicativo cliente.
+         <br/><br/>
+         Se especificado, deve ser application/json.
+      </td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -737,19 +763,22 @@ Se a solicitação da API de link não puder ser atendida devido a um erro nos s
       <td>400</td>
       <td>Solicitação inválida</td>
       <td>
-        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>Não autorizado</td>
       <td>
-        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">Visão geral do registro dinâmico do cliente</a>.</td>
+        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">Visão geral do registro dinâmico do cliente</a>.
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erro interno do servidor</td>
       <td>
-        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.
+      </td>
    </tr>
 </table>
 
@@ -823,7 +852,7 @@ Se a solicitação da API de link não puder ser atendida devido a um erro nos s
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>
@@ -913,8 +942,10 @@ Se a solicitação Unlink API não puder ser atendida devido a um erro nos servi
    <tr>
       <td style="background-color: #DEEBFF;">dispositivos</td>
       <td>
-         Matriz de identificadores de dispositivos a serem desvinculados.<br/><br/>
-         Exemplo:</td>
+         Matriz de identificadores de dispositivos a serem desvinculados.
+         <br/><br/>
+         Exemplo:<br/><code>["deviceid1", "deviceid2", "deviceid3"]</code>
+      </td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
@@ -924,33 +955,39 @@ Se a solicitação Unlink API não puder ser atendida devido a um erro nos servi
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorização</td>
-      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Autorização</a>.</td>
+      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Autorização</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Tipo de conteúdo</td>
       <td>
-         O tipo de mídia aceito para os recursos que estão sendo enviados.<br/><br/>
-         Deve ser application/json.</td>
+         O tipo de mídia aceito para os recursos que estão sendo enviados.
+         <br/><br/>
+         Deve ser application/json.
+      </td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Identificador de dispositivo AP</td>
-      <td>A geração da carga do identificador de dispositivo está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
+      <td>A geração da carga do identificador de dispositivo está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         A geração do token de serviço é descrita pela documentação da API do token de serviço.<br/><br/>
-         Este token de serviço identifica o perfil autenticado para o qual os dispositivos serão desvinculados.</td>
+         A geração do token de serviço é descrita pela documentação da API do token de serviço.
+         <br/><br/>
+         Este token de serviço identifica o perfil autenticado para o qual os dispositivos serão desvinculados.
+      </td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Aceitar</td>
       <td>
-         O tipo de mídia aceito pelo aplicativo cliente.<br/><br/>
-         Se especificado, deve ser application/json.</td>
+         O tipo de mídia aceito pelo aplicativo cliente.
+         <br/><br/>
+         Se especificado, deve ser application/json.
+      </td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -979,13 +1016,15 @@ Se a solicitação Unlink API não puder ser atendida devido a um erro nos servi
       <td>400</td>
       <td>Solicitação inválida</td>
       <td>
-        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>Não autorizado</td>
       <td>
-        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">Visão geral do registro dinâmico do cliente</a>.</td>
+        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">Visão geral do registro dinâmico do cliente</a>.
+      </td>
    </tr>
    <tr>
       <td>405</td>
@@ -998,7 +1037,8 @@ Se a solicitação Unlink API não puder ser atendida devido a um erro nos servi
       <td>500</td>
       <td>Erro interno do servidor</td>
       <td>
-        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.
+      </td>
    </tr>
 </table>
 
@@ -1033,8 +1073,10 @@ Se a solicitação Unlink API não puder ser atendida devido a um erro nos servi
    <tr>
       <td style="background-color: #DEEBFF;">unlinkedDevices</td>
       <td>
-         Lista de dispositivos desvinculados com sucesso.<br/><br/>
-         Exemplo:</td>
+         Lista de dispositivos desvinculados com sucesso.
+         <br/><br/>
+         Exemplo:<br/><code>["deviceid1", "deviceid2", "deviceid3"]</code>
+      </td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>
@@ -1064,7 +1106,7 @@ Se a solicitação Unlink API não puder ser atendida devido a um erro nos servi
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>
@@ -1209,26 +1251,30 @@ Se a solicitação da API de lista não puder ser atendida devido a um erro nos 
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorização</td>
-      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Autorização</a>.</td>
+      <td>A geração da carga do token do portador está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Autorização</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Identificador de dispositivo AP</td>
-      <td>A geração da carga do identificador de dispositivo está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
+      <td>A geração da carga do identificador de dispositivo está descrita na documentação do cabeçalho <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         A geração do token de serviço é descrita pela documentação da API do token de serviço.<br/><br/>
-         Este token de serviço identifica o perfil autenticado para o qual a lista de dispositivos será recuperada.</td>
+         A geração do token de serviço é descrita pela documentação da API do token de serviço.
+         <br/><br/>
+         Este token de serviço identifica o perfil autenticado para o qual a lista de dispositivos será recuperada.
+      </td>
       <td><i>obrigatório</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Aceitar</td>
       <td>
-         O tipo de mídia aceito pelo aplicativo cliente.<br/><br/>
-         Se especificado, deve ser application/json.</td>
+         O tipo de mídia aceito pelo aplicativo cliente.
+         <br/><br/>
+         Se especificado, deve ser application/json.
+      </td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -1257,13 +1303,15 @@ Se a solicitação da API de lista não puder ser atendida devido a um erro nos 
       <td>400</td>
       <td>Solicitação inválida</td>
       <td>
-        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+        A solicitação é inválida, o cliente precisa corrigir a solicitação e tentar novamente. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>Não autorizado</td>
       <td>
-        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">Visão geral do registro dinâmico do cliente</a>.</td>
+        O token de acesso é inválido, o cliente precisa obter um novo token de acesso e tentar novamente. Para obter mais detalhes, consulte a documentação <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">Visão geral do registro dinâmico do cliente</a>.
+      </td>
    </tr>
    <tr>
       <td>405</td>
@@ -1276,7 +1324,8 @@ Se a solicitação da API de lista não puder ser atendida devido a um erro nos 
       <td>500</td>
       <td>Erro interno do servidor</td>
       <td>
-        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+        O servidor encontrou um problema. O corpo da resposta pode conter informações de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.
+      </td>
    </tr>
 </table>
 
@@ -1306,9 +1355,12 @@ Se a solicitação da API de lista não puder ser atendida devido a um erro nos 
    <tr>
       <td style="background-color: #DEEBFF;">dispositivos</td>
       <td>
-         JSON que contém um mapa de pares de chaves e valores.<br/><br/>
-         <b>Chave:</b> deviceId - A carga do identificador do dispositivo conforme descrito na documentação do cabeçalho <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a><br/><br/>
-         <b>Valor:</b> atributos - JSON que contém um mapa de atributos de metadados de dispositivo, incluindo:<ul>
+         JSON que contém um mapa de pares de chaves e valores.
+         <br/><br/>
+         <b>Chave:</b> deviceId - A carga do identificador do dispositivo conforme descrito na documentação do cabeçalho <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>
+         <br/><br/>
+         <b>Valor:</b> atributos - JSON que contém um mapa de atributos de metadados de dispositivo, incluindo:
+         <ul>
             <li>tipo de dispositivo</li>
             <li>platform</li>
             <li>agente do usuário</li>
@@ -1345,7 +1397,7 @@ Se a solicitação da API de lista não puder ser atendida devido a um erro nos 
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/pt-br/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
+      <td>O corpo da resposta pode fornecer informações adicionais de erro que seguem a documentação de <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Códigos de erro aprimorados</a>.</td>
       <td><i>obrigatório</i></td>
    </tr>
 </table>
@@ -1462,7 +1514,7 @@ Todas as respostas de erro incluem estes campos:
     "code": "header_missing",
     "message": "Required header is missing",
     "action": "check_headers",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=pt-BR",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "trace": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
   }
 }
