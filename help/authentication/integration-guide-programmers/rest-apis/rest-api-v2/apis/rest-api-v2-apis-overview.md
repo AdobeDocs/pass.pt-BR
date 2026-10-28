@@ -5,9 +5,9 @@ exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: 35c6ed6491cd47e6f85ee8974d72236c19fb8a6d
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '268'
 ht-degree: 0%
 ---
 # Visão geral das APIs REST API V2 {#rest-api-v2-apis-overview}
@@ -17,6 +17,27 @@ ht-degree: 0%
 > Mantenha-se informado sobre os anúncios mais recentes do produto de Autenticação da Adobe Pass e as linhas do tempo de desativação agregadas na página [Anúncios de produto](/help/authentication/product-announcements.md).
 
 Para começar, visite a documentação pública das APIs nas quais você está interessado, na lista abaixo.
+
+## URLs base {#rest-api-v2-apis-base-urls}
+
+Use o URL base específico do ambiente abaixo para solicitações da REST API V2. Anexar
+o `path` relativo documentado para cada API para esta URL base.
+
+Algumas respostas de API retornam URLs interativos que o dispositivo de streaming deve abrir
+em um navegador ou agente do usuário. Os exemplos incluem o atributo `url` retornado por
+[Iniciar logout para mvpd específico](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+e o redirecionamento `Location` retornado por
+[Executar autenticação no agente do usuário](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
+
+Esses URLs interativos usam o mesmo host do Provedor de serviços (SP) da Adobe Pass.
+Abra um URL interativo absoluto exatamente como retornado. Se o Adobe Pass retornar um
+URL interativa relativa começando com `/adobe-services/`, resolva-a com
+o host da controladora de armazenamento para o ambiente de destino:
+
+| Ambiente | REST API V2 e URL base interativo do URL |
+| --- | --- |
+| Produção | `https://sp.auth.adobe.com` |
+| Estágios | `https://sp.auth-staging.adobe.com` |
 
 ## Configuração {#rest-api-v2-apis-configuration}
 
