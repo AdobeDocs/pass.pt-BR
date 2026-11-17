@@ -5,9 +5,9 @@ exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: 6fdd77e300d01269357d7917702f31aef35d6751
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '726'
 ht-degree: 0%
 ---
 # Tokens de mídia {#media-tokens}
@@ -16,49 +16,55 @@ ht-degree: 0%
 >
 > O conteúdo desta página é fornecido apenas para fins informativos. O uso desta API requer uma licença atual da Adobe. Não é permitida nenhuma utilização não autorizada.
 
-O token de mídia é um token gerado pela [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) da Autenticação da Adobe Pass como resultado de uma decisão de autorização destinada a fornecer acesso de exibição a conteúdo protegido (recurso).
+O token de mídia é um token gerado pela [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) da Autenticação da Adobe Pass após uma decisão de autorização destinada a fornecer acesso de visualização a conteúdo protegido (recurso).
 
 O token de mídia é válido por um período limitado e curto (padrão de 7 minutos) especificado no momento do problema, indicando o limite de tempo antes que ele seja verificado e usado pelo aplicativo cliente. O token de mídia é restrito ao uso único e nunca deve ser armazenado em cache.
 
 O token de mídia consiste em uma sequência de caracteres assinada com base na Infraestrutura de Chave Pública (PKI) enviada em texto não criptografado. Com a proteção baseada em PKI, o token é assinado usando uma chave assimétrica emitida para a Adobe por uma Autoridade de Certificação (CA).
 
-O token de mídia é transmitido ao programador, que pode validá-lo usando o Verificador de token de mídia antes de iniciar o fluxo de vídeo para garantir a segurança de acesso desse recurso.
+O token de mídia é passado para o Programador, que o valida usando o Verificador de token de mídia antes de iniciar o fluxo de vídeo para garantir a segurança de acesso desse recurso.
 
-O Media Token Verifier é uma biblioteca distribuída pela autenticação da Adobe Pass responsável por verificar a autenticidade de um token de mídia.
+O Media Token Verifier é uma biblioteca distribuída pela autenticação da Adobe Pass que verifica a autenticidade de um token de mídia.
 
 ## Verificador de token de mídia {#media-token-verifier}
 
-A autenticação da Adobe Pass recomenda que os programadores enviem o token de mídia para seu próprio serviço de backend, integrando a biblioteca Verificador de token de mídia, para garantir acesso seguro antes de iniciar o fluxo de vídeo. O TTL (time-to-live) do token de mídia foi projetado para levar em conta possíveis problemas de sincronização de relógio entre o servidor que gera o token e o servidor de validação.
+Para garantir acesso seguro antes de iniciar o fluxo de vídeo, a autenticação da Adobe Pass recomenda que os programadores enviem o token de mídia para seu próprio serviço de back-end, integrando a biblioteca Verificador de token de mídia. O TTL (time-to-live) do token de mídia foi projetado para levar em conta possíveis problemas de sincronização de relógio entre o servidor que gera o token e o servidor de validação.
 
 A autenticação da Adobe Pass recomenda não analisar o token de mídia e extrair diretamente os dados, pois o formato do token não é garantido e pode mudar no futuro. A biblioteca do Verificador de token de mídia deve ser a única ferramenta usada para analisar o conteúdo do token.
 
-A biblioteca Media Token Verifier pode ser baixada no seguinte link:
+Baixe a biblioteca Media Token Verifier a partir do seguinte link:
 
 * https://tve.zendesk.com/hc/en-us/articles/204963159-Media-Token-Verifier-library
 
-A biblioteca Verificador de Token de Mídia requer o JDK versão 1.5 ou superior e oferece suporte ao uso de um provedor JCE (extensão de criptografia Java) preferencial para o algoritmo de assinatura (`SHA256WithRSA`).
+A biblioteca Verificador de Token de Mídia exige o Java versão 8 ou superior e oferece suporte ao uso de um provedor JCE (extensão de criptografia Java) preferencial para o algoritmo de assinatura (`SHA256WithRSA`).
 
-A biblioteca Verificador de Token de Mídia representada pelo arquivo Java `mediatoken-verifier-VERSION.jar` inclui:
+A distribuição do Verificador de token de mídia inclui:
 
 * Chave pública do Adobe.
 * API de verificação de token (`ITokenVerifier.java`).
 * Implementação de referência (`com.adobe.entitlement.test.EntitlementVerifierTest.java`).
-* Dependências e armazenamentos de chaves de certificado.
+* Armazenamento de chaves de certificado (`media_token_keystore.jks`).
+* Dependências em tempo de execução em `mediatoken-verifier-VERSION-application-with-dependencies.jar`. O thin `mediatoken-verifier-VERSION.jar` requer essas dependências separadamente.
 
 >[!IMPORTANT]
 > 
 > A senha padrão para o armazenamento de chaves de certificado incluído é `123456`.
 
+>[!IMPORTANT]
+>
+> O `serializedToken` retornado pela API REST V1 e V2 é codificado na Base64. Decodificá-la como UTF-8 antes de passá-la para `getInstance(...)`; caso contrário, a verificação retornará `INVALID_SIGNATURE`. A amostra abaixo aceita o valor codificado e executa essa decodificação.
+
 ### Métodos {#methods}
 
-A classe `ITokenVerifier` define os seguintes métodos:
+A interface `ITokenVerifier` define os seguintes métodos:
 
 * O método `isValid()` usado para validar o token de mídia. Ele aceita um único argumento, o [identificador de recurso](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier). Se o identificador de recurso fornecido for `null`, o método validará somente a autenticidade e o período de validade do token de mídia.
 
   O método `isValid()` retorna um dos seguintes valores de status:
 
-  | VALID_TOKEN | Validações de token bem-sucedidas |
+  | Status | Significado |
   |----------------------|-------------------------------------------|
+  | VALID_TOKEN | Validações de token bem-sucedidas |
   | INVALID_TOKEN_FORMAT | O formato do token é inválido |
   | INVALID_SIGNATURE | Não foi possível validar a autenticidade do token |
   | TOKEN_EXPIRED | O TTL do token não é válido |
@@ -69,7 +75,7 @@ A classe `ITokenVerifier` define os seguintes métodos:
 
 * O método `getTimeIssued()` usado para recuperar a hora em que o token de mídia foi emitido.
 
-* O método `getTimeToLive()` usado para recuperar o TTL do token de mídia.
+* O método `getTimeToLive()` usado para recuperar o TTL do token de mídia em milissegundos.
 
 * O método `getUserSessionGUID()` usado para recuperar uma GUID anônima definida pela MVPD.
 
@@ -79,7 +85,7 @@ A classe `ITokenVerifier` define os seguintes métodos:
 
 ### Amostra {#sample}
 
-O arquivo Verificador de Token de Mídia contém uma implementação de referência (`com.adobe.entitlement.test.EntitlementVerifierTest.java`) e um exemplo de chamada da API com a classe de teste. Este exemplo (`com.adobe.entitlement.text.EntitlementVerifierTest.java`) ilustra a integração da biblioteca do Verificador de Token de Mídia em um servidor de mídia.
+O arquivo Verificador de Token de Mídia contém uma implementação de referência (`com.adobe.entitlement.test.EntitlementVerifierTest.java`) e um exemplo de chamada da API com a classe de teste. Este exemplo (`com.adobe.entitlement.test.EntitlementVerifierTest.java`) ilustra a integração da biblioteca do Verificador de Token de Mídia em um servidor de mídia.
 
 ```JAVA
 package com.adobe.entitlement.test;
@@ -88,8 +94,10 @@ import com.adobe.entitlement.verifier.CryptoDataHolder;
 import com.adobe.entitlement.verifier.ITokenVerifier;
 import com.adobe.entitlement.verifier.ITokenVerifierFactory;
 import com.adobe.entitlement.verifier.SimpleTokenPKISignatureVerifierFactory;
-import com.adobe.tve.crypto.SignatureVerificationCredential; 
+import com.adobe.entitlement.verifier.SignatureVerificationCredential;
 import java.io.InputStream; 
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 public class EntitlementVerifierTest { 
     String mRequestorID = null;
@@ -113,11 +121,11 @@ public class EntitlementVerifierTest {
             System.out.println("One or more arguments is null");
             return;
         } 
+        tokenToVerify = new String(Base64.getDecoder().decode(tokenToVerify),
+                StandardCharsets.UTF_8);
         System.out.println("RequestorID: " + requestorID);
-        System.out.println("token: " + tokenToVerify);
         System.out.println("cert: " + pathToCertificate);
         System.out.println("keystoretype: " + keystoreType);
-        System.out.println("keystore passwd: " + keystorePasswd);
         String resourceID = null;
         if (args.length > 2) {
             resourceID = args[2];
@@ -171,10 +179,9 @@ public class EntitlementVerifierTest {
                                                                                    String keystorePasswd) {
         SignatureVerificationCredential cred = null; 
         if (keystoreFile != null){
-            try {
+            try (InputStream certInputStream =
+                    EntitlementVerifierTest.class.getClassLoader().getResourceAsStream(keystoreFile)) {
                 // load the keystore file 
-                ClassLoader loader = EntitlementVerifierTest.class.getClassLoader();
-                InputStream certInputStream =  loader.getResourceAsStream(keystoreFile);
                 if (certInputStream != null) {
                     cred = new SignatureVerificationCredential(certInputStream, keystorePasswd, keystoreType);          
                 }
@@ -183,8 +190,8 @@ public class EntitlementVerifierTest {
                 System.out.println("Error creating short token server credentials: " + e.getMessage());
             }
         }
-        if (cred == null) {
-            System.out.println("Error creating short token server credentials");
+        if (cred == null || !cred.isValid()) {
+            throw new IllegalStateException("Error creating short token server credentials");
         } 
         return cred;
     } 
